@@ -144,21 +144,21 @@
     </div>
 </footer>
 </div>
-<script src="https://thegrowthindia.in/assets/Site/js/common_app.js"></script>
-<script src="https://thegrowthindia.in/assets/Site/js/feather.min.js"></script>
-<script src="https://thegrowthindia.in/assets/Site/js/ResizeSensor.js"></script>
-<script src="https://thegrowthindia.in/assets/Site/js/theia-sticky-sidebar.js"></script>
-<script src="https://thegrowthindia.in/assets/Site/js/register.js"></script>
-<script src="https://thegrowthindia.in/assets/Site/js/bootstrap.bundle.min.js"></script>
-<script src="https://thegrowthindia.in/assets/Site/js/jquery.waypoints.js"></script>
-<script src="https://thegrowthindia.in/assets/Site/js/jquery.counterup.min.js"></script>
-<script src="https://thegrowthindia.in/assets/Site/js/select2.min.js"></script>
-<script src="https://thegrowthindia.in/assets/Site/js/snackbar.min.js"></script>
-<script src="https://thegrowthindia.in/assets/Site/js/owl.carousel.min.js"></script>
-<script src="https://thegrowthindia.in/assets/Site/js/slick.js"></script>
-<script src="https://thegrowthindia.in/assets/Site/js/aos.js"></script>
-<script src="https://thegrowthindia.in/assets/Site/js/script.js"></script>
-<script src="https://thegrowthindia.in/assets/Site/js/lity.js"></script>
+<script src="{{ asset('frontend/assets/js/common_app.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/feather.min.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/ResizeSensor.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/theia-sticky-sidebar.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/register.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/jquery.waypoints.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/jquery.counterup.min.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/select2.min.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/snackbar.min.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/owl.carousel.min.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/slick.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/aos.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/script.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/lity.js')}}"></script>
 <script>
     $('.owl-carousel').owlCarousel({
         loop: true,

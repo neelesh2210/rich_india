@@ -1,119 +1,97 @@
 @extends('frontend.layouts.app')
 @section('content')
-<!-- Start Page Banner Area -->
-        <div class="page-banner-area">
-            <div class="container">
-                <div class="page-banner-content">
-                    <div class="row align-items-center">
-                        <div class="col-lg-7 col-md-6">
-                            <h2>Contact us</h2>
+<div class="page-banner bg-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-12">
+                <h1 class="mb-0">Contact Us</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page-content contact-ussec">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-sm-5">
+                <div class="support-wrap bg-brand-pink h-640 mh-640">
+                    <p class="text-white mar-top-80 mar-btm-4">Let's Talk</p>
+                    <h5 class="text-white fs-35">Keep Connected With Us</h5>
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-4 col-3">
+                            <i class="fa-solid fa-envelope fs-60 text-white"></i>
                         </div>
-                        <div class="col-lg-5 col-md-6">
-                            <ul>
-                                <li> <a href="/">Home</a></li>
-                                <li>Contact</li>
-                            </ul>
+                        <div class="col-lg-9 col-sm-8 col-9">
+                            <p class="text-white mar-btm-4 mar-top-10">Email:</p>
+                            <p class="text-white mar-btm-4">
+                                <a href="mailto:info@richind.in" class="text-reset">
+                                    info@richind.in                                </a>
+                            </p>
+                        </div>
+                        <div class="col-lg-3 col-sm-4 col-3">
+                            <i class="fa-solid fa-square-phone fs-60 text-white"></i>
+                        </div>
+                        <div class="col-lg-9 col-sm-8 col-9">
+                            <p class="text-white mar-btm-4 mar-top-10">Phone:</p>
+                            <p class="text-white mar-btm-4">
+                                <a href="tel:+916395350946" class="text-reset">
+                                    +916395350946                                </a>
+                            </p>
+                        </div>
+                        <div class="col-lg-3 col-sm-4 col-3">
+                            <i class="fa-brands fa-square-whatsapp fs-60 text-white"></i>
+                        </div>
+                        <div class="col-lg-9 col-sm-8 col-9">
+                            <p class="text-white mar-btm-4 mar-top-10">WhatsApp:</p>
+                            <p class="text-white mar-btm-4">
+                                <a href="https://api.whatsapp.com/send?phone=916395350946" class="text-reset">
+                                    +916395350946                                </a>
+                            </p>
+                        </div>
+                        <div class="col-lg-3 col-sm-4 col-3">
+                            <i class="fa-sharp fa-solid fa-location-dot fs-60 text-white"></i>
+                        </div>
+                        <div class="col-lg-9 col-sm-8 col-9">
+                            <p class="text-white mar-btm-4 mar-top-10">Address:</p>
+                            <p class="text-white mar-btm-4">
+                                <a href="" class="text-reset">
+                                    23 , Firozabad, Uttar Pradesh                                </a>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- End Page Banner Area -->
-        <!-- Start Talk Area -->
-        <div class="talk-area ptb-100">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-7 col-md-12">
-                        <div class="talk-image">
-                            <img src="{{ asset('frontend/images/talk/talk-1.jpg')}}" alt="image">
-                            <div class="talk-information">
-                                <div class="content">
-                                    <h3>Get in touch</h3>
-                                    <p>For any inquiries, please email us or contact us.</p>
-                                </div>
-                                <ul class="list">
-                                    <li>
-                                        <span>Address:</span>
-                                        {{ websiteData('address') }}
-                                    </li>
-                                    <li>
-                                        <span>Phone:</span>
-                                        @if (websiteData('support_phone'))
-                                            @foreach (json_decode(websiteData('support_phone')) as $support_phone)
-                                                <a href="tel:(+91){{ $support_phone }}">(+91) {{ $support_phone }}</a>
-                                                @unless ($loop->last)
-                                                    ,
-                                                @endunless
-                                            @endforeach
-                                        @endif
-                                        {{-- <a href="tel:9876543210">+91-9876543210</a> --}}
-                                    </li>
-                                    <li>
-                                        <span>Email:</span>
-                                        <a href="mailto:{{ websiteData('email') }}">{{ websiteData('email') }}</a>
-                                    </li>
-                                </ul>
+            <div class="col-lg-8 col-sm-7">
+                <div class="support-wrap">
+                    <h5 class="fs-35">Fill The Form Below</h5>
+                    <div>
+                        <form action="https://thegrowthindia.in/Web/insert_contact" method="post">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input name="name" type="text" class="form-control" placeholder="Enter your Full Name" required />
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 col-md-12">
-                        <div class="talk-form" data-aos="fade-left" data-aos-delay="50" data-aos-duration="500" data-aos-once="true">
-                            <form id="contactForm">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" name="name" id="name" class="form-control" required data-error="Please enter your name" placeholder="Name">
-                                            <div class="help-block with-errors"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6 col-md-12">
-                                        <div class="form-group">
-                                            <input type="email" name="email" id="email" class="form-control" required data-error="Please enter your email" placeholder="Email">
-                                            <div class="help-block with-errors"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6 col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" name="phone_number" id="phone_number" required data-error="Please enter your number" class="form-control" placeholder="Phone">
-                                            <div class="help-block with-errors"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6 col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" name="msg_subject" id="msg_subject" class="form-control" required data-error="Please enter your subject" placeholder="Subject">
-                                            <div class="help-block with-errors"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12 col-md-12">
-                                        <div class="form-group">
-                                            <textarea name="message" class="form-control" id="message" cols="30" rows="6" required data-error="Write your message" placeholder="Your message"></textarea>
-                                            <div class="help-block with-errors"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12 col-md-12">
-                                        <div class="send-btn">
-                                            <a href="#" class="default-btn">Send message <i class="ri-arrow-right-line"></i></a>
-                                        </div>
-                                        <div id="msgSubmit" class="h3 text-center hidden"></div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input name="email" type="email" class="form-control" placeholder="Enter your Email Address" />
+                            </div>
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <input name="contact" type="text" class="form-control" placeholder="Enter your Contact Number" maxlength="10" />
+                            </div>
+                            <div class="form-group">
+                                <label>Message</label>
+                                <textarea name="message" rows="4" cols="20" class="form-control" placeholder="Write down here"></textarea>
+                            </div>
+                            <input type="submit" value="Submit" class="btn btn-submit" />
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- End Talk Area -->
-
-        <!-- Start Map -->
-        {{-- <div id="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13822.009735630678!2d77.03819262173836!3d29.993726394575972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390e5b6e3b2a6a5d%3A0xc893a794f2c40f98!2sLadwa%2C%20Haryana%20136132!5e0!3m2!1sen!2sin!4v1671513395824!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div> --}}
-        <!-- End Map -->
-        @endsection
+    </div>
+</div>
+<!--
+<div class="xs-map-section">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3549.872000328307!2d78.37911257446687!3d27.16031724940785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397443ffc93ba509%3A0x9c13238306dfc274!2sRICHIND!5e0!3m2!1sen!2sin!4v1689232776932!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+-->
+@endsection

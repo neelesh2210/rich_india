@@ -94,7 +94,7 @@
                             <div class="blur-border course-radius align-items-center aos">
                                 <div class="online-course d-flex align-items-center">
                                     <div class="course-img icon-circle">
-                                        <i class="fa-sharp fa-solid fa-chart-mixed fa-2x"></i>
+                                        <i class="fab fa-slideshare fa-2x"></i>
                                     </div>
                                     <div class="course-inner-content">
                                         <h4><span>{{websiteData('live_training')}}</span>+</h4>
@@ -197,7 +197,7 @@
             <div class="owl-carousel instructors-course owl-theme aos">
                 <div class='instructors-widget'>
                     <div class='instructors-img '>
-                        <img class='img-fluid' alt='Richind-AMan-Jain' src='https://thegrowthindia.in/assets/Images/Courses_Image/Courses4.png'>
+                        <img class='img-fluid' alt='Richind-AMan-Jain' src='{{ asset('frontend/assets/images/course/Courses2.png')}}'>
                     </div>
                     <div class='instructors-content text-center'>
                         <h5 class='gordita-bold'>AMan Jain</h5>
@@ -212,14 +212,14 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 col-sm-5">
-                    <img src="https://thegrowthindia.in/assets/Images/Why1.png" alt="Richind" class="img-fluid" />
+                    <img src="{{ asset('frontend/assets/images/Why1.png')}}" alt="Richind" class="img-fluid" />
                 </div>
                 <div class="col-lg-7 col-sm-7">
                     <div class="intsa-subsec">
                         <h4>Ready To Get Our <span>Professional Course ?</span> We are offering High Quality Courses
                             and Live Training.”
                         </h4>
-                        <a href="https://api.whatsapp.com/send?phone=917599478457" title="Richind-Whatsapp-Us"
+                        <a href="https://api.whatsapp.com/send?phone=1234567890" title="Richind-Whatsapp-Us"
                             target="_blank" class="btn btn-primary btn-new">Let’s Talk Our Expert</a>
                     </div>
                 </div>
@@ -315,7 +315,7 @@
                 </div>
                 <div class="col-xl-5 col-lg-12 col-md-12 d-flex">
                     <div class="career-img aos">
-                        <img src="https://thegrowthindia.in/assets/Images/Why-Us.png" alt="Richind-Why-Choose-Us"
+                        <img src="{{ asset('frontend/assets/images/Why-Us.png')}}" alt="Richind-Why-Choose-Us"
                             class="img-fluid">
                     </div>
                 </div>

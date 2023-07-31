@@ -56,7 +56,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#" title="{{env('APP_NAME')}}-All-Blog">Blog</a>
+                            <a href="{{route('blog')}}" >Blog</a>
                         </li>
                         <li>
                             <a href="{{route('contact')}}" title="{{env('APP_NAME')}}-Contact-Us">Contact Us</a>

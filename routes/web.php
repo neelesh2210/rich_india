@@ -33,6 +33,8 @@ Auth::routes(['login'=>false,'register'=>false,'logout'=>false]);
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::view('about', 'frontend.about')->name('about');
+Route::view('blog', 'frontend.blog')->name('blog');
+Route::view('blog_details', 'frontend.blog_details')->name('blog_details');
 Route::view('contact-us', 'frontend.contact')->name('contact');
 Route::get('plan',[PlanController::class,'planIndex'])->name('plan');
 Route::get('plan-detail/{slug}', [PlanController::class,'planDetail'])->name('plan.detail');
