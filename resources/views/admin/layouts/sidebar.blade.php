@@ -43,12 +43,12 @@
                         </a>
                     </li>
 
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a href="{{route('admin.unpaidUserList')}}" class="nav-link @if(Route::currentRouteName() == 'admin.unpaidUserList') active @endif">
                             <i class="nav-icon fas fa-users"></i>
                             <p>Unpaid User List</p>
                         </a>
-                    </li>
+                    </li> --}}
                 @endcan
                 {{-- <li class="nav-item">
                     <a href="{{route('admin.get.old.users')}}" class="nav-link @if(Route::currentRouteName() == 'admin.get.old.users') active @endif">
@@ -102,12 +102,12 @@
                         <p>Payout Transaction</p>
                     </a>
                 </li> --}}
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="{{route('admin.leaderboard.index')}}" class="nav-link @if(Route::currentRouteName() == 'admin.leaderboard.index') active @endif">
                         <i class="nav-icon fas fa-chart-bar"></i>
                         <p>Leaderboard</p>
                     </a>
-                </li>
+                </li> --}}
                 @can('referral_income-list')
                     <li class="nav-item">
                         <a href="{{route('admin.commission.index')}}" class="nav-link @if(Route::currentRouteName() == 'admin.commission.index') active @endif">
@@ -116,15 +116,15 @@
                         </a>
                     </li>
                 @endcan
-                @can('earning-list')
+                {{-- @can('earning-list')
                     <li class="nav-item">
                         <a href="{{route('admin.earning')}}" class="nav-link @if(Route::currentRouteName() == 'admin.earning') active @endif">
                             <i class="nav-icon fas fa-hand-holding-usd"></i>
                             <p>Earnings</p>
                         </a>
                     </li>
-                @endcan
-                @can('role-list')
+                @endcan --}}
+                {{-- @can('role-list')
                     <li class="nav-item">
                         <a href="{{route('admin.roles.index')}}" class="nav-link @if(Route::currentRouteName() == 'admin.roles.index' || Route::currentRouteName() == 'admin.roles.create' || Route::currentRouteName() == 'admin.roles.edit') active @endif">
                             <i class="nav-icon fas fa-cog"></i>
@@ -139,7 +139,7 @@
                             <p>Staff</p>
                         </a>
                     </li>
-                @endcan
+                @endcan --}}
                 {{-- <li class="nav-item">
                     <a href="{{route('admin.withdrawal')}}" class="nav-link @if(Route::currentRouteName() == 'admin.withdrawal') active @endif">
                         <i class="nav-icon fas fa-file-invoice-dollar"></i>
@@ -153,7 +153,7 @@
                     </a>
                 </li> --}}
 
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="{{route('admin.webinars.index')}}" class="nav-link @if(Route::currentRouteName() == 'admin.webinars.index' || Route::currentRouteName() == 'admin.webinars.create' || Route::currentRouteName() == 'admin.webinars.edit') active @endif">
                         <i class="nav-icon fas fa-file-invoice-dollar"></i>
                         <p>Webinars</p>
@@ -165,9 +165,9 @@
                         <i class="nav-icon fas fa-file-invoice-dollar"></i>
                         <p>Trainings</p>
                     </a>
-                </li>
+                </li> --}}
 
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="{{route('admin.offers.index')}}" class="nav-link @if(Route::currentRouteName() == 'admin.offers.index') active @endif">
                         <i class="nav-icon fas fa-file-invoice-dollar"></i>
                         <p>Offer</p>
@@ -179,7 +179,7 @@
                         <i class="nav-icon fas fa-file-invoice-dollar"></i>
                         <p>MarketingMaterial</p>
                     </a>
-                </li>
+                </li> --}}
 
                 @canany(['slider-list', 'social_media_link-list', 'instructor-list', 'review-list', 'media-section', 'faq-section', 'testimonial_video-section', 'commission_setting-section'])
                     <li class="nav-item @if(Route::currentRouteName() == 'admin.websitesetting.index' || Route::currentRouteName() == 'admin.faq.index' || Route::currentRouteName() == 'admin.faq.edit' || Route::currentRouteName() == 'admin.testimonialvideo.index' || Route::currentRouteName() == 'admin.commission-setting.index' || Route::currentRouteName() == 'admin.instructors.index' || Route::currentRouteName() == 'admin.instructors.create' || Route::currentRouteName() == 'admin.instructors.edit' || Route::currentRouteName() == 'admin.reviews.index' || Route::currentRouteName() == 'admin.reviews.create' || Route::currentRouteName() == 'admin.reviews.edit' || Route::currentRouteName() == 'admin.medias.index') menu-is-opening menu-open @endif">
@@ -214,18 +214,18 @@
                                     <p>Website Data</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a href="{{route('admin.websitesetting.index')}}?type=meetup" class="nav-link @if(Route::currentRouteName() == 'admin.websitesetting.index') @if(request()->type == 'meetup') active @endif @endif">
                                     <p>Meetup</p>
                                 </a>
-                            </li>
-                            @can('instructor-list')
+                            </li> --}}
+                            {{-- @can('instructor-list')
                                 <li class="nav-item">
                                     <a href="{{route('admin.instructors.index')}}" class="nav-link @if(Route::currentRouteName() == 'admin.instructors.index' || Route::currentRouteName() == 'admin.instructors.create' || Route::currentRouteName() == 'admin.instructors.edit') active @endif">
                                         <p>Instructors</p>
                                     </a>
                                 </li>
-                            @endcan
+                            @endcan --}}
                             @can('review-list')
                                 <li class="nav-item">
                                     <a href="{{route('admin.reviews.index')}}" class="nav-link @if(Route::currentRouteName() == 'admin.reviews.index' || Route::currentRouteName() == 'admin.reviews.create' || Route::currentRouteName() == 'admin.reviews.edit') active @endif">
@@ -233,13 +233,13 @@
                                     </a>
                                 </li>
                             @endcan
-                            @can('media-section')
+                            {{-- @can('media-section')
                                 <li class="nav-item">
                                     <a href="{{route('admin.medias.index')}}" class="nav-link @if(Route::currentRouteName() == 'admin.medias.index') active @endif">
                                         <p>Media</p>
                                     </a>
                                 </li>
-                            @endcan
+                            @endcan --}}
                             @can('faq-section')
                                 <li class="nav-item">
                                     <a href="{{route('admin.faq.index')}}" class="nav-link @if(Route::currentRouteName() == 'admin.faq.index' || Route::currentRouteName() == 'admin.faq.edit') active @endif">
@@ -247,13 +247,13 @@
                                     </a>
                                 </li>
                             @endcan
-                            @can('testimonial_video-section')
+                            {{-- @can('testimonial_video-section')
                                 <li class="nav-item">
                                     <a href="{{route('admin.testimonialvideo.index')}}" class="nav-link @if(Route::currentRouteName() == 'admin.testimonialvideo.index') active @endif">
                                         <p>Testimonial Video</p>
                                     </a>
                                 </li>
-                            @endcan
+                            @endcan --}}
                             @can('commission_setting-section')
                                 <li class="nav-item">
                                     <a href="{{route('admin.commission-setting.index')}}" class="nav-link @if(Route::currentRouteName() == 'admin.commission-setting.index') active @endif">
