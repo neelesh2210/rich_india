@@ -2913,6 +2913,7 @@ textarea.form-control-lg {
     background-color: #e9ecef;
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
+    min-height: 50px;
 }
 
 .input-group-lg > .btn,

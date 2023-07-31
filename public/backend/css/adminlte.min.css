@@ -4802,7 +4802,7 @@ input[type=submit].btn-block {
     /* border-radius: .25rem */
 }
 .sidebar {
-    background: #01345d;
+    background: #2b353f;
 }
 .nav-pills .nav-link.active,
 .nav-pills .show>.nav-link {
@@ -4844,7 +4844,7 @@ input[type=submit].btn-block {
     align-items: center;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding: .5rem .5rem
+    padding: .75rem .75rem
 }
 
 .navbar .container,
@@ -5251,7 +5251,7 @@ input[type=submit].btn-block {
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color:#fff;
+    color:#000;
 }
 
 .navbar-light .navbar-nav .nav-link:focus,
@@ -5385,7 +5385,7 @@ input[type=submit].btn-block {
 }
 
 .card-body {
-    padding: 20px 25px;
+    padding: 25px 25px;
     border-radius: 4px;
 }
 
@@ -7493,7 +7493,7 @@ button.bg-success:hover {
 
 .bg-info {
     /* background-color: #17a2b8 !important */
-    background-image: linear-gradient(310deg,#eb9d6da3,#01345d);
+    background-image: linear-gradient(310deg,#28353e,#28353e);
 }
 
 a.bg-info:focus,
@@ -11429,7 +11429,7 @@ a.text-danger:hover {
 }
 
 .text-light {
-    color: #f8f9fa !important
+    color: #000 !important
 }
 
 a.text-light:focus,
@@ -13907,7 +13907,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
     display: block;
     font-size: 1.25rem;
     line-height: 1.5;
-    padding: 5px;
+    padding: .6rem .75rem;
     transition: width .3s ease-in-out;
     white-space: nowrap
 }
@@ -13927,7 +13927,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 
 [class*=sidebar-dark] .brand-link,
 [class*=sidebar-dark] .brand-link .pushmenu {
-    background: #01345d;
+    background: #2e61f2;
     border-bottom: none;
 }
 
@@ -14372,7 +14372,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 [class*=sidebar-dark-] .nav-sidebar>.nav-item>.nav-treeview {
-    background-color: #002e53;
+    background-color:#28353e;
 }
 
 [class*=sidebar-dark-] .nav-header {
@@ -14422,11 +14422,12 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 .sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active,
 .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
     text-shadow: rgb(0 0 0 / 25%) 0 -1px 0;
-    background: -webkit-gradient(linear, left top, left bottom, from(#01345d), to(#01345d)),#01345d;
-    background: linear-gradient(#01345d, #01345d),#01345d;
+    /* background: -webkit-gradient(linear, left top, left bottom, from(#01345d), to(#01345d)),#01345d;
+    background: linear-gradient(#01345d, #01345d),#01345d; */
+    background-color: rgba(255,255,255,0.07);
     -webkit-box-shadow: rgb(0 0 0 / 25%) 0 1px 0, inset rgb(255 255 255 / 16%) 0 1px 0;
     box-shadow: rgb(0 0 0 / 25%) 0 1px 0, inset rgb(255 255 255 / 16%) 0 1px 0;
-    border-right: 5px solid #e4be6f;
+    border-right: 5px solid #2e61f2;
 }
 
 .sidebar-dark-primary .nav-sidebar.nav-legacy>.nav-item>.nav-link.active,
@@ -17215,11 +17216,12 @@ body.text-sm .control-sidebar {
 
 .nav-pills .nav-link:not(.active):hover {
     text-shadow: rgb(0 0 0 / 25%) 0 -1px 0;
-    background: -webkit-gradient(linear, left top, left bottom, from(#01345d), to(#01345d)),#01345d;
-    background: linear-gradient(#01345d, #01345d),#01345d;
+    /* background: -webkit-gradient(linear, left top, left bottom, from(#01345d), to(#01345d)),#01345d;
+    background: linear-gradient(#01345d, #01345d),#01345d; */
+    background-color: rgba(255,255,255,0.07);
     -webkit-box-shadow: rgb(0 0 0 / 25%) 0 1px 0, inset rgb(255 255 255 / 16%) 0 1px 0;
     box-shadow: rgb(0 0 0 / 25%) 0 1px 0, inset rgb(255 255 255 / 16%) 0 1px 0;
-    border-right: 5px solid #e4be6f;
+    border-right: 5px solid #2e61f2;
     color: #fff !important;
 }
 
@@ -19781,7 +19783,7 @@ body.text-sm .control-sidebar {
 }
 
 .navbar-white {
-    background-color: #01345d;
+    background-color: #fff;
     color: #1f2d3d
 }
 
@@ -30557,10 +30559,9 @@ html.maximized-card {
 }
 
 .card-header {
-    background-color: #e4be6f;
+    background-color: #fff;
     border-bottom: 1px solid rgba(0, 0, 0, .125);
     padding: 0.75rem 1.25rem;
-    color: #fff;
     position: relative;
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
@@ -37021,7 +37022,11 @@ a.disabled.mailbox-attachment-close {
 
 .login-box,
 .register-box {
-    width: 400px
+    position: relative;
+    width: 500px;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.15), 0 1px 0 0 rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width:576px) {

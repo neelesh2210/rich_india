@@ -129,7 +129,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card card-success">
-                            <div class="card-header" style="background-color: #17a2b8;">
+                            <div class="card-header" style="background-color: #28353e;">
                                 <h3 class="card-title">Last 7 Days Registration</h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -146,7 +146,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="card card-success">
-                            <div class="card-header" style="background-color: #17a2b8;">
+                            <div class="card-header" style="background-color: #28353e;">
                                 <h3 class="card-title">Last 7 Days Payment</h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
