@@ -146,7 +146,7 @@
                                                 <div>
                                                     <label class="form-check-label mb-0">
                                                         <input type="checkbox" required />
-                                                        I agree to the <a href="term-condition.html">Terms of Service</a> and <a href="privacy-policy.html">Privacy Policy.</a>
+                                                        I agree to the <a href="{{route('term_and_condition')}}">Terms of Service</a> and <a href="{{route('privacy_policy')}}">Privacy Policy.</a>
                                                     </label>
                                                 </div>
                                             </div>
