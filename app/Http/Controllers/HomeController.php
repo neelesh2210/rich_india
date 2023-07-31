@@ -36,7 +36,7 @@ class HomeController extends Controller
         }
         $desktop_sliders = WebsiteSetting::select('content','url')->where('type','slider_desktop')->get();
         $mobile_sliders = WebsiteSetting::select('content','url')->where('type','slider_mobile')->get();
-        $plans = PlanManager::withoutTrash()->select('id','course_ids','slug','title','amount','discounted_price','points','image')->where('status',1)->orderBy('priority','desc')->get();
+        $plans = PlanManager::withoutTrash()->select('id','course_ids','slug','title','amount','discounted_price','points','image')->where('status',1)->orderBy('priority','asc')->get();
         $testimonialvideos = TestimonialVideo::select('video_url','thumbnail_image')->where('status',1)->get();
         $faqs = Faq::select('title','content')->get();
         $instructors = Instructor::orderBy('id','desc')->get();

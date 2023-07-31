@@ -40,114 +40,114 @@ class ImportUser implements ShouldQueue
     public function handle()
     {
         //Update Plan Course
-        $plan_purchases = PlanPurchase::whereBetween('id',[1,3252])->get();
-        foreach ($plan_purchases as $plan_purchase) {
-            $plan = Plan::where('id',$plan_purchase->plan_id)->first();
-            $plan_purchase->course_ids = $plan->course_ids;
-            $plan_purchase->save();
-        }
+        // $plan_purchases = PlanPurchase::whereBetween('id',[1,3252])->get();
+        // foreach ($plan_purchases as $plan_purchase) {
+        //     $plan = Plan::where('id',$plan_purchase->plan_id)->first();
+        //     $plan_purchase->course_ids = $plan->course_ids;
+        //     $plan_purchase->save();
+        // }
 
-        return 1;
+        // return 1;
 
         //Insert New User
 
-        // $wp_users = DB::table('wp_users')->get();
+        $wp_users = DB::table('wp_users')->get();
 
-        // foreach($wp_users as $wp_user){
-        //     $wp_user_detail = DB::table('wp_wc_customer_lookup')->where('user_id',$wp_user->ID)->first();
-        //     if($wp_user_detail){
-        //         $wp_affiliates_id = DB::table('wp_uap_affiliates')->where('uid',$wp_user->ID)->first();
-        //         if($wp_affiliates_id){
-        //             $wp_order = DB::table('wp_wc_order_stats')->where('customer_id',$wp_user_detail->customer_id)->where(function ($query) {
-        //                             $query->where('status','wc-completed')->orWhere('status','wc-on-hold');
-        //                         })->first();
-        //             if($wp_order){
-        //                 $wp_order_details = DB::table('wp_woocommerce_order_items')->where('order_id',$wp_order->order_id)->first();
-        //                 if($wp_order_details){
-        //                     $plan = Plan::where('title',$wp_order_details->order_item_name)->first();
-        //                     if($plan){
-        //                         $wp_parent_id = DB::table('wp_uap_mlm_relations')->where('affiliate_id',$wp_affiliates_id->id)->first();
-        //                         $check_user = User::where('email',$wp_user->user_email)->first();
-        //                         if(!$check_user){
-        //                             $user = new User;
-        //                             $user->added_by = 'admin' ;
-        //                             $user->name = optional($wp_user_detail)->first_name.' '.optional($wp_user_detail)->last_name;
-        //                             $user->email = $wp_user->user_email ;
-        //                             $user->state = optional($wp_user_detail)->city;
-        //                             $user->referrer_code = $wp_user->user_login ;
-        //                             $user->password = Hash::make($wp_user->user_email );
-        //                             if($wp_parent_id){
-        //                                 $ref_wp_affiliate = DB::table('wp_uap_affiliates')->where('id',$wp_parent_id->parent_affiliate_id)->first();
-        //                                 $ref_wp_user = DB::table('wp_users')->where('id',optional($ref_wp_affiliate)->uid)->first();
+        foreach($wp_users as $wp_user){
+            $wp_user_detail = DB::table('wp_wc_customer_lookup')->where('user_id',$wp_user->ID)->first();
+            if($wp_user_detail){
+                $wp_affiliates_id = DB::table('wp_uap_affiliates')->where('uid',$wp_user->ID)->first();
+                if($wp_affiliates_id){
+                    $wp_order = DB::table('wp_wc_order_stats')->where('customer_id',$wp_user_detail->customer_id)->where(function ($query) {
+                                    $query->where('status','wc-completed')->orWhere('status','wc-on-hold');
+                                })->first();
+                    if($wp_order){
+                        $wp_order_details = DB::table('wp_woocommerce_order_items')->where('order_id',$wp_order->order_id)->first();
+                        if($wp_order_details){
+                            $plan = Plan::where('title',$wp_order_details->order_item_name)->first();
+                            if($plan){
+                                $wp_parent_id = DB::table('wp_uap_mlm_relations')->where('affiliate_id',$wp_affiliates_id->id)->first();
+                                $check_user = User::where('email',$wp_user->user_email)->first();
+                                if(!$check_user){
+                                    $user = new User;
+                                    $user->added_by = 'admin' ;
+                                    $user->name = optional($wp_user_detail)->first_name.' '.optional($wp_user_detail)->last_name;
+                                    $user->email = $wp_user->user_email ;
+                                    $user->state = optional($wp_user_detail)->city;
+                                    $user->referrer_code = $wp_user->user_login ;
+                                    $user->password = Hash::make($wp_user->user_email );
+                                    if($wp_parent_id){
+                                        $ref_wp_affiliate = DB::table('wp_uap_affiliates')->where('id',$wp_parent_id->parent_affiliate_id)->first();
+                                        $ref_wp_user = DB::table('wp_users')->where('id',optional($ref_wp_affiliate)->uid)->first();
 
-        //                                 $user->referral_code = optional($ref_wp_user)->user_login ;
-        //                             }
-        //                             $user->is_old = '1';
-        //                             $user->save();
+                                        $user->referral_code = optional($ref_wp_user)->user_login ;
+                                    }
+                                    $user->is_old = '1';
+                                    $user->save();
 
-        //                             $plan_purchase = new PlanPurchase;
-        //                             $plan_purchase->user_id = $user->id;
-        //                             $plan_purchase->plan_id = $plan->id;
-        //                             $plan_purchase->course_ids = $plan->course_ids;
-        //                             //$plan_purchase->amount = $plan->amount;
-        //                             // if($user->referral_code){
-        //                             //     $plan_purchase->discounted_amount = $plan->amount - $plan->discounted_price;
-        //                             //     $plan_purchase->total_amount = $plan->discounted_price;
-        //                             // }else{
-        //                             //     $plan_purchase->total_amount = $plan->amount;
-        //                             // }
-        //                             //$plan_purchase->payment_detail = $request->payment_detalis;
-        //                             $plan_purchase->payment_status = 'success';
-        //                             $plan_purchase->save();
+                                    $plan_purchase = new PlanPurchase;
+                                    $plan_purchase->user_id = $user->id;
+                                    $plan_purchase->plan_id = $plan->id;
+                                    $plan_purchase->course_ids = $plan->course_ids;
+                                    //$plan_purchase->amount = $plan->amount;
+                                    // if($user->referral_code){
+                                    //     $plan_purchase->discounted_amount = $plan->amount - $plan->discounted_price;
+                                    //     $plan_purchase->total_amount = $plan->discounted_price;
+                                    // }else{
+                                    //     $plan_purchase->total_amount = $plan->amount;
+                                    // }
+                                    //$plan_purchase->payment_detail = $request->payment_detalis;
+                                    $plan_purchase->payment_status = 'success';
+                                    $plan_purchase->save();
 
-        //                             $user_detail = new UserDetail;
-        //                             $user_detail->user_id = $user->id;
-        //                             $user_detail->current_plan_id = $plan_purchase->plan_id;
-        //                             $user_detail->save();
+                                    $user_detail = new UserDetail;
+                                    $user_detail->user_id = $user->id;
+                                    $user_detail->current_plan_id = $plan_purchase->plan_id;
+                                    $user_detail->save();
 
-        //                             // if($user->referral_code){
-        //                             //         $this->distributeCommission($user->referral_code,$plan->id,$plan_purchase->id,$user);
-        //                             // }else{
-        //                             //     $commission_setting = CommissionSetting::get();
-        //                             //     $level = $commission_setting->count();
-        //                             //     for($i=1;$i<=$level;$i++){
-        //                             //         $commission_user = User::with('userDetail.plan')->first();
-        //                             //         if($commission_user->userDetail->plan->priority <= $plan->priority){
-        //                             //             $commission_amount = $commission_user->userDetail->plan->commission[$i-1];
-        //                             //         }else{
-        //                             //             $commission_amount = $plan->commission[$i-1];
-        //                             //         }
-        //                             //         $commission = new Commission;
-        //                             //         $commission->user_id = $commission_user->id;
-        //                             //         $commission->plan_purchase_id = $plan_purchase->id;
-        //                             //         $commission->commission = $commission_amount;
-        //                             //         $commission->level = $i;
-        //                             //         $commission->save();
+                                    // if($user->referral_code){
+                                    //         $this->distributeCommission($user->referral_code,$plan->id,$plan_purchase->id,$user);
+                                    // }else{
+                                    //     $commission_setting = CommissionSetting::get();
+                                    //     $level = $commission_setting->count();
+                                    //     for($i=1;$i<=$level;$i++){
+                                    //         $commission_user = User::with('userDetail.plan')->first();
+                                    //         if($commission_user->userDetail->plan->priority <= $plan->priority){
+                                    //             $commission_amount = $commission_user->userDetail->plan->commission[$i-1];
+                                    //         }else{
+                                    //             $commission_amount = $plan->commission[$i-1];
+                                    //         }
+                                    //         $commission = new Commission;
+                                    //         $commission->user_id = $commission_user->id;
+                                    //         $commission->plan_purchase_id = $plan_purchase->id;
+                                    //         $commission->commission = $commission_amount;
+                                    //         $commission->level = $i;
+                                    //         $commission->save();
 
-        //                             //         $user_detail = UserDetail::where('user_id',User::first()->id)->first();
-        //                             //         $user_detail->total_commission = $user_detail->total_commission + $commission_amount;
-        //                             //         $user_detail->save();
+                                    //         $user_detail = UserDetail::where('user_id',User::first()->id)->first();
+                                    //         $user_detail->total_commission = $user_detail->total_commission + $commission_amount;
+                                    //         $user_detail->save();
 
-        //                             // //         // if($i == 1){
-        //                             // //         //     Mail::send('email.active_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount], function($message) use($commission_user){
-        //                             // //         //         $message->to($commission_user->email);
-        //                             // //         //         $message->subject('Digiigyan Notification');
-        //                             // //         //     });
-        //                             // //         // }else{
-        //                             // //         //     Mail::send('email.passive_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount,'comes_from'=>$user], function($message) use($commission_user){
-        //                             // //         //         $message->to($commission_user->email);
-        //                             // //         //         $message->subject('Digiigyan Notification');
-        //                             // //         //     });
-        //                             // //         // }
-        //                             //     }
-        //                             // }
-        //                         }
-        //                     }
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
+                                    //         // if($i == 1){
+                                    //         //     Mail::send('email.active_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount], function($message) use($commission_user){
+                                    //         //         $message->to($commission_user->email);
+                                    //         //         $message->subject('Digiigyan Notification');
+                                    //         //     });
+                                    //         // }else{
+                                    //         //     Mail::send('email.passive_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount,'comes_from'=>$user], function($message) use($commission_user){
+                                    //         //         $message->to($commission_user->email);
+                                    //         //         $message->subject('Digiigyan Notification');
+                                    //         //     });
+                                    //         // }
+                                    //     }
+                                    // }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
         //Update Plan
 

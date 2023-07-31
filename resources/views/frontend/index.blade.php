@@ -195,15 +195,17 @@
         </div>
         <div class="container">
             <div class="owl-carousel instructors-course owl-theme aos">
-                <div class='instructors-widget'>
-                    <div class='instructors-img '>
-                        <img class='img-fluid' alt='Richind-AMan-Jain' src='{{ asset('frontend/assets/images/course/Courses2.png')}}'>
+                @foreach ($instructors as $instructor)
+                    <div class='instructors-widget'>
+                        <div class='instructors-img '>
+                            <img class='img-fluid' alt='Richind-AMan-Jain' src="{{asset('backend/img/instructors/'.$instructor->image)}}">
+                        </div>
+                        <div class='instructors-content text-center'>
+                            <h5 class='gordita-bold'>{{$instructor->name}}</h5>
+                            <p>{{$instructor->designation}}</p>
+                        </div>
                     </div>
-                    <div class='instructors-content text-center'>
-                        <h5 class='gordita-bold'>AMan Jain</h5>
-                        <p>Developer</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

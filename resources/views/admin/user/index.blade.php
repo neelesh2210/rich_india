@@ -96,7 +96,7 @@
                                             <th>Total Withdrawl</th>
                                             <th>Associate</th>
                                             <th>Old Site Data</th>
-                                            <th class="text-center">Status</th>
+                                            {{-- <th class="text-center">Status</th> --}}
                                             <th class="text-center">Action</th>
                                         </tr>
                                     </thead>
@@ -148,7 +148,7 @@
                                                     <b>Total Amount:</b>
                                                     {{ $user->userDetail->old_paid_payout + $user->userDetail->old_not_paid_payout }}
                                                 </td>
-                                                <td>
+                                                {{-- <td>
                                                     @if($user->status == '1')
                                                     <a href="{{route('admin.change.user.status',[$user->id,'0'])}}" onclick="return confirm('Are you sure you want to Block this User?');">
                                                         <span class="badge bg-success">Active</span>
@@ -158,7 +158,7 @@
                                                             <span class="badge bg-danger">Blocked</span>
                                                         </a>
                                                     @endif
-                                                </td>
+                                                </td> --}}
                                                 <td>
                                                     <div class="row">
                                                         <div class="col-md-6">
@@ -179,11 +179,11 @@
                                                                 <i class="fas fa-eye"></i>
                                                             </a>
                                                         </div>
-                                                        <div class="col-md-6">
+                                                        {{-- <div class="col-md-6">
                                                             <a class="btn btn-outline-primary btn-sm mr-1 mb-1" href="{{route('admin.upgrade.plan.index',$user->id)}}" style="width:35px;" title="Upgrade Plan">
                                                                 <i class="fas fa-level-up-alt"></i>
                                                             </a>
-                                                        </div>
+                                                        </div> --}}
                                                     </div>
                                                 </td>
                                             </tr>

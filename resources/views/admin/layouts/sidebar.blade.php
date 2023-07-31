@@ -70,7 +70,7 @@
                         <p>Coupons</p>
                     </a>
                 </li> --}}
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="{{route('admin.payout.index')}}" class="nav-link @if(Route::currentRouteName() == 'admin.payout.index') active @endif">
                         <i class="nav-icon fas fa-money-bill-alt"></i>
                         <p>Payouts</p>
@@ -95,7 +95,7 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
                 {{-- <li class="nav-item">
                     <a href="{{route('admin.payout.transaction.index')}}" class="nav-link @if(Route::currentRouteName() == 'admin.payout.transaction.index') active @endif">
                         <i class="nav-icon fas fa-money-bill-alt"></i>
@@ -219,13 +219,13 @@
                                     <p>Meetup</p>
                                 </a>
                             </li> --}}
-                            {{-- @can('instructor-list')
+                            @can('instructor-list')
                                 <li class="nav-item">
                                     <a href="{{route('admin.instructors.index')}}" class="nav-link @if(Route::currentRouteName() == 'admin.instructors.index' || Route::currentRouteName() == 'admin.instructors.create' || Route::currentRouteName() == 'admin.instructors.edit') active @endif">
                                         <p>Instructors</p>
                                     </a>
                                 </li>
-                            @endcan --}}
+                            @endcan
                             @can('review-list')
                                 <li class="nav-item">
                                     <a href="{{route('admin.reviews.index')}}" class="nav-link @if(Route::currentRouteName() == 'admin.reviews.index' || Route::currentRouteName() == 'admin.reviews.create' || Route::currentRouteName() == 'admin.reviews.edit') active @endif">
