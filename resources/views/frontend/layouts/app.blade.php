@@ -43,6 +43,14 @@
 
         </style>
         <script src="{{ asset('frontend/assets/js/jquery-3.6.0.min.js')}}"></script>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-2W1107GP9Y"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-2W1107GP9Y');
+        </script>
     </head>
 
     <body>

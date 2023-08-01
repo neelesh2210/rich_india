@@ -134,7 +134,7 @@
                     <div class="col-lg-5">
                         <div class="copyright-text">
                             <p class="mb-0">
-                                Design & Developed By <a href="https://webinmaker.com/" target="_blank" title="Website Designing and Software Development Company in Bhopal | Networking | Hardware |">Webinmaker Softtech Pvt. Ltd.</a>
+                                Design & Developed By <a href="https://www.techuptechnologies.com" target="_blank" title="Affilate Website & App Development Company.">Techup Technologies</a>
                             </p>
                         </div>
                     </div>
