@@ -628,51 +628,51 @@
             });
         }
 
-        function pay(amount)
-        {
-            $(window).scrollTop(0);
-            var coupon = $('#coupon').val();
-            $('#loading_div').show()
-            var options =
-            {
-                "key": "{{env('RAZORPAY_KEY')}}",
-                "amount": amount * 100,
-                "currency": "INR",
-                "name": "The Success Preneur",
-                "description": "Purchase Plan",
-                "image": "{{asset('backend/img/logo.png')}}",
-                "order_id": "",
-                "handler": function(response)
-                {
-                    $.ajaxSetup({
-                        headers: {
-                            'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                        }
-                    });
-                    $.ajax({
-                        type: 'POST',
-                        url: "{{ route('payment') }}",
-                        data:$('#registerForm').serialize()+ "&plan_id={{$plan_detail->id}}&razorpay_payment_id="+response.razorpay_payment_id+"&coupon="+coupon,
-                        success: function(data) {
-                            window.location.replace("{{route('user.dashboard')}}");
-                            $('#loading_div').hide()
-                        },error: function (request, status, error) {
-                            window.location.replace("{{route('data.modification.error')}}");
-                        }
-                    });
-                },
-                "prefill": {
-                    "email": $('#email').val(),
-                    "contact":$('#phone').val()
-                },
-                "theme":
-                {
-                    "color": "#4553c8db"
-                }
-            };
-            var rzp1 = new Razorpay(options);
-            rzp1.open();
-        }
+        // function pay(amount)
+        // {
+        //     $(window).scrollTop(0);
+        //     var coupon = $('#coupon').val();
+        //     $('#loading_div').show()
+        //     var options =
+        //     {
+        //         "key": "{{env('RAZORPAY_KEY')}}",
+        //         "amount": amount * 100,
+        //         "currency": "INR",
+        //         "name": "The Success Preneur",
+        //         "description": "Purchase Plan",
+        //         "image": "{{asset('backend/img/logo.png')}}",
+        //         "order_id": "",
+        //         "handler": function(response)
+        //         {
+        //             $.ajaxSetup({
+        //                 headers: {
+        //                     'X-CSRF-TOKEN': '{{ csrf_token() }}'
+        //                 }
+        //             });
+        //             $.ajax({
+        //                 type: 'POST',
+        //                 url: "{{ route('payment') }}",
+        //                 data:$('#registerForm').serialize()+ "&plan_id={{$plan_detail->id}}&razorpay_payment_id="+response.razorpay_payment_id+"&coupon="+coupon,
+        //                 success: function(data) {
+        //                     window.location.replace("{{route('user.dashboard')}}");
+        //                     $('#loading_div').hide()
+        //                 },error: function (request, status, error) {
+        //                     window.location.replace("{{route('data.modification.error')}}");
+        //                 }
+        //             });
+        //         },
+        //         "prefill": {
+        //             "email": $('#email').val(),
+        //             "contact":$('#phone').val()
+        //         },
+        //         "theme":
+        //         {
+        //             "color": "#4553c8db"
+        //         }
+        //     };
+        //     var rzp1 = new Razorpay(options);
+        //     rzp1.open();
+        // }
 
         // function pay(amount)
         // {
@@ -694,25 +694,25 @@
         //     });
         // }
 
-        //   function pay(amount)
-        //     {
-        //     var coupon = $('#coupon').val();
-        //     $(window).scrollTop(0);
-        //     $('#loading_div').show()
-        //     $.ajaxSetup({
-        //         headers: {
-        //             'X-CSRF-TOKEN': '{{ csrf_token() }}'
-        //         }
-        //     });
-        //     $.ajax({
-        //         type: 'POST',
-        //         url: "{{ route('payment') }}",
-        //         data:$('#registerForm').serialize()+ "&plan_id={{$plan_detail->id}}&amount="+amount+"&coupon="+coupon,
-        //         success: function(data) {
-        //             window.location.replace(data);
-        //         }
-        //     });
-        // }
+          function pay(amount)
+            {
+            var coupon = $('#coupon').val();
+            $(window).scrollTop(0);
+            $('#loading_div').show()
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                }
+            });
+            $.ajax({
+                type: 'POST',
+                url: "{{ route('payment') }}",
+                data:$('#registerForm').serialize()+ "&plan_id={{$plan_detail->id}}&amount="+amount+"&coupon="+coupon,
+                success: function(data) {
+                    window.location.replace(data);
+                }
+            });
+        }
     </script>
 
     <script>
