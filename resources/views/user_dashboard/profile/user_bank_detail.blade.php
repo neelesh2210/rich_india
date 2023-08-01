@@ -84,6 +84,10 @@ background-color: #f7f7f7;
                         <i class="fa-solid fa-graduation-cap fs-20 me-1 align-middle txt-gray-2"></i>
                         My Course
                     </a>
+                    <a href="{{ route('user.affiliate.links') }}">
+                        <i class="fa-solid fa-graduation-cap fs-20 me-1 align-middle txt-gray-2"></i>
+                        Affilliate Link
+                    </a>
                     {{-- <a href="{{ route('user.payouts') }}"> --}}
                     <a href="#">
                         <i class="fa-solid fa-money-bill-transfer fs-20 me-1 align-middle txt-gray-2"></i>
