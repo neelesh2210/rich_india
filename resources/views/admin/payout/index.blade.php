@@ -10,12 +10,12 @@
                             <li class="breadcrumb-item active">@isset($page_title) {{$page_title}} @endisset</li>
                         </ol>
                     </div>
-                    <div class="col-sm-6" id="automated_payout_div">
+                    {{-- <div class="col-sm-6" id="automated_payout_div">
                         <a class="btn btn-primary float-right" onclick="automatedPayout()"> Automated Payout <i class="fas fa-money-bill-alt"></i></a>
                     </div>
                     <div class="col-sm-6 d-none" id="processing_payout_div">
                         <a class="btn btn-primary float-right"> Processing Your Payout <i class="fas fa-money-bill-alt"></i></a>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </section>
