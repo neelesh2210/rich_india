@@ -46,7 +46,7 @@
                                 <div class="col-lg-6 col-md-6 col-sm-6 remember-me-wrap">
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 lost-your-password-wrap">
-                                    <a href="{{route('signin')}}" class="lost-your-password">Login To The Success Preneur</a>
+                                    <a href="{{route('signin')}}" class="lost-your-password">Login To RichIND</a>
                                 </div>
                             </div>
                             <div class="col-md-12 col-sm-12 col-xs-12">

@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <a href="{{route('admin.dashboard')}}" class="brand-link">
-        <img src="{{asset('backend/img/logo.png')}}" alt="The Success Preneur Logo" class="brand-image">
+        <img src="{{asset('backend/img/logo.png')}}" alt="RichIND Logo" class="brand-image">
     </a>
     <div class="sidebar">
         <nav>

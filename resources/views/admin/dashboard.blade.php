@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 @section('content')
     <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__shake" src="{{ asset('backend/img/logo.png') }}" alt="The Success Preneur Logo">
+        <img class="animation__shake" src="{{ asset('backend/img/logo.png') }}" alt="RichIND Logo">
     </div>
 
     <div class="content-wrapper">

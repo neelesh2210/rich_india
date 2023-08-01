@@ -70,7 +70,7 @@ class PayoutController extends Controller
                 try {
                     Mail::send('email.payout', ['user_name'=>$user->name,'amount'=>$request->amount], function($message) use($user){
                         $message->to($user->email);
-                        $message->subject('The Success Preneur Notification');
+                        $message->subject('RichIND Notification');
                     });
                 } catch (\Throwable $th) {
                     //throw $th;
@@ -90,7 +90,7 @@ class PayoutController extends Controller
             try {
                 Mail::send('email.payout', ['user_name'=>$user->name,'amount'=>$request->amount], function($message) use($user){
                     $message->to($user->email);
-                    $message->subject('The Success Preneur Notification');
+                    $message->subject('RichIND Notification');
                 });
             } catch (\Throwable $th) {
                 //throw $th;
@@ -223,7 +223,7 @@ class PayoutController extends Controller
                 try {
                     Mail::send('email.payout', ['user_name'=>$user->name,'amount'=>$request->amount], function($message) use($user){
                         $message->to($user->email);
-                        $message->subject('The Success Preneur Notification');
+                        $message->subject('RichIND Notification');
                     });
                 } catch (\Throwable $th) {
                     //throw $th;
@@ -243,7 +243,7 @@ class PayoutController extends Controller
             try {
                 Mail::send('email.payout', ['user_name'=>$user->name,'amount'=>$request->amount], function($message) use($user){
                     $message->to($user->email);
-                    $message->subject('The Success Preneur Notification');
+                    $message->subject('RichIND Notification');
                 });
             } catch (\Throwable $th) {
                 //throw $th;

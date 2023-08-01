@@ -152,7 +152,7 @@ class UserController extends Controller
         try {
             Mail::send('email.welcome_mail', ['user_name'=>$user], function($message) use ($user){
                 $message->to($user->email);
-                $message->subject('Welcome to The Success Preneur');
+                $message->subject('Welcome to  RichIND');
             });
         } catch (\Throwable $th) {
             //throw $th;
@@ -185,7 +185,7 @@ class UserController extends Controller
                     try {
                         Mail::send('email.active_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount], function($message) use($commission_user){
                             $message->to($commission_user->email);
-                            $message->subject('The Success Preneur Notification');
+                            $message->subject('RichIND Notification');
                         });
                     } catch (\Throwable $th) {
                         //throw $th;
@@ -194,7 +194,7 @@ class UserController extends Controller
                     try {
                         Mail::send('email.passive_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount,'comes_from'=>$user], function($message) use($commission_user){
                             $message->to($commission_user->email);
-                            $message->subject('The Success Preneur Notification');
+                            $message->subject('RichIND Notification');
                         });
                     } catch (\Throwable $th) {
                         //throw $th;
@@ -235,7 +235,7 @@ class UserController extends Controller
                     try {
                         Mail::send('email.active_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount], function($message) use($commission_user){
                             $message->to($commission_user->email);
-                            $message->subject('The Success Preneur Notification');
+                            $message->subject('RichIND Notification');
                         });
                     } catch (\Throwable $th) {
                         //throw $th;
@@ -244,7 +244,7 @@ class UserController extends Controller
                     try {
                         Mail::send('email.passive_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount,'comes_from'=>$user], function($message) use($commission_user){
                             $message->to($commission_user->email);
-                            $message->subject('The Success Preneur Notification');
+                            $message->subject('RichIND Notification');
                         });
                     } catch (\Throwable $th) {
                         //throw $th;
@@ -273,7 +273,7 @@ class UserController extends Controller
                     try {
                         Mail::send('email.active_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount], function($message) use($commission_user){
                             $message->to($commission_user->email);
-                            $message->subject('The Success Preneur Notification');
+                            $message->subject('RichIND Notification');
                         });
                     } catch (\Throwable $th) {
                         //throw $th;
@@ -282,7 +282,7 @@ class UserController extends Controller
                     try {
                         Mail::send('email.passive_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount,'comes_from'=>$user], function($message) use($commission_user){
                             $message->to($commission_user->email);
-                            $message->subject('The Success Preneur Notification');
+                            $message->subject('RichIND Notification');
                         });
                     } catch (\Throwable $th) {
                         //throw $th;

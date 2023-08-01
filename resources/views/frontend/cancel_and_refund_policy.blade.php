@@ -32,7 +32,7 @@
                             <h3>Overview </h3>
                             <p>Our refund and returns policy lasts 2 hours. If 2 hours have passed since your purchase, we can’t offer you a full refund or exchange.</p>
                             {{-- <p>A payment gateway fee @ 2% of the paid amount and processing fee @5% of the paid amount will be deducted from the amount to be refunded.</p> --}}
-                            <p>No Refund will be given to the customer for the purchase of any package made by the customer directly from the The Success Preneur website “{{env('APP_URL')}}” or through the affiliate link of the person who referred him to the The Success Preneur website after 2 hours of the purchase under any circumstances.</p>
+                            <p>No Refund will be given to the customer for the purchase of any package made by the customer directly from the RichIND website “{{env('APP_URL')}}” or through the affiliate link of the person who referred him to the The Success Preneur website after 2 hours of the purchase under any circumstances.</p>
                             <p>To complete your refund, we require a receipt or proof of purchase.</p>
 
                             <h3>Cancel & Refund Policy</h3>

@@ -5,12 +5,12 @@
         <div class="page-banner-content">
             <div class="row align-items-center">
                 <div class="col-lg-7 col-md-6">
-                    <h2>Enroll to The Success Preneur </h2>
+                    <h2>Enroll to RichIND </h2>
                 </div>
                 <div class="col-lg-5 col-md-6">
                     <ul>
                         <li> <a href="/">Home</a></li>
-                        <li>Enroll to The Success Preneur </li>
+                        <li>Enroll to RichIND </li>
                     </ul>
                 </div>
             </div>

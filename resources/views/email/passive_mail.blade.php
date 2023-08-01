@@ -3,8 +3,8 @@
 
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<title>The Success Preneur</title>
-<meta name="description" content="The Success Preneur">
+<title>RichIND</title>
+<meta name="description" content="RichIND">
 </head>
 <style>
 a:hover {
@@ -77,7 +77,7 @@ a:hover {
                                                     Details: </td>
                                                 <td
                                                     style="padding: 10px; border-bottom: 1px solid #ededed; color: #455056;">
-                                                    The Success Preneur</td>
+                                                    RichIND</td>
                                             </tr>
                                             <tr>
                                                 <td
@@ -92,7 +92,7 @@ a:hover {
                                     <p style="text-align:center;">Many many congratulations to you.</p>
                                     <p style="text-align:center; margin:5px;">We wish you all the best for your next one.<br>
                                         Thanks & Regards.</p>
-                                        <h5 style="text-align:center; margin:5px;">Team The Success Preneur</h5>
+                                        <h5 style="text-align:center; margin:5px;">Team RichIND</h5>
                                 </td>
                             </tr>
                             <tr>

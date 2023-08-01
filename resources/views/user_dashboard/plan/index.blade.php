@@ -202,7 +202,7 @@
                 "key": "{{ env('RAZORPAY_KEY') }}",
                 "amount": amount * 100,
                 "currency": "INR",
-                "name": "The Success Preneur",
+                "name": "RichIND",
                 "description": "Upgrade Plan",
                 "image": "{{ asset('backend/img/logo.png') }}",
                 "order_id": "",
