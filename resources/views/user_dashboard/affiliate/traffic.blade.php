@@ -157,6 +157,7 @@ background-color: #f7f7f7;
                                                         </div>
                                                         <hr>
                                                     </form>
+                                                    <div class="table-responsive">
                                                     <table class="table table-striped table-centered mb-0">
                                                         <thead>
                                                             <tr>
@@ -207,6 +208,7 @@ background-color: #f7f7f7;
                                                             @endforelse
                                                         </tbody>
                                                     </table>
+                                                    </div>
                                                     <div class="d-flex justify-content-center mt-3">
                                                         {!! $commissions->links() !!}
                                                     </div>

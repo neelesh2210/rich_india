@@ -10007,7 +10007,8 @@ input[type=password]::-ms-clear {
 
 .settings-menu ul li {
     border-top: 1px solid rgb(199 199 199/25%);
-    position: relative
+    position: relative;
+    display: inline-block;
 }
 
 .settings-menu ul li a {
@@ -10047,7 +10048,7 @@ input[type=password]::-ms-clear {
 }
 
 .settings-menu ul li:before {
-    opacity: 0;
+    /* opacity: 0;
     content: "";
     position: absolute;
     background: #ff5364;
@@ -10059,7 +10060,7 @@ input[type=password]::-ms-clear {
     -moz-transition: all .5s ease;
     -o-transition: all .5s ease;
     -ms-transition: all .5s ease;
-    -webkit-transition: all .5s ease
+    -webkit-transition: all .5s ease */
 }
 
 .settings-menu ul li:hover a {
@@ -10084,7 +10085,7 @@ input[type=password]::-ms-clear {
 }
 
 .settings-menu ul .active:before {
-    content: "";
+    /* content: "";
     position: absolute;
     background: #ff5364;
     width: 2px;
@@ -10096,7 +10097,7 @@ input[type=password]::-ms-clear {
     -o-transition: all .5s ease;
     -ms-transition: all .5s ease;
     -webkit-transition: all .5s ease;
-    opacity: 1
+    opacity: 1 */
 }
 
 .go-dashboard .btn-primary {
