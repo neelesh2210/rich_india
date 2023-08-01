@@ -107,59 +107,59 @@ class RegisterController extends Controller
         }
     }
 
-    public function payment(Request $request)
-    {
-        $input = $request->all();
+    // public function payment(Request $request)
+    // {
+    //     $input = $request->all();
 
-        $api = new Api(env('RAZORPAY_KEY'), env('RAZORPAY_SECRET'));
+    //     $api = new Api(env('RAZORPAY_KEY'), env('RAZORPAY_SECRET'));
 
-        $payment = $api->payment->fetch($request->razorpay_payment_id);
+    //     $payment = $api->payment->fetch($request->razorpay_payment_id);
 
-        if(count($input)  && !empty($request->razorpay_payment_id)) {
-            $payment_detalis = null;
-            try {
-                $response = $api->payment->fetch($request->razorpay_payment_id)->capture(array('amount'=>$payment['amount']));
-                $payment_detalis = json_encode(array('id' => $response['id'],'method' => $response['method'],'amount' => $response['amount']/100,'currency' => $response['currency']));
-                $request->request->add(['payment_detalis' => $payment_detalis]);
-                $plan = Plan::where('id',$request->plan_id)->first();
+    //     if(count($input)  && !empty($request->razorpay_payment_id)) {
+    //         $payment_detalis = null;
+    //         try {
+    //             $response = $api->payment->fetch($request->razorpay_payment_id)->capture(array('amount'=>$payment['amount']));
+    //             $payment_detalis = json_encode(array('id' => $response['id'],'method' => $response['method'],'amount' => $response['amount']/100,'currency' => $response['currency']));
+    //             $request->request->add(['payment_detalis' => $payment_detalis]);
+    //             $plan = Plan::where('id',$request->plan_id)->first();
 
-                if($request->referral_code){
-                    $total_amount = $plan->discounted_price;
-                }else{
-                    $total_amount = $plan->amount;
-                }
+    //             if($request->referral_code){
+    //                 $total_amount = $plan->discounted_price;
+    //             }else{
+    //                 $total_amount = $plan->amount;
+    //             }
 
-                $today_date = date('Y-m-d').' 00:00:00';
-                $coupon = CouponManager::withoutTrash()->where('name',$request->coupon)->where('is_active','1')->where('start','<=',$today_date)->where('end','>=',$today_date)->where('type','new')->whereJsonContains('plan_ids',''.$request->plan_id)->first();
-                if($coupon){
-                    $total_amount = $total_amount - $coupon->amount;
-                }
+    //             $today_date = date('Y-m-d').' 00:00:00';
+    //             $coupon = CouponManager::withoutTrash()->where('name',$request->coupon)->where('is_active','1')->where('start','<=',$today_date)->where('end','>=',$today_date)->where('type','new')->whereJsonContains('plan_ids',''.$request->plan_id)->first();
+    //             if($coupon){
+    //                 $total_amount = $total_amount - $coupon->amount;
+    //             }
 
-                if(json_decode($payment_detalis)->amount == $total_amount){
-                    $this->register($request);
-                }else{
-                    return response()->json(['msg'=>'Data Modification Not Allowed','payment_detalis'=>$payment_detalis],401);
-                }
+    //             if(json_decode($payment_detalis)->amount == $total_amount){
+    //                 $this->register($request);
+    //             }else{
+    //                 return response()->json(['msg'=>'Data Modification Not Allowed','payment_detalis'=>$payment_detalis],401);
+    //             }
 
-            } catch (\Exception $e) {
-                return  $e->getMessage();
-                \Session::put('error',$e->getMessage());
-                return redirect()->back();
-            }
-        }
+    //         } catch (\Exception $e) {
+    //             return  $e->getMessage();
+    //             \Session::put('error',$e->getMessage());
+    //             return redirect()->back();
+    //         }
+    //     }
 
-        return json_decode($payment_detalis);
-    }
+    //     return json_decode($payment_detalis);
+    // }
 
     // public function payment(Request $request){
     //     $instamojo = new InstamojoController;
     //     return $instamojo->pay($request);
     // }
 
-    // public function payment(Request $request){
-    //     $phonepe = new PhonepeController;
-    //     return $phonepe->payWithPhonePe($request);
-    // }
+    public function payment(Request $request){
+        $phonepe = new PhonepeController;
+        return $phonepe->payWithPhonePe($request);
+    }
 
     public function register(Request $request)
     {
