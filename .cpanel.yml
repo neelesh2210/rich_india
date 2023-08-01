@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/tsp/public_html/
+    - export DEPLOYPATH=/home/richyash/public_html/
     - /bin/cp -R * $DEPLOYPATH
