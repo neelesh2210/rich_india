@@ -1,5 +1,51 @@
 @extends('frontend.layouts.app')
 @section('content')
+<style>
+    body {
+background-color: #f7f7f7;
+}
+.footer,
+.header {
+    display: none;
+}
+
+.mob {
+    display: none;
+}
+
+.header-fixed {
+    display: none;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+
+    .container-fluid {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .navbar-brand.logo .pad-t-b-5-xs {
+        padding: 12px 0px 12px 0;
+        margin-left: 33px;
+    }
+
+    .logo img {
+        width: 150px;
+    }
+
+    .navbar-brand {
+        background: white;
+    }
+
+    .mob {
+        display: block;
+    }
+
+    .header-fixed {
+        display: none;
+    }
+}
+</style>
     <div>
         <div id="dashboard-wrapper" class="bg-light-gray-3">
             <div id="sidebar-wrapper">
@@ -70,7 +116,7 @@
                                 <div class="settings-widget profile-details box-shadow-1 my-profile">
                                     <div class="settings-menu p-0">
                                         <div class="profile-heading">
-                                            <h3 style="color:#FF00A8;text-align:center;font-size:50px">My Team</h3>
+                                            <h3 style="color:#FF00A8;text-align:center;font-size:30px">My Team</h3>
                                         </div>
                                         <div class="checkout-form personal-address add-course-info">
                                             <div action="#">
@@ -104,8 +150,9 @@
                                                                     name="search_key" value="{{ $search_key }}">
                                                             </div>
                                                             <div class="col-md-1 mb-3">
+                                                                <label class="form-label mt-2"></label>
                                                                 <button type="subit"
-                                                                    class="btn btn-primary mt-3_5">Filter</button>
+                                                                    class="btn btn-primary mt-2">Filter</button>
                                                             </div>
                                                         </div>
                                                         <hr>

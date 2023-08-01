@@ -1,5 +1,69 @@
 @extends('frontend.layouts.app')
 @section('content')
+    <style>
+        body {
+            background-color: #f7f7f7;
+        }
+
+        .footer,
+        .header {
+            display: none;
+        }
+
+        .mob {
+            display: none;
+        }
+
+        .header-fixed {
+            display: none;
+        }
+
+        .card-success.card-outline {
+            border-top: 3px solid #28a745;
+        }
+
+        .card-header {
+            background-color: #fff;
+            border-bottom: 1px solid rgba(0, 0, 0, .125);
+            padding: 0.75rem 1.25rem;
+            position: relative;
+            border-top-left-radius: 0.25rem;
+            border-top-right-radius: 0.25rem;
+        }
+
+        .badge {
+            color: #000;
+        }
+
+        @media only screen and (min-width: 320px) and (max-width: 767px) {
+
+            .container-fluid {
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+
+            .navbar-brand.logo .pad-t-b-5-xs {
+                padding: 12px 0px 12px 0;
+                margin-left: 33px;
+            }
+
+            .logo img {
+                width: 150px;
+            }
+
+            .navbar-brand {
+                background: white;
+            }
+
+            .mob {
+                display: block;
+            }
+
+            .header-fixed {
+                display: none;
+            }
+        }
+    </style>
     <div>
         <div id="dashboard-wrapper" class="bg-light-gray-3">
             <div id="sidebar-wrapper">
@@ -37,7 +101,7 @@
                         <i class="fa-solid fa-graduation-cap fs-20 me-1 align-middle txt-gray-2"></i>
                         My Course
                     </a>
-                    <a href="{{route('user.affiliate.links')}}">
+                    <a href="{{ route('user.affiliate.links') }}">
                         <i class="fa-solid fa-graduation-cap fs-20 me-1 align-middle txt-gray-2"></i>
                         Affilliate Link
                     </a>
@@ -73,124 +137,87 @@
                                 <div class="settings-widget profile-details box-shadow-1 my-profile">
                                     <div class="settings-menu p-0">
                                         <div class="profile-heading">
-                                            <h3 style="color:#FF00A8;text-align:center;font-size:50px">My Team</h3>
+                                            <h3 style="color:#FF00A8;text-align:center;font-size:30px">Leaderboard</h3>
                                         </div>
                                         <div class="checkout-form personal-address add-course-info">
                                             <div action="#">
                                                 <div class="row">
-                                                    <div class="leader-board">
-                                                        <div class="col-xl-4 col-lg-6">
-                                                            <div class="pt-0">
-                                                                <div class="table-responsive">
-                                                                    <table
-                                                                        class="table table-borderless table-hover table-centered m-0">
-
-                                                                        <thead class="table-light">
-                                                                            <h4>
-                                                                                Last 7 Days
-                                                                                {{-- (17 - 23 Apr) --}}
-                                                                            </h4>
-                                                                        </thead>
-                                                                        <tbody>
-                                                                            @foreach ($last_week_leaderboards as $week_key => $last_week_leaderboard)
-                                                                                <tr>
-                                                                                    <td>
-                                                                                        <div>
-                                                                                            <img src="{{ asset('frontend/images/avatar/' . $last_week_leaderboard->user->avatar) }}"
-                                                                                                class="avatar-sm img-thumbnail rounded-circle"
-                                                                                                onerror="this.onerror=null;this.src='{{ asset('user_dashboard/images/users/avatar-1.jpg') }}'"
-                                                                                                alt="Generic placeholder image">
-                                                                                        </div>
-                                                                                    </td>
-
-                                                                                    <td>
-                                                                                        {{ $last_week_leaderboard->user->name }}
-                                                                                    </td>
-
-                                                                                    <td style="color:#00b620;">
-                                                                                        ₹{{ $last_week_leaderboard->total_commission }}
-                                                                                    </td>
-                                                                                </tr>
-                                                                            @endforeach
-                                                                        </tbody>
-                                                                    </table>
-                                                                </div> <!-- end .table-responsive-->
+                                                    <div class="col-xl-4 col-lg-6">
+                                                        <div class="card card-outline card-success">
+                                                            <div
+                                                                class="card-header d-flex justify-content-between align-items-center">
+                                                                <h4 class="header-title">Last 7 Days</h4>
                                                             </div>
+                                                            @foreach ($last_week_leaderboards as $week_key => $last_week_leaderboard)
+                                                                <div class="card-body pt-2">
+                                                                    <div class="d-flex align-items-start br-btm  ">
+                                                                        <img src="{{ asset('frontend/images/avatar/' . $last_week_leaderboard->user->avatar) }}"
+                                                                            class="me-3 img-crcl"
+                                                                            onerror="this.onerror=null;this.src='{{ asset('user_dashboard/images/users/avatar-1.jpg') }}'"
+                                                                            alt="Generic placeholder image" width="40px">
+                                                                        <div class="w-75 overflow-hidden my-auto">
+                                                                            <span
+                                                                                class="badge badge-primary-lighten float-end">₹
+                                                                                {{ $last_week_leaderboard->total_commission }}</span>
+                                                                            <h5 class="mt-0 mb-1">
+                                                                                {{ $last_week_leaderboard->user->name }}
+                                                                            </h5>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @endforeach
                                                         </div>
-                                                        <div class="col-xl-4 col-lg-6">
-                                                            <div class="pt-0">
-                                                                <div class="table-responsive">
-                                                                    <table
-                                                                        class="table table-borderless table-hover table-centered m-0">
-
-                                                                        <thead class="table-light">
-                                                                            <h4>
-                                                                                Last 30 Days
-                                                                                {{-- (17 - 23 Apr) --}}
-                                                                            </h4>
-                                                                        </thead>
-                                                                        <tbody>
-                                                                            @foreach ($last_month_leaderboards as $month_key => $last_month_leaderboard)
-                                                                                <tr>
-                                                                                    <td>
-                                                                                        <div>
-                                                                                            <img src="{{ asset('frontend/images/avatar/' . $last_month_leaderboard->user->avatar) }}"
-                                                                                                class="avatar-sm img-thumbnail rounded-circle"
-                                                                                                onerror="this.onerror=null;this.src='{{ asset('user_dashboard/images/users/avatar-1.jpg') }}'"
-                                                                                                alt="Generic placeholder image">
-                                                                                        </div>
-                                                                                    </td>
-
-                                                                                    <td>
-                                                                                        {{ $last_month_leaderboard->user->name }}
-                                                                                    </td>
-
-                                                                                    <td style="color:#00b620;">
-                                                                                        ₹{{ $last_month_leaderboard->total_commission }}
-                                                                                    </td>
-                                                                                </tr>
-                                                                            @endforeach
-                                                                        </tbody>
-                                                                    </table>
-                                                                </div> <!-- end .table-responsive-->
+                                                    </div>
+                                                    <div class="col-xl-4 col-lg-6">
+                                                        <div class="card card-outline card-success">
+                                                            <div
+                                                                class="card-header d-flex justify-content-between align-items-center">
+                                                                <h4 class="header-title"> Last 30 Days</h4>
                                                             </div>
+                                                            @foreach ($last_month_leaderboards as $month_key => $last_month_leaderboard)
+                                                                <div class="card-body pt-2">
+                                                                    <div class="d-flex align-items-start br-btm  ">
+                                                                        <img src="{{ asset('frontend/images/avatar/' . $last_month_leaderboard->user->avatar) }}"
+                                                                            class="me-3 img-crcl"
+                                                                            onerror="this.onerror=null;this.src='{{ asset('user_dashboard/images/users/avatar-1.jpg') }}'"
+                                                                            alt="Generic placeholder image" width="40px">
+                                                                        <div class="w-75 overflow-hidden my-auto">
+                                                                            <span
+                                                                                class="badge badge-primary-lighten float-end">₹
+                                                                                {{ $last_month_leaderboard->total_commission }}</span>
+                                                                            <h5 class="mt-0 mb-1">
+                                                                                {{ $last_month_leaderboard->user->name }}
+                                                                            </h5>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @endforeach
                                                         </div>
-                                                        <div class="col-xl-4 col-lg-6">
-                                                            <div class="pt-0">
-                                                                <div class="table-responsive">
-                                                                    <table
-                                                                        class="table table-borderless table-hover table-centered m-0">
-
-                                                                        <thead class="table-light">
-                                                                            <h4>
-                                                                                ALL TIME
-                                                                            </h4>
-                                                                        </thead>
-                                                                        <tbody>
-                                                                            @foreach ($all_time_leaderboards as $all_key => $all_time_leaderboard)
-                                                                                <tr>
-                                                                                    <td>
-                                                                                        <div>
-                                                                                            <img src="{{ asset('frontend/images/avatar/' . $all_time_leaderboard['user']['avatar']) }}"
-                                                                                                class="avatar-sm img-thumbnail rounded-circle"
-                                                                                                onerror="this.onerror=null;this.src='{{ asset('user_dashboard/images/users/avatar-1.jpg') }}'"
-                                                                                                alt="Generic placeholder image">
-                                                                                        </div>
-                                                                                    </td>
-
-                                                                                    <td>
-                                                                                        {{ $all_time_leaderboard['user']['name'] }}
-                                                                                    </td>
-
-                                                                                    <td style="color:#00b620;">
-                                                                                        ₹{{ $all_time_leaderboard['total_commission'] }}
-                                                                                    </td>
-                                                                                </tr>
-                                                                            @endforeach
-                                                                        </tbody>
-                                                                    </table>
-                                                                </div> <!-- end .table-responsive-->
+                                                    </div>
+                                                    <div class="col-xl-4 col-lg-6">
+                                                        <div class="card card-outline card-success">
+                                                            <div
+                                                                class="card-header d-flex justify-content-between align-items-center">
+                                                                <h4 class="header-title"> All Time</h4>
                                                             </div>
+                                                            @foreach ($all_time_leaderboards as $all_key => $all_time_leaderboard)
+                                                                <div class="card-body pt-2">
+                                                                    <div class="d-flex align-items-start br-btm  ">
+                                                                        <img src="{{ asset('frontend/images/avatar/' . $all_time_leaderboard['user']['avatar']) }}"
+                                                                            class="me-3 img-crcl"
+                                                                            onerror="this.onerror=null;this.src='{{ asset('user_dashboard/images/users/avatar-1.jpg') }}'"
+                                                                            alt="Generic placeholder image" width="40px">
+                                                                        <div class="w-75 overflow-hidden my-auto">
+                                                                            <span
+                                                                                class="badge badge-primary-lighten float-end">₹
+                                                                                {{ $all_time_leaderboard['total_commission'] }}</span>
+                                                                            <h5 class="mt-0 mb-1">
+                                                                                {{ $all_time_leaderboard['user']['name'] }}
+                                                                            </h5>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @endforeach
                                                         </div>
                                                     </div>
                                                 </div>
