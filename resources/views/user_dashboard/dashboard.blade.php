@@ -1,5 +1,51 @@
 @extends('frontend.layouts.app')
 @section('content')
+<style>
+    body {
+    background-color: #f7f7f7;
+    }
+    .footer,
+    .header {
+        display: none;
+    }
+
+    .mob {
+        display: none;
+    }
+
+    .header-fixed {
+        display: none;
+    }
+
+    @media only screen and (min-width: 320px) and (max-width: 767px) {
+
+        .container-fluid {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        .navbar-brand.logo .pad-t-b-5-xs {
+            padding: 12px 0px 12px 0;
+            margin-left: 33px;
+        }
+
+        .logo img {
+            width: 150px;
+        }
+
+        .navbar-brand {
+            background: white;
+        }
+
+        .mob {
+            display: block;
+        }
+
+        .header-fixed {
+            display: none;
+        }
+    }
+</style>
 <div>
     <div id="dashboard-wrapper" class="bg-light-gray-3">
         <div id="sidebar-wrapper">
@@ -114,43 +160,6 @@
         </div>
     </div>
 </div>
-<style>
-    .footer,
-    .header {
-        display: none;
-    }
-        .mob
-        {
-            display: none;
-        }
-    @media only screen and (min-width: 320px) and (max-width: 767px)
-    {
-
-        .container-fluid
-        {
-            padding-left:0px;
-            padding-right: 0px;
-        }
-        .navbar-brand.logo .pad-t-b-5-xs
-        {
-            padding:12px 0px 12px 0;
-            margin-left : 33px;
-        }
-        .logo img
-        {
-            width:150px;
-        }
-        .navbar-brand
-        {
-            background: white;
-        }
-        .mob
-        {
-            display: block;
-        }
-    }
-
-</style>
 <script>
 
 	$.fn.jQuerySimpleCounter = function( options ) {
