@@ -23,8 +23,8 @@
                                 </tr>
                                 <tr>
                                     <td style="text-align:center;">
-                                        <a href="{{ asset('frontend/images/logo.png') }}" title="logo" target="_blank">
-                                            <img src="{{ asset('frontend/images/logo.png') }}" title="logo" alt="logo">
+                                        <a href="{{ asset('frontend/images/logo-2.png') }}" title="logo" target="_blank">
+                                            <img src="{{ asset('frontend/images/logo-2.png') }}" title="logo" alt="logo">
                                         </a>
                                     </td>
                                 </tr>
