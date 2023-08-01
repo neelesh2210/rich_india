@@ -1,5 +1,51 @@
 @extends('frontend.layouts.app')
 @section('content')
+    <style>
+            body {
+    background-color: #f7f7f7;
+    }
+        .footer,
+        .header {
+            display: none;
+        }
+
+        .mob {
+            display: none;
+        }
+
+        .header-fixed {
+            display: none;
+        }
+
+        @media only screen and (min-width: 320px) and (max-width: 767px) {
+
+            .container-fluid {
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+
+            .navbar-brand.logo .pad-t-b-5-xs {
+                padding: 12px 0px 12px 0;
+                margin-left: 33px;
+            }
+
+            .logo img {
+                width: 150px;
+            }
+
+            .navbar-brand {
+                background: white;
+            }
+
+            .mob {
+                display: block;
+            }
+
+            .header-fixed {
+                display: none;
+            }
+        }
+    </style>
     <div>
         <div id="dashboard-wrapper" class="bg-light-gray-3">
             <div id="sidebar-wrapper">
@@ -72,29 +118,33 @@
                                 <div class="settings-widget profile-details box-shadow-1 my-profile">
                                     <div class="settings-menu p-0">
                                         <div class="profile-heading">
-                                            <h3 style="color:#FF00A8;text-align:center;font-size:50px">My Profile</h3>
+                                            <h3 style="color:#FF00A8;text-align:center;font-size:30px">My Profile</h3>
                                         </div>
                                         <div class="checkout-form personal-address add-course-info">
                                             <div action="#">
                                                 <div class="row">
                                                     <div class="col-lg-6 col-sm-6">
                                                         <div class="form-group">
-                                                            <label class="form-control-label">Name : <span class="fw-normal">{{Auth::guard('web')->user()->name}}</span></label>
+                                                            <label class="form-control-label">Name : <span
+                                                                    class="fw-normal">{{ Auth::guard('web')->user()->name }}</span></label>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-sm-6">
                                                         <div class="form-group">
-                                                            <label class="form-control-label">Phone : <span class="fw-normal">{{Auth::guard('web')->user()->phone}}</span></label>
+                                                            <label class="form-control-label">Phone : <span
+                                                                    class="fw-normal">{{ Auth::guard('web')->user()->phone }}</span></label>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-sm-6">
                                                         <div class="form-group">
-                                                            <label class="form-control-label">Email : <span class="fw-normal">{{Auth::guard('web')->user()->email}}</span></label>
+                                                            <label class="form-control-label">Email : <span
+                                                                    class="fw-normal">{{ Auth::guard('web')->user()->email }}</span></label>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-sm-6">
                                                         <div class="form-group">
-                                                            <label class="form-control-label">City : <span class="fw-normal">{{Auth::guard('web')->user()->state}}</span></label>
+                                                            <label class="form-control-label">City : <span
+                                                                    class="fw-normal">{{ Auth::guard('web')->user()->state }}</span></label>
                                                         </div>
                                                     </div>
                                                     <div class="update-profile">
@@ -112,5 +162,4 @@
             </div>
         </div>
     </div>
-
 @endsection
