@@ -110,7 +110,7 @@ class PhonepeController extends Controller
                 return 1;
             }
         } else {
-            return 2;
+            return redirect()->route('index');
         }
     }
 
