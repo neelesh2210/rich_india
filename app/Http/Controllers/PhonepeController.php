@@ -95,6 +95,7 @@ class PhonepeController extends Controller
     {
         $data = $this->status_check_api();
         $response_data = json_decode($data);
+        return $response_data;
         if (!empty($response_data->success)) {
             if ($response_data->success == true) {
                 $m_tid = session()->get('mm_tid');
