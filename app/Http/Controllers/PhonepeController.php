@@ -63,7 +63,7 @@ class PhonepeController extends Controller
             "merchantId" => 'RICHINDONLINE',
             "merchantTransactionId" => $merchantTransaction,
             "merchantUserId" => "MUID" . rand(1111, 9999),
-            "amount" => 1 * 100,
+            "amount" => $amount * 100,
             "redirectUrl" => route('phonepe.redirectUrl'),
             "redirectMode" => "GET",
             "callbackUrl" => route('phonepe.callback'),
@@ -110,6 +110,8 @@ class PhonepeController extends Controller
                 return 1;
             }
         } else {
+                session()->forget('data');
+                session()->forget('mm_tid');
             return redirect()->route('index');
         }
     }
