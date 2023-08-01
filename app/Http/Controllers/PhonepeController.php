@@ -95,12 +95,17 @@ class PhonepeController extends Controller
     {
         $data = $this->status_check_api();
         $response_data = json_decode($data);
-        return $response_data;
         if (!empty($response_data->success)) {
             if ($response_data->success == true) {
                 $m_tid = session()->get('mm_tid');
                 $input = session()->get('data');
 
+                $request->request->add($input);
+                $payment_detalis = json_encode(array('id' => $response_data->data->transactionId,'method' => 'phonepe','amount' => $response_data->data->amount/100,'currency' => 'INR'));
+                $request->request->add(['payment_detalis' => $payment_detalis]);
+                session()->forget('data');
+                $register = new RegisterController;
+                return $register->register($request);
                 return 1;
             }
         } else {
