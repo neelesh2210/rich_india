@@ -117,7 +117,7 @@
                                                         <b>Payment Id: </b>{{json_decode($plan_purchase->payment_detail)->id}} <br>
                                                         <b>Amount Paid: </b>₹ {{json_decode($plan_purchase->payment_detail)->amount}} <br>
                                                         <b>Date: </b>{{$plan_purchase->created_at->format('d-M-Y h:i A')}} <br>
-                                                        <b>Profit: </b>₹ {{$plan_purchase->total_amount - $plan_purchase->commission_sum_commission}}
+                                                        {{-- <b>Profit: </b>₹ {{$plan_purchase->total_amount - $plan_purchase->commission_sum_commission}} --}}
                                                     @endif
                                                 </td>
                                                 <td><span class="badge bg-success">{{ucfirst($plan_purchase->payment_status)}}</span></td>
@@ -160,7 +160,7 @@
                                     </tbody>
                                     <b>Total Sell:</b> ₹{{$total_sell}} <br>
                                     <b>Total Commision: </b> ₹{{$total_commission}} <br>
-                                    <b>Total Profit: </b> ₹{{$total_sell - $total_commission}}
+                                    {{-- <b>Total Profit: </b> ₹{{$total_sell - $total_commission}} --}}
                                 </table>
                                 <hr>
                                 <div class="row">
