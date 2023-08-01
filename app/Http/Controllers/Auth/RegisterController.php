@@ -92,11 +92,13 @@ class RegisterController extends Controller
     public function validateUserRegistration(SignupRequest $request)
     {
         $plan = Plan::where('id',$request->plan_id)->first();
-        if($request->referral_code){
-            $amount = $plan->discounted_price;
-        }else{
-            $amount = $plan->amount;
-        }
+        // if($request->referral_code){
+        //     $amount = $plan->discounted_price;
+        // }else{
+        //     $amount = $plan->amount;
+        // }
+
+        $amount = $plan->discounted_price;
 
         $today_date = date('Y-m-d').' 00:00:00';
         $coupon = CouponManager::withoutTrash()->where('name',$request->coupon)->where('is_active','1')->where('start','<=',$today_date)->where('end','>=',$today_date)->where('type','new')->whereJsonContains('plan_ids',''.$request->plan_id)->first();

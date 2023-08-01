@@ -184,11 +184,11 @@
                                                     <button type="button" class="btn btn-primary btn-start"
                                                         id="submitButton" onclick="submitForm()">Place Order &nbsp; &nbsp;
                                                         <span
-                                                            class="@if (!$referral_code) d-none @endif final_price"
+                                                            class="final_price"
                                                             id="discounted_price_span">₹
                                                             {{ $plan_detail->discounted_price }}</span>
                                                         <span
-                                                            class="@if ($referral_code) d-none @endif final_price"
+                                                            class="d-none final_price"
                                                             id="price_span">₹ {{ $plan_detail->amount }}</span>
                                                         <span> (Inc GST+18%)</span>
                                                     </button>
@@ -240,9 +240,9 @@
                 success: function(data) {
                     var referral_code = $('#referral_code').val();
                     if (referral_code == '') {
-                        $('#discount_div').addClass('d-none')
-                        $('#price_span').removeClass('d-none')
-                        $('#discounted_price_span').addClass('d-none')
+                        // $('#discount_div').addClass('d-none')
+                        // $('#price_span').removeClass('d-none')
+                        // $('#discounted_price_span').addClass('d-none')
                         alert('You are submiting form without Referral Code!');
                     }
                     // $('#submitButton').attr('disabled',true);
