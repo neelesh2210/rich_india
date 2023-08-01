@@ -34,13 +34,13 @@
                                 <div class="mt-3 col-md-3">
                                     <div class="card product-box-hi8 p-3">
                                     <a href="#" class="prt-social-instagram"><i class="uil uil-instagram-alt"></i></a>
-                                        <p class="mb-1">The Success Preneur Offical Instgram Page</p>
+                                        <p class="mb-1">RichIND Offical Instgram Page</p>
                                     </div>
                                 </div>
                                 <div class="mt-3 col-md-3">
                                     <div class="card product-box-hi8 p-3">
                                       <a href="#" class="prt-social-instagram "><i class="uil uil-instagram-alt"></i></a>
-                                    <p class="mb-1">The Success Preneur Achievers Instgram Page</p>
+                                    <p class="mb-1">RichIND Achievers Instgram Page</p>
                                     </div>
                                 </div>
                                 <div class="mt-3 col-md-3">

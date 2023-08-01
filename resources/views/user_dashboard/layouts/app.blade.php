@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>The Success Preneure</title>
-        <meta name="keywords" content="The Success Preneur" />
-        <meta name="description" content="The Success Preneur" />
+        <title>RichIND</title>
+        <meta name="keywords" content="RichIND" />
+        <meta name="description" content="RichIND" />
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{asset('user_dashboard/images/favicon.png')}}">
 

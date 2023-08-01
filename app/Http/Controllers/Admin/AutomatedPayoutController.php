@@ -45,7 +45,7 @@ class AutomatedPayoutController extends Controller
                         try {
                             Mail::send('email.payout', ['user_name'=>$user->name,'amount'=>$user->balance], function($message) use($user){
                                 $message->to($user->email);
-                                $message->subject('The Success Preneur Notification');
+                                $message->subject('RichIND Notification');
                             });
                         } catch (\Throwable $th) {
 
@@ -74,7 +74,7 @@ class AutomatedPayoutController extends Controller
                         try {
                             Mail::send('email.payout', ['user_name'=>$user->name,'amount'=>$user->balance], function($message) use($user){
                                 $message->to($user->email);
-                                $message->subject('The Success Preneur Notification');
+                                $message->subject('RichIND Notification');
                             });
                         } catch (\Throwable $th) {
 

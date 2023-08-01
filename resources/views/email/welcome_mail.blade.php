@@ -161,7 +161,7 @@
                 </span>
 
                 <h1 style="font-size: 19px; font-weight: 600; color: #000; text-transform: uppercase; letter-spacing: 0.5px;">
-                    Welcome to The Success Preneur!</h1>
+                    Welcome to RichIND!</h1>
 
                 <div class="thumbs" style="width:100px; margin:auto; height:100px;">
                     <img src="{{ asset('frontend/images/good.png') }}" alt="good" border="0" style="width: 80%; margin: 30px auto;">
@@ -173,11 +173,11 @@
 
         <div class="hgroup" style="text-align:center; padding: 25px 30px 20px;">
             <p style="font-size: 15px; color: #000; margin-top: 10px;text-align: justify; line-height: 25px;">
-                TThe Success Preneur is a leading affiliate marketing website that specializes in digital marketing courses. Our
+                RichIND is a leading affiliate marketing website that specializes in digital marketing courses. Our
                 mission is to provide high-quality training to help individuals and businesses develop the skills they
                 need to succeed in the digital age.</p>
             <p style="font-size: 15px; color: #000; margin-top: 10px;text-align: justify; line-height: 25px;">You have
-                successfully been registered to use TThe Success Preneur </p>
+                successfully been registered to use RichIND </p>
         </div>
         <div class="button-wrap" style="border:none;text-align: center; padding: 0 0 1rem;">
             <button class="explore" style="border:none; background: #fff;">

@@ -25,7 +25,7 @@
                 <div class="col-lg-7 col-md-12">
                     <div class="main-banner-video-content" data-aos="fade-right" data-aos-duration="500"
                         data-aos-duration="500" data-aos-once="true">
-                        <h1>Welcome To <span>The Success Preneur</span></h1>
+                        <h1>Welcome To <span>RichIND</span></h1>
                         <span class="animate-border"></span>
 
                         <p class="text">Fill The Gap Between You & Your Success <i class="ri-bear-smile-line "></i> ...
@@ -179,7 +179,7 @@
     <div class="process-area pb-60">
         <div class="container">
             <div class="section-title text-center">
-                <h2>How The Success Preneur Work </h2>
+                <h2>How RichIND Work </h2>
                 <span class="animate-border"></span>
             </div>
             <div class="row justify-content-center">
@@ -264,7 +264,7 @@
                     <div class="about-content-wrap with-white-text aos-init aos-init aos-animate" data-aos="fade-left"
                         data-aos-duration="500">
 
-                        <h3>Why The Success Preneur </h3>
+                        <h3>Why RichIND </h3>
                         <span class="animate-border"></span>
                         <p>Augu digital was founded in 2010 and we have achieved success as a digital agency in a very short
                             time. digital agencies evaluate your website traffic and determine the best product.</p>
@@ -455,7 +455,7 @@
             <div class="section-title">
                 <div class="row align-items-center">
                     <div class="col-lg-12 text-center">
-                        <h2>What Others Have To Say About The Success Preneur </h2>
+                        <h2>What Others Have To Say About RichIND </h2>
                         <span class="animate-border"></span>
                     </div>
                     <!-- <div class="col-lg-6 text-end">
