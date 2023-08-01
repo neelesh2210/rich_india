@@ -21,23 +21,28 @@
                         <i class="fa-solid fa-id-card fs-20 me-1 align-middle txt-gray-2"></i>
                         My Profile
                     </a>
-                    <a href="{{ route('user.bank.detail') }}">
+                    {{-- <a href="{{ route('user.bank.detail') }}"> --}}
+                    <a href="#">
                         <i class="fa-regular fa-credit-card fs-20 me-1 align-middle txt-gray-2"></i>
                         KYC
                     </a>
-                    <a href="{{ route('user.traffic') }}">
+                    {{-- <a href="{{ route('user.traffic') }}"> --}}
+                    <a href="#">
                         <i class="fa-sharp fa-solid fa-people-group fs-20 me-1 align-middle txt-gray-2"></i>
                         My Team
                     </a>
-                    <a href="{{ route('user.leaderboard') }}">
+                    {{-- <a href="{{ route('user.leaderboard') }}"> --}}
+                    <a href="#">
                         <i class="fa-solid fa-users fs-20 me-1 align-middle txt-gray-2"></i>
                         Leaderboard
                     </a>
-                    <a href="{{ route('user.course') }}">
+                    {{-- <a href="{{ route('user.course') }}"> --}}
+                    <a href="#">
                         <i class="fa-solid fa-graduation-cap fs-20 me-1 align-middle txt-gray-2"></i>
                         My Course
                     </a>
-                    <a href="{{ route('user.payouts') }}">
+                    {{-- <a href="{{ route('user.payouts') }}"> --}}
+                    <a href="#">
                         <i class="fa-solid fa-money-bill-transfer fs-20 me-1 align-middle txt-gray-2"></i>
                         Request Withdrawal
                     </a>
@@ -107,87 +112,5 @@
             </div>
         </div>
     </div>
-    <style>
-        .footer,
-        .header {
-            display: none;
-        }
 
-        .mob {
-            display: none;
-        }
-
-        @media only screen and (min-width: 320px) and (max-width: 767px) {
-
-            .container-fluid {
-                padding-left: 0px;
-                padding-right: 0px;
-            }
-
-            .navbar-brand.logo .pad-t-b-5-xs {
-                padding: 12px 0px 12px 0;
-                margin-left: 33px;
-            }
-
-            .logo img {
-                width: 150px;
-            }
-
-            .navbar-brand {
-                background: white;
-            }
-
-            .mob {
-                display: block;
-            }
-        }
-    </style>
-    <script>
-        $.fn.jQuerySimpleCounter = function(options) {
-            var settings = $.extend({
-                start: 0,
-                end: 100,
-                easing: 'swing',
-                duration: 500,
-                complete: ''
-            }, options);
-
-            var thisElement = $(this);
-
-            $({
-                count: settings.start
-            }).animate({
-                count: settings.end
-            }, {
-                duration: settings.duration,
-                easing: settings.easing,
-                step: function() {
-                    var mathCount = Math.ceil(this.count);
-                    thisElement.text(mathCount);
-                },
-                complete: settings.complete
-            });
-        };
-        var demo1 = '{{ $today_earning }}';
-        var demo2 = '{{ $last_week_earning }}';
-        var demo3 = '{{ $last_month_earning }}';
-        var demo4 = '{{ $all_time_earning + $old_payout->old_paid_payout + $old_payout->old_not_paid_payout }}';
-
-        $('#number1').jQuerySimpleCounter({
-            end: demo1,
-            duration: 3000
-        });
-        $('#number2').jQuerySimpleCounter({
-            end: demo2,
-            duration: 4000
-        });
-        $('#number3').jQuerySimpleCounter({
-            end: demo3,
-            duration: 4000
-        });
-        $('#number4').jQuerySimpleCounter({
-            end: demo4,
-            duration: 4000
-        });
-    </script>
 @endsection
