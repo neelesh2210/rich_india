@@ -75,8 +75,7 @@ background-color: #f7f7f7;
                         <i class="fa-sharp fa-solid fa-people-group fs-20 me-1 align-middle txt-gray-2"></i>
                         My Team
                     </a>
-                    {{-- <a href="{{ route('user.leaderboard') }}"> --}}
-                    <a href="#">
+                    <a href="{{ route('user.leaderboard') }}">
                         <i class="fa-solid fa-users fs-20 me-1 align-middle txt-gray-2"></i>
                         Leaderboard
                     </a>
