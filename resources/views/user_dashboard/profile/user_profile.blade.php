@@ -21,8 +21,7 @@
                         <i class="fa-solid fa-id-card fs-20 me-1 align-middle txt-gray-2"></i>
                         My Profile
                     </a>
-                    {{-- <a href="{{ route('user.bank.detail') }}"> --}}
-                    <a href="#">
+                    <a href="{{route('user.bank.detail')}}">
                         <i class="fa-regular fa-credit-card fs-20 me-1 align-middle txt-gray-2"></i>
                         KYC
                     </a>
@@ -61,7 +60,7 @@
             </div>
             <div id="page-content-wrapper" class="pt-0 ps-0 pe-0">
                 <span href="#dashboard-menu-toggle" id="dashboard-menu-toggle" class="d-block d-sm-none">&#9776;</span>
-                <a href="{{ route('index') }}" title="{{ env('APP_NAME') }}-logo " class="navbar-brand logo header-fixed">
+                <a href="{{ route('index') }}" title="{{ env('APP_NAME') }}-logo " class="navbar-brand logo header-fixed d-none">
                     <img src="{{ asset('frontend/images/avatar/' . Auth::guard('web')->user()->avatar) }}"
                         alt="{{ env('APP_NAME') }}-logo" class="img-fluid pad-t-b-5-xs mob" style="">
                 </a>
@@ -77,29 +76,40 @@
                                         <div class="checkout-form personal-address add-course-info">
                                             <div action="#">
                                                 <div class="row">
-                                                    <div class="col-lg-6 col-sm-6">
-                                                        <div class="form-group">
-                                                            <label class="form-control-label">Name : <span class="fw-normal">{{Auth::guard('web')->user()->name}}</span></label>
+                                                    <form action="{{route('user.save.user.profile')}}" method="POST" enctype="multipart/form-data">
+                                                        @csrf
+                                                        <div class="row">
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
+                                                                <input type="text" id="name" name="name" value="{{$user_details->name}}" class="form-control" required>
+                                                            </div>
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                                                                <input type="email" id="email" name="email" value="{{$user_details->email}}" class="form-control" placeholder="Email" readonly required>
+                                                            </div>
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="phone" class="form-label">Phone <span class="text-danger">*</span></label>
+                                                                <input type="number" id="phone" name="phone" value="{{$user_details->phone}}" class="form-control" required>
+                                                            </div>
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="state" class="form-label">State <span class="text-danger">*</span></label>
+                                                                <select class="form-select" id="example-select" name="state" required>
+                                                                    <option value="">Select State...</option>
+                                                                    @foreach (states() as $state)
+                                                                        <option value="{{$state}}" @if($user_details->state == $state) selected @endif>{{$state}}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="images" class="form-label">Avatar</label>
+                                                                <input type="file" name="avatar" id="img_input1" class="form-control" accept="image/*">
+                                                                <div class="p-2">
+                                                                    <img id="img1" src="{{asset('frontend/images/avatar/'.$user_details->avatar)}}" onerror="this.onerror=null;this.src='{{asset('backend/img/no-image.png')}}'" height="100px" width="100px">
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-lg-6 col-sm-6">
-                                                        <div class="form-group">
-                                                            <label class="form-control-label">Phone : <span class="fw-normal">{{Auth::guard('web')->user()->phone}}</span></label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6 col-sm-6">
-                                                        <div class="form-group">
-                                                            <label class="form-control-label">Email : <span class="fw-normal">{{Auth::guard('web')->user()->email}}</span></label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6 col-sm-6">
-                                                        <div class="form-group">
-                                                            <label class="form-control-label">City : <span class="fw-normal">{{Auth::guard('web')->user()->state}}</span></label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="update-profile">
-                                                        <a href="#" class="btn btn-primary">Edit Profile</a>
-                                                    </div>
+                                                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>

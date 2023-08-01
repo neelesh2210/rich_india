@@ -12,7 +12,7 @@ class BankDetailController extends Controller
 {
 
     public function store(Request $request){
-        if(Session::get('otp') == $request->otp){
+        //if(Session::get('otp') == $request->otp){
             BankDetail::updateOrCreate([
                 'user_id'=>Auth::guard('web')->user()->id
             ],[
@@ -22,11 +22,11 @@ class BankDetailController extends Controller
                 'bank_name'=>$request->bank_name,
                 'upi_id'=>$request->upi_id
             ]);
-            Session::forget('otp');
+            //Session::forget('otp');
             return back()->with('success','Bank Detail Updated Successfully!');
-        }else{
-            return back()->withInput($request->all())->with('error','Wrong OTP!');
-        }
+        //}else{
+            //return back()->withInput($request->all())->with('error','Wrong OTP!');
+        //}
     }
 
     public function verifyEmail(){

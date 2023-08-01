@@ -212,7 +212,7 @@
         </div>
     </section>
 
-    <section class="section master-skill why-ushome">
+    {{-- <section class="section master-skill why-ushome">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-7 col-lg-12 col-md-12">
@@ -306,7 +306,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <section class="section share-knowledge founder-sec">
         <div class="container">
