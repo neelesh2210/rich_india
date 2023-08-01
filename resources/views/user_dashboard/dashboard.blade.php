@@ -21,23 +21,28 @@
                     <i class="fa-solid fa-id-card fs-20 me-1 align-middle txt-gray-2"></i>
                     My Profile
                 </a>
-                <a href="{{route('user.bank.detail')}}">
+                {{-- <a href="{{route('user.bank.detail')}}"> --}}
+                <a href="#">
                     <i class="fa-regular fa-credit-card fs-20 me-1 align-middle txt-gray-2"></i>
                     KYC
                 </a>
-                <a href="{{route('user.traffic')}}">
+                {{-- <a href="{{route('user.traffic')}}"> --}}
+                <a href="#">
                     <i class="fa-sharp fa-solid fa-people-group fs-20 me-1 align-middle txt-gray-2"></i>
                     My Team
                 </a>
-                <a href="{{route('user.leaderboard')}}">
+                {{-- <a href="{{route('user.leaderboard')}}"> --}}
+                <a href="#">
                     <i class="fa-solid fa-users fs-20 me-1 align-middle txt-gray-2"></i>
                     Leaderboard
                 </a>
-                <a href="{{route('user.course')}}">
+                {{-- <a href="{{route('user.course')}}"> --}}
+                <a href="#">
                     <i class="fa-solid fa-graduation-cap fs-20 me-1 align-middle txt-gray-2"></i>
                     My Course
                 </a>
-                <a href="{{route('user.payouts')}}">
+                {{-- <a href="{{route('user.payouts')}}"> --}}
+                <a href="#">
                     <i class="fa-solid fa-money-bill-transfer fs-20 me-1 align-middle txt-gray-2"></i>
                     Request Withdrawal
                 </a>
