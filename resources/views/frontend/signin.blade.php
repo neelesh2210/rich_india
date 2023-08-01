@@ -1,6 +1,3 @@
-
-
-
 @extends('frontend.layouts.app')
 @section('content')
 <div class="main-wrapper log-wrap login-main">
@@ -11,7 +8,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-6 col-md-6">
                             <div class="login-left">
-                                <img src="https://thegrowthindia.in/assets/Images/Login.webp" alt="Alternate Text" class="img-fluid" />
+                                <img src="{{asset('frontend/assets/images/Login.webp')}}" alt="Alternate Text" class="img-fluid" />
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
