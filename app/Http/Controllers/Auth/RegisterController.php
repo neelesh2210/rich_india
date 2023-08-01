@@ -173,7 +173,7 @@ class RegisterController extends Controller
         $user->email = $request->email;
         $user->phone = $request->phone;
         $user->state = $request->state;
-        $user->referrer_code = 'TSP'.strtoupper(generateRandomString(6));
+        $user->referrer_code = 'RIND'.strtoupper(generateRandomString(8));
         $user->referral_code = $request->referral_code;
         $user->password = Hash::make($request->password);
         $user->save();

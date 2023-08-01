@@ -89,7 +89,7 @@
                                                     Payment Mode:
                                                 </td>
                                                 <td style="padding: 5px 10px; border-bottom: 1px solid #ededed; color: #455056;">
-                                                    Instamojo
+                                                    PhonePe
                                                 </td>
 
                                             </tr>
