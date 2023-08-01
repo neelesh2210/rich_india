@@ -65,7 +65,7 @@ class PhonepeController extends Controller
        "merchantUserId"=> "MUID".rand(1111,9999),
        "amount"=> 1*100,
        "redirectUrl"=> route('phonepe.redirectUrl'),
-       "redirectMode"=> "POST",
+       "redirectMode"=> "GET",
        "callbackUrl"=> route('phonepe.callback'),
        "mobileNumber"=> $phone,
        "paymentInstrument"=>["type"=> "PAY_PAGE"],

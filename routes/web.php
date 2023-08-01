@@ -54,8 +54,8 @@ Route::post('vaildate-user-registeration',[RegisterController::class,'validateUs
 Route::post('payment', [RegisterController::class,'payment'])->name('payment');
 Route::get('instamojo/payment/pay-success',[InstamojoController::class, 'success'])->name('instamojo.success');
 
-Route::post('phonepe/callback',[PhonepeController::class, 'callback'])->name('phonepe.callback');
-Route::post('phonepe/redirectUrl',[PhonepeController::class, 'redirectUrl'])->name('phonepe.redirectUrl');
+Route::get('phonepe/callback',[PhonepeController::class, 'callback'])->name('phonepe.callback');
+Route::get('phonepe/redirectUrl',[PhonepeController::class, 'redirectUrl'])->name('phonepe.redirectUrl');
 
 //thank you
 Route::view('thank-you', 'frontend.thank_you')->name('thank.you');
