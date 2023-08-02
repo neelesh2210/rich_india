@@ -82,12 +82,12 @@
                         <span> Change Password </span>
                     </a>
                 </li> --}}
-                <li class="side-nav-item">
+                {{-- <li class="side-nav-item">
                     <a href="#" class="side-nav-link">
                         <i class="mdi mdi-logout"></i>
                         <span> Sign Out</span>
                     </a>
-                </li>
+                </li> --}}
                 {{-- <li class="side-nav-item">
                     <a href="{{route('user.plan')}}" class="side-nav-link">
                         <i class="uil-book-open"></i>
