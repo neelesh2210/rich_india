@@ -23,7 +23,7 @@
                                 {{-- <p>A payment gateway fee @ 2% of the paid amount and processing fee @5% of the paid amount will be deducted from the amount to be refunded.</p> --}}
                                 <p>No Refund will be given to the customer for the purchase of any package made by the
                                     customer directly from the RichIND website “{{ env('APP_URL') }}” or through the
-                                    affiliate link of the person who referred him to the The Success Preneur website after 2
+                                    affiliate link of the person who referred him to the RichIND website after 2
                                     hours of the purchase under any circumstances.</p>
                                 <p>To complete your refund, we require a receipt or proof of purchase.</p>
 

@@ -143,7 +143,7 @@
                         <label for="payment_type">Payment Mode</label>
                         <select name="payment_type" id="payment_type" class="form-control" required>
                             <option value="">Select Payment Mode...</option>
-                            <option value="online">Online</option>
+                            {{-- <option value="online">Online</option> --}}
                             <option value="cash">Cash</option>
                         </select>
                         <label for="amount">Amount</label>
