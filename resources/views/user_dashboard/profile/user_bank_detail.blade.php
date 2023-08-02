@@ -38,13 +38,13 @@
                                         <label for="upi_id" class="form-label">UPI ID</label>
                                         <input type="text" id="upi_id" name="upi_id" class="form-control" value="{{old('upi_id',optional($user_details->bankDetail)->upi_id)}}" placeholder="UPI ID...">
                                     </div>
-                                    <div class="col-md-6 mb-3 @if(count(old()) == 0) d-none @endif  otp-div">
+                                    {{-- <div class="col-md-6 mb-3 @if(count(old()) == 0) d-none @endif  otp-div">
                                         <label for="otp" class="form-label">OTP</label>
                                         <input type="number" id="otp" name="otp" class="form-control" placeholder="OTP..." required>
-                                    </div>
+                                    </div> --}}
                                 </div>
-                                <a class="btn btn-primary @if(count(old()) != 0) d-none @endif verify-button" onclick="verifyEmailBankdetail()">Get OTP on email to make changes</a>
-                                <button type="submit" class="btn btn-primary save-button @if(count(old()) == 0) d-none @endif">Save Changes</button>
+                                {{-- <a class="btn btn-primary @if(count(old()) != 0) d-none @endif verify-button" onclick="verifyEmailBankdetail()">Get OTP on email to make changes</a> --}}
+                                <button type="submit" class="btn btn-primary save-button">Save Changes</button>
                             </form>
                         </div>
                     </div>
