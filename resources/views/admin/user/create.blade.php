@@ -92,8 +92,8 @@
                                             </div>
                                             <div class="col-md-6 form_div">
                                                 <div class="form-group">
-                                                    <label for="referral_code">Referral Code</label>
-                                                    <input type="text" class="form-control" name="referral_code" placeholder="Enter Referral Code...">
+                                                    <label for="referral_code">Sponsor Code</label>
+                                                    <input type="text" class="form-control" name="referral_code" placeholder="Enter Sponsor Code...">
                                                 </div>
                                                 <span id="error_refferal" class="lbl_msg"></span>
                                             </div>
