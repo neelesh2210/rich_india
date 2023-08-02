@@ -63,7 +63,7 @@
                                                     <label for="level">Level <span class="text-danger">*</span></label>
                                                     <select name="upgrade_commission_level" class="form-control">
                                                         <option value="">Select Level...</option>
-                                                        @for ($i=1;$i<=5;$i++)
+                                                        @for ($i=0;$i<=5;$i++)
                                                             <option value="{{$i}}" @if(optional($update_commission_setting)->content == $i) selected @endif>{{$i}}</option>
                                                         @endfor
                                                     </select>

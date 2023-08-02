@@ -179,11 +179,11 @@
                                                                 <i class="fas fa-eye"></i>
                                                             </a>
                                                         </div>
-                                                        {{-- <div class="col-md-6">
+                                                        <div class="col-md-6">
                                                             <a class="btn btn-outline-primary btn-sm mr-1 mb-1" href="{{route('admin.upgrade.plan.index',$user->id)}}" style="width:35px;" title="Upgrade Plan">
                                                                 <i class="fas fa-level-up-alt"></i>
                                                             </a>
-                                                        </div> --}}
+                                                        </div>
                                                     </div>
                                                 </td>
                                             </tr>
