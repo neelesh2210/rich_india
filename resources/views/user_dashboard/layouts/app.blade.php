@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>RichIND</title>
-        <meta name="keywords" content="RichIND" />
-        <meta name="description" content="RichIND" />
+        <title>Rich India</title>
+        <meta name="keywords" content="Rich India" />
+        <meta name="description" content="Rich India" />
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{asset('user_dashboard/images/favicon.png')}}">
 
@@ -14,6 +14,7 @@
         <link href="{{ asset('user_dashboard/css/app.min.css') }}" rel="stylesheet" type="text/css" id="app-style" />
         <link rel="stylesheet" href="{{asset('user_dashboard/css/daterangepicker.css')}}">
         <link rel="stylesheet" href="{{asset('backend/css/bootstrap-4.min.css')}}">
+        <link rel="stylesheet" href="{{ asset('frontend/assets/webfonts/gordita.css')}}" />
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 

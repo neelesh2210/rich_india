@@ -1,155 +1,125 @@
-@extends('frontend.layouts.app')
+@extends('user_dashboard.layouts.app')
 @section('content')
-<style>
-    body {
-    background-color: #f7f7f7;
-    }
-    .footer,
-    .header {
-        display: none;
-    }
-
-    .mob {
-        display: none;
-    }
-
-    .header-fixed {
-        display: none;
-    }
-
-    @media only screen and (min-width: 320px) and (max-width: 767px) {
-
-        .container-fluid {
-            padding-left: 0px;
-            padding-right: 0px;
-        }
-
-        .navbar-brand.logo .pad-t-b-5-xs {
-            padding: 12px 0px 12px 0;
-            margin-left: 33px;
-        }
-
-        .logo img {
-            width: 150px;
-        }
-
-        .navbar-brand {
-            background: white;
-        }
-
-        .mob {
-            display: block;
-        }
-
-        .header-fixed {
-            display: none;
-        }
-    }
-</style>
-<div>
-    <div id="dashboard-wrapper" class="bg-light-gray-3">
-        <div id="sidebar-wrapper">
-            <div class="sidebar-nav">
-                    <div class="profile-sec">
-                        <div class="pimgsec">
-                            <img src="{{ asset('frontend/images/avatar/' . Auth::guard('web')->user()->avatar) }}">
-                        </div>
-                        <div class="ptext">
-                            <h3>{{Auth::guard('web')->user()->name}}</h3>
-                            <h4>Affiliate Link</h4>
+    <div class="content-page">
+        <div class="content">
+            <div class="container-fluid">
+                {{-- <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right float-start">
+                                <div class="text-center mb-2">
+                                    <img src="{{ 'user_dashboard/images/users/avatar-1.jpg' }}" alt="user-image" height="80" class="rounded-circle shadow-sm">
+                                </div>
+                                <p class="leftbar-user-name">{{Auth::guard('web')->user()->name ? Auth::guard('web')->user()->name : 'User'}}</p>
+                                <p class="text-center">{{Auth::guard('web')->user()->referrer_code}}</p>
+                            </div>
+                            <h4 class="page-title float-end">Dashboard</h4>
                         </div>
                     </div>
-                <a href="{{route('user.dashboard')}}" class="sidebar-nav-active-en mar-top-60">
-                    <i class="fa-solid fa-house icon-active fs-20 me-1 align-middle txt-gray-2"></i>
-                    DashBoard
-                </a>
-                <a href="{{route('user.user.profile')}}">
-                    <i class="fa-solid fa-id-card fs-20 me-1 align-middle txt-gray-2"></i>
-                    My Profile
-                </a>
-                <a href="{{route('user.bank.detail')}}">
-                    <i class="fa-regular fa-credit-card fs-20 me-1 align-middle txt-gray-2"></i>
-                    KYC
-                </a>
-                <a href="{{route('user.traffic')}}">
-                    <i class="fa-sharp fa-solid fa-people-group fs-20 me-1 align-middle txt-gray-2"></i>
-                    My Team
-                </a>
-                <a href="{{route('user.leaderboard')}}">
-                    <i class="fa-solid fa-users fs-20 me-1 align-middle txt-gray-2"></i>
-                    Leaderboard
-                </a>
-                {{-- <a href="{{route('user.course')}}"> --}}
-                <a href="#">
-                    <i class="fa-solid fa-graduation-cap fs-20 me-1 align-middle txt-gray-2"></i>
-                    My Course
-                </a>
-                <a href="{{ route('user.affiliate.links') }}">
-                    <i class="fa-solid fa-graduation-cap fs-20 me-1 align-middle txt-gray-2"></i>
-                    Affilliate Link
-                </a>
-                {{-- <a href="{{route('user.payouts')}}"> --}}
-                <a href="#">
-                    <i class="fa-solid fa-money-bill-transfer fs-20 me-1 align-middle txt-gray-2"></i>
-                    Request Withdrawal
-                </a>
-                <a href="#">
-                    <i class="fa-sharp fa-solid fa-lock fs-20 me-1 align-middle txt-gray-2"></i>
-                    Security
-                </a>
-                <a onclick="$('#logout-forms').submit()">
-                    <i class="fa-solid fa-arrow-right-from-bracket fs-20 me-1 align-middle txt-gray-2"></i>
-                    Sign Out
-                </a>
-                <form id="logout-forms" action="{{route('user.logout')}}" method="POST">
-                    @csrf
-                </form>
-            </div>
-        </div>
-        <div id="page-content-wrapper" class="pt-0 ps-0 pe-0">
-            <span href="#dashboard-menu-toggle" id="dashboard-menu-toggle" class="d-block d-sm-none">&#9776;</span>
-            <a href="{{ route('index') }}" title="{{env('APP_NAME')}}-logo " class="navbar-brand logo header-fixed">
-                <img src="{{ asset('frontend/images/avatar/' . Auth::guard('web')->user()->avatar) }}" alt="{{env('APP_NAME')}}-logo" class="img-fluid pad-t-b-5-xs mob" style="">
-            </a>
-            <div class="page-content">
-                <div class="container-fluid" >
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="settings-widget profile-details box-shadow-1 my-profile">
-                                <div class="settings-menu p-0">
-                                    <div class="profile-sec">
-                                        <div class="pimgsec">
-                                            <img src="{{ asset('frontend/images/avatar/' . Auth::guard('web')->user()->avatar) }}" style="margin:25px;">
-                                        </div>
-                                        <div class="ptext">
-                                            <h3>{{ Auth::guard('web')->user()->name }}</h3>
-                                            <h4>({{ Auth::guard('web')->user()->userDetail->plan->title }})</h4>
+                </div> --}}
+                <div class="row mt-3 mb-3">
+                    <div class="col-lg-3">
+                        <div class="left-side-menu">
+                            <div class="ribbon">
+                                <span>{{Auth::guard('web')->user()->userDetail->plan->title}}</span>
+                            </div>
+                            <div class="user-box text-center mb-2">
+                                <img src="{{asset('frontend/images/avatar/'.Auth::guard('web')->user()->avatar)}}" onerror="this.onerror=null;this.src='{{asset('user_dashboard/images/users/avatar-1.jpg')}}'" class="rounded-circle shadow-sm">
+                            </div>
+                            <p class="leftbar-user-name">
+                                {{ Auth::guard('web')->user()->name ? Auth::guard('web')->user()->name : 'User' }}</p>
+                            <div class="text-center">
+                                <input type="hidden" value="{{env('APP_URL')}}?referrer_code={{Auth::guard('web')->user()->referrer_code}}" id="referral_link">
+                                <p class="text-center fw-bolder mr-2">ID: {{ Auth::guard('web')->user()->referrer_code }}
+                                    <a class="btn btn-success pb" onclick="copyText()"><i class="uil-copy" style="font-size: 20px;"></i></a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-sm-3 mb-2">
+                                <div class="card widget-flat gradient-45deg-light-blue-cyan" data-aos="fade-left" data-aos-duration="500" data-aos-once="true">
+                                    <div class="card-body">
+                                        <h3 class="text-white"><small>₹</small> <span class="counter-value">{{$today_earning}}</span></h3>
+                                        <h5 class="text-white fw-normal mt-3" title="Number of Customers">Today's Earning</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 mb-2">
+                                <div class="card widget-flat gradient-45deg-red-pink">
+                                    <div class="card-body">
+                                        <h3 class="text-white"><small>₹</small> <span class="counter-value">{{$last_week_earning}}</span></h3>
+                                        <h5 class="text-white fw-normal mt-3" title="Number of Orders">Last 7 Days Earning</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 mb-2">
+                                <div class="card widget-flat statistic-bg-purple">
+                                    <div class="card-body">
+                                        <h3 class="text-white"><small>₹</small> <span class="counter-value">{{$last_month_earning}}</span></h3>
+                                        <h5 class="text-white fw-normal mt-3" title="Number of Orders">Last 30 Days Earning</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 mb-2">
+                                <div class="card widget-flat gradient-45deg-green-teal">
+                                    <div class="card-body">
+                                        <h3 class="text-white"><small>₹</small> <span class="counter-value">{{$all_time_earning + $old_payout->old_paid_payout + $old_payout->old_not_paid_payout}}</span></h3>
+                                        <h5 class="text-white fw-normal mt-3" title="Number of Orders">All Time Earning</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- <div class="col-sm-3 mb-2">
+                                <div class="card widget-flat gradient-45deg-amber-amber">
+                                    <div class="card-body">
+                                        <h3 class="text-white"><small>₹</small> <span class="counter-value">{{$withdrawal_amount}}</span></h3>
+                                        <h5 class="text-white fw-normal mt-3" title="Number of Orders">Withdrawal Bonus</h5>
+                                    </div>
+                                </div>
+                            </div> --}}
+                            {{-- <div class="col-sm-3 mb-2">
+                                <div class="card widget-flat gradient-45deg-amber-amber">
+                                    <div class="card-body">
+                                        <h3 class="text-white"><small>₹</small> <span class="counter-value">{{$active_income}}</span></h3>
+                                        <h5 class="text-white fw-normal mt-3" title="Number of Orders">Active Income</h5>
+                                    </div>
+                                </div>
+                            </div> --}}
+                            <div class="col-sm-3 mb-2">
+                                <div class="card widget-flat gradient-45deg-amber-amber">
+                                    <div class="card-body">
+                                        <h3 class="text-white"><small>₹</small> <span class="counter-value">{{$passive_income}}</span></h3>
+                                        <h5 class="text-white fw-normal mt-3" title="Number of Orders">Passive Income</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 mb-2">
+                                <div class="card widget-flat bg-gradient-moonlit">
+                                    <div class="card-body">
+                                        <h3 class="text-white"><small>₹</small> <span class="counter-value">{{$remaining_amount}}</span></h3>
+                                        <h5 class="text-white fw-normal mt-3" title="Number of Customers">Pending Amount</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="card card-info">
+                                    <div class="card-header text-center">
+                                        <h3 class="card-title">Total Transaction</h3>
+                                        <p> Last 30 Days</p>
+                                        <div class="card-tools">
+                                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                <i class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                                <i class="fas fa-times"></i>
+                                            </button>
                                         </div>
                                     </div>
-                                    <div class="box-container">
-                                        <div class="box box1">
-                                            <div class="text">
-                                                <h2 class="topic">Today Income</h2>
-                                                <h2 id="number1" class="topic-heading">₹ {{ $today_earning }}</h2>
-                                            </div>
-                                        </div>
-                                        <div class="box box2">
-                                            <div class="text">
-                                                <h2 class="topic">Last 7 Days Income</h2>
-                                                <h2 id="number2" class="topic-heading">₹ {{ $last_week_earning }}</h2>
-                                            </div>
-                                        </div>
-                                        <div class="box box3">
-                                            <div class="text">
-                                                <h2 class="topic">Last 30 Days Income</h2>
-                                                <h2 id="number3" class="topic-heading">₹ {{ $last_month_earning }}</h2>
-                                            </div>
-                                        </div>
-                                        <div class="box box4">
-                                            <div class="text">
-                                                <h2 class="topic">Total Income</h2>
-                                                <h2 id="number4" class="topic-heading">₹ {{ $all_time_earning + $old_payout->old_paid_payout + $old_payout->old_not_paid_payout }}</h2>
-                                            </div>
+                                    <div class="card-body">
+                                        <div class="chart">
+                                            <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                                         </div>
                                     </div>
                                 </div>
@@ -160,49 +130,101 @@
             </div>
         </div>
     </div>
-</div>
-<script>
 
-	$.fn.jQuerySimpleCounter = function( options ) {
-	    var settings = $.extend({
-	        start:  0,
-	        end:    100,
-	        easing: 'swing',
-	        duration: 500,
-	        complete: ''
-	    }, options );
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="{{asset('backend/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('backend/js/Chart.min.js')}}"></script>
+    <script>
+        $(document).ready(function() {
+            $('.counter-value').each(function() {
+                $(this).prop('Counter', 0).animate({
+                    Counter: $(this).text()
+                }, {
+                    duration: 1000,
+                    easing: 'swing',
+                    step: function(now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
+        });
 
-	    var thisElement = $(this);
+        function copyText() {
+            navigator.clipboard.writeText($('#referral_link').val());
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+            });
+            Toast.fire({
+                icon: "success",
+                title: 'Referral Code Copied SuccessfullY!',
+            });
+        }
+    </script>
+    <script>
+        $(function () {
+          var areaChartData = {
+            labels  : [
+                @foreach ($dates as $date)
+                    '{{ $date }}',
+                @endforeach
+            ],
+            datasets: [
+              {
+                label               : 'Transaction',
+                backgroundColor     : 'rgba(60,141,188,0.9)',
+                borderColor         : 'rgba(60,141,188,0.8)',
+                pointRadius          : false,
+                pointColor          : '#3b8bba',
+                pointStrokeColor    : 'rgba(60,141,188,1)',
+                pointHighlightFill  : '#fff',
+                pointHighlightStroke: 'rgba(60,141,188,1)',
+                data                : [
+                    @foreach ($values as $value)
+                        {{ $value }},
+                    @endforeach
+                ]
+              },
+            ]
+          }
 
-	    $({count: settings.start}).animate({count: settings.end}, {
-			duration: settings.duration,
-			easing: settings.easing,
-			step: function() {
-				var mathCount = Math.ceil(this.count);
-				thisElement.text(mathCount);
-			},
-			complete: settings.complete
-		});
-	};
-var demo1 = '{{ $today_earning }}';
-var demo2 = '{{ $last_week_earning }}';
-var demo3 = '{{ $last_month_earning }}';
-var demo4 = '{{ $all_time_earning + $old_payout->old_paid_payout + $old_payout->old_not_paid_payout }}';
+          var areaChartOptions = {
+            maintainAspectRatio : false,
+            responsive : true,
+            legend: {
+              display: false
+            },
+            scales: {
+              xAxes: [{
+                gridLines : {
+                  display : false,
+                }
+              }],
+              yAxes: [{
+                gridLines : {
+                  display : false,
+                }
+              }]
+            }
+          }
 
-$('#number1').jQuerySimpleCounter({end: demo1,duration: 3000});
-$('#number2').jQuerySimpleCounter({end: demo2,duration: 4000});
-$('#number3').jQuerySimpleCounter({end: demo3,duration: 4000});
-$('#number4').jQuerySimpleCounter({end: demo4,duration: 4000});
+          //-------------
+          //- LINE CHART -
+          //--------------
+          var lineChartCanvas = $('#lineChart').get(0).getContext('2d')
+          var lineChartOptions = $.extend(true, {}, areaChartOptions)
+          var lineChartData = $.extend(true, {}, areaChartData)
+          lineChartData.datasets[0].fill = false;
+          lineChartOptions.datasetFill = false
 
-        </script>
-
-
-
-
-
-
-
-
-
-
+          var lineChart = new Chart(lineChartCanvas, {
+            type: 'line',
+            data: lineChartData,
+            options: lineChartOptions
+          })
+        })
+      </script>
 @endsection

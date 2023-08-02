@@ -10,14 +10,6 @@
         </a>
         <div class="h-100" id="leftside-menu-container" data-simplebar>
             <ul class="side-nav">
-
-                <li class="side-nav-item">
-                    <a href="{{route('user.course')}}" class="side-nav-link">
-                        <i class="uil-book-open"></i>
-                        <span> My Courses </span>
-                    </a>
-                </li>
-
                 <li class="side-nav-item">
                     <a href="{{route('user.dashboard')}}" class="side-nav-link active">
                         <i class="uil-home-alt"></i>
@@ -27,17 +19,76 @@
                 <li class="side-nav-item">
                     <a href="{{route('user.user.profile')}}" class="side-nav-link">
                         <i class="uil-user"></i>
-                        <span> Profile </span>
+                        <span>My Profile </span>
                     </a>
                 </li>
                 <li class="side-nav-item">
                     <a href="{{route('user.bank.detail')}}" class="side-nav-link">
-                        <i class="uil-user"></i>
-                        <span> Bank Detail </span>
+                        <i class="uil-wallet"></i>
+                        <span> KYC </span>
                     </a>
                 </li>
-
                 <li class="side-nav-item">
+                    <a href="{{route('user.traffic')}}" class="side-nav-link">
+                        <i class="uil-users-alt"></i>
+                        <span> My Team </span>
+                    </a>
+                </li>
+                <li class="side-nav-item">
+                    <a href="{{route('user.leaderboard')}}" class="side-nav-link">
+                        <i class="uil-border-clear"></i>
+                        <span> Leaderboard </span>
+                    </a>
+                </li>
+                <li class="side-nav-item">
+                    <a href="#" class="side-nav-link">
+                        <i class="uil-book-open"></i>
+                        <span> My Courses </span>
+                    </a>
+                </li>
+                {{-- <li class="side-nav-item">
+                    <a href="{{route('user.course')}}" class="side-nav-link">
+                        <i class="uil-book-open"></i>
+                        <span> My Courses </span>
+                    </a>
+                </li> --}}
+                <li class="side-nav-item">
+                    <a href="{{route('user.affiliate.links')}}" class="side-nav-link">
+                        <i class="uil-link-alt"></i>
+                        <span> Affiliate Link </span>
+                    </a>
+                </li>
+                <li class="side-nav-item">
+                    <a href="{{route('user.payouts')}}" class="side-nav-link">
+                        <i class="uil-money-bill"></i>
+                        <span> Request Withdrawal </span>
+                    </a>
+                </li>
+                {{-- <li class="side-nav-item">
+                    <a href="#" class="side-nav-link">
+                        <i class="uil-money-bill"></i>
+                        <span> Request Withdrawal </span>
+                    </a>
+                </li> --}}
+                <li class="side-nav-item">
+                    <a href="#" class="side-nav-link">
+                        <i class="uil-lock"></i>
+                        <span> Security </span>
+                    </a>
+                </li>
+                {{-- <li class="side-nav-item">
+                    <a href="{{route('user.change-password')}}" class="side-nav-link">
+                        <i class="uil-key-skeleton"></i>
+                        <span> Change Password </span>
+                    </a>
+                </li> --}}
+                <li class="side-nav-item">
+                    <a href="#" class="side-nav-link">
+                        <i class="mdi mdi-logout"></i>
+                        <span> Sign Out</span>
+                    </a>
+                </li>
+                {{-- <li class="side-nav-item">
                     <a href="{{route('user.plan')}}" class="side-nav-link">
                         <i class="uil-book-open"></i>
                         <span> Plan </span>
@@ -55,23 +106,10 @@
                         <span> Social Media Handles </span>
                     </a>
                 </li>
-
-                <li class="side-nav-item">
-                    <a href="{{route('user.affiliate.links')}}" class="side-nav-link">
-                        <i class="uil-link-alt"></i>
-                        <span> Affiliate Link </span>
-                    </a>
-                </li>
                 <li class="side-nav-item">
                     <a href="{{route('user.associates')}}" class="side-nav-link">
                         <i class="uil-users-alt"></i>
                         <span> My Sales </span>
-                    </a>
-                </li>
-                <li class="side-nav-item">
-                    <a href="{{route('user.traffic')}}" class="side-nav-link">
-                        <i class="uil-traffic-barrier"></i>
-                        <span> Traffic </span>
                     </a>
                 </li>
                 <li class="side-nav-item">
@@ -90,12 +128,6 @@
                     <a href="{{route('user.marketing_materials')}}" class="side-nav-link">
                         <i class="uil-clipboard-notes"></i>
                         <span> Marketing Material </span>
-                    </a>
-                </li>
-                <li class="side-nav-item">
-                    <a href="{{route('user.leaderboard')}}" class="side-nav-link">
-                        <i class="uil-border-clear"></i>
-                        <span> Leaderboard </span>
                     </a>
                 </li>
                 <li class="side-nav-item">
@@ -127,11 +159,7 @@
                         <i class="uil-file-question-alt"></i>
                         <span> Q & A Session </span>
                     </a>
-                </li>
-
-
-
-
+                </li> --}}
 
                 {{-- <li class="side-nav-item menuitem-active">
                     <a data-bs-toggle="collapse" href="#affiliates" aria-expanded="false" aria-controls="affiliates" class="side-nav-link active">
@@ -179,12 +207,12 @@
                         </ul>
                     </div>
                 </li> --}}
-                <li class="side-nav-item">
+                {{-- <li class="side-nav-item">
                     <a href="#" class="side-nav-link">
                         <i class="uil-phone"></i>
                         <span> Support No. </span>
                     </a>
-                </li>
+                </li> --}}
             </ul>
             <div class="clearfix"></div>
         </div>
