@@ -222,26 +222,26 @@ class ImportUser implements ShouldQueue
 
         //Old Data amount
 
-        $users = User::all();
-        foreach($users as $user){
-            $wp_user = DB::table('wp_users')->where('user_email',$user->email)->first();
-            if($wp_user){
-                $wp_affiliate_id = DB::table('wp_uap_affiliates')->where('uid',$wp_user->ID)->first();
-                if($wp_affiliate_id){
-                    $wp_paid_payout = DB::table('wp_uap_referrals')->where('affiliate_id',$wp_affiliate_id->id)->where('payment',2)->get()->sum('amount');
-                    $wp_not_paid_payout = DB::table('wp_uap_referrals')->where('affiliate_id',$wp_affiliate_id->id)->where('status',2)->where('payment',0)->get()->sum('amount');
+        // $users = User::all();
+        // foreach($users as $user){
+        //     $wp_user = DB::table('wp_users')->where('user_email',$user->email)->first();
+        //     if($wp_user){
+        //         $wp_affiliate_id = DB::table('wp_uap_affiliates')->where('uid',$wp_user->ID)->first();
+        //         if($wp_affiliate_id){
+        //             $wp_paid_payout = DB::table('wp_uap_referrals')->where('affiliate_id',$wp_affiliate_id->id)->where('payment',2)->get()->sum('amount');
+        //             $wp_not_paid_payout = DB::table('wp_uap_referrals')->where('affiliate_id',$wp_affiliate_id->id)->where('status',2)->where('payment',0)->get()->sum('amount');
 
-                    UserDetail::where('user_id',$user->id)->update([
-                        'old_paid_payout'=>$wp_paid_payout,
-                        'old_not_paid_payout'=>$wp_not_paid_payout,
-                    ]);
+        //             UserDetail::where('user_id',$user->id)->update([
+        //                 'old_paid_payout'=>$wp_paid_payout,
+        //                 'old_not_paid_payout'=>$wp_not_paid_payout,
+        //             ]);
 
-                    // $user->paid_payout = $wp_paid_payout;
-                    // $user->not_paid_payout = $wp_not_paid_payout;
-                    // $user->total_payout = $wp_paid_payout + $wp_not_paid_payout;
-                }
-            }
-        }
+        //             // $user->paid_payout = $wp_paid_payout;
+        //             // $user->not_paid_payout = $wp_not_paid_payout;
+        //             // $user->total_payout = $wp_paid_payout + $wp_not_paid_payout;
+        //         }
+        //     }
+        // }
 
     }
 

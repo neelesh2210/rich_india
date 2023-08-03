@@ -61,7 +61,7 @@ Route::get('phonepe/redirectUrl',[PhonepeController::class, 'redirectUrl'])->nam
 Route::view('thank-you', 'frontend.thank_you')->name('thank.you');
 Route::view('data-modification-error', 'frontend.data_modification_error')->name('data.modification.error');
 
-Route::get('import-data',[RegisterController::class,'importData']);
+//Route::get('import-data',[RegisterController::class,'importData']);
 
 //Check Coupon
 Route::post('check-coupon',[RegisterController::class,'checkCoupon'])->name('check.coupon');

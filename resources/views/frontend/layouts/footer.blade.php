@@ -13,7 +13,7 @@
                             <li>
                                 @if (websiteData('support_phone'))
                                 @foreach (json_decode(websiteData('support_phone')) as $support_phone)
-                                    <a href="tel:(+91){{ $support_phone }}">
+                                    <a href="tel:{{ $support_phone }}">
                                         <i class="fa fa-phone" aria-hidden="true"></i>
                                         <span>+ {{ $support_phone }}</span>
                                     </a>

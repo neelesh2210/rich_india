@@ -204,7 +204,7 @@
                         <h4>Ready To Get Our <span>Professional Course ?</span> We are offering High Quality Courses
                             and Live Training.”
                         </h4>
-                        <a href="https://api.whatsapp.com/send?phone=1234567890" title="Richind-Whatsapp-Us" target="_blank"
+                        <a href="https://api.whatsapp.com/send?phone={{websiteData('whatsapp')}}" title="Richind-Whatsapp-Us" target="_blank"
                             class="btn btn-primary btn-new">Let’s Talk Our Expert</a>
                     </div>
                 </div>
