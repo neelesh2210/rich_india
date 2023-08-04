@@ -149,7 +149,7 @@
                                         <div class='all-btn all-category d-flex align-items-center'>
                                             <a href="{{ route('checkout') }}?slug={{ $plan->slug }}"
                                                 title="{{ env('APP_NAME') }}-{{ $plan->title }}" class='btn btn-primary'
-                                                style="font-size:20px;margin-left:60px">
+                                                style="margin:0 auto;">
                                                 Buy Now ₹ {{ $plan->discounted_price }}
                                             </a>
                                         </div>

@@ -30,6 +30,9 @@
                                                         <div class="text-danger lbl_msg">{{ $errors->first('email') }}</div>
                                                     @endif
                                                     </div>
+                                                    @if(Session::has('success'))
+                                                        <div class="alert alert-success" role="alert">{{ Session::get('success') }}</div>
+                                                    @endif
                                                 </div>
                                                 <div class="fpsw-sec">
                                                     <div class="forgot">
