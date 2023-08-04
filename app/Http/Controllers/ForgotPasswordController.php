@@ -24,12 +24,18 @@ class ForgotPasswordController extends Controller
             'email' => $request->email,
             'token' => $token,
             'created_at' => Carbon::now()
-          ]);
+        ]);
 
-        Mail::send('email.forgetPassword', ['token' => $token], function($message) use($request){
-            $message->to($request->email);
-            $message->subject('Reset Password');
-        });
+        try {
+            Mail::send('email.forgetPassword', ['token' => $token], function($message) use($request){
+                $message->to($request->email);
+                $message->subject('Reset Password');
+            });
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+
+
 
         return back()->with('success','We have e-mailed your password reset link!');
     }
