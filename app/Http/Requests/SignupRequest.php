@@ -28,7 +28,7 @@ class SignupRequest extends FormRequest
         $rule = [
             'email' => 'required|string|email|max:255|unique:users',
             'phone' => 'required|min:10|max:10|unique:users,phone',
-            'password' =>'required|string|min:8',
+            'password' =>'required|string|min:4',
             'state' => 'required',
         ];
         if($request->has('name')){
