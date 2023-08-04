@@ -27,7 +27,7 @@ a:hover {
                     <td style="text-align:center;">
                         <a href="{{ asset('frontend/images/logo-2.png') }}" title="logo" target="_blank">
                             <img src="{{ asset('frontend/images/logo-2.png') }}"
-                                title="logo" alt="logo">
+                                title="logo" alt="logo" style="width:275px;">
                         </a>
                     </td>
                 </tr>

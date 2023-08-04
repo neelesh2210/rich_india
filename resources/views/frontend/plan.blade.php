@@ -33,7 +33,7 @@
                                             </div>
                                             <a href="{{ route('checkout') }}?slug={{ $plan->slug }}"
                                                 title="{{ env('APP_NAME') }}-{{ $plan->title }}"
-                                                class='read-more btn btn-primary' style="font-size:20px;margin-left:60px">
+                                                class='read-more btn btn-primary' style="font-size:18px;margin-left:60px">
                                                 Buy Now <i class='fas fa-arrow-right'></i>
                                             </a>
                                         </div>

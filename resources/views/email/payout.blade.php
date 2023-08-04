@@ -37,7 +37,7 @@ a:hover {
                             <tr>
                                 <td style="text-align:center;">
                                     <a href="{{ asset('frontend/images/logo-2.png') }}" title="logo" target="_blank">
-                                        <img src="{{ asset('frontend/images/logo-2.png') }}" title="logo" alt="logo">
+                                        <img src="{{ asset('frontend/images/logo-2.png') }}" title="logo" alt="logo" style="width: 275px;">
                                     </a>
                                 </td>
                             </tr>
@@ -63,7 +63,7 @@ a:hover {
                                 </td>
                             </tr>
                             <tr>
-                                <td style="height:40px;"><img src="https://digiigyan.com/frontend/images/ribbon.png" style="height: 60px;width:100%;"></td>
+                                <td style="height:40px;"><img src="{{asset('frontend/images/ribbon.png')}}" style="height: 60px;width:100%;"></td>
                             </tr>
                             <tr>
                                 <td style="height:40px;">&nbsp;</td>

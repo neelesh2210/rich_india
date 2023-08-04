@@ -31,6 +31,7 @@ use App\Http\Controllers\ForgotPasswordController;
 
 Auth::routes(['login'=>false,'register'=>false,'logout'=>false]);
 
+
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::view('about', 'frontend.about')->name('about');
 Route::view('blog', 'frontend.blog')->name('blog');

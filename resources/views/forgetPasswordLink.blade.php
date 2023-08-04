@@ -35,7 +35,7 @@
             <div class="panel panel-default mb-5">
                 <div class="panel-body">
                     <div class="text-center">
-                        <img src="{{ asset('frontend/images/logo-2.png') }}" alt="logo">
+                        <img src="{{ asset('frontend/images/logo-2.png') }}" alt="logo" style="width:250px">
                         <h2 class="text-center">Forgot Password?</h2>
                         <p>You can reset your password here.</p>
                         <div class="panel-body">

@@ -23,7 +23,7 @@
                     <tr>
                         <td style="text-align:center;">
                             <a href="{{ env('APP_URL') }}" title="logo" target="_blank">
-                                <img width="60" src="{{ asset('backend/img/logo.png') }}" title="logo" alt="logo">
+                                <img width="60" src="{{ asset('backend/img/logo.png') }}" title="logo" alt="logo" >
                             </a>
                         </td>
                     </tr>
@@ -47,7 +47,7 @@
                                             password has been generated for you. To reset your password, click the
                                             following link and follow the instructions.
                                         </p> --}}
-                                        <a style="background:#20e277;text-decoration:none !important; font-weight:500; margin-top:35px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">
+                                        <a style="background:#392c7d;text-decoration:none !important; font-weight:500; margin-top:35px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">
                                             {{$otp}}
                                         </a>
                                     </td>
