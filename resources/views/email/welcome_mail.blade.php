@@ -181,7 +181,7 @@
         </div>
         <div class="button-wrap" style="border:none;text-align: center; padding: 0 0 1rem;">
             <button class="explore" style="border:none; background: #fff;">
-                <a href="{{ route('signin') }}" style="padding: 15px 25px; font: inherit; background: linear-gradient(to right, #01345d, #0280EF); border-radius: 50px; border: 0; color: #fff; margin: auto; display: inline-block; transition: all .2s ease-in-out; cursor: pointer;">
+                <a href="{{ route('signin') }}" style="padding: 15px 25px; font: inherit; background: #392c7d; border-radius: 50px; border: 0; color: #fff; margin: auto; display: inline-block; transition: all .2s ease-in-out; cursor: pointer;">
                     Visit Account and Start Managing</a>
             </button>
         </div>
