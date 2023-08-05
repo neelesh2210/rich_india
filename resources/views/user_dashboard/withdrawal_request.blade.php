@@ -99,7 +99,7 @@
                     @csrf
                     <div class="modal-body">
                         <label for="amount">Amount</label>
-                        <input type="number" class="form-control mt-2" name="amount" id="amount" placeholder="Enter Amount..." required>
+                        <input type="number" class="form-control mt-2" name="amount" id="amount" value="{{$remaining_commission}}" placeholder="Enter Amount..." required readonly>
                         <span class="text-danger error_span"></span>
                     </div>
                     <div class="modal-footer justify-content-between">
