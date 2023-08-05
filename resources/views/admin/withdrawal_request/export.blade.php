@@ -47,7 +47,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td></td>
+                <td>Referal Code</td>
             </tr>
         @endforeach
     </tbody>
