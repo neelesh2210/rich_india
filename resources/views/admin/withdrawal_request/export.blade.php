@@ -47,7 +47,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td>Referal Code</td>
+                <td>{{$withdrawal_request->user->referrer_code}}</td>
             </tr>
         @endforeach
     </tbody>
