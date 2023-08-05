@@ -46,12 +46,12 @@
                         <span> My Courses </span>
                     </a>
                 </li>
-                {{-- <li class="side-nav-item">
+                <li class="side-nav-item">
                     <a href="{{route('user.course')}}" class="side-nav-link">
                         <i class="uil-book-open"></i>
                         <span> My Courses </span>
                     </a>
-                </li> --}}
+                </li>
                 <li class="side-nav-item">
                     <a href="{{route('user.affiliate.links')}}" class="side-nav-link">
                         <i class="uil-link-alt"></i>
