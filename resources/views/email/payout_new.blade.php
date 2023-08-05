@@ -17,8 +17,7 @@ a:hover {
     style="@import url(https://fonts.googleapis.com/css?family=Rubik:300,400,500,700|Open+Sans:300,400,600,700); font-family: 'Open Sans', sans-serif;">
     <tr>
         <td>
-            <table style="background-color: #fff;" width="100%" border="0"
-                align="center" cellpadding="0" cellspacing="0">
+            <table style="background-color: #fff;" width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
                 <tr>
                     <td style="height:80px;">&nbsp;</td>
                 </tr>
@@ -37,40 +36,32 @@ a:hover {
                 <tr>
                     <td>
                         <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0"
-                            style="max-width:670px; background:#fff; border-radius:3px;-webkit-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);-moz-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);box-shadow:0 6px 18px 0 rgba(0,0,0,.06);padding:0 40px;">
+                            style="max-width:670px; background:#333; border-radius:3px;-webkit-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);-moz-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);box-shadow:0 6px 18px 0 rgba(0,0,0,.06);padding:0 40px;">
                             <tr>
                                 <td style="height:40px;">&nbsp;</td>
                             </tr>
                             <tr>
                                 <td style="text-align:center;">
-                                    <a href="{{ asset('frontend/images/logo-2.png') }}" title="logo" target="_blank">
-                                        <img src="{{ asset('frontend/images/logo-2.png') }}" title="logo" alt="logo" style="width: 275px;">
-                                    </a>
+                                        <img src="{{ asset('user_dashboard/images/check.png') }}" title="logo" alt="logo" style="width: 50px;">
                                 </td>
                             </tr>
                             <!-- Title -->
                             <tr>
                                 <td style="text-align:center;">
-                                    <h1 style="color:#1e1e2d; font-weight:bold; margin:0;font-size:32px;font-family:'Rubik',sans-serif;">
-                                        Congratulations!</h1><br>
-                                    <h1 style="color:#1e1e2d; font-weight:bold; margin:0;font-size:48px;font-family:'Rubik',sans-serif;">
-                                        Shailesh Gupta</h1><br>
-                                     <h1 style="color:#1e1e2d; font-weight:bold; margin:0;font-size:40px;color:red;font-family:'Rubik',sans-serif;">You Have Earned</h1><br>
-                                     <h1 style="color:#1e1e2d; font-weight:bold; margin:0;font-size:60px;font-family:'Rubik',sans-serif;"> 123 INR</h1><br>
+                                    <h1 style="color:#FFF; font-weight:bold;margin-bottom: 8px; margin-top: 8px;font-size:32px;font-family:'Rubik',sans-serif;">
+                                        ₹ 2540.00</h1>
+                                    <h1 style="color:#FFF; font-weight:bold;margin-bottom: 8px; margin-top: 8px;font-size:18px;font-family:'Rubik',sans-serif;">
+                                        Received Successfully</h1>
+                                     <p style="border-bottom: 2px solid #4CAF50;border-width: 5px;width: 25px;text-align: center;margin: 0 auto;"></p>
                                 </td>
 
                             </tr>
                             <!-- Details Table -->
                             <tr>
                                 <td>
-                                    <p style="text-align:center;font-size:24px;font-weight:500;">We Are Happy To Inform You That We Have Transferred Your Payment Into Your Bank Account.</p>
-                                    <h1 style="text-align:center;color:#1e1e2d; font-weight:bold; margin:0;font-size:36px;font-family:'Rubik',sans-serif;">
-                                        01-01-2024</h1><br>
-                                    <h1 style="text-align:center;color:#1e1e2d; margin:0;font-weight:bold;font-size:18px;font-family:'Rubik',sans-serif;">.</h1><br>
+                                    <p style="text-align:left;font-size:16px;font-weight:500;color:#fff;line-height: 1.5;">You have received <b>₹ 2540.00</b> from <b>Rich IND.</b>Please find details below. </p>
+                                    <p style="text-align:left;font-size:16px;font-weight:500;color:#fff;line-height: 1.5;">If you haven't received the amount, kindly contact richIND support team.</p>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td style="height:40px;"><img src="{{asset('frontend/images/ribbon.png')}}" style="height: 60px;width:100%;"></td>
                             </tr>
                             <tr>
                                 <td style="height:40px;">&nbsp;</td>

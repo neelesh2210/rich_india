@@ -59,12 +59,12 @@
                                         <div class="col-md-4">
                                         <h5 class="pts">Affiliate Marketing Mastery </h5>
                                         </div>
-                                        <div class="col-md-4">
+                                        {{-- <div class="col-md-4">
                                         <span class="pts1">Your Progress: 6 of 9 (67%)</span>
                                         </div>
                                         <div class="col-md-4 d-lg-block d-md-block d-none">
                                         <h5 class="m-1"><button type="button" class="btn btn-outline-secondary rounded-pill w-100"><i class="mdi mdi-check-all"></i> Mark as Complete</button></h5>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                                 <div class="card">
