@@ -76,12 +76,12 @@
                         <p>Withdrawal Request</p>
                     </a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="{{route('admin.payout.index')}}" class="nav-link @if(Route::currentRouteName() == 'admin.payout.index') active @endif">
                         <i class="nav-icon fas fa-money-bill-alt"></i>
                         <p>Payouts</p>
                     </a>
-                </li>
+                </li> --}}
                 <li class="nav-item @if(Route::currentRouteName() == 'admin.payout.transaction.index' || Route::currentRouteName() == 'admin.failed.payout.transaction.index') menu-is-opening menu-open @endif">
                     <a href="#" class="nav-link @if(Route::currentRouteName() == 'admin.payout.transaction.index' || Route::currentRouteName() == 'admin.failed.payout.transaction.index') active @endif">
                         <i class="nav-icon fas fa-money-bill-alt" aria-hidden="true"></i>
