@@ -33,7 +33,7 @@
                 <td>{{$withdrawal_request->amount}}</td>
                 <td></td>
                 <td></td>
-                <td></td>
+                <td>{{optional($withdrawal_request->user->bankDetail)->ifsc_code}}</td>
                 <td></td>
                 <td></td>
                 <td></td>
