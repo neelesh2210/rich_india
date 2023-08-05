@@ -6703,13 +6703,14 @@ fieldset:disabled .btn {
 .badge {
     display: inline-block;
     padding: 0.4em 0.4em;
-    font-weight: 700;
+    /* font-weight: 700; */
     line-height: 1;
     color: var(--ct-badge-color);
     text-align: center;
     white-space: nowrap;
     vertical-align: baseline;
     border-radius: 0.25rem;
+    font-size: 10px;
 }
 
 .badge:empty {
@@ -6748,7 +6749,9 @@ fieldset:disabled .btn {
     z-index: 2;
     padding: .9375rem 1.25rem
 }
-
+.mt-35 {
+    margin-top: 1.75rem !important;
+}
 .alert-primary {
     color: #444a93;
     background-color: #e3e5fd;
@@ -15733,6 +15736,7 @@ body[data-leftbar-theme=light][data-leftbar-compact-mode=condensed] .side-nav .s
 body[data-leftbar-theme=dark] .leftside-menu {
     background: #fff;
     margin-top: 0px;
+    border-right: 1px solid #ddd;
     border-top: 2px solid #891889;
 }
 
@@ -26005,4 +26009,8 @@ input.tutor-form-check-input.tutor-form-check-circle {
     color: #fff;
     font-size: 22px;
     opacity: 0.5;
+}
+.modal-header .btn-close {
+    padding: calc(var(--bs-modal-header-padding-y) * .5) calc(var(--bs-modal-header-padding-x) * .5);
+    margin: calc(var(--bs-modal-header-padding-y) * -.5) calc(var(--bs-modal-header-padding-x) * -.5) calc(var(--bs-modal-header-padding-y) * -.5) auto;
 }

@@ -17,6 +17,7 @@ use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\UserDashboardController;
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\WithdrawalRequestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +32,6 @@ use App\Http\Controllers\ForgotPasswordController;
 
 Auth::routes(['login'=>false,'register'=>false,'logout'=>false]);
 
-Route::view('payout', 'email.payout_new')->name('payout');
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::view('about', 'frontend.about')->name('about');
 Route::view('blog', 'frontend.blog')->name('blog');
@@ -131,6 +131,10 @@ Route::group(['middleware'=>['auth:web',CheckUserStatus::class],'prefix'=>'user'
     Route::view('bank-details', 'user_dashboard.payment.bank_details')->name('bank.details');
     Route::view('support', 'user_dashboard.support')->name('support');
     Route::view('social-media-handles', 'user_dashboard.social_media_handles')->name('social.media.handles');
+
+    //Withdrawal Request
+    Route::get('withdrawal-request-index',[WithdrawalRequestController::class,'index'])->name('withdrawal.request.index');
+    Route::post('withdrawal-request-store',[WithdrawalRequestController::class,'store'])->name('withdrawal.request.store');
 
     //Webinar
     Route::get('webinar',[UserDashboardController::class,'webinar'])->name('webinar');

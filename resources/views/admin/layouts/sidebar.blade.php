@@ -71,6 +71,12 @@
                     </a>
                 </li> --}}
                 <li class="nav-item">
+                    <a href="{{route('admin.withdrawal.request.index')}}" class="nav-link @if(Route::currentRouteName() == 'admin.withdrawal.request.index') active @endif">
+                        <i class="nav-icon fas fa-money-bill-alt"></i>
+                        <p>Withdrawal Request</p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{route('admin.payout.index')}}" class="nav-link @if(Route::currentRouteName() == 'admin.payout.index') active @endif">
                         <i class="nav-icon fas fa-money-bill-alt"></i>
                         <p>Payouts</p>

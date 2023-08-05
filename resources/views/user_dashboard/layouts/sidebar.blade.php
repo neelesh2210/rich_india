@@ -55,15 +55,15 @@
                 <li class="side-nav-item">
                     <a href="{{route('user.payouts')}}" class="side-nav-link">
                         <i class="uil-money-bill"></i>
-                        <span> Request Withdrawal </span>
+                        <span> Payout Transaction </span>
                     </a>
                 </li>
-                {{-- <li class="side-nav-item">
-                    <a href="#" class="side-nav-link">
+                <li class="side-nav-item">
+                    <a href="{{route('user.withdrawal.request.index')}}" class="side-nav-link">
                         <i class="uil-money-bill"></i>
-                        <span> Request Withdrawal </span>
+                        <span> Withdrawal Request</span>
                     </a>
-                </li> --}}
+                </li>
                 <li class="side-nav-item">
                     <a href="#" class="side-nav-link">
                         <i class="uil-lock"></i>

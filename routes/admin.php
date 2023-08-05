@@ -26,6 +26,7 @@ use App\Http\Controllers\Admin\AutomatedPayoutController;
 use App\Http\Controllers\Admin\TestimonialVideoController;
 use App\Http\Controllers\Admin\CommissionSettingController;
 use App\Http\Controllers\Admin\MarketingMaterialController;
+use App\Http\Controllers\Admin\WithdrawalRequestController;
 
 
 /*
@@ -105,6 +106,10 @@ Route::group(['middleware'=>'auth:admin','as'=>'admin.'],function () {
 
     //Associates
     Route::get('associates',[UserController::class,'associates'])->name('associates');
+
+    //Withdrawal Request
+    Route::get('withdrawal-request-index',[WithdrawalRequestController::class,'index'])->name('withdrawal.request.index');
+    Route::get('withdrawal-request-status',[WithdrawalRequestController::class,'stauts'])->name('withdrawal.request.status');
 
     //Payout
     Route::get('payout-index',[PayoutController::class,'index'])->name('payout.index');
