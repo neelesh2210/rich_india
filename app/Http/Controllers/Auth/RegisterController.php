@@ -125,11 +125,13 @@ class RegisterController extends Controller
     //             $request->request->add(['payment_detalis' => $payment_detalis]);
     //             $plan = Plan::where('id',$request->plan_id)->first();
 
-    //             if($request->referral_code){
-    //                 $total_amount = $plan->discounted_price;
-    //             }else{
-    //                 $total_amount = $plan->amount;
-    //             }
+    //             // if($request->referral_code){
+    //             //     $total_amount = $plan->discounted_price;
+    //             // }else{
+    //             //     $total_amount = $plan->amount;
+    //             // }
+
+    //             $total_amount = $plan->discounted_price;
 
     //             $today_date = date('Y-m-d').' 00:00:00';
     //             $coupon = CouponManager::withoutTrash()->where('name',$request->coupon)->where('is_active','1')->where('start','<=',$today_date)->where('end','>=',$today_date)->where('type','new')->whereJsonContains('plan_ids',''.$request->plan_id)->first();
