@@ -38,7 +38,7 @@ class PayoutController extends Controller
                 ->orWhere('referrer_code',$search_key);
             });
         }
-
+        $total_remaining_earning = $users->sum('balance');
         $users = $users->paginate(10);
 
         return view('admin.payout.index',compact('users','search_key','total_remaining_earning'),['page_title'=>'Payouts']);
