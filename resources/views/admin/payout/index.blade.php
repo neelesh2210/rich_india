@@ -50,7 +50,7 @@
                                             <th class="text-center">Total Earning</th>
                                             <th class="text-center">Withdrwal Earning</th>
                                             <th class="text-center">Remaning Earning</th>
-                                            <th class="text-center">Action</th>
+                                            {{-- <th class="text-center">Action</th> --}}
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -90,11 +90,11 @@
                                                 <td class="text-center">
                                                     ₹ {{$user->balance}}
                                                 </td>
-                                                <td class="text-center">
+                                                {{-- <td class="text-center">
                                                     <a class="btn btn-outline-success btn-sm mr-1 mb-1" onclick="openModal({{$user->balance}},{{$user->id}})">
                                                         <i class="fas fa-money-bill-alt"></i>
                                                     </a>
-                                                </td>
+                                                </td> --}}
                                             </tr>
                                         @empty
                                             <tr class="footable-empty">
@@ -106,7 +106,7 @@
                                             </tr>
                                         @endforelse
                                     </tbody>
-                                    {{-- <b>Total Remaining Payout :</b>₹ {{$total_remaining_earning}} --}}
+                                    <b>Total Remaining Payout :</b>₹ {{$total_remaining_earning}}
                                 </table>
                                 <hr>
                                 <div class="row">
@@ -125,7 +125,7 @@
         </section>
     </div>
 
-    <div class="modal fade" id="payout-modal">
+    {{-- <div class="modal fade" id="payout-modal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -143,7 +143,7 @@
                         <label for="payment_type">Payment Mode</label>
                         <select name="payment_type" id="payment_type" class="form-control" required>
                             <option value="">Select Payment Mode...</option>
-                            {{-- <option value="online">Online</option> --}}
+                            <option value="online">Online</option>
                             <option value="cash">Cash</option>
                         </select>
                         <label for="amount">Amount</label>
@@ -159,9 +159,9 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> --}}
 
-    <script>
+    {{-- <script>
 
         function openModal(remaining_amount,user_id){
             $('#total_amount').val(remaining_amount)
@@ -214,5 +214,5 @@
             })
         }
 
-    </script>
+    </script> --}}
 @endsection

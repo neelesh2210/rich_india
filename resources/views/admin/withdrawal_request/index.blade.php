@@ -57,21 +57,6 @@
                                         </div>
                                     </div>
                                 </form>
-                                {{-- <div class="card-tools">
-                                    <form action="{{route('admin.withdrawal.request.index')}}">
-                                        <div class="row">
-                                            <div class="input-group input-group-sm" style="width: 200px;">
-                                                <input type="text" name="search_key" value="{{$search_key}}" class="form-control float-right" placeholder="Search">
-                                                <div class="input-group-append">
-                                                    <button type="submit" class="btn btn-default">
-                                                        <i class="fas fa-search"></i>
-                                                    </button>
-                                                </div>
-                                                <button type="submit" name="export" value="export" class="btn btn-primary" style="height: 31px;padding-top: 2px;">Export</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div> --}}
                             </div>
                             <div class="card-body table-responsive p-2">
                                 <table class="table table-bordered table-striped">
@@ -120,6 +105,7 @@
                                             </tr>
                                         @endforelse
                                     </tbody>
+                                    <b>Total Remaining Payout : </b>₹ {{$total_withdrawal_request}}
                                 </table>
                                 <hr>
                                 <div class="row">
