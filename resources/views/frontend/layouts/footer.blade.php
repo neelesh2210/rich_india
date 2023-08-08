@@ -415,7 +415,7 @@
                 <p>©
                     <script>
                         document.write(new Date().getFullYear())
-                    </script> The Success Preneur || All Rights Reserved
+                    </script> CareerFixx || All Rights Reserved
                 </p>
             </div>
         </div>

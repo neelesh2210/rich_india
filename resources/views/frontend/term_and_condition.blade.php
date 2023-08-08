@@ -246,7 +246,7 @@
                                     and Conditions constitutes acceptance of those changes.</p>
 
                                 <h3>Need Help?</h3>
-                                <p>Contact us at info@thesuccesspreneur.com for questions related to refunds and cancel.</p>
+                                <p>Contact us at info@careefix.com for questions related to refunds and cancel.</p>
                             </div>
                         </div>
                     </div>

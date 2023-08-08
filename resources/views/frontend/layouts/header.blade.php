@@ -6,7 +6,7 @@
                 <div class="col-md-6 left-box">
                     <ul class="info">
                         <li><i class="flaticon-phone-call"></i>+91-81687 01056</li>
-                        <li><i class="flaticon-mail"></i>info@thesuccesspreneur.com</li>
+                        <li><i class="flaticon-mail"></i>info@careefix.com</li>
                     </ul>
 
                 </div>

@@ -31,20 +31,20 @@
                             </div>
                             <h5 class="mb-3 text-uppercase bg-light p-2">Personal Information</h5>
                             <hr>
-                            <form action="{{route('user.save.user.profile')}}" method="POST" enctype="multipart/form-data">
+                            <form action="" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
-                                        <input type="text" id="name" name="name" value="{{$user_details->name}}" class="form-control" required>
+                                        <input type="text" id="name" name="name" value="{{$user_details->name}}" class="form-control" required readonly>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
-                                        <input type="email" id="email" name="email" value="{{$user_details->email}}" class="form-control" placeholder="Email" readonly required>
+                                        <input type="email" id="email" name="email" value="{{$user_details->email}}" class="form-control" placeholder="Email" readonly required readonly>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="phone" class="form-label">Phone <span class="text-danger">*</span></label>
-                                        <input type="number" id="phone" name="phone" value="{{$user_details->phone}}" class="form-control" required>
+                                        <input type="number" id="phone" name="phone" value="{{$user_details->phone}}" class="form-control" required readonly>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="gender" class="form-label">Gender <span  class="text-danger">*</span></label><br>
@@ -57,15 +57,15 @@
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="address" class="form-label">Address <span class="text-danger">*</span></label>
-                                        <input type="text" id="address" name="address" class="form-control" value="{{$user_details->address}}" placeholder="Address" required>
+                                        <input type="text" id="address" name="address" class="form-control" value="{{$user_details->address}}" placeholder="Address" required readonly>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="city" class="form-label">City <span class="text-danger">*</span></label>
-                                        <input type="text" id="city" name="city" class="form-control" value="{{$user_details->city}}" placeholder="City" required>
+                                        <input type="text" id="city" name="city" class="form-control" value="{{$user_details->city}}" placeholder="City" required readonly>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="state" class="form-label">State <span class="text-danger">*</span></label>
-                                        <select class="form-select" id="example-select" name="state" required>
+                                        <select class="form-select" id="example-select" name="state" required disabled>
                                             <option value="">Select State...</option>
                                             @foreach (states() as $state)
                                                 <option value="{{$state}}" @if($user_details->state == $state) selected @endif>{{$state}}</option>
@@ -74,17 +74,17 @@
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="pincode" class="form-label">Pincode <span class="text-danger">*</span></label>
-                                        <input type="text" id="pincode" name="pincode" class="form-control" value="{{$user_details->pincode}}" placeholder="Pincode" required>
+                                        <input type="text" id="pincode" name="pincode" class="form-control" value="{{$user_details->pincode}}" placeholder="Pincode" required readonly>
                                     </div>
-                                    <div class="col-md-6 mb-3">
+                                    {{-- <div class="col-md-6 mb-3">
                                         <label for="images" class="form-label">Avatar</label>
                                         <input type="file" name="avatar" id="img_input1" class="form-control" accept="image/*">
                                         <div class="p-2">
                                             <img id="img1" src="{{asset('frontend/images/avatar/'.$user_details->avatar)}}" onerror="this.onerror=null;this.src='{{asset('backend/img/no-image.png')}}'" height="100px" width="100px">
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
-                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                                {{-- <button type="submit" class="btn btn-primary">Save Changes</button> --}}
                             </form>
                             {{-- <h5 class="mb-3 text-uppercase bg-light p-2">Bank Account Information</h5>
                             <hr>

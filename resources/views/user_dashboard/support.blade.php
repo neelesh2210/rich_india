@@ -21,7 +21,7 @@
                                 <h5 class="mb-3 text-uppercase bg-light p-2">Contact Us</h5>
                                 <div class="mt-3">
                                     <p class="mt-4 mb-1"><strong><i class="uil uil-at"></i> Email:</strong></p>
-                                    <p>info@thesuccesspreneur.com</p>
+                                    <p>info@careefix.com</p>
                                     <p class="mt-3 mb-1"><strong><i class="uil uil-phone"></i> Phone Number:</strong></p>
                                     <p>+91-xxxxxxxxxx</p>
                                     <p class="mt-3 mb-1"><strong><i class="uil uil-location"></i> Location:</strong></p>

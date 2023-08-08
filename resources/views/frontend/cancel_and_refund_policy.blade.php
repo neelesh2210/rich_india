@@ -48,15 +48,15 @@
                                 <p>Next contact your bank. There is often some processing time before a refund is posted.
                                 </p>
                                 <p>If you’ve done all of this and you still have not received your refund yet, please
-                                    contact us at info@thesuccesspreneur.com.</p>
+                                    contact us at info@careefix.com.</p>
                                 <br><br>
-                                <p>For the refund, you need to mail at info@thesuccesspreneur.com In the following format
+                                <p>For the refund, you need to mail at info@careefix.com In the following format
                                     with registered e-mail ID only.</p>
                                 <p>Full Name –</p>
                                 <p>Registered e-mail ID –</p>
                                 <p>Registration date –</p>
                                 <h3>Need Help?</h3>
-                                <p>Contact us at info@thesuccesspreneur.com for questions related to refunds.</p>
+                                <p>Contact us at info@careefix.com for questions related to refunds.</p>
                             </div>
                         </div>
                     </div>
