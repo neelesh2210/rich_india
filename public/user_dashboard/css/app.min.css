@@ -4247,8 +4247,8 @@ fieldset:disabled .btn {
 
 .btn-danger {
     color: #fff;
-    background-color: #fa5c7c;
-    border-color: #fa5c7c
+    background-color: #ff00a5;
+    border-color: #ff00a5
 }
 
 .btn-danger:hover {
@@ -17202,8 +17202,8 @@ body[data-layout-color=dark] .custom-accordion-title:hover {
 }
 
 .btn-danger {
-    -webkit-box-shadow: 0 2px 6px 0 rgba(250, 92, 124, .5);
-    box-shadow: 0 2px 6px 0 rgba(250, 92, 124, .5)
+    /* -webkit-box-shadow: 0 2px 6px 0 rgba(250, 92, 124, .5);
+    box-shadow: 0 2px 6px 0 rgba(250, 92, 124, .5) */
 }
 
 .btn-light {
@@ -25976,7 +25976,7 @@ input.tutor-form-check-input.tutor-form-check-circle {
 }
 
 .gradient-45deg-purple-deep-orange {
-    background: #536dcc;
+    background: #691a9e;
 }
 
 .img-crcl {
