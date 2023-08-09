@@ -257,15 +257,15 @@ class RegisterController extends Controller
 
                         }
                     }else{
-                        try {
-                            Mail::send('email.passive_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount,'comes_from'=>$this->email], function($message) use($commission_user){
-                                $message->to($commission_user->email);
-                                $message->subject('RichIND Notification');
-                            });
-                            $this->email = $commission_user;
-                        } catch (\Throwable $th) {
+                        // try {
+                        //     Mail::send('email.passive_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount,'comes_from'=>$this->email], function($message) use($commission_user){
+                        //         $message->to($commission_user->email);
+                        //         $message->subject('RichIND Notification');
+                        //     });
+                        //     $this->email = $commission_user;
+                        // } catch (\Throwable $th) {
 
-                        }
+                        // }
                     }
                 }
             }
@@ -315,16 +315,16 @@ class RegisterController extends Controller
 
                     }
                 }else{
-                    try {
-                        $user = User::where('referrer_code',$commission_user->referral_code)->first();
-                        Mail::send('email.passive_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount,'comes_from'=>$this->email], function($message) use($commission_user){
-                            $message->to($commission_user->email);
-                            $message->subject('RichIND Notification');
-                        });
-                        $this->email = $commission_user;
-                    } catch (\Throwable $th) {
+                    // try {
+                    //     $user = User::where('referrer_code',$commission_user->referral_code)->first();
+                    //     Mail::send('email.passive_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount,'comes_from'=>$this->email], function($message) use($commission_user){
+                    //         $message->to($commission_user->email);
+                    //         $message->subject('RichIND Notification');
+                    //     });
+                    //     $this->email = $commission_user;
+                    // } catch (\Throwable $th) {
 
-                    }
+                    // }
                 }
 
             }else{
@@ -357,15 +357,15 @@ class RegisterController extends Controller
 
                     }
                 }else{
-                    try {
-                        $user = User::where('referrer_code',$commission_user->referral_code)->first();
-                        Mail::send('email.passive_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount,'comes_from'=>$this->email], function($message) use($commission_user){
-                            $message->to($commission_user->email);
-                            $message->subject('RichIND Notification');
-                        });
-                        $this->email = $commission_user;
-                    } catch (\Throwable $th) {
-                    }
+                    // try {
+                    //     $user = User::where('referrer_code',$commission_user->referral_code)->first();
+                    //     Mail::send('email.passive_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount,'comes_from'=>$this->email], function($message) use($commission_user){
+                    //         $message->to($commission_user->email);
+                    //         $message->subject('RichIND Notification');
+                    //     });
+                    //     $this->email = $commission_user;
+                    // } catch (\Throwable $th) {
+                    // }
                 }
             }
         }
