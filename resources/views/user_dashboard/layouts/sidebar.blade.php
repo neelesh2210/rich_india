@@ -29,6 +29,12 @@
                     </a>
                 </li>
                 <li class="side-nav-item">
+                    <a href="{{route('user.plan')}}" class="side-nav-link">
+                        <i class="uil-wallet"></i>
+                        <span> My Plan </span>
+                    </a>
+                </li>
+                <li class="side-nav-item">
                     <a href="{{route('user.traffic')}}" class="side-nav-link">
                         <i class="uil-users-alt"></i>
                         <span> My Team </span>

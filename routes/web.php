@@ -57,6 +57,7 @@ Route::get('instamojo/payment/pay-success',[InstamojoController::class, 'success
 
 Route::get('phonepe/callback',[PhonepeController::class, 'callback'])->name('phonepe.callback');
 Route::get('phonepe/redirectUrl',[PhonepeController::class, 'redirectUrl'])->name('phonepe.redirectUrl');
+Route::get('phonepe/redirectUrl/update',[PhonepeController::class, 'redirectUrlUpdate'])->name('phonepe.redirectUrl.update');
 
 //thank you
 Route::view('thank-you', 'frontend.thank_you')->name('thank.you');

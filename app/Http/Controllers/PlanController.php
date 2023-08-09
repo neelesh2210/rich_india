@@ -32,31 +32,31 @@ class PlanController extends Controller
         return view('frontend.course_details',compact('plan_detail'));
     }
 
-    public function upgradePlanPayment(Request $request)
-    {
-        $input = $request->all();
+    // public function upgradePlanPayment(Request $request)
+    // {
+    //     $input = $request->all();
 
-        $api = new Api(env('RAZORPAY_KEY'), env('RAZORPAY_SECRET'));
+    //     $api = new Api(env('RAZORPAY_KEY'), env('RAZORPAY_SECRET'));
 
-        $payment = $api->payment->fetch($request->razorpay_payment_id);
+    //     $payment = $api->payment->fetch($request->razorpay_payment_id);
 
-        if(count($input)  && !empty($request->razorpay_payment_id)) {
-            $payment_detalis = null;
-            try {
-                $response = $api->payment->fetch($request->razorpay_payment_id)->capture(array('amount'=>$payment['amount']));
-                $payment_detalis = json_encode(array('id' => $response['id'],'method' => $response['method'],'amount' => $response['amount']/100,'currency' => $response['currency']));
-                $request->request->add(['upgrade_plan_id' => $request->upgrade_plan_id,'payment_detalis' => $payment_detalis]);
-                return $this->upgradePlan($request);
+    //     if(count($input)  && !empty($request->razorpay_payment_id)) {
+    //         $payment_detalis = null;
+    //         try {
+    //             $response = $api->payment->fetch($request->razorpay_payment_id)->capture(array('amount'=>$payment['amount']));
+    //             $payment_detalis = json_encode(array('id' => $response['id'],'method' => $response['method'],'amount' => $response['amount']/100,'currency' => $response['currency']));
+    //             $request->request->add(['upgrade_plan_id' => $request->upgrade_plan_id,'payment_detalis' => $payment_detalis]);
+    //             return $this->upgradePlan($request);
 
-            } catch (\Exception $e) {
-                return  $e->getMessage();
-                \Session::put('error',$e->getMessage());
-                return redirect()->back();
-            }
-        }
+    //         } catch (\Exception $e) {
+    //             return  $e->getMessage();
+    //             \Session::put('error',$e->getMessage());
+    //             return redirect()->back();
+    //         }
+    //     }
 
-        return json_decode($payment_detalis);
-    }
+    //     return json_decode($payment_detalis);
+    // }
 
     // public function upgradePlanPayment(Request $request)
     // {
@@ -67,6 +67,16 @@ class PlanController extends Controller
     //         return response()->json(['msg'=>'Update Your Phone Number!'],422);
     //     }
     // }
+
+    public function upgradePlanPayment(Request $request)
+    {
+        if(Auth::guard('web')->user()->phone){
+            $phonepe = new PhonepeController;
+            return $phonepe->payWithPhonePeUpdate($request);
+        }else{
+            return response()->json(['msg'=>'Update Your Phone Number!'],422);
+        }
+    }
 
     public function upgradePlan(Request $request)
     {

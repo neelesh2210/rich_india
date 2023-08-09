@@ -44,7 +44,7 @@
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="phone" class="form-label">Phone <span class="text-danger">*</span></label>
-                                        <input type="number" id="phone" name="phone" value="{{$user_details->phone}}" class="form-control" required readonly>
+                                        <input type="number" id="phone" name="phone" value="{{$user_details->phone}}" class="form-control" required>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="gender" class="form-label">Gender <span  class="text-danger">*</span></label><br>

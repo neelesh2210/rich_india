@@ -115,6 +115,10 @@
                                          <div class="sub-head-4"></div>
                                         @endif
 
+                                        @if ($key==4)
+                                         <div class="sub-head-4"></div>
+                                        @endif
+
                                     <img src="{{asset('user_dashboard/images/favicon.png')}}">
 
                                     <div class="pricing-header">
@@ -191,64 +195,64 @@
 
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script>
-        function pay(upgrade_plan_id,amount)
-        {
-            $('#loading_div').show()
-            $(window).scrollTop(0);
-            var coupon = $('#modal_coupon').val();
-            $('#loading_div').show()
-            var options =
-            {
-                "key": "{{ env('RAZORPAY_KEY') }}",
-                "amount": amount * 100,
-                "currency": "INR",
-                "name": "RichIND",
-                "description": "Upgrade Plan",
-                "image": "{{ asset('backend/img/logo.png') }}",
-                "order_id": "",
-                "handler": function(response)
-                {
-                    $.ajaxSetup({
-                        headers: {
-                            'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                        }
-                    });
-                    $.ajax({
-                        type: 'POST',
-                        url: "{{ route('user.upgrade.plan.payment') }}?upgrade_plan_id="+upgrade_plan_id+"&razorpay_payment_id="+response.razorpay_payment_id+"&coupon="+coupon,
-                        success: function(data) {
-                            window.location.replace(data);
-                            $('#loading_div').hide()
-                            $('#coupon-modal').modal('hide')
-                            location.reload();
-                        },
-                        error: function(request, status, error) {
-                            const Toast = Swal.mixin({
-                                toast: true,
-                                position: 'top-end',
-                                showConfirmButton: false,
-                                timer: 3000,
-                                timerProgressBar: true,
-                            });
-                            Toast.fire({
-                                icon: "error",
-                                title: request.responseJSON.msg,
-                            });
-                        }
-                    });
-                },
-                "prefill": {
-                    "email": "{{ Auth::guard('web')->user()->email }}",
-                    "contact":"{{ Auth::guard('web')->user()->phone }}"
-                },
-                "theme":
-                {
-                    "color": "#4553c8db"
-                }
-            };
-            var rzp1 = new Razorpay(options);
-            rzp1.open();
-        }
+        // function pay(upgrade_plan_id,amount)
+        // {
+        //     $('#loading_div').show()
+        //     $(window).scrollTop(0);
+        //     var coupon = $('#modal_coupon').val();
+        //     $('#loading_div').show()
+        //     var options =
+        //     {
+        //         "key": "{{ env('RAZORPAY_KEY') }}",
+        //         "amount": amount * 100,
+        //         "currency": "INR",
+        //         "name": "RichIND",
+        //         "description": "Upgrade Plan",
+        //         "image": "{{ asset('backend/img/logo.png') }}",
+        //         "order_id": "",
+        //         "handler": function(response)
+        //         {
+        //             $.ajaxSetup({
+        //                 headers: {
+        //                     'X-CSRF-TOKEN': '{{ csrf_token() }}'
+        //                 }
+        //             });
+        //             $.ajax({
+        //                 type: 'POST',
+        //                 url: "{{ route('user.upgrade.plan.payment') }}?upgrade_plan_id="+upgrade_plan_id+"&razorpay_payment_id="+response.razorpay_payment_id+"&coupon="+coupon,
+        //                 success: function(data) {
+        //                     window.location.replace(data);
+        //                     $('#loading_div').hide()
+        //                     $('#coupon-modal').modal('hide')
+        //                     location.reload();
+        //                 },
+        //                 error: function(request, status, error) {
+        //                     const Toast = Swal.mixin({
+        //                         toast: true,
+        //                         position: 'top-end',
+        //                         showConfirmButton: false,
+        //                         timer: 3000,
+        //                         timerProgressBar: true,
+        //                     });
+        //                     Toast.fire({
+        //                         icon: "error",
+        //                         title: request.responseJSON.msg,
+        //                     });
+        //                 }
+        //             });
+        //         },
+        //         "prefill": {
+        //             "email": "{{ Auth::guard('web')->user()->email }}",
+        //             "contact":"{{ Auth::guard('web')->user()->phone }}"
+        //         },
+        //         "theme":
+        //         {
+        //             "color": "#4553c8db"
+        //         }
+        //     };
+        //     var rzp1 = new Razorpay(options);
+        //     rzp1.open();
+        // }
 
         // function pay(upgrade_plan_id,amount) {
         //     var coupon = $('#modal_coupon').val();
@@ -278,6 +282,35 @@
         //         }
         //     });
         // }
+
+        function pay(upgrade_plan_id,amount) {
+            var coupon = $('#modal_coupon').val();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                }
+            });
+            $.ajax({
+                type: 'POST',
+                url: "{{ route('user.upgrade.plan.payment') }}?upgrade_plan_id=" + upgrade_plan_id + "&amount=" +amount+"&coupon="+coupon,
+                success: function(data) {
+                    window.location.replace(data);
+                },
+                error: function(request, status, error) {
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true,
+                    });
+                    Toast.fire({
+                        icon: "error",
+                        title: request.responseJSON.msg,
+                    });
+                }
+            });
+        }
     </script>
 
     <script>

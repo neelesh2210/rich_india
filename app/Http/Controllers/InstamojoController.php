@@ -99,18 +99,18 @@ class InstamojoController extends Controller
                     "phone" => Auth::guard('web')->user()->phone,
                     "redirect_url" => url('user/instamojo/payment/pay-success-upgrade')
                 ));
-                    session()->put('data_upgrade',$input);
-                    return $response['longurl'];
-                }catch (Exception $e) {
-                    print('Error: ' . $e->getMessage());
-                }
-            }
-            else{
-                return redirect()->back();
+                session()->put('data_upgrade',$input);
+                return $response['longurl'];
+            }catch (Exception $e) {
+                print('Error: ' . $e->getMessage());
             }
         }
+        else{
+            return redirect()->back();
+        }
+    }
 
-        public function upgrade_success(Request $request){
+    public function upgrade_success(Request $request){
         try {
             $endPoint = env('INSTAMOJO_END_POINT');
             $api = new \Instamojo\Instamojo(
