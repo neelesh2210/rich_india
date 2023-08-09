@@ -50,12 +50,12 @@
                         </a>
                     </li> --}}
                 @endcan
-                {{-- <li class="nav-item">
+                <li class="nav-item">
                     <a href="{{route('admin.get.old.users')}}" class="nav-link @if(Route::currentRouteName() == 'admin.get.old.users') active @endif">
                         <i class="nav-icon fas fa-users"></i>
                         <p>Manage Old Users</p>
                     </a>
-                </li> --}}
+                </li>
                 @can('order-list')
                     <li class="nav-item">
                         <a href="{{route('admin.payment.transaction.index')}}" class="nav-link @if(Route::currentRouteName() == 'admin.payment.transaction.index') active @endif">
