@@ -55,7 +55,8 @@
                                 </div>
                             </div>
                         </div>
-
+                    </div>
+                    <div class="col-xxl-12">
                         <div class="row mt-sm-2 mt-3 mb-3">
                             @foreach ($plans as $key => $plan)
                                {{-- <div class="col-md-4">
@@ -95,7 +96,7 @@
                                         {{-- </div>
                                     </div>
                                 </div> --}}
-                               <div class="col-md-4">
+                               <div class="col-md-4 mb-3">
                                 <div class="single-pricing-table with-hover-color">
                                     <a href="{{route('checkout')}}?slug={{$plan->slug}}" class="w-100">
 
@@ -116,7 +117,7 @@
                                         @endif
 
                                         @if ($key==4)
-                                         <div class="sub-head-4"></div>
+                                         <div class="sub-head-5"></div>
                                         @endif
 
                                     <img src="{{asset('user_dashboard/images/favicon.png')}}">
@@ -147,7 +148,7 @@
                                             @endforeach
                                         </ul>
 
-                                        <center>
+                                        <center style="border-top: 1px solid #ddd;">
                                             @if ($current_plan->plan->priority >= $plan->priority)
                                             <a class="btn btn-primary mt-2 mb-2 radius-10">Active Plan</a>
                                             @else
