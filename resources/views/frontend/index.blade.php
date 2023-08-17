@@ -93,6 +93,7 @@
             <div class="section-header aos">
                 <div class="section-sub-head">
                     <h2>Our Exclusive Packages</h2>
+                    <span class="animate-border"></span>
                 </div>
             </div>
             <div class="section-text aos">
@@ -110,10 +111,8 @@
                                     <div class='product-img'>
                                         <a href="{{ route('checkout') }}?slug={{ $plan->slug }}"
                                             title="{{ env('APP_NAME') }}-{{ $plan->title }}">
-                                            <center>
                                                 <img src="{{ 'backend/img/plan/' . $plan->image }}"
                                                     alt="{{ env('APP_NAME') }}-{{ $plan->title }}" class="img-fluid">
-                                            </center>
                                         </a>
                                     </div>
                                     <div class='product-content'>
@@ -167,6 +166,7 @@
         <div class="section-header aos">
             <div class="section-sub-head feature-head text-center">
                 <h2>Instructor At Richind</h2>
+                <span class="animate-border-center"></span>
                 <div class="section-text aos">
                     <p class="mb-0">
                         At Richin, you can now be assured to get the top-most training from the leading educators of
@@ -212,21 +212,22 @@
         </div>
     </section>
 
-    {{-- <section class="section master-skill why-ushome">
+ <section class="section master-skill why-ushome">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-7 col-lg-12 col-md-12">
                     <div class="section-header aos">
                         <div class="section-sub-head">
                             <span>Why Choose Us?</span>
-                            <h2>Why Richind ?</h2>
+                            <h2>Why Choose RICHIND For Remote Learning ?</h2>
+                            <span class="animate-border"></span>
                         </div>
                     </div>
                     <div class="section-text aos">
                         <p>
-                            Change is a must when you wish to step ahead in your career. LeadsGuru, an ed-tech
+                            Change is a must when you wish to step ahead in your career. Richind, an ed-tech
                             platform, never lets you down. With its first-of-its-kind training programs and industry
-                            leaders, LeadsGuru ensures to make your professional journey a leading narrative.
+                            leaders, Richind ensures to make your professional journey a leading narrative.
                         </p>
                     </div>
                     <div class="career-group aos">
@@ -240,9 +241,7 @@
                                             </div>
                                         </div>
                                         <p class="txt-dark-1">
-                                            <strong class="fs-15 gordita-bold">Same Day Payout:</strong> We Provide
-                                            Valuable Courses At Most Affordable Price. Because We Think Everyone
-                                            Deserves To Be Educate And For Education You Don't Need To Spend High
+                                            <strong class="fs-15 gordita-bold">High Paying Skills:</strong>
                                         </p>
                                     </div>
                                 </div>
@@ -256,9 +255,7 @@
                                             </div>
                                         </div>
                                         <p class="txt-dark-1">
-                                            <strong class="fs-15 gordita-bold">Live Training:</strong> We Have A
-                                            Premium Structure Of Daily Payout In GyanKamao. You Can Receive Your
-                                            Payout Within 24 Hours
+                                            <strong class="fs-15 gordita-bold">Valuable Courses:</strong>
                                         </p>
                                     </div>
                                 </div>
@@ -272,9 +269,7 @@
                                             </div>
                                         </div>
                                         <p class="txt-dark-1">
-                                            <strong class="fs-15 gordita-bold">VALUABLE COURSES:</strong> We Believe
-                                            To Provide Values To Our GyanKamao Family. And Our Courses Are Designed
-                                            On This Principal. We Have The Most Valuable Courses.
+                                            <strong class="fs-15 gordita-bold">Affordable Pricing:</strong>
                                         </p>
                                     </div>
                                 </div>
@@ -288,9 +283,7 @@
                                             </div>
                                         </div>
                                         <p class="txt-dark-1">
-                                            <strong class="fs-15 gordita-bold">150+ TRAINING SESSIONS:</strong> 150+
-                                            Training Sessions: With Valueable Courses For Adding More Value. We
-                                            Provide 150+ Training Sessions For Our GyanKamao Family.
+                                            <strong class="fs-15 gordita-bold">24/7 Online Support:</strong>
                                         </p>
                                     </div>
                                 </div>
@@ -306,7 +299,7 @@
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section>
 
     <section class="section share-knowledge founder-sec">
         <div class="container">
@@ -320,8 +313,11 @@
                 </div>
                 <div class="col-xl-7 col-lg-12 col-sm-7 d-flex align-items-center mt-xl-30">
                     <div class="join-mentor aos mar-top-20-xs pl-50">
-                        <h2>Meet Our Founder</h2>
-                        Demonstrate your idea before making an investment in technical resources.
+                        <h2>What Is Richind ?</h2>
+                        <span class="animate-border" style="margin-bottom: 12px;"></span>
+                        The Richind is a digitally organized E-learning platform that focuses on the SKILL DEVELOPMENT of it's students by giving courses in a variety of disciplines that may assist anyone solidify their talents.
+                        {{-- <h2>Meet Our Founder</h2>
+                        Demonstrate your idea before making an investment in technical resources. --}}
                     </div>
                 </div>
             </div>
@@ -334,26 +330,25 @@
                 <div class="section-sub-head">
                     <span>Testimonial</span>
                     <h2>Hear from Our Alumni</h2>
+                    <span class="animate-border"></span>
                 </div>
             </div>
             <div class="owl-carousel mentoring-course owl-theme aos">
                 <div class='item'>
-                    <p>Richind is E-learning platform skill development, help to people earn money thought social
-                        media ?</p>
-                    <p><strong>SR EDITZ OFFICIAL</strong></p>
+                    <p>I have been working with RICHIND for over a year now, and I am extremely satisfied with the experience. This company has exceeded my expectations in terms of professionalism, support, and earnings.</p>
+                    <p><strong>Sandeep Singh</strong></p>
                 </div>
                 <div class='item'>
-                    <p>Nothing but a method to promote affiliate marketing. One type of Pyramid scheme. It's not
-                        private company. It's manged by proprieter , to gain your trust they have added all the
-                        documents like gst, msme certificate on their website. Only naive and illiterate people will
-                        join this platform.</p>
-                    <p><strong>Nishikant Mane</strong></p>
+                    <p>I Am A Student & I Am So Happy To Become A Part Of This Beautiful Platform RICHIND Because I Was Finding A Part Time Work That I Could Earn Money Along With My Studies.</p>
+                    <p><strong>Parminder Singh</strong></p>
                 </div>
                 <div class='item'>
-                    <p>Affiliate marketing ke liye sabse behtarin website yah aapke karta hai ki aap kisi kar se
-                        kaam kar raha hai hai agar aap ek din mein lakh rupees Kama kam sakte hain ek din mein 500
-                        rupees upar defend tractor ki aap kis prakar customer ko handle kar rahe hain</p>
-                    <p><strong>Sandeep Verma</strong></p>
+                    <p> I Am A Collage Student. I Wont To Earn Money As A Part Time With My Study But When I Started RICHIND Searching On YouTube & Google,Its So Amazing E-learning and Earning Platform</p>
+                    <p><strong>Kinshu Gupta</strong></p>
+                </div>
+                <div class='item'>
+                    <p>  Loved to Join RICHIND Here’s Trainings are so powerful i have earned 10k in just 2 days. Best thing on this platform is support from your mentors.</p>
+                    <p><strong>Chhavi Tyagi</strong></p>
                 </div>
             </div>
         </div>
@@ -368,6 +363,7 @@
                             <div class="col-lg-8 m-lg-auto">
                                 <div class="newsletter-txt text-center pr-20">
                                     <h4 class="h4-sm">Freequently Asked Questions</h4>
+                                    <span class="animate-border-center"></span>
                                 </div>
                             </div>
                             <div class="col-lg-10 m-lg-auto">

@@ -16,6 +16,7 @@
                                 <div class="loginbox">
                                     <div class="w-100">
                                         <h1 class="gordita-bold">Login To Richind</h1>
+                                        <span class="animate-border" style="margin-bottom: 12px;"></span>
                                         <form action="{{ route('login') }}" method="POST">
                                             @csrf
                                        @if ($errors->has('error'))

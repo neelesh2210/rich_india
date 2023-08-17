@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-sm-5">
-                <div class="support-wrap bg-brand-pink h-640 mh-640">
+                <div class="support-wrap bg-brand-pink">
                     <p class="text-white mar-top-80 mar-btm-4">Let's Talk</p>
                     <h5 class="text-white fs-35">Keep Connected With Us</h5>
                     <div class="row">
@@ -62,18 +62,19 @@
             </div>
             <div class="col-lg-8 col-sm-7">
                 <div class="support-wrap">
-                    <h5 class="fs-35">Fill The Form Below</h5>
-                    <div>
-                        <form action="https://thegrowthindia.in/Web/insert_contact" method="post">
-                            <div class="form-group">
+                    <h5>Fill The Form Below</h5>
+                    <p>If you have any questions, concerns, or complaints regarding this refund policy, we encourage you to contact us using the details below.</p>
+                    <form action="https://thegrowthindia.in/Web/insert_contact" method="post">
+                        <div class="row">
+                            <div class="form-group col-md-12">
                                 <label>Name</label>
                                 <input name="name" type="text" class="form-control" placeholder="Enter your Full Name" required />
                             </div>
-                            <div class="form-group">
+                            <div class="form-group col-md-6">
                                 <label>Email</label>
                                 <input name="email" type="email" class="form-control" placeholder="Enter your Email Address" />
                             </div>
-                            <div class="form-group">
+                            <div class="form-group col-md-6">
                                 <label>Phone</label>
                                 <input name="contact" type="text" class="form-control" placeholder="Enter your Contact Number" maxlength="10" />
                             </div>
@@ -82,8 +83,8 @@
                                 <textarea name="message" rows="4" cols="20" class="form-control" placeholder="Write down here"></textarea>
                             </div>
                             <input type="submit" value="Submit" class="btn btn-submit" />
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
