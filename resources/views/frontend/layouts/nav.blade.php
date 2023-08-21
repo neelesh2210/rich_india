@@ -42,7 +42,7 @@
                         </li>
                         <li>
                             {{-- <a href="{{route('about')}}" title="{{env('APP_NAME')}}-About-Us"> --}}
-                            <a href="#" title="{{env('APP_NAME')}}-About-Us">
+                            <a href="{{route('about')}}" title="{{env('APP_NAME')}}-About-Us">
                                 About Us
                             </a>
                         </li>

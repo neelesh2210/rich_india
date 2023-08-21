@@ -34,6 +34,8 @@
                                 <p>To complete your return, we require a receipt or proof of purchase.</p>
 
                                 <h3>Refunds</h3>
+                                <p>Since the Website offers non-tangible, irrevocable goods we do not provide refunds after the product is purchased, which you acknowledge prior to purchasing any product on the Website.</p>
+                                <p>We do have a fully functioning 365 day trial available which is identical to the product that you may download and try before making a purchase.</p>
                                 <p>Once your refund request is received and inspected, we will send you an email to notify
                                     you that we have received your request. We will also notify you of the approval or
                                     rejection of your refund.</p>
