@@ -126,8 +126,8 @@
             var remaining_commission = "{{$remaining_commission}}"
             if(amount){
                 $('.error_span').text('')
-                if(amount < 500){
-                    $('.error_span').text('*Amount should be greater then ₹ 500!')
+                if(amount < 400){
+                    $('.error_span').text('*Amount should be greater then ₹ 400!')
                 }else{
                     if(parseInt(amount) <= parseInt(remaining_commission)){
                         Swal.fire({
