@@ -61,6 +61,18 @@
                                                 </div>
                                                 <span id="error_refferal" class="lbl_msg"></span>
                                             </div>
+                                            <div class="col-md-3 form_div">
+                                                <div class="form-group">
+                                                    <label for="old_paid_payout">Old Paid Payout</label>
+                                                    <input type="number" step="0.01" class="form-control" name="old_paid_payout" value="{{$user->userDetail->old_paid_payout}}" placeholder="Enter Old Paid Payout...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 form_div">
+                                                <div class="form-group">
+                                                    <label for="old_not_paid_payout">Old Unpaid Payout</label>
+                                                    <input type="number" step="0.01" class="form-control" name="old_not_paid_payout" value="{{$user->userDetail->old_not_paid_payout}}" placeholder="Enter Old Unpaid Payout...">
+                                                </div>
+                                            </div>
                                         </div>
                                         <hr>
                                         <div class="row">

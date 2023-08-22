@@ -299,7 +299,7 @@ class UserController extends Controller
     }
 
     public function edit($id){
-        $user = User::with('bankDetail')->find($id);
+        $user = User::with(['bankDetail','userDetail'])->find($id);
 
         return view('admin.user.edit',compact('user'),['page_title'=>'Edit User']);
     }
@@ -322,6 +322,11 @@ class UserController extends Controller
         $user->state = $request->state;
         $user->referral_code = $request->referral_code;
         $user->save();
+
+        $user_detail = UserDetail::where('user_id',$id)->first();
+        $user_detail->old_paid_payout = $request->old_paid_payout;
+        $user_detail->old_not_paid_payout = $request->old_not_paid_payout;
+        $user_detail->save();
 
         BankDetail::updateOrCreate([
             'user_id'=>$id
