@@ -12862,7 +12862,7 @@ input[type=password]::-ms-clear {
     }
     .owl-carousel
     {
-        margin-top: 66px;
+        margin-top: 65px;
     }
     .navbar-header {
         width: 100%
@@ -12903,7 +12903,7 @@ input[type=password]::-ms-clear {
         top: 18px;
         margin-right: 20px;
         position: absolute;
-        right: 0px;
+        right: 10px;
     }
 
     .logo img,
