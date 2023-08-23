@@ -1872,7 +1872,7 @@ input[readonly] {
         padding: 30px 0 0;
     }
     .section-sub-head span {
-        padding-bottom: 10px;
+        /* padding-bottom: 10px; */
     }
     .about-first .course-list{
         margin-bottom:0px;
