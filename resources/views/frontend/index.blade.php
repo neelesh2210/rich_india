@@ -2,7 +2,6 @@
 @section('content')
     <!-- Start DeskTop Slider Area -->
     <section>
-            <div class="row ">
                 <div class="owl-carousel owl-theme">
                     @foreach ($desktop_sliders as $desktop_slider)
                         <div class="item">
@@ -11,7 +10,6 @@
                         </div>
                     @endforeach
                 </div>
-        </div>
     </section>
     <!-- End DeskTop Slider Area -->
 
