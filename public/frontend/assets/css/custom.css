@@ -1747,7 +1747,10 @@ input[readonly] {
         margin-bottom: 20px;
     }
     .top-strip .course-widget {
-        padding: 20px 20px 0;
+        padding: 0;
+    }
+    .fa-2x {
+        font-size: 1.25em;
     }
     .top-strip .course-inner-content h4 {
         margin-bottom: 5px;
@@ -1756,7 +1759,7 @@ input[readonly] {
         margin-bottom: 20px;
     }
     .top-strip .online-course {
-        padding: 10px 15px;
+        padding: 8px 6px;
     }
     .new-course{
         margin-top:0px;
@@ -1925,15 +1928,15 @@ input[readonly] {
         font-size: 35px!important;
     }
     .online-course .icon-circle {
-        width: 60px!important;
-        height: 60px!important;
+        width: 50px!important;
+        height: 50px!important;
      }
     .trend-course.how-works-sec p.how-card-para {
         min-height: unset;
         margin-bottom: 10px;
     }
     .online-course h4 {
-        font-size: 18px;
+        font-size: 15px;
     }
     .course-inner-content p {
         font-size: 14px;

@@ -2142,7 +2142,7 @@ html.menu-opened body {
 }
 
 .section-sub-head h2 {
-    font-size: 36px;
+    font-size: 32px;
     margin-bottom: 0;
     font-weight: 700;
     color: #0b0b0b;
@@ -2160,11 +2160,11 @@ html.menu-opened body {
 } */
 
 .section-text {
-    max-width: 700px;
+    max-width: 750px;
     color: #685f78;
     font-size: 16px;
-    text-align: justify;
-    font-weight: 500
+    text-align: center;
+    font-weight: 500;
 }
 
 .all-btn {

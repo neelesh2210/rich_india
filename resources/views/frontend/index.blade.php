@@ -17,7 +17,7 @@
         <div class="container">
             <div class="course-widget">
                 <div class="row">
-                    <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-6">
                         <div class="course-full-width">
                             <div class="blur-border course-radius align-items-center aos">
                                 <div class="online-course d-flex align-items-center">
@@ -32,7 +32,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-6">
                         <div class="course-full-width">
                             <div class="blur-border course-radius align-items-center aos">
                                 <div class="online-course d-flex align-items-center">
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-6">
                         <div class="course-full-width">
                             <div class="blur-border course-radius align-items-center aos">
                                 <div class="online-course d-flex align-items-center">
@@ -62,7 +62,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-6">
                         <div class="course-full-width">
                             <div class="blur-border course-radius align-items-center aos">
                                 <div class="online-course d-flex align-items-center">
@@ -158,6 +158,7 @@
         </div>
     </section>
 
+
     <div class="feature-instructors trend-course instructorhome-sec">
         <div class="section-header aos">
             <div class="section-sub-head feature-head text-center">
@@ -171,6 +172,30 @@
                 </div>
             </div>
         </div>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-7">
+                        <div class="about-content-wrap with-white-text aos-init" data-aos="fade-left" data-aos-duration="500">
+                            <div class="section-header aos">
+                                <div class="section-sub-head">
+                                    <h2>CEO & Founder of RichInd - <br> Mr. Harsh Kulshrestha</h2>
+                                </div>
+                            </div>
+                            <p>Harsh Kulshrestha is one of the Youngest Entrepreneur and YouTuber from India. He started his journey
+                                since 2018. He has 5 years Experience about Sales And Law of attraction. He love to share his
+                                knowledge with youth. He has made 200 Lakhpati In India. He is guiding now 10k people about
+                                social media marketing in this company.</p>
+
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="aos-init aos-animate" data-aos="fade-right" data-aos-delay="50" data-aos-duration="500" data-aos-once="true">
+                            <img src="{{ asset('frontend/images/founder.png') }}" alt="image" class="img-fluid">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         <div class="container">
             <div class="owl-carousel instructors-course owl-theme aos">
                 @foreach ($instructors as $instructor)
