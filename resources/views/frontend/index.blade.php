@@ -178,10 +178,10 @@
                         <div class="about-content-wrap with-white-text aos-init" data-aos="fade-left" data-aos-duration="500">
                             <div class="section-header aos">
                                 <div class="section-sub-head">
-                                    <h2>CEO & Founder of RichInd - <br> Mr. Harsh Kulshrestha</h2>
+                                    <h2>CEO & Founder of RichInd - <br> Mr. Yash kulshrestha</h2>
                                 </div>
                             </div>
-                            <p>Harsh Kulshrestha is one of the Youngest Entrepreneur and YouTuber from India. He started his journey
+                            <p>Yash kulshrestha is one of the Youngest Entrepreneur and YouTuber from India. He started his journey
                                 since 2018. He has 5 years Experience about Sales And Law of attraction. He love to share his
                                 knowledge with youth. He has made 200 Lakhpati In India. He is guiding now 10k people about
                                 social media marketing in this company.</p>
