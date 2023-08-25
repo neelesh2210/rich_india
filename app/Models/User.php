@@ -60,4 +60,8 @@ class User extends Authenticatable
         return $this->hasMany(Payout::class,'user_id','id');
     }
 
+    public function associates(){
+        return $this->hasMany(User::class,'referral_code','referrer_code')->where('delete_status','0');
+    }
+
 }

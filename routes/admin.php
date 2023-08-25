@@ -25,6 +25,7 @@ use App\Http\Controllers\Admin\WebsiteSettingController;
 use App\Http\Controllers\Admin\AutomatedPayoutController;
 use App\Http\Controllers\Admin\TestimonialVideoController;
 use App\Http\Controllers\Admin\CommissionSettingController;
+use App\Http\Controllers\Admin\EmergingAssociateController;
 use App\Http\Controllers\Admin\MarketingMaterialController;
 use App\Http\Controllers\Admin\WithdrawalRequestController;
 
@@ -121,6 +122,9 @@ Route::group(['middleware'=>'auth:admin','as'=>'admin.'],function () {
 
     //Coupon
     Route::resource('coupons',CouponController::class);
+
+    //Emerging Associate
+    Route::get('emerging-associate',[EmergingAssociateController::class,'index'])->name('emerging.associate');
 
     //Instructor
     Route::resource('instructors',InstructorController::class);
