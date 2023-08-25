@@ -27,14 +27,19 @@ class EmergingAssociateController extends Controller
 
             $search_date=$dates[0].' - '.$dates[1];
 
-            $users = $users->whereBetween('created_at',[$startDate,$endDate]);
+            //$users = $users->whereBetween('created_at',[$startDate,$endDate]);
+            $users = $users->whereHas('associates',function($q) use ($startDate,$endDate){
+                $q->whereBetween('created_at',[$startDate,$endDate]);
+            });
         }else{
             $startDate = Carbon::now()->startOfMonth()->toDateString();
             $endDate = Carbon::now()->endOfMonth()->toDateString();
 
             $search_date=date('m/d/Y',strtotime($startDate)).' - '.date('m/d/Y',strtotime($endDate));
 
-            $users = $users->whereBetween('created_at',[$startDate,$endDate]);
+            $users = $users->whereHas('associates',function($q) use ($startDate,$endDate){
+                $q->whereBetween('created_at',[$startDate,$endDate]);
+            });
         }
 
         if($search_key){
