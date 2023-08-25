@@ -88,7 +88,7 @@
                                                     <a href="{{ route('admin.earning') }}?search_key={{ $user->user->email }}" target="_blank">
                                                         ₹ {{ $user->user->userDetail->total_commission }}
                                                     </a> <br>
-                                                    <b>Emerging Amount: </b>₹
+                                                    <b>Target Amount: </b>₹
                                                     @if($user->commission_sum_commission)
                                                         {{$user->commission_sum_commission}}
                                                     @else

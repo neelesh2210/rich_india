@@ -48,8 +48,6 @@ class EmergingAssociateController extends Controller
         $users=$users->groupBy('user_id')->selectRaw('*, sum(commission) as commission_sum_commission')->with(['user.sponsorDetail','user.userDetail.plan'])->with(['user' => function($query){
             $query->withCount('associates')->withSum('payout','amount');
         }])->orderby('commission_sum_commission','desc')->paginate(10);
-        // $users=$users->with(['sponsorDetail','userDetail.plan'])->withCount('associates')->withSum('payout','amount')->withSum('commission','commission')->orderby('commission_sum_commission','desc')->paginate(10);
-
 
         return view('admin.emerging_associate.index',compact('users','search_date','search_key'),['page_title'=>'Emerging Associates']);
     }

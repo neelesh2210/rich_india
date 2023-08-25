@@ -85,7 +85,7 @@
                 <li class="nav-item">
                     <a href="{{route('admin.emerging.associate')}}" class="nav-link @if(Route::currentRouteName() == 'admin.emerging.associate') active @endif">
                         <i class="nav-icon fas fa-chart-line"></i>
-                        <p>Emerging Associate</p>
+                        <p>Target Achiever</p>
                     </a>
                 </li>
                 <li class="nav-item @if(Route::currentRouteName() == 'admin.payout.transaction.index' || Route::currentRouteName() == 'admin.failed.payout.transaction.index') menu-is-opening menu-open @endif">
