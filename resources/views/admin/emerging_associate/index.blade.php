@@ -67,11 +67,11 @@
                                             <tr>
                                                 <td>{{ $key + 1 + ($users->currentPage() - 1) * $users->perPage() }}</td>
                                                 <td>
-                                                    <b>Name: </b>{{ $user->name }} <br>
-                                                    <b>Email: </b>{{ $user->email }} <br>
-                                                    <b>Phone: </b>{{ $user->phone }} <br>
-                                                    <b>Referrer Code: </b>{{ $user->referrer_code }} <br>
-                                                    <b>Date: </b>{{ $user->created_at->format('d-M-Y h:i A') }} <br>
+                                                    <b>Name: </b>{{ $user->user->name }} <br>
+                                                    <b>Email: </b>{{ $user->user->email }} <br>
+                                                    <b>Phone: </b>{{ $user->user->phone }} <br>
+                                                    <b>Referrer Code: </b>{{ $user->user->referrer_code }} <br>
+                                                    <b>Date: </b>{{ $user->user->created_at->format('d-M-Y h:i A') }} <br>
                                                     <b>Added By: </b>
                                                     @if ($user->added_by == 'admin')
                                                         Manual
@@ -80,13 +80,13 @@
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    <b>Name: </b>{{ optional($user->sponsorDetail)->name }} <br>
-                                                    <b>Referrer Code: </b>{{ optional($user->sponsorDetail)->referrer_code }} <br>
+                                                    <b>Name: </b>{{ optional($user->user->sponsorDetail)->name }} <br>
+                                                    <b>Referrer Code: </b>{{ optional($user->user->sponsorDetail)->referrer_code }} <br>
                                                 </td>
-                                                <td>{{ $user->userDetail->plan->title }}</td>
+                                                <td>{{ $user->user->userDetail->plan->title }}</td>
                                                 <td class="text-center">
-                                                    <a href="{{ route('admin.earning') }}?search_key={{ $user->email }}" target="_blank">
-                                                        ₹ {{ $user->userDetail->total_commission }}
+                                                    <a href="{{ route('admin.earning') }}?search_key={{ $user->user->email }}" target="_blank">
+                                                        ₹ {{ $user->user->userDetail->total_commission }}
                                                     </a> <br>
                                                     <b>Emerging Amount: </b>₹
                                                     @if($user->commission_sum_commission)
@@ -97,18 +97,18 @@
                                                 </td>
                                                 <td class="text-center">
                                                     <a href="{{ route('admin.withdrawal') }}?search_key={{ $user->email }}" target="_blank">
-                                                        @if ($user->payout_sum_amount)
-                                                            ₹ {{ $user->payout_sum_amount }}
+                                                        @if ($user->user->payout_sum_amount)
+                                                            ₹ {{ $user->user->payout_sum_amount }}
                                                         @else
                                                             ₹ 0
                                                         @endif
                                                     </a>
                                                 </td>
                                                 <td class="text-center">
-                                                    <a href="{{ route('admin.associates') }}?search_key={{ $user->referrer_code }}" target="_blank">{{ $user->associates_count }}</a>
+                                                    <a href="{{ route('admin.associates') }}?search_key={{ $user->user->referrer_code }}" target="_blank">{{ $user->user->associates_count }}</a>
                                                 </td>
                                                 <td>
-                                                    @if($user->status == '1')
+                                                    @if($user->user->status == '1')
                                                         <span class="badge bg-success">Active</span>
                                                     @elseif($user->status == '0')
                                                             <span class="badge bg-danger">Blocked</span>
@@ -117,7 +117,7 @@
                                                 <td class="text-center">
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <a class="btn btn-outline-primary btn-sm mr-1 mb-1" onclick="showProfileModel({{ $user->id }})" style="width:35px;" title="View User">
+                                                            <a class="btn btn-outline-primary btn-sm mr-1 mb-1" onclick="showProfileModel({{ $user->user->id }})" style="width:35px;" title="View User">
                                                                 <i class="fas fa-eye"></i>
                                                             </a>
                                                         </div>
