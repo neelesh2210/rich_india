@@ -29,8 +29,8 @@ class EmergingAssociateController extends Controller
 
             $users = $users->whereBetween('created_at',[$startDate,$endDate]);
         }else{
-            $startDate = Carbon::now()->subMonth(2)->startOfMonth()->toDateString();
-            $endDate = Carbon::now()->subMonth(2)->endOfMonth()->toDateString();
+            $startDate = Carbon::now()->startOfMonth()->toDateString();
+            $endDate = Carbon::now()->endOfMonth()->toDateString();
 
             $search_date=date('m/d/Y',strtotime($startDate)).' - '.date('m/d/Y',strtotime($endDate));
 
