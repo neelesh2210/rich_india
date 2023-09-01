@@ -53,11 +53,18 @@ Route::get('get-referral-users/{referral_code}',[RegisterController::class,'dist
 Route::post('user-register',[RegisterController::class,'register'])->name('register');
 Route::post('vaildate-user-registeration',[RegisterController::class,'validateUserRegistration'])->name('vaildate.user.registeration');
 Route::post('payment', [RegisterController::class,'payment'])->name('payment');
+
+//Instamojo
 Route::get('instamojo/payment/pay-success',[InstamojoController::class, 'success'])->name('instamojo.success');
 
+//Phonepe
 Route::get('phonepe/callback',[PhonepeController::class, 'callback'])->name('phonepe.callback');
 Route::get('phonepe/redirectUrl',[PhonepeController::class, 'redirectUrl'])->name('phonepe.redirectUrl');
 Route::get('phonepe/redirectUrl/update',[PhonepeController::class, 'redirectUrlUpdate'])->name('phonepe.redirectUrl.update');
+
+//Cash
+Route::get('cash-payment/{id}',[RegisterController::class,'cashPayment'])->name('cash.payment');
+Route::post('cash-payment-verify/{id}',[RegisterController::class,'cashPaymentVerify'])->name('cash.payment.verify');
 
 //thank you
 Route::view('thank-you', 'frontend.thank_you')->name('thank.you');

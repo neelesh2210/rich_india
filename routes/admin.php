@@ -26,6 +26,7 @@ use App\Http\Controllers\Admin\AutomatedPayoutController;
 use App\Http\Controllers\Admin\TestimonialVideoController;
 use App\Http\Controllers\Admin\CommissionSettingController;
 use App\Http\Controllers\Admin\EmergingAssociateController;
+use App\Http\Controllers\Admin\ErrorRegistrationController;
 use App\Http\Controllers\Admin\MarketingMaterialController;
 use App\Http\Controllers\Admin\WithdrawalRequestController;
 
@@ -92,6 +93,9 @@ Route::group(['middleware'=>'auth:admin','as'=>'admin.'],function () {
     //Payment Transaction
     Route::get('payment-transaction-index',[PaymentController::class,'index'])->name('payment.transaction.index');
     Route::get('payment-transaction-delete/{id}',[PaymentController::class,'destroy'])->name('payment.transaction.delete');
+
+    //Error Registration
+    Route::get('error-registration',[ErrorRegistrationController::class,'index'])->name('error.registration');
 
     //Leaderboard
     Route::get('leaderboard-index',[LeaderboardController::class,'index'])->name('leaderboard.index');

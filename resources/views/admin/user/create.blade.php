@@ -60,14 +60,21 @@
                                             <div class="col-md-6 form_div">
                                                 <div class="form-group">
                                                     <label for="name">Name <span class="text-danger">*</span> </label>
-                                                    <input type="text" class="form-control" name="name" placeholder="Enter Name..." required>
+                                                    <input type="text" class="form-control" name="name" @if($error_registration_user) value="{{$error_registration_user->name}}" @endif placeholder="Enter Name..." required>
                                                 </div>
                                                 <span id="error_name" class="lbl_msg"></span>
                                             </div>
                                             <div class="col-md-6 form_div">
                                                 <div class="form-group">
                                                     <label for="email">Email <span class="text-danger">*</span> </label>
-                                                    <input type="email" class="form-control" name="email" placeholder="Enter Email..." required>
+                                                    <input type="email" class="form-control" name="email" @if($error_registration_user) value="{{$error_registration_user->email}}" @endif placeholder="Enter Email..." required>
+                                                </div>
+                                                <span id="error_email" class="lbl_msg"></span>
+                                            </div>
+                                            <div class="col-md-6 form_div">
+                                                <div class="form-group">
+                                                    <label for="phone">Phone</label>
+                                                    <input type="number" class="form-control" name="phone" @if($error_registration_user) value="{{$error_registration_user->phone}}" @endif placeholder="Enter Phone...">
                                                 </div>
                                                 <span id="error_email" class="lbl_msg"></span>
                                             </div>
@@ -77,7 +84,7 @@
                                                     <select name="state" class="form-control" required>
                                                         <option value="">Select State</option>
                                                         @foreach (states() as $state)
-                                                        <option value="{{$state}}">{{$state}}</option>
+                                                        <option value="{{$state}}" @if($error_registration_user && $error_registration_user->state == $state) selected @endif>{{$state}}</option>
                                                         @endforeach
                                                     </select>
                                                     <span id="error_state" class="lbl_msg"></span>
@@ -86,14 +93,14 @@
                                             <div class="col-md-6 form_div">
                                                 <div class="form-group">
                                                     <label for="referrer_code">Referrer Code <span class="text-danger">*</span> </label>
-                                                    <input type="text" class="form-control" name="referrer_code" placeholder="Enter Referrer Code..." required>
+                                                    <input type="text" class="form-control" name="referrer_code" value="RIND{{strtoupper(generateRandomString(6))}}" placeholder="Enter Referrer Code..." required>
                                                 </div>
                                                 <span id="error_refferer" class="lbl_msg"></span>
                                             </div>
                                             <div class="col-md-6 form_div">
                                                 <div class="form-group">
                                                     <label for="referral_code">Sponsor Code</label>
-                                                    <input type="text" class="form-control" name="referral_code" placeholder="Enter Sponsor Code...">
+                                                    <input type="text" class="form-control" name="referral_code" @if($error_registration_user) value="{{$error_registration_user->referral_code}}" @endif placeholder="Enter Sponsor Code...">
                                                 </div>
                                                 <span id="error_refferal" class="lbl_msg"></span>
                                             </div>
@@ -103,7 +110,7 @@
                                                     <select name="current_plan_id" class="form-control" required>
                                                         <option value="">Select Plan</option>
                                                         @foreach (App\CPU\PlanManager::withoutTrash()->where('status',1)->get() as $plan)
-                                                            <option value="{{$plan->id}}">{{$plan->title}}</option>
+                                                            <option value="{{$plan->id}}" @if($error_registration_user && is_numeric(optional($error_registration_user)->plan) && optional($error_registration_user)->plan == $plan->id) selected @elseif(optional($error_registration_user)->plan == $plan->title) selected @endif>{{$plan->title}}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -112,10 +119,21 @@
                                             <div class="col-md-6 form_div">
                                                 <div class="form-group">
                                                     <label for="payment_id">Payment Id <span class="text-danger">*</span></label>
-                                                    <input type="text" class="form-control" name="payment_id" placeholder="Enter Payment Id..." required>
+                                                    <input type="text" class="form-control" name="payment_id" @if($error_registration_user) value="{{$error_registration_user->payment_id}}" @endif placeholder="Enter Payment Id..." required>
                                                 </div>
                                                 <span id="error_payment_id" class="lbl_msg"></span>
                                             </div>
+                                            @if($error_registration_user)
+                                                @if($error_registration_user->payment_image)
+                                                    <div class="col-md-6 form_div">
+                                                        <div class="form-group">
+                                                            <label for="payment_image">Payment Image <span class="text-danger">*</span></label> <br>
+                                                            <img src="{{asset('frontend/images/payment_image/'.$error_registration_user->payment_image)}}" height="100px" width="100px">
+                                                        </div>
+                                                        <span id="error_payment_id" class="lbl_msg"></span>
+                                                    </div>
+                                                @endif
+                                            @endif
                                         </div>
                                     </form>
                                     <div class="d-flex justify-content-center">

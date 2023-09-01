@@ -37,9 +37,15 @@
                 @endcan
                 @can('user-list')
                     <li class="nav-item">
-                        <a href="{{route('admin.user.index')}}" class="nav-link @if(Route::currentRouteName() == 'admin.user.index') active @endif">
+                        <a href="{{route('admin.user.index')}}" class="nav-link @if(Route::currentRouteName() == 'admin.user.index' || Route::currentRouteName() == 'admin.add.user') active @endif">
                             <i class="nav-icon fas fa-users"></i>
                             <p>Users</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('admin.error.registration')}}" class="nav-link @if(Route::currentRouteName() == 'admin.error.registration') active @endif">
+                            <i class="nav-icon fas fa-users"></i>
+                            <p>Error Registration</p>
                         </a>
                     </li>
 

@@ -15,6 +15,7 @@ use Illuminate\Validation\Rule;
 use App\Models\Admin\UserDetail;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\WebsiteSetting;
+use App\Models\RegistrationErrorLog;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Admin\CommissionSetting;
@@ -96,8 +97,10 @@ class UserController extends Controller
         return view('admin.user.associates',compact('associates','search_key','search_date'),['page_title'=>'Associates']);
     }
 
-    public function create(){
-        return view('admin.user.create',['page_title'=>'Add User']);
+    public function create(Request $request){
+        $error_registration_user = RegistrationErrorLog::find($request->error_registration_id);
+
+        return view('admin.user.create',compact('error_registration_user'),['page_title'=>'Add User']);
     }
 
     public function store(Request $request){

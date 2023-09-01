@@ -15,6 +15,7 @@ use App\Models\Admin\UserDetail;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SignupRequest;
+use App\Models\RegistrationErrorLog;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
@@ -92,22 +93,32 @@ class RegisterController extends Controller
     public function validateUserRegistration(SignupRequest $request)
     {
         $plan = Plan::where('id',$request->plan_id)->first();
-        // if($request->referral_code){
-        //     $amount = $plan->discounted_price;
-        // }else{
-        //     $amount = $plan->amount;
-        // }
 
         $amount = $plan->discounted_price;
 
         $today_date = date('Y-m-d').' 00:00:00';
         $coupon = CouponManager::withoutTrash()->where('name',$request->coupon)->where('is_active','1')->where('start','<=',$today_date)->where('end','>=',$today_date)->where('type','new')->whereJsonContains('plan_ids',''.$request->plan_id)->first();
         if($coupon){
-            return $amount = $amount - $coupon->amount;
+            $amount = $amount - $coupon->amount;
         }else{
-            return $amount;
+            $amount;
         }
+
+        $registration_error_log = new RegistrationErrorLog;
+        $registration_error_log->from = 'website';
+        $registration_error_log->name = $request->first_name.' '.$request->last_name;
+        $registration_error_log->email = $request->email;
+        $registration_error_log->phone = $request->phone;
+        $registration_error_log->state = $request->state;
+        $registration_error_log->plan = $request->plan_id;
+        $registration_error_log->referral_code = $request->referral_code;
+        $registration_error_log->error = 'Self Registration Payment Error.';
+        $registration_error_log->save();
+
+        return $amount;
     }
+
+    //Razorpay
 
     // public function payment(Request $request)
     // {
@@ -155,14 +166,25 @@ class RegisterController extends Controller
     //     return json_decode($payment_detalis);
     // }
 
+    //Instamojo
+
     // public function payment(Request $request){
     //     $instamojo = new InstamojoController;
     //     return $instamojo->pay($request);
     // }
 
+    //Phonepe
+
+    // public function payment(Request $request){
+    //     $phonepe = new PhonepeController;
+    //     return $phonepe->payWithPhonePe($request);
+    // }
+
+    //Cash
+
     public function payment(Request $request){
-        $phonepe = new PhonepeController;
-        return $phonepe->payWithPhonePe($request);
+        $registration_error_log = RegistrationErrorLog::where('phone',$request->phone)->latest()->first();
+        return route('cash.payment',encrypt($registration_error_log->id));
     }
 
     public function register(Request $request)
@@ -386,5 +408,20 @@ class RegisterController extends Controller
         }else{
             return response()->json(['msg'=>'Invalid Coupon Code!'], 401);
         }
+    }
+
+    public function cashPayment($id){
+        return view('cash_payment_verification',compact('id'));
+    }
+
+    public function cashPaymentVerify(Request $request,$id){
+        $registration_error_log = RegistrationErrorLog::where('id',decrypt($id))->first();
+
+        $registration_error_log->payment_image = imageUpload($request->file('payment_image'),'frontend/images/payment_image/');
+        $registration_error_log->payment_id = $request->payment_id;
+        $registration_error_log->error = 'Payment Verification';
+        $registration_error_log->save();
+
+        return redirect()->route('index')->with('success','Request Has beed Submitted!');
     }
 }

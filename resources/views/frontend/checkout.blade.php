@@ -342,6 +342,8 @@
             });
         }
 
+        //Razorpay
+
         // function pay(amount)
         // {
         //     $(window).scrollTop(0);
@@ -388,6 +390,8 @@
         //     rzp1.open();
         // }
 
+        //Instamojo
+
         // function pay(amount)
         // {
         //     var coupon = $('#coupon').val();
@@ -407,6 +411,30 @@
         //         }
         //     });
         // }
+
+        //Phonepe
+
+        // function pay(amount) {
+        //     var coupon = $('#coupon').val();
+        //     $(window).scrollTop(0);
+        //     $('#loading_div').show()
+        //     $.ajaxSetup({
+        //         headers: {
+        //             'X-CSRF-TOKEN': '{{ csrf_token() }}'
+        //         }
+        //     });
+        //     $.ajax({
+        //         type: 'POST',
+        //         url: "{{ route('payment') }}",
+        //         data: $('#registerForm').serialize() + "&plan_id={{ $plan_detail->id }}&amount=" + amount +
+        //             "&coupon=" + coupon,
+        //         success: function(data) {
+        //             window.location.replace(data);
+        //         }
+        //     });
+        // }
+
+        //Cash
 
         function pay(amount) {
             var coupon = $('#coupon').val();
