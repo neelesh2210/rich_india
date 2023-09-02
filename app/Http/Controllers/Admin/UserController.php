@@ -205,7 +205,10 @@ class UserController extends Controller
                 }
             }
         }
-        return redirect()->route('admin.get.old.users')->with('success','Old User Registered Successfully!');
+
+        RegistrationErrorLog::where('email',$request->email)->delete();
+
+        return redirect()->route('admin.user.index')->with('success','Old User Registered Successfully!');
     }
 
     public function distributeCommission($referral_code,$plan_id,$plan_purchase_id,$user){

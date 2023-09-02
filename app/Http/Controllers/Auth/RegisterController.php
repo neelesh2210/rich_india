@@ -417,6 +417,10 @@ class RegisterController extends Controller
     }
 
     public function cashPaymentVerify(Request $request,$id){
+        $this->validate($request, [
+            'payment_id' => 'required|digits:12|unique:registration_error_logs',
+        ]);
+
         $registration_error_log = RegistrationErrorLog::where('id',decrypt($id))->first();
 
         $registration_error_log->payment_image = imageUpload($request->file('payment_image'),'frontend/images/payment_image/');

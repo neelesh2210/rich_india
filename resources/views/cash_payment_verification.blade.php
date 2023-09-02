@@ -17,6 +17,7 @@
                                 <input type="hidden" value="richind0557@icici" id="upi_id">
                                 <h1 class="gordita-bold text-center" style="color: #372d7a;">richind0557@icici <a class="btn btn-success pb" onclick="copyText()"><i class="fa fa-copy" style="font-size: 20px;"></i> Copy UPI</a></h1>
                                 <h5 class="text-center mb-2">After Payment please upload payment screenshot.</h5>
+                                <h5 class="text-center mb-2">Payment Screenshot मैं सब Details Show होनी चाहिए। Like :- UTR / UPI Ref. Id ( 12 digital number )</h5>
                             </div>
                             <div class="col-md-3">
                                 <div class="avatar-preview">
@@ -44,6 +45,9 @@
                                                     <div class="form-group col-md-12">
                                                         <label>UTR Number</label>
                                                         <input type="text" name="payment_id" class="form-control" placeholder="Enter UTR Number">
+                                                        @error('payment_id')
+                                                            <span class="text-danger">{{$message}}</span>
+                                                        @enderror
                                                     </div>
                                                     <div class="form-group col-md-12">
                                                         <input type="submit" value="Send" class="btn btn-submit">
