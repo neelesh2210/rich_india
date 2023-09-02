@@ -42,7 +42,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group col-md-12">
-                                                        <label>Payment Id</label>
+                                                        <label>UTR Number</label>
                                                         <input type="text" name="payment_id" class="form-control" placeholder="Enter Payment Id">
                                                     </div>
                                                     <div class="form-group col-md-12">

@@ -101,7 +101,7 @@
                                                 </td>
                                                 <td>
                                                     @if($error_registration->payment_image)
-                                                        <img src="{{asset('frontend/images/payment_image/'.$error_registration->payment_image)}}" height="100px" width="100px">
+                                                        <a href="{{asset('frontend/images/payment_image/'.$error_registration->payment_image)}}" target="_blank"><img src="{{asset('frontend/images/payment_image/'.$error_registration->payment_image)}}" height="100px" width="100px"></a>
                                                     @endif
                                                 </td>
                                                 <td class="text-center">

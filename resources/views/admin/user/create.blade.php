@@ -128,9 +128,9 @@
                                                     <div class="col-md-6 form_div">
                                                         <div class="form-group">
                                                             <label for="payment_image">Payment Image <span class="text-danger">*</span></label> <br>
-                                                            <img src="{{asset('frontend/images/payment_image/'.$error_registration_user->payment_image)}}" height="100px" width="100px">
+                                                            <a href="{{asset('frontend/images/payment_image/'.$error_registration_user->payment_image)}}" target="_blank"><img src="{{asset('frontend/images/payment_image/'.$error_registration_user->payment_image)}}" height="100px" width="100px"></a>
                                                         </div>
-                                                        <span id="error_payment_id" class="lbl_msg"></span>
+                                                        <span id="payment_image" class="lbl_msg"></span>
                                                     </div>
                                                 @endif
                                             @endif
