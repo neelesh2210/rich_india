@@ -43,7 +43,7 @@
                                                     </div>
                                                     <div class="form-group col-md-12">
                                                         <label>UTR Number</label>
-                                                        <input type="text" name="payment_id" class="form-control" placeholder="Enter Payment Id">
+                                                        <input type="text" name="payment_id" class="form-control" placeholder="Enter UTR Number">
                                                     </div>
                                                     <div class="form-group col-md-12">
                                                         <input type="submit" value="Send" class="btn btn-submit">

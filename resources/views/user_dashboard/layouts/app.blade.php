@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Rich India</title>
-        <meta name="keywords" content="Rich India" />
-        <meta name="description" content="Rich India" />
+        <title>RichInd</title>
+        <meta name="keywords" content="RichInd" />
+        <meta name="description" content="RichInd" />
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{asset('user_dashboard/images/favicon.png')}}">
 
