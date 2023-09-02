@@ -74,7 +74,7 @@
                                                     <b>Phone: </b>{{ $error_registration->phone }} <br>
                                                     <b>Date: </b>{{ $error_registration->created_at->format('d-M-Y h:i A') }} <br>
                                                     <b>Added By: </b>
-                                                    @if ($error_registration->error == 'Self Registration Payment Error.')
+                                                    @if ($error_registration->error == 'Self Registration Payment Error.' || $error_registration->error == 'Payment Verification')
                                                         Website
                                                     @else
                                                         Cosmofeed
