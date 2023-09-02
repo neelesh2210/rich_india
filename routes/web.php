@@ -31,7 +31,7 @@ use App\Http\Controllers\WithdrawalRequestController;
 */
 
 Auth::routes(['login'=>false,'register'=>false,'logout'=>false]);
-
+Route::view('cashthank-you', 'frontend.cashthank_you')->name('cashthank_you');
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::view('about', 'frontend.about')->name('about');
 Route::view('blog', 'frontend.blog')->name('blog');
