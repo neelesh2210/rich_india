@@ -29,6 +29,7 @@
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/custom.css')}}" />
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/my-profile.css')}}" />
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/index.css')}}" />
+        <link rel="stylesheet" href="{{asset('backend/css/bootstrap-4.min.css')}}">
         <style>
             .our-alumni-sec .owl-item {
                 background: #fae5e4;

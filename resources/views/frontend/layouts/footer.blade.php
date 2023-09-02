@@ -159,6 +159,59 @@
 <script src="{{ asset('frontend/assets/js/aos.js')}}"></script>
 <script src="{{ asset('frontend/assets/js/script.js')}}"></script>
 <script src="{{ asset('frontend/assets/js/lity.js')}}"></script>
+<script src="{{ asset('backend/js/sweetalert2.min.js') }}"></script>
+<script type="text/javascript">
+
+    $(function(){
+        //alerts
+        var Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000
+        });
+        var success_message = "{{ Session::get('success') }}";
+        var info_message = "{{ Session::get('info') }}";
+        var error_message = "{{ Session::get('error') }}";
+        var warning_message = "{{ Session::get('warning') }}";
+        if (success_message != "") {
+            success_alert(success_message);
+        }
+        if (info_message != "") {
+            info_alert(info_message);
+        }
+        if (error_message != "") {
+            error_alert(error_message)
+        }
+        if (warning_message != "") {
+            warning_alert(warning_message)
+        }
+        function success_alert(success_message) {
+            Toast.fire({
+                icon: 'success',
+                title: success_message
+            })
+        }
+        function info_alert(info_message) {
+            Toast.fire({
+                icon: 'info',
+                title: info_message
+            })
+        }
+        function error_alert(error_message) {
+            Toast.fire({
+                icon: 'error',
+                title: error_message
+            })
+        }
+        function warning_alert(warning_message) {
+            Toast.fire({
+                icon: 'warning',
+                title: warning_message
+            })
+        }
+    });
+</script>
 <script>
     $('.owl-carousel').owlCarousel({
         loop: true,
@@ -317,185 +370,3 @@
     })
 
 </script>
-
-
-{{-- <footer class="footer-area">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-footer-widget">
-                    <div class="footer-widget-logo">
-                        <a href="#"><img src="{{ asset('frontend/images/logo-2.png') }}" alt="image"></a>
-                    </div>
-                    <p>Live as if you were to die tomorrow. Learn as if you were to live forever...</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-footer-widget ps-5">
-                    <h3>Quick links</h3>
-                    <ul class="quick-links">
-                        <li><a href="{{route('about')}}">About us</a></li>
-                        <li><a href="{{route('plan')}}">Courses</a></li>
-                        <li><a href="{{route('contact')}}">Contact Us</a></li>
-                        <li><a href="#">Main services</a></li>
-                        <li><a href="#">Search page</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-footer-widget">
-                    <h3>Imp Links</h3>
-                    <ul class="quick-links">
-                        <li><a href="{{route('privacy_policy')}}">Privacy Policy</a></li>
-                        <li><a href="{{route('term_and_condition')}}">Terms &amp; Conditions</a></li>
-                        <li><a href="{{route('cancel_and_refund_policy')}}">Cancel &amp; Refund Policy</a></li>
-                        <li><a href="#">Register</a></li>
-                        <li><a href="#">Login</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-footer-widget">
-                    <h3>Our Address</h3>
-                    <ul class="quick-links">
-                        <li>
-                            <i class="flaticon-phone-call"></i>
-                            @if (websiteData('support_phone'))
-                                @foreach (json_decode(websiteData('support_phone')) as $support_phone)
-                                    <a href="tel:(+91){{ $support_phone }}">(+91) {{ $support_phone }}</a>
-                                    @unless ($loop->last)
-                                        ,
-                                    @endunless
-                                @endforeach
-                            @endif
-                            <br>
-                            <a href="tel:">( 88 ) 61 23 14 25 11</a>
-                        </li>
-                        <li>
-                            <i class="ri-map-pin-2-fill"></i>
-                            {{ websiteData('address') }}
-                        </li>
-                        <li>
-                            <i class="flaticon-mail"></i>
-                            <a href="mailto:{{ websiteData('email') }}">{{ websiteData('email') }}</a>
-                        </li>
-                    </ul>
-                    <div class="widget-newsletter">
-                        <ul class="widget-social">
-                            <li>
-                                <a href="{{ socialMediaLink('facebook') }}" target="_blank">
-                                    <i class="ri-facebook-line"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ socialMediaLink('youtube') }}" target="_blank">
-                                    <i class="ri-youtube-fill"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ socialMediaLink('instagram') }}" target="_blank">
-                                    <i class="ri-instagram-fill"></i>
-                                </a>
-                            </li>
-                             <li>
-                                <a href="{{ socialMediaLink('linkedin') }}" target="_blank">
-                                    <i class="ri-linkedin-fill"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="copyright-area">
-        <div class="container">
-            <div class="copyright-area-content">
-                <p>©
-                    <script>
-                        document.write(new Date().getFullYear())
-                    </script> CareerFixx || All Rights Reserved
-                </p>
-            </div>
-        </div>
-    </div>
-</footer> --}}
-
-{{-- <div class="go-top">
-    <i class="ri-arrow-up-s-line"></i>
-</div>
-
-<script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ asset('frontend/js/jquery.meanmenu.js') }}"></script>
-<script src="{{ asset('frontend/js/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('frontend/js/owl.thumbs.min.js') }}"></script>
-<script src="{{ asset('frontend/js/jquery.appear.js') }}"></script>
-<script src="{{ asset('frontend/js/odometer.min.js') }}"></script>
-<script src="{{ asset('frontend/js/jquery.magnific-popup.min.js') }}"></script>
-<script src="{{ asset('frontend/js/fancybox.min.js') }}"></script>
-<script src="{{ asset('frontend/js/selectize.min.js') }}"></script>
-<script src="{{ asset('frontend/js/aos.js') }}"></script>
-<script src="{{ asset('frontend/js/isotope.pkgd.min.js') }}"></script>
-<script src="{{ asset('frontend/js/TweenMax.min.js') }}"></script>
-<script src="{{ asset('frontend/js/jquery.ajaxchimp.min.js') }}"></script>
-<script src="{{ asset('frontend/js/form-validator.min.js') }}"></script>
-<script src="{{ asset('frontend/js/contact-form-script.js') }}"></script>
-<script src="{{ asset('frontend/js/wow.min.js') }}"></script>
-<script src="{{ asset('frontend/js/main.js') }}"></script>
-<script src="{{ asset('backend/js/sweetalert2.min.js') }}"></script>
-
-<script type="text/javascript">
-    $(function() {
-        //alerts
-        var Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 3000
-        });
-        var success_message = "{{ Session::get('success') }}";
-        var info_message = "{{ Session::get('info') }}";
-        var error_message = "{{ Session::get('error') }}";
-        var warning_message = "{{ Session::get('warning') }}";
-        if (success_message != "") {
-            success_alert(success_message);
-        }
-        if (info_message != "") {
-            info_alert(info_message);
-        }
-        if (error_message != "") {
-            error_alert(error_message)
-        }
-        if (warning_message != "") {
-            warning_alert(warning_message)
-        }
-        function success_alert(success_message) {
-            Toast.fire({
-                icon: 'success',
-                title: success_message
-            })
-        }
-
-        function info_alert(info_message) {
-            Toast.fire({
-                icon: 'info',
-                title: info_message
-            })
-        }
-
-        function error_alert(error_message) {
-            Toast.fire({
-                icon: 'error',
-                title: error_message
-            })
-        }
-
-        function warning_alert(warning_message) {
-            Toast.fire({
-                icon: 'warning',
-                title: warning_message
-            })
-        }
-    });
-</script> --}}

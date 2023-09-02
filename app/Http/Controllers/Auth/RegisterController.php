@@ -411,7 +411,9 @@ class RegisterController extends Controller
     }
 
     public function cashPayment($id){
-        return view('cash_payment_verification',compact('id'));
+        $registration_error_log = RegistrationErrorLog::find(decrypt($id));
+        $plan = Plan::find($registration_error_log->plan);
+        return view('cash_payment_verification',compact('id','registration_error_log','plan'));
     }
 
     public function cashPaymentVerify(Request $request,$id){
@@ -422,6 +424,6 @@ class RegisterController extends Controller
         $registration_error_log->error = 'Payment Verification';
         $registration_error_log->save();
 
-        return redirect()->route('index')->with('success','Request Has beed Submitted!');
+        return redirect()->route('cashthank_you')->with('success','Request Has beed Submitted!');
     }
 }
