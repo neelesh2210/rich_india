@@ -61,6 +61,7 @@
                                             <th>Sponsor Details</th>
                                             <th>Plan</th>
                                             <th>Transaction Image</th>
+                                            <th>Error</th>
                                             <th class="text-center">Action</th>
                                         </tr>
                                     </thead>
@@ -108,6 +109,7 @@
                                                         <a href="{{asset('frontend/images/payment_image/'.$error_registration->payment_image)}}" target="_blank"><img src="{{asset('frontend/images/payment_image/'.$error_registration->payment_image)}}" height="100px" width="100px"></a>
                                                     @endif
                                                 </td>
+                                                <td>{{$error_registration->error}}</td>
                                                 <td class="text-center">
                                                     <a href="{{route('admin.add.user')}}?error_registration_id={{$error_registration->id}}" title="Convert to User" class="btn btn-outline-success btn-sm mr-1 mb-1"><i class="fas fa-recycle"></i></a>
                                                 </td>
