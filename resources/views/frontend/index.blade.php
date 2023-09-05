@@ -148,17 +148,19 @@
                                                 Buy Now ₹ {{ $plan->discounted_price }}
                                             </a>
                                         </div> --}}
-                                        @if($key == 0)
-                                            <a href="https://cosmofeed.com/vp/649d9ac792e0dc002085b20e">Buy Now ₹ {{ $plan->discounted_price }}</a>
-                                        @elseif($key == 1)
-                                            <a href="https://cosmofeed.com/vp/64f54ac19e9120001e12d6db">Buy Now ₹ {{ $plan->discounted_price }}</a>
-                                        @elseif($key == 2)
-                                            <a href="https://cosmofeed.com/vp/64f54c0c451d40001e207c92">Buy Now ₹ {{ $plan->discounted_price }}</a>
-                                        @elseif($key == 3)
-                                            <a href="https://cosmofeed.com/vp/64f54cab84fcaf001ef11aa6">Buy Now ₹ {{ $plan->discounted_price }}</a>
-                                        @elseif($key == 4)
-                                            <a href="https://cosmofeed.com/vp/64f54d30095729001f5950b8">Buy Now ₹ {{ $plan->discounted_price }}</a>
-                                        @endif
+                                        <div class='all-btn all-category d-flex align-items-center'>
+                                            @if($key == 0)
+                                                <a href="https://cosmofeed.com/vp/649d9ac792e0dc002085b20e" class='btn btn-primary' style="margin:0 auto;">Buy Now ₹ {{ $plan->discounted_price }}</a>
+                                            @elseif($key == 1)
+                                                <a href="https://cosmofeed.com/vp/64f54ac19e9120001e12d6db" class='btn btn-primary' style="margin:0 auto;">Buy Now ₹ {{ $plan->discounted_price }}</a>
+                                            @elseif($key == 2)
+                                                <a href="https://cosmofeed.com/vp/64f54c0c451d40001e207c92" class='btn btn-primary' style="margin:0 auto;">Buy Now ₹ {{ $plan->discounted_price }}</a>
+                                            @elseif($key == 3)
+                                                <a href="https://cosmofeed.com/vp/64f54cab84fcaf001ef11aa6" class='btn btn-primary' style="margin:0 auto;">Buy Now ₹ {{ $plan->discounted_price }}</a>
+                                            @elseif($key == 4)
+                                                <a href="https://cosmofeed.com/vp/64f54d30095729001f5950b8" class='btn btn-primary' style="margin:0 auto;">Buy Now ₹ {{ $plan->discounted_price }}</a>
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
                             </div>
