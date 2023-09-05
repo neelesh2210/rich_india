@@ -85,8 +85,12 @@
                                                         @php
                                                             $sponsor = App\Models\User::where('referrer_code',$error_registration->referral_code)->first();
                                                         @endphp
-                                                        <b>Name: </b>{{ $sponsor->name }} <br>
-                                                        <b>Referrer Code: </b>{{ $sponsor->referrer_code }} <br>
+                                                        @if($sponsor)
+                                                            <b>Name: </b>{{ $sponsor->name }} <br>
+                                                            <b>Referrer Code: </b>{{ $sponsor->referrer_code }} <br>
+                                                        @else
+                                                            {{$error_registration->referral_code}}
+                                                        @endif
                                                     @endif
                                                 </td>
                                                 <td>
