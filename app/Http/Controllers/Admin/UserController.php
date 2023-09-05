@@ -19,6 +19,7 @@ use App\Models\RegistrationErrorLog;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Admin\CommissionSetting;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -468,6 +469,224 @@ class UserController extends Controller
 
         $users = $users->orderBy('created_at','desc')->paginate(10);
         return view('admin.user.unpaid_user_list',compact('users','search_key','search_date'),['page_title'=>'Users']);
+    }
+
+    public function webhookRegistration(Request $request){
+        try {
+            if(Hash::check('RichInd@2023',$request->header('key'))){
+                $validator =  Validator::make($request->all(), [
+                    'name' => 'required|max:255',
+                    'email' => 'required|email|max:255|unique:users',
+                    'state' => 'required',
+                    //'referrer_code' => 'required|unique:users',
+                    'plan' => 'required',
+                    'payment_Id' => 'required',
+                ]);
+                if($validator->fails()) {
+                    $registration_error_log = new RegistrationErrorLog;
+                    $registration_error_log->from = 'cosmofeed';
+                    $registration_error_log->name = $request->name?$request->name:'';
+                    $registration_error_log->email = $request->email?$request->email:'';
+                    $registration_error_log->phone = $request->phone?$request->phone:'';
+                    $registration_error_log->state = $request->state?$request->state:'';
+                    $registration_error_log->plan = $request->plan?$request->plan:'';
+                    $registration_error_log->referral_code= $request->referral_code;
+                    $registration_error_log->payment_id = $request->payment_Id?$request->payment_Id:'';
+                    $registration_error_log->error= json_encode($validator->errors());
+                    $registration_error_log->save();
+                    return $validator->errors();
+                }
+
+                if($request->referral_code){
+                    $validator =  Validator::make($request->all(), [
+                        'referral_code' => [Rule::exists('users','referrer_code')->where('delete_status','0'),]
+                    ]);
+                    if($validator->fails()) {
+                        $registration_error_log = new RegistrationErrorLog;
+                        $registration_error_log->from = 'cosmofeed';
+                        $registration_error_log->name = $request->name?$request->name:'';
+                        $registration_error_log->email = $request->email?$request->email:'';
+                        $registration_error_log->phone = $request->phone?$request->phone:'';
+                        $registration_error_log->state = $request->state?$request->state:'';
+                        $registration_error_log->plan = $request->plan?$request->plan:'';
+                        $registration_error_log->referral_code= $request->referral_code;
+                        $registration_error_log->payment_id = $request->payment_Id?$request->payment_Id:'';
+                        $registration_error_log->error= json_encode($validator->errors());
+                        $registration_error_log->save();
+                        return $validator->errors();
+                    }
+                }
+                if($request->phone){
+                    $input = $request->all();
+                    $input['phone'] = substr($request->phone, 2);
+                    $validator =  Validator::make($input, [
+                        'phone' => 'required|unique:users,phone',
+                    ]);
+                    if($validator->fails()) {
+                        $registration_error_log = new RegistrationErrorLog;
+                        $registration_error_log->from = 'cosmofeed';
+                        $registration_error_log->name = $request->name?$request->name:'';
+                        $registration_error_log->email = $request->email?$request->email:'';
+                        $registration_error_log->phone = $request->phone?$request->phone:'';
+                        $registration_error_log->state = $request->state?$request->state:'';
+                        $registration_error_log->plan = $request->plan?$request->plan:'';
+                        $registration_error_log->referral_code= $request->referral_code;
+                        $registration_error_log->payment_id = $request->payment_Id?$request->payment_Id:'';
+                        $registration_error_log->error= json_encode($validator->errors());
+                        $registration_error_log->save();
+                        return $validator->errors();
+                    }
+                }
+
+                $plan = Plan::where('title',$request->plan)->first();
+                if(!$plan){
+                    $registration_error_log = new RegistrationErrorLog;
+                    $registration_error_log->from = 'cosmofeed';
+                    $registration_error_log->name = $request->name?$request->name:'';
+                    $registration_error_log->email = $request->email?$request->email:'';
+                    $registration_error_log->phone = $request->phone?$request->phone:'';
+                    $registration_error_log->state = $request->state?$request->state:'';
+                    $registration_error_log->plan = $request->plan?$request->plan:'';
+                    $registration_error_log->referral_code = $request->referral_code;
+                    $registration_error_log->payment_id = $request->payment_Id?$request->payment_Id:'';
+                    $registration_error_log->error = 'This Plan does not exists!';
+                    $registration_error_log->save();
+
+                    return response()->json(['msg'=>'This Plan does not exists!'],401);
+                }
+                if($request->status == 'paid'){
+                    $user = new User;
+                    $user->added_by = 'cosmofeed';
+                    $user->name = $request->name;
+                    $user->email = $request->email;
+                    $user->phone = substr($request->phone, 3);
+                    $user->state = $request->state;
+                    $user->referrer_code = 'RIND'.strtoupper(generateRandomString(6));
+                    $user->referral_code = $request->referral_code;
+                    $user->password = Hash::make($request->email);
+                    $user->is_old = '0';
+                    $user->save();
+
+                    $user_detail = new UserDetail;
+                    $user_detail->user_id = $user->id;
+                    $user_detail->current_plan_id = $plan->id;
+                    $user_detail->save();
+
+                    $plan_purchase = new PlanPurchase;
+                    $plan_purchase->user_id = $user->id;
+                    $plan_purchase->plan_id = $plan->id;
+                    $plan_purchase->course_ids = $plan->course_ids;
+                    $plan_purchase->amount = $plan->amount;
+                    if($request->referral_code){
+                        $plan_purchase->discounted_amount = $plan->amount - $plan->discounted_price;
+                        $plan_purchase->total_amount = $plan->discounted_price;
+                        $plan_purchase->payment_detail = json_encode(['id'=>$request->payment_id,'amount'=>$plan->discounted_price]);
+                    }else{
+                        $plan_purchase->total_amount = $plan->amount;
+                        $plan_purchase->payment_detail = json_encode(['id'=>$request->payment_id,'amount'=>$plan->amount]);
+                    }
+                    $plan_purchase->payment_status = 'success';
+                    $plan_purchase->save();
+
+                    try {
+                        Mail::send('email.welcome_mail', ['user_name'=>$user], function($message) use ($user){
+                            $message->to($user->email);
+                            $message->subject('Welcome to RichInd');
+                        });
+                    } catch (\Throwable $th) {
+                        //throw $th;
+                    }
+
+                    if($request->referral_code){
+                        $this->distributeCommission($request->referral_code,$plan->id,$plan_purchase->id,$user);
+                    }else{
+                        $commission_setting = CommissionSetting::get();
+                        $level = $commission_setting->count();
+                        for($i=1;$i<=$level;$i++){
+                            $commission_user = User::with('userDetail.plan')->first();
+                            if($commission_user->userDetail->plan->priority <= $plan->priority){
+                                $commission_amount = $commission_user->userDetail->plan->commission[$i-1];
+                            }else{
+                                $commission_amount = $plan->commission[$i-1];
+                            }
+                            $commission = new Commission;
+                            $commission->user_id = $commission_user->id;
+                            $commission->plan_purchase_id = $plan_purchase->id;
+                            $commission->commission = $commission_amount;
+                            $commission->level = $i;
+                            $commission->save();
+
+                            $user_detail = UserDetail::where('user_id',User::first()->id)->first();
+                            $user_detail->total_commission = $user_detail->total_commission + $commission_amount;
+                            $user_detail->save();
+
+                            if($i == 1){
+                                try {
+                                    Mail::send('email.active_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount], function($message) use($commission_user){
+                                        $message->to($commission_user->email);
+                                        $message->subject('RichInd Notification');
+                                    });
+                                } catch (\Throwable $th) {
+                                    //throw $th;
+                                }
+                            }else{
+                                // try {
+                                //     Mail::send('email.passive_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount,'comes_from'=>$user], function($message) use($commission_user){
+                                //         $message->to($commission_user->email);
+                                //         $message->subject('RichInd Notification');
+                                //     });
+                                // } catch (\Throwable $th) {
+                                //     //throw $th;
+                                // }
+                            }
+                        }
+                    }
+                    return response()->json(['message'=>'Data Inserted Successfully!','status'=>200]);
+                }else{
+                    $registration_error_log = new RegistrationErrorLog;
+                    $registration_error_log->from = 'cosmofeed';
+                    $registration_error_log->name = $request->name?$request->name:'';
+                    $registration_error_log->email = $request->email?$request->email:'';
+                    $registration_error_log->phone = $request->phone?$request->phone:'';
+                    $registration_error_log->state = $request->state?$request->state:'';
+                    $registration_error_log->plan = $request->plan?$request->plan:'';
+                    $registration_error_log->referral_code= $request->referral_code;
+                    $registration_error_log->payment_id = $request->payment_Id?$request->payment_Id:'';
+                    $registration_error_log->error= 'Payment Failed';
+                    $registration_error_log->save();
+                    return response()->json(['message'=>'Payment Failed','status'=>401],401);
+                }
+            }else{
+                $registration_error_log = new RegistrationErrorLog;
+                $registration_error_log->from = 'cosmofeed';
+                $registration_error_log->name = $request->name?$request->name:'';
+                $registration_error_log->email = $request->email?$request->email:'';
+                $registration_error_log->phone = $request->phone?$request->phone:'';
+                $registration_error_log->state = $request->state?$request->state:'';
+                $registration_error_log->plan = $request->plan?$request->plan:'';
+                $registration_error_log->referral_code= $request->referral_code;
+                $registration_error_log->payment_id = $request->payment_Id?$request->payment_Id:'';
+                $registration_error_log->error= 'Invalid Key';
+                $registration_error_log->save();
+                return response()->json(['message'=>'Invalid Key','status'=>401],401);
+            }
+        } catch (\Throwable $th) {
+            return $th;
+            $registration_error_log = new RegistrationErrorLog;
+            $registration_error_log->from = 'cosmofeed';
+            $registration_error_log->name = $request->name?$request->name:'';
+            $registration_error_log->email = $request->email?$request->email:'';
+            $registration_error_log->phone = $request->phone?$request->phone:'';
+            $registration_error_log->state = $request->state?$request->state:'';
+            $registration_error_log->plan = $request->plan?$request->plan:'';
+            $registration_error_log->referral_code= $request->referral_code;
+            $registration_error_log->payment_id = $request->payment_Id?$request->payment_Id:'';
+            $registration_error_log->error= 'Something went wrong';
+            $registration_error_log->save();
+
+            return response()->json(['msg'=>'Something went wrong!'],401);
+        }
+
     }
 
 }
