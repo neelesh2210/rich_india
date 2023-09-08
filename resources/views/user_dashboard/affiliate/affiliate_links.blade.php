@@ -30,7 +30,7 @@
                                 </div>
                             </div>
                             <hr>
-                            <div class="row">
+                            {{-- <div class="row">
                                 <div class="col-md-4 mb-3">
                                     <label for="links" class="form-label">Generate Link For</label>
                                     <select class="form-select" id="plan_id" onchange="get_plan_url()">
@@ -46,7 +46,7 @@
                                 <div class="col-md-2 mb-3">
                                     <a class="btn btn-primary mt-3_5" onclick="copyText1()">Copy Link</a>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
