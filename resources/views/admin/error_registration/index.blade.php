@@ -99,7 +99,11 @@
                                                         @php
                                                             $plan = App\Models\Admin\Plan::where('id',$error_registration->plan)->first();
                                                         @endphp
-                                                        {{$plan->title}}
+                                                        @if ($plan)
+                                                            {{$plan->title}}
+                                                        @else
+                                                            Wrong Plan
+                                                        @endif
                                                     @else
                                                         {{$error_registration->plan}}
                                                     @endif
