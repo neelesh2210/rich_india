@@ -67,14 +67,14 @@
                                                     <b>Email: </b>{{$old_user->email}} <br>
                                                     <b>Phone: </b>{{$old_user->phone}} <br>
                                                     <b>Referrer Code: </b>{{$old_user->referrer_code}} <br>
-                                                    <b>Package: </b>{{$old_user->userDetail->plan->title}}
+                                                    <b>Package: </b>{{optional(optional($old_user->userDetail)->plan)->title}}
                                                 </td>
                                                 <td>
                                                     <b>Name: </b>{{optional($old_user->sponsorDetail)->name}} <br>
                                                     <b>Referrer Code: </b>{{optional($old_user->sponsorDetail)->referrer_code}} <br>
                                                 </td>
-                                                <td>{{$old_user->userDetail->old_paid_payout}}</td>
-                                                <td>{{$old_user->userDetail->old_not_paid_payout}}</td>
+                                                <td>{{optional($old_user->userDetail)->old_paid_payout}}</td>
+                                                <td>{{optional($old_user->userDetail)->old_not_paid_payout}}</td>
                                                 <td class="text-center">
                                                     @php
                                                         $associates = App\Models\User::where('referral_code',$old_user->referrer_code)->get();
