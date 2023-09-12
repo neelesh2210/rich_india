@@ -145,6 +145,7 @@
                                                     </table>
                                                 </td>
                                                 <td>
+                                                    <a href="{{route('admin.payment.invoice',$plan_purchase->id)}}" class="btn btn-outline-primary btn-sm mr-1 mb-1"><i class="fas fa-receipt"></i></a>
                                                     <a href="{{route('admin.payment.transaction.delete',$plan_purchase->id)}}" class="btn btn-outline-danger btn-sm mr-1 mb-1" onclick="return confirm('You Want to delete This Order?');"><i class="fa fa-trash"></i></a>
                                                 </td>
                                             </tr>

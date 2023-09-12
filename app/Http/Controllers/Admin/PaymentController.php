@@ -91,4 +91,10 @@ class PaymentController extends Controller
         }
     }
 
+    public function invoice($id){
+        $payment = PlanPurchase::with(['user','plan'])->find($id);
+
+        return view('admin.payment_transaction.invoice',compact('payment'),['page_title'=>'Payment Invoice']);
+    }
+
 }
