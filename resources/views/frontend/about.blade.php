@@ -57,18 +57,8 @@
                                         title="Richind-Our Mision" class="img-fluid about-img" alt="Richind-Our Mision">
                                 </div>
                                 <h2 class="how-card-title">Our Mision</h2>
-                                <p style="text-align:justify">Prides Aqua is a new age water purifier brand. we promise to
-                                    provide 100% pure with healthy water in every household and industries. Only Prides
-                                    Aqua&#39;s range of water purifiers come with an advanced mineral guard technology that
-                                    retains these essential natural minerals, to give you water that&nbsp;not just pure, or
-                                    shudh but healthy today.</p>
-                                <p style="text-align:justify">We, Prides Aqua,&nbsp;are focused on providing the best water
-                                    purifier sales &amp; services to our customers. We are the right platform for you to
-                                    come and get all type of services for water purifiers. Customer satisfaction is our
-                                    first priority which keeps us at the top in this category. We maintain the highest
-                                    standard of quality services to avoid any contamination. We have experienced and a
-                                    skilled technical team specialized in all brands of water purifier installation, service
-                                    &amp; repairs with the exchange offer.</p>
+                                <p style="text-align:justify">At RichInd, our vision is to revolutionize the way the world learns by creating a dynamic and inclusive e-learning platform that empowers individuals from all walks of life to pursue knowledge, develop skills, and achieve their fullest potential. We are committed to providing a transformative educational experience that transcends boundaries, fosters innovation, and cultivates lifelong learners.</p>
+
                                 <p style="text-align:justify">&nbsp;</p>
                             </div>
                         </div>
@@ -79,19 +69,8 @@
                                         title="Richind-Our Vision" class="img-fluid about-img" alt="Richind-Our Vision">
                                 </div>
                                 <h2 class="how-card-title">Our Vision</h2>
-                                <p style="text-align:justify">Prides Aqua is a new age water purifier brand. we promise to
-                                    provide 100% pure with healthy water in every household and industries. Only Prides
-                                    Aqua&#39;s range of water purifiers come with an advanced mineral guard technology that
-                                    retains these essential natural minerals, to give you water that&nbsp;not just pure, or
-                                    shudh but healthy today.</p>
 
-                                <p style="text-align:justify">We, Prides Aqua,&nbsp;are focused on providing the best water
-                                    purifier sales &amp; services to our customers. We are the right platform for you to
-                                    come and get all type of services for water purifiers. Customer satisfaction is our
-                                    first priority which keeps us at the top in this category. We maintain the highest
-                                    standard of quality services to avoid any contamination. We have experienced and a
-                                    skilled technical team specialized in all brands of water purifier installation, service
-                                    &amp; repairs with the exchange offer.</p>
+                                <p style="text-align:justify">At RichInd, our mission is to provide a dynamic and inclusive e-learning platform that empowers individuals of all backgrounds to embark on a journey of lifelong learning. We are dedicated to delivering high-quality, accessible, and personalized educational experiences that foster personal growth, professional development, and global enrichment.</p>
 
                                 <p style="text-align:justify">&nbsp;</p>
                             </div>
@@ -110,10 +89,10 @@
                         <h2>Our Approach</h2>
                     </div>
                     <div>
-                        <p style="text-align:justify">With an endeavor to facilitate quality education, Richin is making
+                        <p style="text-align:justify">With an endeavor to facilitate quality education, RichInd is making
                             every possible effort to bring a revolution to the emerging ed-tech industry. Now with the
                             growing number of students who wish to upskill themselves with the latest trends, online
-                            educational platforms are manifesting a strong market in the professional world. Hence, Richin ,
+                            educational platforms are manifesting a strong market in the professional world. Hence, RichInd ,
                             with its dynamic team and exceptional courses, is helping you transform your professional
                             journey to a whole new level.</p>
                     </div>
@@ -139,9 +118,9 @@
                         <h2>Our Promise</h2>
                     </div>
                     <div>
-                        <p style="text-align:justify">Ever since its inception, Richin has striven to provide students with
+                        <p style="text-align:justify">Ever since its inception, RichInd has striven to provide students with
                             impeccable education. From offering the best courses to providing you with exceptional
-                            opportunities, Richin promises to make your education journey worthwhile. We promise to give you
+                            opportunities, RichInd promises to make your education journey worthwhile. We promise to give you
                             an unbiased education with access to the best teaching modules for your successful professional
                             career.</p>
                     </div>

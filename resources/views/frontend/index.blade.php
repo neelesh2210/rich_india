@@ -26,7 +26,7 @@
                                     </div>
                                     <div class="course-inner-content">
                                         <h4><span>{{ websiteData('community_earning') }}</span>+</h4>
-                                        <p>Commission Distributed</p>
+                                        <p>Worth Courses Sold</p>
                                     </div>
                                 </div>
                             </div>
@@ -179,8 +179,8 @@
                 <span class="animate-border-center"></span>
                 <div class="section-text aos">
                     <p class="mb-0">
-                        At Richin, you can now be assured to get the top-most training from the leading educators of
-                        their respective fields. Turn your dreams into reality with Richin proficient instructors.
+                        At RichInd, you can now be assured to get the top-most training from the leading educators of
+                        their respective fields. Turn your dreams into reality with RichInd proficient instructors.
                     </p>
                 </div>
             </div>
@@ -196,7 +196,7 @@
                             </div>
                             <p>Yash kulshrestha is one of the Youngest Entrepreneur and YouTuber from India. He started his journey
                                 since 2018. He has 5 years Experience about Sales And Law of attraction. He love to share his
-                                knowledge with youth. He has made 200 Lakhpati In India. He is guiding now 10k people about
+                                knowledge with youth. He has helped more than 20K+ students in learning new skill. He is guiding now 10k people about
                                 social media marketing in this company.</p>
 
                         </div>
@@ -369,19 +369,19 @@
             </div>
             <div class="owl-carousel mentoring-course owl-theme aos">
                 <div class='item'>
-                    <p>I have been working with RICHIND for over a year now, and I am extremely satisfied with the experience. This company has exceeded my expectations in terms of professionalism, support, and earnings.</p>
+                    <p>I have been working with RICHIND for over a year now, and I am extremely satisfied with the experience. This company has exceeded my expectations in terms of professionalism, support, and education.</p>
                     <p><strong>Sandeep Singh</strong></p>
                 </div>
                 <div class='item'>
-                    <p>I Am A Student & I Am So Happy To Become A Part Of This Beautiful Platform RICHIND Because I Was Finding A Part Time Work That I Could Earn Money Along With My Studies.</p>
+                    <p>I Am A Student & I Am So Happy To Become A Part Of This Beautiful Platform RICHIND Because I have learned so much from this platform. Best for learning new skill.</p>
                     <p><strong>Parminder Singh</strong></p>
                 </div>
                 <div class='item'>
-                    <p> I Am A Collage Student. I Wont To Earn Money As A Part Time With My Study But When I Started RICHIND Searching On YouTube & Google,Its So Amazing E-learning and Earning Platform</p>
+                    <p> I Am A Collage Student. I want to learn new digital skill with my ongoing studies. When I Started RICHIND Searching On YouTube & Google,I found that its So Amazing E-learning Platform</p>
                     <p><strong>Kinshu Gupta</strong></p>
                 </div>
                 <div class='item'>
-                    <p>  Loved to Join RICHIND Here’s Trainings are so powerful i have earned 10k in just 2 days. Best thing on this platform is support from your mentors.</p>
+                    <p>  Loved to Join RICHIND Here’s Trainings are so powerful i have learn so many things. Best thing on this platform is support from your mentors.</p>
                     <p><strong>Chhavi Tyagi</strong></p>
                 </div>
             </div>
