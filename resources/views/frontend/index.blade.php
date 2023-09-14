@@ -171,61 +171,35 @@
         </div>
     </section>
 
-
     <div class="feature-instructors trend-course instructorhome-sec">
-        <div class="section-header aos">
-            <div class="section-sub-head feature-head text-center">
-                <h2>Instructor At Richind</h2>
-                <span class="animate-border-center"></span>
-                <div class="section-text aos">
-                    <p class="mb-0">
-                        At RichInd, you can now be assured to get the top-most training from the leading educators of
-                        their respective fields. Turn your dreams into reality with RichInd proficient instructors.
-                    </p>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-4">
+                <div class="aos-init aos-animate" data-aos="fade-right" data-aos-delay="50" data-aos-duration="500" data-aos-once="true">
+                    <img src="{{ asset('frontend/images/Mr-Yash-kulshrestha.jpg') }}" alt="image" class="img-fluid">
+
                 </div>
             </div>
-        </div>
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-7">
-                        <div class="about-content-wrap with-white-text aos-init" data-aos="fade-left" data-aos-duration="500">
-                            <div class="section-header aos">
-                                <div class="section-sub-head">
-                                    <h2>CEO & Founder of RichInd - <br> Mr. Yash kulshrestha</h2>
-                                </div>
-                            </div>
-                            <p>Yash kulshrestha is one of the Youngest Entrepreneur and YouTuber from India. He started his journey
-                                since 2018. He has 5 years Experience about Sales And Law of attraction. He love to share his
-                                knowledge with youth. He has helped more than 20K+ students in learning new skill. He is guiding now 10k people about
-                                social media marketing in this company.</p>
-
+            <div class="col-md-8">
+                <div class="about-content-wrap with-white-text aos-init" data-aos="fade-left" data-aos-duration="500">
+                    <div class="section-header aos">
+                        <div class="section-sub-head">
+                            <h2>CEO & Founder of RichInd - <br> Mr. Yash kulshrestha</h2>
                         </div>
                     </div>
-                    <div class="col-md-5">
-                        <div class="aos-init aos-animate" data-aos="fade-right" data-aos-delay="50" data-aos-duration="500" data-aos-once="true">
-                            <img src="{{ asset('frontend/images/founder.png') }}" alt="image" class="img-fluid">
+                    <p>Yash kulshrestha is one of the Youngest Entrepreneur and YouTuber from India. He started his journey
+                        since 2018. He has 5 years Experience about Sales And Law of attraction. He love to share his
+                        knowledge with youth. He has helped more than 20K+ students in learning new skill. He is guiding now 10k people about
+                        social media marketing in this company.</p>
 
-                        </div>
-                    </div>
                 </div>
             </div>
-        <div class="container">
-            <div class="owl-carousel instructors-course owl-theme aos">
-                @foreach ($instructors as $instructor)
-                    <div class='instructors-widget'>
-                        <div class='instructors-img '>
-                            <img class='img-fluid' alt='Richind-AMan-Jain'
-                                src="{{ asset('backend/img/instructors/' . $instructor->image) }}">
-                        </div>
-                        <div class='instructors-content text-center'>
-                            <h5 class='gordita-bold'>{{ $instructor->name }}</h5>
-                            <p>{{ $instructor->designation }}</p>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
+
         </div>
     </div>
+    </div>
+
+
 
     <section class="insta-sec">
         <div class="container">
@@ -276,6 +250,7 @@
                                         </div>
                                         <p class="txt-dark-1">
                                             <strong class="fs-15 gordita-bold">High Paying Skills:</strong>
+                                            We are provide high paying skills Courses
                                         </p>
                                     </div>
                                 </div>
@@ -285,11 +260,12 @@
                                     <div class="get-certified d-flex align-items-center">
                                         <div class="blur-box">
                                             <div class="certified-img ">
-                                                <i class="fa-solid fa-bullseye-arrow fs-60"></i>
+                                                <i class="fa-solid fa-bullseye fs-60"></i>
                                             </div>
                                         </div>
                                         <p class="txt-dark-1">
                                             <strong class="fs-15 gordita-bold">Valuable Courses:</strong>
+                                            We believe to provide value to our RICHIND family. And our courses are designed on this principle. We have the most valuable courses.
                                         </p>
                                     </div>
                                 </div>
@@ -304,6 +280,7 @@
                                         </div>
                                         <p class="txt-dark-1">
                                             <strong class="fs-15 gordita-bold">Affordable Pricing:</strong>
+                                            We provide valuable courses at the most affordable price. Because we think everyone deserves to be educated and for education, you don't need to spend high.
                                         </p>
                                     </div>
                                 </div>
@@ -318,6 +295,7 @@
                                         </div>
                                         <p class="txt-dark-1">
                                             <strong class="fs-15 gordita-bold">24/7 Online Support:</strong>
+                                            We have the best support system for RICHIND family. It's 24×7 open for everyone - any time.
                                         </p>
                                     </div>
                                 </div>
@@ -369,26 +347,55 @@
             </div>
             <div class="owl-carousel mentoring-course owl-theme aos">
                 <div class='item'>
-                    <p>I have been working with RICHIND for over a year now, and I am extremely satisfied with the experience. This company has exceeded my expectations in terms of professionalism, support, and education.</p>
+                    <p style="text-align: justify;">I have been working with RICHIND for over a year now, and I am extremely satisfied with the experience. This company has exceeded my expectations in terms of professionalism, support, and education.</p>
                     <p><strong>Sandeep Singh</strong></p>
                 </div>
                 <div class='item'>
-                    <p>I Am A Student & I Am So Happy To Become A Part Of This Beautiful Platform RICHIND Because I have learned so much from this platform. Best for learning new skill.</p>
+                    <p style="text-align: justify;">I Am A Student & I Am So Happy To Become A Part Of This Beautiful Platform RICHIND Because I have learned so much from this platform. Best for learning new skill.</p>
                     <p><strong>Parminder Singh</strong></p>
                 </div>
                 <div class='item'>
-                    <p> I Am A Collage Student. I want to learn new digital skill with my ongoing studies. When I Started RICHIND Searching On YouTube & Google,I found that its So Amazing E-learning Platform</p>
+                    <p style="text-align: justify;"> I Am A Collage Student. I want to learn new digital skill with my ongoing studies. When I Started RICHIND Searching On YouTube & Google,I found that its So Amazing E-learning Platform</p>
                     <p><strong>Kinshu Gupta</strong></p>
                 </div>
                 <div class='item'>
-                    <p>  Loved to Join RICHIND Here’s Trainings are so powerful i have learn so many things. Best thing on this platform is support from your mentors.</p>
+                    <p style="text-align: justify;">  Loved to Join RICHIND Here’s Trainings are so powerful i have learn so many things. Best thing on this platform is support from your mentors.</p>
                     <p><strong>Chhavi Tyagi</strong></p>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="subscribe-newsec">
+    <div class="feature-instructors trend-course instructorhome-sec subscribe-newsec">
+        <div class="section-header aos">
+            <div class="section-sub-head feature-head text-center">
+                <h2>Instructor At Richind</h2>
+                <span class="animate-border-center"></span>
+                <div class="section-text aos">
+                    <p class="mb-0">
+                        At RichInd, you can now be assured to get the top-most training from the leading educators of
+                        their respective fields. Turn your dreams into reality with RichInd proficient instructors.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="owl-carousel instructors-course owl-theme aos">
+                @foreach ($instructors as $instructor)
+                    <div class='instructors-widget'>
+                        <div class='instructors-img '>
+                            <img class='img-fluid' alt='Richind-AMan-Jain'
+                                src="{{ asset('backend/img/instructors/' . $instructor->image) }}">
+                        </div>
+                        <div class='instructors-content text-center'>
+                            <h5 class='gordita-bold'>{{ $instructor->name }}</h5>
+                            <p>{{ $instructor->designation }}</p>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+    <section class="ptb-60">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -396,7 +403,7 @@
                         <div class="row d-flex align-items-center row-cols-1 row-cols-lg-2">
                             <div class="col-lg-8 m-lg-auto">
                                 <div class="newsletter-txt text-center pr-20">
-                                    <h4 class="h4-sm">Freequently Asked Questions</h4>
+                                    <h4 class="h4-sm">Frequently Asked Questions</h4>
                                     <span class="animate-border-center"></span>
                                 </div>
                             </div>

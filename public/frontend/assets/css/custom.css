@@ -1492,7 +1492,7 @@ input[readonly] {
 }
 .subscribe-newsec {
     border: 1px solid #efefef;
-    padding: 60px 40px;
+    /* padding: 60px 40px; */
     -webkit-border-radius: 16px;
     -moz-border-radius: 16px;
     -o-border-radius: 16px;

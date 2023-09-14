@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer class="footer  subscribe-newsec">
     <div class="footer-top aos">
         <div class="container">
             <div class="row">
