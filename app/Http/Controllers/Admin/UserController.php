@@ -186,23 +186,23 @@ class UserController extends Controller
                 $user_detail->save();
 
                 if($i == 1){
-                    try {
-                        Mail::send('email.active_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount], function($message) use($commission_user){
-                            $message->to($commission_user->email);
-                            $message->subject('RichIND Notification');
-                        });
-                    } catch (\Throwable $th) {
-                        //throw $th;
-                    }
+                    // try {
+                    //     Mail::send('email.active_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount], function($message) use($commission_user){
+                    //         $message->to($commission_user->email);
+                    //         $message->subject('RichIND Notification');
+                    //     });
+                    // } catch (\Throwable $th) {
+                    //     //throw $th;
+                    // }
                 }else{
-                    try {
-                        Mail::send('email.passive_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount,'comes_from'=>$user], function($message) use($commission_user){
-                            $message->to($commission_user->email);
-                            $message->subject('RichIND Notification');
-                        });
-                    } catch (\Throwable $th) {
-                        //throw $th;
-                    }
+                    // try {
+                    //     Mail::send('email.passive_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount,'comes_from'=>$user], function($message) use($commission_user){
+                    //         $message->to($commission_user->email);
+                    //         $message->subject('RichIND Notification');
+                    //     });
+                    // } catch (\Throwable $th) {
+                    //     //throw $th;
+                    // }
                 }
             }
         }
@@ -239,23 +239,23 @@ class UserController extends Controller
                 array_push($user_arr,$commission_user->id);
                 $referral_code = $commission_user->referral_code;
                 if($i == 1){
-                    try {
-                        Mail::send('email.active_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount], function($message) use($commission_user){
-                            $message->to($commission_user->email);
-                            $message->subject('RichIND Notification');
-                        });
-                    } catch (\Throwable $th) {
-                        //throw $th;
-                    }
+                    // try {
+                    //     Mail::send('email.active_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount], function($message) use($commission_user){
+                    //         $message->to($commission_user->email);
+                    //         $message->subject('RichIND Notification');
+                    //     });
+                    // } catch (\Throwable $th) {
+                    //     //throw $th;
+                    // }
                 }else{
-                    try {
-                        Mail::send('email.passive_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount,'comes_from'=>$user], function($message) use($commission_user){
-                            $message->to($commission_user->email);
-                            $message->subject('RichIND Notification');
-                        });
-                    } catch (\Throwable $th) {
-                        //throw $th;
-                    }
+                    // try {
+                    //     Mail::send('email.passive_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount,'comes_from'=>$user], function($message) use($commission_user){
+                    //         $message->to($commission_user->email);
+                    //         $message->subject('RichIND Notification');
+                    //     });
+                    // } catch (\Throwable $th) {
+                    //     //throw $th;
+                    // }
                 }
 
             }else{
@@ -277,23 +277,23 @@ class UserController extends Controller
                 $user_detail->save();
 
                 if($i == 1){
-                    try {
-                        Mail::send('email.active_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount], function($message) use($commission_user){
-                            $message->to($commission_user->email);
-                            $message->subject('RichIND Notification');
-                        });
-                    } catch (\Throwable $th) {
-                        //throw $th;
-                    }
+                    // try {
+                    //     Mail::send('email.active_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount], function($message) use($commission_user){
+                    //         $message->to($commission_user->email);
+                    //         $message->subject('RichIND Notification');
+                    //     });
+                    // } catch (\Throwable $th) {
+                    //     //throw $th;
+                    // }
                 }else{
-                    try {
-                        Mail::send('email.passive_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount,'comes_from'=>$user], function($message) use($commission_user){
-                            $message->to($commission_user->email);
-                            $message->subject('RichIND Notification');
-                        });
-                    } catch (\Throwable $th) {
-                        //throw $th;
-                    }
+                    // try {
+                    //     Mail::send('email.passive_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount,'comes_from'=>$user], function($message) use($commission_user){
+                    //         $message->to($commission_user->email);
+                    //         $message->subject('RichIND Notification');
+                    //     });
+                    // } catch (\Throwable $th) {
+                    //     //throw $th;
+                    // }
                 }
             }
         }
@@ -621,14 +621,14 @@ class UserController extends Controller
                             $user_detail->save();
 
                             if($i == 1){
-                                try {
-                                    Mail::send('email.active_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount], function($message) use($commission_user){
-                                        $message->to($commission_user->email);
-                                        $message->subject('RichInd Notification');
-                                    });
-                                } catch (\Throwable $th) {
-                                    //throw $th;
-                                }
+                                // try {
+                                //     Mail::send('email.active_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount], function($message) use($commission_user){
+                                //         $message->to($commission_user->email);
+                                //         $message->subject('RichInd Notification');
+                                //     });
+                                // } catch (\Throwable $th) {
+                                //     //throw $th;
+                                // }
                             }else{
                                 // try {
                                 //     Mail::send('email.passive_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount,'comes_from'=>$user], function($message) use($commission_user){
