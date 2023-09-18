@@ -101,8 +101,8 @@
             <div class="course-feature">
                 <div class="row">
                     @foreach ($plans as $key => $plan)
-                        <div class='col-lg-4 col-md-6 d-flex'>
-                            <div class='course-box d-flex aos'>
+                        <div class='col-lg-4 col-md-6'>
+                            <div class='course-box'>
                                 <div class='product'>
                                     <div class='product-img'>
                                         <a href="{{ route('checkout') }}?slug={{ $plan->slug }}"
@@ -183,7 +183,7 @@
             <div class="col-md-8">
                 <div class="about-content-wrap with-white-text aos-init" data-aos="fade-left" data-aos-duration="500">
                     <div class="section-header aos">
-                        <div class="section-sub-head">
+                        <div class="section-sub-head mt-3">
                             <h2>CEO & Founder of RichInd - <br> Mr. Yash kulshrestha</h2>
                         </div>
                     </div>
@@ -365,6 +365,120 @@
             </div>
         </div>
     </section>
+
+
+
+    <section class="section share-knowledge founder-sec">
+        <div class="container">
+           <div class="row">
+              <div class="col-lg-6 mb-3">
+                 <!-- Banner Box Start -->
+                 <div class="banner-box banner-bg-1 aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="row align-items-end">
+                       <div class="col-md-7">
+                          <div class="banner-caption">
+                             <h3 class="banner-caption__title">Become An Instructor</h3>
+                             <p>Top instructors from around the world teach millions of students on RichInd.</p>
+                             <a href="#" class="banner-caption__btn btn btn-primary btn-hover-secondary">Start teaching today</a>
+                          </div>
+                       </div>
+                       <div class="col-md-5">
+                          <div class="banner-image banner-position">
+                             <img src="{{asset('frontend/images/banner-image-group-teachers.png')}}" alt="Banner" width="100%" height="auto">
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+                 <!-- Banner Box End -->
+              </div>
+              <div class="col-lg-6">
+                 <!-- Banner Box Start -->
+                 <div class="banner-box banner-bg-2 aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="row align-items-end">
+                       <div class="col-md-7">
+                          <div class="banner-caption">
+                             <h3 class="banner-caption__title">Access To Education</h3>
+                             <p>Create an account to receive our newsletter, course recommendations and promotions.</p>
+                             <a href="#" class="banner-caption__btn btn btn-primary btn-hover-secondary">Register for free</a>
+                          </div>
+                       </div>
+                       <div class="col-md-5">
+                          <div class="banner-image banner-position-02">
+                             <img src="{{asset('frontend/images/banner-image-laptop.png')}}" alt="Banner" width="100%" height="auto">
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+                 <!-- Banner Box End -->
+              </div>
+           </div>
+        </div>
+    </section>
+
+     <section class="section how-it-works ptb-60 our-alumni-sec">
+        <div class="container">
+            <div class="section-header aos">
+                <div class="section-sub-head">
+                    <h2>RichInd Specialities</h2>
+                    <span class="animate-border"></span>
+                </div>
+            </div>
+            <div class="row g-6">
+                <div class="col-lg-3 col-sm-6 mt-2">
+                   <!-- RichInd Box Item Strat -->
+                   <div class="edumall-box-item text-center aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
+                      <div class="edumall-box-item__icon mb-2">
+                         <img src="{{asset('frontend/images/image-box-01.png')}}" alt="Icon" width="99" height="100">
+                      </div>
+                      <div class="edumall-box-item__content">
+                         <h4 class="edumall-box-item__title">Learn The Essential Skills</h4>
+                         <p>Like graphic design, business anaytics, coding and much more</p>
+                      </div>
+                   </div>
+                   <!-- Edumall Box Item End -->
+                </div>
+                <div class="col-lg-3 col-sm-6 mt-2">
+                   <!-- Edumall Box Item Strat -->
+                   <div class="edumall-box-item text-center aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
+                      <div class="edumall-box-item__icon mb-2">
+                         <img src="{{asset('frontend/images/image-box-02.png')}}" alt="Icon" width="100" height="100">
+                      </div>
+                      <div class="edumall-box-item__content">
+                         <h4 class="edumall-box-item__title">Earn Certificates And Degrees</h4>
+                         <p>From top institutions and universities with high reputation over the world</p>
+                      </div>
+                   </div>
+                   <!-- Edumall Box Item End -->
+                </div>
+                <div class="col-lg-3 col-sm-6 mt-2">
+                   <!-- Edumall Box Item Strat -->
+                   <div class="edumall-box-item text-center aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
+                      <div class="edumall-box-item__icon mb-2">
+                         <img src="{{asset('frontend/images/image-box-03.png')}}" alt="Icon" width="100" height="100">
+                      </div>
+                      <div class="edumall-box-item__content">
+                         <h4 class="edumall-box-item__title">Get Ready for The Next Career</h4>
+                         <p>With high demands in mastering new skills in IT, analytics and more</p>
+                      </div>
+                   </div>
+                   <!-- Edumall Box Item End -->
+                </div>
+                <div class="col-lg-3 col-sm-6 mt-2">
+                   <!-- Edumall Box Item Strat -->
+                   <div class="edumall-box-item text-center aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
+                      <div class="edumall-box-item__icon mb-2">
+                         <img src="{{asset('frontend/images/image-box-04.png')}}" alt="Icon" width="90" height="100">
+                      </div>
+                      <div class="edumall-box-item__content">
+                         <h4 class="edumall-box-item__title">Master at Different Areas</h4>
+                         <p>With RichInd's thousands of courses instructed by top experts</p>
+                      </div>
+                   </div>
+                   <!-- Edumall Box Item End -->
+                </div>
+             </div>
+        </div>
+    </section>
     <div class="feature-instructors trend-course instructorhome-sec subscribe-newsec">
         <div class="section-header aos">
             <div class="section-sub-head feature-head text-center">
@@ -396,6 +510,62 @@
         </div>
     </div>
     <section class="ptb-60">
+        <div class="container">
+            <div class="row gy-8 align-items-center">
+                <div class="col-lg-6 col-md-6">
+                   <!-- Section Title Start -->
+                   <div class="section-title aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="section-header aos">
+                        <div class="section-sub-head">
+                            <h2>Our Certificates</h2>
+                            <span class="animate-border"></span>
+                        </div>
+                    </div>
+                      <p>Over the years, we have received numerous certificates from trustworthy sources including Government as a consequence of our dedication to excellence in every aspect of our services.</p>
+                   </div>
+                   <div class="certificate-button mt-3">
+                      <a href="#" class="banner-caption__btn btn btn-primary btn-hover-secondary mt-0 mb-3">View Certificates</a>
+                   </div>
+                   <!-- Section Title End -->
+                </div>
+                <div class="col-lg-2">
+                   <!-- Partners Logo Start -->
+                   <div class="partner-logo mb-3">
+                      <div class="partner-logo__logo">
+                         <img src="{{asset('frontend/images/msme.png')}}" alt="Brand Logo">
+                      </div>
+
+                   </div>
+
+                   <!-- Partners Logo End -->
+                </div>
+                <div class="col-lg-2 col-6">
+                   <!-- Partners Logo Start -->
+                   <div class="partner-logo">
+                      <div class="partner-logo__logo">
+                         <img src="{{asset('frontend/images/iso.png')}}" alt="Brand Logo">
+                      </div>
+
+                   </div>
+
+                   <!-- Partners Logo End -->
+                </div>
+                <div class="col-lg-2 col-6">
+                   <!-- Partners Logo Start -->
+                   <div class="partner-logo">
+                      <div class="partner-logo__logo">
+                         <img src="{{asset('frontend/images/gst.png')}}" alt="Brand Logo">
+                      </div>
+
+                   </div>
+
+                   <!-- Partners Logo End -->
+                </div>
+
+             </div>
+        </div>
+    </section>
+    <section class="ptb-60 subscribe-newsec">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">

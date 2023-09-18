@@ -12,7 +12,7 @@
 <div class="page-content contact-ussec">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-sm-5">
+            <div class="col-lg-4 col-sm-5 mb-3">
                 <div class="support-wrap bg-brand-pink">
                     <p class="text-white mar-top-80 mar-btm-4">Let's Talk</p>
                     <h5 class="text-white fs-35">Keep Connected With Us</h5>

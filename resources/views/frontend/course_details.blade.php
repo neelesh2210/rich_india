@@ -15,8 +15,8 @@
         </div>
         <div class="course-feature">
             <div class="row">
-                <div class='col-lg-4 col-md-6 d-flex'>
-                    <div class='course-box d-flex aos'>
+                <div class='col-lg-4 col-md-6'>
+                    <div class='course-box'>
                         <div class='product'>
                             <div class='product-img'>
                                 <a href="#" title="{{env('APP_NAME')}}-{{$plan_detail->title}}">

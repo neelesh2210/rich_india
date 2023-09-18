@@ -55,7 +55,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6 col-6">
                     <div class="footer-widget footer-menu">
                         <h2 class="footer-title">Important Links</h2>
                         <ul>
@@ -77,7 +77,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6">
+                <div class="col-lg-2 col-md-6 col-6">
                     <div class="footer-widget footer-menu">
                         <h2 class="footer-title">Quick Links</h2>
                         <ul>
