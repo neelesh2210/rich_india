@@ -78,13 +78,13 @@ class UserDashboardController extends Controller
 
     public function leaderboard()
     {
-        $last_week_leaderboards = Commission::select('user_id')->where('delete_status','0')->where('user_id','!=',1)->whereDate('created_at', '>=', Carbon::now()->subDays(7))->selectRaw('round(sum(commission),2) as total_commission')->with('user.userDetail')->whereHas('user', function($q){
+        $last_week_leaderboards = Commission::select('user_id')->where('delete_status','0')->whereNotIn('user_id', [1,614])->whereDate('created_at', '>=', Carbon::now()->subDays(7))->selectRaw('round(sum(commission),2) as total_commission')->with('user.userDetail')->whereHas('user', function($q){
             $q->where('status','1');
         })->groupBy('user_id')->orderBy('total_commission','desc')->take(10)->get();
-        $last_month_leaderboards = Commission::select('user_id')->where('delete_status','0')->where('user_id','!=',1)->whereDate('created_at', '>=', Carbon::now()->subDays(30))->selectRaw('round(sum(commission),2) as total_commission')->with('user.userDetail')->whereHas('user', function($q){
+        $last_month_leaderboards = Commission::select('user_id')->where('delete_status','0')->whereNotIn('user_id', [1,614])->whereDate('created_at', '>=', Carbon::now()->subDays(30))->selectRaw('round(sum(commission),2) as total_commission')->with('user.userDetail')->whereHas('user', function($q){
             $q->where('status','1');
         })->groupBy('user_id')->orderBy('total_commission','desc')->take(10)->get();
-        $all_time_leaderboards = Commission::select('user_id')->where('delete_status','0')->where('user_id','!=',1)->selectRaw('round(sum(commission),2) as total_commission')->with('user.userDetail')->whereHas('user', function($q){
+        $all_time_leaderboards = Commission::select('user_id')->where('delete_status','0')->whereNotIn('user_id', [1,614])->selectRaw('round(sum(commission),2) as total_commission')->with('user.userDetail')->whereHas('user', function($q){
             $q->where('status','1');
         })->groupBy('user_id')->get();
 
