@@ -116,6 +116,8 @@
                                                     @elseif($user->added_by == 'self')
                                                         Website
                                                     @endif
+                                                        <br>
+                                                    <b>@if(!empty($user->userDetail->avatar))<a href="{{asset('frontend/images/avatar/'.$user->userDetail->avatar)}}" download> <i class="fas fa-download"></i> Download Image</a>@endif </b><br>
                                                 </td>
                                                 <td>
                                                     <b>Name: </b>{{ optional($user->sponsorDetail)->name }} <br>
@@ -225,8 +227,8 @@
             <div class="card card-primary card-outline">
                 <div class="modal-header">
                     <h5 class="modal-title">User Detail</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="cursor:pointer">
-                        <span aria-hidden="true">&times;</span>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
                     </button>
                 </div>
                 <div class="modal-body" id="modal_div">

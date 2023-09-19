@@ -25,7 +25,7 @@
                                         </tr>
                                         <tr>
                                             <th scope="row">Total Withdrawl :</th>
-                                            <td class="text-muted">        
+                                            <td class="text-muted">
                                                 @if($user_details->payout_sum_amount)
                                                 {{$user_details->payout_sum_amount}}
                                                 @else
