@@ -117,7 +117,7 @@
                                                         Website
                                                     @endif
                                                         <br>
-                                                    <b><a href="{{asset('frontend/images/avatar/'.$user->userDetail->avatar)}}" download> <i class="fas fa-download"></i> Download Image</a> </b><br>
+                                                    <b>@if(!empty($user->avatar))<a href="{{asset('frontend/images/avatar/'.$user->avatar)}}" download> <i class="fas fa-download"></i> Download Image</a>@endif </b><br>
                                                 </td>
                                                 <td>
                                                     <b>Name: </b>{{ optional($user->sponsorDetail)->name }} <br>
