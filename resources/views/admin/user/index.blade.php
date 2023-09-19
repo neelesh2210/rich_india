@@ -225,7 +225,7 @@
             <div class="card card-primary card-outline">
                 <div class="modal-header">
                     <h5 class="modal-title">User Detail</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="cursor:pointer">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
