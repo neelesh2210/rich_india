@@ -24,16 +24,21 @@
                                                     <h4> Today </h4>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <th colspan="2">Member</th>
-                                                        <th>Amount</th>
-                                                    </tr>
                                                     @foreach ($today_leaderboards as $today_key=>$today_leaderboard)
                                                     <tr>
+                                                        <td>
+                                                            <div>
+                                                                <img src="{{ asset('frontend/images/avatar/'.$today_leaderboard->user->avatar) }}" class="avatar-sm img-thumbnail rounded-circle" onerror="this.onerror=null;this.src='{{asset('user_dashboard/images/users/avatar-1.jpg')}}'" alt="Generic placeholder image">
+                                                            </div>
+                                                        </td>
 
-                                                        <td> <img src="{{ asset('frontend/images/avatar/' . $today_leaderboard->user->avatar) }}" class="avatar-sm img-thumbnail rounded-circle" onerror="this.onerror=null;this.src='{{asset('user_dashboard/images/users/avatar-1.jpg')}}'"></td>
-                                                        <th>{{ $today_leaderboard->user->name }} <br> <span class="badge bg-warning">Rank {{$today_key+1}}</span></th>
-                                                        <td style="color:red" class="fw-bold">₹{{ $today_leaderboard->total_commission }}</td>
+                                                        <td>
+                                                            {{$today_leaderboard->user->name}}
+                                                        </td>
+
+                                                        <td style="color:#00b620;">
+                                                            ₹{{$today_leaderboard->total_commission}}
+                                                        </td>
                                                     </tr>
                                                     @endforeach
                                                 </tbody>
