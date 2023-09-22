@@ -17,7 +17,7 @@
         <div class="container">
             <div class="course-widget">
                 <div class="row">
-                    <div class="col-xl-3 col-lg-4 col-md-6 col-6">
+                    <div class="col-xl-3 col-lg-4 col-md-6">
                         <div class="course-full-width">
                             <div class="blur-border course-radius align-items-center aos">
                                 <div class="online-course d-flex align-items-center">
@@ -32,7 +32,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 col-6">
+                    <div class="col-xl-3 col-lg-4 col-md-6">
                         <div class="course-full-width">
                             <div class="blur-border course-radius align-items-center aos">
                                 <div class="online-course d-flex align-items-center">
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 col-6">
+                    <div class="col-xl-3 col-lg-4 col-md-6">
                         <div class="course-full-width">
                             <div class="blur-border course-radius align-items-center aos">
                                 <div class="online-course d-flex align-items-center">
@@ -62,7 +62,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 col-6">
+                    <div class="col-xl-3 col-lg-4 col-md-6">
                         <div class="course-full-width">
                             <div class="blur-border course-radius align-items-center aos">
                                 <div class="online-course d-flex align-items-center">
