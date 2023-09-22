@@ -181,7 +181,7 @@
                 </div>
             </div>
             <div class="col-md-8">
-                <div class="about-content-wrap with-white-text aos-init" data-aos="fade-left" data-aos-duration="500">
+                <div class="about-content-wrap with-white-text aos-init">
                     <div class="section-header aos">
                         <div class="section-sub-head mt-3">
                             <h2>CEO & Founder of RichInd - <br> Mr. Yash kulshrestha</h2>
