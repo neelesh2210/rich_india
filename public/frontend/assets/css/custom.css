@@ -2088,7 +2088,7 @@ input[readonly] {
         display: block;
     }
     .login-box .login-wrapper .loginbox {
-        padding: 20px 0px;
+        /* padding: 20px 0px; */
     }
     .login-wrapper .loginbox label {
         margin-bottom: 7px!important;
