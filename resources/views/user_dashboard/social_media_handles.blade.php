@@ -19,36 +19,46 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="row text-center">
-                                <div class="mt-3 col-md-3">
-                                    <div class="card product-box-hi8 p-3">
-                                    <a href="#" class="prt-social-whatsap"><i class="uil uil-whatsapp"></i></a>
-                                    <p class="mb-1">Whatsapp</p>
-                                    </div>
-                                </div>
-                                <div class="mt-3 col-md-3">
-                                    <div class="card product-box-hi8 p-4">
-                                    <a href="#" class="prt-social-telegram"></i><i class="fab fa-telegram"></i></a>
-                                    <p class="mt-1 mb-1">Telegram</p>
-                                    </div>
-                                </div>
-                                <div class="mt-3 col-md-3">
-                                    <div class="card product-box-hi8 p-3">
-                                    <a href="#" class="prt-social-instagram"><i class="uil uil-instagram-alt"></i></a>
-                                        <p class="mb-1">RichIND Offical Instgram Page</p>
-                                    </div>
-                                </div>
-                                <div class="mt-3 col-md-3">
-                                    <div class="card product-box-hi8 p-3">
-                                      <a href="#" class="prt-social-instagram "><i class="uil uil-instagram-alt"></i></a>
-                                    <p class="mb-1">RichIND Achievers Instgram Page</p>
-                                    </div>
-                                </div>
-                                <div class="mt-3 col-md-3">
-                                    <div class="card product-box-hi8 p-3">
-                                    <a href="#" class="prt-social-instagram"><i class="uil uil-instagram-alt"></i></a>
-                                    <p class="mb-1">Founder and Ceo Instgram ID</p>
-                                    </div>
-                                </div>
+                                @if(websiteData('whatsappgroup'))
+                                    @foreach (json_decode(websiteData('whatsappgroup')) as $whskey=>$whatsappgroup)
+                                        <div class="mt-3 col-md-3">
+                                            <div class="card product-box-hi8 p-3">
+                                            <a href="{{$whatsappgroup->link}}" class="prt-social-whatsap" target="_blank"><i class="uil uil-whatsapp"></i></a>
+                                            <p class="mb-1">{{$whatsappgroup->title}}</p>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                @endif
+                                @if(websiteData('telegramgroup'))
+                                    @foreach (json_decode(websiteData('telegramgroup')) as $telkey=>$telegramgroup)
+                                        <div class="mt-3 col-md-3">
+                                            <div class="card product-box-hi8 p-4">
+                                            <a href="{{$telegramgroup->link}}" class="prt-social-telegram" target="_blank"></i><i class="fab fa-telegram"></i></a>
+                                            <p class="mt-1 mb-1">{{$telegramgroup->title}}</p>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                @endif
+                                @if(websiteData('instagramgroup'))
+                                    @foreach (json_decode(websiteData('instagramgroup')) as $inskey=>$instagramgroup)
+                                        <div class="mt-3 col-md-3">
+                                            <div class="card product-box-hi8 p-3">
+                                            <a href="{{$instagramgroup->link}}" class="prt-social-instagram" target="_blank"><i class="uil uil-instagram-alt"></i></a>
+                                                <p class="mb-1">{{$instagramgroup->title}}</p>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                @endif
+                                @if(websiteData('foundergroup'))
+                                    @foreach (json_decode(websiteData('foundergroup')) as $fonkey=>$foundergroup)
+                                        <div class="mt-3 col-md-3">
+                                            <div class="card product-box-hi8 p-3">
+                                            <a href="{{$foundergroup->link}}" class="prt-social-instagram" target="_blank"><i class="uil uil-instagram-alt"></i></a>
+                                            <p class="mb-1">{{$foundergroup->name}}</p>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                @endif
                                 </div>
                             </div>
                         </div>

@@ -76,6 +76,12 @@
                         <span> Security </span>
                     </a>
                 </li>
+                <li class="side-nav-item">
+                    <a href="{{route('user.social.media.handles')}}" class="side-nav-link">
+                        <i class="uil-share-alt"></i>
+                        <span> Social Media Handles </span>
+                    </a>
+                </li>
                 {{-- <li class="side-nav-item">
                     <a href="{{route('user.change-password')}}" class="side-nav-link">
                         <i class="uil-key-skeleton"></i>
@@ -98,12 +104,6 @@
                     <a href="#" class="side-nav-link">
                         <i class="uil-video"></i>
                         <span> Startup Video </span>
-                    </a>
-                </li>
-                <li class="side-nav-item">
-                    <a href="{{route('user.social.media.handles')}}" class="side-nav-link">
-                        <i class="uil-share-alt"></i>
-                        <span> Social Media Handles </span>
                     </a>
                 </li>
                 <li class="side-nav-item">
