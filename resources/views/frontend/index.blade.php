@@ -141,14 +141,14 @@
                                                 @endforeach
                                             </ul>
                                         </div>
-                                        {{-- <div class='all-btn all-category d-flex align-items-center'>
+                                        <div class='all-btn all-category d-flex align-items-center'>
                                             <a href="{{ route('checkout') }}?slug={{ $plan->slug }}"
                                                 title="{{ env('APP_NAME') }}-{{ $plan->title }}" class='btn btn-primary'
                                                 style="margin:0 auto;">
                                                 Buy Now ₹ {{ $plan->discounted_price }}
                                             </a>
-                                        </div> --}}
-                                        <div class='all-btn all-category d-flex align-items-center'>
+                                        </div>
+                                        {{-- <div class='all-btn all-category d-flex align-items-center'>
                                             @if($key == 0)
                                                 <a href="https://cosmofeed.com/vp/649d9ac792e0dc002085b20e" class='btn btn-primary' style="margin:0 auto;">Buy Now ₹ {{ $plan->discounted_price }}</a>
                                             @elseif($key == 1)
@@ -160,7 +160,7 @@
                                             @elseif($key == 4)
                                                 <a href="https://cosmofeed.com/vp/64f54d30095729001f5950b8" class='btn btn-primary' style="margin:0 auto;">Buy Now ₹ {{ $plan->discounted_price }}</a>
                                             @endif
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
