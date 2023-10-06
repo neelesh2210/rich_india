@@ -55,6 +55,8 @@ class PlanController extends Controller
         $plan->discounted_price = $request->discounted_price;
         $plan->image = imageUpload($request->file('image'),'backend/img/plan');
         $plan->commission = $request->commission;
+        $plan->cosmofeed_base_price_url = $request->cosmofeed_base_price_url;
+        $plan->cosmofeed_discounted_price_url = $request->cosmofeed_discounted_price_url;
         $plan->points = $request->points;
         $plan->course_ids = $request->course_ids;
         $plan->description = $request->description;
@@ -121,6 +123,8 @@ class PlanController extends Controller
            $plan->image = imageUpload($request->file('image'),'backend/img/plan');
         }
         $plan->commission = $request->commission;
+        $plan->cosmofeed_base_price_url = $request->cosmofeed_base_price_url;
+        $plan->cosmofeed_discounted_price_url = $request->cosmofeed_discounted_price_url;
         $plan->points = $request->points;
         $plan->course_ids = $request->course_ids;
         $plan->description = $request->description;

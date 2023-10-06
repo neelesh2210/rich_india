@@ -65,6 +65,24 @@
                                             @endforeach
                                         </div>
                                         <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Cosmofeed Base Price Url</label>
+                                                    <input type="text" name="cosmofeed_base_price_url"
+                                                        class="form-control"
+                                                        placeholder="Cosmofeed Base Price Url"  value="{{$plan->cosmofeed_base_price_url}}">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Cosmofeed Discounted Price Url </label>
+                                                    <input type="text"  name="cosmofeed_discounted_price_url"
+                                                        class="form-control"
+                                                        placeholder="Cosmofeed Discounted Price Url" value="{{$plan->cosmofeed_discounted_price_url}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
                                             @php
                                                 $plans = App\CPU\PlanManager::withoutTrash()->get();
                                             @endphp

@@ -177,7 +177,7 @@
                                                             @foreach ($plans as $key => $plan)
                                                             <div class="col-lg-3 col-12 col-sm-3">
                                                                 <label class="aiz-megabox d-block mb-3">
-                                                                    <input value="{{$plan->id}}" class="online_payment" type="radio" name="plan_id" @if($plan->slug==request('slug')) checked @endif>
+                                                                    <input value="{{$plan->id}}" class="online_payment" type="radio" name="plan_id" @if($plan->slug==request('slug')) checked @endif onchange="submitForm()">
                                                                     <span class="d-block p-2 aiz-megabox-elem">
                                                                         <img id="ContentPlaceHolder1_img{{ $plan->title }}"
                                                                                     src="{{ asset('backend/img/plan/' . $plan->image) }}" class="img-fluid mb-3" />
@@ -218,7 +218,7 @@
                                 </div>
                             </div>
                             <br>
-                            <div class="col-lg-8 col-12 m-lg-auto" style="margin-top: 25px !important;display:none;" id="payment_div">
+                            <div class="col-lg-8 col-12 m-lg-auto" style="margin-top: 25px !important;" id="payment_div">
                                 <div class="login-wrapper">
                                     <div class="loginbox">
                                         <div class="section-title mb-4 mt-2">
@@ -228,7 +228,7 @@
                                         <div class="faq-accordion">
                                             <div class="accordion" id="FaqAccordion">
                                                 <div class="accordion-item">
-                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" id="cosmofeed" >
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" id="cosmofeed" disabled>
                                                         Cosmofeed
                                                     </button>
                                                     <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#FaqAccordion">
@@ -240,8 +240,8 @@
                                                                     Card/Net Banking
                                                                 </p>
                                                                 <div class="about-btn mt-3 mb-3">
-                                                                    <a href="#" id="place_order" class="btn btn-primary w-100">Place Order <i class="ri-arrow-right-line"></i></a>
-                                                                    <span class="final_price"  id="price"></span>
+                                                                    <a href="#" id="place_order" class="btn btn-primary w-100">Place Order  <span class="final_price"  id="price"></span> <i class="ri-arrow-right-line"></i></a>
+
                                                                 </div>
                                                             </div>
 
@@ -308,36 +308,15 @@
             });
         });
 
-        // function submitForm(){
-        //     var name=$('#name').val();
-        //     var email=$('#email').val();
-        //     var state=$('#state').val();
-        //     var password=$('#password').val();
-        //     var c_password=$('#confirm_password').val();
-
-        //     if(password!=c_password){
-        //         alert('password mismatch with confirme password');
-        //     }
-        //     if(name && email && state && password && c_password){
-        //         if(password==c_password){
-        //          $('#cosmofeed').prop('disabled', false);
-        //          $('#phonepay').prop('disabled', false);
-        //         }
-        //     }else{
-        //         alert('Please Fill Required Fileds');
-        //         $('#cosmofeed').prop('disabled', true);
-        //         $('#phonepay').prop('disabled', true);
-        //     }
-        // }
         function submitForm() {
-
             $.ajax({
                 type: 'POST',
                 url: "{{ route('vaildate.user.registeration') }}",
                 data: $('#registerForm').serialize(),
                 success: function(data) {
-                    $('#payment_div').show();
-                    $('#details_div').hide();
+                    $('#cosmofeed').prop('disabled',false);
+                    // $('#payment_div').show();
+                    // $('#details_div').hide();
                     var referral_code = $('#referral_code').val();
                     if (referral_code == '') {
                         alert('You are submiting form without Referral Code!');
@@ -345,11 +324,52 @@
                     $('#price').text('₹'+data.amount);
                     $('#place_order').attr('href',data.url);
 
+                    $('.form-control').prop('readonly',true);
+                    $('.online_payment').prop('disabled',true);
+                        $('#error_name').show();
+                        $('#error_name').addClass('text-success');
+                        $('#error_name').removeClass('text-danger');
+                        $('#error_name').text('✔ Correct');
+                        $('#name').prop('readonly',true);
+
+                        $('#error_email').show();
+                        $('#error_email').addClass('text-success');
+                        $('#error_email').removeClass('text-danger');
+                        $('#error_email').text('✔ Email Available');
+                        $('#email').prop('readonly',true);
+
+                        $('#error_phone').show();
+                        $('#error_phone').addClass('text-success');
+                        $('#error_phone').removeClass('text-danger');
+                        $('#error_phone').text('✔ Phone Available');
+                        $('#phone').prop('readonly',true);
+
+                        $('#error_password').show();
+                        $('#error_password').addClass('text-success');
+                        $('#error_password').removeClass('text-danger');
+                        $('#error_password').text('✔ Correct');
+                        $('#password').prop('readonly',true);
+
+                        $('#error_state').show();
+                        $('#error_state').addClass('text-success');
+                        $('#error_state').removeClass('text-danger');
+                        $('#error_state').text('✔ Correct');
+                        $('#state').prop('disabled',true);
+
+                        $('#error_refferal').show();
+                        $('#error_refferal').addClass('text-success');
+                        $('#error_refferal').removeClass('text-danger');
+                        $('#error_refferal').text('✔ Correct');
+                        $('#referral_code').prop('readonly',true);
+
+                        $('#submitButton').prop('disabled',true);
+
 
                 },
                 error: function(request, status, error) {
-                    $('#payment_div').hide();
-                    $('#details_div').show();
+                    $('#cosmofeed').prop('disabled',true);
+                    // $('#payment_div').hide();
+                    // $('#details_div').show();
                     $(window).scrollTop(0);
                     if (request.responseJSON.errors.name) {
                         $('#error_name').show();
@@ -361,17 +381,6 @@
                         $('#error_name').addClass('text-success');
                         $('#error_name').removeClass('text-danger');
                         $('#error_name').text('✔ Correct');
-                    }
-                    if (request.responseJSON.errors.last_name) {
-                        $('#error_last_name').show();
-                        $('#error_last_name').addClass('text-danger');
-                        $('#error_last_name').removeClass('text-success');
-                        $('#error_last_name').text('✖ ' + request.responseJSON.errors.last_name);
-                    } else {
-                        $('#error_last_name').show();
-                        $('#error_last_name').addClass('text-success');
-                        $('#error_last_name').removeClass('text-danger');
-                        $('#error_last_name').text('✔ Correct');
                     }
                     if (request.responseJSON.errors.email) {
                         $('#error_email').show();

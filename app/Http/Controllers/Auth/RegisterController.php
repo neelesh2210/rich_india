@@ -94,7 +94,11 @@ class RegisterController extends Controller
     {
         $plan = Plan::where('id',$request->plan_id)->first();
 
-        $amount = $plan->discounted_price;
+        if($request->referral_code){
+            $amount = $plan->discounted_price;
+        }else{
+            $amount = $plan->amount;
+        }
 
         $today_date = date('Y-m-d').' 00:00:00';
         $coupon = CouponManager::withoutTrash()->where('name',$request->coupon)->where('is_active','1')->where('start','<=',$today_date)->where('end','>=',$today_date)->where('type','new')->whereJsonContains('plan_ids',''.$request->plan_id)->first();
@@ -106,7 +110,7 @@ class RegisterController extends Controller
 
         $registration_error_log = new RegistrationErrorLog;
         $registration_error_log->from = 'website';
-        $registration_error_log->name = $request->first_name.' '.$request->last_name;
+        $registration_error_log->name = $request->name;
         $registration_error_log->email = $request->email;
         $registration_error_log->phone = $request->phone;
         $registration_error_log->state = $request->state;
@@ -115,7 +119,14 @@ class RegisterController extends Controller
         $registration_error_log->error = 'Self Registration Payment Error.';
         $registration_error_log->save();
 
-        return $amount;
+
+        if($request->referral_code){
+            $cosmofeed_url = $plan->cosmofeed_discounted_price_url.'?email='.$request->email.'&phone='.$request->phone.'&checksum='.Hash::make($registration_error_log->id);
+        }else{
+            $cosmofeed_url = $plan->cosmofeed_base_price_url.'?email='.$request->email.'&phone='.$request->phone.'&checksum='.Hash::make($registration_error_log->id);
+        }
+
+        return ['amount'=>$amount,'url'=>$cosmofeed_url];
     }
 
     //Razorpay

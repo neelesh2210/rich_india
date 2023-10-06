@@ -75,6 +75,24 @@
                                                 </div>
                                             @endforeach
                                         </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Cosmofeed Base Price Url</label>
+                                                    <input type="text" name="cosmofeed_base_price_url"
+                                                        class="form-control"
+                                                        placeholder="Cosmofeed Base Price Url" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Cosmofeed Discounted Price Url </label>
+                                                    <input type="text"  name="cosmofeed_discounted_price_url"
+                                                        class="form-control"
+                                                        placeholder="Cosmofeed Discounted Price Url" >
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="row" id="poins">
                                             <div class="col-md-5 form_div">
                                                 <div class="form-group">
