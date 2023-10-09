@@ -98,7 +98,7 @@
                                                         <div class="form-group">
                                                             <label>Your Affiliate Code</label>
                                                             <div class="aff-div">
-                                                                <input class="form-control" name="referral_code" id="referral_code" placeholder="Referral Code"/>
+                                                                <input class="form-control" name="referral_code" id="referral_code" value="{{ old('referral_code', $referral_code) }}" placeholder="Referral Code"/>
                                                                 <div class="lbl_msg" id="error_refferal"></div>
                                                             </div>
                                                         </div>
