@@ -115,6 +115,8 @@
                                                         Manual
                                                     @elseif($user->added_by == 'self')
                                                         Website
+                                                    @elseif($user->added_by == 'cosmofeed')
+                                                        Cosmofeed
                                                     @endif
                                                         <br>
                                                     <b>@if(!empty($user->avatar))<a href="{{asset('frontend/images/avatar/'.$user->avatar)}}" download> <i class="fas fa-download"></i> Download Image</a>@endif </b><br>

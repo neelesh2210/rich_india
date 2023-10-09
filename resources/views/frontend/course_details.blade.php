@@ -46,9 +46,9 @@
                                     </ul>
                                 </div>
                                 <div class='all-btn all-category d-flex align-items-center'>
-                                    {{-- <a href="{{route('checkout')}}?slug={{$plan_detail->slug}}" title="{{env('APP_NAME')}}-{{$plan_detail->title}}" class='btn btn-primary' style="font-size:20px;margin-left:60px">
+                                    <a href="{{route('checkout')}}?slug={{$plan_detail->slug}}" title="{{env('APP_NAME')}}-{{$plan_detail->title}}" class='btn btn-primary' style="font-size:20px;margin-left:60px">
                                         Buy Now ₹ {{$plan_detail->discounted_price}}
-                                    </a> --}}
+                                    </a>
                                 </div>
                             </div>
                         </div>

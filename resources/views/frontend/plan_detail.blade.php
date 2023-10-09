@@ -39,7 +39,7 @@
                                 <small>Inc. GST</small>
                             </div>
                             <div class="mt-3 mb-30">
-                                {{-- <a href="{{route('checkout')}}?slug={{$plan_detail->slug}}" class="default-btn">Buy Now</a> --}}
+                                <a href="{{route('checkout')}}?slug={{$plan_detail->slug}}" class="default-btn">Buy Now</a>
                             </div>
                             <div class="mb-30">
                                 @foreach ($plan_detail->course_ids as $course_id)

@@ -105,19 +105,19 @@
                             <div class='course-box'>
                                 <div class='product'>
                                     <div class='product-img'>
-                                        {{-- <a href="{{ route('checkout') }}?slug={{ $plan->slug }}"
+                                        <a href="{{ route('checkout') }}?slug={{ $plan->slug }}"
                                             title="{{ env('APP_NAME') }}-{{ $plan->title }}">
                                                 <img src="{{ 'backend/img/plan/' . $plan->image }}"
                                                     alt="{{ env('APP_NAME') }}-{{ $plan->title }}" class="img-fluid">
-                                        </a> --}}
+                                        </a>
                                     </div>
                                     <div class='product-content'>
                                         <div class='course-group d-flex'>
                                             <div class='course-group-img d-flex'>
                                                 <div class='course-name'>
                                                     <h4>
-                                                        {{-- <a href="{{ route('checkout') }}?slug={{ $plan->slug }}"
-                                                            title="Richind-Starter-Package"> {{ $plan->title }} </a> --}}
+                                                        <a href="{{ route('checkout') }}?slug={{ $plan->slug }}"
+                                                            title="Richind-Starter-Package"> {{ $plan->title }} </a>
                                                     </h4>
                                                 </div>
                                             </div>
@@ -142,11 +142,11 @@
                                             </ul>
                                         </div>
                                         <div class='all-btn all-category d-flex align-items-center'>
-                                            {{-- <a href="{{ route('checkout') }}?slug={{ $plan->slug }}"
+                                            <a href="{{ route('checkout') }}?slug={{ $plan->slug }}"
                                                 title="{{ env('APP_NAME') }}-{{ $plan->title }}" class='btn btn-primary'
                                                 style="margin:0 auto;">
                                                 Buy Now ₹ {{ $plan->discounted_price }}
-                                            </a> --}}
+                                            </a>
                                         </div>
                                         {{-- <div class='all-btn all-category d-flex align-items-center'>
                                             @if($key == 0)

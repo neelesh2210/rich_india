@@ -97,67 +97,66 @@
                                     </div>
                                 </div> --}}
                                <div class="col-md-4 mb-3">
-                                    <div class="single-pricing-table with-hover-color">
-                                        {{-- <a href="{{route('checkout')}}?slug={{$plan->slug}}" class="w-100"> --}}
-                                        <a href="#" class="w-100">
+                                <div class="single-pricing-table with-hover-color">
+                                    <a href="{{route('checkout')}}?slug={{$plan->slug}}" class="w-100">
 
-                                            @if ($key==0)
-                                            <div class="sub-head"></div>
-                                            @endif
+                                        @if ($key==0)
+                                         <div class="sub-head"></div>
+                                        @endif
 
-                                            @if ($key==1)
-                                            <div class="sub-head-2"></div>
-                                            @endif
+                                        @if ($key==1)
+                                         <div class="sub-head-2"></div>
+                                        @endif
 
-                                            @if ($key==2)
-                                            <div class="sub-head-3"></div>
-                                            @endif
+                                        @if ($key==2)
+                                          <div class="sub-head-3"></div>
+                                        @endif
 
-                                            @if ($key==3)
-                                            <div class="sub-head-4"></div>
-                                            @endif
+                                        @if ($key==3)
+                                         <div class="sub-head-4"></div>
+                                        @endif
 
-                                            @if ($key==4)
-                                            <div class="sub-head-5"></div>
-                                            @endif
+                                        @if ($key==4)
+                                         <div class="sub-head-5"></div>
+                                        @endif
 
-                                            <img src="{{asset('user_dashboard/images/favicon.png')}}">
+                                    <img src="{{asset('user_dashboard/images/favicon.png')}}">
 
-                                            <div class="pricing-header">
-                                                <h3>{{$plan->title}}</h3>
-                                            </div>
-
-                                            @if ($current_plan->plan->priority >= $plan->priority)
-                                            @else
-                                                @php
-                                                    if(isset($current_plan->plan->upgrade_amount[$plan->priority - $current_plan->plan->priority - 1])){
-                                                        $amount = $current_plan->plan->upgrade_amount[$plan->priority - $current_plan->plan->priority - 1];
-                                                    }else{
-                                                        $amount =  0;
-                                                    }
-                                                @endphp
-                                                {{-- <div class="price">Rs. {{ $amount }} </div> --}}
-                                            @endif
-
-                                            <ul class="features-list">
-                                                @foreach ($plan->points as $plan_point)
-                                                    <li>
-                                                        <div class="d-flex justify-content-between align-items-center">
-                                                            {{$plan_point}} <i class="uil-check"></i>
-                                                        </div>
-                                                    </li>
-                                                @endforeach
-                                            </ul>
-
-                                            <center style="border-top: 1px solid #ddd;">
-                                                @if ($current_plan->plan->priority >= $plan->priority)
-                                                <a class="btn btn-primary mt-2 mb-2 radius-10">Active Plan</a>
-                                                @else
-                                                    <a class="btn btn-primary mt-2 mb-2 radius-10" onclick="couponModel({{ $plan->id }},{{ $amount }})">Upgrade to {{ $plan->title }} in ₹{{ $amount }}</a>
-                                                @endif
-                                            </center>
-                                        </a>
+                                    <div class="pricing-header">
+                                        <h3>{{$plan->title}}</h3>
                                     </div>
+
+                                        @if ($current_plan->plan->priority >= $plan->priority)
+                                        @else
+                                            @php
+                                                if(isset($current_plan->plan->upgrade_amount[$plan->priority - $current_plan->plan->priority - 1])){
+                                                    $amount = $current_plan->plan->upgrade_amount[$plan->priority - $current_plan->plan->priority - 1];
+                                                }else{
+                                                    $amount =  0;
+                                                }
+                                            @endphp
+                                            {{-- <div class="price">Rs. {{ $amount }} </div> --}}
+                                        @endif
+
+                                        <ul class="features-list">
+                                            @foreach ($plan->points as $plan_point)
+                                                <li>
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        {{$plan_point}} <i class="uil-check"></i>
+                                                    </div>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+
+                                        <center style="border-top: 1px solid #ddd;">
+                                            @if ($current_plan->plan->priority >= $plan->priority)
+                                            <a class="btn btn-primary mt-2 mb-2 radius-10">Active Plan</a>
+                                            @else
+                                                <a class="btn btn-primary mt-2 mb-2 radius-10" onclick="couponModel({{ $plan->id }},{{ $amount }})">Upgrade to {{ $plan->title }} in ₹{{ $amount }}</a>
+                                            @endif
+                                        </center>
+
+                                </div>
                                </div>
                             @endforeach
 
