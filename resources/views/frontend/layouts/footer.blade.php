@@ -36,20 +36,20 @@
                                 </a>
                             </li>
                         </ul>
-                        <a href="https://www.facebook.com/gyankamao/" target="_blank" class="icons">
+                        <a href="{{socialMediaLink('facebook')}}" target="_blank" class="icons">
                             <i class="fab fa-facebook" aria-hidden="true"></i>
                         </a>
-                        <a href="https://t.me/gyankamao1" target="_blank" class="icons">
+                        <a href="{{socialMediaLink('telegram')}}" target="_blank" class="icons">
                             <i class="fab fa-telegram" aria-hidden="true"></i>
                         </a>
-                        <a href="https://www.instagram.com/gyankamao/" target="_blank" class="icons">
+                        <a href="{{socialMediaLink('instagram')}}" target="_blank" class="icons">
                             <i class="fab fa-instagram" aria-hidden="true"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/gyan-kamao-144a5b223" target="_blank"
+                        <a href="{{socialMediaLink('linkedin')}}" target="_blank"
                             class="icons">
                             <i class="fab fa-linkedin" aria-hidden="true"></i>
                         </a>
-                        <a href="https://youtube.com/channel/UCg7ImHigNfDnMldOsKW59IA" target="_blank"
+                        <a href="{{socialMediaLink('youtube')}}" target="_blank"
                             class="icons">
                             <i class="fab fa-youtube" aria-hidden="true"></i>
                         </a>
@@ -122,7 +122,6 @@
                                 ©
                                 <script>
                                     document.write(new Date().getFullYear())
-
                                 </script>
                                 Richin. All Rights Reserved.
                             </p>
@@ -168,7 +167,7 @@
             toast: true,
             position: 'top-end',
             showConfirmButton: false,
-            timer: 3000
+            timer: 3000,
         });
         var success_message = "{{ Session::get('success') }}";
         var info_message = "{{ Session::get('info') }}";
