@@ -183,11 +183,12 @@
                                                                                     src="{{ asset('backend/img/plan/' . $plan->image) }}" class="img-fluid mb-3" />
                                                                         <span class="d-block text-center">
                                                                             <span class="d-block fw-600 fs-15">{{ $plan->title }}
-                                                                                (₹ @if (!$referral_code)
+                                                                                {{-- (₹ @if (!$referral_code)
                                                                                     {{ $plan->amount }}
                                                                                 @else
                                                                                     {{ $plan->discounted_price }}
-                                                                                @endif)</span>
+                                                                                @endif) --}}
+                                                                            </span>
                                                                         </span>
                                                                     </span>
                                                                 </label>
