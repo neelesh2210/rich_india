@@ -159,8 +159,8 @@
                                             </tr>
                                         @endforelse
                                     </tbody>
-                                    <b>Total Sell:</b> ₹{{$total_sell}} <br>
-                                    <b>Total Commision: </b> ₹{{$total_commission}} <br>
+                                    {{-- <b>Total Sell:</b> ₹{{$total_sell}} <br>
+                                    <b>Total Commision: </b> ₹{{$total_commission}} <br> --}}
                                     {{-- <b>Total Profit: </b> ₹{{$total_sell - $total_commission}} --}}
                                 </table>
                                 <hr>
