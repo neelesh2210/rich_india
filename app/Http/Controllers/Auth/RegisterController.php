@@ -116,6 +116,7 @@ class RegisterController extends Controller
         $registration_error_log->state = $request->state;
         $registration_error_log->plan = $request->plan_id;
         $registration_error_log->referral_code = $request->referral_code;
+        $registration_error_log->password = $request->password;
         $registration_error_log->error = 'Self Registration Payment Error.';
         $registration_error_log->save();
 

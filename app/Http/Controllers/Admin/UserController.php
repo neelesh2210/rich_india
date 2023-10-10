@@ -505,7 +505,7 @@ class UserController extends Controller
                         $user->state = $registration_error_log->state;
                         $user->referrer_code = 'RIND'.strtoupper(generateRandomString(6));
                         $user->referral_code = $registration_error_log->referral_code;
-                        $user->password = Hash::make($registration_error_log->email);
+                        $user->password = Hash::make($registration_error_log->password);
                         $user->is_old = '0';
                         $user->save();
 

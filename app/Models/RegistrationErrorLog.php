@@ -19,6 +19,7 @@ class RegistrationErrorLog extends Model
         'referral_code',
         'payment_image',
         'payment_id',
+        'password',
         'error',
     ];
 }

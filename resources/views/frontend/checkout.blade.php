@@ -327,45 +327,43 @@
 
                     $('.form-control').prop('readonly',true);
                     $('.online_payment').prop('disabled',true);
-                        $('#error_name').show();
-                        $('#error_name').addClass('text-success');
-                        $('#error_name').removeClass('text-danger');
-                        $('#error_name').text('✔ Correct');
-                        $('#name').prop('readonly',true);
+                    $('#error_name').show();
+                    $('#error_name').addClass('text-success');
+                    $('#error_name').removeClass('text-danger');
+                    $('#error_name').text('✔ Correct');
+                    $('#name').prop('readonly',true);
 
-                        $('#error_email').show();
-                        $('#error_email').addClass('text-success');
-                        $('#error_email').removeClass('text-danger');
-                        $('#error_email').text('✔ Email Available');
-                        $('#email').prop('readonly',true);
+                    $('#error_email').show();
+                    $('#error_email').addClass('text-success');
+                    $('#error_email').removeClass('text-danger');
+                    $('#error_email').text('✔ Email Available');
+                    $('#email').prop('readonly',true);
 
-                        $('#error_phone').show();
-                        $('#error_phone').addClass('text-success');
-                        $('#error_phone').removeClass('text-danger');
-                        $('#error_phone').text('✔ Phone Available');
-                        $('#phone').prop('readonly',true);
+                    $('#error_phone').show();
+                    $('#error_phone').addClass('text-success');
+                    $('#error_phone').removeClass('text-danger');
+                    $('#error_phone').text('✔ Phone Available');
+                    $('#phone').prop('readonly',true);
 
-                        $('#error_password').show();
-                        $('#error_password').addClass('text-success');
-                        $('#error_password').removeClass('text-danger');
-                        $('#error_password').text('✔ Correct');
-                        $('#password').prop('readonly',true);
+                    $('#error_password').show();
+                    $('#error_password').addClass('text-success');
+                    $('#error_password').removeClass('text-danger');
+                    $('#error_password').text('✔ Correct');
+                    $('#password').prop('readonly',true);
 
-                        $('#error_state').show();
-                        $('#error_state').addClass('text-success');
-                        $('#error_state').removeClass('text-danger');
-                        $('#error_state').text('✔ Correct');
-                        $('#state').prop('disabled',true);
+                    $('#error_state').show();
+                    $('#error_state').addClass('text-success');
+                    $('#error_state').removeClass('text-danger');
+                    $('#error_state').text('✔ Correct');
+                    $('#state').prop('disabled',true);
 
-                        $('#error_refferal').show();
-                        $('#error_refferal').addClass('text-success');
-                        $('#error_refferal').removeClass('text-danger');
-                        $('#error_refferal').text('✔ Correct');
-                        $('#referral_code').prop('readonly',true);
+                    $('#error_refferal').show();
+                    $('#error_refferal').addClass('text-success');
+                    $('#error_refferal').removeClass('text-danger');
+                    $('#error_refferal').text('✔ Correct');
+                    $('#referral_code').prop('readonly',true);
 
-                        $('#submitButton').prop('disabled',true);
-
-
+                    $('#submitButton').prop('disabled',true);
                 },
                 error: function(request, status, error) {
                     $('#cosmofeed').prop('disabled',true);
