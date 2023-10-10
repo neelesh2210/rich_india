@@ -316,8 +316,10 @@
                 data: $('#registerForm').serialize(),
                 success: function(data) {
                     $('#cosmofeed').prop('disabled',false);
-                    // $('#payment_div').show();
-                    // $('#details_div').hide();
+                    $('#cosmofeed').removeClass('collapsed');
+                    $('#collapseFour').addClass('show');
+                    $('#payment_div').show();
+                    $('#details_div').hide();
                     var referral_code = $('#referral_code').val();
                     if (referral_code == '') {
                         alert('You are submiting form without Referral Code!');
