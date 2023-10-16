@@ -57,9 +57,9 @@
                                                 <p style="line-height:24px;margin:10px 0;margin-top:10px"><span style="font-family:Poppins,Arial,Helvetica,sans-serif;font-size:16px">Greetings RICHIND,</span></p>
                                                 <p style="line-height:24px;margin:10px 0"><span style="font-family:Poppins,Arial,Helvetica,sans-serif;font-size:16px">₹ @isset($amount)
                                                   {{ $amount }}
-                                                  @endisset.00 withdrawn successfully.</span><br>&nbsp; </p>
-                                                <p style="line-height:24px;margin:10px 0"><span style="font-family:Poppins,Arial,Helvetica,sans-serif;font-size:16px">Please rate us on the Application store:</span><br><span style="font-family:Poppins,Arial,Helvetica,sans-serif;font-size:16px"><a href="http://onelink.to/cds6ck" target="_blank">http://onelink.to/cds6ck</a></span></p>
-                                                <p style="line-height:24px;margin:10px 0"><span style="font-family:Poppins,Arial,Helvetica,sans-serif;font-size:16px">Your feedback matters to us.</span></p>
+                                                  @endisset.00 Withdrawal Successfully.</span><br>&nbsp; </p>
+                                                <p style="line-height:24px;margin:10px 0"><span style="font-family:Poppins,Arial,Helvetica,sans-serif;font-size:16px">We are happy to inform you that we have transferred your payment into your Bank Account</span><br><span style="font-family:Poppins,Arial,Helvetica,sans-serif;font-size:16px"></span></p>
+                                                <p style="line-height:24px;margin:10px 0"><span style="font-family:Poppins,Arial,Helvetica,sans-serif;font-size:16px">Date : {{date('d-m-Y')}}</span></p>
                                                 <p style="line-height:24px;margin:10px 0"> &nbsp;</p>
                                                 <p style="line-height:24px;margin:10px 0"><span style="font-family:Poppins,Arial,Helvetica,sans-serif;font-size:16px">Regards,</span></p>
                                                 <p style="line-height:24px;margin:10px 0;margin-bottom:10px"><span style="font-family:Poppins,Arial,Helvetica,sans-serif;font-size:16px">Team RICHIND.</span></p>
