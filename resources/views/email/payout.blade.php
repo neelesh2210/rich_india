@@ -20,7 +20,7 @@
             </tr>
             <tr>
               <td>
-                <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0" style="max-width:625px; background-image: url('/frontend/images/email-bg.jpg'); border-radius:3px;-webkit-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);-moz-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);box-shadow:0 6px 18px 0 rgba(0,0,0,.06);padding:0 40px;">
+                <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0" style="max-width:625px; background-image: url('/frontend/images/email-bg.jpg'); background-size:contain; border-radius:3px;-webkit-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);-moz-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);box-shadow:0 6px 18px 0 rgba(0,0,0,.06);padding:0 40px;">
                   <tbody>
                     <tr>
                       <td>
@@ -41,7 +41,7 @@
                                           <tr>
                                             <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0px;padding-bottom:0px;word-break:break-word">
                                               <div style="font-family:Arial,sans-serif;font-size:20px;letter-spacing:normal;line-height:1;text-align:left;color:#000000">
-                                                <p style="line-height:20px;text-align:center;margin:10px 0;margin-top:10px"><span style="color:#ffffff;font-size:20px;letter-spacing:2px"><b>Congratulations,</b></span></p>
+                                                <p style="line-height:20px;text-align:center;margin:10px 0;margin-top:25px"><span style="color:#ffffff;font-size:20px;letter-spacing:2px"><b>Congratulations,</b></span></p>
                                                 <p style="line-height:20px;text-align:center;margin:10px 0;margin-bottom:10px"><span style="color:#ffffff;font-size:14px;letter-spacing:2px"><b>Withdrawal successful on RichInd!</b></span></p>
                                               </div>
                                             </td>
