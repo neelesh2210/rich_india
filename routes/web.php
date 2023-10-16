@@ -42,6 +42,11 @@ Route::get('plan-detail/{slug}', [PlanController::class,'planDetail'])->name('pl
 Route::get('course-detail/{slug}',[CourseController::class,'courseDetail'])->name('course.detail');
 Route::get('checkout', [CheckoutController::class,'checkout'])->name('checkout');
 
+
+//Email
+Route::view('welcome_mail', 'email.welcome_mail')->name('welcome_mail');
+Route::view('payout', 'email.payout')->name('payout');
+
 //Policies
 Route::view('privacy-policy', 'frontend.privacy_policy')->name('privacy_policy');
 Route::view('term-and-condition', 'frontend.term_and_condition')->name('term_and_condition');
