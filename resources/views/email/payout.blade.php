@@ -20,7 +20,7 @@
             </tr>
             <tr>
               <td>
-                <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0" style="max-width:625px; background-image: url('/frontend/images/email-bg.jpg'); background-size:contain; border-radius:3px;-webkit-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);-moz-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);box-shadow:0 6px 18px 0 rgba(0,0,0,.06);padding:0 40px;">
+                <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0" style="max-width:625px; background-image: url({{asset('frontend/images/email-bg.jpg')}}); background-size:contain; border-radius:3px;-webkit-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);-moz-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);box-shadow:0 6px 18px 0 rgba(0,0,0,.06);padding:0 40px;">
                   <tbody>
                     <tr>
                       <td>
