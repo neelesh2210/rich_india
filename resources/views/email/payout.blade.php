@@ -54,10 +54,8 @@
                                           <tr>
                                             <td align="left" style="background:#ffffff;font-size:0px;padding:24px 24px 24px 24px;padding-top:24px;padding-right:24px;padding-bottom:24px;padding-left:24px;word-break:break-word">
                                               <div style="font-family:Arial,sans-serif;font-size:16px;letter-spacing:normal;line-height:1;text-align:left;color:#000000">
-                                                <p style="line-height:24px;margin:10px 0;margin-top:10px"><span style="font-family:Poppins,Arial,Helvetica,sans-serif;font-size:16px">Greetings RICHIND,</span></p>
-                                                <p style="line-height:24px;margin:10px 0"><span style="font-family:Poppins,Arial,Helvetica,sans-serif;font-size:16px">₹ @isset($amount)
-                                                  {{ $amount }}
-                                                  @endisset.00 Withdrawal Successfully.</span><br>&nbsp; </p>
+                                                <p style="line-height:24px;margin:10px 0;margin-top:10px"><span style="font-family:Poppins,Arial,Helvetica,sans-serif;font-size:16px">Greetings {{$user_name}},</span></p>
+                                                <p style="line-height:24px;margin:10px 0"><span style="font-family:Poppins,Arial,Helvetica,sans-serif;font-size:16px">₹ @isset($amount){{$amount}}@endisset Withdrawal Successfully.</span><br>&nbsp; </p>
                                                 <p style="line-height:24px;margin:10px 0"><span style="font-family:Poppins,Arial,Helvetica,sans-serif;font-size:16px">We are happy to inform you that we have transferred your payment into your Bank Account</span><br><span style="font-family:Poppins,Arial,Helvetica,sans-serif;font-size:16px"></span></p>
                                                 <p style="line-height:24px;margin:10px 0"><span style="font-family:Poppins,Arial,Helvetica,sans-serif;font-size:16px">Date : {{date('d-m-Y')}}</span></p>
                                                 <p style="line-height:24px;margin:10px 0"> &nbsp;</p>
