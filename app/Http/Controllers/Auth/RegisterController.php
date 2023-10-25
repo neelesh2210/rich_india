@@ -281,25 +281,25 @@ class RegisterController extends Controller
                     $user_detail->save();
 
                     if($i == 1){
-                        // try {
-                        //     $this->email = $commission_user;
-                        //     Mail::send('email.active_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount], function($message) use($commission_user){
-                        //         $message->to($commission_user->email);
-                        //         $message->subject('RichIND Notification');
-                        //     });
-                        // } catch (\Throwable $th) {
+                        try {
+                            $this->email = $commission_user;
+                            Mail::send('email.active_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount], function($message) use($commission_user){
+                                $message->to($commission_user->email);
+                                $message->subject('RichIND Notification');
+                            });
+                        } catch (\Throwable $th) {
 
-                        // }
+                        }
                     }else{
-                        // try {
-                        //     Mail::send('email.passive_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount,'comes_from'=>$this->email], function($message) use($commission_user){
-                        //         $message->to($commission_user->email);
-                        //         $message->subject('RichIND Notification');
-                        //     });
-                        //     $this->email = $commission_user;
-                        // } catch (\Throwable $th) {
+                        try {
+                            Mail::send('email.passive_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount,'comes_from'=>$this->email], function($message) use($commission_user){
+                                $message->to($commission_user->email);
+                                $message->subject('RichIND Notification');
+                            });
+                            $this->email = $commission_user;
+                        } catch (\Throwable $th) {
 
-                        // }
+                        }
                     }
                 }
             }
@@ -339,26 +339,26 @@ class RegisterController extends Controller
                 array_push($user_arr,$commission_user->id);
                 $referral_code = $commission_user->referral_code;
                 if($i == 1){
-                    // try {
-                    //     Mail::send('email.active_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount], function($message) use($commission_user){
-                    //         $this->email = $commission_user;
-                    //         $message->to($commission_user->email);
-                    //         $message->subject('RichIND Notification');
-                    //     });
-                    // } catch (\Throwable $th) {
+                    try {
+                        Mail::send('email.active_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount], function($message) use($commission_user){
+                            $this->email = $commission_user;
+                            $message->to($commission_user->email);
+                            $message->subject('RichIND Notification');
+                        });
+                    } catch (\Throwable $th) {
 
-                    // }
+                    }
                 }else{
-                    // try {
-                    //     $user = User::where('referrer_code',$commission_user->referral_code)->first();
-                    //     Mail::send('email.passive_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount,'comes_from'=>$this->email], function($message) use($commission_user){
-                    //         $message->to($commission_user->email);
-                    //         $message->subject('RichIND Notification');
-                    //     });
-                    //     $this->email = $commission_user;
-                    // } catch (\Throwable $th) {
+                    try {
+                        $user = User::where('referrer_code',$commission_user->referral_code)->first();
+                        Mail::send('email.passive_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount,'comes_from'=>$this->email], function($message) use($commission_user){
+                            $message->to($commission_user->email);
+                            $message->subject('RichIND Notification');
+                        });
+                        $this->email = $commission_user;
+                    } catch (\Throwable $th) {
 
-                    // }
+                    }
                 }
 
             }else{
@@ -381,25 +381,25 @@ class RegisterController extends Controller
 
 
                 if($i == 1){
-                    // try {
-                    //     Mail::send('email.active_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount], function($message) use($commission_user){
-                    //         $this->email = $commission_user;
-                    //         $message->to($commission_user->email);
-                    //         $message->subject('TRichIND Notification');
-                    //     });
-                    // } catch (\Throwable $th) {
+                    try {
+                        Mail::send('email.active_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount], function($message) use($commission_user){
+                            $this->email = $commission_user;
+                            $message->to($commission_user->email);
+                            $message->subject('TRichIND Notification');
+                        });
+                    } catch (\Throwable $th) {
 
-                    // }
+                    }
                 }else{
-                    // try {
-                    //     $user = User::where('referrer_code',$commission_user->referral_code)->first();
-                    //     Mail::send('email.passive_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount,'comes_from'=>$this->email], function($message) use($commission_user){
-                    //         $message->to($commission_user->email);
-                    //         $message->subject('RichIND Notification');
-                    //     });
-                    //     $this->email = $commission_user;
-                    // } catch (\Throwable $th) {
-                    // }
+                    try {
+                        $user = User::where('referrer_code',$commission_user->referral_code)->first();
+                        Mail::send('email.passive_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount,'comes_from'=>$this->email], function($message) use($commission_user){
+                            $message->to($commission_user->email);
+                            $message->subject('RichIND Notification');
+                        });
+                        $this->email = $commission_user;
+                    } catch (\Throwable $th) {
+                    }
                 }
             }
         }

@@ -48,7 +48,7 @@
                                             style="color:#1e1e2d; font-weight:400; margin:0;font-size:32px;font-family:'Rubik',sans-serif;">
                                             Hi
                                             @isset($user_name)
-                                            {{ $user_name->name }}
+                                            {{ $user_name }}
                                             @endisset,</h1>
                                         <p style="margin:5px">Congratulations! </p>
                                         <p style="margin:5px">You are such a Team Player. </p>

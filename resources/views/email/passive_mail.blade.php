@@ -48,7 +48,7 @@ a:hover {
                                         style="color:#1e1e2d; font-weight:400; margin:0;font-size:32px;font-family:'Rubik',sans-serif;">
                                         Hey
                                         @isset($user_name)
-                                        {{ $user_name->name }}
+                                        {{ $user_name }}
                                         @endisset,</h1>
                                         <p style="margin:5px">Your are really awesome,
                                             Congratulations !</p>
@@ -70,7 +70,7 @@ a:hover {
                                                 <td
                                                     style="padding: 10px; border-bottom: 1px solid #a183c9; color: #333;">
                                                     ₹  @isset($amount)
-                                                    {{ $user_name->amount }}
+                                                    {{ $amount }}
                                                     @endisset</td>
                                             </tr>
                                             <tr>
