@@ -20,11 +20,11 @@
             </tr>
             <tr>
               <td>
-                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" style="max-width:800px; background-image: url({{asset('frontend/images/email-bg.jpg')}}); background-size:cover; border-radius:3px;-webkit-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);-moz-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);box-shadow:0 6px 18px 0 rgba(0,0,0,.06);padding:0 10px;">
+                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" style="max-width:725px; background-image: url({{asset('frontend/images/email-bg.jpg')}}); background-size:cover; border-radius:3px;-webkit-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);-moz-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);box-shadow:0 6px 18px 0 rgba(0,0,0,.06);padding:0 10px;">
                   <tbody>
                     <tr>
                       <td>
-                        <div style="margin:0px auto;max-width:800px">
+                        <div style="margin:0px auto;max-width:725px">
                           <div style="line-height:0;font-size:0">
                             <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%">
                               <tbody>
