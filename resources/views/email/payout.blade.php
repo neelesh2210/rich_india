@@ -20,16 +20,16 @@
             </tr>
             <tr>
               <td>
-                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" style="max-width:725px; background-image: url({{asset('frontend/images/email-bg.jpg')}}); background-size:cover; border-radius:3px;-webkit-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);-moz-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);box-shadow:0 6px 18px 0 rgba(0,0,0,.06);padding:0 10px;">
+                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" style="max-width:650px; background-image: url({{asset('frontend/images/email-bg.jpg')}}); background-size:contain; border-radius:3px;-webkit-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);-moz-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);box-shadow:0 6px 18px 0 rgba(0,0,0,.06);padding:0 10px;">
                   <tbody>
                     <tr>
                       <td>
-                        <div style="margin:0px auto;max-width:725px">
+                        <div style="margin:0px auto;max-width:650px">
                           <div style="line-height:0;font-size:0">
                             <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%">
                               <tbody>
                                 <tr>
-                                  <td style="direction:ltr;font-size:0px;padding:24px 10px 48px 10px;padding-bottom:48px;padding-left:16px;padding-right:16px;padding-top:24px;text-align:center">
+                                  <td style="direction:ltr;font-size:0px;padding:24px 10px 48px 10px;padding-bottom:48px;padding-left:10px;padding-right:10px;padding-top:24px;text-align:center">
                                     <div style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%">
                                       <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top" width="100%">
                                         <tbody>
@@ -41,7 +41,7 @@
                                           <tr>
                                             <td align="left" style="font-size:0px;padding:10px 25px;padding-top:0px;padding-bottom:0px;word-break:break-word">
                                               <div style="font-family:Arial,sans-serif;font-size:20px;letter-spacing:normal;line-height:1;text-align:left;color:#000000">
-                                                <p style="line-height:20px;text-align:center;margin:10px 0;margin-top:65px"><span style="color:#ffffff;font-size:20px;letter-spacing:2px"><b>Congratulations,</b></span></p>
+                                                <p style="line-height:20px;text-align:center;margin:10px 0;margin-top:25px"><span style="color:#ffffff;font-size:20px;letter-spacing:2px"><b>Congratulations,</b></span></p>
                                                 <p style="line-height:20px;text-align:center;margin:10px 0;margin-bottom:10px"><span style="color:#ffffff;font-size:14px;letter-spacing:2px"><b>Withdrawal successful on RichInd!</b></span></p>
                                               </div>
                                             </td>
@@ -52,7 +52,7 @@
                                             </td>
                                           </tr>
                                           <tr>
-                                            <td align="left" style="background:#ffffff;font-size:0px;padding:24px 24px 24px 24px;padding-top:24px;padding-right:24px;padding-bottom:24px;padding-left:24px;word-break:break-word">
+                                            <td align="left" style="background:#ffffff;font-size:0px;padding:24px 24px 24px 24px;padding-top:24px;padding-right:10px;padding-bottom:24px;padding-left:10px;word-break:break-word">
                                               <div style="font-family:Arial,sans-serif;font-size:16px;letter-spacing:normal;line-height:1;text-align:left;color:#000000">
                                                 <p style="line-height:24px;margin:10px 0;margin-top:10px"><span style="font-family:Poppins,Arial,Helvetica,sans-serif;font-size:16px">Greetings  @isset($user_name)  {{$user_name}} @endisset,</span></p>
                                                 <p style="line-height:24px;margin:10px 0"><span style="font-family:Poppins,Arial,Helvetica,sans-serif;font-size:16px">₹ @isset($amount){{$amount}}@endisset Withdrawal Successfully.</span><br>&nbsp; </p>
