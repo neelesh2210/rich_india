@@ -236,7 +236,7 @@
                                                         </form>
                                                     </div>
                                                 </div>
-                                                <div class="accordion-item">
+                                                {{-- <div class="accordion-item">
                                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" id="cosmofeed">
                                                         Cosmofeed
                                                     </button>
@@ -252,7 +252,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                         </div>
                                     </div>
