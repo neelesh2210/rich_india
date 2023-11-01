@@ -92,6 +92,7 @@ class RegisterController extends Controller
 
     public function validateUserRegistration(SignupRequest $request)
     {
+        \Session::forget('registration_error_log_id');
         $plan = Plan::where('id',$request->plan_id)->first();
 
         if($request->referral_code){
@@ -120,6 +121,7 @@ class RegisterController extends Controller
         $registration_error_log->error = 'Self Registration Payment Error.';
         $registration_error_log->save();
 
+        \Session::put('registration_error_log_id',encrypt($registration_error_log->id));
 
         if($request->referral_code){
             $cosmofeed_url = $plan->cosmofeed_discounted_price_url.'?email='.$request->email.'&phone='.$request->phone.'&checksum='.Hash::make($registration_error_log->id);
@@ -187,10 +189,23 @@ class RegisterController extends Controller
 
     //Phonepe
 
-    // public function payment(Request $request){
-    //     $phonepe = new PhonepeController;
-    //     return $phonepe->payWithPhonePe($request);
-    // }
+    public function phonepePayment(Request $request){
+        $registration_error_log_id = \Session::get('registration_error_log_id');
+        $registration_error_log = RegistrationErrorLog::where('id',decrypt($registration_error_log_id))->first();
+
+        $plan = Plan::where('id',$registration_error_log->plan)->first();
+
+        if($registration_error_log->referral_code){
+            $amount = $plan->discounted_price;
+        }else{
+            $amount = $plan->amount;
+        }
+
+        $request->request->add(['name'=>$registration_error_log->name,'email'=>$registration_error_log->email,'phone'=>$registration_error_log->phone,'amount'=>$amount,'state'=>$registration_error_log->state,'referral_code'=>$registration_error_log->referral_code,'password'=>$registration_error_log->password,'plan_id'=>$registration_error_log->plan]);
+        $phonepe = new PhonepeController;
+
+        return redirect()->to($phonepe->payWithPhonePe($request));
+    }
 
     //Cash
 
@@ -201,13 +216,9 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
+        return $request;
         $user = new User;
-        if($request->has('name')){
-            $user->name = $request->name;
-        }
-        if($request->has('first_name')){
-            $user->name = $request->first_name.' '.$request->last_name;
-        }
+        $user->name = $request->name;
         $user->email = $request->email;
         $user->phone = $request->phone;
         $user->state = $request->state;
@@ -215,91 +226,90 @@ class RegisterController extends Controller
         $user->referral_code = $request->referral_code;
         $user->password = Hash::make($request->password);
         $user->save();
-        if($request->has('first_name')){
-            $plan = Plan::where('id',$request->plan_id)->first();
 
-            $plan_purchase = new PlanPurchase;
-            $plan_purchase->user_id = $user->id;
-            $plan_purchase->plan_id = $plan->id;
-            $plan_purchase->course_ids = $plan->course_ids;
-            $plan_purchase->amount = $plan->amount;
-            if($request->referral_code){
-                $total_amount = $plan->discounted_price;
-                $plan_purchase->discounted_amount = $plan->amount - $plan->discounted_price;
-            }else{
-                $total_amount = $plan->amount;
-            }
+        $plan = Plan::where('id',$request->plan_id)->first();
 
-            $today_date = date('Y-m-d').' 00:00:00';
-            $coupon = CouponManager::withoutTrash()->where('name',$request->coupon)->where('is_active','1')->where('start','<=',$today_date)->where('end','>=',$today_date)->where('type','new')->whereJsonContains('plan_ids',''.$request->plan_id)->first();
-            if($coupon){
-                $plan_purchase->coupon_detail = $coupon;
-                $plan_purchase->coupon_discount_amount = $coupon->amount;
-                $total_amount = $total_amount - $coupon->amount;
-            }
-            $plan_purchase->total_amount = $total_amount;
+        $plan_purchase = new PlanPurchase;
+        $plan_purchase->user_id = $user->id;
+        $plan_purchase->plan_id = $plan->id;
+        $plan_purchase->course_ids = $plan->course_ids;
+        $plan_purchase->amount = $plan->amount;
+        if($request->referral_code){
+            $total_amount = $plan->discounted_price;
+            $plan_purchase->discounted_amount = $plan->amount - $plan->discounted_price;
+        }else{
+            $total_amount = $plan->amount;
+        }
 
-            $plan_purchase->payment_detail = $request->payment_detalis;
-            $plan_purchase->payment_status = 'success';
-            $plan_purchase->save();
+        $today_date = date('Y-m-d').' 00:00:00';
+        $coupon = CouponManager::withoutTrash()->where('name',$request->coupon)->where('is_active','1')->where('start','<=',$today_date)->where('end','>=',$today_date)->where('type','new')->whereJsonContains('plan_ids',''.$request->plan_id)->first();
+        if($coupon){
+            $plan_purchase->coupon_detail = $coupon;
+            $plan_purchase->coupon_discount_amount = $coupon->amount;
+            $total_amount = $total_amount - $coupon->amount;
+        }
+        $plan_purchase->total_amount = $total_amount;
 
-            $user_detail = new UserDetail;
-            $user_detail->user_id = $user->id;
-            $user_detail->current_plan_id = $plan->id;
-            $user_detail->save();
+        $plan_purchase->payment_detail = $request->payment_detalis;
+        $plan_purchase->payment_status = 'success';
+        $plan_purchase->save();
 
-            try{
-                Mail::send('email.welcome_mail', ['user_name'=>$user], function($message) use ($user){
-                    $message->to($user->email);
-                    $message->subject('Welcome to RichIND');
-                });
-            }catch (\Throwable $th) {
+        $user_detail = new UserDetail;
+        $user_detail->user_id = $user->id;
+        $user_detail->current_plan_id = $plan->id;
+        $user_detail->save();
 
-            }
+        try{
+            Mail::send('email.welcome_mail', ['user_name'=>$user], function($message) use ($user){
+                $message->to($user->email);
+                $message->subject('Welcome to RichIND');
+            });
+        }catch (\Throwable $th) {
 
-            if($request->referral_code){
-                $this->distributeCommission($request->referral_code,$plan->id,$plan_purchase->id,$user);
-            }else{
-                $commission_setting = CommissionSetting::get();
-                $level = $commission_setting->count();
-                for($i=1;$i<=$level;$i++){
-                    $commission_user = User::with('userDetail.plan')->first();
-                    if($commission_user->userDetail->plan->priority <= $plan->priority){
-                        $commission_amount = $commission_user->userDetail->plan->commission[$i-1];
-                    }else{
-                        $commission_amount = $plan->commission[$i-1];
+        }
+
+        if($request->referral_code){
+            $this->distributeCommission($request->referral_code,$plan->id,$plan_purchase->id,$user);
+        }else{
+            $commission_setting = CommissionSetting::get();
+            $level = $commission_setting->count();
+            for($i=1;$i<=$level;$i++){
+                $commission_user = User::with('userDetail.plan')->first();
+                if($commission_user->userDetail->plan->priority <= $plan->priority){
+                    $commission_amount = $commission_user->userDetail->plan->commission[$i-1];
+                }else{
+                    $commission_amount = $plan->commission[$i-1];
+                }
+                $commission = new Commission;
+                $commission->user_id = $commission_user->id;
+                $commission->plan_purchase_id = $plan_purchase->id;
+                $commission->commission = $commission_amount;
+                $commission->level = $i;
+                $commission->save();
+
+                $user_detail = UserDetail::where('user_id',User::first()->id)->first();
+                $user_detail->total_commission = $user_detail->total_commission + $commission_amount;
+                $user_detail->save();
+
+                if($i == 1){
+                    try {
+                        $this->email = $commission_user;
+                        Mail::send('email.active_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount], function($message) use($commission_user){
+                            $message->to($commission_user->email);
+                            $message->subject('RichIND Notification');
+                        });
+                    } catch (\Throwable $th) {
+
                     }
-                    $commission = new Commission;
-                    $commission->user_id = $commission_user->id;
-                    $commission->plan_purchase_id = $plan_purchase->id;
-                    $commission->commission = $commission_amount;
-                    $commission->level = $i;
-                    $commission->save();
+                }else{
+                    try {
+                        Mail::send('email.passive_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount,'comes_from'=>$this->email], function($message) use($commission_user){
+                            $message->to($commission_user->email);
+                            $message->subject('RichIND Notification');
+                        });
+                        $this->email = $commission_user;
+                    } catch (\Throwable $th) {
 
-                    $user_detail = UserDetail::where('user_id',User::first()->id)->first();
-                    $user_detail->total_commission = $user_detail->total_commission + $commission_amount;
-                    $user_detail->save();
-
-                    if($i == 1){
-                        try {
-                            $this->email = $commission_user;
-                            Mail::send('email.active_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount], function($message) use($commission_user){
-                                $message->to($commission_user->email);
-                                $message->subject('RichIND Notification');
-                            });
-                        } catch (\Throwable $th) {
-
-                        }
-                    }else{
-                        try {
-                            Mail::send('email.passive_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount,'comes_from'=>$this->email], function($message) use($commission_user){
-                                $message->to($commission_user->email);
-                                $message->subject('RichIND Notification');
-                            });
-                            $this->email = $commission_user;
-                        } catch (\Throwable $th) {
-
-                        }
                     }
                 }
             }

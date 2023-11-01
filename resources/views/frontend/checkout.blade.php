@@ -164,39 +164,28 @@
                                                             <div class="lbl_msg"></div>
                                                         </div>
                                                     </div>
-
                                                     <div class="col-lg-12 mt-10">
                                                         <div class="form-group">
-                                                            <label
-                                                                class="form-control-label text-center fs-22 fw-bold">Choose
-                                                                Package</label>
+                                                            <label class="form-control-label text-center fs-22 fw-bold">Choose Package</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-12">
                                                         <div class="row">
                                                             @foreach ($plans as $key => $plan)
-                                                            <div class="col-lg-3 col-12 col-sm-3">
-                                                                <label class="aiz-megabox d-block mb-3">
-                                                                    <input value="{{$plan->id}}" class="online_payment" type="radio" name="plan_id" @if($plan->slug==request('slug')) checked @endif onchange="submitForm()">
-                                                                    <span class="d-block p-2 aiz-megabox-elem">
-                                                                        <img id="ContentPlaceHolder1_img{{ $plan->title }}"
-                                                                                    src="{{ asset('backend/img/plan/' . $plan->image) }}" class="img-fluid mb-3" />
-                                                                        <span class="d-block text-center">
-                                                                            <span class="d-block fw-600 fs-15">{{ $plan->title }}
-                                                                                {{-- (₹ @if (!$referral_code)
-                                                                                    {{ $plan->amount }}
-                                                                                @else
-                                                                                    {{ $plan->discounted_price }}
-                                                                                @endif) --}}
+                                                                <div class="col-lg-3 col-12 col-sm-3">
+                                                                    <label class="aiz-megabox d-block mb-3">
+                                                                        <input value="{{$plan->id}}" class="online_payment" type="radio" name="plan_id" @if($plan->slug==request('slug')) checked @endif onchange="submitForm()">
+                                                                        <span class="d-block p-2 aiz-megabox-elem">
+                                                                            <img id="ContentPlaceHolder1_img{{ $plan->title }}" src="{{ asset('backend/img/plan/' . $plan->image) }}" class="img-fluid mb-3" />
+                                                                            <span class="d-block text-center">
+                                                                                <span class="d-block fw-600 fs-15">{{ $plan->title }}</span>
                                                                             </span>
                                                                         </span>
-                                                                    </span>
-                                                                </label>
-                                                            </div>
+                                                                    </label>
+                                                                </div>
                                                             @endforeach
                                                         </div>
                                                     </div>
-
                                                     <div>
                                                         <label class="form-check-label mb-3 mt-2">
                                                             <input type="checkbox" required/>
@@ -205,8 +194,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="d-grid">
-                                                    <button type="button" class="btn btn-primary btn-start" id="submitButton" onclick="submitForm()">Next
-                                                    </button>
+                                                    <button type="button" class="btn btn-primary btn-start" id="submitButton" onclick="submitForm()">Next</button>
                                                 </div>
                                                 <div class="google-bg text-center mt-4">
                                                     <p class="mb-0">Already have an account?
@@ -219,7 +207,7 @@
                                 </div>
                             </div>
                             <br>
-                            <div class="col-lg-8 col-12 m-lg-auto" style="margin-top: 25px !important;" id="payment_div">
+                            <div class="col-lg-8 col-12 m-lg-auto" style="margin-top: 25px !important; display:none" id="payment_div">
                                 <div class="login-wrapper">
                                     <div class="loginbox">
                                         <div class="section-title mb-4 mt-2">
@@ -233,27 +221,24 @@
                                                         Cosmofeed
                                                     </button>
                                                     <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#FaqAccordion">
-
-                                                            <div class="accordion-body">
-                                                                <p> Pay Using Paytm Gateway <br>
-                                                                    You can pay directly through Paytm payment gateway using
-                                                                    UPI/Debit
-                                                                    Card/Net Banking
-                                                                </p>
-                                                                <div class="about-btn mt-3 mb-3">
-                                                                    <a href="#" id="place_order" class="btn btn-primary w-100">Place Order  <span class="final_price"  id="price"></span> <i class="ri-arrow-right-line"></i></a>
-
-                                                                </div>
+                                                        <div class="accordion-body">
+                                                            <p> Pay Using Paytm Gateway <br>
+                                                                You can pay directly through Paytm payment gateway using
+                                                                UPI/Debit
+                                                                Card/Net Banking
+                                                            </p>
+                                                            <div class="about-btn mt-3 mb-3">
+                                                                <a href="#" id="place_order" class="btn btn-primary w-100">Place Order  <span class="final_price"  id="price"></span> <i class="ri-arrow-right-line"></i></a>
                                                             </div>
-
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                {{-- <div class="accordion-item">
-                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" id="phonepay" disabled>
+                                                <div class="accordion-item">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" id="phonepay">
                                                         PhonePe
                                                     </button>
                                                     <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#FaqAccordion">
-                                                        <form action="#" method="POST">
+                                                        <form action="{{route('phonepe.payment')}}" method="POST">
                                                             @csrf
                                                             <div class="accordion-body">
                                                                 <p> Pay Using Paytm Gateway <br>
@@ -267,7 +252,7 @@
                                                             </div>
                                                         </form>
                                                     </div>
-                                                </div> --}}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -281,27 +266,27 @@
     </div>
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function(){
             $("#show_hide_password a").on('click', function(event) {
                 event.preventDefault();
-                if ($('#show_hide_password input').attr("type") == "text") {
+                if($('#show_hide_password input').attr("type") == "text"){
                     $('#show_hide_password input').attr('type', 'password');
                     $('#show_hide_password i').addClass("fa-eye-slash");
                     $('#show_hide_password i').removeClass("fa-eye");
-                } else if ($('#show_hide_password input').attr("type") == "password") {
+                }else if($('#show_hide_password input').attr("type") == "password"){
                     $('#show_hide_password input').attr('type', 'text');
                     $('#show_hide_password i').removeClass("fa-eye-slash");
                     $('#show_hide_password i').addClass("fa-eye");
                 }
             });
 
-            $("#confirm_show_hide_password a").on('click', function(event) {
+            $("#confirm_show_hide_password a").on('click', function(event){
                 event.preventDefault();
-                if ($('#confirm_show_hide_password input').attr("type") == "text") {
+                if($('#confirm_show_hide_password input').attr("type") == "text"){
                     $('#confirm_show_hide_password input').attr('type', 'password');
                     $('#confirm_show_hide_password i').addClass("fa-eye-slash");
                     $('#confirm_show_hide_password i').removeClass("fa-eye");
-                } else if ($('#confirm_show_hide_password input').attr("type") == "password") {
+                }else if($('#confirm_show_hide_password input').attr("type") == "password"){
                     $('#confirm_show_hide_password input').attr('type', 'text');
                     $('#confirm_show_hide_password i').removeClass("fa-eye-slash");
                     $('#confirm_show_hide_password i').addClass("fa-eye");
@@ -309,19 +294,19 @@
             });
         });
 
-        function submitForm() {
+        function submitForm(){
             $.ajax({
                 type: 'POST',
                 url: "{{ route('vaildate.user.registeration') }}",
                 data: $('#registerForm').serialize(),
-                success: function(data) {
+                success: function(data){
                     $('#cosmofeed').prop('disabled',false);
                     $('#cosmofeed').removeClass('collapsed');
                     $('#collapseFour').addClass('show');
                     $('#payment_div').show();
                     $('#details_div').hide();
                     var referral_code = $('#referral_code').val();
-                    if (referral_code == '') {
+                    if (referral_code == ''){
                         alert('You are submiting form without Referral Code!');
                     }
                     $('#price').text('₹'+data.amount);
@@ -366,68 +351,67 @@
                     $('#referral_code').prop('readonly',true);
 
                     $('#submitButton').prop('disabled',true);
-                },
-                error: function(request, status, error) {
+                },error: function(request, status, error){
                     $('#cosmofeed').prop('disabled',true);
-                    // $('#payment_div').hide();
-                    // $('#details_div').show();
+                    $('#payment_div').hide();
+                    $('#details_div').show();
                     $(window).scrollTop(0);
-                    if (request.responseJSON.errors.name) {
+                    if (request.responseJSON.errors.name){
                         $('#error_name').show();
                         $('#error_name').addClass('text-danger');
                         $('#error_name').removeClass('text-success');
                         $('#error_name').text('✖ ' + request.responseJSON.errors.name);
-                    } else {
+                    }else{
                         $('#error_name').show();
                         $('#error_name').addClass('text-success');
                         $('#error_name').removeClass('text-danger');
                         $('#error_name').text('✔ Correct');
                     }
-                    if (request.responseJSON.errors.email) {
+                    if(request.responseJSON.errors.email){
                         $('#error_email').show();
                         $('#error_email').addClass('text-danger');
                         $('#error_email').removeClass('text-success');
                         $('#error_email').text('✖ ' + request.responseJSON.errors.email);
-                    } else {
+                    }else{
                         $('#error_email').show();
                         $('#error_email').addClass('text-success');
                         $('#error_email').removeClass('text-danger');
                         $('#error_email').text('✔ Email Available');
                     }
-                    if (request.responseJSON.errors.phone) {
+                    if(request.responseJSON.errors.phone){
                         $('#error_phone').show();
                         $('#error_phone').addClass('text-danger');
                         $('#error_phone').removeClass('text-success');
                         $('#error_phone').text('✖ ' + request.responseJSON.errors.phone);
-                    } else {
+                    }else{
                         $('#error_phone').show();
                         $('#error_phone').addClass('text-success');
                         $('#error_phone').removeClass('text-danger');
                         $('#error_phone').text('✔ Phone Available');
                     }
-                    if (request.responseJSON.errors.password) {
+                    if(request.responseJSON.errors.password){
                         $('#error_password').show();
                         $('#error_password').addClass('text-danger');
                         $('#error_password').removeClass('text-success');
                         $('#error_password').text('✖ ' + request.responseJSON.errors.password);
-                    } else {
+                    }else{
                         $('#error_password').show();
                         $('#error_password').addClass('text-success');
                         $('#error_password').removeClass('text-danger');
                         $('#error_password').text('✔ Correct');
                     }
-                    if (request.responseJSON.errors.state) {
+                    if(request.responseJSON.errors.state){
                         $('#error_state').show();
                         $('#error_state').addClass('text-danger')
                         $('#error_state').removeClass('text-success');
                         $('#error_state').text('✖ ' + request.responseJSON.errors.state);
-                    } else {
+                    }else{
                         $('#error_state').show();
                         $('#error_state').addClass('text-success');
                         $('#error_state').removeClass('text-danger');
                         $('#error_state').text('✔ Correct');
                     }
-                    if (request.responseJSON.errors.referral_code) {
+                    if(request.responseJSON.errors.referral_code){
                         $('#error_refferal').show();
                         $('#error_refferal').addClass('text-danger');
                         $('#error_refferal').removeClass('text-success');
@@ -435,8 +419,8 @@
                         $('#discount_div').addClass('d-none')
                         $('#price_span').removeClass('d-none')
                         $('#discounted_price_span').addClass('d-none')
-                    } else {
-                        if ($('#referral_code').val() != '') {
+                    }else{
+                        if($('#referral_code').val() != ''){
                             $('#discount_div').removeClass('d-none')
                             $('#discounted_price_span').removeClass('d-none')
                             $('#price_span').addClass('d-none')

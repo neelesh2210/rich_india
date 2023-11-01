@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\CPU\TopicManager;
 use App\CPU\CourseManager;
+use App\Models\Admin\Plan;
 use App\Models\Admin\Course;
 use App\Models\PlanPurchase;
 use Illuminate\Http\Request;
@@ -16,9 +17,9 @@ class CourseController extends Controller
     public function index()
     {
         $user_detail = UserDetail::where('user_id',Auth::guard('web')->user()->id)->first();
-        $plan_purchase = PlanPurchase::where('delete_status','0')->where('user_id',Auth::guard('web')->user()->id)->where('plan_id',$user_detail->current_plan_id)->first();
-        $enrolled_courses = CourseManager::withoutTrash()->whereIn('id',$plan_purchase->course_ids)->get();
-        $active_courses = CourseManager::withoutTrash()->where('status',1)->whereIn('id',$plan_purchase->course_ids)->get();
+        $plan = Plan::where('delete_status','0')->where('status','1')->where('id',$user_detail->current_plan_id)->first();
+        $enrolled_courses = CourseManager::withoutTrash()->whereIn('id',$plan->course_ids)->get();
+        $active_courses = CourseManager::withoutTrash()->where('status',1)->whereIn('id',$plan->course_ids)->get();
 
         return view('user_dashboard.courses.course',compact('enrolled_courses','active_courses'));
     }

@@ -18,6 +18,9 @@ class UserProfileController extends Controller
 
     public function saveUserProfile(Request $request)
     {
+        $this->validate($request,[
+            'avatar'=>'nullable|mimes:png,jpg,jpeg,webp',
+        ]);
         $user_detail = User::find(Auth::guard('web')->user()->id);
         $check_phone = User::where('id','!=',$user_detail->id)->where('phone',$request->phone)->first();
         if($check_phone){

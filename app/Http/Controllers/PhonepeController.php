@@ -60,7 +60,7 @@ class PhonepeController extends Controller
     public function payload_creation($amount, $phone, $merchantTransaction)
     {
         $payload = array(
-            "merchantId" => 'RICHINDONLINE',
+            "merchantId" => 'M1PZ706LQV26',
             "merchantTransactionId" => $merchantTransaction,
             "merchantUserId" => "MUID" . rand(1111, 9999),
             "amount" => $amount * 100,
@@ -76,7 +76,7 @@ class PhonepeController extends Controller
 
 
 
-        $salt = '3a716740-03f7-42fa-b559-7e2998582794'; // replace with your actual salt key
+        $salt = 'cc973b2b-64ab-4106-b998-43a326ce4d83'; // replace with your actual salt key
 
         $hash_input = $base64_payload . "/pg/v1/pay" . $salt;
 
@@ -119,9 +119,9 @@ class PhonepeController extends Controller
 
     public function payload_creation_status_check()
     {
-        $salt = '3a716740-03f7-42fa-b559-7e2998582794'; // replace with your actual salt key
+        $salt = 'cc973b2b-64ab-4106-b998-43a326ce4d83'; // replace with your actual salt key
 
-        $hash_input = "/pg/v1/status/RICHINDONLINE/".session()->get('mm_tid').$salt;
+        $hash_input = "/pg/v1/status/M1PZ706LQV26/".session()->get('mm_tid').$salt;
 
         $sha256_hash = hash('sha256', $hash_input).'###1';
         return $sha256_hash;
@@ -133,7 +133,7 @@ class PhonepeController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, [
-            CURLOPT_URL => "https://api.phonepe.com/apis/hermes/pg/v1/status/RICHINDONLINE/".session()->get('mm_tid'),
+            CURLOPT_URL => "https://api.phonepe.com/apis/hermes/pg/v1/status/M1PZ706LQV26/".session()->get('mm_tid'),
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
@@ -142,7 +142,7 @@ class PhonepeController extends Controller
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_HTTPHEADER => [
                 "Content-Type: application/json",
-                "X-MERCHANT-ID: RICHINDONLINE",
+                "X-MERCHANT-ID: M1PZ706LQV26",
                 "X-VERIFY: ".$this->payload_creation_status_check(),
                 "accept: application/json"
             ],
@@ -204,7 +204,7 @@ class PhonepeController extends Controller
     public function payload_creation_update($amount, $phone, $merchantTransaction)
     {
         $payload = array(
-            "merchantId" => 'RICHINDONLINE',
+            "merchantId" => 'M1PZ706LQV26',
             "merchantTransactionId" => $merchantTransaction,
             "merchantUserId" => "MUID" . rand(1111, 9999),
             "amount" => $amount * 100,
@@ -220,7 +220,7 @@ class PhonepeController extends Controller
 
 
 
-        $salt = '3a716740-03f7-42fa-b559-7e2998582794'; // replace with your actual salt key
+        $salt = 'cc973b2b-64ab-4106-b998-43a326ce4d83'; // replace with your actual salt key
 
         $hash_input = $base64_payload . "/pg/v1/pay" . $salt;
 

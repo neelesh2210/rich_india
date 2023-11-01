@@ -82,6 +82,9 @@
                                         <div class="p-2">
                                             <img id="img1" src="{{asset('frontend/images/avatar/'.$user_details->avatar)}}" onerror="this.onerror=null;this.src='{{asset('backend/img/no-image.png')}}'" height="100px" width="100px">
                                         </div>
+                                        @error('avatar')
+                                            <span class="text-danger">{{$message}}</span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Save Changes</button>

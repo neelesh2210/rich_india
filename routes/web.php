@@ -58,6 +58,7 @@ Route::post('payment', [RegisterController::class,'payment'])->name('payment');
 Route::get('instamojo/payment/pay-success',[InstamojoController::class, 'success'])->name('instamojo.success');
 
 //Phonepe
+Route::post('phonepe-payment',[RegisterController::class,'phonepePayment'])->name('phonepe.payment');
 Route::get('phonepe/callback',[PhonepeController::class, 'callback'])->name('phonepe.callback');
 Route::get('phonepe/redirectUrl',[PhonepeController::class, 'redirectUrl'])->name('phonepe.redirectUrl');
 Route::get('phonepe/redirectUrl/update',[PhonepeController::class, 'redirectUrlUpdate'])->name('phonepe.redirectUrl.update');
