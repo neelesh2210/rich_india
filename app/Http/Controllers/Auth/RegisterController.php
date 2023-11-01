@@ -216,7 +216,6 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
-        return $request;
         $user = new User;
         $user->name = $request->name;
         $user->email = $request->email;

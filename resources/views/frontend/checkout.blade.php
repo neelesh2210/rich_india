@@ -217,23 +217,6 @@
                                         <div class="faq-accordion">
                                             <div class="accordion" id="FaqAccordion">
                                                 <div class="accordion-item">
-                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" id="cosmofeed" disabled>
-                                                        Cosmofeed
-                                                    </button>
-                                                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#FaqAccordion">
-                                                        <div class="accordion-body">
-                                                            <p> Pay Using Paytm Gateway <br>
-                                                                You can pay directly through Paytm payment gateway using
-                                                                UPI/Debit
-                                                                Card/Net Banking
-                                                            </p>
-                                                            <div class="about-btn mt-3 mb-3">
-                                                                <a href="#" id="place_order" class="btn btn-primary w-100">Place Order  <span class="final_price"  id="price"></span> <i class="ri-arrow-right-line"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="accordion-item">
                                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" id="phonepay">
                                                         PhonePe
                                                     </button>
@@ -251,6 +234,23 @@
                                                                 </div>
                                                             </div>
                                                         </form>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" id="cosmofeed">
+                                                        Cosmofeed
+                                                    </button>
+                                                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#FaqAccordion">
+                                                        <div class="accordion-body">
+                                                            <p> Pay Using Paytm Gateway <br>
+                                                                You can pay directly through Paytm payment gateway using
+                                                                UPI/Debit
+                                                                Card/Net Banking
+                                                            </p>
+                                                            <div class="about-btn mt-3 mb-3">
+                                                                <a href="#" id="place_order" class="btn btn-primary w-100">Place Order  <span class="final_price"  id="price"></span> <i class="ri-arrow-right-line"></i></a>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -300,9 +300,9 @@
                 url: "{{ route('vaildate.user.registeration') }}",
                 data: $('#registerForm').serialize(),
                 success: function(data){
-                    $('#cosmofeed').prop('disabled',false);
-                    $('#cosmofeed').removeClass('collapsed');
-                    $('#collapseFour').addClass('show');
+                    $('#phonepay').prop('disabled',false);
+                    $('#phonepay').removeClass('collapsed');
+                    $('#collapseFive').addClass('show');
                     $('#payment_div').show();
                     $('#details_div').hide();
                     var referral_code = $('#referral_code').val();
