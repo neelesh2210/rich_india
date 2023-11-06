@@ -60,30 +60,33 @@ class WithdrawalRequestController extends Controller
 
     public function stauts(Request $request){
         $withdrawal_request = WithdrawalRequest::find($request->id);
-        $withdrawal_request->status = $request->status;
-        $withdrawal_request->save();
+        if($withdrawal_request->status == 'pending'){
+            $withdrawal_request->status = $request->status;
+            $withdrawal_request->save();
 
-        if($request->status == 'success'){
-            $user = User::find($withdrawal_request->user_id);
+            if($request->status == 'success'){
+                $user = User::find($withdrawal_request->user_id);
 
-            $payout = new Payout;
-            $payout->user_id = $withdrawal_request->user_id;
-            $payout->amount = $withdrawal_request->amount;
-            $payout->payment_type = 'cash';
-            $payout->payment_status = 'success';
-            $payout->save();
+                $payout = new Payout;
+                $payout->user_id = $withdrawal_request->user_id;
+                $payout->amount = $withdrawal_request->amount;
+                $payout->payment_type = 'cash';
+                $payout->payment_status = 'success';
+                $payout->save();
 
-            try {
-                Mail::send('email.payout', ['user_name'=>$user->name,'amount'=>$withdrawal_request->amount], function($message) use($user){
-                    $message->to($user->email);
-                    $message->subject('Withdrawal Successfull!');
-                });
-            } catch (\Throwable $th) {
-                //throw $th;
+                try {
+                    Mail::send('email.payout', ['user_name'=>$user->name,'amount'=>$withdrawal_request->amount], function($message) use($user){
+                        $message->to($user->email);
+                        $message->subject('Withdrawal Successfull!');
+                    });
+                } catch (\Throwable $th) {
+                    //throw $th;
+                }
             }
+            return back()->with('success','Payout Completed Successfully!');
+        }else{
+            return back()->with('error','Payout Already Completed Successfully!');
         }
-
-        return back()->with('success','Payout Completed Successfully!');
     }
 
 
