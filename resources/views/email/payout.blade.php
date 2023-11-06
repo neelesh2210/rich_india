@@ -3,8 +3,8 @@
 
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<title>Skill Achiever</title>
-<meta name="description" content="Skill Achiever">
+<title>Rich IND</title>
+<meta name="description" content="Rich IND">
 </head>
 <style>
 a:hover {
