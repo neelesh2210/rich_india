@@ -32,21 +32,21 @@ a:hover {
                             <tr>
                                 <td style="text-align:center; border-bottom:1px solid #f2e8dc; padding-bottom: 10px;">
                                     <a href="{{ asset('frontend/images/logo-2.png') }}" title="logo" target="_blank">
-                                        <img src="{{ asset('frontend/images/logo-2.png') }}" title="logo" alt="logo" style="height: 70px">
+                                        <img src="{{ asset('frontend/images/logo-2.png') }}" title="logo" alt="logo" style="height: 65px">
                                     </a>
                                 </td>
                             </tr>
                             <!-- Title -->
                             <tr>
                                 <td style="text-align:center;">
-                                    <h1 style="color:#1e1e2d; margin-top: 20px; margin-bottom:0; font-weight:bold; font-size:32px;font-family:'Rubik',sans-serif;">
+                                    <h1 style="color:#1e1e2d; margin-top: 20px; margin-bottom:20px; font-weight:bold; font-size:30px;font-family:'Rubik',sans-serif;">
                                         Congratulations!</h1>
-                                    <h1 style="color:#1e1e2d; font-weight:bold; margin:0;font-size:48px;font-family:'Rubik',sans-serif;">
+                                    <h1 style="color:#1e1e2d; font-weight:bold; margin:0;font-size:40px;font-family:'Rubik',sans-serif;">
                                         @isset($user_name)
                                         {{ $user_name }}
                                         @endisset</h1><br>
-                                     <h1 style="color:#1e1e2d; font-weight:bold; margin:0;font-size:40px;color:red;font-family:'Rubik',sans-serif;">You Have Earned</h1><br>
-                                     <h1 style="color:#1e1e2d; font-weight:bold; margin:0;font-size:60px;font-family:'Rubik',sans-serif;"> @isset($amount)
+                                     <h1 style="color:#1e1e2d; font-weight:bold; margin:0;font-size:35px;color:red;font-family:'Rubik',sans-serif;">You Have Earned</h1><br>
+                                     <h1 style="color:#1e1e2d; font-weight:bold; margin:0;font-size:43px;font-family:'Rubik',sans-serif;"> @isset($amount)
                                         {{ $amount }}
                                         @endisset INR</h1><br>
                                 </td>
@@ -55,8 +55,8 @@ a:hover {
                             <!-- Details Table -->
                             <tr>
                                 <td>
-                                    <p style="text-align:center;font-size:24px;font-weight:500;margin:5px 0 20px;">We Are Happy To Inform You That We Have Transferred Your Payment Into Your Bank Account.</p>
-                                    <h1 style="text-align:center;color:#1e1e2d; font-weight:bold; margin:0;font-size:36px;font-family:'Rubik',sans-serif;">
+                                    <p style="text-align:center;font-size:20px;font-weight:500;margin:5px 0 20px;">We Are Happy To Inform You That We Have Transferred Your Payment Into Your Bank Account.</p>
+                                    <h1 style="text-align:center;color:#1e1e2d; font-weight:bold; margin:0;font-size:30px;font-family:'Rubik',sans-serif;">
                                         ({{date('d M Y')}})</h1><br>
                                 </td>
                             </tr>
