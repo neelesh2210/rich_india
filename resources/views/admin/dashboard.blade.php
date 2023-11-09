@@ -111,7 +111,6 @@
                     <div class="col-lg-3 col-6">
                         <div class="small-box bg-info">
                             @php
-                                $plan_purchase_id = App\Models\PlanPurchase::where('delete_status','0')->pluck('id');
                                 $total_sell = App\Models\PlanPurchase::where('delete_status','0')->get()->sum('total_amount');
                                 $total_commission =  App\Models\Commission::where('user_id','!=',1)->where('delete_status','0')->get()->sum('commission');
                             @endphp
