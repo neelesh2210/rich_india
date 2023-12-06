@@ -318,8 +318,8 @@
             <div class="row">
                 <div class="col-xl-5 col-lg-12 col-sm-5">
                     <div class="knowledge-img aos">
-                        <iframe width="450" height="450" src="https://www.youtube.com/embed/NuqDs-_QAv0"
-                            title="Richind Presentation Video | Official | richind se paise kaise kamaye 👈 #richind #entrepreneur"
+                        <iframe width="450" height="450" src="https://www.youtube.com/embed/O0duA97uSR4"
+                        title="PRESENTATION VIDEO ❤️‍🔥 ||  RICHIND से paisa💸 कैसे कमाए ? 🤔 || #richind"
                             class="img-fluid bdr-20" style="height:254px"></iframe>
                     </div>
                 </div>
