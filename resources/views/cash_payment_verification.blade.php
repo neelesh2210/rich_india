@@ -15,8 +15,9 @@
                             <div class="col-md-12">
                                 <h4 class="gordita-bold text-center">Please Pay Rs. @if($registration_error_log->referral_code) {{$plan->discounted_price}} @else {{$plan->amount}} @endif/- On below given UPI </h4>
                                 <input type="hidden" value="richind0557@icici" id="upi_id">
-                                <h1 class="gordita-bold text-center" style="color: #372d7a;">richind0557@icici <a class="btn btn-success pb" onclick="copyText()"><i class="fa fa-copy" style="font-size: 20px;"></i> Copy UPI</a></h1>
+                                <h1 class="gordita-bold text-center">richind0557@icici <a class="btn btn-submit pb" onclick="copyText()"><i class="fa fa-copy" style="font-size: 20px;"></i> Copy UPI</a></h1>
                                 <h5 class="text-center mb-2">After Payment share screenshot and registered email id on given number.</h5>
+                                <h5 class="text-center mb-2"><a href="https://wa.me/+916395350946" value="Send" class="btn btn-submit p-3" style="font-size: 16px; background:#25D366;border:0;"><i class="fa fa-whatsapp"></i> Whatsapp: 6395350946</a></h5>
                                 <div class="avatar-preview">
                                     <img src="{{ asset('frontend/images/qr-code.jpg') }}" alt="" class="img-fluid">
                                     <p class="text-center" style="color: #372d7a;font-size:12px;font-weight:600;margin-top:5px;">Scan QR Code
