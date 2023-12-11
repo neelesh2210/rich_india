@@ -12,21 +12,26 @@
                 <div class="col-lg-8 m-lg-auto">
                     <div class="login-box">
                         <div class="row align-items-center">
-                            <div class="col-md-9">
+                            <div class="col-md-12">
                                 <h4 class="gordita-bold text-center">Please Pay Rs. @if($registration_error_log->referral_code) {{$plan->discounted_price}} @else {{$plan->amount}} @endif/- On below given UPI </h4>
                                 <input type="hidden" value="richind0557@icici" id="upi_id">
                                 <h1 class="gordita-bold text-center" style="color: #372d7a;">richind0557@icici <a class="btn btn-success pb" onclick="copyText()"><i class="fa fa-copy" style="font-size: 20px;"></i> Copy UPI</a></h1>
-                                <h5 class="text-center mb-2">After Payment please upload payment screenshot.</h5>
-                                <h5 class="text-center mb-2">Payment Screenshot मैं सब Details Show होनी चाहिए। Like :- UTR / UPI Ref. Id ( 12 digital number )</h5>
-                            </div>
-                            <div class="col-md-3">
+                                <h5 class="text-center mb-2">After Payment share screenshot and registered email id on given number.</h5>
                                 <div class="avatar-preview">
                                     <img src="{{ asset('frontend/images/qr-code.jpg') }}" alt="" class="img-fluid">
                                     <p class="text-center" style="color: #372d7a;font-size:12px;font-weight:600;margin-top:5px;">Scan QR Code
                                     </p>
                                 </div>
+                                <h5 class="text-center mb-2">Payment Screenshot मैं सब Details Show होनी चाहिए। Like :- UTR / UPI Ref. Id ( 12 digital number )</h5>
                             </div>
-                            <div class="col-lg-12 col-md-12">
+                            {{-- <div class="col-md-3">
+                                <div class="avatar-preview">
+                                    <img src="{{ asset('frontend/images/qr-code.jpg') }}" alt="" class="img-fluid">
+                                    <p class="text-center" style="color: #372d7a;font-size:12px;font-weight:600;margin-top:5px;">Scan QR Code
+                                    </p>
+                                </div>
+                            </div> --}}
+                            {{-- <div class="col-lg-12 col-md-12">
                                 <div class="login-wrapper">
                                     <div class="w-100">
                                         <div class="support-wrap">
@@ -57,7 +62,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>

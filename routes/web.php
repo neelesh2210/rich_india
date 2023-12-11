@@ -67,7 +67,7 @@ Route::get('phonepe/redirectUrl',[PhonepeController::class, 'redirectUrl'])->nam
 Route::get('phonepe/redirectUrl/update',[PhonepeController::class, 'redirectUrlUpdate'])->name('phonepe.redirectUrl.update');
 
 //Cash
-Route::get('cash-payment/{id}',[RegisterController::class,'cashPayment'])->name('cash.payment');
+Route::get('cash-payment',[RegisterController::class,'cashPayment'])->name('cash.payment');
 Route::post('cash-payment-verify/{id}',[RegisterController::class,'cashPaymentVerify'])->name('cash.payment.verify');
 
 //thank you

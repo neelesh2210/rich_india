@@ -431,8 +431,10 @@ class RegisterController extends Controller
         }
     }
 
-    public function cashPayment($id){
-        $registration_error_log = RegistrationErrorLog::find(decrypt($id));
+    public function cashPayment(){
+        $registration_error_log_id = \Session::get('registration_error_log_id');
+        $id = $registration_error_log_id;
+        $registration_error_log = RegistrationErrorLog::find(decrypt($registration_error_log_id));
         $plan = Plan::find($registration_error_log->plan);
         return view('cash_payment_verification',compact('id','registration_error_log','plan'));
     }

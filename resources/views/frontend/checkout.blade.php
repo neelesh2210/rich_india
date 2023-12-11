@@ -1,5 +1,6 @@
 @extends('frontend.layouts.app')
 @section('content')
+
     <style>
         .loader {
             position: absolute;
@@ -237,14 +238,29 @@
                                                     </div>
                                                 </div> --}}
                                                 <div class="accordion-item">
-                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" id="cosmofeed">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour" id="cosmofeed">
                                                         Cosmofeed
                                                     </button>
-                                                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#FaqAccordion">
+                                                    <div id="collapseFour" class="accordion-collapse collapse show" data-bs-parent="#FaqAccordion">
                                                         <div class="accordion-body">
                                                             <p> Pay Using Cosmofeed <br></p>
                                                             <div class="about-btn mt-3 mb-3">
                                                                 <a href="#" id="place_order" class="btn btn-primary w-100">Place Order  <span class="final_price"  id="price"></span> <i class="ri-arrow-right-line"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                                        Pay with QR
+                                                    </button>
+                                                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#FaqAccordion" style="">
+                                                        <div class="accordion-body">
+                                                            <p> Pay Using Cash <br>
+                                                                You can pay directly through QR
+                                                            </p>
+                                                            <div class="about-btn mt-3 mb-3">
+                                                                <a href="{{route('cash.payment')}}" class="btn btn-primary w-100">Place Order <i class="ri-arrow-right-line"></i></a>
                                                             </div>
                                                         </div>
                                                     </div>
