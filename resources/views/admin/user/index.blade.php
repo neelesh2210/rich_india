@@ -141,7 +141,7 @@
                                                         @endif
                                                     </a>
                                                 </td>
-                                                <td class="text-center">{{$user->userDetail->total_wallet_amount}}</td>
+                                                <td class="text-center">{{$user->userDetail->total_wallet_balance}}</td>
                                                 <td class="text-center">
                                                     @php
                                                         $associates = App\Models\User::where('referral_code', $user->referrer_code)->where('delete_status','0')->get();
