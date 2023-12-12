@@ -78,6 +78,13 @@
         .login-wrapper .loginbox label {
             cursor: pointer;
         }
+
+        .btn-disabled,
+        .btn-disabled[disabled] {
+            opacity: .4;
+            cursor: default !important;
+            pointer-events: none;
+        }
     </style>
 
     <div class="main-wrapper log-wrap">
@@ -237,6 +244,26 @@
                                                         </form>
                                                     </div>
                                                 </div> --}}
+                                                {{-- <div class="accordion-item">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" id="instamojo">
+                                                        Instamojo
+                                                    </button>
+                                                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#FaqAccordion">
+                                                        <form action="{{route('payment')}}" method="POST">
+                                                            @csrf
+                                                            <div class="accordion-body">
+                                                                <p> Pay Using Paytm Gateway <br>
+                                                                    You can pay directly through Paytm payment gateway using
+                                                                    UPI/Debit
+                                                                    Card/Net Banking
+                                                                </p>
+                                                                <div class="about-btn mt-3 mb-3">
+                                                                    <button class="btn btn-primary w-100">Place Order <i class="ri-arrow-right-line"></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div> --}}
                                                 <div class="accordion-item">
                                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour" id="cosmofeed">
                                                         Cosmofeed
@@ -256,11 +283,28 @@
                                                     </button>
                                                     <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#FaqAccordion" style="">
                                                         <div class="accordion-body">
-                                                            <p> Pay Using Cash <br>
+                                                            <p> Pay Using QR <br>
                                                                 You can pay directly through QR
                                                             </p>
                                                             <div class="about-btn mt-3 mb-3">
                                                                 <a href="{{route('cash.payment')}}" class="btn btn-primary w-100">Place Order <i class="ri-arrow-right-line"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseOne">
+                                                        Pay with Referrel Wallet
+                                                    </button>
+                                                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#FaqAccordion" style="">
+                                                        <div class="accordion-body">
+                                                            <p> Pay Using {{env('APP_ENV')}} Referrel Wallet </p>
+                                                            <div class="about-btn mt-3 mb-3">
+                                                                <input type="text" class="form-control" id="wallet_referrel_code" readonly>
+                                                                <form action="{{route('wallet.referrel.request')}}" method="POST" id="wallet_referrel_code_form">
+                                                                    @csrf
+                                                                </form>
+                                                                <a class="btn btn-primary w-100 mt-2" id="wallet_referrel_code_button" onclick="$('#wallet_referrel_code_form').submit()">Place Order <i class="ri-arrow-right-line"></i></a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -314,12 +358,17 @@
                 success: function(data){
                     $('#phonepay').prop('disabled',false);
                     $('#phonepay').removeClass('collapsed');
-                    $('#collapseFive').addClass('show');
+                    //$('#collapseFive').addClass('show');
                     $('#payment_div').show();
                     $('#details_div').hide();
                     var referral_code = $('#referral_code').val();
                     if (referral_code == ''){
                         alert('You are submiting form without Referral Code!');
+                        $('#wallet_referrel_code').val('');
+                        $('#wallet_referrel_code_button').addClass('btn-disabled');
+                    }else{
+                        $('#wallet_referrel_code').val(referral_code);
+                        $('#wallet_referrel_code_button').removeClass('btn-disabled');
                     }
                     $('#price').text('₹'+data.amount);
                     $('#place_order').attr('href',data.url);

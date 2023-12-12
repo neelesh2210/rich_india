@@ -103,6 +103,14 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-sm-3 mb-2">
+                                <div class="card widget-flat bg-gradient-moonlit">
+                                    <div class="card-body">
+                                        <h3 class="text-white"><small>₹</small> <span class="counter-value">{{Auth::guard('web')->user()->userDetail->total_wallet_balance}}</span></h3>
+                                        <h5 class="text-white fw-normal mt-3" title="Number of Customers">Total Wallet Amount</h5>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="col-md-12">
                                 <div class="card card-info">
                                     <div class="card-header text-center">

@@ -14,7 +14,8 @@ class UserDetail extends Model
         'current_plan_id',
         'total_commission',
         'old_paid_payout',
-        'old_not_paid_payout'
+        'old_not_paid_payout',
+        'total_wallet_balance'
     ];
 
     public function plan()

@@ -17,7 +17,9 @@ use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\UserDashboardController;
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\WalletTransactionController;
 use App\Http\Controllers\WithdrawalRequestController;
+use App\Http\Controllers\RegistrationRequestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,7 +72,11 @@ Route::get('phonepe/redirectUrl/update',[PhonepeController::class, 'redirectUrlU
 Route::get('cash-payment',[RegisterController::class,'cashPayment'])->name('cash.payment');
 Route::post('cash-payment-verify/{id}',[RegisterController::class,'cashPaymentVerify'])->name('cash.payment.verify');
 
-//thank you
+//Wallet Referrel Request
+Route::post('wallet-referrel-request',[RegisterController::class,'walletReferrelRequest'])->name('wallet.referrel.request');
+Route::get('wallet-request-confirmation/{id}',[RegisterController::class,'walletRequestConfirmation'])->name('wallet.request.confirmation');
+
+//Thank You
 Route::view('thank-you', 'frontend.thank_you')->name('thank.you');
 Route::view('data-modification-error', 'frontend.data_modification_error')->name('data.modification.error');
 
@@ -125,6 +131,11 @@ Route::group(['middleware'=>['auth:web',CheckUserStatus::class],'prefix'=>'user'
 
     Route::get('associates',[AssociateController::class,'associate'])->name('associates');
 
+    //Registration Request
+    Route::get('registration-request',[RegistrationRequestController::class,'index'])->name('registration.request');
+    Route::get('registration-request-detail/{id}',[RegistrationRequestController::class,'detail'])->name('registration.request.detail');
+    Route::post('registration-request-store/{id}',[RegistrationRequestController::class,'store'])->name('registration.request.store');
+
     Route::get('course',[CourseController::class,'index'])->name('course');
     Route::get('course-detail/{course_id}',[CourseController::class,'detail'])->name('course.detail');
 
@@ -153,6 +164,9 @@ Route::group(['middleware'=>['auth:web',CheckUserStatus::class],'prefix'=>'user'
 
     //Training
     Route::get('training',[UserDashboardController::class,'training'])->name('training');
+
+    //Wallet Transaction
+    Route::get('wallet-transaction',[WalletTransactionController::class,'index'])->name('wallet.transaction.index');
 
     //Logout
     Route::post('user-logout',[LoginController::class,'logout'])->name('logout');

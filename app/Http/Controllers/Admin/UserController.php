@@ -9,6 +9,7 @@ use App\CPU\UserManager;
 use App\Models\Admin\Plan;
 use App\Models\BankDetail;
 use App\Models\Commission;
+use App\Models\UserWallet;
 use App\Models\PlanPurchase;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -181,8 +182,21 @@ class UserController extends Controller
                 $commission->level = $i;
                 $commission->save();
 
+                $user_wallet = new UserWallet;
+                $user_wallet->user_id = $commission_user->id;
+                $user_wallet->from_id = $plan_purchase->id;
+                $user_wallet->amount = $commission_amount;
+                $user_wallet->type = 'credit';
+                if($i == 1){
+                    $user_wallet->from = 'active_commission';
+                }else{
+                    $user_wallet->from = 'passive_commission';
+                }
+                $user_wallet->save();
+
                 $user_detail = UserDetail::where('user_id',User::first()->id)->first();
                 $user_detail->total_commission = $user_detail->total_commission + $commission_amount;
+                $user_detail->total_wallet_balance = $user_detail->total_wallet_balance + $commission_amount;
                 $user_detail->save();
 
                 if($i == 1){
@@ -232,8 +246,21 @@ class UserController extends Controller
                 $commission->level = $i;
                 $commission->save();
 
+                $user_wallet = new UserWallet;
+                $user_wallet->user_id = $commission_user->id;
+                $user_wallet->from_id = $plan_purchase_id;
+                $user_wallet->amount = $commission_amount;
+                $user_wallet->type = 'credit';
+                if($i == 1){
+                    $user_wallet->from = 'active_commission';
+                }else{
+                    $user_wallet->from = 'passive_commission';
+                }
+                $user_wallet->save();
+
                 $user_detail = UserDetail::where('user_id',$commission_user->id)->first();
                 $user_detail->total_commission = $user_detail->total_commission + $commission_amount;
+                $user_detail->total_wallet_balance = $user_detail->total_wallet_balance + $commission_amount;
                 $user_detail->save();
 
                 array_push($user_arr,$commission_user->id);
@@ -272,8 +299,21 @@ class UserController extends Controller
                 $commission->level = $i;
                 $commission->save();
 
+                $user_wallet = new UserWallet;
+                $user_wallet->user_id = $commission_user->id;
+                $user_wallet->from_id = $plan_purchase_id;
+                $user_wallet->amount = $commission_amount;
+                $user_wallet->type = 'credit';
+                if($i == 1){
+                    $user_wallet->from = 'active_commission';
+                }else{
+                    $user_wallet->from = 'passive_commission';
+                }
+                $user_wallet->save();
+
                 $user_detail = UserDetail::where('user_id',User::first()->id)->first();
                 $user_detail->total_commission = $user_detail->total_commission + $commission_amount;
+                $user_detail->total_wallet_balance = $user_detail->total_wallet_balance + $commission_amount;
                 $user_detail->save();
 
                 if($i == 1){
@@ -558,8 +598,21 @@ class UserController extends Controller
                                 $commission->level = $i;
                                 $commission->save();
 
+                                $user_wallet = new UserWallet;
+                                $user_wallet->user_id = $commission_user->id;
+                                $user_wallet->from_id = $plan_purchase->id;
+                                $user_wallet->amount = $commission_amount;
+                                $user_wallet->type = 'credit';
+                                if($i == 1){
+                                    $user_wallet->from = 'active_commission';
+                                }else{
+                                    $user_wallet->from = 'passive_commission';
+                                }
+                                $user_wallet->save();
+
                                 $user_detail = UserDetail::where('user_id',User::first()->id)->first();
                                 $user_detail->total_commission = $user_detail->total_commission + $commission_amount;
+                                $user_detail->total_wallet_balance = $user_detail->total_wallet_balance + $commission_amount;
                                 $user_detail->save();
 
                                 if($i == 1){

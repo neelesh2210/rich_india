@@ -28,7 +28,7 @@ class InstamojoController extends Controller
                 $response = $api->paymentRequestCreate(array(
                     "purpose" =>'Form Payment',
                     "amount" => $request->amount,
-                    "buyer_name" => $request->first_name,
+                    "buyer_name" => $request->name,
                     "send_email" => true,
                     "send_sms"=>true,
                     "email" => $request->email,

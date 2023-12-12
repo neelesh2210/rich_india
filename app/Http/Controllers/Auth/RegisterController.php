@@ -9,6 +9,7 @@ use App\Jobs\ImportUser;
 use App\CPU\CouponManager;
 use App\Models\Admin\Plan;
 use App\Models\Commission;
+use App\Models\UserWallet;
 use App\Models\PlanPurchase;
 use Illuminate\Http\Request;
 use App\Models\Admin\UserDetail;
@@ -21,6 +22,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Admin\CommissionSetting;
 use App\Providers\RouteServiceProvider;
+use App\Models\WalletRegistrationRequest;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\PhonepeController;
 use App\Http\Controllers\InstamojoController;
@@ -81,8 +83,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\User
      */
-    protected function create(array $data)
-    {
+    protected function create(array $data){
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -90,8 +91,7 @@ class RegisterController extends Controller
         ]);
     }
 
-    public function validateUserRegistration(SignupRequest $request)
-    {
+    public function validateUserRegistration(SignupRequest $request){
         \Session::forget('registration_error_log_id');
         $plan = Plan::where('id',$request->plan_id)->first();
 
@@ -133,7 +133,6 @@ class RegisterController extends Controller
     }
 
     //Razorpay
-
     // public function payment(Request $request)
     // {
     //     $input = $request->all();
@@ -181,14 +180,24 @@ class RegisterController extends Controller
     // }
 
     //Instamojo
+    public function payment(Request $request){
+        $registration_error_log_id = \Session::get('registration_error_log_id');
+        $registration_error_log = RegistrationErrorLog::where('id',decrypt($registration_error_log_id))->first();
 
-    // public function payment(Request $request){
-    //     $instamojo = new InstamojoController;
-    //     return $instamojo->pay($request);
-    // }
+        $plan = Plan::where('id',$registration_error_log->plan)->first();
+
+        if($registration_error_log->referral_code){
+            $amount = $plan->discounted_price;
+        }else{
+            $amount = $plan->amount;
+        }
+
+        $request->request->add(['name'=>$registration_error_log->name,'email'=>$registration_error_log->email,'phone'=>$registration_error_log->phone,'amount'=>$amount,'state'=>$registration_error_log->state,'referral_code'=>$registration_error_log->referral_code,'password'=>$registration_error_log->password,'plan_id'=>$registration_error_log->plan]);
+        $instamojo = new InstamojoController;
+        return redirect()->to($instamojo->pay($request));
+    }
 
     //Phonepe
-
     public function phonepePayment(Request $request){
         $registration_error_log_id = \Session::get('registration_error_log_id');
         $registration_error_log = RegistrationErrorLog::where('id',decrypt($registration_error_log_id))->first();
@@ -208,14 +217,12 @@ class RegisterController extends Controller
     }
 
     //Cash
+    // public function payment(Request $request){
+    //     $registration_error_log = RegistrationErrorLog::where('phone',$request->phone)->latest()->first();
+    //     return route('cash.payment',encrypt($registration_error_log->id));
+    // }
 
-    public function payment(Request $request){
-        $registration_error_log = RegistrationErrorLog::where('phone',$request->phone)->latest()->first();
-        return route('cash.payment',encrypt($registration_error_log->id));
-    }
-
-    public function register(Request $request)
-    {
+    public function register(Request $request){
         $user = new User;
         $user->name = $request->name;
         $user->email = $request->email;
@@ -286,8 +293,21 @@ class RegisterController extends Controller
                 $commission->level = $i;
                 $commission->save();
 
+                $user_wallet = new UserWallet;
+                $user_wallet->user_id = $commission_user->id;
+                $user_wallet->from_id = $plan_purchase->id;
+                $user_wallet->amount = $commission_amount;
+                $user_wallet->type = 'credit';
+                if($i == 1){
+                    $user_wallet->from = 'active_commission';
+                }else{
+                    $user_wallet->from = 'passive_commission';
+                }
+                $user_wallet->save();
+
                 $user_detail = UserDetail::where('user_id',User::first()->id)->first();
                 $user_detail->total_commission = $user_detail->total_commission + $commission_amount;
+                $user_detail->total_wallet_balance = $user_detail->total_wallet_balance + $commission_amount;
                 $user_detail->save();
 
                 if($i == 1){
@@ -319,8 +339,7 @@ class RegisterController extends Controller
         return redirect()->route('thank.you',compact('user','amount'));
     }
 
-    public function distributeCommission($referral_code,$plan_id,$plan_purchase_id,$user)
-    {
+    public function distributeCommission($referral_code,$plan_id,$plan_purchase_id,$user){
         $commission_setting = CommissionSetting::get();
         $level = $commission_setting->count();
         $plan = Plan::where('id',$plan_id)->first();
@@ -340,13 +359,26 @@ class RegisterController extends Controller
                 $commission->level = $i;
                 $commission->save();
 
-                $user_detail = UserDetail::where('user_id',$commission_user->id)->first();
-                $user_detail->total_commission = $user_detail->total_commission + $commission_amount;
-                $user_detail->save();
-
-
                 array_push($user_arr,$commission_user->id);
                 $referral_code = $commission_user->referral_code;
+
+                $user_wallet = new UserWallet;
+                $user_wallet->user_id = $commission_user->id;
+                $user_wallet->from_id = $plan_purchase_id;
+                $user_wallet->amount = $commission_amount;
+                $user_wallet->type = 'credit';
+                if($i == 1){
+                    $user_wallet->from = 'active_commission';
+                }else{
+                    $user_wallet->from = 'passive_commission';
+                }
+                $user_wallet->save();
+
+                $user_detail = UserDetail::where('user_id',$commission_user->id)->first();
+                $user_detail->total_commission = $user_detail->total_commission + $commission_amount;
+                $user_detail->total_wallet_balance = $user_detail->total_wallet_balance + $commission_amount;
+                $user_detail->save();
+
                 if($i == 1){
                     try {
                         Mail::send('email.active_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount], function($message) use($commission_user){
@@ -384,17 +416,29 @@ class RegisterController extends Controller
                 $commission->level = $i;
                 $commission->save();
 
+                $user_wallet = new UserWallet;
+                $user_wallet->user_id = $commission_user->id;
+                $user_wallet->from_id = $plan_purchase_id;
+                $user_wallet->amount = $commission_amount;
+                $user_wallet->type = 'credit';
+                if($i == 1){
+                    $user_wallet->from = 'active_commission';
+                }else{
+                    $user_wallet->from = 'passive_commission';
+                }
+                $user_wallet->save();
+
                 $user_detail = UserDetail::where('user_id',User::first()->id)->first();
                 $user_detail->total_commission = $user_detail->total_commission + $commission_amount;
+                $user_detail->total_wallet_balance = $user_detail->total_wallet_balance + $commission_amount;
                 $user_detail->save();
-
 
                 if($i == 1){
                     try {
                         Mail::send('email.active_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount], function($message) use($commission_user){
                             $this->email = $commission_user;
                             $message->to($commission_user->email);
-                            $message->subject('TRichIND Notification');
+                            $message->subject('RichIND Notification');
                         });
                     } catch (\Throwable $th) {
 
@@ -452,5 +496,32 @@ class RegisterController extends Controller
         $registration_error_log->save();
 
         return redirect()->route('cashthank_you')->with('success','Request Has beed Submitted!');
+    }
+
+    public function walletReferrelRequest(Request $request){
+        $registration_error_log_id = \Session::get('registration_error_log_id');
+        $registration_error_log = RegistrationErrorLog::find(decrypt($registration_error_log_id));
+
+        $wallet_registration_request = new WalletRegistrationRequest;
+        $wallet_registration_request->name = $registration_error_log->name;
+        $wallet_registration_request->email = $registration_error_log->email;
+        $wallet_registration_request->phone = $registration_error_log->phone;
+        $wallet_registration_request->state = $registration_error_log->state;
+        $wallet_registration_request->plan = $registration_error_log->plan;
+        $wallet_registration_request->referral_code = $registration_error_log->referral_code;
+        $wallet_registration_request->password = $registration_error_log->password;
+        $wallet_registration_request->save();
+
+        return redirect()->route('wallet.request.confirmation',encrypt($wallet_registration_request->id));
+    }
+
+    public function walletRequestConfirmation($id){
+        if($id){
+            $registration_error_log = WalletRegistrationRequest::find(decrypt($id));
+
+            return view('wallet_request_confirmation',compact('registration_error_log'));
+        }else{
+            return redirect()->route('index')->with('error','First Register Your Self!');
+        }
     }
 }

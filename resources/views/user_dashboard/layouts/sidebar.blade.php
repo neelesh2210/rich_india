@@ -35,6 +35,12 @@
                     </a>
                 </li>
                 <li class="side-nav-item">
+                    <a href="{{route('user.registration.request')}}" class="side-nav-link">
+                        <i class="uil-users-alt"></i>
+                        <span> Registration Request </span>
+                    </a>
+                </li>
+                <li class="side-nav-item">
                     <a href="{{route('user.traffic')}}" class="side-nav-link">
                         <i class="uil-users-alt"></i>
                         <span> My Team </span>
@@ -56,6 +62,12 @@
                     <a href="{{route('user.affiliate.links')}}" class="side-nav-link">
                         <i class="uil-link-alt"></i>
                         <span> Affiliate Link </span>
+                    </a>
+                </li>
+                <li class="side-nav-item">
+                    <a href="{{route('user.wallet.transaction.index')}}" class="side-nav-link">
+                        <i class="uil-money-bill"></i>
+                        <span> Wallet Transaction </span>
                     </a>
                 </li>
                 <li class="side-nav-item">
