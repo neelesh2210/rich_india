@@ -512,6 +512,8 @@ class RegisterController extends Controller
         $wallet_registration_request->password = $registration_error_log->password;
         $wallet_registration_request->save();
 
+        RegistrationErrorLog::where('email',$registration_error_log->email)->delete();
+
         return redirect()->route('wallet.request.confirmation',encrypt($wallet_registration_request->id));
     }
 

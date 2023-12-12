@@ -16,10 +16,6 @@ class WithdrawalRequestController extends Controller
         $search_date = $request->search_date;
         $search_status = $request->search_status;
 
-        $total_commission = Commission::where('user_id',Auth::guard('web')->user()->id)->where('delete_status','0')->get()->sum('commission');
-        $total_payout = Payout::where('user_id',Auth::guard('web')->user()->id)->get()->sum('amount');
-        $remaining_commission = $total_commission - $total_payout;
-
         $withdrawal_requests = WithdrawalRequest::where('user_id',Auth::guard('web')->user()->id);
 
         if($search_date){
@@ -40,7 +36,7 @@ class WithdrawalRequestController extends Controller
 
         $withdrawal_requests = $withdrawal_requests->latest()->paginate(10);
 
-        return view('user_dashboard.withdrawal_request',compact('search_date','search_status','remaining_commission','withdrawal_requests'));
+        return view('user_dashboard.withdrawal_request',compact('search_date','search_status','withdrawal_requests'));
     }
 
     public function store(Request $request){
@@ -49,11 +45,7 @@ class WithdrawalRequestController extends Controller
             if($withdrawal_request->status == 'pending'){
                 return back()->with('error','You have Previous Request Pending!');
             }else{
-                $total_commission = Commission::where('user_id',Auth::guard('web')->user()->id)->where('delete_status','0')->get()->sum('commission');
-                $total_payout = Payout::where('user_id',Auth::guard('web')->user()->id)->get()->sum('amount');
-                $remaining_commission = $total_commission - $total_payout;
-
-                if($request->amount <= $remaining_commission){
+                if($request->amount <= Auth::guard('web')->user()->userDetail->total_wallet_balance){
                     $withdrawal_request = new WithdrawalRequest;
                     $withdrawal_request->user_id = Auth::guard('web')->user()->id;
                     $withdrawal_request->amount = $request->amount;
@@ -65,11 +57,7 @@ class WithdrawalRequestController extends Controller
                 }
             }
         }else{
-            $total_commission = Commission::where('user_id',Auth::guard('web')->user()->id)->where('delete_status','0')->get()->sum('commission');
-            $total_payout = Payout::where('user_id',Auth::guard('web')->user()->id)->get()->sum('amount');
-            $remaining_commission = $total_commission - $total_payout;
-
-            if($request->amount <= $remaining_commission){
+            if($request->amount <= Auth::guard('web')->user()->userDetail->total_wallet_balance){
                 $withdrawal_request = new WithdrawalRequest;
                 $withdrawal_request->user_id = Auth::guard('web')->user()->id;
                 $withdrawal_request->amount = $request->amount;

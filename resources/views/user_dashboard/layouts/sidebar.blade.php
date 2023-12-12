@@ -41,6 +41,12 @@
                     </a>
                 </li>
                 <li class="side-nav-item">
+                    <a href="{{route('user.upgrade.plan.request.list')}}" class="side-nav-link">
+                        <i class="uil-users-alt"></i>
+                        <span> Upgrade Request </span>
+                    </a>
+                </li>
+                <li class="side-nav-item">
                     <a href="{{route('user.traffic')}}" class="side-nav-link">
                         <i class="uil-users-alt"></i>
                         <span> My Team </span>

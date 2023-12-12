@@ -9,7 +9,7 @@
                             <div class="page-title-left mt-1">
                                 <ol class="breadcrumb m-0">
                                     <a class="btn btn-sm btn-dark waves-effect">
-                                        Remaining Commission : ₹ {{$remaining_commission}}
+                                        Remaining Commission : ₹ {{Auth::guard('web')->user()->userDetail->total_wallet_balance}}
                                     </a>
                                 </ol>
                             </div>
@@ -99,7 +99,7 @@
                     @csrf
                     <div class="modal-body">
                         <label for="amount">Amount</label>
-                        <input type="number" class="form-control mt-2" name="amount" id="amount" value="{{$remaining_commission}}" placeholder="Enter Amount..." required readonly>
+                        <input type="number" class="form-control mt-2" name="amount" id="amount" value="{{Auth::guard('web')->user()->userDetail->total_wallet_balance}}" placeholder="Enter Amount..." required readonly>
                         <span class="text-danger error_span"></span>
                     </div>
                     <div class="modal-footer justify-content-between">
@@ -123,11 +123,11 @@
 
         function requestWithdrawal(){
             var amount = $('#amount').val();
-            var remaining_commission = "{{$remaining_commission}}"
+            var remaining_commission = "{{Auth::guard('web')->user()->userDetail->total_wallet_balance}}"
             if(amount){
                 $('.error_span').text('')
-                if(amount < 400){
-                    $('.error_span').text('*Amount should be greater then ₹ 400!')
+                if(amount < 1){
+                    $('.error_span').text('*Amount should be greater then ₹ 1!')
                 }else{
                     if(parseInt(amount) <= parseInt(remaining_commission)){
                         Swal.fire({

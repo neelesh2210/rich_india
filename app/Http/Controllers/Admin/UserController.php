@@ -109,6 +109,7 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
+            'phone' => 'required|digits:10|unique:users',
             'state' => 'required',
             'referrer_code' => 'required|unique:users',
             'current_plan_id' => 'required',
@@ -124,6 +125,7 @@ class UserController extends Controller
         $user->added_by = 'admin';
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->phone = $request->phone;
         $user->state = $request->state;
         $user->referrer_code = $request->referrer_code;
         $user->referral_code = $request->referral_code;

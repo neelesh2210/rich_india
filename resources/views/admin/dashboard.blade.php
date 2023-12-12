@@ -108,7 +108,7 @@
                             <a href="{{ route('admin.payment.transaction.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-6">
+                    {{-- <div class="col-lg-3 col-6">
                         <div class="small-box bg-info">
                             @php
                                 $total_sell = App\Models\PlanPurchase::where('delete_status','0')->get()->sum('total_amount');
@@ -122,7 +122,7 @@
                                 <i class="fas fa-money-bill-alt"></i>
                             </div>
                             <a href="{{ route('admin.payment.transaction.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="row">

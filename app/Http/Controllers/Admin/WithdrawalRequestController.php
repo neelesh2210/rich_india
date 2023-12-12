@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use Carbon\Carbon;
 use App\Models\User;
+use App\Models\UserWallet;
 use App\Models\Admin\Payout;
 use Illuminate\Http\Request;
+use App\Models\Admin\UserDetail;
 use App\Models\WithdrawalRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
@@ -61,27 +63,42 @@ class WithdrawalRequestController extends Controller
     public function stauts(Request $request){
         $withdrawal_request = WithdrawalRequest::find($request->id);
         if($withdrawal_request->status == 'pending'){
-            $withdrawal_request->status = $request->status;
-            $withdrawal_request->save();
+            $user = User::find($withdrawal_request->user_id);
+            if($withdrawal_request->amount <= $user->userDetail->total_wallet_balance){
+                $withdrawal_request->status = $request->status;
+                $withdrawal_request->save();
 
-            if($request->status == 'success'){
-                $user = User::find($withdrawal_request->user_id);
+                if($request->status == 'success'){
+                    $payout = new Payout;
+                    $payout->user_id = $withdrawal_request->user_id;
+                    $payout->amount = $withdrawal_request->amount;
+                    $payout->payment_type = 'cash';
+                    $payout->payment_status = 'success';
+                    $payout->save();
 
-                $payout = new Payout;
-                $payout->user_id = $withdrawal_request->user_id;
-                $payout->amount = $withdrawal_request->amount;
-                $payout->payment_type = 'cash';
-                $payout->payment_status = 'success';
-                $payout->save();
+                    $user_wallet = new UserWallet;
+                    $user_wallet->user_id = $user->id;
+                    $user_wallet->from_id = $payout->id;
+                    $user_wallet->amount = $withdrawal_request->amount;
+                    $user_wallet->type = 'debit';
+                    $user_wallet->from = 'payout';
+                    $user_wallet->save();
 
-                try {
-                    Mail::send('email.payout', ['user_name'=>$user->name,'amount'=>$withdrawal_request->amount], function($message) use($user){
-                        $message->to($user->email);
-                        $message->subject('Withdrawal Successfull!');
-                    });
-                } catch (\Throwable $th) {
-                    //throw $th;
+                    $user_detail = UserDetail::where('user_id',$user->id)->first();
+                    $user_detail->total_wallet_balance = $user_detail->total_wallet_balance - $withdrawal_request->amount;
+                    $user_detail->save();
+
+                    try {
+                        Mail::send('email.payout', ['user_name'=>$user->name,'amount'=>$withdrawal_request->amount], function($message) use($user){
+                            $message->to($user->email);
+                            $message->subject('Withdrawal Successfull!');
+                        });
+                    } catch (\Throwable $th) {
+                        //throw $th;
+                    }
                 }
+            }else{
+                return back()->with('error','User Have Insufficiant Balance!');
             }
             return back()->with('success','Payout Completed Successfully!');
         }else{

@@ -19,6 +19,7 @@ use App\Http\Controllers\UserDashboardController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\WalletTransactionController;
 use App\Http\Controllers\WithdrawalRequestController;
+use App\Http\Controllers\UpgradePlanRequestController;
 use App\Http\Controllers\RegistrationRequestController;
 
 /*
@@ -143,6 +144,12 @@ Route::group(['middleware'=>['auth:web',CheckUserStatus::class],'prefix'=>'user'
     Route::post('upgrade-plan-payment',[PlanController::class,'upgradePlanPayment'])->name('upgrade.plan.payment');
     Route::get('upgrade-plan',[PlanController::class,'upgradePlan'])->name('upgrade.plan');
     Route::get('instamojo/payment/pay-success-upgrade',[InstamojoController::class, 'upgrade_success'])->name('instamojo.upgrade_success');
+
+    //Upgrade Plan Request
+    Route::get('upgrade-plan-request-list',[UpgradePlanRequestController::class,'index'])->name('upgrade.plan.request.list');
+    Route::get('upgrade-plan-request/{id}',[UpgradePlanRequestController::class,'show'])->name('upgrade.plan.request.show');
+    Route::post('upgrade-plan-request',[UpgradePlanRequestController::class,'store'])->name('upgrade.plan.request');
+    Route::put('upgrade-plan-request-process/{id}',[UpgradePlanRequestController::class,'update'])->name('upgrade.plan.request.process');
 
     Route::get('payouts', [PayoutController::class,'index'])->name('payouts');
 
