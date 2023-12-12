@@ -94,6 +94,7 @@
                                             <th>Active Plan</th>
                                             <th>Total Earning</th>
                                             <th>Total Withdrawl</th>
+                                            <th>Total Wallet Amount</th>
                                             <th>Associate</th>
                                             <th>Old Site Data</th>
                                             {{-- <th class="text-center">Status</th> --}}
@@ -140,6 +141,7 @@
                                                         @endif
                                                     </a>
                                                 </td>
+                                                <td class="text-center">{{$user->userDetail->total_wallet_amount}}</td>
                                                 <td class="text-center">
                                                     @php
                                                         $associates = App\Models\User::where('referral_code', $user->referrer_code)->where('delete_status','0')->get();
