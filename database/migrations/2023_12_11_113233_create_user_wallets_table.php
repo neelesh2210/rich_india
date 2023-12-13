@@ -21,7 +21,7 @@ class CreateUserWalletsTable extends Migration
             $table->enum('type', ['credit', 'debit']);
             $table->enum('from', ['active_commission', 'passive_commission', 'payout', 'register', 'upgrade']);
             $table->text('remark')->nullable();
-            $table->enum('delete_status', ['1', '0']);
+            $table->enum('delete_status', ['1', '0'])->default('0');
             $table->timestamps();
         });
     }
