@@ -146,24 +146,6 @@ class PlanController extends Controller
 
         }
 
-
-        // $commission_user = User::where('referrer_code',Auth::guard('web')->user()->referral_code)->first();
-        // if($commission_user){
-        //     $update_commission = UserDetail::where('user_id',$commission_user->id)->first();
-        // }else{
-        //     $update_commission = UserDetail::first();
-        // }
-
-        // $commission = new Commission;
-        // $commission->user_id = $update_commission->user_id;
-        // $commission->plan_purchase_id = $plan_purchase->id;
-        // $commission->commission = $current_plan->upgrade_commission[$upgrade_plan_detail->priority - $current_plan->priority - 1];
-        // $commission->level = 1;
-        // $commission->save();
-
-        // $update_commission->total_commission = $update_commission->total_commission + $current_plan->upgrade_commission[$upgrade_plan_detail->priority - $current_plan->priority - 1];
-        // $update_commission->save();
-
         return redirect()->route('user.plan')->with('success','Plan Updated Successfully!');
     }
 
