@@ -64,6 +64,12 @@ class WithdrawalRequestController extends Controller
         $withdrawal_request = WithdrawalRequest::find($request->id);
         if($withdrawal_request->status == 'pending'){
             $user = User::find($withdrawal_request->user_id);
+            if($request->status == 'cancel'){
+                $withdrawal_request->status = $request->status;
+                $withdrawal_request->save();
+
+                return back()->with('success','Payout Cancelled Successfully!');
+            }
             if($withdrawal_request->amount <= $user->userDetail->total_wallet_balance){
                 $withdrawal_request->status = $request->status;
                 $withdrawal_request->save();

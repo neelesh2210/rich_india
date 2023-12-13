@@ -109,7 +109,7 @@ class UserController extends Controller
         $this->validate($request, [
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
-            'phone' => 'required|digits:10|unique:users',
+            'phone' => 'nullable|digits:10|unique:users',
             'state' => 'required',
             'referrer_code' => 'required|unique:users',
             'current_plan_id' => 'required',
