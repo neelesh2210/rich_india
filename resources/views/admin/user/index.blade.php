@@ -129,7 +129,7 @@
                                                 <td>{{ $user->userDetail->plan->title }}</td>
                                                 <td class="text-center">
                                                     <a href="{{ route('admin.earning') }}?search_key={{ $user->email }}">
-                                                        ₹ {{ $user->userDetail->total_commission }}
+                                                        ₹ {{ $user->commission_sum_commission }}
                                                     </a>
                                                 </td>
                                                 <td class="text-center">

@@ -32,7 +32,7 @@ class UserController extends Controller
         $search_register_from = $request->search_register_from;
         $search_commission = $request->search_commission;
 
-        $users = UserManager::withoutTrash()->with(['sponsorDetail','userDetail'])->withSum('payout','amount');
+        $users = UserManager::withoutTrash()->with(['sponsorDetail','userDetail'])->withSum('payout','amount')->withSum('commission','commission');
         if($search_date){
             $dates=explode('-',$search_date);
             $d1=strtotime($dates[0]);
