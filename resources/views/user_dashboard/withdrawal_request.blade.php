@@ -127,7 +127,7 @@
             if(amount){
                 $('.error_span').text('')
                 if(amount < 1){
-                    $('.error_span').text('*Amount should be greater then ₹ 1!')
+                    $('.error_span').text('*Amount should be greater then ₹ 400!')
                 }else{
                     if(parseInt(amount) <= parseInt(remaining_commission)){
                         Swal.fire({
