@@ -5,6 +5,8 @@ namespace App\Jobs;
 use App\Models\User;
 use App\Models\Admin\Plan;
 use App\Models\Commission;
+use App\Models\UserWallet;
+use App\Models\Admin\Payout;
 use App\Models\PlanPurchase;
 use Illuminate\Bus\Queueable;
 use App\Models\Admin\UserDetail;
@@ -39,6 +41,33 @@ class ImportUser implements ShouldQueue
      */
     public function handle()
     {
+        //Wallet amount update
+        // $users = User::where('delete_status','0')->get();
+
+        // foreach ($users as $user){
+        //     $total_commission = Commission::where('delete_status','0')->where('user_id',$user->id)->where('created_at','<=','2023-12-15 10:35:09')->get()->sum('commission');
+        //     $total_payout = Payout::where('user_id',$user->id)->get()->sum('amount');
+        //     $pending_wallet_balance = $total_commission - $total_payout;
+        //     if($pending_wallet_balance > 0){
+        //         if(!UserWallet::where('user_id',$user->id)->where('from','pending_payout_transfer')->first()){
+        //             $user_wallet = new UserWallet;
+        //             $user_wallet->user_id = $user->id;
+        //             $user_wallet->from_id = 1;
+        //             $user_wallet->amount = $pending_wallet_balance;
+        //             $user_wallet->type = 'credit';
+        //             $user_wallet->from = 'pending_payout_transfer';
+        //             $user_wallet->remark = 'Pending Payout Transfer by Admin';
+        //             $user_wallet->save();
+
+        //             $user_detail = UserDetail::where('user_id',$user->id)->first();
+        //             $user_detail->total_wallet_balance = $user_detail->total_wallet_balance + $pending_wallet_balance;
+        //             $user_detail->save();
+        //         }
+        //     }
+        // }
+
+        // return ;
+
         //Update Plan Course
         // $plan_purchases = PlanPurchase::whereBetween('id',[1,3252])->get();
         // foreach ($plan_purchases as $plan_purchase) {

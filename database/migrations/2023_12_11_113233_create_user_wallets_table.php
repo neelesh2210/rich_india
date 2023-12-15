@@ -19,7 +19,7 @@ class CreateUserWalletsTable extends Migration
             $table->bigInteger('from_id');
             $table->double('amount',15,2);
             $table->enum('type', ['credit', 'debit']);
-            $table->enum('from', ['active_commission', 'passive_commission', 'payout', 'register', 'upgrade']);
+            $table->enum('from', ['active_commission', 'passive_commission', 'payout', 'register', 'upgrade', 'pending_payout_transfer']);
             $table->text('remark')->nullable();
             $table->enum('delete_status', ['1', '0'])->default('0');
             $table->timestamps();

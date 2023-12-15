@@ -92,7 +92,7 @@ Route::group(['middleware'=>'auth:admin','as'=>'admin.'],function () {
 
     //Payment Transaction
     Route::get('payment-transaction-index',[PaymentController::class,'index'])->name('payment.transaction.index');
-    Route::get('payment-transaction-delete/{id}',[PaymentController::class,'destroy'])->name('payment.transaction.delete');
+    //Route::get('payment-transaction-delete/{id}',[PaymentController::class,'destroy'])->name('payment.transaction.delete');
     Route::get('payment-invoice/{id}',[PaymentController::class,'invoice'])->name('payment.invoice');
 
     //Error Registration

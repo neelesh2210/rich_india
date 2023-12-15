@@ -82,12 +82,12 @@
                         <p>Withdrawal Request</p>
                     </a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="{{route('admin.payout.index')}}" class="nav-link @if(Route::currentRouteName() == 'admin.payout.index') active @endif">
                         <i class="nav-icon fas fa-money-bill-alt"></i>
                         <p>Payouts</p>
                     </a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a href="{{route('admin.emerging.associate')}}" class="nav-link @if(Route::currentRouteName() == 'admin.emerging.associate') active @endif">
                         <i class="nav-icon fas fa-chart-line"></i>
