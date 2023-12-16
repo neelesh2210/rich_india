@@ -437,7 +437,16 @@ class UserController extends Controller
                 $commission->level = $i;
                 $commission->save();
 
+                $user_wallet = new UserWallet;
+                $user_wallet->user_id = $update_commission->user_id;
+                $user_wallet->from_id = $plan_purchase->id;
+                $user_wallet->amount = $current_plan->upgrade_commission[$upgrade_plan_detail->priority - $current_plan->priority - 1][$i-1];
+                $user_wallet->type = 'credit';
+                $user_wallet->from = 'upgrade';
+                $user_wallet->save();
+
                 $update_commission->total_commission = $update_commission->total_commission + $current_plan->upgrade_commission[$upgrade_plan_detail->priority - $current_plan->priority - 1][$i-1];
+                $update_commission->total_wallet_balance = $update_commission->total_wallet_balance + $current_plan->upgrade_commission[$upgrade_plan_detail->priority - $current_plan->priority - 1][$i-1];
                 $update_commission->save();
 
             }
