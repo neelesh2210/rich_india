@@ -264,7 +264,7 @@
                                                         </form>
                                                     </div>
                                                 </div> --}}
-                                                {{-- <div class="accordion-item">
+                                                <div class="accordion-item">
                                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour" id="cosmofeed">
                                                         Cosmofeed
                                                     </button>
@@ -276,12 +276,12 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div> --}}
+                                                </div>
                                                 <div class="accordion-item">
                                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                                         Pay with QR
                                                     </button>
-                                                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#FaqAccordion" style="">
+                                                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#FaqAccordion" style="">
                                                         <div class="accordion-body">
                                                             <p> Pay Using QR <br>
                                                                 You can pay directly through QR
