@@ -114,6 +114,26 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item @if(Route::currentRouteName() == 'admin.total.pending.wallet.amount' || Route::currentRouteName() == 'admin.payment.transaction.report') menu-is-opening menu-open @endif">
+                    <a href="#" class="nav-link @if(Route::currentRouteName() == 'admin.total.pending.wallet.amount' || Route::currentRouteName() == 'admin.payment.transaction.report') active @endif">
+                        <i class="nav-icon fas fa-money-bill-alt" aria-hidden="true"></i>
+                        <p>Report
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('admin.total.pending.wallet.amount')}}" class="nav-link @if(Route::currentRouteName() == 'admin.total.pending.wallet.amount') active @endif">
+                                <p>Pending Wallet Balance</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('admin.payment.transaction.report')}}" class="nav-link @if(Route::currentRouteName() == 'admin.payment.transaction.report') active @endif">
+                                <p>Payment Transaction</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 {{-- <li class="nav-item">
                     <a href="{{route('admin.payout.transaction.index')}}" class="nav-link @if(Route::currentRouteName() == 'admin.payout.transaction.index') active @endif">
                         <i class="nav-icon fas fa-money-bill-alt"></i>

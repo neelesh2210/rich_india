@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\TopicController;
 use App\Http\Controllers\Admin\CouponController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\PayoutController;
+use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\OldDataController;
 use App\Http\Controllers\Admin\PaymentController;
@@ -172,6 +173,10 @@ Route::group(['middleware'=>'auth:admin','as'=>'admin.'],function () {
 
     //Automated Payout
     Route::get('automated-payout',[AutomatedPayoutController::class,'automatedPayout'])->name('automated.payout');
+
+    //Pending Wallet Amount
+    Route::get('total-pending-wallet-amount',[ReportController::class,'totalPendingWalletAmount'])->name('total.pending.wallet.amount');
+    Route::get('payment-transaction-report',[ReportController::class,'paymentTransaction'])->name('payment.transaction.report');
 
     Route::post('logout/', [LoginController::class, 'logout'])->name('logout');
 });

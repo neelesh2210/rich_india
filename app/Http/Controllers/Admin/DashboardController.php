@@ -27,14 +27,7 @@ class DashboardController extends Controller
             $week_users[]=$users;
         }
 
-        $week_payments=[];
-        foreach($dates as $date)
-        {
-            $payments = PlanPurchase::where('delete_status','0')->whereDate('created_at',$date )->sum('total_amount');
-            $week_payments[]=$payments;
-        }
-
-        return view('admin.dashboard',compact('dates','week_users','week_payments'),['page_title'=>'Dashboard']);
+        return view('admin.dashboard',compact('dates','week_users'),['page_title'=>'Dashboard']);
     }
 
     public function adminChangePassword(Request $request){

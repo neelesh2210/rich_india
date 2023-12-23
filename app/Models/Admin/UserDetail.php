@@ -2,8 +2,9 @@
 
 namespace App\Models\Admin;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class UserDetail extends Model
 {
@@ -21,5 +22,9 @@ class UserDetail extends Model
     public function plan()
     {
         return $this->belongsTo(Plan::class,'current_plan_id','id');
+    }
+
+    public function user(){
+        return $this->belongsTo(User::Class);
     }
 }
