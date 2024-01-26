@@ -8,7 +8,7 @@
 
         <meta name="keyword" content="Richind.in -  Learn Earn Grow">
         <meta name="description" content="Richind.in -  Learn Earn Grow">
-        <meta name="author" content="Webinmaker Softtech Private Limited" />
+        {{-- <meta name="author" content="Webinmaker Softtech Private Limited" /> --}}
         <meta name="subject" content="Richin" />
         <link rel="shortcut icon" href="{{asset('user_dashboard/images/favicon.png')}}">
         <script src="https://kit.fontawesome.com/592ef58b65.js" crossorigin="anonymous"></script>
