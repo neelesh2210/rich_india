@@ -236,13 +236,13 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            {{-- @can('slider-list')
+                            @can('slider-list')
                                 <li class="nav-item">
                                     <a href="{{route('admin.websitesetting.index')}}?type=sliders" class="nav-link @if(Route::currentRouteName() == 'admin.websitesetting.index') @if(request()->type == 'sliders') active @endif @endif">
                                         <p>Sliders</p>
                                     </a>
                                 </li>
-                            @endcan --}}
+                            @endcan
                             @can('social_media_link-list')
                                 <li class="nav-item">
                                     <a href="{{route('admin.websitesetting.index')}}?type=social" class="nav-link @if(Route::currentRouteName() == 'admin.websitesetting.index') @if(request()->type == 'soial') active @endif @endif">
