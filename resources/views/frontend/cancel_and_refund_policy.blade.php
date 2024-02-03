@@ -1,16 +1,18 @@
 @extends('frontend.layouts.app')
 @section('content')
-    <div class="page-banner bg-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-12">
-                    <h1 class="mb-0">Cancel & Refund Policy</h1>
-                </div>
-            </div>
+<section class="page-header page-header--bg-two">
+        <div class="page-header__bg jarallax-img"></div>
+        <div class="page-header__overlay"></div>
+        <div class="container text-center">
+            <h2 class="page-header__title">Cancel & Refund Policy</h2>
+            <ul class="page-header__breadcrumb list-unstyled">
+                <li><a href="{{ route('index') }}">Home</a></li>
+                <li><span>Cancel & Refund Policy</span></li>
+            </ul>
         </div>
-    </div>
+    </section>
 
-    <div class="page-content">
+    <section class="about-two about-two--about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -65,5 +67,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 @endsection

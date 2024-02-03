@@ -25,8 +25,7 @@ class Topic extends Model
         'delete_status',
     ];
 
-    public function course()
-    {
+    public function course(){
         return $this->belongsTo(Course::class, 'course_id');
     }
 }

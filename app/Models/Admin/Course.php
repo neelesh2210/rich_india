@@ -25,4 +25,8 @@ class Course extends Model
         'status',
         'delete_status'
     ];
+
+    public function topic(){
+        return $this->hasMany(Topic::class);
+    }
 }

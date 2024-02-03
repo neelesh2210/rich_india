@@ -1,66 +1,77 @@
 @extends('frontend.layouts.app')
 @section('content')
-    <!-- Start Page Banner Area -->
-    <div class="page-banner-area">
-        <div class="container">
-            <div class="page-banner-content">
-                <div class="row align-items-center">
-                    <div class="col-lg-7 col-md-6">
-                        <h2>Course</h2>
-                    </div>
-                    <div class="col-lg-5 col-md-6">
-                        <ul>
-                            <li> <a href="{{route('index')}}">Home</a></li>
-                            <li>{{$plan_detail->title}}</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+    <div class="rbt-breadcrumb-default rbt-breadcrumb-style-3 rbt-banner-1">
+        <div class="breadcrumb-inner">
+            <img src="{{ asset('frontend/assets/images/banner-01.png') }}">
         </div>
-    </div>
-    <!-- End Page Banner Area -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="content">
+                        <div class="inner">
+                            <div class="rbt-new-badge rbt-new-badge-one">
+                                <span class="rbt-new-badge-icon">🏆</span> {{$plan_detail->title}}
+                            </div>
+                            <h2> MRP - ₹{{$plan_detail->amount}} </h2>
+                            <h1 class="title"> With Promocode - ₹{{$plan_detail->discounted_price}}</h1>
+                            @if (!Auth::guard('web')->user())
+                                <div class="slider-btn">
+                                    <a href="{{route('checkout')}}?slug={{$plan_detail->slug}}" class="richind-btn richind-btn-second">
+                                        <span class="richind-btn__curve"></span>Buy Now <i class="icon-arrow"></i>
+                                    </a>
+                                </div>
+                            @endif
+                        </div>
 
-    <div class="pt-100 pb-75">
-        <div class="container">
-            <div class="about-area-inner">
-                <div class="row">
-                    <div class="col-lg-6 col-md-10">
-                        <div class="about-thumb-wrap after-shape">
-                            <img src="{{ asset('backend/img/plan/'.$plan_detail->image) }}">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="about-inner-wraps">
-                            <div class="section-title mb-0">
-                                <h2>{{$plan_detail->title}}</h2>
-                            </div>
-                            <div class="price">
-                                <span class="price-amount">₹{{$plan_detail->amount}}</span>
-                                <small>Inc. GST</small>
-                            </div>
-                            <div class="mt-3 mb-30">
-                                <a href="{{route('checkout')}}?slug={{$plan_detail->slug}}" class="default-btn">Buy Now</a>
-                            </div>
-                            <div class="mb-30">
-                                @foreach ($plan_detail->course_ids as $course_id)
-                                    @php
-                                        $course = App\Models\Admin\Course::where('id',$course_id)->first();
-                                    @endphp
-                                    <div class="latest-course-item">
-                                        <div class="latest-course-img">
-                                            <img src="{{ asset('backend/img/course/'.$course->image) }}">
-                                        </div>
-                                        <div class="latest-course-content">
-                                            <h5><a href="#">{{$course->name}}</a></h5>
-                                            {{-- <a class="latest-course-author" href="#">by <span>AK Singh</span></a> --}}
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
+                        <div class="shape-wrapper" id="scene">
+                            <img src="{{ asset('backend/img/plan/'.$plan_detail->image) }}" onerror="this.onerror=null;this.src='{{ asset('frontend/assets/images/no-courses-2.jpg') }}';">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <section class="course-three" style="background-image: url({{ asset('frontend/assets/images/shapes/course-bg-3.png') }});">
+        <div class="container">
+            <div class="row">
+                @foreach ($plan_detail->course_ids as $course_id)
+                    @php
+                        $course = App\Models\Admin\Course::where('delete_status','0')->where('status','1')->where('id',$course_id)->first();
+                    @endphp
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="rbt-cat-box rbt-cat-box-1 variation-2 text-center">
+                            <div class="inner">
+                                <div class="thumbnail">
+                                    <a href="{{route('course.detail',$course->slug)}}">
+                                        <img src="{{asset('backend/img/course/'.$course->image)}}" alt="Category Images" onerror="this.onerror=null;this.src='https://careerfixx.com/frontend/images/category/image/web-design.jpg';">
+                                    </a>
+                                </div>
+                                <div class="icons">
+                                    <a class="rbt-btn rounded-player-2 sm-size popup-video position-to-top" href="#">
+                                        <span class="icon-play"></span>
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h5 class="title">
+                                        <a href="{{route('course.detail',$course->slug)}}">{{$course->name}}</a>
+                                    </h5>
+                                    {{-- <div class="rbt-author-meta mt--10">
+                                        <div class="rbt-avater-1">
+                                            <a href="#">
+                                                <img src="{{ asset('/frontend/assets/images/resources/banner-author.png') }}" onerror="this.onerror=null;this.src='{{ asset('/frontend/assets/images/resources/banner-author.png') }}';">
+                                            </a>
+                                        </div>
+                                        <div class="rbt-author-info">
+                                            By <a href="#">Yash Kulshrestha</a>
+                                        </div>
+                                    </div> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
 @endsection

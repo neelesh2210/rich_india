@@ -1,27 +1,52 @@
-    <!-- Header Top -->
-    {{-- <div class="header-top">
-        <div class="container-fluid">
-            <div class="row">
-                <!-- Left Box -->
-                <div class="col-md-6 left-box">
-                    <ul class="info">
-                        <li><i class="flaticon-phone-call"></i>+91-81687 01056</li>
-                        <li><i class="flaticon-mail"></i>info@richind.in</li>
-                    </ul>
-
-                </div>
-
-                <!-- Right Box -->
-                <div class="col-md-6 right-box ">
-                    <!-- social -->
-                    <ul class="social-box">
-                        <li><a href="#" target="_blank"><i class="ri-facebook-line"></i></a></li>
-                        <li><a href="#" target="_blank"><i class="ri-twitter-fill"></i></a></li>
-                        <li><a href="#" target="_blank"><i class="ri-instagram-fill"></i></a></li>
-                        <li><a href="#" target="_blank"><i class="ri-linkedin-fill"></i></a></li>
-                    </ul>
-                </div>
+@php
+    $plans = App\Models\Admin\Plan::where('delete_status','0')->where('status','1')->oldest('priority')->get();
+@endphp
+<header class="main-header-two">
+    <nav class="main-menu">
+        <div class="container">
+            <div class="main-menu__logo">
+                <a href="{{ route('index') }}">
+                    <img src="{{ asset('frontend/assets/images/logo-light.png') }}" width="183" height="48" alt="richind">
+                </a>
+            </div>
+            <div class="main-menu__nav">
+                <ul class="main-menu__list">
+                    <li><a href="{{ route('index') }}">Home</a></li>
+                    <li><a href="{{ route('about') }}">About</a></li>
+                    <li><a href="{{ route('course') }}">Course</a></li>
+                    <li class="dropdown">
+                        <a href="{{ route('plan') }}">Plans</a>
+                        <ul>
+                            @foreach ($plans as $plan)
+                                <li>
+                                    <a href="{{route('plan.detail',$plan->slug)}}" title="{{ env('APP_NAME') }}-{{ $plan->title }}">{{ $plan->title }}</a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </li>
+                    <li><a href="{{ route('blog') }}">Blog</a></li>
+                    <li><a href="{{ route('contact') }}">Contact</a></li>
+                </ul>
+            </div>
+            <div class="main-menu__right">
+                <a href="#" class="main-menu__toggler mobile-nav__toggler">
+                    <i class="fa fa-bars"></i>
+                </a>
+                @auth('web')
+                    <a href="{{ route('user.dashboard') }}" class="main-menu__login">
+                        <i class="icon-account-1"></i>
+                    </a>
+                @else
+                    <a href="{{ route('signin') }}" class="main-menu__login">
+                        <i class="icon-account-1"></i>
+                    </a>
+                @endauth
+                <a href="{{ route('contact') }}" class="richind-btn"><span class="richind-btn__curve"></span>Get In Touch</a>
             </div>
         </div>
-    </div> --}}
-    <!--End Header Top -->
+    </nav>
+</header>
+
+<div class="stricky-header stricked-menu main-menu">
+    <div class="sticky-header__content"></div>
+</div>

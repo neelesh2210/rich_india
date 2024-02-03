@@ -1,100 +1,51 @@
 @extends('frontend.layouts.app')
 @section('content')
-<section class="course-content blogs-main">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12">
-                <div class="row">
-                                        <div class='col-12 col-lg-6 col-xl-4 col-sm-6 mb-3'>
-                        <div class='blog grid-blog'>
-                            <div class='blog-image'>
-                                <a href="{{route('blog_details')}}" title="Richind-Mastering-the-Digital-Media-Landscape-with-Richin">
-                                    <img src="{{ asset('frontend/assets/images/course/Courses1.png')}}" title="Richind-Mastering-the-Digital-Media-Landscape-with-Richin" class='img-fluid'>
-                                </a>
+    <section class="page-header page-header--bg-two" data-jarallax data-speed="0.3" data-imgPosition="50% -100%">
+        <div class="page-header__bg jarallax-img"></div>
+        <div class="page-header__overlay"></div>
+        <div class="container text-center">
+            <h2 class="page-header__title">Blog</h2>
+            <ul class="page-header__breadcrumb list-unstyled">
+                <li><a href="{{ route('index') }}">Home</a></li>
+                <li><span>Blog</span></li>
+            </ul>
+        </div>
+    </section>
+    <section class="blog-page">
+        <div class="container">
+            <div class="row">
+                @foreach ($blogs as $blog)
+                    <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                        <div class="blog-three__item">
+                            <div class="blog-three__image">
+                                <img src="{{ asset('backend/img/blog/'.$blog->image) }}" alt="richind">
                             </div>
-                            <div class='blog-grid-box'>
-                                <div class='blog-info clearfix'>
-                                    <div class='post-left'>
-                                        <ul>
-                                            <li>
-                                                <img class='img-fluid w__20' src='{{ asset('frontend/assets/images/Calender.svg')}}' alt='Posted On'>Jan 24,2023                                            </li>
-                                        </ul>
-                                    </div>
+                            <div class="blog-three__content">
+                                <div class="blog-three__top-meta">
+                                    <div class="blog-three__cats"><a href="{{route('blog.detail',$blog->slug)}}">{{$blog->topic}}</a></div>
+                                    <div class="blog-three__date">{{$blog->created_at->format('d M Y')}}</div>
                                 </div>
-                                <h3 class='blog-title'>
-                                    <a href="{{route('blog_details')}}" title="Richind-Mastering-the-Digital-Media-Landscape-with-Richin">
-                                        Mastering the Digital Media Landscape with Richin                                    </a>
+                                <h3 class="blog-three__title">
+                                    <a href="{{route('blog.detail',$blog->slug)}}">{{$blog->title}}</a>
                                 </h3>
-                                <div class='blog-content blog-read'>
-                                    <p class='txt-ellipsis-2'><p>I define the goals and objectives of the counseling sessions in a very transparent manner to help patients overcome their problems quickly and effe</p>
-                                    <a href="{{route('blog_details')}}" title="Richind-Mastering-the-Digital-Media-Landscape-with-Richin" class='read-more btn btn-primary'>
-                                        Read More <i class='fas fa-arrow-right'></i>
-                                    </a>
+                                <div class="blog-three__meta">
+                                    <div class="blog-three__meta__author">
+                                        @if($blog->writter_image)
+                                            <img src="{{ asset('backend/img/blog/'.$blog->writter_image) }}" alt="richind" />
+                                        @endif
+                                        @if($blog->writter_image)
+                                            <a href="{{route('blog.detail',$blog->slug)}}">{{$blog->written_by}}</a>
+                                        @endif
+                                        {{$blog->writter_position}}
+                                    </div>
+                                    <a class="blog-three__rm" href="{{route('blog.detail',$blog->slug)}}"><span class="icon-arrow"></span></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                                        <div class='col-12 col-lg-6 col-xl-4 col-sm-6 mb-3'>
-                        <div class='blog grid-blog'>
-                            <div class='blog-image'>
-                                <a href="{{route('blog_details')}}" title="Richind-Demo2">
-                                    <img src="{{ asset('frontend/assets/images/course/Courses2.png')}}" alt="Richind-Demo2" title="Richind-Demo2" class='img-fluid'>
-                                </a>
-                            </div>
-                            <div class='blog-grid-box'>
-                                <div class='blog-info clearfix'>
-                                    <div class='post-left'>
-                                        <ul>
-                                            <li>
-                                                <img class='img-fluid w__20' src='{{ asset('frontend/assets/images/Calender.svg')}}' alt='Posted On'>Jan 24,2023                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <h3 class='blog-title'>
-                                    <a href="{{route('blog_details')}}" title="Richind-Demo2">
-                                        Demo2                                    </a>
-                                </h3>
-                                <div class='blog-content blog-read'>
-                                    <p class='txt-ellipsis-2'><p>I define the goals and objectives of the counseling sessions in a very transparent manner to help patients overcome their problems quickly and effe</p>
-                                    <a href="{{route('blog_details')}}" title="Richind-Demo2" class='read-more btn btn-primary'>
-                                        Read More <i class='fas fa-arrow-right'></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                                        <div class='col-12 col-lg-6 col-xl-4 col-sm-6 mb-3'>
-                        <div class='blog grid-blog'>
-                            <div class='blog-image'>
-                                <a href="{{route('blog_details')}}" title="Richind-Dewmo3">
-                                    <img src="{{ asset('frontend/assets/images/course/Courses3.png')}}" alt="Richind-Dewmo3" title="Richind-Dewmo3" class='img-fluid'>
-                                </a>
-                            </div>
-                            <div class='blog-grid-box'>
-                                <div class='blog-info clearfix'>
-                                    <div class='post-left'>
-                                        <ul>
-                                            <li>
-                                                <img class='img-fluid w__20' src='{{ asset('frontend/assets/images/Calender.svg')}}' alt='Posted On'>Jan 24,2023                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <h3 class='blog-title'>
-                                    <a href="{{route('blog_details')}}" title="Richind-Dewmo3">
-                                        Dewmo3                                    </a>
-                                </h3>
-                                <div class='blog-content blog-read'>
-                                    <p class='txt-ellipsis-2'><p>I define the goals and objectives of the counseling sessions in a very transparent manner to help patients overcome their problems quickly and effe</p>
-                                    <a href="{{route('blog_details')}}" title="Richind-Dewmo3" class='read-more btn btn-primary'>
-                                        Read More <i class='fas fa-arrow-right'></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                                    </div>
+                @endforeach
+
             </div>
         </div>
-    </div>
-</section>
+    </section>
 @endsection

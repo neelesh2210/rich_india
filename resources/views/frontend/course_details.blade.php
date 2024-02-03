@@ -1,54 +1,70 @@
 @extends('frontend.layouts.app')
 @section('content')
-
-<section class="section new-course">
-    <div class="container">
-        <div class="section-header aos">
-            <div class="section-sub-head">
-                <h2>Our {{$plan_detail->title}}</h2>
+    <div class="rbt-breadcrumb-default bg-gradient-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="content">
+                        <div class="inner">
+                            <div class="rbt-new-badge rbt-new-badge-one">
+                                <span class="rbt-new-badge-icon">🏆</span> {{$course->name}}
+                            </div>
+                            <h2> {{$course->name}}</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4"></div>
             </div>
         </div>
-        <div class="section-text aos">
-            <p class="mb-0">
-                With our {{$plan_detail->title}}, now you can be assured to acquire the best knowledge and expertise from our team of experts. We believe you can empower the world with industry-leading courses.
-            </p>
-        </div>
-        <div class="course-feature">
+    </div>
+    <div class="pt-100 pb-75">
+        <div class="container">
             <div class="row">
-                <div class='col-lg-4 col-md-6'>
-                    <div class='course-box'>
-                        <div class='product'>
-                            <div class='product-img'>
-                                <a href="#" title="{{env('APP_NAME')}}-{{$plan_detail->title}}">
-                                    <center>
-                                        <img src="{{asset('backend/img/plan/'.$plan_detail->image)}}" alt="{{env('APP_NAME')}}-{{$plan_detail->title}}" class="img-fluid">
-                                    </center>
-                                </a>
-                            </div>
-                            <div class='product-content'>
-                                <div class='course-group d-flex'>
-                                    <div class='course-group-img d-flex'>
-                                        <div class='course-name'>
-                                            <h4>
-                                                <a href="#" title="{{env('APP_NAME')}}-{{$plan_detail->title}}">
-                                                    {{$plan_detail->title}}
-                                                </a>
-                                            </h4>
+                <div class="col-md-8">
+                    {!!$course->description!!}
+                    <div class="course-details-content">
+                        <h4 class="title">Course Content </h4>
+                        <div class="accordion course-content" id="FaqAccordion">
+                            @foreach ($course->topic as $key=>$topic)
+                                <div class="accordion-item">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{$key}}" aria-expanded="false" aria-controls="collapse{{$key}}">
+                                        {{$key+1}}. {{$topic->title}}
+                                    </button>
+                                    <div id="collapse{{$key}}" class="accordion-collapse collapse" data-bs-parent="#FaqAccordion" style="">
+                                        <div class="accordion-body">
+                                            <p>
+                                                {!!$topic->description!!}
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
-                                <div style="height:160px;">
-                                    <ul style="">
-                                        @foreach ($plan_detail->points as $point)
-                                            <li style="">{{$point}}</li>
-                                        @endforeach
-
-                                    </ul>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="sticky-top">
+                        <div class="course-sidebar rbt-shadow-box course-sidebar-top">
+                            <div class="inner">
+                                <div class="video-area">
+                                    <div class="video-view">
+                                        <img @isset($course->topic[0]) src="{{ asset('backend/img/topic/'.$course->topic[0]->thumbnail_image) }}" @endisset class="img-fluid w-100" alt="image" onerror="this.onerror=null;this.src='{{ asset('frontend/assets/images/video-player.jpg') }}'">
+                                        <div class="view-content">
+                                            <a @isset($course->topic[0]) href="{{$course->topic[0]->video_url}}" target="_blank" @else href="#" @endisset class="video-btn popup-youtube">
+                                                <i class="fas fa-play"></i>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class='all-btn all-category d-flex align-items-center'>
-                                    <a href="{{route('checkout')}}?slug={{$plan_detail->slug}}" title="{{env('APP_NAME')}}-{{$plan_detail->title}}" class='btn btn-primary' style="font-size:20px;margin-left:60px">
-                                        Buy Now ₹ {{$plan_detail->discounted_price}}
-                                    </a>
+                                <div class="course-details__sidebar__item">
+                                    <h3 class="course-details__sidebar__title">Course Features</h3>
+                                    <ul class="course-details__sidebar__lists clerfix">
+                                        <li><i class="icon-history"></i>Duration:<span>20 Hours</span></li>
+                                        <li><i class="icon-reading"></i>Students:<span>Max 15</span></li>
+                                        <li><i class="icon-play-border"></i>Videos<span>{{$course->topic_count}}</span></li>
+                                        <li><i class="icon-logical-thinking"></i>Skill Level<span>Advanced</span></li>
+                                        <li><i class="icon-Digital-marketing"></i>Language:<span>English</span></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -57,7 +73,4 @@
             </div>
         </div>
     </div>
-</section>
-
-
 @endsection

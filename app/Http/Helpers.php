@@ -76,8 +76,7 @@ if (! function_exists('states')) {
     }
 }
 
-if (! function_exists('razorpay_payout_bank'))
-{
+if (! function_exists('razorpay_payout_bank')){
     function razorpay_payout_bank($user,$amount)
     {
         $amount=$amount*100;
@@ -143,8 +142,7 @@ if (! function_exists('razorpay_payout_bank'))
     }
 }
 
-if (! function_exists('razorpay_payout_upi'))
-{
+if (! function_exists('razorpay_payout_upi')){
     function razorpay_payout_upi($user,$amount)
     {
         $curl = curl_init();
@@ -209,13 +207,15 @@ if (! function_exists('razorpay_payout_upi'))
 
 if (!function_exists('socialMediaLink')) {
     function socialMediaLink($name) {
-        return WebsiteSetting::where('type','social')->where('content',$name)->first() ? WebsiteSetting::where('type','social')->where('content',$name)->first()->url : "";
+        $website_setting = WebsiteSetting::where('type','social')->where('content',$name)->first();
+        return $website_setting ? $website_setting->url : "";
     }
 }
 
 if (!function_exists('websiteData')) {
     function websiteData($type) {
-        return WebsiteSetting::where('type',$type)->first() ? WebsiteSetting::where('type',$type)->first()->content : "";
+        $website_data = WebsiteSetting::where('type',$type)->first();
+        return $website_data ? $website_data->content : "";
     }
 }
 

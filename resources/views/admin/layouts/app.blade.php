@@ -31,6 +31,10 @@
     <link rel="stylesheet" href="{{asset('backend/css/select2-bootstrap4.min.css')}}">
     <!-- SweetAlert2 -->
     <link rel="stylesheet" href="{{asset('backend/css/bootstrap-4.min.css')}}">
+
+    {{-- Tag Css --}}
+    <link rel="stylesheet" href="{{asset('backend/css/tag.css')}}">
+
     <!-- jQuery -->
     <script src="{{ asset('backend/js/jquery.min.js') }}"></script>
 </head>
@@ -76,11 +80,15 @@
     <!-- SweetAlert2 -->
     <script src="{{ asset('backend/js/sweetalert2.min.js') }}"></script>
 
+    {{-- Tag JS --}}
+    <script src="{{ asset('backend/js/tag.js') }}"></script>
+
 
 <script>
     $(function () {
         // Summernote
-        $('#summernote').summernote()
+        $('#summernote').summernote();
+        $('.summernote').summernote();
         // Select2
         $('.select2').select2()
 

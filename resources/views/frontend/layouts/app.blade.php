@@ -1,70 +1,40 @@
-<!doctype html>
-<html lang="zxx">
-
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{{env('APP_NAME')}}</title>
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('frontend/assets/images/favicon.png')}}" />
+        <meta name="description" content=""/>
 
-        <meta name="keyword" content="Richind.in -  Learn Earn Grow">
-        <meta name="description" content="Richind.in -  Learn Earn Grow">
-        {{-- <meta name="author" content="Webinmaker Softtech Private Limited" /> --}}
-        <meta name="subject" content="Richin" />
-        <link rel="shortcut icon" href="{{asset('user_dashboard/images/favicon.png')}}">
-        <script src="https://kit.fontawesome.com/592ef58b65.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="{{ asset('frontend/assets/css/bootstrap.min.css')}}" />
-        <link rel="stylesheet" href="{{ asset('frontend/assets/css/owl.carousel.min.css')}}" />
-        <link rel="stylesheet" href="{{ asset('frontend/assets/css/owl.theme.default.min.css')}}" />
-        <link rel="stylesheet" href="{{ asset('frontend/assets/css/slick.css')}}" />
-        <link rel="stylesheet" href="{{ asset('frontend/assets/css/slick-theme.css')}}" />
-        <link rel="stylesheet" href="{{ asset('frontend/assets/css/select2.min.css')}}" />
-        <link rel="stylesheet" href="{{ asset('frontend/assets/css/aos.css')}}" />
-        <link rel="stylesheet" href="{{ asset('frontend/assets/css/feather.css')}}" />
-        <link rel="stylesheet" href="{{ asset('frontend/assets/css/lity.css')}}" />
+        {{-- Start CSS --}}
+        @include('frontend.layouts.css')
+        {{-- End CSS --}}
 
-        <link rel="stylesheet" href="{{ asset('frontend/assets/css/dashboard.css')}}" />
-        <link rel="stylesheet" href="{{ asset('frontend/assets/css/snackbar.min.css')}}" />
-        <link rel="stylesheet" href="{{ asset('frontend/assets/webfonts/gordita.css')}}" />
-        <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css')}}" />
-        <link rel="stylesheet" href="{{ asset('frontend/assets/css/custom.css')}}" />
-        <link rel="stylesheet" href="{{ asset('frontend/assets/css/my-profile.css')}}" />
-        <link rel="stylesheet" href="{{ asset('frontend/assets/css/index.css')}}" />
-        <link rel="stylesheet" href="{{asset('backend/css/bootstrap-4.min.css')}}">
-        <style>
-            .our-alumni-sec .owl-item {
-                background: #fae5e4;
-                padding: 18px 20px;
-                border-radius: 10px;
-                text-align: left;
-            }
-
-        </style>
-        <style>
-            @import url({{ asset('frontend/assets/css/login.css')}});
-
-        </style>
-        <script src="{{ asset('frontend/assets/js/jquery-3.6.0.min.js')}}"></script>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-2W1107GP9Y"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-2W1107GP9Y');
-        </script>
     </head>
+    <body class="custom-cursor">
 
-    <body>
-        <div class="main-wrapper">
+        <div class="custom-cursor__cursor"></div>
+        <div class="custom-cursor__cursor-two"></div>
 
-            {{-- @include('frontend.layouts.header') --}}
-            @include('frontend.layouts.nav')
+        <div class="preloader">
+            <div class="preloader__image" style="background-image: url({{ asset('frontend/assets/images/logo-light.png')}});"></div>
+        </div>
 
+        <div class="page-wrapper">
+
+            {{-- Start Header --}}
+            @include('frontend.layouts.header')
+            {{-- End Header --}}
+
+                {{-- Start Content --}}
                 @yield('content')
+                {{-- End Content --}}
 
+            {{-- Start Footer --}}
             @include('frontend.layouts.footer')
+            {{-- End Footer --}}
 
         </div>
     </body>
-
 </html>

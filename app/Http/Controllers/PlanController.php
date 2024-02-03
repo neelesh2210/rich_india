@@ -26,11 +26,10 @@ class PlanController extends Controller
         return view('user_dashboard.plan.index',compact('plans','current_plan'));
     }
 
-    public function planDetail($slug)
-    {
-        $plan_detail = PlanManager::withoutTrash()->where('slug',$slug)->first();
+    public function planDetail($slug){
+        $plan_detail = Plan::where('delete_status','0')->where('status','1')->where('slug',$slug)->first();
 
-        return view('frontend.course_details',compact('plan_detail'));
+        return view('frontend.plan_detail',compact('plan_detail'));
     }
 
     // public function upgradePlanPayment(Request $request)
@@ -160,7 +159,8 @@ class PlanController extends Controller
     }
 
     public function planIndex(){
-        $plans = PlanManager::withoutTrash()->where('status',1)->orderBy('priority','desc')->get();
+        $plans = Plan::where('delete_status','0')->where('status','1')->oldest('priority')->get();
+
         return view('frontend.plan',compact('plans'));
     }
 

@@ -1,16 +1,18 @@
 @extends('frontend.layouts.app')
 @section('content')
-<div class="page-banner bg-3">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-12">
-                <h1 class="mb-0">Term & Condition</h1>
-            </div>
+    <section class="page-header page-header--bg-two">
+        <div class="page-header__bg jarallax-img"></div>
+        <div class="page-header__overlay"></div>
+        <div class="container text-center">
+            <h2 class="page-header__title">Term & Condition</h2>
+            <ul class="page-header__breadcrumb list-unstyled">
+                <li><a href="{{ route('index') }}">Home</a></li>
+                <li><span>Term & Condition</span></li>
+            </ul>
         </div>
-    </div>
-</div>
+    </section>
 
-    <div class="page-content">
+    <section class="about-two about-two--about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -246,12 +248,12 @@
                                     and Conditions constitutes acceptance of those changes.</p>
 
                                 <h3>Need Help?</h3>
-                                <p>Contact us at info@richind.in  for questions related to refunds and cancel.</p>
+                                <p>Contact us at info@richind.in for questions related to refunds and cancel.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 @endsection

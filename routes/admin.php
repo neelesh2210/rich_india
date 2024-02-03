@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\FaqController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\PlanController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
@@ -177,6 +178,9 @@ Route::group(['middleware'=>'auth:admin','as'=>'admin.'],function () {
     //Pending Wallet Amount
     Route::get('total-pending-wallet-amount',[ReportController::class,'totalPendingWalletAmount'])->name('total.pending.wallet.amount');
     Route::get('payment-transaction-report',[ReportController::class,'paymentTransaction'])->name('payment.transaction.report');
+
+    //Blog
+    Route::resource('blog', BlogController::class);
 
     Route::post('logout/', [LoginController::class, 'logout'])->name('logout');
 });

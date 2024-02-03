@@ -1,98 +1,63 @@
 @extends('frontend.layouts.app')
 @section('content')
-    <style>
-        .login-box {
-            margin: 0;
-            box-shadow: 0 0 20px 7px #f6f5f5;
-        }
-    </style>
-    <div class="main-wrapper log-wrap login-main">
+    @push('css')
+        <style>
+            .login-box {
+                margin: 0;
+                box-shadow: 0 0 20px 7px #f6f5f5;
+            }
+        </style>
+    @endpush
+    <section class="contact-one">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 m-lg-auto">
-                    <div class="login-box">
+                <div class="col-lg-10 m-lg-auto">
+                    <div class="login-box p-5">
                         <div class="row align-items-center">
                             <div class="col-md-12">
-                                <h4 class="gordita-bold text-center">Please Pay Rs. @if($registration_error_log->referral_code) {{$plan->discounted_price}} @else {{$plan->amount}} @endif/- On below given UPI </h4>
+                                <h4 class="gordita-bold text-center">
+                                    Please Pay Rs.
+                                    @if ($registration_error_log->referral_code)
+                                        {{ $plan->discounted_price }}
+                                    @else
+                                        {{ $plan->amount }}
+                                    @endif/- On below given UPI
+                                </h4>
                                 <input type="hidden" value="richind0557@icici" id="upi_id">
-                                <h1 class="gordita-bold text-center">richind0557@icici <a class="btn btn-submit pb" onclick="copyText()"><i class="fa fa-copy" style="font-size: 20px;"></i> Copy UPI</a></h1>
-                                <h5 class="text-center mb-2">After Payment share screenshot and registered email id on given number.</h5>
-                                <h5 class="text-center mb-2"><a href="https://wa.me/+916395350946" value="Send" class="btn btn-submit p-3" style="font-size: 16px; background:#25D366;border:0;"><i class="fa fa-whatsapp"></i> Whatsapp: 6395350946</a></h5>
+                                <h1 class="gordita-bold text-center">
+                                    richind0557@icici
+                                    <a class="richind-btn p-2" onclick="copyText()">
+                                        <span class="richind-btn__curve"></span>
+                                        <i class="fa fa-copy" style="font-size: 20px;"></i> Copy UPI
+                                    </a>
+                                </h1>
+                                <h5 class="text-center mb-2">
+                                    After Payment share screenshot and registered email id on given number.
+                                </h5>
+                                <h5 class="text-center mb-2"><a href="https://wa.me/+916395350946" value="Send" class="btn btn-submit p-3" style="font-size:16px;font-weight:600;background:#25D366;border: 0;color: #fff;">
+                                    <i class="fab fa-whatsapp"></i> Whatsapp: 6395350946</a>
+                                </h5>
                                 <div class="avatar-preview">
-                                    <img src="{{ asset('frontend/images/qr-code.jpg') }}" alt="" class="img-fluid">
-                                    <p class="text-center" style="color: #372d7a;font-size:12px;font-weight:600;margin-top:5px;">Scan QR Code
-                                    </p>
+                                    <img src="{{ asset('frontend/assets/images/qr-code.jpg') }}" alt="" class="img-fluid">
+                                    <p class="text-center" style="color: #372d7a;font-size:12px;font-weight:600;margin-top:5px;">Scan QR Code</p>
                                 </div>
-                                <h5 class="text-center mb-2">Payment Screenshot मैं सब Details Show होनी चाहिए। Like :- UTR / UPI Ref. Id ( 12 digital number )</h5>
+                                <h5 class="text-center mb-2">
+                                    Payment Screenshot मैं सब Details Show होनी चाहिए। Like :- UTR / UPI Ref. Id ( 12 digital number )
+                                </h5>
                             </div>
-                            {{-- <div class="col-md-3">
-                                <div class="avatar-preview">
-                                    <img src="{{ asset('frontend/images/qr-code.jpg') }}" alt="" class="img-fluid">
-                                    <p class="text-center" style="color: #372d7a;font-size:12px;font-weight:600;margin-top:5px;">Scan QR Code
-                                    </p>
-                                </div>
-                            </div> --}}
-                            {{-- <div class="col-lg-12 col-md-12">
-                                <div class="login-wrapper">
-                                    <div class="w-100">
-                                        <div class="support-wrap">
-                                            <form action="{{ route('cash.payment.verify', $id) }}" method="POST" enctype="multipart/form-data">
-                                                @csrf
-                                                <div class="row">
-                                                    <div class="form-group col-md-9">
-                                                        <label>Payment Screenshot</label>
-                                                        <input type="file" name="payment_image" id="img_input1" class="form-control custom-file-input" accept="image/*">
-                                                    </div>
-                                                    <div class="form-group col-md-3">
-                                                        <div class="avatar-preview">
-                                                            <img id="img1" src="{{asset('backend/img/no-image.png')}}" alt="" class="img-fluid" width="100px">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group col-md-12">
-                                                        <label>UTR Number</label>
-                                                        <input type="text" name="payment_id" class="form-control" placeholder="Enter UTR Number">
-                                                        @error('payment_id')
-                                                            <span class="text-danger">{{$message}}</span>
-                                                        @enderror
-                                                    </div>
-                                                    <div class="form-group col-md-12">
-                                                        <input type="submit" value="Send" class="btn btn-submit">
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> --}}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <script>
-        img_input1.onchange = evt => {
-            const [file] = img_input1.files
-            if (file) {
-                img1.src = URL.createObjectURL(file)
+    @push('js')
+        <script>
+            function copyText() {
+                navigator.clipboard.writeText($('#upi_id').val());
+                alert('Referrel Code Copied Successfully!');
             }
-        }
-
-        function copyText() {
-            navigator.clipboard.writeText($('#upi_id').val());
-            const Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: true,
-            });
-            Toast.fire({
-                icon: "success",
-                title: 'Referral Code Copied SuccessfullY!',
-            });
-        }
-    </script>
-
+        </script>
+    @endpush
 @endsection

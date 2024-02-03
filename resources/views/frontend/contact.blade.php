@@ -1,98 +1,93 @@
 @extends('frontend.layouts.app')
 @section('content')
-<div class="page-banner bg-2">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-12">
-                <h1 class="mb-0">Contact Us</h1>
+<section class="page-header page-header--bg-two" data-jarallax data-speed="0.3" data-imgPosition="50% -100%">
+            <div class="page-header__bg jarallax-img"></div><!-- /.page-header-bg -->
+            <div class="page-header__overlay"></div><!-- /.page-header-overlay -->
+            <div class="container text-center">
+                <h2 class="page-header__title">Contact</h2><!-- /.page-title -->
+                <ul class="page-header__breadcrumb list-unstyled">
+                    <li><a href="{{ route('index') }}">Home</a></li>
+                    <li><span>Contact</span></li>
+                </ul><!-- /.page-breadcrumb list-unstyled -->
+            </div><!-- /.container -->
+        </section><!-- /.page-header -->
+                <!-- Info Start -->
+                <section class="contact-info mt-4">
+            <div class="container">
+                <ul class="contact-info__wrapper">
+                    <li>
+                        <div class="contact-info__icon"><span class="icon-Call"></span></div>
+                        <p class="contact-info__title">Have any question?</p>
+                        <h4 class="contact-info__text">Free <a href="tel:+91-6395350946">+91-6395350946</a></h4>
+                    </li>
+                    <li class="active">
+                        <div class="contact-info__icon"><span class="icon-Email"></span></div>
+                        <p class="contact-info__title">Send Email</p>
+                        <h4 class="contact-info__text"><a href="mailto:richindcare@gmail.com">richindcare@gmail.com</a></h4>
+                    </li>
+                    <li>
+                        <div class="contact-info__icon"><span class="icon-Location"></span></div>
+                        <p class="contact-info__title">Visit Anytime</p>
+                        <h4 class="contact-info__text">23 , Firozabad, Uttar Pradesh</h4>
+                    </li>
+                </ul>
             </div>
-        </div>
-    </div>
-</div>
-<div class="page-content contact-ussec">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-sm-5 mb-3">
-                <div class="support-wrap bg-brand-pink">
-                    <p class="text-white mar-top-80 mar-btm-4">Let's Talk</p>
-                    <h5 class="text-white fs-35">Keep Connected With Us</h5>
-                    <div class="row">
-                        <div class="col-lg-3 col-sm-4 col-3">
-                            <i class="fa-solid fa-envelope fs-60 text-white"></i>
-                        </div>
-                        <div class="col-lg-9 col-sm-8 col-9">
-                            <p class="text-white mar-btm-4 mar-top-10">Email:</p>
-                            <p class="text-white mar-btm-4">
-                                <a href="mailto:info@richind.in" class="text-reset">
-                                    info@richind.in                                </a>
-                            </p>
-                        </div>
-                        <div class="col-lg-3 col-sm-4 col-3">
-                            <i class="fa-solid fa-square-phone fs-60 text-white"></i>
-                        </div>
-                        <div class="col-lg-9 col-sm-8 col-9">
-                            <p class="text-white mar-btm-4 mar-top-10">Phone:</p>
-                            <p class="text-white mar-btm-4">
-                                <a href="tel:+916395350946" class="text-reset">
-                                    +916395350946                                </a>
-                            </p>
-                        </div>
-                        <div class="col-lg-3 col-sm-4 col-3">
-                            <i class="fa-brands fa-square-whatsapp fs-60 text-white"></i>
-                        </div>
-                        <div class="col-lg-9 col-sm-8 col-9">
-                            <p class="text-white mar-btm-4 mar-top-10">WhatsApp:</p>
-                            <p class="text-white mar-btm-4">
-                                <a href="https://api.whatsapp.com/send?phone=916395350946" class="text-reset">
-                                    +916395350946                                </a>
-                            </p>
-                        </div>
-                        <div class="col-lg-3 col-sm-4 col-3">
-                            <i class="fa-sharp fa-solid fa-location-dot fs-60 text-white"></i>
-                        </div>
-                        <div class="col-lg-9 col-sm-8 col-9">
-                            <p class="text-white mar-btm-4 mar-top-10">Address:</p>
-                            <p class="text-white mar-btm-4">
-                                <a href="" class="text-reset">
-                                    23 , Firozabad, Uttar Pradesh                                </a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-8 col-sm-7">
-                <div class="support-wrap">
-                    <h5>Fill The Form Below</h5>
-                    <p>If you have any questions, concerns, or complaints regarding this refund policy, we encourage you to contact us using the details below.</p>
-                    <form action="https://thegrowthindia.in/Web/insert_contact" method="post">
+        </section>
+        <!-- Info End -->
+        <!-- Contact Start -->
+        <section class="contact-one">
+            <div class="container wow fadeInUp" data-wow-delay="300ms">
+                <div class="section-title  text-center">
+                    <h5 class="section-title__tagline">
+                        Contact with Us
+                        <svg class="arrow-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 13">
+                            <g clip-path="url(#clip0_324_36194)">
+                                <path d="M10.5406 6.49995L0.700562 12.1799V8.56995L4.29056 6.49995L0.700562 4.42995V0.819946L10.5406 6.49995Z" />
+                                <path d="M25.1706 6.49995L15.3306 12.1799V8.56995L18.9206 6.49995L15.3306 4.42995V0.819946L25.1706 6.49995Z" />
+                                <path d="M39.7906 6.49995L29.9506 12.1799V8.56995L33.5406 6.49995L29.9506 4.42995V0.819946L39.7906 6.49995Z" />
+                                <path d="M54.4206 6.49995L44.5806 12.1799V8.56995L48.1706 6.49995L44.5806 4.42995V0.819946L54.4206 6.49995Z" />
+                            </g>
+                        </svg>
+                    </h5>
+                    <h2 class="section-title__title">Feel Free to Write us Anytime</h2>
+                </div><!-- section-title -->
+                <div class="contact-one__form-box  text-center">
+                    <form action="" class="contact-one__form">
                         <div class="row">
-                            <div class="form-group col-md-12">
-                                <label>Name</label>
-                                <input name="name" type="text" class="form-control" placeholder="Enter your Full Name" required />
+                            <div class="col-md-6">
+                                <div class="contact-one__input-box">
+                                    <input type="text" placeholder="Your Name" name="name">
+                                </div>
                             </div>
-                            <div class="form-group col-md-6">
-                                <label>Email</label>
-                                <input name="email" type="email" class="form-control" placeholder="Enter your Email Address" />
+                            <div class="col-md-6">
+                                <div class="contact-one__input-box">
+                                    <input type="email" placeholder="Email Address" name="email">
+                                </div>
                             </div>
-                            <div class="form-group col-md-6">
-                                <label>Phone</label>
-                                <input name="contact" type="text" class="form-control" placeholder="Enter your Contact Number" maxlength="10" />
+                            <div class="col-md-6">
+                                <div class="contact-one__input-box">
+                                    <input type="text" placeholder="Phone" name="phone">
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Message</label>
-                                <textarea name="message" rows="4" cols="20" class="form-control" placeholder="Write down here"></textarea>
+                            <div class="col-md-6">
+                                <div class="contact-one__input-box">
+                                    <input type="text" placeholder="Subject" name="subject">
+                                </div>
                             </div>
-                            <input type="submit" value="Submit" class="btn btn-submit" />
+                            <div class="col-md-12">
+                                <div class="contact-one__input-box text-message-box">
+                                    <textarea name="message" placeholder="Write a Message"></textarea>
+                                </div>
+                                <div class="contact-one__btn-box">
+                                    <button type="submit" class="richind-btn richind-btn-second"><span class="richind-btn__curve"></span>Send a Message<i class="icon-arrow"></i></button>
+                                </div>
+                            </div>
                         </div>
                     </form>
+                    <div class="result"></div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-<!--
-<div class="xs-map-section">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3549.872000328307!2d78.37911257446687!3d27.16031724940785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397443ffc93ba509%3A0x9c13238306dfc274!2sRICHIND!5e0!3m2!1sen!2sin!4v1689232776932!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
--->
+        </section>
+        <!-- Contact End -->
+
 @endsection

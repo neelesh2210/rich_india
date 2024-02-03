@@ -34,8 +34,9 @@ class CourseController extends Controller
     }
 
     public function courseDetail($slug){
-        $course = Course::where('slug',$slug)->first();
-        return view('frontend.course_detail',compact('course'));
+        $course = Course::where('slug',$slug)->with('topic')->withCount('topic')->first();
+
+        return view('frontend.course_details',compact('course'));
     }
 
 }

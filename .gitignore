@@ -5,6 +5,7 @@
 .env.backup
 /public/hot
 /node_modules
+composer.lock
 /storage/*.key
 Homestead.json
 Homestead.yaml
@@ -12,6 +13,7 @@ npm-debug.log
 yarn-error.log
 /public/storage
 .phpunit.result.cache
+/public/backend/img/blog
 /public/backend/img/plan
 /public/backend/img/reviews
 /public/backend/img/topic

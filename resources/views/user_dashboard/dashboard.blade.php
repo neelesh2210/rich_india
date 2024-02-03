@@ -17,6 +17,25 @@
                         </div>
                     </div>
                 </div> --}}
+                <div class="row mt-2">
+                    <div class="col-md-12">
+                        @php
+                            $dat = new DateTime('now', new DateTimeZone('Asia/Kolkata'));
+                            $date = $dat->format('H');
+                            if ($date < 12) {
+                                $greet_message = 'Good morning';
+                            } elseif ($date < 17) {
+                                $greet_message = 'Good afternoon';
+                            } elseif ($date < 20) {
+                                $greet_message = 'Good evening';
+                            } else {
+                                $greet_message = 'Good night';
+                            }
+                        @endphp
+                        <h1 class="welcome__usre"><span>{{ $greet_message }}, </span>
+                            {{ Auth::guard('web')->user()->name ? Auth::guard('web')->user()->name : 'User' }}</h1>
+                    </div>
+                </div>
                 <div class="row mt-3 mb-3">
                     <div class="col-lg-3">
                         <div class="left-side-menu">
@@ -36,86 +55,143 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-12">
+
+                <div class="row mt-3 mb-2">
+                    <div class="col-md-12">
                         <div class="row">
-                            <div class="col-sm-3 mb-2">
-                                <div class="card widget-flat gradient-45deg-light-blue-cyan" data-aos="fade-left" data-aos-duration="500" data-aos-once="true">
-                                    <div class="card-body">
-                                        <h3 class="text-white"><small>₹</small> <span class="counter-value">{{$today_earning}}</span></h3>
-                                        <h5 class="text-white fw-normal mt-3" title="Number of Customers">Today's Earning</h5>
+                        <div class="col-sm-3 col-6">
+                                <div class="card widget-flat gradient-45deg-sevent-earning bg-primary-opacity">
+                                    <div class="card-body user-earnings">
+                                        <h3><small><i class="fas fa-rupee-sign"></i></small> <span class="counter-value">{{ $today_earning }}</span>
+                                        </h3>
+                                        <h5 title="Number of Orders">Today's Earning</h5>
+                                        <div class="progress progress-sm m-0">
+                                            <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="90"
+                                                aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                                                <span class="visually-hidden">90% Complete</span>
+                                            </div>
+                                        </div>
+                                        <h5 title="Number of Customers" style="margin-bottom: 0;">View details <span
+                                                class="r8-arw"><i class="fas fa-chevron-right"></i></span></h5>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-3 mb-2">
-                                <div class="card widget-flat gradient-45deg-red-pink">
-                                    <div class="card-body">
-                                        <h3 class="text-white"><small>₹</small> <span class="counter-value">{{$last_week_earning}}</span></h3>
-                                        <h5 class="text-white fw-normal mt-3" title="Number of Orders">Last 7 Days Earning</h5>
+                            <div class="col-sm-3 col-6">
+                                <div class="card widget-flat gradient-45deg-sevent-earning bg-img-opacity">
+                                    <div class="card-body user-earnings">
+                                        <h3><small><i class="fas fa-rupee-sign"></i></small> <span class="counter-value">{{ $last_week_earning }}</span>
+                                        </h3>
+                                        <h5 title="Number of Orders">Last 7 Days Earning</h5>
+                                        <div class="progress progress-sm m-0">
+                                            <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="90"
+                                                aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                                                <span class="visually-hidden">90% Complete</span>
+                                            </div>
+                                        </div>
+                                        <h5 title="Number of Customers" style="margin-bottom: 0;">View details <span
+                                                class="r8-arw"><i class="fas fa-chevron-right"></i></span></h5>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-3 mb-2">
-                                <div class="card widget-flat statistic-bg-purple">
-                                    <div class="card-body">
-                                        <h3 class="text-white"><small>₹</small> <span class="counter-value">{{$last_month_earning}}</span></h3>
-                                        <h5 class="text-white fw-normal mt-3" title="Number of Orders">Last 30 Days Earning</h5>
+                            <div class="col-sm-3 col-6">
+                                <div class="card widget-flat gradient-45deg-thirty-earning bg-img1-opacity">
+                                    <div class="card-body user-earnings">
+                                        <h3><small><i class="fas fa-rupee-sign"></i></small> <span class="counter-value">{{ $last_month_earning }}</span>
+                                        </h3>
+                                        <h5 title="Number of Orders">Last 30 Days Earning</h5>
+                                        <div class="progress progress-sm m-0">
+                                            <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="90"
+                                                aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                                                <span class="visually-hidden">90% Complete</span>
+                                            </div>
+                                        </div>
+                                        <h5 title="Number of Customers" style="margin-bottom: 0;">View details <span
+                                                class="r8-arw"><i class="fas fa-chevron-right"></i></span></h5>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-3 mb-2">
-                                <div class="card widget-flat gradient-45deg-green-teal">
-                                    <div class="card-body">
-                                        <h3 class="text-white"><small>₹</small> <span class="counter-value">{{$all_time_earning + $old_payout->old_paid_payout + $old_payout->old_not_paid_payout}}</span></h3>
-                                        <h5 class="text-white fw-normal mt-3" title="Number of Orders">All Time Earning</h5>
+                            <div class="col-sm-3 col-6">
+                                <div class="card widget-flat gradient-45deg-all-time-earning bg-img2-opacity">
+                                    <div class="card-body user-earnings">
+                                        <h3><small><i class="fas fa-rupee-sign"></i></small> <span
+                                                class="counter-value">{{ $all_time_earning + $old_payout->old_paid_payout + $old_payout->old_not_paid_payout }}</span>
+                                        </h3>
+                                        <h5 title="Number of Orders">All Time Earning</h5>
+                                        <div class="progress progress-sm m-0">
+                                            <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="90"
+                                                aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                                                <span class="visually-hidden">90% Complete</span>
+                                            </div>
+                                        </div>
+                                        <h5 title="Number of Customers" style="margin-bottom: 0;">View details <span
+                                                class="r8-arw"><i class="fas fa-chevron-right"></i></span></h5>
                                     </div>
                                 </div>
                             </div>
-                            {{-- <div class="col-sm-3 mb-2">
-                                <div class="card widget-flat gradient-45deg-amber-amber">
-                                    <div class="card-body">
-                                        <h3 class="text-white"><small>₹</small> <span class="counter-value">{{$withdrawal_amount}}</span></h3>
-                                        <h5 class="text-white fw-normal mt-3" title="Number of Orders">Withdrawal Bonus</h5>
+                           {{-- <div class="col-sm-3">
+                                <div class="card widget-flat gradient-45deg-all-time-earning bg-img3-opacity">
+                                    <div class="card-body user-earnings">
+                                        <h3><small><i class="fas fa-rupee-sign"></i></small> <span
+                                                class="counter-value">{{$passive_income}}</span>
+                                        </h3>
+                                        <h5 title="Number of Orders">Passive Income</h5>
+                                        <div class="progress progress-sm m-0">
+                                            <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="90"
+                                                aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                                                <span class="visually-hidden">90% Complete</span>
+                                            </div>
+                                        </div>
+                                        <h5 title="Number of Customers" style="margin-bottom: 0;">View details <span
+                                                class="r8-arw"><i class="fas fa-chevron-right"></i></span></h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card widget-flat gradient-45deg-all-time-earning bg-img4-opacity">
+                                    <div class="card-body user-earnings">
+                                        <h3><small><i class="fas fa-rupee-sign"></i></small> <span
+                                                class="counter-value">{{Auth::guard('web')->user()->userDetail->total_wallet_balance}}</span>
+                                        </h3>
+                                        <h5 title="Number of Orders">Total Wallet Amount</h5>
+                                        <div class="progress progress-sm m-0">
+                                            <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="90"
+                                                aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                                                <span class="visually-hidden">90% Complete</span>
+                                            </div>
+                                        </div>
+                                        <h5 title="Number of Customers" style="margin-bottom: 0;">View details <span
+                                                class="r8-arw"><i class="fas fa-chevron-right"></i></span></h5>
                                     </div>
                                 </div>
                             </div> --}}
-                            {{-- <div class="col-sm-3 mb-2">
-                                <div class="card widget-flat gradient-45deg-amber-amber">
-                                    <div class="card-body">
-                                        <h3 class="text-white"><small>₹</small> <span class="counter-value">{{$active_income}}</span></h3>
-                                        <h5 class="text-white fw-normal mt-3" title="Number of Orders">Active Income</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                    <div class="card card-info">
+                        <div class="card-header">
+                            <h3 class="card-title">Pending Amount</h3>
+                        </div>
+                        <div class="card-body">
+                                <div class="pending text-center">
+                                    <div class="content">
+                                        <i class="fas fa-lock"></i>
+                                        <h2 class="text-dark" title="Pending Amount">Pending Amount</h2>
+                                        <h6 class="text-dark counter"><small>Rs.</small>
+                                            <span style="font-size:15px;">{{ $remaining_amount }}</span>
+                                        </h6>
                                     </div>
                                 </div>
-                            </div> --}}
-                            <div class="col-sm-3 mb-2">
-                                <div class="card widget-flat gradient-45deg-amber-amber">
-                                    <div class="card-body">
-                                        <h3 class="text-white"><small>₹</small> <span class="counter-value">{{$passive_income}}</span></h3>
-                                        <h5 class="text-white fw-normal mt-3" title="Number of Orders">Passive Income</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3 mb-2">
-                                <div class="card widget-flat bg-gradient-moonlit">
-                                    <div class="card-body">
-                                        <h3 class="text-white"><small>₹</small> <span class="counter-value">{{Auth::guard('web')->user()->userDetail->total_wallet_balance}}</span></h3>
-                                        <h5 class="text-white fw-normal mt-3" title="Number of Customers">Total Wallet Amount</h5>
-                                    </div>
-                                </div>
-                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="row">
                             <div class="col-md-12">
                                 <div class="card card-info">
-                                    <div class="card-header text-center">
-                                        <h3 class="card-title">Total Transaction</h3>
-                                        <p> Last 30 Days</p>
-                                        <div class="card-tools">
-                                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                                <i class="fas fa-minus"></i>
-                                            </button>
-                                            <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                                <i class="fas fa-times"></i>
-                                            </button>
-                                        </div>
+                                    <div class="card-header">
+                                        <h3 class="card-title">Sales Last 30 Days </h3>
                                     </div>
                                     <div class="card-body">
                                         <div class="chart">

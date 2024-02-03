@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PlanController;
 use App\Http\Middleware\CheckUserStatus;
@@ -34,19 +35,24 @@ use App\Http\Controllers\RegistrationRequestController;
 */
 
 Auth::routes(['login'=>false,'register'=>false,'logout'=>false]);
-Route::view('cashthank-you', 'frontend.cashthank_you')->name('cashthank_you');
+
+//Home
 Route::get('/', [HomeController::class, 'index'])->name('index');
-Route::view('about', 'frontend.about')->name('about');
-Route::view('blog', 'frontend.blog')->name('blog');
-Route::view('blog_details', 'frontend.blog_details')->name('blog_details');
-Route::view('contact-us', 'frontend.contact')->name('contact');
+
+//Course
+Route::view('course', 'frontend.course')->name('course');
+Route::get('course-detail/{slug}',[CourseController::class,'courseDetail'])->name('course.detail');
+
+//Plan
 Route::get('plan',[PlanController::class,'planIndex'])->name('plan');
 Route::get('plan-detail/{slug}', [PlanController::class,'planDetail'])->name('plan.detail');
-Route::get('course-detail/{slug}',[CourseController::class,'courseDetail'])->name('course.detail');
-Route::get('checkout', [CheckoutController::class,'checkout'])->name('checkout');
 
-//Email
-// Route::view('payout', 'email.payout')->name('payout');
+//Checkout
+Route::get('checkout', [CheckoutController::class,'checkout'])->name('checkout');
+Route::post('get-plan-detail',[CheckoutController::class,'getPlanDetail'])->name('get.plan.detail');
+
+Route::get('about', [HomeController::class,'about'])->name('about');
+Route::view('contact-us', 'frontend.contact')->name('contact');
 
 //Policies
 Route::view('privacy-policy', 'frontend.privacy_policy')->name('privacy_policy');
@@ -81,6 +87,8 @@ Route::get('wallet-request-confirmation/{id}',[RegisterController::class,'wallet
 Route::view('thank-you', 'frontend.thank_you')->name('thank.you');
 Route::view('data-modification-error', 'frontend.data_modification_error')->name('data.modification.error');
 
+Route::view('cashthank-you', 'frontend.cashthank_you')->name('cashthank_you');
+
 //Route::get('import-data',[RegisterController::class,'importData']);
 
 //Check Coupon
@@ -108,6 +116,10 @@ Route::get('forgot-password',function(){
 Route::post('send-mail-forgot-password',[ForgotPasswordController::class,'sendMailForgotPassword'])->name('send.mail.forgot.password');
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
 Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
+
+//Blog
+Route::get('blog',[BlogController::class,'index'])->name('blog');
+Route::get('blog_detail/{slug}',[BlogController::class,'show'])->name('blog.detail');
 
 Route::group(['middleware'=>['auth:web',CheckUserStatus::class],'prefix'=>'user','as'=>'user.'],function () {
 
