@@ -86,44 +86,44 @@
                 </h2>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-6 wow fadeInUp" data-wow-delay="100ms">
+            <div class="col-lg-3 col-md-6 col-6 wow fadeInUp" data-wow-delay="100ms">
                     <div class="fact-one__item text-center">
                         <div class="fact-one__count">
                             <span class="count-box">
-                                <span class="count-text" @isset($website_data[3]) data-stop="{{$website_data[3]->content}}" @else data-stop="0" @endif data-speed="1500"></span>
-                            </span>Cr+
+                                <span class="count-text" @isset($website_data[1]) data-stop="{{$website_data[1]->content}}" @else data-stop="0" @endif data-speed="1500"></span>
+                            </span>+
                         </div>
-                        <h3 class="fact-one__title">Worth Courses Sold</h3>
+                        <h3 class="fact-one__title">Trainer</h3>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-6 wow fadeInUp" data-wow-delay="200ms">
                     <div class="fact-one__item text-center">
                         <div class="fact-one__count">
                             <span class="count-box">
-                                <span class="count-text" @isset($website_data[0]) data-stop="{{$website_data[0]->content}}" @else data-stop="0" @endif data-speed="1500"></span>
-                            </span>+
+                                <span class="count-text" @isset($website_data[2]) data-stop="{{$website_data[2]->content}}" @else data-stop="0" @endif data-speed="1500"></span>
+                            </span>k
                         </div>
-                        <h3 class="fact-one__title">Trainer</h3>
+                        <h3 class="fact-one__title">Students</h3>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-6 wow fadeInUp" data-wow-delay="300ms">
                     <div class="fact-one__item text-center">
                         <div class="fact-one__count">
                             <span class="count-box">
-                                <span class="count-text" @isset($website_data[1]) data-stop="{{$website_data[1]->content}}" @else data-stop="0" @endif data-speed="1500"></span>
-                            </span>k
+                                <span class="count-text" @isset($website_data[3]) data-stop="{{$website_data[3]->content}}" @else data-stop="0" @endif data-speed="1500"></span>
+                            </span>+
                         </div>
-                        <h3 class="fact-one__title">Students</h3>
+                        <h3 class="fact-one__title">Live Training</h3>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-6 wow fadeInUp" data-wow-delay="400ms">
                     <div class="fact-one__item text-center">
                         <div class="fact-one__count">
                             <span class="count-box">
-                                <span class="count-text" @isset($website_data[2]) data-stop="{{$website_data[2]->content}}" @else data-stop="0" @endif data-speed="1500"></span>
-                            </span>+
+                                <span class="count-text" @isset($website_data[4]) data-stop="{{$website_data[4]->content}}" @else data-stop="0" @endif data-speed="1500"></span>
+                            </span>Cr
                         </div>
-                        <h3 class="fact-one__title">Live Training</h3>
+                        <h3 class="fact-one__title">Community Earning</h3>
                     </div>
                 </div>
             </div>

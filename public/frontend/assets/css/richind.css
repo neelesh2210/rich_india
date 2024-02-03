@@ -8587,12 +8587,13 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 
 .category-one__content {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 160px;
-  width: 100%;
-  text-align: center;
+    position: relative;
+    left: 0;
+    top: -50px;
+    bottom: 0;
+    height: 120px;
+    width: 100%;
+    text-align: center;
 }
 
 .category-one__icon {
