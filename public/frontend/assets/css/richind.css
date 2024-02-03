@@ -17812,3 +17812,7 @@ padding: 10px !important;
 .rbt-inner-onepage-navigation .mainmenu-nav .mainmenu li.current a, .rbt-inner-onepage-navigation .mainmenu-nav .mainmenu li:hover a {
     color: #fff;
 }
+.course-two__meta__price del{
+    font-size: 16px;
+    color: #222;
+}

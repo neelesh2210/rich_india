@@ -97,7 +97,7 @@
                         <div class="fact-one__count">
                             <span class="count-box">
                                 <span class="count-text" @isset($website_data[2]) data-stop="{{$website_data[2]->content}}" @else data-stop="0" @endif data-speed="1500"></span>
-                            </span>k
+                            </span>K
                         </div>
                         <h3 class="fact-one__title">Students</h3>
                     </div>
@@ -145,7 +145,7 @@
                         <div class="about-one__thumb__box wow fadeInLeft" data-wow-delay="600ms">
                             <div class="about-one__thumb__box__icon"><span class="icon-Headphone-Women"></span></div>
                             <h4 class="about-one__thumb__box__title">Need to Know More Details?</h4>
-                            <p class="about-one__thumb__box__text">@isset($website_data[4]) <a href="tel:{{$website_data[4]->content}}">+91-{{$website_data[4]->content}}</a> @endif</p>
+                            <p class="about-one__thumb__box__text">@isset($website_data[0]) <a href="tel:{{$website_data[0]->content}}">+91-{{$website_data[0]->content}}</a> @endif</p>
                         </div>
                     </div>
                 </div>
@@ -280,7 +280,7 @@
                                 </h3>
                                 <div class="course-two__bottom">
                                     <div class="course-two__meta">
-                                        <h4 class="course-two__meta__price">₹{{$plan->amount}}</h4>
+                                        <h4 class="course-two__meta__price">₹ {{$plan->discounted_price}} <del>{{$plan->amount}}</del></h4>
                                         <p class="course-two__meta__class"><i class="fas fa-image"></i> {{count($plan->course_ids)}} Courses</p>
                                     </div>
                                     <div class="course-two__author">
