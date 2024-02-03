@@ -1299,12 +1299,12 @@
 /*-- Team Page --*/
 .team-page {
   position: relative;
-  padding: 120px 0 70px;
+  padding: 50px 0 0px;
 }
 
 @media (max-width: 767px) {
   .team-page {
-    padding: 80px 0 50px;
+
   }
 }
 
