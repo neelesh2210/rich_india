@@ -179,7 +179,7 @@
                                         <i class="fas fa-lock"></i>
                                         <h2 class="text-dark" title="Pending Amount">Pending Amount</h2>
                                         <h6 class="text-dark counter"><small>Rs.</small>
-                                            <span style="font-size:15px;">{{ $remaining_amount }}</span>
+                                            <span style="font-size:15px;">{{ Auth::guard('web')->user()->userDetail->total_wallet_balance }}</span>
                                         </h6>
                                     </div>
                                 </div>
