@@ -50,7 +50,8 @@
                                     <div class="video-view">
                                         <img @isset($course->topic[0]) src="{{ asset('backend/img/topic/'.$course->topic[0]->thumbnail_image) }}" @endisset class="img-fluid w-100" alt="image" onerror="this.onerror=null;this.src='{{ asset('frontend/assets/images/video-player.jpg') }}'">
                                         <div class="view-content">
-                                            <a @isset($course->topic[0]) href="{{$course->topic[0]->video_url}}" target="_blank" @else href="#" @endisset class="video-btn popup-youtube">
+                                            <a @isset($course->topic[0]) href="https://youtu.be/EWd9bC5CceQ?si=KnEShoRXzoAJS_FZ" target="_blank" @else href="#" @endisset class="video-btn popup-youtube">
+                                            {{-- <a @isset($course->topic[0]) href="{{$course->topic[0]->video_url}}" target="_blank" @else href="#" @endisset class="video-btn popup-youtube"> --}}
                                                 <i class="fas fa-play"></i>
                                             </a>
                                         </div>
