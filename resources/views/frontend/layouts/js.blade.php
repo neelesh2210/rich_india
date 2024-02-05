@@ -48,6 +48,7 @@
             })
         }
         function error_alert(error_message) {
+            //alert("Hello! I am an alert box!!");
             Toast.fire({
                 icon: 'error',
                 title: error_message
