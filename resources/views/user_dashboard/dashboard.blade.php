@@ -81,7 +81,7 @@
                                     <div class="card-body user-earnings">
                                         <h3><small><i class="fas fa-rupee-sign"></i></small> <span class="counter-value">{{ $last_week_earning }}</span>
                                         </h3>
-                                        <h5 title="Number of Orders">Last 7 Days Earning</h5>
+                                        <h5 title="Number of Orders">7 Days Earning</h5>
                                         <div class="progress progress-sm m-0">
                                             <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="90"
                                                 aria-valuemin="0" aria-valuemax="100" style="width: 90%">
@@ -98,7 +98,7 @@
                                     <div class="card-body user-earnings">
                                         <h3><small><i class="fas fa-rupee-sign"></i></small> <span class="counter-value">{{ $last_month_earning }}</span>
                                         </h3>
-                                        <h5 title="Number of Orders">Last 30 Days Earning</h5>
+                                        <h5 title="Number of Orders">30 Days Earning</h5>
                                         <div class="progress progress-sm m-0">
                                             <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="90"
                                                 aria-valuemin="0" aria-valuemax="100" style="width: 90%">
@@ -216,7 +216,7 @@
                 $(this).prop('Counter', 0).animate({
                     Counter: $(this).text()
                 }, {
-                    duration: 1000,
+                    duration: 5000,
                     easing: 'swing',
                     step: function(now) {
                         $(this).text(Math.ceil(now));
