@@ -6,5 +6,6 @@
 <link rel="stylesheet" href="{{ asset('frontend/assets/vendors/owl-carousel/assets/owl.carousel.min.css') }}" />
 <link rel="stylesheet" href="{{ asset('frontend/assets/vendors/owl-carousel/assets/owl.theme.default.min.css') }}" />
 <link rel="stylesheet" href="{{ asset('frontend/assets/css/richind.css') }}" />
+<link rel="stylesheet" href="{{asset('backend/css/bootstrap-4.min.css')}}">
 
 @stack('css')
