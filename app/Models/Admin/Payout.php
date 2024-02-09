@@ -13,6 +13,8 @@ class Payout extends Model
     protected $fillable = [
         'user_id',
         'amount',
+        'service_charge',
+        'tds_charge',
         'payment_type',
         'payment_detail',
         'remark',

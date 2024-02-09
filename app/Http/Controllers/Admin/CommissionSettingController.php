@@ -16,12 +16,10 @@ class CommissionSettingController extends Controller
     {
         $commission_settings = CommissionSetting::all();
         $update_commission_setting = WebsiteSetting::where('type','upgrade_commission_level')->first();
-        return view('admin.commission_setting.index',compact('commission_settings','update_commission_setting'),['page_title'=>'Commission Setting']);
-    }
+        $service_charge = WebsiteSetting::where('type','service_charge')->first();
+        $tds_charge = WebsiteSetting::where('type','tds_charge')->first();
 
-    public function create()
-    {
-        //
+        return view('admin.commission_setting.index',compact('commission_settings','update_commission_setting','service_charge','tds_charge'),['page_title'=>'Commission Setting']);
     }
 
     public function store(Request $request)
@@ -52,26 +50,6 @@ class CommissionSettingController extends Controller
         return back()->with('success','Data Updated Succesfully!');
     }
 
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
-    }
-
     public function updateCommissionLevel(Request $request){
         WebsiteSetting::updateOrCreate([
             'type'=>'upgrade_commission_level'
@@ -80,5 +58,20 @@ class CommissionSettingController extends Controller
         ]);
 
         return back()->with('success','Commission Level Updated!');
+    }
+
+    public function updateWithdrawalDeductionCharges(Request $request){
+        WebsiteSetting::updateOrCreate([
+            'type'=>'service_charge'
+        ],[
+            'content'=>$request->service_charge??0
+        ]);
+        WebsiteSetting::updateOrCreate([
+            'type'=>'tds_charge'
+        ],[
+            'content'=>$request->tds_charge??0
+        ]);
+
+        return back()->with('success','Withdrawal Deduction Charges Updated!');
     }
 }

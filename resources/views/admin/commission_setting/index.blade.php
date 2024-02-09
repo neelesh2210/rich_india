@@ -76,6 +76,33 @@
                                     </form>
                                 </div>
                             </div>
+                            <div class="card-header">
+                                <h5 class="mb-0">Withdrawal Deduction Charges</h5>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="modal-body">
+                                    <form action="{{route('admin.update.withdrawal.deduction.charges')}}" method="POST" class="form-example">
+                                        @csrf
+                                        <div class="row">
+                                            <div class="col-md-6 form_div">
+                                                <div class="form-group">
+                                                    <label for="service_charge">Service Charge</label>
+                                                    <input type="number" name="service_charge" value="{{optional($service_charge)->content}}" placeholder="Enter Service Charge..." class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 form_div">
+                                                <div class="form-group">
+                                                    <label for="tds_charge">TDS Charge</label>
+                                                    <input type="number" name="tds_charge" value="{{optional($tds_charge)->content}}" placeholder="Enter TDS Charge..." class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer text-center">
+                                            <button type="submit" class="btn btn-outline-success mt-1 mb-1" onclick="return confirm('Are you sure you want to Update?');"><i class="fa fa-check" aria-hidden="true"></i> SAVE</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

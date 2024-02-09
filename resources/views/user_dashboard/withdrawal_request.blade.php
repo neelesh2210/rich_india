@@ -126,8 +126,8 @@
             var remaining_commission = "{{Auth::guard('web')->user()->userDetail->total_wallet_balance}}"
             if(amount){
                 $('.error_span').text('')
-                if(amount < 400){
-                    $('.error_span').text('*Amount should be greater then ₹ 400!')
+                if(amount < 200){
+                    $('.error_span').text('*Amount should be greater then ₹ 200!')
                 }else{
                     if(parseInt(amount) <= parseInt(remaining_commission)){
                         Swal.fire({

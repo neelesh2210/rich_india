@@ -91,6 +91,7 @@ Route::group(['middleware'=>'auth:admin','as'=>'admin.'],function () {
 
         //Update Commission Level
         Route::post('update-commission-level',[CommissionSettingController::class,'updateCommissionLevel'])->name('update.commission.level');
+        Route::post('update-withdrawal-deduction-charges',[CommissionSettingController::class,'updateWithdrawalDeductionCharges'])->name('update.withdrawal.deduction.charges');
 
     //Payment Transaction
     Route::get('payment-transaction-index',[PaymentController::class,'index'])->name('payment.transaction.index');

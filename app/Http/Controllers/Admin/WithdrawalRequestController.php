@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Models\Admin\UserDetail;
 use App\Models\WithdrawalRequest;
 use App\Http\Controllers\Controller;
+use App\Models\Admin\WebsiteSetting;
 use Illuminate\Support\Facades\Mail;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\WithdrawalRequestsExport;
@@ -75,9 +76,15 @@ class WithdrawalRequestController extends Controller
                 $withdrawal_request->save();
 
                 if($request->status == 'success'){
+                    $service_charge = WebsiteSetting::where('type','service_charge')->first();
+                    $tds_charge = WebsiteSetting::where('type','tds_charge')->first();
+
+
                     $payout = new Payout;
                     $payout->user_id = $withdrawal_request->user_id;
                     $payout->amount = $withdrawal_request->amount;
+                    $payout->service_charge = $service_charge->content??0;
+                    $payout->tds_charge = $tds_charge->content??0;
                     $payout->payment_type = 'cash';
                     $payout->payment_status = 'success';
                     $payout->save();

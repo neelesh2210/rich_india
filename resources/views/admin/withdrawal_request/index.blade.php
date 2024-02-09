@@ -65,6 +65,9 @@
                                             <th class="text-center">#</th>
                                             <th class="text-center">User Details</th>
                                             <th class="text-center">Amount</th>
+                                            <th class="text-center">Service Charge</th>
+                                            <th class="text-center">TDS Charge</th>
+                                            <th class="text-center">Paid Amount</th>
                                             <th class="text-center">Date</th>
                                             <th class="text-center">Action</th>
                                         </tr>
@@ -72,6 +75,10 @@
                                     <tbody>
                                         @forelse ($withdrawal_requests as $key=>$withdrawal_request)
                                             <tr>
+                                                @php
+                                                    $service_charge = App\Models\Admin\WebsiteSetting::where('type','service_charge')->first();
+                                                    $tds_charge = App\Models\Admin\WebsiteSetting::where('type','tds_charge')->first();
+                                                @endphp
                                                 <td class="text-center">{{($key+1) + ($withdrawal_requests->currentPage() - 1)*$withdrawal_requests->perPage()}}</td>
                                                 <td>
                                                     <b>Name: </b>{{$withdrawal_request->user->name}} <br>
@@ -80,6 +87,9 @@
                                                     <b>Referrer Code: </b>{{$withdrawal_request->user->referrer_code}}
                                                 </td>
                                                 <td class="text-center">₹ {{$withdrawal_request->amount}}</td>
+                                                <td class="text-center">₹ {{$service_charge?$service_charge->content:0}}</td>
+                                                <td class="text-center">₹ {{$tds_charge?$tds_charge->content:0}}</td>
+                                                <td class="text-center">₹ {{$withdrawal_request->amount - $service_charge->content - $tds_charge->content}}</td>
                                                 <td class="text-center">{{$withdrawal_request->created_at}}</td>
                                                 <td class="text-center">
                                                     @if($withdrawal_request->status == 'pending')

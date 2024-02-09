@@ -63,7 +63,10 @@
                                                     <b>Referrer Code: </b>{{$payout->user->referrer_code}}
                                                 </td>
                                                 <td class="text-center">
-                                                    ₹ {{$payout->amount}}
+                                                    <b>Total Amount: </b> ₹ {{$payout->amount}} <br>
+                                                    <b>Service Charge: </b> ₹ {{$payout->service_charge}} <br>
+                                                    <b>TDS Charge: </b> ₹ {{$payout->tds_charge}} <br>
+                                                    <b>Paid Amount: </b> ₹ {{$payout->amount - $payout->service_charge - $payout->tds_charge}} <br>
                                                 </td>
                                                 <td>
                                                     @if($payout->payment_detail)
