@@ -5,6 +5,9 @@
             <th><b>Beneficiary Ac No</b></th>
             <th><b>Beneficiary Name</b></th>
             <th><b>Amt</b></th>
+            <th><b>Ser Charge</b></th>
+            <th><b>TDS Charge</b></th>
+            <th><b>Final Amt</b></th>
             <th><b>Pay Mod</b></th>
             <th><b>Date</b></th>
             <th><b>IFSC</b></th>
@@ -26,11 +29,18 @@
     </thead>
     <tbody>
         @foreach ($withdrawal_requests as $key=>$withdrawal_request)
+            @php
+                $service_charge = App\Models\Admin\WebsiteSetting::where('type','service_charge')->first();
+                $tds_charge = App\Models\Admin\WebsiteSetting::where('type','tds_charge')->first();
+            @endphp
             <tr>
                 <td></td>
                 <td>{{optional($withdrawal_request->user->bankDetail)->account_number}}</td>
                 <td>{{$withdrawal_request->user->name}}</td>
                 <td>{{$withdrawal_request->amount}}</td>
+                <td>{{$service_charge->content}}</td>
+                <td>{{$tds_charge->content}}</td>
+                <td>{{$withdrawal_request->amount - $service_charge->content - $tds_charge->content}}</td>
                 <td></td>
                 <td></td>
                 <td>{{optional($withdrawal_request->user->bankDetail)->ifsc_code}}</td>
