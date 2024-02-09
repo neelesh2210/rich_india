@@ -101,8 +101,10 @@ class WithdrawalRequestController extends Controller
                     $user_detail->total_wallet_balance = $user_detail->total_wallet_balance - $withdrawal_request->amount;
                     $user_detail->save();
 
+                    $final_amount =  $withdrawal_request->amount - $service_charge->content - $tds_charge->content;
+
                     try {
-                        Mail::send('email.payout', ['user_name'=>$user->name,'amount'=>$withdrawal_request->amount], function($message) use($user){
+                        Mail::send('email.payout', ['user_name'=>$user->name,'amount'=>$final_amount], function($message) use($user){
                             $message->to($user->email);
                             $message->subject('Withdrawal Successfull!');
                         });
