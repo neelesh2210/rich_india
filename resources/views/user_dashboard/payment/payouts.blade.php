@@ -37,6 +37,9 @@
                                         <th>Sr. No</th>
                                         <th>Date</th>
                                         <th>Amount</th>
+                                        <th>TDS Charge</th>
+                                        <th>Service Charge</th>
+                                        <th>Final Amount</th>
                                         <th>Payment Mode</th>
                                         <th>Payment Detail</th>
                                         <th>Remark</th>
@@ -48,6 +51,9 @@
                                             <td>{{($key+1) + ($payouts->currentPage() - 1)*$payouts->perPage()}}</td>
                                             <td>{{$payout->created_at->format('d-M-Y h:i A')}}</td>
                                             <td>₹ {{$payout->amount}}</td>
+                                            <td>₹ {{$payout->tds_charge}}</td>
+                                            <td>₹ {{$payout->service_charge}}</td>
+                                            <td>₹ {{$payout->amount - $payout->tds_charge - $payout->service_charge}}</td>
                                             <td>{{ucfirst($payout->payment_type)}}</td>
                                             <td>
                                                 @if($payout->payment_detail)
