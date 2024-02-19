@@ -16,5 +16,14 @@ class BankDetail extends Model
         'account_number',
         'bank_name',
         'upi_id',
+        'aadhar_name',
+        'aadhar_number',
+        'pan_name',
+        'pan_number',
+        'aadhar_front_image',
+        'aadhar_back_image',
+        'pan_image',
+        'note',
+        'admin_message',
     ];
 }

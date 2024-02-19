@@ -27,6 +27,7 @@ class User extends Authenticatable
         'avatar',
         'referrer_code',
         'referral_code',
+        'kyc_status',
         'is_verified',
         'status',
         'is_old',

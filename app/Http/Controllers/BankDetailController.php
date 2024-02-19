@@ -12,21 +12,25 @@ class BankDetailController extends Controller
 {
 
     public function store(Request $request){
-        //if(Session::get('otp') == $request->otp){
-            BankDetail::updateOrCreate([
-                'user_id'=>Auth::guard('web')->user()->id
-            ],[
-                'holder_name'=>$request->holder_name,
-                'ifsc_code'=>$request->ifsc_code,
-                'account_number'=>$request->account_number,
-                'bank_name'=>$request->bank_name,
-                'upi_id'=>$request->upi_id
-            ]);
-            //Session::forget('otp');
-            return back()->with('success','Bank Detail Updated Successfully!');
-        //}else{
-            //return back()->withInput($request->all())->with('error','Wrong OTP!');
-        //}
+        if(Auth::guard('web')->user()->kyc_status != 'verified'){
+            //if(Session::get('otp') == $request->otp){
+                BankDetail::updateOrCreate([
+                    'user_id'=>Auth::guard('web')->user()->id
+                ],[
+                    'holder_name'=>$request->holder_name,
+                    'ifsc_code'=>$request->ifsc_code,
+                    'account_number'=>$request->account_number,
+                    'bank_name'=>$request->bank_name,
+                    'upi_id'=>$request->upi_id
+                ]);
+                //Session::forget('otp');
+                return back()->with('success','Bank Detail Updated Successfully!');
+            //}else{
+                //return back()->withInput($request->all())->with('error','Wrong OTP!');
+            //}
+        }else{
+            return back()->with('error','You can not change bank detail after kyc verification!');
+        }
     }
 
     public function verifyEmail(){

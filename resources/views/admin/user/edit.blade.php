@@ -78,6 +78,48 @@
                                         <div class="row">
                                             <div class="col-md-6 form_div">
                                                 <div class="form-group">
+                                                    <label for="aadhaar_name">Aadhar Name <span class="text-danger">*</span> </label>
+                                                    <input type="text" class="form-control" name="aadhar_name" value="{{optional($user->bankDetail)->aadhar_name}}" placeholder="Enter Aadhar Name...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 form_div">
+                                                <div class="form-group">
+                                                    <label for="aadhaar_number">Aadhaar Number <span class="text-danger">*</span> </label>
+                                                    <input type="text" class="form-control" name="aadhar_number" value="{{optional($user->bankDetail)->aadhar_number}}" placeholder="Enter Aadhaar Number...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 form_div">
+                                                <div class="form-group">
+                                                    <label for="pan_name">Pan Name <span class="text-danger">*</span> </label>
+                                                    <input type="text" class="form-control" name="pan_name" value="{{optional($user->bankDetail)->pan_name}}" placeholder="Enter Pan Name...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 form_div">
+                                                <div class="form-group">
+                                                    <label for="pan_number">Pan Number <span class="text-danger">*</span> </label>
+                                                    <input type="text" class="form-control" name="pan_number" value="{{optional($user->bankDetail)->pan_number}}" placeholder="Enter Pan Number...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 form_div">
+                                                <div class="form-group">
+                                                    <label for="dob">DOB <span class="text-danger">*</span> </label>
+                                                    <input type="date" class="form-control" name="dob" value="{{$user->dob}}" placeholder="Enter DOB...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 form_div">
+                                                <div class="form-group">
+                                                    <label for="gender">Gender <span class="text-danger">*</span> </label>
+                                                    <select name="gender" class="form-control">
+                                                        <option value="male" @if($user->gender == 'male') selected @endif>Male</option>
+                                                        <option value="female" @if($user->gender == 'female') selected @endif>Female</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-md-6 form_div">
+                                                <div class="form-group">
                                                     <label for="holder_name">Holder Name <span class="text-danger">*</span> </label>
                                                     <input type="text" class="form-control" name="holder_name" value="{{optional($user->bankDetail)->holder_name}}" placeholder="Enter Holder Name...">
                                                 </div>
@@ -106,6 +148,58 @@
                                                     <input type="text" class="form-control" name="upi_id" value="{{optional($user->bankDetail)->upi_id}}" placeholder="Enter UPI Id...">
                                                 </div>
                                             </div>
+                                            <div class="col-md-6 form_div">
+                                                <div class="form-group">
+                                                    <label for="kyc_status">KYC Status <span class="text-danger">*</span> </label>
+                                                    <select name="kyc_status" class="form-control">
+                                                        <option value="not_verified" @if($user->kyc_status == 'not_verified') selected @endif>Pending</option>
+                                                        <option value="verified" @if($user->kyc_status == 'verified') selected @endif>Verified</option>
+                                                        <option value="rejected" @if($user->kyc_status == 'rejected') selected @endif>Rejected</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 form_div">
+                                                <div class="form-group">
+                                                    <label for="notes">Notes </label>
+                                                    <textarea name="notes" class="form-control">{!!optional($user->bankDetail)->notes!!}</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 form_div">
+                                                <div class="form-group">
+                                                    <label for="admin_message">Admin Message </label>
+                                                    <textarea name="admin_message" class="form-control">{{optional($user->bankDetail)->admin_message}}</textarea>
+                                                </div>
+                                            </div>
+                                            @if(optional($user->bankDetail)->aadhar_front_image)
+                                                <div class="col-md-6 form_div">
+                                                    <div class="form-group">
+                                                        <label>Aadhaar Front Image</label> <br>
+                                                        <a href="{{asset('frontend/images/documents/'.optional($user->bankDetail)->aadhar_front_image)}}" target="_blank">
+                                                            <img src="{{asset('frontend/images/documents/'.optional($user->bankDetail)->aadhar_front_image)}}" height="100px" width="100px">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            @endif
+                                            @if(optional($user->bankDetail)->aadhar_back_image)
+                                                <div class="col-md-6 form_div">
+                                                    <div class="form-group">
+                                                        <label>Aadhaar Back Image</label> <br>
+                                                        <a href="{{asset('frontend/images/documents/'.optional($user->bankDetail)->aadhar_back_image)}}" target="_blank">
+                                                            <img src="{{asset('frontend/images/documents/'.optional($user->bankDetail)->aadhar_back_image)}}" height="100px" width="100px">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            @endif
+                                            @if(optional($user->bankDetail)->pan_image)
+                                                <div class="col-md-6 form_div">
+                                                    <div class="form-group">
+                                                        <label>Pan Image</label> <br>
+                                                        <a href="{{asset('frontend/images/documents/'.optional($user->bankDetail)->pan_image)}}" target="_blank">
+                                                            <img src="{{asset('frontend/images/documents/'.optional($user->bankDetail)->pan_image)}}" height="100px" width="100px">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            @endif
                                         </div>
                                     </form>
                                     <div class="d-flex justify-content-center">

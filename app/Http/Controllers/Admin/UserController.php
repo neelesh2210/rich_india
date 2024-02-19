@@ -19,6 +19,7 @@ use App\Models\Admin\WebsiteSetting;
 use App\Models\RegistrationErrorLog;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\File;
 use App\Models\Admin\CommissionSetting;
 use Illuminate\Support\Facades\Validator;
 
@@ -370,12 +371,43 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->state = $request->state;
         $user->referral_code = $request->referral_code;
+        $user->kyc_status = $request->kyc_status;
         $user->save();
 
         $user_detail = UserDetail::where('user_id',$id)->first();
         $user_detail->old_paid_payout = $request->old_paid_payout;
         $user_detail->old_not_paid_payout = $request->old_not_paid_payout;
         $user_detail->save();
+
+        if($request->kyc_status != 'pending'){
+            $bank_detail = BankDetail::where('user_id',$user->id)->first();
+            if($bank_detail){
+                if(File::exists('frontend/images/documents/'.optional($user->bankDetail)->aadhar_front_image)) {
+                    File::delete('frontend/images/documents/'.optional($user->bankDetail)->aadhar_front_image);
+                    $bank_detail->aadhar_front_image = null;
+                }
+                if(File::exists('frontend/images/documents/'.optional($user->bankDetail)->aadhar_back_image)) {
+                    File::delete('frontend/images/documents/'.optional($user->bankDetail)->aadhar_back_image);
+                    $bank_detail->aadhar_back_image = null;
+                }
+                if(File::exists('frontend/images/documents/'.optional($user->bankDetail)->pan_image)) {
+                    File::delete('frontend/images/documents/'.optional($user->bankDetail)->pan_image);
+                    $bank_detail->pan_image = null;
+                }
+                $bank_detail->save();
+
+                try {
+                    Mail::send('email.kyc_status_mail', ['user_name'=>$user,'status'=>$request->kyc_status,'admin_message'=>$request->admin_message], function($message) use ($user){
+                        $message->to($user->email);
+                        $message->subject('KYC Status Career Fixx');
+                    });
+                } catch (\Throwable $th) {
+                    //throw $th;
+                }
+            }
+
+
+        }
 
         BankDetail::updateOrCreate([
             'user_id'=>$id
@@ -385,6 +417,12 @@ class UserController extends Controller
             'account_number'=>$request->account_number,
             'bank_name'=>$request->bank_name,
             'upi_id'=>$request->upi_id,
+            'note'=>$request->notes,
+            'admin_message'=>$request->admin_message,
+            'aadhaar_name'=>$request->aadhaar_name,
+            'aadhaar_number'=>$request->aadhaar_number,
+            'pan_name'=>$request->pan_name,
+            'pan_number'=>$request->pan_number,
         ]);
 
         return redirect()->route('admin.user.index')->with('success','User Edited Successfully!');

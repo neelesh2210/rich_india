@@ -87,7 +87,9 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                                @if(Auth::guard('web')->user()->kyc_status != 'verified')
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                @endif
                             </form>
                             {{-- <h5 class="mb-3 text-uppercase bg-light p-2">Bank Account Information</h5>
                             <hr>
