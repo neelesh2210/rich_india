@@ -88,7 +88,7 @@
                                                     <input type="text" class="form-control" name="aadhar_number" value="{{optional($user->bankDetail)->aadhar_number}}" placeholder="Enter Aadhaar Number...">
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 form_div">
+                                            {{-- <div class="col-md-6 form_div">
                                                 <div class="form-group">
                                                     <label for="pan_name">Pan Name <span class="text-danger">*</span> </label>
                                                     <input type="text" class="form-control" name="pan_name" value="{{optional($user->bankDetail)->pan_name}}" placeholder="Enter Pan Name...">
@@ -99,7 +99,7 @@
                                                     <label for="pan_number">Pan Number <span class="text-danger">*</span> </label>
                                                     <input type="text" class="form-control" name="pan_number" value="{{optional($user->bankDetail)->pan_number}}" placeholder="Enter Pan Number...">
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                             <div class="col-md-6 form_div">
                                                 <div class="form-group">
                                                     <label for="dob">DOB <span class="text-danger">*</span> </label>
