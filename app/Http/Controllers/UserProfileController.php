@@ -66,13 +66,13 @@ class UserProfileController extends Controller
     public function userDocumentDetailSave(Request $request){
         if(Auth::guard('web')->user()->kyc_status != 'verified'){
             $this->validate($request,[
-                'aadhar_name'=>'required',
-                'aadhar_number'=>'required',
-                'pan_name'=>'required',
-                'pan_number'=>'required',
+                //'aadhar_name'=>'required',
+                //'aadhar_number'=>'required',
+                //'pan_name'=>'required',
+                //'pan_number'=>'required',
                 'aadhar_front_image'=>'nullable|mimes:png,jpg,jpeg,webp',
                 'aadhar_back_image'=>'nullable|mimes:png,jpg,jpeg,webp',
-                'pan_image'=>'nullable|mimes:png,jpg,jpeg,webp',
+                //'pan_image'=>'nullable|mimes:png,jpg,jpeg,webp',
             ]);
 
             $bank_detail = BankDetail::where('user_id',Auth::guard('web')->user()->id)->first();

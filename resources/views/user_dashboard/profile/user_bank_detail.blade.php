@@ -80,7 +80,7 @@
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
                                     </div>
-                                    <div class="col-md-6 mb-3">
+                                    {{-- <div class="col-md-6 mb-3">
                                         <label for="pan_name" class="form-label">Pan Name</label>
                                         <input type="text" id="pan_name" name="pan_name" value="{{old('pan_name',optional($user_details->bankDetail)->pan_name)}}" class="form-control" placeholder="Pan Name...">
                                         @error('pan_name')
@@ -93,7 +93,7 @@
                                         @error('pan_number')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
-                                    </div>
+                                    </div> --}}
                                     <div class="col-md-6 mb-3">
                                         <label for="aadhar_front_image" class="form-label">Aadhra Front Image</label>
                                         <input type="file" name="aadhar_front_image" id="aadhar_front_image" class="form-control" accept="image/*">
@@ -114,7 +114,7 @@
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
                                     </div>
-                                    <div class="col-md-6 mb-3">
+                                    {{-- <div class="col-md-6 mb-3">
                                         <label for="pan_image" class="form-label">Pan Image</label>
                                         <input type="file" name="pan_image" id="pan_image" class="form-control" accept="image/*">
                                         <div class="p-2">
@@ -123,7 +123,7 @@
                                         @error('pan_image')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 @if(Auth::guard('web')->user()->kyc_status != 'verified')
                                     <button type="submit" class="btn btn-primary save-button">Save Changes</button>
