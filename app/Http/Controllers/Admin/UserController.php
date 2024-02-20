@@ -399,7 +399,7 @@ class UserController extends Controller
                 try {
                     Mail::send('email.kyc_status_mail', ['user_name'=>$user,'status'=>$request->kyc_status,'admin_message'=>$request->admin_message], function($message) use ($user){
                         $message->to($user->email);
-                        $message->subject('KYC Status Career Fixx');
+                        $message->subject('KYC Status Richind');
                     });
                 } catch (\Throwable $th) {
                     //throw $th;

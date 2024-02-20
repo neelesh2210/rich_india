@@ -4,7 +4,7 @@
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
     <title>RichInd | KYC Status</title>
-    <meta name="description" content="Career Fixx">
+    <meta name="description" content="Richind">
 </head>
 <style>
     a:hover {
