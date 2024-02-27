@@ -33,7 +33,7 @@
                             <hr>
                             <form action="{{route('user.save.user.profile')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <div class="row">
+                                <div class="row" id="profile_row">
                                     <div class="col-md-6 mb-3">
                                         <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
                                         <input type="text" id="name" name="name" value="{{$user_details->name}}" class="form-control" required>
@@ -88,8 +88,13 @@
                                     </div>
                                 </div>
                                 @if(Auth::guard('web')->user()->kyc_status != 'verified')
-                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                    @if(!Session::get('profile_otp'))
+                                        <button type="button" class="btn btn-primary" onclick="sendOtp()" id="send_otp_button">Send OTP</button>
+                                    @else
+                                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                                    @endif
                                 @endif
+                                <button type="submit" class="btn btn-primary" id="save_button" style="display:none">Save Changes</button>
                             </form>
                             {{-- <h5 class="mb-3 text-uppercase bg-light p-2">Bank Account Information</h5>
                             <hr>
@@ -132,6 +137,28 @@
             if (file) {
                 img1.src = URL.createObjectURL(file)
             }
+        }
+
+        function sendOtp(){
+            $.ajax({
+                type: 'POST',
+                url: "{{ route('user.send.profile.otp') }}",
+                data: {
+                    _token:"{{csrf_token()}}"
+                },
+                success: function(data) {
+                    console.log(data);
+                    $('#profile_row').append('<div class="col-md-6 mb-3">'+
+                                        '<label for="otp" class="form-label">OTP <span class="text-danger">*</span></label>'+
+                                        '<input type="number" name="otp" class="form-control" placeholder="Enter OTP..." required>'+
+                                    '</div>');
+                    $('#send_otp_button').hide();
+                    $('#save_button').show();
+                },
+                error: function(request, status, error) {
+                    alert('Something Went Wrong!');
+                }
+            });
         }
     </script>
 

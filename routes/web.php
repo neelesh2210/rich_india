@@ -128,6 +128,7 @@ Route::group(['middleware'=>['auth:web',CheckUserStatus::class],'prefix'=>'user'
 
     //User Profile
     Route::get('user-profile', [UserProfileController::class,'profile'])->name('user.profile');
+    Route::post('send-profile-otp', [UserProfileController::class,'sendProfileOtp'])->name('send.profile.otp');
     Route::post('save-user-profile', [UserProfileController::class,'saveUserProfile'])->name('save.user.profile');
 
     //User Bank Detail
