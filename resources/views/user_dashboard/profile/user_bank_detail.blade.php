@@ -22,7 +22,7 @@
                                     <form action="{{route('user.bank.detail.store')}}" method="POST">
                                 @endif
                                 @csrf
-                                <div class="row">
+                                <div class="row" id="account_row">
                                     <div class="col-md-6 mb-3">
                                         <label for="holder_name" class="form-label">Holder Name</label>
                                         <input type="text" id="holder_name" name="holder_name" value="{{old('holder_name',optional($user_details->bankDetail)->holder_name)}}" class="form-control" placeholder="Holder Name...">
@@ -52,7 +52,12 @@
                                     {{-- <a class="btn btn-primary @if(count(old()) != 0) d-none @endif verify-button" onclick="verifyEmailBankdetail()">Get OTP on email to make changes</a> --}}
                                     @if(optional($user_details->bankDetail)->holder_name || optional($user_details->bankDetail)->ifsc_code || optional($user_details->bankDetail)->account_number || optional($user_details->bankDetail)->bank_name || optional($user_details->bankDetail)->upi_id)
                                     @else
-                                        <button type="submit" class="btn btn-primary save-button">Save Changes</button>
+                                        @if(!Session::get('account_otp'))
+                                            <button type="button" class="btn btn-primary" onclick="verifyAccountDetail()" id="send_otp_buttons">Send OTP</button>
+                                        @else
+                                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                                        @endif
+                                        <button type="submit" class="btn btn-primary" id="save_buttons" style="display:none">Save Changes</button>
                                     @endif
                                 @endif
                             </form>
@@ -65,7 +70,7 @@
                         <div class="card-body">
                             <form action="{{route('user.document.detail.save')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <div class="row">
+                                <div class="row" id="kyc_row">
                                     <div class="col-md-6 mb-3">
                                         <label for="aadhar_name" class="form-label">Aadhar Name</label>
                                         <input type="text" id="aadhar_name" name="aadhar_name" value="{{old('aadhar_name',optional($user_details->bankDetail)->aadhar_name)}}" class="form-control" placeholder="Aadhar Name...">
@@ -126,7 +131,12 @@
                                     </div> --}}
                                 </div>
                                 @if(Auth::guard('web')->user()->kyc_status != 'verified')
-                                    <button type="submit" class="btn btn-primary save-button">Save Changes</button>
+                                    @if(!Session::get('kyc_otp'))
+                                        <button type="button" class="btn btn-primary" onclick="verifyEmailBankdetail()" id="send_otp_button">Send OTP</button>
+                                    @else
+                                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                                    @endif
+                                    <button type="submit" class="btn btn-primary" id="save_button" style="display:none">Save Changes</button>
                                 @endif
                             </form>
                         </div>
@@ -140,9 +150,23 @@
 
         function verifyEmailBankdetail(){
             $.get("{{route('user.verify.email.bank.detail')}}", function(data, status){
-                $('.save-button').removeClass('d-none')
-                $('.verify-button').addClass('d-none')
-                $('.otp-div').removeClass('d-none')
+                $('#kyc_row').append('<div class="col-md-6 mb-3">'+
+                                        '<label for="otp" class="form-label">OTP <span class="text-danger">*</span></label>'+
+                                        '<input type="number" name="otp" class="form-control" placeholder="Enter OTP..." required>'+
+                                    '</div>');
+                $('#send_otp_button').hide();
+                $('#save_button').show();
+            });
+        }
+
+        function verifyAccountDetail(){
+            $.get("{{route('user.verify.account.detail')}}", function(data, status){
+                $('#account_row').append('<div class="col-md-6 mb-3">'+
+                                        '<label for="otp" class="form-label">OTP <span class="text-danger">*</span></label>'+
+                                        '<input type="number" name="otp" class="form-control" placeholder="Enter OTP..." required>'+
+                                    '</div>');
+                $('#send_otp_buttons').hide();
+                $('#save_buttons').show();
             });
         }
 

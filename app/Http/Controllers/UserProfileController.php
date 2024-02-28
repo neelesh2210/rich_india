@@ -82,43 +82,49 @@ class UserProfileController extends Controller
     }
 
     public function bankDetail(){
+        Session::forget('kyc_otp');
+        Session::forget('account_otp');
         $user_details = User::where('id',Auth::guard('web')->user()->id)->with(['sponsorDetail','bankDetail'])->first();
         return view('user_dashboard.profile.user_bank_detail',compact('user_details'));
     }
 
     public function userDocumentDetailSave(Request $request){
         if(Auth::guard('web')->user()->kyc_status != 'verified'){
-            $this->validate($request,[
-                //'aadhar_name'=>'required',
-                //'aadhar_number'=>'required',
-                //'pan_name'=>'required',
-                //'pan_number'=>'required',
-                'aadhar_front_image'=>'nullable|mimes:png,jpg,jpeg,webp',
-                'aadhar_back_image'=>'nullable|mimes:png,jpg,jpeg,webp',
-                //'pan_image'=>'nullable|mimes:png,jpg,jpeg,webp',
-            ]);
+            if(Session::get('kyc_otp') == $request->otp){
+                $this->validate($request,[
+                    //'aadhar_name'=>'required',
+                    //'aadhar_number'=>'required',
+                    //'pan_name'=>'required',
+                    //'pan_number'=>'required',
+                    'aadhar_front_image'=>'nullable|mimes:png,jpg,jpeg,webp',
+                    'aadhar_back_image'=>'nullable|mimes:png,jpg,jpeg,webp',
+                    //'pan_image'=>'nullable|mimes:png,jpg,jpeg,webp',
+                ]);
 
-            $bank_detail = BankDetail::where('user_id',Auth::guard('web')->user()->id)->first();
-            if(!$bank_detail){
-                $bank_detail = new BankDetail;
-                $bank_detail->user_id = Auth::guard('web')->user()->id;
-            }
-            $bank_detail->aadhar_name = $request->aadhar_name;
-            $bank_detail->aadhar_number = $request->aadhar_number;
-            $bank_detail->pan_name = $request->pan_name;
-            $bank_detail->pan_number = $request->pan_number;
-            if($request->hasFile('aadhar_front_image')){
-                $bank_detail->aadhar_front_image = imageUpload($request->file('aadhar_front_image'),'frontend/images/documents');
-            }
-            if($request->hasFile('aadhar_back_image')){
-                $bank_detail->aadhar_back_image = imageUpload($request->file('aadhar_back_image'),'frontend/images/documents');
-            }
-            if($request->hasFile('pan_image')){
-                $bank_detail->pan_image = imageUpload($request->file('pan_image'),'frontend/images/documents');
-            }
-            $bank_detail->save();
+                $bank_detail = BankDetail::where('user_id',Auth::guard('web')->user()->id)->first();
+                if(!$bank_detail){
+                    $bank_detail = new BankDetail;
+                    $bank_detail->user_id = Auth::guard('web')->user()->id;
+                }
+                $bank_detail->aadhar_name = $request->aadhar_name;
+                $bank_detail->aadhar_number = $request->aadhar_number;
+                $bank_detail->pan_name = $request->pan_name;
+                $bank_detail->pan_number = $request->pan_number;
+                if($request->hasFile('aadhar_front_image')){
+                    $bank_detail->aadhar_front_image = imageUpload($request->file('aadhar_front_image'),'frontend/images/documents');
+                }
+                if($request->hasFile('aadhar_back_image')){
+                    $bank_detail->aadhar_back_image = imageUpload($request->file('aadhar_back_image'),'frontend/images/documents');
+                }
+                if($request->hasFile('pan_image')){
+                    $bank_detail->pan_image = imageUpload($request->file('pan_image'),'frontend/images/documents');
+                }
+                $bank_detail->save();
 
-            return back()->with('success','Document Detail Saved Successfully!');
+                return back()->with('success','Document Detail Saved Successfully!');
+            }else{
+                return back()->with('error','Invalid OTP Please Reverify Again!');
+            }
         }else{
             return back()->with('error','You can not change document detail after kyc verification!');
         }

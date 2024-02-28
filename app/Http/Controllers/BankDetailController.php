@@ -13,7 +13,7 @@ class BankDetailController extends Controller
 
     public function store(Request $request){
         if(Auth::guard('web')->user()->kyc_status != 'verified'){
-            //if(Session::get('otp') == $request->otp){
+            if(Session::get('account_otp') == $request->otp){
                 BankDetail::updateOrCreate([
                     'user_id'=>Auth::guard('web')->user()->id
                 ],[
@@ -23,11 +23,11 @@ class BankDetailController extends Controller
                     'bank_name'=>$request->bank_name,
                     'upi_id'=>$request->upi_id
                 ]);
-                //Session::forget('otp');
+                Session::forget('account_otp');
                 return back()->with('success','Bank Detail Updated Successfully!');
-            //}else{
-                //return back()->withInput($request->all())->with('error','Wrong OTP!');
-            //}
+            }else{
+                return back()->withInput($request->all())->with('error','Wrong OTP!');
+            }
         }else{
             return back()->with('error','You can not change bank detail after kyc verification!');
         }
@@ -35,7 +35,16 @@ class BankDetailController extends Controller
 
     public function verifyEmail(){
         $otp = rand(1111,9999);
-        Session::put('otp',$otp);
+        Session::put('kyc_otp',$otp);
+        Mail::send('email.verify_email_bank', ['otp' => $otp], function($message){
+            $message->to(Auth::guard('web')->user()->email);
+            $message->subject('Verify OTP');
+        });
+    }
+
+    public function verifyAccount(){
+        $otp = rand(1111,9999);
+        Session::put('account_otp',$otp);
         Mail::send('email.verify_email_bank', ['otp' => $otp], function($message){
             $message->to(Auth::guard('web')->user()->email);
             $message->subject('Verify OTP');

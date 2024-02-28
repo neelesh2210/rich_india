@@ -133,6 +133,7 @@ Route::group(['middleware'=>['auth:web',CheckUserStatus::class],'prefix'=>'user'
 
     //User Bank Detail
     Route::get('verify-email-bank-detail',[BankDetailController::class,'verifyEmail'])->name('verify.email.bank.detail');
+    Route::get('verify-account-detail',[BankDetailController::class,'verifyAccount'])->name('verify.account.detail');
     Route::get('user-bank-detail',[UserProfileController::class,'bankDetail'])->name('bank.detail');
     Route::post('user-document-detail-save',[UserProfileController::class,'userDocumentDetailSave'])->name('document.detail.save');
 

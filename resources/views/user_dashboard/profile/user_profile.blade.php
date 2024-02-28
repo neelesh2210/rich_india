@@ -147,7 +147,6 @@
                     _token:"{{csrf_token()}}"
                 },
                 success: function(data) {
-                    console.log(data);
                     $('#profile_row').append('<div class="col-md-6 mb-3">'+
                                         '<label for="otp" class="form-label">OTP <span class="text-danger">*</span></label>'+
                                         '<input type="number" name="otp" class="form-control" placeholder="Enter OTP..." required>'+
