@@ -46,7 +46,7 @@ class UserProfileController extends Controller
                 if($check_phone){
                     return back()->with('error','Phone Already Exixts!');
                 }else{
-                    $user_detail->name = $request->name;
+                    //$user_detail->name = $request->name;
                     $user_detail->gender = $request->gender;
                     $user_detail->state = $request->state;
                     $user_detail->city = $request->city;

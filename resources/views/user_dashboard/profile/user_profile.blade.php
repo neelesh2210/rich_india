@@ -36,7 +36,7 @@
                                 <div class="row" id="profile_row">
                                     <div class="col-md-6 mb-3">
                                         <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
-                                        <input type="text" id="name" name="name" value="{{$user_details->name}}" class="form-control" required>
+                                        <input type="text" id="name" name="name" value="{{$user_details->name}}" class="form-control" required readonly>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
@@ -87,14 +87,14 @@
                                         @enderror
                                     </div>
                                 </div>
-                                @if(Auth::guard('web')->user()->kyc_status != 'verified')
+                                {{-- @if(Auth::guard('web')->user()->kyc_status != 'verified')
                                     @if(!Session::get('profile_otp'))
                                         <button type="button" class="btn btn-primary" onclick="sendOtp()" id="send_otp_button">Send OTP</button>
                                     @else
                                         <button type="submit" class="btn btn-primary">Save Changes</button>
                                     @endif
-                                @endif
-                                <button type="submit" class="btn btn-primary" id="save_button" style="display:none">Save Changes</button>
+                                @endif --}}
+                                <button type="submit" class="btn btn-primary" id="save_button">Save Changes</button>
                             </form>
                             {{-- <h5 class="mb-3 text-uppercase bg-light p-2">Bank Account Information</h5>
                             <hr>
