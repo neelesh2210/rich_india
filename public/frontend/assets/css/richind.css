@@ -14436,14 +14436,20 @@ body.megamenu-popup-active .mobile-nav__content {
   color: var(--richind-black);
 }
 
-.login-page__area {
+/* .login-page__area {
   border-radius: 14px;
   background: var(--richind-white);
   box-shadow: 0px 0px 60px 0px rgba(2, 2, 2, 0.07);
   padding: 53px 60px 60px;
   position: relative;
+} */
+.login-page__area {
+    border-radius: 14px;
+    background: var(--richind-white);
+    box-shadow: 0px 0px 60px 0px rgba(2, 2, 2, 0.07);
+    padding: 40px 40px 10px;
+    position: relative;
 }
-
 @media (max-width: 991px) {
   .login-page__area {
     padding: 0 50px 60px;
@@ -14456,7 +14462,7 @@ body.megamenu-popup-active .mobile-nav__content {
   }
 }
 
-.login-page__area::after {
+/* .login-page__area::after {
   position: absolute;
   content: '';
   left: 0;
@@ -14467,7 +14473,7 @@ body.megamenu-popup-active .mobile-nav__content {
   width: 1px;
   height: 354px;
   border-right: 1px dashed var(--richind-grey);
-}
+} */
 
 @media (max-width: 991px) {
   .login-page__area::after {

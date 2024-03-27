@@ -41,6 +41,9 @@
                         <i class="icon-account-1"></i>
                     </a>
                 @endauth
+                <a data-bs-toggle="modal" data-bs-target="#loginModal" class="main-menu__login">
+                    <i class="icon-account-1"></i>
+                </a>
                 <a href="{{ route('contact') }}" class="richind-btn"><span class="richind-btn__curve"></span>Get In Touch</a>
             </div>
         </div>

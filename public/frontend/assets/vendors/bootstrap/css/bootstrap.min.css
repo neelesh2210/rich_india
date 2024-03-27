@@ -2238,8 +2238,8 @@ progress {
     font-size: 15px;
     display: block;
     font-weight: 500;
-    border-radius: 4px;
-    border: 2px solid #ddd;
+    border-radius: 0;
+    border: 1px solid #ddd;
 }
 
 @media (prefers-reduced-motion:reduce) {
