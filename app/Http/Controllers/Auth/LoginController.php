@@ -70,6 +70,6 @@ class LoginController extends Controller
     public function logout()
     {
         Auth::guard('web')->logout();
-        return redirect()->route('signin')->with('success','You Have Logged out Successfully!');
+        return redirect()->route('index')->with('success','You Have Logged out Successfully!');
     }
 }

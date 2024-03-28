@@ -138,7 +138,7 @@
                                 <input type="checkbox" name="save-data" id="save-data">
                                 <label for="save-data"><span></span>Remember Me?</label>
                                 <div class="login-page__forgot-password">
-                                    <a href="#" class="btn-second-modal within-first-modal" data-bs-toggle="modal" data-bs-target="#forgotModal" data-bs-dismiss-modal="modal">Forgot Passowrd?</a>
+                                    <a href="#" class="btn-second-modal within-first-modal" data-bs-toggle="modal" data-bs-target="#forgotModal" data-bs-dismiss-modal="modal">Forgot Password?</a>
                                 </div>
                             </div>
                         </div>
