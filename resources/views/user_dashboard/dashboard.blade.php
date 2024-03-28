@@ -128,7 +128,7 @@
                                     </div>
                                 </div>
                             </div>
-                           {{-- <div class="col-sm-3">
+                           <div class="col-sm-3">
                                 <div class="card widget-flat gradient-45deg-all-time-earning bg-img3-opacity">
                                     <div class="card-body user-earnings">
                                         <h3><small><i class="fas fa-rupee-sign"></i></small> <span
@@ -146,7 +146,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-3">
+                            {{-- <div class="col-sm-3">
                                 <div class="card widget-flat gradient-45deg-all-time-earning bg-img4-opacity">
                                     <div class="card-body user-earnings">
                                         <h3><small><i class="fas fa-rupee-sign"></i></small> <span

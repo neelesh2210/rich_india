@@ -8,18 +8,15 @@
     $address = websiteData('address');
 @endphp
 <footer class="main-footer">
-    <div class="main-footer__bg"
-        style="background-image: url({{ asset('frontend/assets/images/shapes/footer-bg-1.png') }});"></div>
+    <div class="main-footer__bg" style="background-image: url({{ asset('frontend/assets/images/shapes/footer-bg-1.png') }});"></div>
     <div class="container">
         <div class="row">
             <div class="col-xl-4 col-md-5 wow fadeInUp" data-wow-delay="100ms">
                 <div class="main-footer__about">
                     <a href="{{ route('index') }}" class="main-footer__logo">
-                        <img src="{{ asset('frontend/assets/images/logo-light.png') }}" alt="richind" width="213"
-                            height="55">
+                        <img src="{{ asset('frontend/assets/images/logo-light.png') }}" alt="richind" width="213" height="55">
                     </a>
-                    <p class="main-footer__about__text">Richind is a E -learning plateform . this plateform helps people
-                        to make own personal brand on social media and create passive income.</p>
+                    <p class="main-footer__about__text">Richind is a E -learning plateform . this plateform helps people to make own personal brand on social media and create passive income.</p>
                     <div class="main-footer__social">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -56,10 +53,8 @@
                     <h3 class="main-footer__title">Contact Us</h3>
                     <ul class="main-footer__info-list">
                         <li><span class="icon-Location"></span>{{ $address }}</li>
-                        <li><span class="icon-Telephone"></span><a
-                                href="tel:+91-{{ $whatsapp }}">+91-{{ $whatsapp }}</a></li>
-                        <li><span class="icon-Email"></span><a
-                                href="mailto:{{ $email }}">{{ $email }}</a></li>
+                        <li><span class="icon-Telephone"></span><a href="tel:+91-{{ $whatsapp }}">+91-{{ $whatsapp }}</a></li>
+                        <li><span class="icon-Email"></span><a href="mailto:{{ $email }}">{{ $email }}</a></li>
                     </ul>
                 </div>
             </div>
@@ -68,9 +63,7 @@
 </footer>
 <section class="copyright text-center">
     <div class="container wow fadeInUp" data-wow-delay="400ms">
-        <p class="copyright__text">©<span class="dynamic-year"></span>Richind. All Rights Reserved. Design & Developed
-            By <a href="https://techuptechnologies.com/affiliate-marketing-website-development-company/"
-                target="_blank">Techup Technologies.</a></p>
+        <p class="copyright__text">©<span class="dynamic-year"></span>Richind. All Rights Reserved. Design & Developed By <a href="https://techuptechnologies.com/affiliate-marketing-website-development-company/" target="_blank">Techup Technologies.</a></p>
     </div>
 </section>
 
@@ -79,9 +72,7 @@
     <div class="mobile-nav__content">
         <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
         <div class="logo-box">
-            <a href="index.html" aria-label="logo image"><img
-                    src="{{ asset('frontend/assets/images/logo-light.png') }}" width="183" height="48"
-                    alt="richind" /></a>
+            <a href="index.html" aria-label="logo image"><img src="{{ asset('frontend/assets/images/logo-light.png') }}" width="183" height="48" alt="richind" /></a>
         </div>
         <div class="mobile-nav__container"></div>
         <ul class="mobile-nav__contact list-unstyled">
@@ -115,7 +106,7 @@
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <form action="{{ route('login') }}" method="POST" class="login-page__form">
+            <form method="POST" class="login-page__form" id="login_form">
                 @csrf
                 <div class="modal-header">
                     <h5 class="modal-title" id="loginModalLabel">Login</h5>
@@ -124,26 +115,17 @@
                 <div class="login-page__area">
                     <div class="row">
                         <div class="col-lg-12">
-                            @if ($errors->has('error'))
-                                <div class="text-danger">{{ $errors->first('error') }}</div>
-                            @endif
+                            <div class="text-danger d-none" id="error_div">Credintial does not Matched!</div>
                             <div>
                                 <div class="login-page__form-input-box">
-                                    <input type="email" name="email" class="form-control"
-                                        placeholder="Email Id" />
-                                    @if ($errors->has('email'))
-                                        <div class="text-danger lbl_msg">{{ $errors->first('email') }}</div>
-                                    @endif
+                                    <input type="email" name="email" class="form-control" placeholder="Email Id" />
                                 </div>
                                 <div class="login-page__form-input-box">
                                     <div class="input-group" id="show_hide_password">
-                                        <input type="password" class="form-control" name="password" id="password"
-                                            value="" placeholder="Enter Password..."
-                                            autocomplete="new-password">
+                                        <input type="password" class="form-control" name="password" id="password" value="" placeholder="Enter Password..." autocomplete="new-password">
                                         <div class="input-group-append">
                                             <div class="input-group-text">
-                                                <a href=""><i class="fa fa-eye-slash"
-                                                        aria-hidden="true"></i></a>
+                                                <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -151,29 +133,19 @@
                                         <div class="text-danger lbl_msg">{{ $errors->first('password') }}</div>
                                     @endif
                                 </div>
-                                {{-- <div class="form-group">
-                                        <label class="form-control-label">Password</label>
-                                        <input type="password" class="form-control" name="password" id="password"
-                                        value="" placeholder="Enter your Password" autocomplete="new-password">
-                                        @if ($errors->has('password'))
-                                        <div class="text-danger lbl_msg">{{ $errors->first('password') }}</div>
-                                         @endif
-                                    </div> --}}
                             </div>
                             <div class="login-page__checked-box">
                                 <input type="checkbox" name="save-data" id="save-data">
                                 <label for="save-data"><span></span>Remember Me?</label>
                                 <div class="login-page__forgot-password">
-                                    <a href="#" class="btn-second-modal within-first-modal" data-bs-toggle="modal" data-bs-target="#forgotModal" data-bs-dismiss-modal="modal" >Forgot
-                                        Passowrd?</a>
+                                    <a href="#" class="btn-second-modal within-first-modal" data-bs-toggle="modal" data-bs-target="#forgotModal" data-bs-dismiss-modal="modal">Forgot Passowrd?</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="richind-btn richind-btn-second w-100"><span
-                            class="richind-btn__curve"></span>Login <i class="icon-arrow"></i></button>
+                    <button type="button" class="richind-btn richind-btn-second w-100" onclick="submitLoginForm()"><span class="richind-btn__curve"></span>Login <i class="icon-arrow"></i></button>
                 </div>
             </form>
         </div>
@@ -193,35 +165,21 @@
                 <div class="login-page__area">
                     <div class="row">
                         <div class="col-lg-12 wow fadeInUp animated" data-wow-delay="300ms">
-                            @if ($errors->has('error'))
-                                <div class="text-danger">{{ $errors->first('error') }}</div>
-                            @endif
                             <div>
                                 <div class="login-page__form-input-box">
-                                    <input type="email" name="email" class="form-control"
-                                        placeholder="Email Id" />
-                                    @if ($errors->has('email'))
-                                        <div class="text-danger lbl_msg">{{ $errors->first('email') }}</div>
-                                    @endif
+                                    <input type="email" name="email" class="form-control" placeholder="Email Id" />
                                 </div>
-                                @if (Session::has('success'))
-                                    <div class="alert alert-success" role="alert">{{ Session::get('success') }}
-                                    </div>
-                                @endif
                             </div>
                             <div class="fpsw-sec">
                                 <div class="login-page__forgot-password m-0">
-                                    <span class="text-right"><a data-bs-toggle="modal" data-bs-target="#loginModal"
-                                            class="forgot-link btn-second-modal-close">Login To
-                                            RichIND</a></span>
+                                    <span class="text-right"><a data-bs-toggle="modal" data-bs-target="#loginModal" class="forgot-link btn-second-modal-close">Login To RichIND</a></span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="richind-btn richind-btn-second w-100"><span
-                            class="richind-btn__curve"></span>Submit <i class="icon-arrow"></i></button>
+                    <button type="submit" class="richind-btn richind-btn-second w-100"><span class="richind-btn__curve"></span>Submit <i class="icon-arrow"></i></button>
                 </div>
             </form>
         </div>
@@ -229,32 +187,32 @@
 </div>
 {{-- End Forget Password Model --}}
 <script>
-var within_first_modal = false;
-$('.btn-second-modal').on('click', function() {
-  if ($(this).hasClass('within-first-modal')) {
-    within_first_modal = true;
-    $('#loginModal').modal('hide');
-  }
-  $('#forgotModal').modal('show');
-});
+    var within_first_modal = false;
+    $('.btn-second-modal').on('click', function() {
+        if ($(this).hasClass('within-first-modal')) {
+            within_first_modal = true;
+            $('#loginModal').modal('hide');
+        }
+        $('#forgotModal').modal('show');
+    });
 
-$('.btn-second-modal-close').on('click', function() {
-  $('#forgotModal').modal('hide');
-  if (within_first_modal) {
-    $('#loginModal').modal('show');
-    within_first_modal = false;
-  }
-});
+    $('.btn-second-modal-close').on('click', function() {
+        $('#forgotModal').modal('hide');
+        if (within_first_modal) {
+            $('#loginModal').modal('show');
+            within_first_modal = false;
+        }
+    });
 
-$('.btn-toggle-fade').on('click', function() {
-  if ($('.modal').hasClass('fade')) {
-    $('.modal').removeClass('fade');
-    $(this).removeClass('btn-success');
-  } else {
-    $('.modal').addClass('fade');
-    $(this).addClass('btn-success');
-  }
-});
+    $('.btn-toggle-fade').on('click', function() {
+        if ($('.modal').hasClass('fade')) {
+            $('.modal').removeClass('fade');
+            $(this).removeClass('btn-success');
+        } else {
+            $('.modal').addClass('fade');
+            $(this).addClass('btn-success');
+        }
+    });
 
     $(document).ready(function() {
         $("#show_hide_password a").on('click', function(event) {
@@ -270,4 +228,23 @@ $('.btn-toggle-fade').on('click', function() {
             }
         });
     });
+</script>
+
+<script>
+
+    function submitLoginForm(){
+        $.ajax({
+            type: 'POST',
+            url: "{{ route('login') }}",
+            data: $('#login_form').serialize(),
+            success: function(data) {
+                $('#error_div').addClass('d-none');
+                window.location.replace(data);
+            },
+            error: function(request, status, error) {
+                $('#error_div').removeClass('d-none');
+            }
+        });
+    }
+
 </script>

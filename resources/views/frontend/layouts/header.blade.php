@@ -1,5 +1,5 @@
 @php
-    $plans = App\Models\Admin\Plan::where('delete_status','0')->where('status','1')->oldest('priority')->get();
+    $plans = App\Models\Admin\Plan::where('delete_status', '0')->where('status', '1')->oldest('priority')->get();
 @endphp
 <header class="main-header-two">
     <nav class="main-menu">
@@ -19,7 +19,7 @@
                         <ul>
                             @foreach ($plans as $plan)
                                 <li>
-                                    <a href="{{route('plan.detail',$plan->slug)}}" title="{{ env('APP_NAME') }}-{{ $plan->title }}">{{ $plan->title }}</a>
+                                    <a href="{{ route('plan.detail', $plan->slug) }}" title="{{ env('APP_NAME') }}-{{ $plan->title }}">{{ $plan->title }}</a>
                                 </li>
                             @endforeach
                         </ul>
@@ -37,13 +37,13 @@
                         <i class="icon-account-1"></i>
                     </a>
                 @else
-                    <a href="{{ route('signin') }}" class="main-menu__login">
+                    {{-- <a href="{{ route('signin') }}" class="main-menu__login">
+                        <i class="icon-account-1"></i>
+                    </a> --}}
+                    <a data-bs-toggle="modal" data-bs-target="#loginModal" class="main-menu__login">
                         <i class="icon-account-1"></i>
                     </a>
                 @endauth
-                <a data-bs-toggle="modal" data-bs-target="#loginModal" class="main-menu__login">
-                    <i class="icon-account-1"></i>
-                </a>
                 <a href="{{ route('contact') }}" class="richind-btn"><span class="richind-btn__curve"></span>Get In Touch</a>
             </div>
         </div>

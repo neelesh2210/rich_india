@@ -54,7 +54,7 @@ class LoginController extends Controller
                 if($user->status == '1'){
                     if (Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password]))
                     {
-                        return redirect()->route('user.dashboard')->with('success','Welcome To The RichIND!');
+                        return route('user.dashboard');
                     }
                 }elseif($user->status == '0'){
                     return back()->withErrors(['error' => ['Your Id is Blocked, Please Contact Admin!']]);;
