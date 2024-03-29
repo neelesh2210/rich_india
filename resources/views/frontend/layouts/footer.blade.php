@@ -171,7 +171,7 @@
                                 </div>
                             </div>
                             <div class="fpsw-sec">
-                                <div class="login-page__forgot-password m-0">
+                                <div class="login-page__forgot-password ms-0 mb-2">
                                     <span class="text-right"><a data-bs-toggle="modal" data-bs-target="#loginModal" class="forgot-link btn-second-modal-close">Login To RichIND</a></span>
                                 </div>
                             </div>

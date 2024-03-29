@@ -14452,13 +14452,13 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 @media (max-width: 991px) {
   .login-page__area {
-    padding: 0 50px 60px;
+    padding: 30px 23px 0px;
   }
 }
 
 @media (max-width: 767px) {
   .login-page__area {
-    padding: 0 30px 50px;
+    padding: 30px 23px 0px;
   }
 }
 
@@ -14572,8 +14572,8 @@ body.megamenu-popup-active .mobile-nav__content {
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  margin-top: 27px;
-  margin-bottom: 25px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .login-page__checked-box label {
@@ -14583,7 +14583,7 @@ body.megamenu-popup-active .mobile-nav__content {
   margin-right: 0px;
   margin-bottom: 0;
   color: var(--richind-text);
-  font-size: 16px;
+  font-size: 14px;
   line-height: 26px;
   font-weight: 600;
   cursor: pointer;
@@ -14636,7 +14636,7 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 
 .login-page__forgot-password a {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--richind-text);
   position: relative;
