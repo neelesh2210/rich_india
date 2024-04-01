@@ -140,12 +140,12 @@
                         <p>Payout Transaction</p>
                     </a>
                 </li> --}}
-                {{-- <li class="nav-item">
+                <li class="nav-item">
                     <a href="{{route('admin.leaderboard.index')}}" class="nav-link @if(Route::currentRouteName() == 'admin.leaderboard.index') active @endif">
                         <i class="nav-icon fas fa-chart-bar"></i>
                         <p>Leaderboard</p>
                     </a>
-                </li> --}}
+                </li>
                 @can('referral_income-list')
                     <li class="nav-item">
                         <a href="{{route('admin.commission.index')}}" class="nav-link @if(Route::currentRouteName() == 'admin.commission.index') active @endif">
