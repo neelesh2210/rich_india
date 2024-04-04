@@ -44,7 +44,7 @@
                                     </div>
                                     <div class="fpsw-sec">
                                         <div class="login-page__forgot-password m-0">
-                                            <span class="text-right"><a href="{{ route('signin') }}" class="forgot-link">Login To
+                                            <span class="text-right"><a href="{{ route('index') }}" class="forgot-link">Login To
                                                     RichIND</a></span>
                                         </div>
                                         <div class="d-grid mt-2">

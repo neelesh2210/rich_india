@@ -10,6 +10,9 @@
                             <li class="breadcrumb-item active">@isset($page_title) {{$page_title}} @endisset</li>
                         </ol>
                     </div>
+                    <div class="col-sm-6 d-flex justify-content-end">
+                        <a href="{{route('admin.get.leaderboard.user')}}" class="btn btn-primary"><i class="fa fa-eye"></i> Hide User From Leaderboard</a>
+                    </div>
                 </div>
             </div>
         </section>

@@ -22,7 +22,7 @@
                             <img src="{{ asset('frontend/images/avatar/' . Auth::guard('web')->user()->avatar) }}" alt="{{env('APP_NAME')}}-<{{Auth::guard('web')->user()->name}}" style="width:30px;border-radius:50%" class="custom-account-icon">
                         </a>
                     @else
-                        <a title="{{env('APP_NAME')}}-Login" href="{{ route('signin') }}" class="account-icon-fix d-block d-sm-none">
+                        <a title="{{env('APP_NAME')}}-Login" href="{{ route('index') }}" class="account-icon-fix d-block d-sm-none">
                             <i class="fa-regular fa-user fs-25 custom-account-icon"></i>
                         </a>
                     @endif
@@ -71,7 +71,7 @@
                                 @csrf
                             </form>
                         @else
-                            <a title="{{env('APP_NAME')}}-Login" href="{{ route('signin') }}" class="btn btn-primary w__90-p">Login / Signup</a>
+                            <a title="{{env('APP_NAME')}}-Login" href="{{ route('index') }}" class="btn btn-primary w__90-p">Login / Signup</a>
                         @endif
                     </div>
                 </div>
@@ -84,7 +84,7 @@
                                 @csrf
                             </form>
                         @else
-                            <a class="nav-link header-login" title="{{env('APP_NAME')}}-Login" href="{{ route('signin') }}" style="margin-left:15px">Login / Signup</a>
+                            <a class="nav-link header-login" title="{{env('APP_NAME')}}-Login" href="{{ route('index') }}" style="margin-left:15px">Login / Signup</a>
                         @endif
                     </li>
                 </ul>

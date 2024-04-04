@@ -44,7 +44,7 @@
                         <li><a href="{{ route('blog') }}">Blog</a></li>
                         <li><a href="{{ route('course') }}">Our Courses</a></li>
                         <li><a href="{{ route('contact') }}">Contact Us</a></li>
-                        <li><a href="{{ route('signin') }}">Login / Signup</a></li>
+                        <li><a href="{{ route('index') }}">Login / Signup</a></li>
                     </ul>
                 </div>
             </div>

@@ -19,7 +19,7 @@ class CheckUserStatus
     {
         if(Auth::guard('web')->user()->status == '0'){
             Auth::guard('web')->logout();
-            return redirect()->route('signin')->with('success','You Have Logged out Successfully!');
+            return redirect()->route('index')->with('success','You Have Logged out Successfully!');
         }elseif(Auth::guard('web')->user()->status == '1'){
             return $next($request);
         }

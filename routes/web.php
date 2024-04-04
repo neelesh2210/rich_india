@@ -97,6 +97,7 @@ Route::post('check-upgrage-coupon',[PlanController::class,'checkUpgradeCoupon'])
 
 //Login
 Route::get('signin',function(){
+    return redirect()->route('index');
     if(Auth::guard('web')->user()){
         return redirect()->route('user.dashboard');
     }else{

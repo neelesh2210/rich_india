@@ -77,7 +77,7 @@
         </div>
         <div class="button-wrap" style="border:none;text-align: center; padding: 0 0 1rem;">
             <button class="explore" style="border:none; background: transparent;">
-                <a href="{{ route('signin') }}" style="text-decoration-line: none;font-size: 15px;padding: 15px 25px; background: #971680; border: 0; color: #fff; margin: auto; display: inline-block; transition: all .2s ease-in-out; cursor: pointer; font-weight: bold;letter-spacing: 1px;">
+                <a href="{{ route('index') }}" style="text-decoration-line: none;font-size: 15px;padding: 15px 25px; background: #971680; border: 0; color: #fff; margin: auto; display: inline-block; transition: all .2s ease-in-out; cursor: pointer; font-weight: bold;letter-spacing: 1px;">
                     Visit Account and Start Managing <img src="{{ asset('frontend/images/next.png') }}" style="margin: -4px"> </a>
             </button>
         </div>

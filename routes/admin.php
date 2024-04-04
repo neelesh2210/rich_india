@@ -103,6 +103,9 @@ Route::group(['middleware'=>'auth:admin','as'=>'admin.'],function () {
 
     //Leaderboard
     Route::get('leaderboard-index',[LeaderboardController::class,'index'])->name('leaderboard.index');
+    Route::get('get-leaderboard-user',[LeaderboardController::class,'getUser'])->name('get.leaderboard.user');
+    Route::get('set-leaderboard-user-session',[LeaderboardController::class,'setSession'])->name('set.leaderboard.user.session');
+    Route::get('hide-leaderboard-user',[LeaderboardController::class,'hideUser'])->name('hide.leaderboard.user');
 
     //Commission
     Route::get('commission-index',[CommissionController::class,'index'])->name('commission.index');

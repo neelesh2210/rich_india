@@ -368,7 +368,7 @@
                         <div class="counter-one__left__content">
                         Learning is not just an individual journey; it's a community experience. Connect with fellow learners, share insights, and collaborate on projects within the vibrant Richind community. Together, we're building a network of digital pioneers.
                         </div>
-                        <a href="{{route('signin')}}" class="richind-btn richind-btn-second"><span class="richind-btn__curve"></span>Join Now<i class="icon-arrow"></i></a>
+                        <a href="{{route('index')}}" class="richind-btn richind-btn-second"><span class="richind-btn__curve"></span>Join Now<i class="icon-arrow"></i></a>
                         <img src="{{ asset('frontend/assets/images/shapes/counter-dot.png') }}" alt="richind">
                     </div>
                 </div>
