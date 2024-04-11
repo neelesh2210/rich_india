@@ -62,7 +62,7 @@ class PaymentController extends Controller
             $plan_purchase_id   = $plan_purchases->pluck('id');
             // $total_sell =  $plan_purchases->sum('total_amount');
             // $total_commission =  Commission::where('user_id','!=',1)->whereIn('plan_purchase_id',$plan_purchase_id)->get()->sum('commission');
-            $plan_purchases = $plan_purchases->withSum('commission','commission')->orderBy('id','desc')->paginate('10');
+            $plan_purchases = $plan_purchases->withSum('commission','commission')->orderBy('id','desc')->simplePaginate('10');
             return view('admin.payment_transaction.index',compact('plan_purchases','search_date','search_key','search_plan','search_have_sponser'),['page_title'=>'Orders']);
         }
 

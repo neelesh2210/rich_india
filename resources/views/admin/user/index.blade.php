@@ -206,14 +206,7 @@
                                 </table>
                                 <hr>
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        <p>
-                                            <b>Showing {{ ($users->currentpage() - 1) * $users->perpage() + 1 }} to
-                                                {{ ($users->currentpage() - 1) * $users->perpage() + $users->count() }} of
-                                                {{ $users->total() }} Users
-                                            </b>
-                                        </p>
-                                    </div>
+
                                     <div class="col-md-8 d-flex justify-content-end">
                                         {!! $users->appends(['search_date' => $search_date, 'search_key' => $search_key,'search_have_sponser'=>$search_have_sponser,'search_register_from'=>$search_register_from,'search_commission'=>$search_commission])->links() !!}
                                     </div>

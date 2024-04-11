@@ -68,7 +68,7 @@ class UserController extends Controller
                       ->orWhere('referrer_code','like','%'.$search_key.'%');
             });
         }
-        $users = $users->orderBy('id','desc')->paginate(10);
+        $users = $users->orderBy('id','desc')->simplePaginate(10);
 
         return view('admin.user.index',compact('users','search_key','search_date','search_have_sponser','search_register_from','search_commission'),['page_title'=>'Users']);
     }

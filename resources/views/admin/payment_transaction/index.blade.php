@@ -165,9 +165,7 @@
                                 </table>
                                 <hr>
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        <p><b>Showing {{($plan_purchases->currentpage()-1)*$plan_purchases->perpage()+1}} to {{(($plan_purchases->currentpage()-1)*$plan_purchases->perpage())+$plan_purchases->count()}} of {{$plan_purchases->total()}} Orders</b></p>
-                                    </div>
+
                                     <div class="col-md-8 d-flex justify-content-end">
                                         {!! $plan_purchases->appends(['search_date'=>$search_date,'search_key'=>$search_key,'search_plan'=>$search_plan,'search_have_sponser'=>$search_have_sponser])->links() !!}
                                     </div>
