@@ -91,7 +91,7 @@
                                 <hr>
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <p><b>Showing {{($payouts->currentpage()-1)*$payouts->perpage()+1}} to {{(($payouts->currentpage()-1)*$payouts->perpage())+$payouts->count()}} of {{$payouts->total()}} Payouts</b></p>
+
                                     </div>
                                     <div class="col-md-8 d-flex justify-content-end">
                                         {!! $payouts->appends(['search_key'=>$search_key,'search_date'=>$search_date])->links() !!}

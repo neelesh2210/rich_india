@@ -161,7 +161,7 @@ class PayoutController extends Controller
             $payouts = $payouts->whereBetween('created_at', [$startDate, $endDate]);
         }
 
-        $payouts = $payouts->paginate(10);
+        $payouts = $payouts->simplePaginate(10);
 
         return view('admin.payout_transaction.index',compact('payouts','search_key','search_date'),['page_title'=>'Success Payout Transaction']);
     }
