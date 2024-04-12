@@ -54,7 +54,7 @@ class WithdrawalRequestController extends Controller
             return Excel::download(new WithdrawalRequestsExport($withdrawal_requests), 'withdrawal_request.xlsx');
         }else{
             $total_withdrawal_request = $withdrawal_requests->sum('amount');
-            $withdrawal_requests = $withdrawal_requests->paginate(10);
+            $withdrawal_requests = $withdrawal_requests->simplePaginate(10);
 
             return view('admin.withdrawal_request.index',compact('withdrawal_requests','search_status','search_date','search_key','total_withdrawal_request'),['page_title'=>'Withdrawal Request List']);
         }

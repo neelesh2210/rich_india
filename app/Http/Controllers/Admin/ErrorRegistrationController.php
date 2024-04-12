@@ -37,7 +37,7 @@ class ErrorRegistrationController extends Controller
             });
         }
 
-        $error_registrations = $error_registrations->paginate(10);
+        $error_registrations = $error_registrations->simplePaginate(10);
 
         return view('admin.error_registration.index',compact('error_registrations','search_key','search_date'),['page_title'=>'Error Registration']);
     }

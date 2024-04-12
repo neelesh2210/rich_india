@@ -132,12 +132,7 @@
                                 <hr>
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <p>
-                                            <b>Showing {{ ($error_registrations->currentpage() - 1) * $error_registrations->perpage() + 1 }} to
-                                                {{ ($error_registrations->currentpage() - 1) * $error_registrations->perpage() + $error_registrations->count() }} of
-                                                {{ $error_registrations->total() }} Users
-                                            </b>
-                                        </p>
+
                                     </div>
                                     <div class="col-md-8 d-flex justify-content-end">
                                         {!! $error_registrations->appends(['search_date' => $search_date, 'search_key' => $search_key])->links() !!}

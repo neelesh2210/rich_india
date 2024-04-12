@@ -120,7 +120,7 @@
                                 <hr>
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <p><b>Showing {{($withdrawal_requests->currentpage()-1)*$withdrawal_requests->perpage()+1}} to {{(($withdrawal_requests->currentpage()-1)*$withdrawal_requests->perpage())+$withdrawal_requests->count()}} of {{$withdrawal_requests->total()}} Withdrawal Requests</b></p>
+
                                     </div>
                                     <div class="col-md-8 d-flex justify-content-end">
                                         {!! $withdrawal_requests->appends(['search_key'=>$search_key,'search_date'=>$search_date,'search_status'=>$search_status])->links() !!}
