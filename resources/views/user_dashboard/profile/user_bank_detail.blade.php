@@ -51,19 +51,20 @@
                                 @if(Auth::guard('web')->user()->kyc_status != 'verified')
                                     {{-- <a class="btn btn-primary @if(count(old()) != 0) d-none @endif verify-button" onclick="verifyEmailBankdetail()">Get OTP on email to make changes</a> --}}
                                     @if(optional($user_details->bankDetail)->holder_name || optional($user_details->bankDetail)->ifsc_code || optional($user_details->bankDetail)->account_number || optional($user_details->bankDetail)->bank_name || optional($user_details->bankDetail)->upi_id)
-                                    @else
                                         @if(!Session::get('account_otp'))
                                             <button type="button" class="btn btn-primary" onclick="verifyAccountDetail()" id="send_otp_buttons">Send OTP</button>
                                         @else
                                             <button type="submit" class="btn btn-primary">Save Changes</button>
                                         @endif
-                                        <button type="submit" class="btn btn-primary" id="save_buttons" style="display:none">Save Changes</button>
+                                    @else
+
+                                        <button type="submit" class="btn btn-primary" id="save_buttons" >Save Changes</button>
                                     @endif
                                 @endif
                             </form>
                         </div>
                     </div>
-                    <div class="card">
+                    {{-- <div class="card">
                         <div class="card-header">
                             <h4 class="page-title">Document Detail</h4>
                         </div>
@@ -85,7 +86,7 @@
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
                                     </div>
-                                    {{-- <div class="col-md-6 mb-3">
+                                   <div class="col-md-6 mb-3">
                                         <label for="pan_name" class="form-label">Pan Name</label>
                                         <input type="text" id="pan_name" name="pan_name" value="{{old('pan_name',optional($user_details->bankDetail)->pan_name)}}" class="form-control" placeholder="Pan Name...">
                                         @error('pan_name')
@@ -98,7 +99,7 @@
                                         @error('pan_number')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
-                                    </div> --}}
+                                    </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="aadhar_front_image" class="form-label">Aadhra Front Image</label>
                                         <input type="file" name="aadhar_front_image" id="aadhar_front_image" class="form-control" accept="image/*">
@@ -119,7 +120,7 @@
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
                                     </div>
-                                    {{-- <div class="col-md-6 mb-3">
+                                    <div class="col-md-6 mb-3">
                                         <label for="pan_image" class="form-label">Pan Image</label>
                                         <input type="file" name="pan_image" id="pan_image" class="form-control" accept="image/*">
                                         <div class="p-2">
@@ -128,7 +129,7 @@
                                         @error('pan_image')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
-                                    </div> --}}
+                                    </div>
                                 </div>
                                 @if(Auth::guard('web')->user()->kyc_status != 'verified')
                                     @if(!Session::get('kyc_otp'))
@@ -140,7 +141,7 @@
                                 @endif
                             </form>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
