@@ -56,6 +56,7 @@
                                         @else
                                             <button type="submit" class="btn btn-primary">Save Changes</button>
                                         @endif
+                                        <button type="submit" class="btn btn-primary" id="save_buttons" style="display:none">Save Changes</button>
                                     @else
 
                                         <button type="submit" class="btn btn-primary" id="save_buttons" >Save Changes</button>
