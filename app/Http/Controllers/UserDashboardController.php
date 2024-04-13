@@ -49,15 +49,15 @@ class UserDashboardController extends Controller
         $last_month_leaderboards = Commission::select('user_id')->where('delete_status','0')->whereDate('created_at', '>=', Carbon::now()->subDays(30))->selectRaw('round(sum(commission),2) as total_commission')->with('user.userDetail')->whereHas('user', function($q){
             $q->where('status','1');
         })->groupBy('user_id')->orderBy('total_commission','desc')->take(10)->get();
-        $all_time_leaderboards = Commission::select('user_id')->where('delete_status','0')->selectRaw('round(sum(commission),2) as total_commission')->with('user.userDetail')->whereHas('user', function($q){
-            $q->where('status','1');
-        })->groupBy('user_id')->get();
+        // $all_time_leaderboards = Commission::select('user_id')->where('delete_status','0')->selectRaw('round(sum(commission),2) as total_commission')->with('user.userDetail')->whereHas('user', function($q){
+        //     $q->where('status','1');
+        // })->groupBy('user_id')->get();
 
-        foreach($all_time_leaderboards as $key => $all_time_leaderboard){
-            $all_time_leaderboard->total_commission = round($all_time_leaderboard->total_commission + optional($all_time_leaderboard->user->userDetail)->old_paid_payout + optional($all_time_leaderboard->user->userDetail)->old_not_paid_payout,0);
-        }
-        $sorted_products = $this->sort_array_by_key($all_time_leaderboards->toArray(), 'total_commission');
-        $all_time_leaderboards = array_slice($sorted_products, 0, 10);
+        // foreach($all_time_leaderboards as $key => $all_time_leaderboard){
+        //     $all_time_leaderboard->total_commission = round($all_time_leaderboard->total_commission + optional($all_time_leaderboard->user->userDetail)->old_paid_payout + optional($all_time_leaderboard->user->userDetail)->old_not_paid_payout,0);
+        // }
+        // $sorted_products = $this->sort_array_by_key($all_time_leaderboards->toArray(), 'total_commission');
+        // $all_time_leaderboards = array_slice($sorted_products, 0, 10);
 
         return view('user_dashboard.dashboard',compact('today_earning',
                                                         'last_week_earning',
@@ -72,7 +72,7 @@ class UserDashboardController extends Controller
                                                         'old_payout',
                                                         'last_week_leaderboards',
                                                         'last_month_leaderboards',
-                                                        'all_time_leaderboards',
+                                                        // 'all_time_leaderboards',
                                                         'today_leaderboards'
                                                     ));
     }
