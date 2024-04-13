@@ -17,7 +17,7 @@
                             {{-- <hr> --}}
                             {{-- <form action="#" method="POST"> --}}
                                 @if(optional($user_details->bankDetail)->holder_name || optional($user_details->bankDetail)->ifsc_code || optional($user_details->bankDetail)->account_number || optional($user_details->bankDetail)->bank_name || optional($user_details->bankDetail)->upi_id)
-                                    <form action="#" method="POST">
+                                    <form action="{{route('user.bank.detail.store')}}" method="POST">
                                 @else
                                     <form action="{{route('user.bank.detail.store')}}" method="POST">
                                 @endif
