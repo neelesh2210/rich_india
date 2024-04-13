@@ -103,6 +103,7 @@
 @include('frontend.layouts.js')
 
 <!-- Start Login Model -->
+{{--
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -151,6 +152,7 @@
         </div>
     </div>
 </div>
+--}}
 {{-- End Login Model --}}
 {{-- End Forget Password Model --}}
 <div class="modal fade" id="forgotModal" tabindex="-1" aria-labelledby="forgotModalLabel" aria-hidden="true">
