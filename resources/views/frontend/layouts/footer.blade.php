@@ -232,7 +232,7 @@
     });
 </script>
 
-<script>
+{{-- <script>
 
     function submitLoginForm(){
         $.ajax({
@@ -249,4 +249,4 @@
         });
     }
 
-</script>
+</script> --}}

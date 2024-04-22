@@ -23,7 +23,7 @@
                     <div class="col-lg-6 wow fadeInUp animated" data-wow-delay="300ms">
                         <div class="login-page__wrap">
                             <h3 class="login-page__wrap__title">Login</h3>
-                            <form action="{{ route('login') }}" method="POST" class="login-page__form">
+                            <form action="{{ route('login') }}" method="POST" class="login-page__form" id="login-form">
                                 @csrf
                                 @if ($errors->has('error'))
                                     <div class="text-danger">{{ $errors->first('error') }}</div>
@@ -65,7 +65,7 @@
                                         <a href="{{ route('forgot.password') }}">Forgot Passowrd?</a>
                                     </div>
                                 </div>
-                                <button type="submit" class="richind-btn richind-btn-second w-100"><span class="richind-btn__curve"></span>Login <i class="icon-arrow"></i></button>
+                                <button type="button" id="login_button_id" class="richind-btn richind-btn-second w-100" onclick="submitLoginForm()"><span class="richind-btn__curve"></span>Login <i class="icon-arrow"></i></button>
                             </form>
                         </div>
                     </div>
@@ -90,6 +90,11 @@
                     }
                 });
             });
+
+            function submitLoginForm(){
+                $('#login_button_id').attr('disabled',true);
+                $('#login-form').submit();
+            }
         </script>
     @endpush
 @endsection

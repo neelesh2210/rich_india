@@ -396,6 +396,7 @@
             });
 
             function submitForm() {
+                $('#submitButton').attr('disabled',true)
                 $.ajax({
                     type: 'POST',
                     url: "{{ route('vaildate.user.registeration') }}",
@@ -460,6 +461,7 @@
                         $('#submitButton').prop('disabled', true);
                     },
                     error: function(request, status, error) {
+                        $('#submitButton').attr('disabled',false)
                         $('#cosmofeed').prop('disabled', true);
                         $('#payment_div').hide();
                         $('#details_div').show();
