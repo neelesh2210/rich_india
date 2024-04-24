@@ -67,7 +67,9 @@
                                                         $current_plan = App\Models\Admin\Plan::where('id',$data->user->userDetail->current_plan_id)->first();
                                                         $upgrade_plan_detail = App\Models\Admin\Plan::where('id',$data->plan_id)->first();
                                                     @endphp
+                                                    @isset($current_plan->upgrade_amount[$upgrade_plan_detail->priority - $current_plan->priority - 1])
                                                     ₹ {{$current_plan->upgrade_amount[$upgrade_plan_detail->priority - $current_plan->priority - 1]}}
+                                                    @endisset
                                                 </td>
                                                 <td class="text-center">{{$data->created_at->format('d-M-Y H:i')}}</td>
                                                 <td class="text-center">
