@@ -14,6 +14,7 @@ class Topic extends Model
         'title',
         'thumbnail_image',
         'cover_image',
+        'language_id',
         'is_url',
         'video_url',
         'pdf',

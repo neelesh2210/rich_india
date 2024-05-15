@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\OldDataController;
 use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\WebinarController;
+use App\Http\Controllers\Admin\LanguageController;
 use App\Http\Controllers\Admin\TrainingController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\Auth\LoginController;
@@ -185,6 +186,9 @@ Route::group(['middleware'=>'auth:admin','as'=>'admin.'],function () {
 
     //Blog
     Route::resource('blog', BlogController::class);
+
+    //Language
+    Route::resource('language', LanguageController::class)->except('create','show');
 
     Route::post('logout/', [LoginController::class, 'logout'])->name('logout');
 });

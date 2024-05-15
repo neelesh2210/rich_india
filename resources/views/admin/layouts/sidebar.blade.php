@@ -307,6 +307,11 @@
                                     </a>
                                 </li>
                             @endcan
+                            <li class="nav-item">
+                                <a href="{{route('admin.language.index')}}" class="nav-link @if(Route::currentRouteName() == 'admin.language.index' || Route::currentRouteName() == 'admin.language.edit') active @endif">
+                                    <p>Language</p>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                 @endcanany

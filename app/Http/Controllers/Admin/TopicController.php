@@ -63,6 +63,7 @@ class TopicController extends Controller
         }
         $topic->pdf = imageUpload($request->file('pdf'),'backend/img/topic');
         $topic->description = $request->description;
+        $topic->language_id = $request->language_id;
         if($request->seo_title)
         {
             $topic->seo_title = $request->seo_title;
@@ -141,6 +142,7 @@ class TopicController extends Controller
                 $topic->pdf = imageUpload($request->file('pdf'),'backend/img/topic');
             }
             $topic->description = $request->description;
+            $topic->language_id = $request->language_id;
             if($request->seo_title)
             {
                 $topic->seo_title = $request->seo_title;

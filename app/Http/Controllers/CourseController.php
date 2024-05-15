@@ -24,11 +24,17 @@ class CourseController extends Controller
         return view('user_dashboard.courses.course',compact('enrolled_courses','active_courses'));
     }
 
-    public function detail($course_id)
+    public function selectLanguage($course_id){
+        $course_detail = CourseManager::withoutTrash()->where('id',decrypt($course_id))->first();
+
+        return view('user_dashboard.courses.select_langauge',compact('course_detail'));
+    }
+
+    public function detail($course_id,$language_id)
     {
         $course_detail = CourseManager::withoutTrash()->where('id',decrypt($course_id))->first();
-        $topics = TopicManager::withoutTrash()->where('course_id',decrypt($course_id))->simplepaginate(1);
-        $topic_list = TopicManager::withoutTrash()->where('course_id',decrypt($course_id))->get();
+        $topics = TopicManager::withoutTrash()->where('course_id',decrypt($course_id))->where('language_id',decrypt($language_id))->simplepaginate(1);
+        $topic_list = TopicManager::withoutTrash()->where('course_id',decrypt($course_id))->where('language_id',decrypt($language_id))->get();
 
         return view('user_dashboard.courses.course_details',compact('course_detail','topics','topic_list'));
     }

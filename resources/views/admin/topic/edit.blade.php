@@ -103,7 +103,7 @@
                                                     value="{{$topic->video_url}}" placeholder="Enter URL...">
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <label>PDF</label>
                                                 <div class="custom-file">
@@ -112,6 +112,17 @@
                                                     <label class="custom-file-label" for="customFile">Choose
                                                         file</label>
                                                 </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Langauge</label>
+                                                <select name="language_id" class="form-control select2" required>
+                                                    <option value="">Select Language</option>
+                                                    @foreach (App\Models\Language::where('is_delete','0')->get() as $language)
+                                                        <option value="{{$language->id}}" @if($topic->language_id == $language->id) selected @endif>{{$language->name}}</option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-md-12">

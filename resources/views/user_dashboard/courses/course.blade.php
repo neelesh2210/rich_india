@@ -46,8 +46,8 @@
                                                                         <div class="progress mb-2 progress-sm">
                                                                             <div class="progress-bar" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
                                                                         </div>
-                                                                        <h5 class="font-14 mt-0 mb-1"><a href="{{ route('user.course.detail',encrypt($enrolled_course->id)) }}">{{$enrolled_course->name}}</a> </h5>
-                                                                        <a href="{{ route('user.course.detail',encrypt($enrolled_course->id)) }}" class="btn learn waves-effect waves-light w-100">Continue Learning </a>
+                                                                        <h5 class="font-14 mt-0 mb-1"><a href="{{ route('user.select.language',encrypt($enrolled_course->id)) }}">{{$enrolled_course->name}}</a> </h5>
+                                                                        <a href="{{ route('user.select.language',encrypt($enrolled_course->id)) }}" class="btn learn waves-effect waves-light w-100">Continue Learning </a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -69,8 +69,8 @@
                                                                         <div class="progress mb-2 progress-sm">
                                                                             <div class="progress-bar" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
                                                                         </div>
-                                                                        <h5 class="font-14 mt-0 mb-1"><a href="{{ route('user.course.detail',encrypt($active_course->id)) }}" >{{$active_course->name}}</a> </h5>
-                                                                        <a href="{{ route('user.course.detail',encrypt($enrolled_course->id)) }}" class="btn learn waves-effect waves-light w-100">Continue Learning </a>
+                                                                        <h5 class="font-14 mt-0 mb-1"><a href="{{ route('user.select.language',encrypt($active_course->id)) }}" >{{$active_course->name}}</a> </h5>
+                                                                        <a href="{{ route('user.select.language',encrypt($enrolled_course->id)) }}" class="btn learn waves-effect waves-light w-100">Continue Learning </a>
                                                                     </div>
                                                                 </div>
                                                             </div>

@@ -154,7 +154,8 @@ Route::group(['middleware'=>['auth:web',CheckUserStatus::class],'prefix'=>'user'
     Route::post('registration-request-store/{id}',[RegistrationRequestController::class,'store'])->name('registration.request.store');
 
     Route::get('course',[CourseController::class,'index'])->name('course');
-    Route::get('course-detail/{course_id}',[CourseController::class,'detail'])->name('course.detail');
+    Route::get('select-language/{course_id}',[CourseController::class,'selectLanguage'])->name('select.language');
+    Route::get('course-detail/{course_id}/{language_id}',[CourseController::class,'detail'])->name('course.detail');
 
     Route::get('plan',[PlanController::class,'index'])->name('plan');
     Route::post('upgrade-plan-payment',[PlanController::class,'upgradePlanPayment'])->name('upgrade.plan.payment');
