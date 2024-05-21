@@ -99,6 +99,11 @@
     </svg>
 </a>
 
+<div class="telegram">
+    <a href="#" target="_blank">
+        <img src="{{ asset('frontend/assets/images/telegram.png') }}" alt="whatsapp">
+    </a>
+</div>
 
 @include('frontend.layouts.js')
 
