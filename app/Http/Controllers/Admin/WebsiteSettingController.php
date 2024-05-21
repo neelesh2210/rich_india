@@ -88,6 +88,11 @@ class WebsiteSettingController extends Controller
             ],[
                 'content'=>json_encode($request->support_phone)
             ]);
+            WebsiteSetting::updateOrCreate([
+                'type'=>'telegram',
+            ],[
+                'content'=>$request->telegram
+            ]);
         }
 
         if($request->type == 'social_handle'){

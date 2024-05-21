@@ -33,6 +33,12 @@
                                                     <input type="number" minlength="10" maxlength="10" name="whatsapp" value="{{websiteData('whatsapp')}}" class="form-control" placeholder="Enter Whatsapp...">
                                                 </div>
                                             </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Telegram</label>
+                                                    <input type="url" name="telegram" value="{{websiteData('telegram')}}" class="form-control" placeholder="Enter Telegram...">
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="row" id="support_div">
                                             @if(websiteData('support_phone'))

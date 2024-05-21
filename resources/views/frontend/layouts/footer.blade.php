@@ -100,8 +100,8 @@
 </a>
 
 <div class="telegram">
-    <a href="#" target="_blank">
-        <img src="{{ asset('frontend/assets/images/telegram.png') }}" alt="whatsapp">
+    <a href="{{websiteData('telegram')}}" target="_blank">
+        <img src="{{ asset('frontend/assets/images/telegram.png') }}">
     </a>
 </div>
 
