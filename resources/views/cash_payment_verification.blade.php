@@ -34,8 +34,11 @@
                                 <h5 class="text-center mb-2">
                                     After Payment share screenshot and registered email id on given number.
                                 </h5>
-                                <h5 class="text-center mb-2"><a href="https://wa.me/+917599067737" value="Send" class="btn btn-submit p-3" style="font-size:16px;font-weight:600;background:#25D366;border: 0;color: #fff;">
-                                    <i class="fab fa-whatsapp"></i> Whatsapp: 7599067737</a>
+                                <h5 class="text-center mb-2 pay">
+                                    <a href="{{websiteData('telegram')}}" target="_blank">
+                                        <img src="{{ asset('frontend/assets/images/telegram.png') }}">
+                                        <p><span>Need Support!</span></p>
+                                    </a>
                                 </h5>
                                 <div class="avatar-preview">
                                     <img src="{{ asset('frontend/assets/images/qr-code.jpg') }}" alt="" class="img-fluid">
