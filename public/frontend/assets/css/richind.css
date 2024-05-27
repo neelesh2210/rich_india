@@ -17832,3 +17832,55 @@ padding: 10px !important;
     box-shadow: 2px 2px 3px #999;
     z-index: 100;
 }
+
+.floating_chatbot_icon p.animated {
+    opacity: inherit;
+    z-index: 24;
+}
+.floating_chatbot_icon p {
+    position: fixed;
+    bottom: 20px;
+    font-size: 13px;
+    background-color: rgb(3 155 229);
+    border-radius: 8px;
+    padding: 8px 10px;
+    width: max-content;
+    color: #fff;
+    left: 78px;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
+    padding-right: 12px;
+}
+
+.floating_chatbot_icon p.tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 9px;
+    transform: rotate(90deg);
+    left: 0px;
+    margin-left: -24px;
+    border-width: 12px;
+    border-style: solid;
+    border-color: #039be5 transparent transparent transparent;
+}
+
+.pay img{
+    height: 50px;
+}
+
+.pay a{
+    display: flex;
+    justify-content: center;
+    background: #039be5;
+    width: fit-content;
+    padding: 0 24px 0 8px;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.pay p{
+    margin: 0;
+    color: #fff;
+    padding: 16px 0px 0;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}

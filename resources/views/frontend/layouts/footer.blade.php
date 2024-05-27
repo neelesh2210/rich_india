@@ -99,9 +99,12 @@
     </svg>
 </a>
 
-<div class="telegram">
+<div class="telegram floating_chatbot_icon">
     <a href="{{websiteData('telegram')}}" target="_blank">
         <img src="{{ asset('frontend/assets/images/telegram.png') }}">
+        <p class="tooltiptext animated bounceInRight">
+            <span>Need Support!</span>
+        </p>
     </a>
 </div>
 
