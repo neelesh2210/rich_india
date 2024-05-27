@@ -93,6 +93,14 @@ class WebsiteSettingController extends Controller
             ],[
                 'content'=>$request->telegram
             ]);
+
+            if($request->has('qr_code')){
+                WebsiteSetting::updateOrCreate([
+                    'type'=>'qr_code',
+                ],[
+                    'content'=>imageUpload($request->file('qr_code'),'frontend/assets/images')
+                ]);
+            }
         }
 
         if($request->type == 'social_handle'){

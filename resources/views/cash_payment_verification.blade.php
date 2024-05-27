@@ -38,7 +38,7 @@
                                     <i class="fab fa-whatsapp"></i> Whatsapp: 7599067737</a>
                                 </h5>
                                 <div class="avatar-preview">
-                                    <img src="{{ asset('frontend/assets/images/qr-code.jpg') }}" alt="" class="img-fluid">
+                                    <img src="{{ asset('frontend/assets/images/'.websiteData('qr_code')) }}" alt="" class="img-fluid">
                                     <p class="text-center" style="color: #372d7a;font-size:12px;font-weight:600;margin-top:5px;">Scan QR Code</p>
                                 </div>
                                 <h5 class="text-center mb-2">

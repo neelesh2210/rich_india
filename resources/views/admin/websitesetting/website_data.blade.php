@@ -39,6 +39,17 @@
                                                     <input type="url" name="telegram" value="{{websiteData('telegram')}}" class="form-control" placeholder="Enter Telegram...">
                                                 </div>
                                             </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>QR Code</label>
+                                                    <input type="file" name="qr_code" class="form-control">
+                                                </div>
+                                            </div>
+                                            @if(websiteData('qr_code'))
+                                                <div class="col-md-6">
+                                                    <img src="{{asset('frontend/assets/images/'.websiteData('qr_code'))}}" height="200px" width="300px">
+                                                </div>
+                                            @endif
                                         </div>
                                         <div class="row" id="support_div">
                                             @if(websiteData('support_phone'))
