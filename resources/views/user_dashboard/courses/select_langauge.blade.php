@@ -17,7 +17,7 @@
         <div class="content">
             <div class="container-fluid">
                 <div class="row mt-3 mb-3 justify-content-center">
-                    @foreach (App\Models\Language::where('is_delete','0')->oldest('name')->get() as $language)
+                    @foreach (App\Models\Language::where('is_delete','0')->whereIn('id',$languages)->oldest('name')->get() as $language)
                         <div class="col-md-4">
                             <div class="card">
                                 <div class="teams">

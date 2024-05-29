@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\CPU\TopicManager;
 use App\CPU\CourseManager;
 use App\Models\Admin\Plan;
+use App\Models\Admin\Topic;
 use App\Models\Admin\Course;
 use App\Models\PlanPurchase;
 use Illuminate\Http\Request;
@@ -14,8 +15,7 @@ use Illuminate\Support\Facades\Auth;
 class CourseController extends Controller
 {
 
-    public function index()
-    {
+    public function index(){
         $user_detail = UserDetail::where('user_id',Auth::guard('web')->user()->id)->first();
         $plan = Plan::where('delete_status','0')->where('status','1')->where('id',$user_detail->current_plan_id)->first();
         $enrolled_courses = CourseManager::withoutTrash()->whereIn('id',$plan->course_ids)->get();
@@ -26,8 +26,9 @@ class CourseController extends Controller
 
     public function selectLanguage($course_id){
         $course_detail = CourseManager::withoutTrash()->where('id',decrypt($course_id))->first();
+        $languages = Topic::where('delete_status','0')->where('status','1')->where('course_id',$course_detail->id)->groupBy('language_id')->pluck('language_id');
 
-        return view('user_dashboard.courses.select_langauge',compact('course_detail'));
+        return view('user_dashboard.courses.select_langauge',compact('course_detail','languages'));
     }
 
     public function detail($course_id,$language_id)

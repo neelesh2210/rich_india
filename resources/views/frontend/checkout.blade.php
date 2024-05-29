@@ -207,17 +207,19 @@
                                                     <div class="col-lg-12">
                                                         <div class="row">
                                                             @foreach ($plans as $key => $plan)
-                                                                <div class="col-lg-4 col-4 col-sm-4">
-                                                                    <label class="aiz-megabox d-block mb-3">
-                                                                        <input value="{{ $plan->id }}" class="online_payment" type="radio" name="plan_id" @if ($plan->slug == request('slug')) checked @endif onchange="getPlanDetail({{ $plan->id }})">
-                                                                        <span class="d-block p-2 aiz-megabox-elem">
-                                                                            <img id="ContentPlaceHolder1_img{{ $plan->title }}" src="{{ asset('backend/img/plan/' . $plan->image) }}" class="img-fluid mb-3" />
-                                                                            <span class="d-block text-center">
-                                                                                <h5 class="text-white">{{ $plan->title }}
-                                                                            </span></h5>
-                                                                        </span>
-                                                                    </label>
-                                                                </div>
+                                                                @if ($plan->slug == request('slug'))
+                                                                    <div class="col-lg-4 col-4 col-sm-4">
+                                                                        <label class="aiz-megabox d-block mb-3">
+                                                                            <input value="{{ $plan->id }}" class="online_payment" type="radio" name="plan_id" @if ($plan->slug == request('slug')) checked @endif onchange="getPlanDetail({{ $plan->id }})">
+                                                                            <span class="d-block p-2 aiz-megabox-elem">
+                                                                                <img id="ContentPlaceHolder1_img{{ $plan->title }}" src="{{ asset('backend/img/plan/' . $plan->image) }}" class="img-fluid mb-3" />
+                                                                                <span class="d-block text-center">
+                                                                                    <h5 class="text-white">{{ $plan->title }}
+                                                                                </span></h5>
+                                                                            </span>
+                                                                        </label>
+                                                                    </div>
+                                                                @endif
                                                             @endforeach
                                                         </div>
                                                     </div>
