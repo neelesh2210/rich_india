@@ -11,7 +11,6 @@ class CheckoutController extends Controller
 {
 
     public function checkout(Request $request){
-        return redirect()->route('index');
         if(!Auth::check()){
             if(Session::has('referrer_code')){
                 $referral_code = Session::get('referrer_code');
