@@ -66,7 +66,7 @@
                                 <h2 class="section-title__title">We Are An Open Book</h2>
                             </div><!-- section-title -->
                             <p class="about-two__content__text">
-                            Richind is a E -learning plateform . this plateform helps people to make own personal brand on social media and create passive income.
+                            Richind is a E -learning platform . this platform helps people to make own personal brand on social media and create passive income.
                             </p>
                             <div class="about-two__about-box">
                                 <div class="about-two__about-box__top">

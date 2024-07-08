@@ -16,7 +16,7 @@
                     <a href="{{ route('index') }}" class="main-footer__logo">
                         <img src="{{ asset('frontend/assets/images/logo-light.png') }}" alt="richind" width="213" height="55">
                     </a>
-                    <p class="main-footer__about__text">Richind is a E -learning plateform . this plateform helps people to make own personal brand on social media and create passive income.</p>
+                    <p class="main-footer__about__text">Richind is a E -learning platform . this platform helps people to make own personal brand on social media and create passive income.</p>
                     <div class="main-footer__social">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
