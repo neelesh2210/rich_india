@@ -48,9 +48,9 @@
                                         <input type="number" id="otp" name="otp" class="form-control" placeholder="OTP..." required>
                                     </div> --}}
                                 </div>
-                                {{-- @if(Auth::guard('web')->user()->kyc_status != 'verified') --}}
+                                @if(Auth::guard('web')->user()->kyc_status != 'verified')
                                     {{-- <a class="btn btn-primary @if(count(old()) != 0) d-none @endif verify-button" onclick="verifyEmailBankdetail()">Get OTP on email to make changes</a> --}}
-                                    {{-- @if(optional($user_details->bankDetail)->holder_name || optional($user_details->bankDetail)->ifsc_code || optional($user_details->bankDetail)->account_number || optional($user_details->bankDetail)->bank_name || optional($user_details->bankDetail)->upi_id)
+                                    @if(optional($user_details->bankDetail)->holder_name || optional($user_details->bankDetail)->ifsc_code || optional($user_details->bankDetail)->account_number || optional($user_details->bankDetail)->bank_name || optional($user_details->bankDetail)->upi_id)
                                         @if(!Session::get('account_otp'))
                                             <button type="button" class="btn btn-primary" onclick="verifyAccountDetail()" id="send_otp_buttons">Send OTP</button>
                                         @else
@@ -60,10 +60,8 @@
                                     @else
 
                                         <button type="submit" class="btn btn-primary" id="save_buttons" >Save Changes</button>
-                                    @endif --}}
-                                {{-- @endif --}}
-                                <button type="submit" class="btn btn-primary" id="save_buttons" >Save Changes</button>
-
+                                    @endif
+                                @endif
                             </form>
                         </div>
                     </div>
