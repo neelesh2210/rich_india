@@ -686,7 +686,7 @@ class UserController extends Controller
                             }
                         }
                         RegistrationErrorLog::where('email',$request->email)->delete();
-                        return response()->json(['message'=>'Data Inserted Successfully!','status'=>200]);
+                        return response()->json(['status'=>'Webhook Received']);
                     }else{
                         $registration_error_log->error= 'Payment Failed';
                         $registration_error_log->save();
