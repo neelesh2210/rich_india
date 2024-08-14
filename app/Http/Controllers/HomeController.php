@@ -24,8 +24,8 @@ class HomeController extends Controller
                 ->orWhere('type', 'community_earning')
                 ->orWhere('type', 'whatsapp');
         })->oldest('id')->get();
-        $desktop_sliders = WebsiteSetting::select('content','url')->where('type','slider_desktop')->get();
-        $mobile_sliders = WebsiteSetting::select('content','url')->where('type','slider_mobile')->get();
+        $desktop_sliders = WebsiteSetting::select('content','url')->where('type','slider_desktop')->latest()->get();
+        $mobile_sliders = WebsiteSetting::select('content','url')->where('type','slider_mobile')->latest()->get();
         $courses = Course::where('delete_status','0')->where('status','1')->withCount('topic')->get();
         $plans = Plan::where('delete_status','0')->where('status','1')->oldest('priority')->get();
         $reviews = Review::latest()->get();
