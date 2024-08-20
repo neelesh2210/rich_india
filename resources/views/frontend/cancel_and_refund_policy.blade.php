@@ -44,7 +44,6 @@
                                 <p>If you are approved, then your refund will be processed, and a credit will automatically
                                     be applied to your credit card or original method of payment, within a certain amount of
                                     days.</p>
-
                                 <h5>Late or missing refunds</h5>
                                 <p>If you haven’t received a refund yet, first check your bank account again.</p>
                                 <p>Then contact your credit card company, it may take some time before your refund is
@@ -59,8 +58,9 @@
                                 <p>Full Name –</p>
                                 <p>Registered e-mail ID –</p>
                                 <p>Registration date –</p>
-                                <h3>Need Help?</h3>
-                                <p>Contact us at info@richind.in for questions related to refunds.</p>
+                                <h3>Contacting us</h3>
+                                <p>If you have any questions, concerns, or complaints regarding this refund policy, we encourage you to contact us using the details below:</p>
+                                <a href="mailto:richindcare@gmail.com">richindcare@gmail.com</a>
                             </div>
                         </div>
                     </div>
