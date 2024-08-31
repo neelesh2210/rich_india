@@ -74,7 +74,7 @@
                                     <h4 class="about-two__about-box__title">Our Mission</h4>
                                 </div><hr/>
                                 <p class="about-two__about-box__text">
-                                At RichInd, our vision is to revolutionize the way the world learns by creating a dynamic and inclusive e-learning platform that empowers individuals from all walks of life to pursue knowledge, develop skills, and achieve their fullest potential. We are committed to providing a transformative educational experience that transcends boundaries, fosters innovation, and cultivates lifelong learners.
+                                    At RichInd, our mission is to provide a dynamic and inclusive e-learning platform that empowers individuals of all backgrounds to embark on a journey of lifelong learning. We are dedicated to delivering high-quality, accessible, and personalized educational experiences that foster personal growth, professional development, and global enrichment.
                                 </p>
                             </div><!-- /.icon-box -->
                             <div class="about-two__about-box">
@@ -83,7 +83,8 @@
                                     <h4 class="about-two__about-box__title">Our Vision</h4>
                                 </div><hr/>
                                 <p class="about-two__about-box__text">
-                                At RichInd, our mission is to provide a dynamic and inclusive e-learning platform that empowers individuals of all backgrounds to embark on a journey of lifelong learning. We are dedicated to delivering high-quality, accessible, and personalized educational experiences that foster personal growth, professional development, and global enrichment.
+                                    At RichInd, our vision is to revolutionize the way the world learns by creating a dynamic and inclusive e-learning platform that empowers individuals from all walks of life to pursue knowledge, develop skills, and achieve their fullest potential. We are committed to providing a transformative educational experience that transcends boundaries, fosters innovation, and cultivates lifelong learners.
+
                                 </p>
                             </div><!-- /.icon-box -->
                         </div><!-- about content end -->
