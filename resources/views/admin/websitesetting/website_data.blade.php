@@ -39,17 +39,27 @@
                                                     <input type="url" name="telegram" value="{{websiteData('telegram')}}" class="form-control" placeholder="Enter Telegram...">
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label>QR Code</label>
                                                     <input type="file" name="qr_code" class="form-control">
                                                 </div>
+                                                @if(websiteData('qr_code'))
+                                                    <img src="{{asset('frontend/assets/images/'.websiteData('qr_code'))}}" height="100px" width="100px">
+                                                @endif
                                             </div>
-                                            @if(websiteData('qr_code'))
-                                                <div class="col-md-6">
-                                                    <img src="{{asset('frontend/assets/images/'.websiteData('qr_code'))}}" height="200px" width="300px">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Bonus %</label>
+                                                    <input type="number" name="bonus_percent" value="{{websiteData('bonus_percent')}}" class="form-control" placeholder="Enter Bonus %">
                                                 </div>
-                                            @endif
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label>Discount %</label>
+                                                    <input type="number" name="discount_percent" value="{{websiteData('discount_percent')}}" class="form-control" placeholder="Enter Discount %">
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="row" id="support_div">
                                             @if(websiteData('support_phone'))
