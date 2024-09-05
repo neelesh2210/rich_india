@@ -72,10 +72,9 @@
                                         <tr>
                                             <th>#</th>
                                             <th>User Details</th>
-                                            <th>Purchase Type</th>
                                             <th>Plan Details</th>
                                             <th>Transaction Detils</th>
-                                            <th>Payment Status</th>
+                                            <th>Other</th>
                                             <th>Sponsor Details</th>
                                             <th class="text-center">Referral Income</th>
                                             <th>Action</th>
@@ -92,20 +91,10 @@
                                                     <b>Referrer Code: </b>{{$plan_purchase->user->referrer_code}}
                                                 </td>
                                                 <td>
-                                                    @if($plan_purchase->amount == 0)
-                                                        New Plan
-                                                    @else
-                                                        @if($plan_purchase->amount == $plan_purchase->plan->amount)
-                                                            New Plan
-                                                        @else
-                                                            Upgrade Plan
-                                                        @endif
-                                                    @endif
-                                                </td>
-                                                <td>
                                                     <b>Name: </b>{{$plan_purchase->plan->title}} <br>
                                                     @if ($plan_purchase->payment_detail != null && $plan_purchase->payment_detail != 'Updated by Admin')
-                                                        <b>Amount: </b>₹ @if(json_decode($plan_purchase->payment_detail)->amount == $plan_purchase->plan->amount){{$plan_purchase->plan->amount}}@else{{json_decode($plan_purchase->payment_detail)->amount}}@endif <br>
+                                                        <b>Plan Amount: </b>₹  {{$plan_purchase->amount}} <br>
+                                                        <b>Paid Amount: </b>₹  {{$plan_purchase->total_amount}} <br>
                                                     @endif
                                                     @if($plan_purchase->coupon_detail)
                                                         <b>Coupon Name: </b> {{json_decode($plan_purchase->coupon_detail)->name}} <br>
@@ -120,7 +109,22 @@
                                                         {{-- <b>Profit: </b>₹ {{$plan_purchase->total_amount - $plan_purchase->commission_sum_commission}} --}}
                                                     @endif
                                                 </td>
-                                                <td><span class="badge bg-success">{{ucfirst($plan_purchase->payment_status)}}</span></td>
+                                                <td>
+
+                                                    @if($plan_purchase->amount == 0)
+                                                        <span class="badge bg-success">New Plan</span>
+                                                    @else
+                                                        @if($plan_purchase->amount == $plan_purchase->plan->amount)
+                                                        <span class="badge bg-success">New Plan</span>
+                                                        @else
+                                                        <span class="badge bg-warning">Upgrade Plan</span>
+                                                        @endif
+                                                    @endif
+
+                                                    <b>Payment Method:</b> @isset(json_decode($plan_purchase->payment_detail)->method)
+                                                    {{json_decode($plan_purchase->payment_detail)->method}}
+                                                    @endisset
+                                                </td>
                                                 <td>
                                                     <b>Name: </b>{{optional($plan_purchase->user->sponsorDetail)->name}} <br>
                                                     {{-- <b>Email: </b>{{optional($plan_purchase->user->sponsorDetail)->email}} <br>

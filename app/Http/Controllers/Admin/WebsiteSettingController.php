@@ -93,6 +93,16 @@ class WebsiteSettingController extends Controller
             ],[
                 'content'=>$request->telegram
             ]);
+            WebsiteSetting::updateOrCreate([
+                'type'=>'bonus_percent',
+            ],[
+                'content'=>$request->bonus_percent
+            ]);
+            WebsiteSetting::updateOrCreate([
+                'type'=>'discount_percent',
+            ],[
+                'content'=>$request->discount_percent
+            ]);
 
             if($request->has('qr_code')){
                 WebsiteSetting::updateOrCreate([

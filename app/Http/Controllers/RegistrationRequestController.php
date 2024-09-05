@@ -62,14 +62,20 @@ class RegistrationRequestController extends Controller
         ]);
         $withdrawal_request = WithdrawalRequest::where('user_id',Auth::guard('web')->user()->id)->latest()->first();
 
-        if($withdrawal_request->status == 'pending'){
+        if($withdrawal_request?->status == 'pending'){
             return back()->with('error','You Have Pending Withdrawal Request!');
         }else{
             $reg_user = WalletRegistrationRequest::where('referral_code',Auth::guard('web')->user()->referrer_code)->where('id',$id)->first();
             if($reg_user->status == 'pending'){
                 $plan = Plan::where('id',$reg_user->plan)->first();
 
-                if($plan->discounted_price <= Auth::guard('web')->user()->userDetail->total_wallet_balance){
+                if(websiteData('discount_percent')){
+                    $final_amount = $plan->discounted_price - ($plan->discounted_price*websiteData('discount_percent'))/100;
+                }else{
+                    $final_amount = $plan->discounted_price;
+                }
+
+                if($final_amount <= Auth::guard('web')->user()->userDetail->total_wallet_balance){
                     $user = new User;
                     $user->name = $reg_user->name;
                     $user->email = $reg_user->email;
@@ -84,15 +90,12 @@ class RegistrationRequestController extends Controller
                     $plan_purchase->user_id = $user->id;
                     $plan_purchase->plan_id = $plan->id;
                     $plan_purchase->amount = $plan->amount;
-                    if($reg_user->referral_code){
-                        $total_amount = $plan->discounted_price;
-                        $plan_purchase->discounted_amount = $plan->amount - $plan->discounted_price;
-                    }else{
-                        $total_amount = $plan->amount;
+                    $plan_purchase->discounted_amount = $plan->amount - $plan->discounted_price;
+                    if(websiteData('discount_percent')){
+                        $plan_purchase->extra_discount = ($final_amount*websiteData('discount_percent'))/100;
                     }
-
-                    $plan_purchase->total_amount = $total_amount;
-                    $plan_purchase->payment_detail = json_encode(['id'=>'From Wallet','amount'=>$plan->discounted_price]);
+                    $plan_purchase->total_amount = $final_amount;
+                    $plan_purchase->payment_detail = json_encode(['id'=>'From Wallet','amount'=>$final_amount,'method'=>'Wallet']);
                     $plan_purchase->payment_status = 'success';
                     $plan_purchase->save();
 
@@ -121,14 +124,28 @@ class RegistrationRequestController extends Controller
                     $user_wallet = new UserWallet;
                     $user_wallet->user_id = Auth::guard('web')->user()->id;
                     $user_wallet->from_id = $plan_purchase->id;
-                    $user_wallet->amount = $total_amount;
+                    $user_wallet->amount = $final_amount;
                     $user_wallet->type = 'debit';
                     $user_wallet->from = 'register';
                     $user_wallet->save();
 
                     $user_detail = UserDetail::where('user_id',Auth::guard('web')->user()->id)->first();
-                    $user_detail->total_wallet_balance = $user_detail->total_wallet_balance - $total_amount;
+                    $user_detail->total_wallet_balance = $user_detail->total_wallet_balance - $final_amount;
                     $user_detail->save();
+
+                    if(websiteData('bonus_percent')){
+                        $user_wallet = new UserWallet;
+                        $user_wallet->user_id = Auth::guard('web')->user()->id;
+                        $user_wallet->from_id = $plan_purchase->id;
+                        $user_wallet->amount = ($final_amount*websiteData('bonus_percent'))/100;
+                        $user_wallet->type = 'credit';
+                        $user_wallet->from = 'bonus';
+                        $user_wallet->save();
+
+                        $user_detail = UserDetail::where('user_id',Auth::guard('web')->user()->id)->first();
+                        $user_detail->total_wallet_balance = $user_detail->total_wallet_balance + $user_wallet->amount;
+                        $user_detail->save();
+                    }
 
                     return redirect()->route('user.registration.request')->with('success','User Register Successfully!');
                 }else{
