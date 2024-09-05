@@ -1,11 +1,18 @@
-{{-- <link href="../../fonts.googleapis.com/css2387b.css?family=Urbanist:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Water+Brush&amp;display=swap" rel="stylesheet"> --}}
-<link rel="stylesheet" href="{{ asset('frontend/assets/vendors/bootstrap/css/bootstrap.min.css') }}" />
-<link rel="stylesheet" href="{{ asset('frontend/assets/vendors/fontawesome/css/all.min.css') }}" />
-<link rel="stylesheet" href="{{ asset('frontend/assets/vendors/richind-icons/style.css') }}" />
-<link rel="stylesheet" href="{{ asset('frontend/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css') }}" />
-<link rel="stylesheet" href="{{ asset('frontend/assets/vendors/owl-carousel/assets/owl.carousel.min.css') }}" />
-<link rel="stylesheet" href="{{ asset('frontend/assets/vendors/owl-carousel/assets/owl.theme.default.min.css') }}" />
-<link rel="stylesheet" href="{{ asset('frontend/assets/css/richind.css') }}" />
-<link rel="stylesheet" href="{{asset('backend/css/bootstrap-4.min.css')}}">
 
+<!-- CSS here -->
+<link rel="stylesheet" href="{{ asset('frontend/assets/css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/assets/css/animate.min.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/assets/css/magnific-popup.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/assets/css/fontawesome-all.min.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/assets/css/flaticon-skillgro.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/assets/css/flaticon-skillgro-new.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/assets/css/swiper-bundle.min.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/assets/css/default-icons.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/assets/css/select2.min.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/assets/css/odometer.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/assets/css/aos.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/assets/css/plyr.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/assets/css/spacing.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/assets/css/tg-cursor.css')}}">
+<link rel="stylesheet" href="{{ asset('frontend/assets/css/main.css') }}">
 @stack('css')

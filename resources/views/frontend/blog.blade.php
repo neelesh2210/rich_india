@@ -1,51 +1,159 @@
 @extends('frontend.layouts.app')
 @section('content')
-    <section class="page-header page-header--bg-two" data-jarallax data-speed="0.3" data-imgPosition="50% -100%">
-        <div class="page-header__bg jarallax-img"></div>
-        <div class="page-header__overlay"></div>
-        <div class="container text-center">
-            <h2 class="page-header__title">Blog</h2>
-            <ul class="page-header__breadcrumb list-unstyled">
-                <li><a href="{{ route('index') }}">Home</a></li>
-                <li><span>Blog</span></li>
-            </ul>
-        </div>
-    </section>
-    <section class="blog-page">
+     <!-- breadcrumb-area -->
+     <section class="breadcrumb__area breadcrumb__bg" data-background="{{ asset('frontend/assets/img/bg/breadcrumb_bg.jpg')}}">
         <div class="container">
             <div class="row">
-                @foreach ($blogs as $blog)
-                    <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="400ms">
-                        <div class="blog-three__item">
-                            <div class="blog-three__image">
-                                <img src="{{ asset('backend/img/blog/'.$blog->image) }}" alt="richind">
-                            </div>
-                            <div class="blog-three__content">
-                                <div class="blog-three__top-meta">
-                                    <div class="blog-three__cats"><a href="{{route('blog.detail',$blog->slug)}}">{{$blog->topic}}</a></div>
-                                    <div class="blog-three__date">{{$blog->created_at->format('d M Y')}}</div>
-                                </div>
-                                <h3 class="blog-three__title">
-                                    <a href="{{route('blog.detail',$blog->slug)}}">{{$blog->title}}</a>
-                                </h3>
-                                <div class="blog-three__meta">
-                                    <div class="blog-three__meta__author">
-                                        @if($blog->writter_image)
-                                            <img src="{{ asset('backend/img/blog/'.$blog->writter_image) }}" alt="richind" />
-                                        @endif
-                                        @if($blog->writter_image)
-                                            <a href="{{route('blog.detail',$blog->slug)}}">{{$blog->written_by}}</a>
-                                        @endif
-                                        {{$blog->writter_position}}
-                                    </div>
-                                    <a class="blog-three__rm" href="{{route('blog.detail',$blog->slug)}}"><span class="icon-arrow"></span></a>
-                                </div>
-                            </div>
-                        </div>
+                <div class="col-12">
+                    <div class="breadcrumb__content">
+                        <h3 class="title">Blogs</h3>
+                        <nav class="breadcrumb">
+                            <span property="itemListElement" typeof="ListItem">
+                                <a href="index.php">Home</a>
+                            </span>
+                            <span class="breadcrumb-separator"><i class="fas fa-angle-right"></i></span>
+                            <span property="itemListElement" typeof="ListItem">Blogs</span>
+                        </nav>
                     </div>
-                @endforeach
-
+                </div>
             </div>
         </div>
+        <div class="breadcrumb__shape-wrap">
+            <img src="{{ asset('frontend/assets/img/others/breadcrumb_shape01.svg')}}" alt="img" class="alltuchtopdown">
+            <img src="{{ asset('frontend/assets/img/others/breadcrumb_shape02.svg')}}" alt="img" data-aos="fade-right" data-aos-delay="300">
+            <img src="{{ asset('frontend/assets/img/others/breadcrumb_shape03.svg')}}" alt="img" data-aos="fade-up" data-aos-delay="400">
+            <img src="{{ asset('frontend/assets/img/others/breadcrumb_shape04.svg')}}" alt="img" data-aos="fade-down-left" data-aos-delay="400">
+            <img src="{{ asset('frontend/assets/img/others/breadcrumb_shape05.svg')}}" alt="img" data-aos="fade-left" data-aos-delay="400">
+        </div>
     </section>
+    <!-- breadcrumb-area-end -->
+
+    <!-- blog-area -->
+    <section class="blog-area section-py-120">
+        <div class="container">
+            <div class="row gutter-20">
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="blog__post-item shine__animate-item">
+                        <div class="blog__post-thumb">
+                            <a href="{{route('blog_details')}}" class="shine__animate-link"><img src="{{ asset('frontend/assets/img/blog/blog_post01.jpg')}}" alt="img"></a>
+                            <a href="blog.php" class="post-tag">Marketing</a>
+                        </div>
+                        <div class="blog__post-content">
+                            <div class="blog__post-meta">
+                                <ul class="list-wrap">
+                                    <li><i class="flaticon-calendar"></i>20 July, 2024</li>
+                                    <li><i class="flaticon-user-1"></i>by <a href="{{route('blog_details')}}">Admin</a></li>
+                                </ul>
+                            </div>
+                            <h4 class="title"><a href="{{route('blog_details')}}">How To Become idiculously Self-Aware In 20 Minutes</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="blog__post-item shine__animate-item">
+                        <div class="blog__post-thumb">
+                            <a href="{{route('blog_details')}}" class="shine__animate-link"><img src="{{ asset('frontend/assets/img/blog/blog_post02.jpg')}}" alt="img"></a>
+                            <a href="blog.php" class="post-tag">Students</a>
+                        </div>
+                        <div class="blog__post-content">
+                            <div class="blog__post-meta">
+                                <ul class="list-wrap">
+                                    <li><i class="flaticon-calendar"></i>20 July, 2024</li>
+                                    <li><i class="flaticon-user-1"></i>by <a href="{{route('blog_details')}}">Admin</a></li>
+                                </ul>
+                            </div>
+                            <h4 class="title"><a href="{{route('blog_details')}}">Get Started With UI Design With Tips To Speed</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="blog__post-item shine__animate-item">
+                        <div class="blog__post-thumb">
+                            <a href="{{route('blog_details')}}" class="shine__animate-link"><img src="{{ asset('frontend/assets/img/blog/blog_post03.jpg')}}" alt="img"></a>
+                            <a href="blog.php" class="post-tag">Science</a>
+                        </div>
+                        <div class="blog__post-content">
+                            <div class="blog__post-meta">
+                                <ul class="list-wrap">
+                                    <li><i class="flaticon-calendar"></i>20 July, 2024</li>
+                                    <li><i class="flaticon-user-1"></i>by <a href="{{route('blog_details')}}">Admin</a></li>
+                                </ul>
+                            </div>
+                            <h4 class="title"><a href="{{route('blog_details')}}">Make Your Own Expanding Contracting Content</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="blog__post-item shine__animate-item">
+                        <div class="blog__post-thumb">
+                            <a href="{{route('blog_details')}}" class="shine__animate-link"><img src="{{ asset('frontend/assets/img/blog/blog_post04.jpg')}}" alt="img"></a>
+                            <a href="blog.php" class="post-tag">Agency</a>
+                        </div>
+                        <div class="blog__post-content">
+                            <div class="blog__post-meta">
+                                <ul class="list-wrap">
+                                    <li><i class="flaticon-calendar"></i>20 July, 2024</li>
+                                    <li><i class="flaticon-user-1"></i>by <a href="{{route('blog_details')}}">Admin</a></li>
+                                </ul>
+                            </div>
+                            <h4 class="title"><a href="{{route('blog_details')}}">What we are capable to usually discovered</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="blog__post-item shine__animate-item">
+                        <div class="blog__post-thumb">
+                            <a href="{{route('blog_details')}}" class="shine__animate-link"><img src="{{ asset('frontend/assets/img/blog/blog_post05.jpg')}}" alt="img"></a>
+                            <a href="blog.php" class="post-tag">Agency</a>
+                        </div>
+                        <div class="blog__post-content">
+                            <div class="blog__post-meta">
+                                <ul class="list-wrap">
+                                    <li><i class="flaticon-calendar"></i>20 July, 2024</li>
+                                    <li><i class="flaticon-user-1"></i>by <a href="{{route('blog_details')}}">Admin</a></li>
+                                </ul>
+                            </div>
+                            <h4 class="title"><a href="{{route('blog_details')}}">What we are capable to usually discovered</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="blog__post-item shine__animate-item">
+                        <div class="blog__post-thumb">
+                            <a href="{{route('blog_details')}}" class="shine__animate-link"><img src="{{ asset('frontend/assets/img/blog/blog_post06.jpg')}}" alt="img"></a>
+                            <a href="blog.php" class="post-tag">Agency</a>
+                        </div>
+                        <div class="blog__post-content">
+                            <div class="blog__post-meta">
+                                <ul class="list-wrap">
+                                    <li><i class="flaticon-calendar"></i>20 July, 2024</li>
+                                    <li><i class="flaticon-user-1"></i>by <a href="{{route('blog_details')}}">Admin</a></li>
+                                </ul>
+                            </div>
+                            <h4 class="title"><a href="{{route('blog_details')}}">What we are capable to usually discovered</a></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="blog__post-item shine__animate-item">
+                        <div class="blog__post-thumb">
+                            <a href="{{route('blog_details')}}" class="shine__animate-link"><img src="{{ asset('frontend/assets/img/blog/blog_post07.jpg')}}" alt="img"></a>
+                            <a href="blog.php" class="post-tag">Agency</a>
+                        </div>
+                        <div class="blog__post-content">
+                            <div class="blog__post-meta">
+                                <ul class="list-wrap">
+                                    <li><i class="flaticon-calendar"></i>20 July, 2024</li>
+                                    <li><i class="flaticon-user-1"></i>by <a href="{{route('blog_details')}}">Admin</a></li>
+                                </ul>
+                            </div>
+                            <h4 class="title"><a href="{{route('blog_details')}}">What we are capable to usually discovered</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- blog-area-end -->
 @endsection

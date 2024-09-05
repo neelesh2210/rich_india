@@ -1,14 +1,23 @@
-<script src="{{ asset('frontend/assets/vendors/jquery/jquery-3.5.1.min.js') }}"></script>
-<script src="{{ asset('frontend/assets/vendors/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<script src="{{ asset('frontend/assets/vendors/jquery-appear/jquery.appear.min.js') }}"></script>
-<script src="{{ asset('frontend/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js') }}"></script>
-<script src="{{ asset('frontend/assets/vendors/owl-carousel/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('frontend/assets/vendors/tilt/tilt.jquery.js') }}"></script>
-<script src="{{ asset('frontend/assets/vendors/wow/wow.js') }}"></script>
-<script src="{{ asset('frontend/assets/vendors/countdown/countdown.min.js') }}"></script>
-<script src="{{ asset('frontend/assets/js/richind.js') }}"></script>
-<script src="{{ asset('backend/js/sweetalert2.min.js') }}"></script>
-
+<script src="{{ asset('frontend/assets/js/vendor/jquery-3.6.0.min.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/bootstrap.min.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/imagesloaded.pkgd.min.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/jquery.odometer.min.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/jquery.appear.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/tween-max.min.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/select2.min.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/swiper-bundle.min.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/jquery.marquee.min.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/tg-cursor.min.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/vivus.min.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/ajax-form.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/svg-inject.min.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/jquery.circleType.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/jquery.lettering.min.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/plyr.min.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/wow.min.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/aos.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/main.js')}}"></script>
 <script type="text/javascript">
 
     $(function(){

@@ -41,6 +41,7 @@ Route::get('/', [HomeController::class, 'index'])->name('index');
 
 //Course
 Route::view('course', 'frontend.course')->name('course');
+Route::view('course_details', 'frontend.course_details')->name('course_details');
 Route::get('course-detail/{slug}',[CourseController::class,'courseDetail'])->name('course.detail');
 
 //Plan
@@ -120,6 +121,8 @@ Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPass
 
 //Blog
 Route::get('blog',[BlogController::class,'index'])->name('blog');
+Route::view('blog', 'frontend.blog')->name('blog');
+Route::view('blog-details', 'frontend.blog_details')->name('blog_details');
 Route::get('blog_detail/{slug}',[BlogController::class,'show'])->name('blog.detail');
 
 Route::group(['middleware'=>['auth:web',CheckUserStatus::class],'prefix'=>'user','as'=>'user.'],function () {

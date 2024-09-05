@@ -1,55 +1,106 @@
 @php
     $plans = App\Models\Admin\Plan::where('delete_status', '0')->where('status', '1')->oldest('priority')->get();
 @endphp
-<header class="main-header-two">
-    <nav class="main-menu">
-        <div class="container">
-            <div class="main-menu__logo">
-                <a href="{{ route('index') }}">
-                    <img src="{{ asset('frontend/assets/images/logo-light.png') }}" width="183" height="48" alt="richind">
-                </a>
-            </div>
-            <div class="main-menu__nav">
-                <ul class="main-menu__list">
-                    <li><a href="{{ route('index') }}">Home</a></li>
-                    <li><a href="{{ route('about') }}">About</a></li>
-                    <li><a href="{{ route('course') }}">Course</a></li>
-                    <li class="dropdown">
-                        <a href="{{ route('plan') }}">Plans</a>
-                        <ul>
-                            @foreach ($plans as $plan)
-                                <li>
-                                    <a href="{{ route('plan.detail', $plan->slug) }}" title="{{ env('APP_NAME') }}-{{ $plan->title }}">{{ $plan->title }}</a>
-                                </li>
-                            @endforeach
+<header>
+    <div class="tg-header__top">
+        <div class="container custom-container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <ul class="tg-header__top-info list-wrap">
+                        <li><img src="{{ asset('frontend/assets/img/icons/map_marker.svg')}}" alt="Icon"> <span>Mata wali gali himayunpur ,
+                                Firozabad, Uttar Pradesh</span></li>
+                        <li><img src="{{ asset('frontend/assets/img/icons/envelope.svg')}}" alt="Icon"> <a
+                                href="mailto:richindcare@gmail.com">richindcare@gmail.com</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="tg-header__top-right">
+                        <div class="tg-header__phone">
+                            <img src="{{ asset('frontend/assets/img/icons/phone.svg')}}" alt="Icon">Call us: <a href="tel:0123456789">+123
+                                599 8989</a>
+                        </div>
+                        <ul class="tg-header__top-social list-wrap">
+                            <li>Follow Us On :</li>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
                         </ul>
-                    </li>
-                    <li><a href="{{ route('blog') }}">Blog</a></li>
-                    <li><a href="{{ route('contact') }}">Contact</a></li>
-                </ul>
-            </div>
-            <div class="main-menu__right">
-                <a href="#" class="main-menu__toggler mobile-nav__toggler">
-                    <i class="fa fa-bars"></i>
-                </a>
-                @auth('web')
-                    <a href="{{ route('user.dashboard') }}" class="main-menu__login">
-                        <i class="icon-account-1"></i>
-                    </a>
-                @else
-                    <a href="{{ route('signin') }}" class="main-menu__login">
-                        <i class="icon-account-1"></i>
-                    </a>
-                    {{-- <a data-bs-toggle="modal" data-bs-target="#loginModal" class="main-menu__login">
-                        <i class="icon-account-1"></i>
-                    </a> --}}
-                @endauth
-                <a href="{{ route('contact') }}" class="richind-btn"><span class="richind-btn__curve"></span>Get In Touch</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
+    </div>
+    <div id="header-fixed-height"></div>
+    <div id="sticky-header" class="tg-header__area">
+        <div class="container custom-container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="tgmenu__wrap">
+                        <nav class="tgmenu__nav">
+                            <div class="logo">
+                                <a href="{{ route('index') }}"><img src="{{ asset('frontend/assets/img/logo/logo.png')}}" alt="Logo"></a>
+                            </div>
+                            <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
+                                <ul class="navigation">
+                                    <li class="active"><a href="{{ route('index') }}">Home</a></li>
+                                    <li><a href="{{ route('about') }}">About Us</a></li>
+                                    <li class="menu-item-has-children"><a href="{{ route('plan') }}">Plan</a>
+                                        <ul class="sub-menu">
+                                            @foreach ($plans as $plan)
+                                            <li><a href="{{ route('plan.detail', $plan->slug) }}">{{ $plan->title }}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                    <li><a href="{{ route('course') }}">Course</a></li>
+                                    <li><a href="{{ route('blog') }}">Blog</a></li>
+                                    <li><a href="{{ route('contact') }}">contact</a></li>
+                                </ul>
+                            </div>
+                            <div class="tgmenu__action">
+                                <ul class="list-wrap">
+                                    <li class="header-btn login-btn">
+                                        @auth('web')
+                                        <a href="{{ route('user.dashboard') }}"><i class="far fa-user"></i> Log in</a>
+                                        @else
+                                        <a href="{{ route('signin') }}"><i class="far fa-user"></i> Log in</a>
+                                        @endauth
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mobile-login-btn">
+                                <a href="#"><img src="assets/img/icons/user.svg" alt=""
+                                        class="injectable"></a>
+                            </div>
+                            <div class="mobile-nav-toggler"><i class="tg-flaticon-menu-1"></i></div>
+                        </nav>
+                    </div>
+                    <!-- Mobile Menu  -->
+                    <div class="tgmobile__menu">
+                        <nav class="tgmobile__menu-box">
+                            <div class="close-btn"><i class="tg-flaticon-close-1"></i></div>
+                            <div class="nav-logo">
+                                <a href="#"><img src="{{ asset('frontend/assets/images/logo-light.png') }}" alt="Logo"></a>
+                            </div>
+                            <div class="tgmobile__menu-outer">
+                                <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                            </div>
+                            <div class="social-links">
+                                <ul class="list-wrap">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="tgmobile__menu-backdrop"></div>
+                    <!-- End Mobile Menu -->
+                </div>
+            </div>
+        </div>
+    </div>
 </header>
-
-<div class="stricky-header stricked-menu main-menu">
-    <div class="sticky-header__content"></div>
-</div>
