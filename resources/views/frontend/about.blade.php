@@ -83,50 +83,6 @@
     </section>
     <!-- about-area-end -->
 
-    <!-- brand-area -->
-    <div class="brand-area">
-        <div class="container-fluid">
-            <div class="marquee_mode">
-                <div class="brand__item">
-                    <a href="#"><img src="{{ asset('frontend/assets/img/brand/brand01.png')}}" alt="brand"></a>
-                    <img src="{{ asset('frontend/assets/img/icons/brand_star.svg')}}" alt="star">
-                </div>
-                <div class="brand__item">
-                    <a href="#"><img src="{{ asset('frontend/assets/img/brand/brand02.png')}}" alt="brand"></a>
-                    <img src="{{ asset('frontend/assets/img/icons/brand_star.svg')}}" alt="star">
-                </div>
-                <div class="brand__item">
-                    <a href="#"><img src="{{ asset('frontend/assets/img/brand/brand03.png')}}" alt="brand"></a>
-                    <img src="{{ asset('frontend/assets/img/icons/brand_star.svg')}}" alt="star">
-                </div>
-                <div class="brand__item">
-                    <a href="#"><img src="{{ asset('frontend/assets/img/brand/brand04.png')}}" alt="brand"></a>
-                    <img src="{{ asset('frontend/assets/img/icons/brand_star.svg')}}" alt="star">
-                </div>
-                <div class="brand__item">
-                    <a href="#"><img src="{{ asset('frontend/assets/img/brand/brand05.png')}}" alt="brand"></a>
-                    <img src="{{ asset('frontend/assets/img/icons/brand_star.svg')}}" alt="star">
-                </div>
-                <div class="brand__item">
-                    <a href="#"><img src="{{ asset('frontend/assets/img/brand/brand06.png')}}" alt="brand"></a>
-                    <img src="{{ asset('frontend/assets/img/icons/brand_star.svg')}}" alt="star">
-                </div>
-                <div class="brand__item">
-                    <a href="#"><img src="{{ asset('frontend/assets/img/brand/brand07.png')}}" alt="brand"></a>
-                    <img src="{{ asset('frontend/assets/img/icons/brand_star.svg')}}" alt="star">
-                </div>
-                <div class="brand__item">
-                    <a href="#"><img src="{{ asset('frontend/assets/img/brand/brand04.png')}}" alt="brand"></a>
-                    <img src="{{ asset('frontend/assets/img/icons/brand_star.svg')}}" alt="star">
-                </div>
-                <div class="brand__item">
-                    <a href="#"><img src="{{ asset('frontend/assets/img/brand/brand03.png')}}" alt="brand"></a>
-                    <img src="{{ asset('frontend/assets/img/icons/brand_star.svg')}}" alt="star">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- brand-area-end -->
 
      <!-- features-area -->
     <section class="features__area-three section-pt-120 section-pb-90">

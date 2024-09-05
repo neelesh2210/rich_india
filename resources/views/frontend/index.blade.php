@@ -1549,11 +1549,6 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="faq__img-wrap tg-svg">
-                        <div class="faq__round-text">
-                            <div class="curved-circle">
-                                * Education * System * can * Make * Change *
-                            </div>
-                        </div>
                         <div class="faq__img">
                             <img src="{{ asset('frontend/assets/img/others/faq_img.png')}}" alt="img">
                             <div class="shape-one">
