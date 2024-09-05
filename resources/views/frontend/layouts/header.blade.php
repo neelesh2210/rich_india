@@ -70,7 +70,7 @@
                                 </ul>
                             </div>
                             <div class="mobile-login-btn">
-                                <a href="#"><img src="assets/img/icons/user.svg" alt=""
+                                <a href="{{route('signin')}}"><img src="{{ asset('frontend/assets/img/icons/user.svg')}}" alt=""
                                         class="injectable"></a>
                             </div>
                             <div class="mobile-nav-toggler"><i class="tg-flaticon-menu-1"></i></div>
@@ -81,7 +81,7 @@
                         <nav class="tgmobile__menu-box">
                             <div class="close-btn"><i class="tg-flaticon-close-1"></i></div>
                             <div class="nav-logo">
-                                <a href="#"><img src="{{ asset('frontend/assets/images/logo-light.png') }}" alt="Logo"></a>
+                                <a href="#"><img src="{{ asset('frontend/assets/img/logo/logo.png')}}" alt="Logo"></a>
                             </div>
                             <div class="tgmobile__menu-outer">
                                 <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->

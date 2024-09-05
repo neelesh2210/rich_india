@@ -47,7 +47,7 @@
   --tg-body-font-size: 16px;
   --tg-body-line-height: 1.75;
   --tg-heading-line-height: 1.3;
-  --tg-body-color: #6D6C80;
+  --tg-body-color: #333;
   --tg-heading-color: #161439;
   --tg-theme-primary: #5751E1;
   --tg-theme-secondary: #FFC224;
@@ -18555,10 +18555,11 @@ blockquote > p {
   color: var(--tg-theme-primary);
 }
 .customer__form-wrap .form-grp label {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 15px;
-  color: var(--tg-body-color);
+    display: block;
+    margin-bottom: 5px;
+    font-size: 15px;
+    color: #000;
+    font-weight: 500;
 }
 .customer__form-wrap .form-grp textarea, .customer__form-wrap .form-grp input {
   width: 100%;

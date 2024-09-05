@@ -50,8 +50,8 @@
                                     <p class="author">By <a href="#">RichInd</a></p>
                                     <div class="courses__item-bottom">
                                         <div class="button">
-                                            <a href="#">
-                                                <span class="text">Enroll Now</span>
+                                            <a href="{{route('checkout')}}">
+                                                <span class="text">Buy Now</span>
                                                 <i class="flaticon-arrow-right"></i>
                                             </a>
                                         </div>
@@ -78,8 +78,8 @@
                                     <p class="author">By <a href="#">RichInd</a></p>
                                     <div class="courses__item-bottom">
                                         <div class="button">
-                                            <a href="#">
-                                                <span class="text">Enroll Now</span>
+                                            <a href="{{route('checkout')}}">
+                                                <span class="text">Buy Now</span>
                                                 <i class="flaticon-arrow-right"></i>
                                             </a>
                                         </div>
@@ -106,8 +106,8 @@
                                     <p class="author">By <a href="#">RichInd</a></p>
                                     <div class="courses__item-bottom">
                                         <div class="button">
-                                            <a href="#">
-                                                <span class="text">Enroll Now</span>
+                                            <a href="{{route('checkout')}}">
+                                                <span class="text">Buy Now</span>
                                                 <i class="flaticon-arrow-right"></i>
                                             </a>
                                         </div>
