@@ -28,10 +28,10 @@ class CheckoutController extends Controller
 
                 return view('frontend.checkout',compact('plan_detail','referral_code', 'plans'));
             }else{
-                return back()->with('error','Select Plan First!');
+                return redirect()->rotue('index')->with('error','Select Plan First!');
             }
         }else{
-            return back()->with('error','Please Logout Before Creating Another Account!');
+            return redirect()->rotue('index')->with('error','Please Logout Before Creating Another Account!');
         }
     }
 

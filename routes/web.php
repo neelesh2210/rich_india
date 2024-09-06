@@ -39,6 +39,14 @@ Auth::routes(['login'=>false,'register'=>false,'logout'=>false]);
 //Home
 Route::get('/', [HomeController::class, 'index'])->name('index');
 
+//Checkout
+Route::get('checkout', [CheckoutController::class,'checkout'])->name('checkout');
+
+//Register
+Route::post('vaildate-user-registeration',[RegisterController::class,'validateUserRegistration'])->name('vaildate.user.registeration');
+Route::post('user-register',[RegisterController::class,'register'])->name('register');
+Route::post('payment', [RegisterController::class,'payment'])->name('payment');
+
 //Course
 Route::view('course', 'frontend.course')->name('course');
 Route::view('course_details', 'frontend.course_details')->name('course_details');
@@ -48,9 +56,6 @@ Route::get('course-detail/{slug}',[CourseController::class,'courseDetail'])->nam
 Route::get('plan',[PlanController::class,'planIndex'])->name('plan');
 Route::get('plan-detail/{slug}', [PlanController::class,'planDetail'])->name('plan.detail');
 
-//Checkout
-Route::view('checkout', 'frontend.checkout')->name('checkout');
-//Route::get('checkout', [CheckoutController::class,'checkout'])->name('checkout');
 Route::post('get-plan-detail',[CheckoutController::class,'getPlanDetail'])->name('get.plan.detail');
 
 Route::get('about', [HomeController::class,'about'])->name('about');
@@ -63,10 +68,6 @@ Route::view('cancel-and-refund-policy', 'frontend.cancel_and_refund_policy')->na
 
 Route::get('get-referral-users/{referral_code}',[RegisterController::class,'distributeCommission']);
 
-//Register
-Route::post('user-register',[RegisterController::class,'register'])->name('register');
-Route::post('vaildate-user-registeration',[RegisterController::class,'validateUserRegistration'])->name('vaildate.user.registeration');
-Route::post('payment', [RegisterController::class,'payment'])->name('payment');
 
 //Instamojo
 Route::get('instamojo/payment/pay-success',[InstamojoController::class, 'success'])->name('instamojo.success');

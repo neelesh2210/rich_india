@@ -10,6 +10,8 @@
 <script type="text/javascript">
 
     $(function(){
+        $('.select2').select2();
+
         var Toast = Swal.mixin({
             toast: true,
             position: 'top-end',

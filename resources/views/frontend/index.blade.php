@@ -270,22 +270,22 @@
                     <div class="col-md-4">
                         <div class="courses__item shine__animate-item">
                             <div class="courses__item-thumb">
-                                <a href="#" class="shine__animate-link">
+                                <a href="{{route('checkout')}}?slug={{$plan->slug}}" class="shine__animate-link">
                                     <img src="{{ asset('backend/img/plan/'.$plan->image) }}" alt="img">
                                 </a>
                             </div>
                             <div class="courses__item-content">
                                 <ul class="courses__item-meta list-wrap">
                                     <li class="courses__item-tag">
-                                        <a href="#">{{$plan->tag}}</a>
+                                        <a href="{{route('checkout')}}?slug={{$plan->slug}}">{{$plan->tag}}</a>
                                     </li>
                                     <li class="avg-rating"><i class="fas fa-star"></i> ({{$plan->review}} Reviews)</li>
                                 </ul>
-                                <h5 class="title"><a href="#">{{$plan->title}}</a></h5>
-                                <p class="author">By <a href="#">RichInd</a></p>
+                                <h5 class="title"><a href="{{route('checkout')}}?slug={{$plan->slug}}">{{$plan->title}}</a></h5>
+                                <p class="author">By <a href="{{route('checkout')}}?slug={{$plan->slug}}">RichInd</a></p>
                                 <div class="courses__item-bottom">
                                     <div class="button">
-                                        <a href="#">
+                                        <a href="{{route('checkout')}}?slug={{$plan->slug}}">
                                             <span class="text">Enroll Now</span>
                                             <i class="flaticon-arrow-right"></i>
                                         </a>
