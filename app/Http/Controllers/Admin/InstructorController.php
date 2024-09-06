@@ -24,6 +24,11 @@ class InstructorController extends Controller
         $instructor->name = $request->name;
         $instructor->designation = $request->designation;
         $instructor->image = imageUpload($request->file('image'),'backend/img/instructors');;
+        $instructor->rating = $request->rating;
+        $instructor->facebook = $request->facebook;
+        $instructor->twitter = $request->twitter;
+        $instructor->whatsapp = $request->whatsapp;
+        $instructor->instagram = $request->instagram;
         $instructor->save();
 
         return redirect()->route('admin.instructors.index')->with('success','Instructor Added Successfully!');
@@ -45,6 +50,11 @@ class InstructorController extends Controller
         if($request->has('image')){
             $instructor->image = imageUpload($request->file('image'),'backend/img/instructors');;
         }
+        $instructor->rating = $request->rating;
+        $instructor->facebook = $request->facebook;
+        $instructor->twitter = $request->twitter;
+        $instructor->whatsapp = $request->whatsapp;
+        $instructor->instagram = $request->instagram;
         $instructor->save();
 
         return redirect()->route('admin.instructors.index')->with('success','Instructor Updated Successfully!');

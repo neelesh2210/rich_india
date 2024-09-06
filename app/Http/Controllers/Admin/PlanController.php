@@ -60,6 +60,8 @@ class PlanController extends Controller
         $plan->points = $request->points;
         $plan->course_ids = $request->course_ids;
         $plan->description = $request->description;
+        $plan->tag = $request->tag;
+        $plan->review = $request->review;
         if($request->seo_title)
         {
             $plan->seo_title = $request->seo_title;
@@ -130,6 +132,8 @@ class PlanController extends Controller
         $plan->description = $request->description;
         $plan->upgrade_amount = $request->upgrade_amount;
         $plan->upgrade_commission = $upgrade_commission_amount;
+        $plan->tag = $request->tag;
+        $plan->review = $request->review;
         if($request->seo_title)
         {
             $plan->seo_title = $request->seo_title;

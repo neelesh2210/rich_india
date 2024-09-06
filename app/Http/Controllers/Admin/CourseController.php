@@ -28,44 +28,30 @@ class CourseController extends Controller
         return view('admin.course.create',['search_key'=>$request->search_key,'page_title'=>'Add Course']);
     }
 
-    public function store(Request $request)
-    {
-        $course = new Course;
+    public function store(Request $request){
+        $request->validate([
+            'name'              =>  'required',
+            'image'             =>  'nullable|mimes:png,jpg,jpeg,webp',
+            'review'            =>  'nullable|numeric|min:1|max:5',
+            'no_of_student'     =>  'nullable|integer',
+        ]);
 
+        $course = new Course;
         $course->slug = strtolower(str_replace(" ","-",$request->name)).'-'.generateRandomString(4);
         $course->name = $request->name;
         $course->image = imageUpload($request->file('image'),'backend/img/course');
-        $course->price = $request->price;
-        $course->discount = $request->discount;
-        $course->discounted_price = $request->discounted_price;
-        $course->referral_commission = $request->referral_commission;
-        $course->referral_commission_type = $request->referral_commission_type;
+        $course->tag = $request->tag;
+        $course->review = $request->review;
+        $course->student = $request->no_of_student;
+        $course->price = $request->price??0;
+        $course->discount = $request->discount??0;
+        $course->discounted_price = $request->discounted_price??0;
+        $course->referral_commission = $request->referral_commission??0;
+        $course->referral_commission_type = $request->referral_commission_type??'amount';
         $course->description = $request->description;
-        if($request->seo_title)
-        {
-            $course->seo_title = $request->seo_title;
-        }
-        else
-        {
-            $course->seo_title = $request->name;
-        }
-        if($request->seo_keyword)
-        {
-            $course->seo_keyword = $request->seo_keyword;
-        }
-        else
-        {
-            $course->seo_keyword = $request->name;
-        }
-        if($request->seo_description)
-        {
-            $course->seo_description = $request->seo_description;
-        }
-        else
-        {
-            $course->seo_description = $request->name;
-        }
-
+        $course->seo_title = $request->seo_title??$request->name;
+        $course->seo_keyword = $request->seo_keyword??$request->name;
+        $course->seo_description = $request->seo_description??$request->name;
         $course->save();
 
         return redirect()->route('admin.course.index',['search_key'=>$request->search_key]);
@@ -78,47 +64,31 @@ class CourseController extends Controller
         return view('admin.course.edit',compact('course'),['search_key'=>$request->search_key,'page_title'=>'Edit Course']);
     }
 
-    public function update(Request $request,$id)
-    {
-        $course = Course::find(decrypt($id));
+    public function update(Request $request,$id){
+        $request->validate([
+            'name'              =>  'required',
+            'image'             =>  'nullable|mimes:png,jpg,jpeg,webp',
+            'review'            =>  'nullable|numeric|min:1|max:5',
+            'no_of_student'     =>  'nullable|integer',
+        ]);
 
+        $course = Course::find(decrypt($id));
         $course->name = $request->name;
-        if($request->has('image'))
-        {
+        if($request->has('image')){
             $course->image = imageUpload($request->file('image'),'backend/img/course');
         }
-
-        $course->price = $request->price;
-        $course->discount = $request->discount;
-        $course->discounted_price = $request->discounted_price;
-        $course->referral_commission = $request->referral_commission;
-        $course->referral_commission_type = $request->referral_commission_type;
+        $course->tag = $request->tag;
+        $course->review = $request->review;
+        $course->student = $request->no_of_student;
+        $course->price = $request->price??0;
+        $course->discount = $request->discount??0;
+        $course->discounted_price = $request->discounted_price??0;
+        $course->referral_commission = $request->referral_commission??0;
+        $course->referral_commission_type = $request->referral_commission_type??'amount';
         $course->description = $request->description;
-        if($request->seo_title)
-        {
-            $course->seo_title = $request->seo_title;
-        }
-        else
-        {
-            $course->seo_title = $request->name;
-        }
-        if($request->seo_keyword)
-        {
-            $course->seo_keyword = $request->seo_keyword;
-        }
-        else
-        {
-            $course->seo_keyword = $request->name;
-        }
-        if($request->seo_description)
-        {
-            $course->seo_description = $request->seo_description;
-        }
-        else
-        {
-            $course->seo_description = $request->name;
-        }
-
+        $course->seo_title = $request->seo_title??$request->name;
+        $course->seo_keyword = $request->seo_keyword??$request->name;
+        $course->seo_description = $request->seo_description??$request->name;
         $course->save();
 
         return redirect()->route('admin.course.index',['search_key'=>$request->search_key]);

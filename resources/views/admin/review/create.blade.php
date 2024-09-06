@@ -30,6 +30,12 @@
                                         </div>
                                         <div class="col-md-6 form_div">
                                             <div class="form-group">
+                                                <label for="rating">Rating</label>
+                                                <input type="number" class="form-control" name="rating" placeholder="Enter Rating...">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 form_div">
+                                            <div class="form-group">
                                                 <label for="message">Message <span class="text-danger">*</span></label>
                                                 <textarea name="message" class="form-control"></textarea>
                                             </div>

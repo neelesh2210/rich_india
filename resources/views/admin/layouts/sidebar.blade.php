@@ -312,6 +312,11 @@
                                     <p>Language</p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{route('admin.instagram-link.index')}}" class="nav-link @if(Route::currentRouteName() == 'admin.instagram-link.index'|| Route::currentRouteName() == 'admin.instagram-link.edit') active @endif">
+                                    <p>Instagram Link</p>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                 @endcanany

@@ -10,7 +10,6 @@
 <script type="text/javascript">
 
     $(function(){
-        //alerts
         var Toast = Swal.mixin({
             toast: true,
             position: 'top-end',
@@ -46,7 +45,6 @@
             })
         }
         function error_alert(error_message) {
-            //alert("Hello! I am an alert box!!");
             Toast.fire({
                 icon: 'error',
                 title: error_message

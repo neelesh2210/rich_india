@@ -37,7 +37,6 @@ class WebsiteSettingController extends Controller
 
     public function store(Request $request)
     {
-
         if($request->type == 'sliders'){
             $websitesetting = new WebsiteSetting;
             $websitesetting->type = $request->for;
@@ -65,57 +64,74 @@ class WebsiteSettingController extends Controller
         }
 
         if($request->type == 'website_data'){
-            WebsiteSetting::updateOrCreate([
-                'type'=>'address',
-            ],[
-                'content'=>$request->address
-            ]);
-
-            WebsiteSetting::updateOrCreate([
-                'type'=>'email',
-            ],[
-                'content'=>$request->email
-            ]);
-
-            WebsiteSetting::updateOrCreate([
-                'type'=>'whatsapp',
-            ],[
-                'content'=>$request->whatsapp
-            ]);
-
-            WebsiteSetting::updateOrCreate([
-                'type'=>'support_phone',
-            ],[
-                'content'=>json_encode($request->support_phone)
-            ]);
-            WebsiteSetting::updateOrCreate([
-                'type'=>'telegram',
-            ],[
-                'content'=>$request->telegram
-            ]);
-            WebsiteSetting::updateOrCreate([
-                'type'=>'bonus_percent',
-            ],[
-                'content'=>$request->bonus_percent
-            ]);
-            WebsiteSetting::updateOrCreate([
-                'type'=>'discount_percent',
-            ],[
-                'content'=>$request->discount_percent
-            ]);
-
-            if($request->has('qr_code')){
+            if($request->address){
                 WebsiteSetting::updateOrCreate([
-                    'type'=>'qr_code',
+                    'type'=>'address',
                 ],[
-                    'content'=>imageUpload($request->file('qr_code'),'frontend/assets/images')
+                    'content'=>$request->address
                 ]);
+            }
+
+            if($request->email){
+                WebsiteSetting::updateOrCreate([
+                    'type'=>'email',
+                ],[
+                    'content'=>$request->email
+                ]);
+            }
+
+            if($request->whatsapp){
+                WebsiteSetting::updateOrCreate([
+                    'type'=>'whatsapp',
+                ],[
+                    'content'=>$request->whatsapp
+                ]);
+            }
+
+            if($request->support_phone){
+                WebsiteSetting::updateOrCreate([
+                    'type'=>'support_phone',
+                ],[
+                    'content'=>json_encode($request->support_phone)
+                ]);
+            }
+
+            if($request->telegram){
+                WebsiteSetting::updateOrCreate([
+                    'type'=>'telegram',
+                ],[
+                    'content'=>$request->telegram
+                ]);
+            }
+
+            if($request->bonus_percent){
+                WebsiteSetting::updateOrCreate([
+                    'type'=>'bonus_percent',
+                ],[
+                    'content'=>$request->bonus_percent
+                ]);
+            }
+
+            if($request->discount_percent){
+                WebsiteSetting::updateOrCreate([
+                    'type'=>'discount_percent',
+                ],[
+                    'content'=>$request->discount_percent
+                ]);
+            }
+
+            if($request->qr_code){
+                if($request->has('qr_code')){
+                    WebsiteSetting::updateOrCreate([
+                        'type'=>'qr_code',
+                    ],[
+                        'content'=>imageUpload($request->file('qr_code'),'frontend/assets/images')
+                    ]);
+                }
             }
         }
 
         if($request->type == 'social_handle'){
-            //return $request->all();
-
             if($request->whatsapp_title){
                 $whatspp = [];
 

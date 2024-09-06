@@ -24,6 +24,7 @@ class ReviewController extends Controller
         $review->name = $request->name;
         $review->designation = $request->designation;
         $review->message = $request->message;
+        $review->rating = $request->rating;
         $review->image = imageUpload($request->file('image'),'backend/img/reviews');;
         $review->save();
 
@@ -45,6 +46,7 @@ class ReviewController extends Controller
         $review->name = $request->name;
         $review->designation = $request->designation;
         $review->message = $request->message;
+        $review->rating = $request->rating;
         if($request->has('image')){
             $review->image = imageUpload($request->file('image'),'backend/img/reviews');;
         }

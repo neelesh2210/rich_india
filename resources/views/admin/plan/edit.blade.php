@@ -31,19 +31,31 @@
                                                     <input type="text" class="form-control" name="title" value="{{ $plan->title }}" placeholder="Enter Title..." required>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3 form_div">
+                                            <div class="col-md-2 form_div">
                                                 <div class="form-group">
                                                     <label for="amount">Amount<span class="text-danger">*</span> </label>
                                                     <input type="text" class="form-control" name="amount" value="{{ $plan->amount }}" placeholder="Enter Amount..." required>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3 form_div">
+                                            <div class="col-md-2 form_div">
                                                 <div class="form-group">
                                                     <label for="discounted_price">Discounted Price<span class="text-danger">*</span> </label>
                                                     <input type="text" class="form-control" name="discounted_price" value="{{ $plan->discounted_price }}" placeholder="Enter Discounted Price..." required>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-2 form_div">
+                                                <div class="form-group">
+                                                    <label for="tag">Tag</label>
+                                                    <input type="text" class="form-control" name="tag" value="{{ $plan->tag }}" placeholder="Enter Tag...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 form_div">
+                                                <div class="form-group">
+                                                    <label for="review">review</label>
+                                                    <input type="text" class="form-control" name="review" value="{{ $plan->review }}" placeholder="Enter Review...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label>Image</label>
                                                     <div class="custom-file">
@@ -68,17 +80,13 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>Cosmofeed Base Price Url</label>
-                                                    <input type="text" name="cosmofeed_base_price_url"
-                                                        class="form-control"
-                                                        placeholder="Cosmofeed Base Price Url"  value="{{$plan->cosmofeed_base_price_url}}">
+                                                    <input type="text" name="cosmofeed_base_price_url" class="form-control" placeholder="Cosmofeed Base Price Url" value="{{ $plan->cosmofeed_base_price_url }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label>Cosmofeed Discounted Price Url </label>
-                                                    <input type="text"  name="cosmofeed_discounted_price_url"
-                                                        class="form-control"
-                                                        placeholder="Cosmofeed Discounted Price Url" value="{{$plan->cosmofeed_discounted_price_url}}">
+                                                    <input type="text" name="cosmofeed_discounted_price_url" class="form-control" placeholder="Cosmofeed Discounted Price Url" value="{{ $plan->cosmofeed_discounted_price_url }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -88,7 +96,7 @@
                                             @endphp
                                             @for ($i = 1; $i <= $plans->count() - $plan->priority; $i++)
                                                 @php
-                                                    $upgrade_plan = App\Models\Admin\Plan::where('priority', $plan->priority + $i)->first();
+                                                    $upgrade_plan = App\Models\Admin\Plan::where('priority',$plan->priority + $i,)->first();
                                                 @endphp
                                                 <div class="col-md-12">
                                                     <div class="form-group">
@@ -96,11 +104,11 @@
                                                         <input type="number" step="0.01" name="upgrade_amount[]" @if ($plan->upgrade_amount) value="{{ $plan->upgrade_amount[$i - 1] }}" @endif class="form-control" placeholder="Upgrade Amount for {{ $upgrade_plan->title }}... " required>
                                                     </div>
                                                 </div>
-                                                @for($j=1;$j<=App\Models\Admin\WebsiteSetting::where('type','upgrade_commission_level')->first()->content;$j++)
+                                                @for ($j = 1; $j <= App\Models\Admin\WebsiteSetting::where('type', 'upgrade_commission_level')->first()->content; $j++)
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label>Upgrade Commission for {{ $upgrade_plan->title }} of Level {{$j}}<span class="text-danger">*</span></label>
-                                                            <input type="number" step="0.01" name="upgrade_commission_{{$i}}[]" @if($plan->upgrade_commission) @isset($plan->upgrade_commission[$i - 1][$j-1]) value="{{ $plan->upgrade_commission[$i - 1][$j-1] }}" @endisset @endif class="form-control" placeholder="Upgrade Commission for {{ $upgrade_plan->title }}... " required>
+                                                            <label>Upgrade Commission for {{ $upgrade_plan->title }} of Level {{ $j }}<span class="text-danger">*</span></label>
+                                                            <input type="number" step="0.01" name="upgrade_commission_{{ $i }}[]" @if ($plan->upgrade_commission) @isset($plan->upgrade_commission[$i - 1][$j - 1]) value="{{ $plan->upgrade_commission[$i - 1][$j - 1] }}" @endisset @endif class="form-control" placeholder="Upgrade Commission for {{ $upgrade_plan->title }}... " required>
                                                         </div>
                                                     </div>
                                                 @endfor

@@ -24,6 +24,7 @@ use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\CommissionController;
 use App\Http\Controllers\Admin\InstructorController;
 use App\Http\Controllers\Admin\LeaderboardController;
+use App\Http\Controllers\Admin\InstagramLinkController;
 use App\Http\Controllers\Admin\WebsiteSettingController;
 use App\Http\Controllers\Admin\AutomatedPayoutController;
 use App\Http\Controllers\Admin\TestimonialVideoController;
@@ -189,6 +190,9 @@ Route::group(['middleware'=>'auth:admin','as'=>'admin.'],function () {
 
     //Language
     Route::resource('language', LanguageController::class)->except('create','show');
+
+    //Instagram Link
+    Route::resource('instagram-link', InstagramLinkController::class)->except('create','show');
 
     Route::post('logout/', [LoginController::class, 'logout'])->name('logout');
 });

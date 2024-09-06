@@ -54,11 +54,11 @@
                                             <tr>
                                                 <td class="text-center">{{($key+1) + ($reviews->currentPage() - 1)*$reviews->perPage()}}</td>
                                                 <td class="text-center">{{$review->name}}</td>
-                                                <td class="text-center">{{$review->designation}}</td>
-                                                <td class="text-center">{{$review->message}}</td>
                                                 <td class="text-center">
                                                     <img src="{{asset('backend/img/reviews/'.$review->image)}}" width="100px" height="100px">
                                                 </td>
+                                                <td class="text-center">{{$review->designation}}</td>
+                                                <td class="text-center">{{$review->message}}</td>
                                                 <td class="d-flex text-center">
                                                     @can('review-edit')
                                                         <a href="{{route('admin.reviews.edit',encrypt($review->id))}}" class="btn btn-outline-primary btn-sm mr-1 mb-1">
