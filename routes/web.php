@@ -49,8 +49,7 @@ Route::post('payment', [RegisterController::class,'payment'])->name('payment');
 
 //Course
 Route::view('course', 'frontend.course')->name('course');
-Route::view('course_details', 'frontend.course_details')->name('course_details');
-Route::get('course-detail/{slug}',[CourseController::class,'courseDetail'])->name('course.detail');
+Route::get('course/{slug}',[CourseController::class,'courseDetail'])->name('course.detail');
 
 //Plan
 Route::get('plan',[PlanController::class,'planIndex'])->name('plan');
