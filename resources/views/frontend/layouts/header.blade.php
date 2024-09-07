@@ -1,27 +1,31 @@
 @php
-    if(!isset($plans)) {
+    if (!isset($plans)) {
         $plans = App\Models\Admin\Plan::where('delete_status', '0')->where('status', '1')->oldest('priority')->get();
     }
 
-    if(!isset($website_data)) {
-        $website_data = App\Models\Admin\WebsiteSetting::where(function($query){
-            $query->where('type', 'trainers')
+    if (!isset($website_data)) {
+        $website_data = App\Models\Admin\WebsiteSetting::where(function ($query) {
+            $query
+                ->where('type', 'trainers')
                 ->orWhere('type', 'students')
                 ->orWhere('type', 'live_training')
                 ->orWhere('type', 'community_earning')
                 ->orWhere('type', 'whatsapp')
                 ->orWhere('type', 'address')
                 ->orWhere('type', 'email');
-        })->pluck('content','type');
+        })->pluck('content', 'type');
     }
 
-    if(!isset($website_social_link)) {
-        $website_social_link = App\Models\Admin\WebsiteSetting::where('type','social')->where(function($query){
-            $query->where('content', 'facebook')
-                ->orWhere('content', 'youtube')
-                ->orWhere('content', 'instagram')
-                ->orWhere('content', 'linkedin');
-        })->pluck('url','content');
+    if (!isset($website_social_link)) {
+        $website_social_link = App\Models\Admin\WebsiteSetting::where('type', 'social')
+            ->where(function ($query) {
+                $query
+                    ->where('content', 'facebook')
+                    ->orWhere('content', 'youtube')
+                    ->orWhere('content', 'instagram')
+                    ->orWhere('content', 'linkedin');
+            })
+            ->pluck('url', 'content');
     }
 @endphp
 <header>
@@ -33,13 +37,13 @@
                         @isset($website_data['address'])
                             <li>
                                 <img src="{{ asset('frontend/assets/img/icons/map_marker.svg') }}" alt="Icon">
-                                <span>{{$website_data['address']}}</span>
+                                <span>{{ $website_data['address'] }}</span>
                             </li>
                         @endisset
                         @isset($website_data['email'])
                             <li>
                                 <img src="{{ asset('frontend/assets/img/icons/envelope.svg') }}" alt="Icon">
-                                <a href="mailto:{{$website_data['email']}}">{{$website_data['email']}}</a>
+                                <a href="mailto:{{ $website_data['email'] }}">{{ $website_data['email'] }}</a>
                             </li>
                         @endisset
                     </ul>
@@ -49,29 +53,33 @@
                         @isset($website_data['whatsapp'])
                             <div class="tg-header__phone">
                                 <img src="{{ asset('frontend/assets/img/icons/phone.svg') }}" alt="Icon">Call us:
-                                <a href="tel:{{$website_data['whatsapp']}}">{{$website_data['whatsapp']}}</a>
+                                <a href="tel:{{ $website_data['whatsapp'] }}">{{ $website_data['whatsapp'] }}</a>
                             </div>
                         @endisset
                         <ul class="tg-header__top-social list-wrap">
                             <li>Follow Us On :</li>
                             @isset($website_social_link['facebook'])
-                                <li><a href="{{$website_social_link['facebook']}}"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="{{ $website_social_link['facebook'] }}"><i class="fab fa-facebook-f"></i></a>
+                                </li>
                             @endisset
 
                             @isset($website_social_link['instagram'])
-                                <li><a href="{{$website_social_link['instagram']}}"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="{{ $website_social_link['instagram'] }}"><i class="fab fa-instagram"></i></a>
+                                </li>
                             @endisset
 
                             @isset($website_social_link['whatsapp'])
-                                <li><a href="{{$website_social_link['whatsapp']}}"><i class="fab fa-whatsapp"></i></a></li>
+                                <li><a href="{{ $website_social_link['whatsapp'] }}"><i class="fab fa-whatsapp"></i></a>
+                                </li>
                             @endisset
 
                             @isset($website_social_link['linkedin'])
-                                <li><a href="{{$website_social_link['linkedin']}}"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="{{ $website_social_link['linkedin'] }}"><i class="fab fa-linkedin-in"></i></a>
+                                </li>
                             @endisset
 
                             @isset($website_social_link['youtube'])
-                                <li><a href="{{$website_social_link['youtube']}}"><i class="fab fa-youtube"></i></a></li>
+                                <li><a href="{{ $website_social_link['youtube'] }}"><i class="fab fa-youtube"></i></a></li>
                             @endisset
                         </ul>
                     </div>
@@ -99,7 +107,8 @@
                                         <ul class="sub-menu">
                                             @foreach ($plans as $plan)
                                                 <li>
-                                                    <a href="{{ route('plan.detail', $plan->slug) }}">{{ $plan->title }}</a>
+                                                    <a
+                                                        href="{{ route('plan.detail', $plan->slug) }}">{{ $plan->title }}</a>
                                                 </li>
                                             @endforeach
                                         </ul>
@@ -113,7 +122,8 @@
                                 <ul class="list-wrap">
                                     <li class="header-btn login-btn">
                                         @auth('web')
-                                            <a href="{{ route('user.dashboard') }}"><i class="far fa-user"></i> {{Auth::guard('web')->user()->name}}</a>
+                                            <a href="{{ route('user.dashboard') }}"><i class="far fa-user"></i>
+                                                {{ Auth::guard('web')->user()->name }}</a>
                                         @else
                                             <a href="{{ route('signin') }}"><i class="far fa-user"></i> Log in</a>
                                         @endauth
@@ -122,7 +132,8 @@
                             </div>
                             <div class="mobile-login-btn">
                                 <a href="{{ route('signin') }}">
-                                    <img src="{{ asset('frontend/assets/img/icons/user.svg') }}" alt="" class="injectable">
+                                    <img src="{{ asset('frontend/assets/img/icons/user.svg') }}" alt=""
+                                        class="injectable">
                                 </a>
                             </div>
                             <div class="mobile-nav-toggler"><i class="tg-flaticon-menu-1"></i></div>
@@ -141,23 +152,28 @@
                             <div class="social-links">
                                 <ul class="list-wrap">
                                     @isset($website_social_link['facebook'])
-                                        <li><a href="{{$website_social_link['facebook']}}"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="{{ $website_social_link['facebook'] }}"><i
+                                                    class="fab fa-facebook-f"></i></a></li>
                                     @endisset
 
                                     @isset($website_social_link['instagram'])
-                                        <li><a href="{{$website_social_link['instagram']}}"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="{{ $website_social_link['instagram'] }}"><i
+                                                    class="fab fa-instagram"></i></a></li>
                                     @endisset
 
                                     @isset($website_social_link['whatsapp'])
-                                        <li><a href="{{$website_social_link['whatsapp']}}"><i class="fab fa-whatsapp"></i></a></li>
+                                        <li><a href="{{ $website_social_link['whatsapp'] }}"><i
+                                                    class="fab fa-whatsapp"></i></a></li>
                                     @endisset
 
                                     @isset($website_social_link['linkedin'])
-                                        <li><a href="{{$website_social_link['linkedin']}}"><i class="fab fa-linkedin-in"></i></a></li>
+                                        <li><a href="{{ $website_social_link['linkedin'] }}"><i
+                                                    class="fab fa-linkedin-in"></i></a></li>
                                     @endisset
 
                                     @isset($website_social_link['youtube'])
-                                        <li><a href="{{$website_social_link['youtube']}}"><i class="fab fa-youtube"></i></a></li>
+                                        <li><a href="{{ $website_social_link['youtube'] }}"><i
+                                                    class="fab fa-youtube"></i></a></li>
                                     @endisset
                                 </ul>
                             </div>

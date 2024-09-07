@@ -380,6 +380,13 @@ textarea {
   .custom-container {
     max-width: 100%;
   }
+  .content .inner {
+    width: 100% !important;
+    padding: 0 !important;
+}
+.content {
+    display: block !important;
+}
 }
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   .custom-container {
@@ -18562,12 +18569,12 @@ blockquote > p {
     font-weight: 500;
 }
 .customer__form-wrap .form-grp textarea, .customer__form-wrap .form-grp input {
-  width: 100%;
-  color: var(--tg-heading-color);
-  height: 53px;
-  padding: 0 20px;
-  background: #f5f5f5;
-  border: none;
+    width: 100%;
+    color: var(--tg-heading-color);
+    height: 50px;
+    padding: 0 20px;
+    background: #fff;
+    border: 1px solid #333;
 }
 .customer__form-wrap .form-grp textarea {
   padding: 10px 20px 0;
@@ -20649,4 +20656,62 @@ blockquote > p {
 .instagram-media{
   min-width: 100% !important;
   margin: -15px !important;
+}
+.rbt-new-badge {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+.rbt-new-badge-one {
+    color: #192335;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1;
+    padding: 15px 24px 15px 15px;
+    box-shadow: 0 15px 40px #d2d3e2a1;
+    background: #fff;
+    border-radius: 4px;
+}
+.rbt-new-badge-one:before {
+    position: absolute;
+    top: 50%;
+    right: -19px;
+    left: -19px;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    transform: translateY(-50%);
+    height: 45px;
+    width: -moz-calc(100% + 38px);
+    width: calc(100% + 38px);
+    background: rgba(255, 255, 255, 0.5);
+    -webkit-box-shadow: 0 0 29px #d1d3ed63;
+    box-shadow: 0 0 29px #d1d3ed63;
+    z-index: -1;
+    content: "";
+    -webkit-clip-path: polygon(100% 0, 97% 50%, 100% 100%, 0 100%, 3% 50%, 0 0);
+    clip-path: polygon(100% 0, 97% 50%, 100% 100%, 0 100%, 3% 50%, 0 0);
+}
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.content .inner {
+    position: relative;
+    z-index: 1;
+    padding-right: 140px;
+    width: 80%;
+}
+.content .shape-wrapper {
+    margin-top: 20px;
+    z-index: 2;
+    margin-bottom: 6px;
+    position: relative;
+    width: 300px;
+}
+.content .shape-wrapper img {
+    width: 100%;
+    display: block;
+    margin-left: 40px;
+    margin-right: auto;
 }

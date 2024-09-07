@@ -2,32 +2,23 @@
 @section('content')
 
     <section class="slider__area">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                @foreach($desktop_sliders as $desktop_slider)
-                    <div class="swiper-slide slider__single">
-                        <div class="slider__bg" data-background="{{ asset('backend/img/websitesetting/sliders/'.$desktop_slider->content) }}">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-xl-6 col-lg-7">
-                                        <div class="slider__content">
-                                            <span class="sub-title">Professional Courses</span>
-                                            <h2 class="title">Find Business
-                                                <span>Courses</span> & Develop Your Skills
-                                            </h2>
-                                            <p>Free & Premium online courses from the world’s Join 17 million learners today.</p>
-                                            <div class="banner__btn-wrap" data-aos="fade-right" data-aos-delay="800">
-                                                <a href="{{$desktop_slider->url??'#'}}" class="btn arrow-btn">Start Free Trial <i class="fas fa-arrow-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                @foreach ($desktop_sliders as $key => $desktop_slider)
+                    <div class="carousel-item {{$key == 0 ? 'active' : ''}}">
+                    <img src="{{ asset('backend/img/websitesetting/sliders/' . $desktop_slider->content) }}" class="d-block w-100" alt="{{ env('APP_NAME') }}-Slider">
                     </div>
                 @endforeach
-            </div>
-        </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                </div>
     </section>
 
     <section class="features__area-eight">
@@ -364,7 +355,7 @@
                 </div>
             </div>
             <div class="fact__inner-wrap">
-                <div class="row">.
+                <div class="row">
                     @isset($website_data['trainers'])
                         <div class="col-lg-3 col-6">
                             <div class="fact__item">
@@ -719,7 +710,7 @@
                                                 {{$faq->title}}
                                             </button>
                                         </h2>
-                                        <div id="collapse{{$faq_key}}" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                        <div id="collapse{{$faq_key}}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                             <div class="accordion-body">
                                                 <p>
                                                     {!!$faq->content!!}

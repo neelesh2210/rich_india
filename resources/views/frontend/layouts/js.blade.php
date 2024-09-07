@@ -1,15 +1,16 @@
-<script src="{{ asset('frontend/assets/js/vendor/jquery-3.6.0.min.js')}}"></script>
-<script src="{{ asset('frontend/assets/js/bootstrap.min.js')}}"></script>
-<script src="{{ asset('frontend/assets/js/jquery.odometer.min.js')}}"></script>
-<script src="{{ asset('frontend/assets/js/jquery.appear.js')}}"></script>
-<script src="{{ asset('frontend/assets/js/select2.min.js')}}"></script>
-<script src="{{ asset('frontend/assets/js/swiper-bundle.min.js')}}"></script>
-<script src="{{ asset('frontend/assets/js/wow.min.js')}}"></script>
-<script src="{{ asset('frontend/assets/js/aos.js')}}"></script>
-<script src="{{ asset('frontend/assets/js/main.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/vendor/jquery-3.6.0.min.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/jquery.odometer.min.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/jquery.appear.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/select2.min.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/swiper-bundle.min.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/vivus.min.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/plyr.min.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/wow.min.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/aos.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/main.js') }}"></script>
 <script type="text/javascript">
-
-    $(function(){
+    $(function() {
         $('.select2').select2();
 
         var Toast = Swal.mixin({
@@ -34,24 +35,28 @@
         if (warning_message != "") {
             warning_alert(warning_message)
         }
+
         function success_alert(success_message) {
             Toast.fire({
                 icon: 'success',
                 title: success_message
             })
         }
+
         function info_alert(info_message) {
             Toast.fire({
                 icon: 'info',
                 title: info_message
             })
         }
+
         function error_alert(error_message) {
             Toast.fire({
                 icon: 'error',
                 title: error_message
             })
         }
+
         function warning_alert(warning_message) {
             Toast.fire({
                 icon: 'warning',
