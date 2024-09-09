@@ -151,7 +151,7 @@
                                         <div class="form-grp">
                                             <label>Your Affiliate Code</label>
                                             <div class="aff-div">
-                                                <input  name="referral_code" id="referral_code"
+                                                <input name="referral_code" id="referral_code"
                                                     value="{{ old('referral_code', $referral_code) }}"
                                                     placeholder="Referral Code" />
                                                 <div class="lbl_msg" id="error_refferal"></div>
@@ -181,16 +181,15 @@
                                     <div class="col-md-6 mb-3">
                                         <div class="form-grp">
                                             <label>Enter Mobile Number</label>
-                                            <input type="number" name="phone" id="phone"
-                                                placeholder="+91 |">
+                                            <input type="number" name="phone" id="phone" placeholder="+91 |">
                                             <div class="lbl_msg" id="error_phone"></div>
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <div class="form-grp">
                                             <label>Email Id <span>*</span></label>
-                                            <input type="email" name="email" id="email"
-                                                placeholder="xyz@gmail.com" required />
+                                            <input type="email" name="email" id="email" placeholder="xyz@gmail.com"
+                                                required />
                                             <div class="lbl_msg" id="error_email"></div>
                                         </div>
                                     </div>
@@ -198,8 +197,8 @@
                                         <div class="form-grp">
                                             <label for="password">Password <span>*</span></label>
                                             <div class="input-group" id="show_hide_password">
-                                                <input type="password" name="password" id="password"
-                                                    placeholder="Password" required />
+                                                <input type="password" name="password" id="password" placeholder="Password"
+                                                    required />
                                                 <div class="input-group-append">
                                                     <div class="input-group-text">
                                                         <a href=""><i class="fa fa-eye-slash"
@@ -216,7 +215,7 @@
                                                 <span>*</span></label>
                                             <div class="input-group" id="confirm_show_hide_password">
                                                 <input type="password" name="confirm_password" id="confirm_password"
-                                                     placeholder="Password" required />
+                                                    placeholder="Password" required />
                                                 <div class="input-group-append">
                                                     <div class="input-group-text">
                                                         <a href=""><i class="fa fa-eye-slash"
@@ -284,23 +283,22 @@
                             I agree to the <a href="{{ route('term_and_condition') }}">Terms of Service</a> and <a
                                 href="{{ route('privacy_policy') }}">Privacy Policy.</a>
                         </label>
-                        <button type="button" class="btn w-100" id="submitButton"
-                            onclick="submitForm()"><span class="richind-btn__curve"></span>Next<i
-                                class="icon-arrow"></i></button>
+                        <button type="button" class="btn w-100" id="submitButton" onclick="submitForm()"><span
+                                class="richind-btn__curve"></span>Next<i class="icon-arrow"></i></button>
                     </div>
                 </div>
             </div>
-        <div class="row">
-            <div class="col-lg-10 col-12 m-lg-auto" style="display:none" id="payment_div">
-                <div class="login-wrapper">
-                    <div class="loginbox">
-                        <div class="section-title mb-4 mt-2">
-                            <h5 class="gordita-bold">Payment Modes</h5>
-                            <hr>
-                        </div>
-                        <div class="faq-accordion">
-                            <div class="accordion" id="FaqAccordion">
-                                {{-- <div class="accordion-item">
+            <div class="row">
+                <div class="col-lg-10 col-12 m-lg-auto" style="display:none" id="payment_div">
+                    <div class="login-wrapper">
+                        <div class="loginbox">
+                            <div class="section-title mb-4 mt-2">
+                                <h5 class="gordita-bold">Payment Modes</h5>
+                                <hr>
+                            </div>
+                            <div class="faq-accordion">
+                                <div class="accordion" id="FaqAccordion">
+                                    {{-- <div class="accordion-item">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" id="phonepay">
                                             PhonePe
                                         </button>
@@ -321,7 +319,7 @@
                                             </form>
                                         </div>
                                     </div> --}}
-                                {{-- <div class="accordion-item">
+                                    {{-- <div class="accordion-item">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" id="instamojo">
                                             Instamojo
                                         </button>
@@ -342,28 +340,28 @@
                                             </form>
                                         </div>
                                     </div> --}}
-                                <div class="accordion-item">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour"
-                                        id="cosmofeed">
-                                        Cosmofeed
-                                    </button>
-                                    <div id="collapseFour" class="accordion-collapse collapse show"
-                                        data-bs-parent="#FaqAccordion">
-                                        <div class="accordion-body">
-                                            <p> Pay Using Cosmofeed <br></p>
-                                            <div class="about-btn mt-3 mb-3">
-                                                <div class="text-center">
-                                                    <a href="#" id="place_order"
-                                                        class="richind-btn richind-btn-second w-100"><span
-                                                            class="richind-btn__curve" id="price"></span>Place Order<i
-                                                            class="icon-arrow"></i></a>
+                                    <div class="accordion-item">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true"
+                                            aria-controls="collapseFour" id="cosmofeed">
+                                            Cosmofeed
+                                        </button>
+                                        <div id="collapseFour" class="accordion-collapse collapse show"
+                                            data-bs-parent="#FaqAccordion">
+                                            <div class="accordion-body">
+                                                <p> Pay Using Cosmofeed <br></p>
+                                                <div class="about-btn mt-3 mb-3">
+                                                    <div class="text-center">
+                                                        <a href="#" id="place_order"
+                                                            class="richind-btn richind-btn-second w-100"><span
+                                                                class="richind-btn__curve" id="price"></span>Place
+                                                            Order<i class="icon-arrow"></i></a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                {{-- <div class="accordion-item">
+                                    {{-- <div class="accordion-item">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                             Pay with QR
                                         </button>
@@ -381,30 +379,30 @@
                                             </div>
                                         </div>
                                     </div> --}}
-                                <div class="accordion-item">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="false"
-                                        aria-controls="collapseThree">
-                                        Pay with Referrel Wallet
-                                    </button>
-                                    <div id="collapseThree" class="accordion-collapse collapse"
-                                        data-bs-parent="#FaqAccordion" style="">
-                                        <div class="accordion-body">
-                                            <p> Pay Using {{ env('APP_ENV') }} Referrel Wallet </p>
-                                            <div class="about-btn mt-3 mb-3">
-                                                <input type="text"  id="wallet_referrel_code"
-                                                    readonly>
-                                                <form action="{{ route('wallet.referrel.request') }}" method="POST"
-                                                    id="wallet_referrel_code_form">
-                                                    @csrf
-                                                </form>
-                                            </div>
-                                            <div class="text-center">
-                                                <a id="wallet_referrel_code_button"
-                                                    class="richind-btn richind-btn-second w-100"
-                                                    onclick="$('#wallet_referrel_code_form').submit()"><span
-                                                        class="richind-btn__curve"></span>Place Order<i
-                                                        class="icon-arrow"></i></a>
+                                    <div class="accordion-item">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                            aria-expanded="false" aria-controls="collapseThree">
+                                            Pay with Referrel Wallet
+                                        </button>
+                                        <div id="collapseThree" class="accordion-collapse collapse"
+                                            data-bs-parent="#FaqAccordion" style="">
+                                            <div class="accordion-body">
+                                                <p> Pay Using {{ env('APP_ENV') }} Referrel Wallet </p>
+                                                <div class="about-btn mt-3 mb-3">
+                                                    <input type="text" id="wallet_referrel_code" readonly>
+                                                    <form action="{{ route('wallet.referrel.request') }}" method="POST"
+                                                        id="wallet_referrel_code_form">
+                                                        @csrf
+                                                    </form>
+                                                </div>
+                                                <div class="text-center">
+                                                    <a id="wallet_referrel_code_button"
+                                                        class="richind-btn richind-btn-second w-100"
+                                                        onclick="$('#wallet_referrel_code_form').submit()"><span
+                                                            class="richind-btn__curve"></span>Place Order<i
+                                                            class="icon-arrow"></i></a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -416,210 +414,210 @@
             </div>
         </div>
     </div>
-    </section>
 
-    @push('js')
-        <script>
-            $(document).ready(function() {
-                $("#show_hide_password a").on('click', function(event) {
-                    event.preventDefault();
-                    if ($('#show_hide_password input').attr("type") == "text") {
-                        $('#show_hide_password input').attr('type', 'password');
-                        $('#show_hide_password i').addClass("fa-eye-slash");
-                        $('#show_hide_password i').removeClass("fa-eye");
-                    } else if ($('#show_hide_password input').attr("type") == "password") {
-                        $('#show_hide_password input').attr('type', 'text');
-                        $('#show_hide_password i').removeClass("fa-eye-slash");
-                        $('#show_hide_password i').addClass("fa-eye");
-                    }
-                });
 
-                $("#confirm_show_hide_password a").on('click', function(event) {
-                    event.preventDefault();
-                    if ($('#confirm_show_hide_password input').attr("type") == "text") {
-                        $('#confirm_show_hide_password input').attr('type', 'password');
-                        $('#confirm_show_hide_password i').addClass("fa-eye-slash");
-                        $('#confirm_show_hide_password i').removeClass("fa-eye");
-                    } else if ($('#confirm_show_hide_password input').attr("type") == "password") {
-                        $('#confirm_show_hide_password input').attr('type', 'text');
-                        $('#confirm_show_hide_password i').removeClass("fa-eye-slash");
-                        $('#confirm_show_hide_password i').addClass("fa-eye");
-                    }
-                });
-            });
-
-            function submitForm() {
-                $('#submitButton').attr('disabled', true)
-                $.ajax({
-                    type: 'POST',
-                    url: "{{ route('vaildate.user.registeration') }}",
-                    data: $('#registerForm').serialize(),
-                    success: function(data) {
-                        $('#phonepay').prop('disabled', false);
-                        $('#phonepay').removeClass('collapsed');
-                        //$('#collapseFive').addClass('show');
-                        $('#payment_div').show();
-                        $('#details_div').hide();
-                        $('#payment_detail').hide();
-                        var referral_code = $('#referral_code').val();
-                        if (referral_code == '') {
-                            alert('You are submiting form without Referral Code!');
-                            $('#wallet_referrel_code').val('');
-                            $('#wallet_referrel_code_button').addClass('btn-disabled');
-                        } else {
-                            $('#wallet_referrel_code').val(referral_code);
-                            $('#wallet_referrel_code_button').removeClass('btn-disabled');
+        @push('js')
+            <script>
+                $(document).ready(function() {
+                    $("#show_hide_password a").on('click', function(event) {
+                        event.preventDefault();
+                        if ($('#show_hide_password input').attr("type") == "text") {
+                            $('#show_hide_password input').attr('type', 'password');
+                            $('#show_hide_password i').addClass("fa-eye-slash");
+                            $('#show_hide_password i').removeClass("fa-eye");
+                        } else if ($('#show_hide_password input').attr("type") == "password") {
+                            $('#show_hide_password input').attr('type', 'text');
+                            $('#show_hide_password i').removeClass("fa-eye-slash");
+                            $('#show_hide_password i').addClass("fa-eye");
                         }
-                        $('#price').text('₹' + data.amount);
-                        $('#place_order').attr('href', data.url);
+                    });
 
-                        $('.form-control').prop('readonly', true);
-                        $('.online_payment').prop('disabled', true);
-                        $('#error_name').show();
-                        $('#error_name').addClass('text-success');
-                        $('#error_name').removeClass('text-danger');
-                        $('#error_name').text('✔ Correct');
-                        $('#name').prop('readonly', true);
+                    $("#confirm_show_hide_password a").on('click', function(event) {
+                        event.preventDefault();
+                        if ($('#confirm_show_hide_password input').attr("type") == "text") {
+                            $('#confirm_show_hide_password input').attr('type', 'password');
+                            $('#confirm_show_hide_password i').addClass("fa-eye-slash");
+                            $('#confirm_show_hide_password i').removeClass("fa-eye");
+                        } else if ($('#confirm_show_hide_password input').attr("type") == "password") {
+                            $('#confirm_show_hide_password input').attr('type', 'text');
+                            $('#confirm_show_hide_password i').removeClass("fa-eye-slash");
+                            $('#confirm_show_hide_password i').addClass("fa-eye");
+                        }
+                    });
+                });
 
-                        $('#error_email').show();
-                        $('#error_email').addClass('text-success');
-                        $('#error_email').removeClass('text-danger');
-                        $('#error_email').text('✔ Email Available');
-                        $('#email').prop('readonly', true);
+                function submitForm() {
+                    $('#submitButton').attr('disabled', true)
+                    $.ajax({
+                        type: 'POST',
+                        url: "{{ route('vaildate.user.registeration') }}",
+                        data: $('#registerForm').serialize(),
+                        success: function(data) {
+                            $('#phonepay').prop('disabled', false);
+                            $('#phonepay').removeClass('collapsed');
+                            //$('#collapseFive').addClass('show');
+                            $('#payment_div').show();
+                            $('#details_div').hide();
+                            $('#payment_detail').hide();
+                            var referral_code = $('#referral_code').val();
+                            if (referral_code == '') {
+                                alert('You are submiting form without Referral Code!');
+                                $('#wallet_referrel_code').val('');
+                                $('#wallet_referrel_code_button').addClass('btn-disabled');
+                            } else {
+                                $('#wallet_referrel_code').val(referral_code);
+                                $('#wallet_referrel_code_button').removeClass('btn-disabled');
+                            }
+                            $('#price').text('₹' + data.amount);
+                            $('#place_order').attr('href', data.url);
 
-                        $('#error_phone').show();
-                        $('#error_phone').addClass('text-success');
-                        $('#error_phone').removeClass('text-danger');
-                        $('#error_phone').text('✔ Phone Available');
-                        $('#phone').prop('readonly', true);
-
-                        $('#error_password').show();
-                        $('#error_password').addClass('text-success');
-                        $('#error_password').removeClass('text-danger');
-                        $('#error_password').text('✔ Correct');
-                        $('#password').prop('readonly', true);
-
-                        $('#error_state').show();
-                        $('#error_state').addClass('text-success');
-                        $('#error_state').removeClass('text-danger');
-                        $('#error_state').text('✔ Correct');
-                        $('#state').prop('disabled', true);
-
-                        $('#error_refferal').show();
-                        $('#error_refferal').addClass('text-success');
-                        $('#error_refferal').removeClass('text-danger');
-                        $('#error_refferal').text('✔ Correct');
-                        $('#referral_code').prop('readonly', true);
-
-                        $('#submitButton').prop('disabled', true);
-                    },
-                    error: function(request, status, error) {
-                        $('#submitButton').attr('disabled', false)
-                        $('#cosmofeed').prop('disabled', true);
-                        $('#payment_div').hide();
-                        $('#details_div').show();
-                        $(window).scrollTop(0);
-                        if (request.responseJSON.errors.name) {
-                            $('#error_name').show();
-                            $('#error_name').addClass('text-danger');
-                            $('#error_name').removeClass('text-success');
-                            $('#error_name').text('✖ ' + request.responseJSON.errors.name);
-                        } else {
+                            $('.form-control').prop('readonly', true);
+                            $('.online_payment').prop('disabled', true);
                             $('#error_name').show();
                             $('#error_name').addClass('text-success');
                             $('#error_name').removeClass('text-danger');
                             $('#error_name').text('✔ Correct');
-                        }
-                        if (request.responseJSON.errors.email) {
-                            $('#error_email').show();
-                            $('#error_email').addClass('text-danger');
-                            $('#error_email').removeClass('text-success');
-                            $('#error_email').text('✖ ' + request.responseJSON.errors.email);
-                        } else {
+                            $('#name').prop('readonly', true);
+
                             $('#error_email').show();
                             $('#error_email').addClass('text-success');
                             $('#error_email').removeClass('text-danger');
                             $('#error_email').text('✔ Email Available');
-                        }
-                        if (request.responseJSON.errors.phone) {
-                            $('#error_phone').show();
-                            $('#error_phone').addClass('text-danger');
-                            $('#error_phone').removeClass('text-success');
-                            $('#error_phone').text('✖ ' + request.responseJSON.errors.phone);
-                        } else {
+                            $('#email').prop('readonly', true);
+
                             $('#error_phone').show();
                             $('#error_phone').addClass('text-success');
                             $('#error_phone').removeClass('text-danger');
                             $('#error_phone').text('✔ Phone Available');
-                        }
-                        if (request.responseJSON.errors.password) {
-                            $('#error_password').show();
-                            $('#error_password').addClass('text-danger');
-                            $('#error_password').removeClass('text-success');
-                            $('#error_password').text('✖ ' + request.responseJSON.errors.password);
-                        } else {
+                            $('#phone').prop('readonly', true);
+
                             $('#error_password').show();
                             $('#error_password').addClass('text-success');
                             $('#error_password').removeClass('text-danger');
                             $('#error_password').text('✔ Correct');
-                        }
-                        if (request.responseJSON.errors.state) {
-                            $('#error_state').show();
-                            $('#error_state').addClass('text-danger')
-                            $('#error_state').removeClass('text-success');
-                            $('#error_state').text('✖ ' + request.responseJSON.errors.state);
-                        } else {
+                            $('#password').prop('readonly', true);
+
                             $('#error_state').show();
                             $('#error_state').addClass('text-success');
                             $('#error_state').removeClass('text-danger');
                             $('#error_state').text('✔ Correct');
-                        }
-                        if (request.responseJSON.errors.referral_code) {
+                            $('#state').prop('disabled', true);
+
                             $('#error_refferal').show();
-                            $('#error_refferal').addClass('text-danger');
-                            $('#error_refferal').removeClass('text-success');
-                            $('#error_refferal').text('✖ ' + request.responseJSON.errors.referral_code);
-                            $('#discount_div').addClass('d-none')
-                            $('#price_span').removeClass('d-none')
-                            $('#discounted_price_span').addClass('d-none')
-                        } else {
-                            if ($('#referral_code').val() != '') {
-                                $('#discount_div').removeClass('d-none')
-                                $('#discounted_price_span').removeClass('d-none')
-                                $('#price_span').addClass('d-none')
+                            $('#error_refferal').addClass('text-success');
+                            $('#error_refferal').removeClass('text-danger');
+                            $('#error_refferal').text('✔ Correct');
+                            $('#referral_code').prop('readonly', true);
+
+                            $('#submitButton').prop('disabled', true);
+                        },
+                        error: function(request, status, error) {
+                            $('#submitButton').attr('disabled', false)
+                            $('#cosmofeed').prop('disabled', true);
+                            $('#payment_div').hide();
+                            $('#details_div').show();
+                            $(window).scrollTop(0);
+                            if (request.responseJSON.errors.name) {
+                                $('#error_name').show();
+                                $('#error_name').addClass('text-danger');
+                                $('#error_name').removeClass('text-success');
+                                $('#error_name').text('✖ ' + request.responseJSON.errors.name);
+                            } else {
+                                $('#error_name').show();
+                                $('#error_name').addClass('text-success');
+                                $('#error_name').removeClass('text-danger');
+                                $('#error_name').text('✔ Correct');
+                            }
+                            if (request.responseJSON.errors.email) {
+                                $('#error_email').show();
+                                $('#error_email').addClass('text-danger');
+                                $('#error_email').removeClass('text-success');
+                                $('#error_email').text('✖ ' + request.responseJSON.errors.email);
+                            } else {
+                                $('#error_email').show();
+                                $('#error_email').addClass('text-success');
+                                $('#error_email').removeClass('text-danger');
+                                $('#error_email').text('✔ Email Available');
+                            }
+                            if (request.responseJSON.errors.phone) {
+                                $('#error_phone').show();
+                                $('#error_phone').addClass('text-danger');
+                                $('#error_phone').removeClass('text-success');
+                                $('#error_phone').text('✖ ' + request.responseJSON.errors.phone);
+                            } else {
+                                $('#error_phone').show();
+                                $('#error_phone').addClass('text-success');
+                                $('#error_phone').removeClass('text-danger');
+                                $('#error_phone').text('✔ Phone Available');
+                            }
+                            if (request.responseJSON.errors.password) {
+                                $('#error_password').show();
+                                $('#error_password').addClass('text-danger');
+                                $('#error_password').removeClass('text-success');
+                                $('#error_password').text('✖ ' + request.responseJSON.errors.password);
+                            } else {
+                                $('#error_password').show();
+                                $('#error_password').addClass('text-success');
+                                $('#error_password').removeClass('text-danger');
+                                $('#error_password').text('✔ Correct');
+                            }
+                            if (request.responseJSON.errors.state) {
+                                $('#error_state').show();
+                                $('#error_state').addClass('text-danger')
+                                $('#error_state').removeClass('text-success');
+                                $('#error_state').text('✖ ' + request.responseJSON.errors.state);
+                            } else {
+                                $('#error_state').show();
+                                $('#error_state').addClass('text-success');
+                                $('#error_state').removeClass('text-danger');
+                                $('#error_state').text('✔ Correct');
+                            }
+                            if (request.responseJSON.errors.referral_code) {
                                 $('#error_refferal').show();
-                                $('#error_refferal').addClass('text-success');
-                                $('#error_refferal').removeClass('text-danger');
-                                $('#error_refferal').text('✔ Correct');
+                                $('#error_refferal').addClass('text-danger');
+                                $('#error_refferal').removeClass('text-success');
+                                $('#error_refferal').text('✖ ' + request.responseJSON.errors.referral_code);
+                                $('#discount_div').addClass('d-none')
+                                $('#price_span').removeClass('d-none')
+                                $('#discounted_price_span').addClass('d-none')
+                            } else {
+                                if ($('#referral_code').val() != '') {
+                                    $('#discount_div').removeClass('d-none')
+                                    $('#discounted_price_span').removeClass('d-none')
+                                    $('#price_span').addClass('d-none')
+                                    $('#error_refferal').show();
+                                    $('#error_refferal').addClass('text-success');
+                                    $('#error_refferal').removeClass('text-danger');
+                                    $('#error_refferal').text('✔ Correct');
+                                }
                             }
                         }
-                    }
-                });
-            }
+                    });
+                }
 
-            function getPlanDetail(plan_id) {
-                $.ajax({
-                    type: 'POST',
-                    url: "{{ route('get.plan.detail') }}",
-                    data: {
-                        _token: "{{ csrf_token() }}",
-                        plan_id: plan_id
-                    },
-                    success: function(data) {
-                        $('#basic_amount').text('₹ ' + data.plan.amount);
-                        $('#discount_amount').text('₹ ' + data.plan.discount);
-                        @if ($referral_code)
-                            $('#grand_total_amount').text('₹ ' + data.plan.discounted_price);
-                        @else
-                            $('#grand_total_amount').text('₹ ' + data.plan.amount);
-                        @endif
-                        submitForm();
-                    },
-                    error: function(request, status, error) {
-                        location.reload();
-                    }
-                });
-            }
-        </script>
-    @endpush
-@endsection
+                function getPlanDetail(plan_id) {
+                    $.ajax({
+                        type: 'POST',
+                        url: "{{ route('get.plan.detail') }}",
+                        data: {
+                            _token: "{{ csrf_token() }}",
+                            plan_id: plan_id
+                        },
+                        success: function(data) {
+                            $('#basic_amount').text('₹ ' + data.plan.amount);
+                            $('#discount_amount').text('₹ ' + data.plan.discount);
+                            @if ($referral_code)
+                                $('#grand_total_amount').text('₹ ' + data.plan.discounted_price);
+                            @else
+                                $('#grand_total_amount').text('₹ ' + data.plan.amount);
+                            @endif
+                            submitForm();
+                        },
+                        error: function(request, status, error) {
+                            location.reload();
+                        }
+                    });
+                }
+            </script>
+        @endpush
+    @endsection

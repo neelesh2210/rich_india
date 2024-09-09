@@ -18517,7 +18517,7 @@ blockquote > p {
 }
 
 .customer__form-wrap {
-  border: 1px solid #ebebeb;
+    border: 2px solid var(--tg-theme-primary);
   padding: 30px;
 }
 @media (max-width: 767.98px) {
@@ -18574,7 +18574,7 @@ blockquote > p {
     height: 50px;
     padding: 0 20px;
     background: #fff;
-    border: 1px solid #333;
+    border: 1px solid #ebebeb;
 }
 .customer__form-wrap .form-grp textarea {
   padding: 10px 20px 0;
