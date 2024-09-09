@@ -6,13 +6,13 @@
             <div class="row">
                 <div class="col-12">
                     <div class="breadcrumb__content">
-                        <h3 class="title">Login</h3>
+                        <h3 class="title">Forgot</h3>
                         <nav class="breadcrumb">
                             <span property="itemListElement" typeof="ListItem">
-                                <a href="index.html">Home</a>
+                                <a href="{{route('index')}}">Home</a>
                             </span>
                             <span class="breadcrumb-separator"><i class="fas fa-angle-right"></i></span>
-                            <span property="itemListElement" typeof="ListItem">Login</span>
+                            <span property="itemListElement" typeof="ListItem">Forgot</span>
                         </nav>
                     </div>
                 </div>
