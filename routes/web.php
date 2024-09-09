@@ -122,8 +122,6 @@ Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPass
 
 //Blog
 Route::get('blog',[BlogController::class,'index'])->name('blog');
-Route::view('blog', 'frontend.blog')->name('blog');
-Route::view('blog-details', 'frontend.blog_details')->name('blog_details');
 Route::get('blog_detail/{slug}',[BlogController::class,'show'])->name('blog.detail');
 
 Route::group(['middleware'=>['auth:web',CheckUserStatus::class],'prefix'=>'user','as'=>'user.'],function () {

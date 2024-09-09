@@ -2292,6 +2292,7 @@ textarea {
   color: var(--tg-heading-color);
   font-weight: 600;
   line-height: 18px;
+  margin-top: 8px;
 }
 .tgmenu__action > ul li.login-btn a:hover {
   background: var(--tg-theme-primary);
