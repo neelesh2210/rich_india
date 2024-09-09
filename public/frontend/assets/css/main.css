@@ -18241,8 +18241,8 @@ blockquote > p {
   border-color: var(--tg-theme-primary);
 }
 .contact-form-wrap .form-grp textarea {
-  min-height: 230px;
-  max-height: 230px;
+  min-height: 100px;
+  max-height: 100px;
 }
 .contact-form-wrap .row {
   --bs-gutter-x: 20px;
