@@ -140,7 +140,7 @@
                         <div class="section__title text-center mb-40">
                             <span class="sub-title">Top Class Courses</span>
                             <h2 class="title">Explore Our World's Best Courses</h2>
-                            <p class="desc">When known printer took a galley of type scrambl edmake</p>
+                            <p class="desc">RichInd envisions providing you with the latest trending courses which make you a proficient leader in your field of expertise.</p>
                         </div>
                         <div class="courses__nav">
                             <ul class="nav nav-tabs" id="courseTab" role="tablist">
@@ -252,7 +252,7 @@
                     <div class="section__title text-center mb-40">
                         <span class="sub-title">Our Plan</span>
                         <h2 class="title">RichInd Course Package</h2>
-                        <p>when an unknown printer took a galley of type and scrambled make <br> specimen book has survived not only five centuries</p>
+                        <p>Enroll With RichInd</p>
                     </div>
                 </div>
             </div>
@@ -277,7 +277,7 @@
                                 <div class="courses__item-bottom">
                                     <div class="button">
                                         <a href="{{route('checkout')}}?slug={{$plan->slug}}">
-                                            <span class="text">Enroll Now</span>
+                                            <span class="text">Buy Now</span>
                                             <i class="flaticon-arrow-right"></i>
                                         </a>
                                     </div>
@@ -298,7 +298,7 @@
                     <div class="section__title text-center mb-40">
                         <span class="sub-title">Our Top Features</span>
                         <h2 class="title">Achieve Your Goal With RichInd</h2>
-                        <p>when an unknown printer took a galley of type and scrambled make <br> specimen book has survived not only five centuries</p>
+                        <p>With RichInd, Begin your journey to success.</p>
                     </div>
                 </div>
             </div>
@@ -313,7 +313,7 @@
                                     </div>
                                     <h2 class="title">Expert Tutors</h2>
                                 </div>
-                                <p>when an unknown printer took a galley offe type and scrambled makes.</p>
+                                <p>Professional educational service provider specializing in personalized tutoring across various subjects and educational levels.</p>
                             </div>
                             <div class="features__item-shape">
                                 <img src="{{ asset('frontend/assets/img/others/features_item_shape.svg') }}" alt="img" class="injectable">
@@ -329,7 +329,7 @@
                                     </div>
                                     <h2 class="title">Effective Courses</h2>
                                 </div>
-                                <p>when an unknown printer took a galley offe type and scrambled makes.</p>
+                                <p>Effective Courses is an educational platform designed to deliver impactful, high-quality learning experiences tailored to diverse needs.</p>
                             </div>
                             <div class="features__item-shape">
                                 <img src="{{ asset('frontend/assets/img/others/features_item_shape.svg') }}" alt="img" class="injectable">
@@ -345,7 +345,7 @@
                                     </div>
                                     <h2 class="title">Earn Certificate</h2>
                                 </div>
-                                <p>when an unknown printer took a galley offe type and scrambled makes.</p>
+                                <p>Earn Certificate is a program that provides learners with the opportunity to gain recognized certifications upon completing specific courses or training modules.</p>
                             </div>
                             <div class="features__item-shape">
                                 <img src="{{ asset('frontend/assets/img/others/features_item_shape.svg') }}" alt="img" class="injectable">
@@ -433,12 +433,10 @@
                     <div class="instructor__content-wrap">
                         <div class="section__title mb-15">
                             <span class="sub-title">Skilled Introduce</span>
-                            <h2 class="title">Our Top Class & Expert Instructors in One Place</h2>
+                            <h3>CEO & Founder of RichInd</h3>
                         </div>
-                        <p>when an unknown printer took a galley of type and scrambled makespecimen book has survived not only five centuries</p>
-                        <div class="tg-button-wrap">
-                            <a href="#" class="btn arrow-btn">See All Instructors <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                        <p>Yash kulshrestha is one of the Youngest Entrepreneur and YouTuber from India. He started his journey since 2018. He has 5 years Experience about Sales And Law of attraction. He love to share his knowledge with youth.</p>
+                        <p>He has helped more than 20K+ students in learning new skill. He is guiding now 10k people about social media marketing in this company.</p>
                     </div>
                 </div>
                 <div class="col-xl-8">
@@ -497,25 +495,28 @@
                 <div class="col-lg-6">
                     <div class="choose__content-four">
                         <div class="section__title mb-20">
-                            <span class="sub-title">Why Choose Us</span>
-                            <h2 class="title bold">Professional Courses taught by industry leaders</h2>
+                            <span class="sub-title">Why RichInd</span>
+                            <h2 class="title bold">Why Choose Us</h2>
                         </div>
-                        <p>Groove’s intuitive shared inbox makes it easy for team member anIn this episode.Groove’s intuitive shared inboeasy for team organize, prioritize anIn this episode.</p>
+                        <p>When it comes to the best in Quality, Management, Knowledge, Nourishment, Leadership, Skill Development and Earning – Here we are!</p>
                         <ul class="about__info-list list-wrap">
                             <li class="about__info-list-item">
                                 <i class="flaticon-angle-right"></i>
-                                <p class="content">Body & Mind Stress Relief</p>
+                                <p class="content">E-learning Courses Of High Quality</p>
                             </li>
                             <li class="about__info-list-item">
                                 <i class="flaticon-angle-right"></i>
-                                <p class="content">Enhance Strength Growing</p>
+                                <p class="content">Possibility Of Skill Development</p>
                             </li>
                             <li class="about__info-list-item">
                                 <i class="flaticon-angle-right"></i>
-                                <p class="content">Get Better Posture</p>
+                                <p class="content">Opportunity To Begin Your Entrepreneurial Journey</p>
+                            </li>
+                            <li class="about__info-list-item">
+                                <i class="flaticon-angle-right"></i>
+                                <p class="content">Dedicated Support System</p>
                             </li>
                         </ul>
-                        <a href="#" class="btn arrow-btn btn-four">Start Free Trial <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -527,9 +528,9 @@
             <div class="row justify-content-center">
                 <div class="col-xl-5">
                     <div class="section__title text-center mb-50">
-                        <span class="sub-title">Our Testimonials</span>
-                        <h2 class="title">What Students Think and Say About RichInd</h2>
-                        <p>when known printer took a galley of type scrambl edmake</p>
+                        <span class="sub-title">Review</span>
+                        <h2 class="title">Words From Our Students</h2>
+                        <p>What Our Students Say About Skill Achiever</p>
                     </div>
                 </div>
             </div>
@@ -577,11 +578,11 @@
     <section class="features__area">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-xl-6">
+                <div class="col-xl-7">
                     <div class="section__title white-title text-center mb-50">
                         <span class="sub-title">How We Start Journey</span>
                         <h2 class="title">Start your Learning Journey Today!</h2>
-                        <p>Groove’s intuitive shared inbox makesteam members together <br> organize, prioritize and.In this episode.</p>
+                        <p>Unlock your potential with expert-led courses and certifications designed to help you succeed.</p>
                     </div>
                 </div>
             </div>
@@ -593,7 +594,7 @@
                         </div>
                         <div class="features__content">
                             <h4 class="title">Learn with Experts</h4>
-                            <p>Curate anding area share Pluralsight content to reach your</p>
+                            <p>Learn with Experts connects learners with industry professionals for hands-on, expert-led training across various subjects.</p>
                         </div>
                     </div>
                 </div>
@@ -604,7 +605,7 @@
                         </div>
                         <div class="features__content">
                             <h4 class="title">Learn Anything</h4>
-                            <p>Curate anding area share Pluralsight content to reach your</p>
+                            <p>Learn Anything is a versatile learning platform designed to empower individuals to acquire knowledge and skills in virtually any subject.</p>
                         </div>
                     </div>
                 </div>
@@ -615,7 +616,7 @@
                         </div>
                         <div class="features__content">
                             <h4 class="title">Get Online Certificate</h4>
-                            <p>Curate anding area share Pluralsight content to reach your</p>
+                            <p>Get Online Certificate offers a convenient way to earn recognized certifications from the comfort of your home.</p>
                         </div>
                     </div>
                 </div>
@@ -626,7 +627,7 @@
                         </div>
                         <div class="features__content">
                             <h4 class="title">E-mail Marketing</h4>
-                            <p>Curate anding area share Pluralsight content to reach your</p>
+                            <p>E-mail Marketing is a powerful digital marketing strategy that involves sending targeted emails to engage customers, promote products or services.</p>
                         </div>
                     </div>
                 </div>
@@ -648,7 +649,7 @@
                             </div>
                             <div class="instructor__content-two">
                                 <h3 class="title"><a href="#">Become a Instructor</a></h3>
-                                <p>To take a trivial example, which of us undertakes physical exercise yes is this happen here.</p>
+                                <p>Become an Instructor empowers knowledgeable individuals to share their expertise and make a meaningful impact by teaching others.</p>
                                 <div class="tg-button-wrap">
                                     <a href="#" class="btn arrow-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
                                 </div>
@@ -665,7 +666,7 @@
                             </div>
                             <div class="instructor__content-two">
                                 <h3 class="title"><a href="#">Become a Student</a></h3>
-                                <p>Join millions of people from around the world learning together. Online learning.
+                                <p>Become a Student offers you the chance to embark on a personalized learning journey with access to a diverse range of courses and expert instructors.
                                 </p>
                                 <div class="tg-button-wrap">
                                     <a href="#" class="btn arrow-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
@@ -698,9 +699,9 @@
                     <div class="faq__content">
                         <div class="section__title pb-10">
                             <span class="sub-title">Faq’s</span>
-                            <h2 class="title">Start Learning From <br> World’s Pro Instructors</h2>
+                            <h2 class="title">Frequently Asked Question & Answers Here</h2>
                         </div>
-                        <p>Groove’s intuitive shared inbox makes it easy for team members to organize, prioritize and.In this episode.</p>
+                        <p>Feel free to adjust or expand on these based on your specific needs.</p>
                         <div class="faq__wrap">
                             <div class="accordion" id="accordionExample">
                                 @foreach ($faqs as $faq_key=>$faq)
@@ -732,9 +733,8 @@
             <div class="row justify-content-center">
                 <div class="col-xl-6">
                     <div class="section__title text-center mb-20">
-                        <span class="sub-title">Instagram Show</span>
-                        <h2 class="title bold">RichInd Show</h2>
-                        <p>when known printer took a galley of type scrambl edmake</p>
+                        <span class="sub-title">Instagram</span>
+                        <h2 class="title bold">Instagram Show</h2>
                     </div>
                 </div>
             </div>

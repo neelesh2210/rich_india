@@ -61,7 +61,7 @@
                                 <div class="courses__item-bottom">
                                     <div class="button">
                                         <a href="{{ route('checkout') }}?slug={{ $plan->slug }}">
-                                            <span class="text">Enroll Now</span>
+                                            <span class="text">Buy Now</span>
                                             <i class="flaticon-arrow-right"></i>
                                         </a>
                                     </div>

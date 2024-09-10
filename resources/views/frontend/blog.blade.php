@@ -36,7 +36,7 @@
                 <div class="col-xl-3 col-lg-4 col-md-6">
                     <div class="blog__post-item shine__animate-item">
                         <div class="blog__post-thumb">
-                            <a href="{{route('blog_details')}}" class="shine__animate-link">
+                            <a href="{{route('blog.detail',$blog->slug)}}" class="shine__animate-link">
                                 <img src="{{ asset('backend/img/blog/'.$blog->image) }}" alt="img">
                             </a>
                             <a href="{{route('blog.detail',$blog->slug)}}" class="post-tag">{{$blog->topic}}</a>
@@ -47,12 +47,12 @@
                                     <li><i class="flaticon-calendar"></i>{{$blog->created_at->format('d M Y')}}</li>
                                     <li>
                                         @if($blog->writter_image)
-                                        <img src="{{ asset('backend/img/blog/'.$blog->writter_image) }}" alt="richind" /> By <a href="{{route('blog_details')}}">{{$blog->written_by}}</a>
+                                        <img src="{{ asset('backend/img/blog/'.$blog->writter_image) }}" alt="richind" /> By <a href="{{route('blog.detail',$blog->slug)}}">{{$blog->written_by}}</a>
                                         @endif
                                     </li>
                                 </ul>
                             </div>
-                            <h4 class="title"><a href="{{route('blog_details')}}">{{$blog->title}}</a></h4>
+                            <h4 class="title"><a href="{{route('blog.detail',$blog->slug)}}">{{$blog->title}}</a></h4>
                         </div>
                     </div>
                 </div>

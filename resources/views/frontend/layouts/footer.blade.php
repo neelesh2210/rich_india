@@ -35,7 +35,7 @@
                             </a>
                         </div>
                         <div class="footer__content">
-                            <p>when an unknown printer took galley of type and scrambled it to make pspecimen bookt has.</p>
+                            <p>Richind is a E -learning platform . this platform helps people to make own personal brand on social media and create passive income.</p>
                         </div>
                     </div>
                 </div>

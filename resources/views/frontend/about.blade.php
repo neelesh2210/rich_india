@@ -48,34 +48,17 @@
                         <div class="section__title mb-10">
                             <span class="sub-title">Get More About Us</span>
                             <h2 class="title">
-                                Empowering Students to reach their
+                                About Us
                                 <span class="position-relative">
                                     <svg x="0px" y="0px" preserveAspectRatio="none" viewBox="0 0 209 59" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M4.74438 7.70565C69.7006 -1.18799 136.097 -2.38304 203.934 4.1205C207.178 4.48495 209.422 7.14626 208.933 10.0534C206.793 23.6481 205.415 36.5704 204.801 48.8204C204.756 51.3291 202.246 53.5582 199.213 53.7955C136.093 59.7623 74.1922 60.5985 13.5091 56.3043C10.5653 56.0924 7.84371 53.7277 7.42158 51.0325C5.20725 38.2627 2.76333 25.6511 0.0898448 13.1978C-0.465589 10.5873 1.61173 8.1379 4.73327 7.70565" fill="currentcolor" />
                                     </svg>
-                                    potential
+                                    RichInd
                                 </span>
-                                Goal For Next Level Challenge.
                             </h2>
                         </div>
-                        <p class="desc">when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.</p>
-                        <ul class="about__info-list list-wrap">
-                            <li class="about__info-list-item">
-                                <i class="flaticon-angle-right"></i>
-                                <p class="content">The Most World Class Instructors</p>
-                            </li>
-                            <li class="about__info-list-item">
-                                <i class="flaticon-angle-right"></i>
-                                <p class="content">Access Your Class anywhere</p>
-                            </li>
-                            <li class="about__info-list-item">
-                                <i class="flaticon-angle-right"></i>
-                                <p class="content">Flexible Course Plan</p>
-                            </li>
-                        </ul>
-                        <div class="tg-button-wrap">
-                            <a href="contact.html" class="btn arrow-btn">Start Free Trial <img src="{{ asset('frontend/assets/img/icons/right_arrow.svg')}}" alt="img" class="injectable"></a>
-                        </div>
+                        <p class="desc mt-3">At RichInd, our mission is to provide a dynamic and inclusive e-learning platform that empowers individuals of all backgrounds to embark on a journey of lifelong learning. We are dedicated to delivering high-quality, accessible, and personalized educational experiences that foster personal growth, professional development, and global enrichment.</p>
+
                     </div>
                 </div>
             </div>
@@ -88,11 +71,11 @@
     <section class="features__area-three section-pt-120 section-pb-90">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-xl-5 col-lg-8">
+                <div class="col-xl-6 col-lg-8">
                     <div class="section__title text-center mb-40">
-                        <span class="sub-title">What We Offer</span>
-                        <h2 class="title">Learn New Skills When And Where You Like</h2>
-                        <p>when known printer took a galley of type scrambl edmake</p>
+                        <span class="sub-title">Our Top Features</span>
+                        <h2 class="title">Achieve Your Goal With RichInd</h2>
+                        <p>With RichInd, Begin your journey to success.</p>
                     </div>
                 </div>
             </div>
@@ -103,14 +86,14 @@
                             <div class="features__content-two">
                                 <div class="content-top">
                                     <div class="features__icon-two">
-                                        <img src="{{ asset('frontend/assets/img/icons/h2_features_icon01.svg')}}" alt="img" class="injectable">
+                                        <img src="{{ asset('frontend/assets/img/icons/h2_features_icon01.svg') }}" alt="img" class="injectable">
                                     </div>
                                     <h2 class="title">Expert Tutors</h2>
                                 </div>
-                                <p>when an unknown printer took a galley offe type and scrambled makes.</p>
+                                <p>Professional educational service provider specializing in personalized tutoring across various subjects and educational levels.</p>
                             </div>
                             <div class="features__item-shape">
-                                <img src="{{ asset('frontend/assets/img/others/features_item_shape.svg')}}" alt="img" class="injectable">
+                                <img src="{{ asset('frontend/assets/img/others/features_item_shape.svg') }}" alt="img" class="injectable">
                             </div>
                         </div>
                     </div>
@@ -119,14 +102,14 @@
                             <div class="features__content-two">
                                 <div class="content-top">
                                     <div class="features__icon-two">
-                                        <img src="{{ asset('frontend/assets/img/icons/h2_features_icon02.svg')}}" alt="img" class="injectable">
+                                        <img src="{{ asset('frontend/assets/img/icons/h2_features_icon02.svg') }}" alt="img" class="injectable">
                                     </div>
                                     <h2 class="title">Effective Courses</h2>
                                 </div>
-                                <p>when an unknown printer took a galley offe type and scrambled makes.</p>
+                                <p>Effective Courses is an educational platform designed to deliver impactful, high-quality learning experiences tailored to diverse needs.</p>
                             </div>
                             <div class="features__item-shape">
-                                <img src="{{ asset('frontend/assets/img/others/features_item_shape.svg')}}" alt="img" class="injectable">
+                                <img src="{{ asset('frontend/assets/img/others/features_item_shape.svg') }}" alt="img" class="injectable">
                             </div>
                         </div>
                     </div>
@@ -135,14 +118,14 @@
                             <div class="features__content-two">
                                 <div class="content-top">
                                     <div class="features__icon-two">
-                                        <img src="{{ asset('frontend/assets/img/icons/h2_features_icon03.svg')}}" alt="img" class="injectable">
+                                        <img src="{{ asset('frontend/assets/img/icons/h2_features_icon03.svg') }}" alt="img" class="injectable">
                                     </div>
                                     <h2 class="title">Earn Certificate</h2>
                                 </div>
-                                <p>when an unknown printer took a galley offe type and scrambled makes.</p>
+                                <p>Earn Certificate is a program that provides learners with the opportunity to gain recognized certifications upon completing specific courses or training modules.</p>
                             </div>
                             <div class="features__item-shape">
-                                <img src="{{ asset('frontend/assets/img/others/features_item_shape.svg')}}" alt="img" class="injectable">
+                                <img src="{{ asset('frontend/assets/img/others/features_item_shape.svg') }}" alt="img" class="injectable">
                             </div>
                         </div>
                     </div>
