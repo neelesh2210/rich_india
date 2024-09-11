@@ -12,6 +12,8 @@
             <th><b>Referral</b></th>
             <th><b>Sponsor Name</b></th>
             <th><b>Sponsor Referral Code</b></th>
+            <th><b>Active Income</b></th>
+            <th><b>Passive Income</b></th>
         </tr>
     </thead>
     <tbody>
@@ -46,6 +48,9 @@
                 <td>{{$plan->user->referrer_code}}</td>
                 <td>{{optional($plan->user->sponsorDetail)->name}}</td>
                 <td>{{optional($plan->user->sponsorDetail)->referrer_code}}</td>
+                @foreach (App\Models\Commission::where('plan_purchase_id',$plan->id)->get() as $plan_key=>$commission_plan_purchase)
+                    <td>{{$commission_plan_purchase->commission}}</td>
+                @endforeach
             </tr>
         @endforeach
     </tbody>
