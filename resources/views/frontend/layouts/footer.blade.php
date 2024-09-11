@@ -35,7 +35,7 @@
                             </a>
                         </div>
                         <div class="footer__content">
-                            <p>when an unknown printer took galley of type and scrambled it to make pspecimen bookt has.</p>
+                            <p>Richind is a E -learning platform . this platform helps people to make own personal brand on social media and create passive income.</p>
                         </div>
                     </div>
                 </div>
@@ -113,21 +113,13 @@
     <div class="footer__bottom">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-md-9">
-                    <div class="copy-right-text">
+                <div class="col-md-12">
+                    <div class="copy-right-text text-center">
                         <p>© 2020-2024 Richind. All Rights Reserved. Design & Developed By <a href="https://techuptechnologies.com/">Techup Technologies.</a></p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="footer__bottom-menu">
-                        <ul class="list-wrap">
-                            <li><a href="{{ route('privacy_policy') }}">Privacy Policy</a></li>
-                            <li><a href="{{ route('term_and_condition') }}">Term and Conditions</a></li>
-                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </footer>
-@include('frontend.layouts.js')
+

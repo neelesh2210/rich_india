@@ -1,4 +1,3 @@
-
 <!-- CSS here -->
 <link rel="stylesheet" href="{{ asset('frontend/assets/css/bootstrap.min.css') }}">
 <link rel="stylesheet" href="{{ asset('frontend/assets/css/animate.min.css') }}">
