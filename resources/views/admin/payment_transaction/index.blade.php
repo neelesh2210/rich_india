@@ -106,7 +106,6 @@
                                                         <b>Payment Id: </b>{{json_decode($plan_purchase->payment_detail)->id}} <br>
                                                         <b>Amount Paid: </b>₹ {{json_decode($plan_purchase->payment_detail)->amount}} <br>
                                                         <b>Date: </b>{{$plan_purchase->created_at->format('d-M-Y h:i A')}} <br>
-                                                        {{-- <b>Profit: </b>₹ {{$plan_purchase->total_amount - $plan_purchase->commission_sum_commission}} --}}
                                                     @endif
                                                 </td>
                                                 <td>
@@ -127,13 +126,11 @@
                                                 </td>
                                                 <td>
                                                     <b>Name: </b>{{optional($plan_purchase->user->sponsorDetail)->name}} <br>
-                                                    {{-- <b>Email: </b>{{optional($plan_purchase->user->sponsorDetail)->email}} <br>
-                                                    <b>phone: </b>{{optional($plan_purchase->user->sponsorDetail)->phone}} <br> --}}
                                                     <b>Referrer Code: </b>{{optional($plan_purchase->user->sponsorDetail)->referrer_code}}
                                                 </td>
                                                 <td>
                                                     <table>
-                                                        @foreach (App\Models\Commission::where('plan_purchase_id',$plan_purchase->id)->get() as $plan_key=>$commission_plan_purchase)
+                                                        @foreach ($plan_purchase->commission as $plan_key=>$commission_plan_purchase)
                                                             <tr>
                                                                 <td>{{$commission_plan_purchase->user->name}}</td>
                                                                 <td>
@@ -150,7 +147,6 @@
                                                 </td>
                                                 <td>
                                                     <a href="{{route('admin.payment.invoice',$plan_purchase->id)}}" class="btn btn-outline-primary btn-sm mr-1 mb-1"><i class="fas fa-receipt"></i></a>
-                                                    {{-- <a href="{{route('admin.payment.transaction.delete',$plan_purchase->id)}}" class="btn btn-outline-danger btn-sm mr-1 mb-1" onclick="return confirm('You Want to delete This Order?');"><i class="fa fa-trash"></i></a> --}}
                                                 </td>
                                             </tr>
                                         @empty
@@ -163,9 +159,6 @@
                                             </tr>
                                         @endforelse
                                     </tbody>
-                                    {{-- <b>Total Sell:</b> ₹{{$total_sell}} <br>
-                                    <b>Total Commision: </b> ₹{{$total_commission}} <br> --}}
-                                    {{-- <b>Total Profit: </b> ₹{{$total_sell - $total_commission}} --}}
                                 </table>
                                 <hr>
                                 <div class="row">
