@@ -37,29 +37,26 @@
                     </div>
                 </div>
                 <div class="row mt-3 mb-3">
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 mb-2">
                         <div class="left-side-menu">
-                            <div class="ribbon">
-                                <span>{{Auth::guard('web')->user()->userDetail->plan->title}}</span>
-                            </div>
                             <div class="user-box text-center mb-2">
                                 <img src="{{asset('frontend/images/avatar/'.Auth::guard('web')->user()->avatar)}}" onerror="this.onerror=null;this.src='{{asset('user_dashboard/images/users/avatar-1.jpg')}}'" class="rounded-circle shadow-sm">
                             </div>
-                            <p class="leftbar-user-name">
+                            <p class="leftbar-user-name ">
                                 {{ Auth::guard('web')->user()->name ? Auth::guard('web')->user()->name : 'User' }}</p>
-                            <div class="text-center">
+                            <p class="course-title text-center">
+                                <b>{{Auth::guard('web')->user()->userDetail->plan->title}}</b>
+                            </p>
+                                <div class="text-center">
                                 <input type="hidden" value="{{env('APP_URL')}}?referrer_code={{Auth::guard('web')->user()->referrer_code}}" id="referral_link">
-                                <p class="text-center fw-bolder mr-2">ID: {{ Auth::guard('web')->user()->referrer_code }}
+                                <p class="text-center fw-bolder mr-2 text-white">ID: {{ Auth::guard('web')->user()->referrer_code }}
                                     <a class="btn btn-success pb" onclick="copyText()"><i class="uil-copy" style="font-size: 20px;"></i></a></p>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="row mt-3 mb-2">
-                    <div class="col-md-12">
+                    <div class="col-md-9">
                         <div class="row">
-                        <div class="col-sm-3 col-6">
+                        <div class="col-sm-4 col-6">
                                 <div class="card widget-flat gradient-45deg-sevent-earning bg-primary-opacity">
                                     <div class="card-body user-earnings">
                                         <h3><small><i class="fas fa-rupee-sign"></i></small> <span class="counter-value">{{ $today_earning }}</span>
@@ -76,7 +73,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-3 col-6">
+                            <div class="col-sm-4 col-6">
                                 <div class="card widget-flat gradient-45deg-sevent-earning bg-img-opacity">
                                     <div class="card-body user-earnings">
                                         <h3><small><i class="fas fa-rupee-sign"></i></small> <span class="counter-value">{{ $last_week_earning }}</span>
@@ -93,7 +90,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-3 col-6">
+                            <div class="col-sm-4 col-6">
                                 <div class="card widget-flat gradient-45deg-thirty-earning bg-img1-opacity">
                                     <div class="card-body user-earnings">
                                         <h3><small><i class="fas fa-rupee-sign"></i></small> <span class="counter-value">{{ $last_month_earning }}</span>
@@ -110,7 +107,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-3 col-6">
+                            <div class="col-sm-4 col-6">
                                 <div class="card widget-flat gradient-45deg-all-time-earning bg-img2-opacity">
                                     <div class="card-body user-earnings">
                                         <h3><small><i class="fas fa-rupee-sign"></i></small> <span
@@ -128,7 +125,7 @@
                                     </div>
                                 </div>
                             </div>
-                           <div class="col-sm-3">
+                           <div class="col-sm-4">
                                 <div class="card widget-flat gradient-45deg-all-time-earning bg-img3-opacity">
                                     <div class="card-body user-earnings">
                                         <h3><small><i class="fas fa-rupee-sign"></i></small> <span
@@ -146,7 +143,7 @@
                                     </div>
                                 </div>
                             </div>
-                            {{-- <div class="col-sm-3">
+                            {{-- <div class="col-sm-4">
                                 <div class="card widget-flat gradient-45deg-all-time-earning bg-img4-opacity">
                                     <div class="card-body user-earnings">
                                         <h3><small><i class="fas fa-rupee-sign"></i></small> <span
@@ -167,6 +164,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-lg-3">
                     <div class="card card-info">
