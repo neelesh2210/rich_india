@@ -23,7 +23,7 @@
             })->pluck('url', 'content');
     }
 @endphp
-<footer class="footer__area">
+<footer class="footer__area" style="background-image: url({{ asset('frontend/assets/img/footer-bg-1.png')}});">
     <div class="footer__top">
         <div class="container">
             <div class="row">

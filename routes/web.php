@@ -96,7 +96,6 @@ Route::view('cashthank-you', 'frontend.cashthank_you')->name('cashthank_you');
 //Check Coupon
 Route::post('check-coupon',[RegisterController::class,'checkCoupon'])->name('check.coupon');
 Route::post('check-upgrage-coupon',[PlanController::class,'checkUpgradeCoupon'])->name('check.upgrade.coupon');
-
 //Login
 Route::get('signin',function(){
     //return redirect()->route('index');

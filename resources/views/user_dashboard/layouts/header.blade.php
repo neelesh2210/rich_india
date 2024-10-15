@@ -23,9 +23,6 @@
                 <span class="account-user-avatar">
                     <img src="{{asset('frontend/images/avatar/'.Auth::guard('web')->user()->avatar)}}" onerror="this.onerror=null;this.src='{{asset('user_dashboard/images/users/avatar-1.jpg')}}'" class="rounded-circle">
                 </span>
-                <span>
-                    <span class="account-user-name">{{Auth::guard('web')->user()->name}}</span>
-                </span>
             </a>
             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
                 <div class=" dropdown-header noti-title">
@@ -47,6 +44,6 @@
         </li>
     </ul>
     <button class="button-menu-mobile open-left">
-        <i class="mdi mdi-menu"></i>
+        <i class="mdi mdi-menu" style="color: #000;"></i>
     </button>
 </div>

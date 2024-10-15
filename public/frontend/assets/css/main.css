@@ -17569,7 +17569,7 @@ blockquote > p {
 .newsletter__area {
   background: var(--tg-theme-primary);
   position: relative;
-  padding: 35px 0 0;
+  padding:0;
   z-index: 1;
   overflow: hidden;
 }
@@ -17707,9 +17707,9 @@ blockquote > p {
   position: absolute;
 }
 .newsletter__img-wrap img:nth-child(2) {
-  left: 5%;
-  bottom: 0;
-  z-index: -1;
+    left: -10%;
+    bottom: -15px;
+    z-index: -1;
 }
 @media (max-width: 1199.98px) {
   .newsletter__img-wrap img:nth-child(2) {
@@ -20283,10 +20283,10 @@ blockquote > p {
   background: #272260;
 }
 .footer__bottom-three .copy-right-text p {
-  color: #cfd9ea;
+  color: #ddd;
 }
 .footer__bottom-three .footer__bottom-menu .list-wrap li a {
-  color: #cfd9ea;
+  color: #ddd;
 }
 .footer__bottom-four {
   position: relative;
@@ -20658,8 +20658,12 @@ blockquote > p {
   background: #e1c9f4;
 }
 .instagram-media{
-  min-width: 100% !important;
-  margin: -15px !important;
+    width: 100% !important;
+    min-width: auto !important;
+    border: 0 !important;
+}
+.Embed {
+    padding: 5px !important;
 }
 .rbt-new-badge {
     position: relative;

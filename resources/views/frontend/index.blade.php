@@ -685,7 +685,7 @@
                 <div class="col-lg-6">
                     <div class="faq__img-wrap tg-svg">
                         <div class="faq__img">
-                            <img src="{{ asset('frontend/assets/img/others/faq_img.png') }}" alt="img">
+                            <img src="{{ asset('frontend/assets/img/others/faq_img.jpeg') }}" alt="img" class="img-fluid">
                             <div class="shape-one">
                                 <img src="{{ asset('frontend/assets/img/others/faq_shape01.svg') }}" class="injectable tg-motion-effects4" alt="img">
                             </div>
@@ -740,7 +740,7 @@
             </div>
             <div class="row gy-3">
                 @foreach ($instagram_links as $instagram_link)
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-3 col-md-6 p-2">
                         <blockquote class="instagram-media" data-instgrm-permalink="{{$instagram_link->link}}" data-instgrm-version="14"></blockquote>
                     </div>
                 @endforeach

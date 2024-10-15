@@ -3,21 +3,13 @@
     <div class="content-page">
         <div class="content">
             <div class="container-fluid">
-                {{-- <div class="row">
-                    <div class="col-12">
-                        <div class="page-title-box">
-                            <div class="page-title-right float-start">
-                                <div class="text-center mb-2">
-                                    <img src="{{ 'user_dashboard/images/users/avatar-1.jpg' }}" alt="user-image" height="80" class="rounded-circle shadow-sm">
-                                </div>
-                                <p class="leftbar-user-name">{{Auth::guard('web')->user()->name ? Auth::guard('web')->user()->name : 'User'}}</p>
-                                <p class="text-center">{{Auth::guard('web')->user()->referrer_code}}</p>
-                            </div>
-                            <h4 class="page-title float-end">Dashboard</h4>
-                        </div>
-                    </div>
-                </div> --}}
                 <div class="row mt-2">
+                    <div class="col-md-12">
+                    <div class="form-check form-switch float-end mb-2">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onclick="changeDashboard()" @if($type == 'old') checked @endif>
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Switch New Dashboard</label>
+                    </div>
+                    </div>
                     <div class="col-md-12">
                         @php
                             $dat = new DateTime('now', new DateTimeZone('Asia/Kolkata'));
@@ -302,5 +294,9 @@
             options: lineChartOptions
           })
         })
+
+        function changeDashboard(){
+            window.location.replace("{{route('user.dashboard')}}?type=new");
+        }
       </script>
 @endsection

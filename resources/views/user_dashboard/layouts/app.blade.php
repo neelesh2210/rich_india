@@ -14,8 +14,6 @@
         <link href="{{ asset('user_dashboard/css/app.min.css') }}" rel="stylesheet" type="text/css" id="app-style" />
         <link rel="stylesheet" href="{{asset('user_dashboard/css/daterangepicker.css')}}">
         <link rel="stylesheet" href="{{asset('backend/css/bootstrap-4.min.css')}}">
-        <link rel="stylesheet" href="{{ asset('frontend/assets/webfonts/gordita.css')}}" />
-
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJRTMGTBXB"></script>

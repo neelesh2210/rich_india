@@ -15,7 +15,7 @@ use App\Models\Admin\HideLeaderboardUser;
 class UserDashboardController extends Controller
 {
 
-    public function dashboard()
+    public function dashboard(Request $request)
     {
         $today_earning = Commission::where('delete_status','0')->where('user_id',Auth::guard('web')->user()->id)->whereDate('created_at', Carbon::today())->sum('commission');
         $last_week_earning = Commission::where('delete_status','0')->where('user_id',Auth::guard('web')->user()->id)->whereDate('created_at', '>=', Carbon::now()->subDays(7))->sum('commission');
@@ -26,6 +26,7 @@ class UserDashboardController extends Controller
         $withdrawal_amount = Payout::where('user_id',Auth::guard('web')->user()->id)->sum('amount');
         $old_payout = UserDetail::where('user_id',Auth::guard('web')->user()->id)->first();
         $remaining_amount = $all_time_earning - $withdrawal_amount;
+        $type = $request->type;
 
         $dates = [];
         foreach( range( -6, 0 ) AS $i ) {
@@ -59,7 +60,27 @@ class UserDashboardController extends Controller
         // $sorted_products = $this->sort_array_by_key($all_time_leaderboards->toArray(), 'total_commission');
         // $all_time_leaderboards = array_slice($sorted_products, 0, 10);
 
-        return view('user_dashboard.dashboard',compact('today_earning',
+        if($type == 'old'){
+            return view('user_dashboard.dashboard',compact('today_earning',
+                                                            'last_week_earning',
+                                                            'last_month_earning',
+                                                            'all_time_earning',
+                                                            'withdrawal_amount',
+                                                            'remaining_amount',
+                                                            'active_income',
+                                                            'passive_income',
+                                                            'dates',
+                                                            'values',
+                                                            'old_payout',
+                                                            'last_week_leaderboards',
+                                                            'last_month_leaderboards',
+                                                            // 'all_time_leaderboards',
+                                                            'today_leaderboards',
+                                                            'type'
+                                                        ));
+        }
+
+        return view('user_dashboard.new_dashboard',compact('today_earning',
                                                         'last_week_earning',
                                                         'last_month_earning',
                                                         'all_time_earning',
@@ -73,7 +94,8 @@ class UserDashboardController extends Controller
                                                         'last_week_leaderboards',
                                                         'last_month_leaderboards',
                                                         // 'all_time_leaderboards',
-                                                        'today_leaderboards'
+                                                        'today_leaderboards',
+                                                        'type'
                                                     ));
     }
 

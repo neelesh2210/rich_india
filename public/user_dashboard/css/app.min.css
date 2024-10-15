@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
 :root {
     --ct-link-color: #b29456;
     --ct-link-hover-color: #b29456;
@@ -499,10 +500,10 @@ body[data-leftbar-theme=light] {
     --ct-black-rgb: 0, 0, 0;
     --ct-body-color-rgb: 108, 117, 125;
     --ct-body-bg-rgb: 250, 251, 254;
-    --ct-font-sans-serif: 'Gordita Regular', sans-serif;
+    --ct-font-sans-serif: 'Lexend Deca', sans-serif;
     --ct-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --ct-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-    --ct-body-font-family:'Gordita Regular', sans-serif;
+    --ct-body-font-family:'Lexend Deca', sans-serif;
     --ct-body-font-size: 0.9rem;
     --ct-body-font-weight: 400;
     --ct-body-line-height: 1.5;
@@ -525,7 +526,7 @@ body[data-leftbar-theme=light] {
 
 body {
     margin: 0;
-    font-family: 'Gordita Regular', sans-serif;
+    font-family: 'Lexend Deca', sans-serif;
     font-size: var(--ct-body-font-size);
     font-weight: var(--ct-body-font-weight);
     line-height: var(--ct-body-line-height);
@@ -723,7 +724,7 @@ code,
 kbd,
 pre,
 samp {
-    font-family: 'Gordita Regular', sans-serif;
+    font-family: 'Lexend Deca', sans-serif;
     font-size: 1em;
     direction: ltr;
     unicode-bidi: bidi-override
@@ -4008,8 +4009,6 @@ textarea.form-control.is-invalid {
 .btn-check:focus+.btn,
 .btn:focus {
     outline: 0;
-    -webkit-box-shadow: 0 0 0 .2rem var(--ct-input-btn-focus-color);
-    box-shadow: 0 0 0 .2rem var(--ct-input-btn-focus-color)
 }
 
 .btn.disabled,
@@ -4118,8 +4117,6 @@ fieldset:disabled .btn {
     color: #fff;
     background-color: #09b080;
     border-color: #08a679;
-    -webkit-box-shadow: 0 0 0 .2rem rgba(47, 214, 167, .5);
-    box-shadow: 0 0 0 .2rem rgba(47, 214, 167, .5)
 }
 
 .btn-check:active+.btn-success,
@@ -4137,8 +4134,8 @@ fieldset:disabled .btn {
 .btn-success.active:focus,
 .btn-success:active:focus,
 .show>.btn-success.dropdown-toggle:focus {
-    -webkit-box-shadow: 0 0 0 .2rem rgba(47, 214, 167, .5);
-    box-shadow: 0 0 0 .2rem rgba(47, 214, 167, .5)
+    /* -webkit-box-shadow: 0 0 0 .2rem rgba(47, 214, 167, .5);
+    box-shadow: 0 0 0 .2rem rgba(47, 214, 167, .5) */
 }
 
 .btn-success.disabled,
@@ -4165,8 +4162,8 @@ fieldset:disabled .btn {
     color: #fff;
     background-color: #3095b2;
     border-color: #2e8ca7;
-    -webkit-box-shadow: 0 0 0 .2rem rgba(87, 187, 216, .5);
-    box-shadow: 0 0 0 .2rem rgba(87, 187, 216, .5)
+    /* -webkit-box-shadow: 0 0 0 .2rem rgba(87, 187, 216, .5);
+    box-shadow: 0 0 0 .2rem rgba(87, 187, 216, .5) */
 }
 
 .btn-check:active+.btn-info,
@@ -4184,8 +4181,8 @@ fieldset:disabled .btn {
 .btn-info.active:focus,
 .btn-info:active:focus,
 .show>.btn-info.dropdown-toggle:focus {
-    -webkit-box-shadow: 0 0 0 .2rem rgba(87, 187, 216, .5);
-    box-shadow: 0 0 0 .2rem rgba(87, 187, 216, .5)
+    /* -webkit-box-shadow: 0 0 0 .2rem rgba(87, 187, 216, .5);
+    box-shadow: 0 0 0 .2rem rgba(87, 187, 216, .5) */
 }
 
 .btn-info.disabled,
@@ -4259,8 +4256,8 @@ fieldset:disabled .btn {
     color: #fff;
     background-color: #d54e69;
     border-color: #c84a63;
-    -webkit-box-shadow: 0 0 0 .2rem rgba(251, 116, 144, .5);
-    box-shadow: 0 0 0 .2rem rgba(251, 116, 144, .5)
+    /* -webkit-box-shadow: 0 0 0 .2rem rgba(251, 116, 144, .5);
+    box-shadow: 0 0 0 .2rem rgba(251, 116, 144, .5) */
 }
 
 .btn-check:active+.btn-danger,
@@ -6204,7 +6201,7 @@ fieldset:disabled .btn {
 {
     padding: 5px 15px;
     text-transform: capitalize;
-    font-family: 'Gordita Regular', sans-serif;
+    font-family: 'Lexend Deca', sans-serif;
     background-image: linear-gradient(177deg, #fff759, rgb(198 159 21));
     color: #fff;
     text-shadow: 0px 1px 4px #2c2a2a;
@@ -7825,7 +7822,7 @@ fieldset:disabled .btn {
     z-index: 1080;
     display: block;
     margin: 0;
-    font-family: 'Gordita Regular', sans-serif;
+    font-family: 'Lexend Deca', sans-serif;
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
@@ -14952,6 +14949,7 @@ body {
     padding-left: 0;
     list-style-type: none;
     background: #fff;
+    min-height: 140vh;
 }
 
 .side-nav ul {
@@ -15006,7 +15004,7 @@ body {
 .side-nav .side-nav-link span {
     letter-spacing: .25px;
     vertical-align: middle;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 
@@ -15071,7 +15069,7 @@ body {
 }
 
 .side-nav .menuitem-active>a {
-    color: #fff !important
+    color: #a2157f !important
 }
 
 [dir=ltr] .side-nav .side-nav-item .menu-arrow:before {
@@ -15736,12 +15734,11 @@ body[data-leftbar-theme=light][data-leftbar-compact-mode=condensed] .side-nav .s
 body[data-leftbar-theme=dark] .leftside-menu {
     background: #fff;
     margin-top: 0px;
-    border-right: 1px solid #ddd;
-    border-top: 2px solid #891889;
+    border-right: 1px solid #dddddd54;
 }
 
 body[data-leftbar-theme=dark] .leftside-menu .logo {
-    border-bottom: 1px solid #ddd;
+    box-shadow: var(--ct-box-shadow);
 }
 
 body[data-leftbar-theme=dark] .side-nav .side-nav-link {
@@ -15761,24 +15758,17 @@ body[data-leftbar-theme=dark] .side-nav .side-nav-link:active {
     border-radius: 0 5px 5px 0;
 }
 
-body[data-leftbar-theme=dark] .side-nav .side-nav-link:focus {
-    text-shadow: rgb(0 0 0 / 25%) 0 -1px 0;
-    background: linear-gradient(90deg, #b29456, rgb(178 149 86));
-    margin-right: 0;
-    color: #fff;
-    border-radius: 0 0px 0px 0;
-}
 
 body[data-leftbar-theme=dark] .side-nav .side-nav-link:hover {
     text-shadow: rgb(0 0 0 / 25%) 0 -1px 0;
-    background: linear-gradient(90deg, #d6078d, rgb(157 23 126));
+    background: linear-gradient(90deg, #d6078d2e, rgb(157 23 126 / 44%));
     margin-right: 0;
-    color: #fff !important;
+    color: #a2157f !important;
     border-radius: 0 0px 0px 0;
 }
 
 body[data-leftbar-theme=dark] .side-nav .menuitem-active>a {
-    background: linear-gradient(90deg, #d6078d, rgb(157 23 126));
+    background: linear-gradient(90deg, #d6078d2e, rgb(157 23 126 / 44%));
     margin-right: 0;
     color: #fff;
     border-radius: 0;
@@ -15818,14 +15808,17 @@ body[data-leftbar-theme=dark][data-leftbar-compact-mode=condensed] .side-nav .si
 body[data-leftbar-theme=dark][data-leftbar-compact-mode=condensed] .side-nav .side-nav-item .side-nav-link:hover {
     color: var(--ct-dark-menu-item-hover)
 }
-
+body[data-leftbar-theme=dark][data-leftbar-compact-mode=condensed] .user-bgs{
+    display: none !important;
+}
 body[data-leftbar-theme=dark][data-leftbar-compact-mode=condensed] .side-nav .side-nav-item:hover .side-nav-link {
-    background: linear-gradient(90deg, #d6078d, rgb(157 23 126));
-    color: #fff !important;
+    background: linear-gradient(90deg, #d6078d2e, rgb(157 23 126 / 44%));
+    color: #a2157f !important;
     -webkit-transition: none;
     transition: none
 }
 
+body[data-leftbar-theme=dark][data-leftbar-compact-mode=condensed] .side-nav .side-nav-item:hover .side-nav-link
 body[data-leftbar-theme=dark][data-leftbar-compact-mode=condensed] .side-nav .side-nav-item:hover>ul {
     background: var(--ct-bg-leftbar);
     -webkit-box-shadow: var(--ct-box-shadow);
@@ -15915,8 +15908,7 @@ body[data-layout-color=dark][data-layout=detached] .leftbar-user .leftbar-user-n
 }
 
 .navbar-custom {
-    border-top: 2px solid #891889;
-    padding: 0 24px;
+    padding: 0 20px;
     -webkit-box-shadow: var(--ct-box-shadow);
     box-shadow: var(--ct-box-shadow);
     min-height: 70px;
@@ -15925,7 +15917,7 @@ body[data-layout-color=dark][data-layout=detached] .leftbar-user .leftbar-user-n
     top: 0;
     right: 0;
     z-index: 1001;
-    background: linear-gradient(90deg, #d6078d, rgb(157 23 126));
+    background: #fff;
 }
 
 .navbar-custom .topbar-left {
@@ -16202,13 +16194,12 @@ body[data-layout-color=dark][data-layout=detached] .leftbar-user .leftbar-user-n
 
 .nav-user .account-user-avatar {
     position: absolute;
-    top: calc(38px * .5);
-    left: 15px
+    left: 28px
 }
 
 .nav-user .account-user-avatar img {
-    height: 30px;
-    width: 30px
+    height: 42px;
+    width: 42px
 }
 
 .nav-user .account-position {
@@ -18068,7 +18059,7 @@ body[data-layout-color=dark] .badge-outline-dark[href]:hover {
     color: #fff;
     letter-spacing: 0.5px;
     font-size: 16px;
-    font-family: 'Gordita Regular', sans-serif;
+    font-family: 'Lexend Deca', sans-serif;
     font-weight: 600;
     margin-bottom: 3px;
     margin-top: 0;
@@ -18089,7 +18080,7 @@ body[data-layout-color=dark] .badge-outline-dark[href]:hover {
 .user-info-header-title h6
 {
     margin: 1px 5px;
-    font-family: 'Gordita Regular', sans-serif;
+    font-family: 'Lexend Deca', sans-serif;
     font-size: 16px;
 }
 
@@ -19816,7 +19807,7 @@ body[data-layout-color=dark] .border-dark {
     border-radius: 50%;
     color: #fff;
     font-size: 24px;
-    font-family: 'Gordita Regular', sans-serif;
+    font-family: 'Lexend Deca', sans-serif;
 }
 
 .widget-flat small {
@@ -19826,7 +19817,7 @@ body[data-layout-color=dark] .border-dark {
     color: #fff;
     font-size: 22px;
     opacity: 0.5; */
-    font-family: 'Gordita Regular', sans-serif;
+    font-family: 'Lexend Deca', sans-serif;
     padding: 0px;
     border-radius: 50%;
     color: #fff;
@@ -20591,12 +20582,18 @@ body[data-layout-color=dark] .auth-brand .logo-light {
 
 .button-list {
     margin-left: -8px;
-    margin-bottom: -12px
+    margin-bottom: -12px;
+    text-align: center;
 }
 
 .button-list .btn {
     margin-bottom: 12px;
-    margin-left: 8px
+    margin-left: 8px;
+    border-radius: 30px;
+    width: 35px;
+    height: 35px;
+    line-height: 33px;
+    padding: 0;
 }
 
 .scrollspy-example {
@@ -22130,7 +22127,7 @@ body[data-layout-color=dark] .timeline-show .time-show-name {
     margin: 0 0 5px;
     border-radius: 4px;
     font-size: 12px;
-    font-family: 'Gordita Regular', sans-serif;
+    font-family: 'Lexend Deca', sans-serif;
     line-height: 17px;
     position: relative;
     pointer-events: all !important;
@@ -22140,7 +22137,7 @@ body[data-layout-color=dark] .timeline-show .time-show-name {
 
 .jq-toast-single .h2,
 .jq-toast-single h2 {
-    font-family: 'Gordita Regular', sans-serif;
+    font-family: 'Lexend Deca', sans-serif;
     font-size: 14px;
     margin: 0 0 7px;
     background: 0 0;
@@ -22967,7 +22964,7 @@ body[data-layout-color=dark] .timeline-show .time-show-name {
     margin: 0 0 5px;
     border-radius: 4px;
     font-size: 12px;
-    font-family: 'Gordita Regular', sans-serif;
+    font-family: 'Lexend Deca', sans-serif;
     line-height: 17px;
     position: relative;
     pointer-events: all !important;
@@ -22977,7 +22974,7 @@ body[data-layout-color=dark] .timeline-show .time-show-name {
 
 .jq-toast-single .h2,
 .jq-toast-single h2 {
-    font-family: 'Gordita Regular', sans-serif;
+    font-family: 'Lexend Deca', sans-serif;
     font-size: 14px;
     margin: 0 0 7px;
     background: 0 0;
@@ -23274,7 +23271,7 @@ body[data-layout-color=dark] .timeline-show .time-show-name {
 }
 
 .apex-charts text {
-    font-family: 'Gordita Regular', sans-serif !important;
+    font-family: 'Lexend Deca', sans-serif !important;
     fill: #adb5bd
 }
 
@@ -23292,7 +23289,7 @@ body[data-layout-color=dark] .timeline-show .time-show-name {
 
 .apexcharts-tooltip-text,
 .apexcharts-tooltip-title {
-    font-family: 'Gordita Regular', sans-serif !important;
+    font-family: 'Lexend Deca', sans-serif !important;
     color: #6c757d
 }
 
@@ -23307,12 +23304,12 @@ body[data-layout-color=dark] .timeline-show .time-show-name {
 
 .apexcharts-legend-text {
     color: #98a6ad !important;
-    font-family: 'Gordita Regular', sans-serif !important
+    font-family: 'Lexend Deca', sans-serif !important
 }
 
 .apexcharts-xaxis text,
 .apexcharts-yaxis text {
-    font-family: 'Gordita Regular', sans-serif !important;
+    font-family: 'Lexend Deca', sans-serif !important;
     fill: #adb5bd
 }
 
@@ -23385,7 +23382,7 @@ body[data-layout-color=dark] .apex-charts text.apexcharts-title-text {
 
 body[data-layout-color=dark] .apexcharts-tooltip-text,
 body[data-layout-color=dark] .apexcharts-tooltip-title {
-    font-family: 'Gordita Regular', sans-serif !important;
+    font-family: 'Lexend Deca', sans-serif !important;
     color: #8391a2
 }
 
@@ -23421,7 +23418,7 @@ body[data-layout-color=dark] .apexcharts-track path {
 
 .britechart,
 .tick text {
-    font-family: 'Gordita Regular', sans-serif;
+    font-family: 'Lexend Deca', sans-serif;
     font-size: .75rem
 }
 
@@ -23712,7 +23709,6 @@ th.fc-day-header {
 
     .user-box-content p
     {
-        font-family: 'Gordita Regular', sans-serif;
         text-align: center;
         font-size: 12px;
         margin-bottom: 12px;
@@ -24042,7 +24038,7 @@ body[data-layout-color=dark] .activate-select .sorting_1 {
 }
 
 .daterangepicker {
-    font-family: 'Gordita Regular', sans-serif;
+    font-family: 'Lexend Deca', sans-serif;
     border: 1px solid var(--ct-dropdown-border-color);
     -webkit-box-shadow: var(--ct-box-shadow);
     box-shadow: var(--ct-box-shadow);
@@ -24363,7 +24359,7 @@ body[data-layout-color=dark] .datepicker tfoot tr th:hover {
     border: none;
     background: #343a40;
     color: #f1f3fa;
-    font-family: 'Gordita Regular', sans-serif;
+    font-family: 'Lexend Deca', sans-serif;
     font-size: .9rem;
     padding: 5px 8px
 }
@@ -24396,7 +24392,7 @@ body[data-layout-color=dark] .jvectormap-container .jvectormap-zoomout {
 }
 
 .ql-container {
-    font-family: 'Gordita Regular', sans-serif
+    font-family: 'Lexend Deca', sans-serif
 }
 
 .ql-container.ql-snow {
@@ -24409,7 +24405,7 @@ body[data-layout-color=dark] .jvectormap-container .jvectormap-zoomout {
 }
 
 .ql-toolbar {
-    font-family: 'Gordita Regular', sans-serif !important
+    font-family: 'Lexend Deca', sans-serif !important
 }
 
 .ql-toolbar span {
@@ -24852,7 +24848,7 @@ body[data-layout-color=dark] .select2-container--default .select2-results__optio
 .jq-toast-single {
     text-align: left !important;
     padding: 15px;
-    font-family: 'Gordita Regular', sans-serif;
+    font-family: 'Lexend Deca', sans-serif;
     background-color: #1c80af;
     font-size: 13px;
     line-height: 22px
@@ -24860,7 +24856,7 @@ body[data-layout-color=dark] .select2-container--default .select2-results__optio
 
 .jq-toast-single .h2,
 .jq-toast-single h2 {
-    font-family: 'Gordita Regular', sans-serif
+    font-family: 'Lexend Deca', sans-serif
 }
 
 .jq-toast-single a {
@@ -25138,7 +25134,7 @@ body[data-layout-color=dark] .editor-statusbar {
 }
 
 .tt-highlight {
-    font-family: 'Gordita Regular', sans-serif
+    font-family: 'Lexend Deca', sans-serif
 }
 
 .typeahead-empty-message {
@@ -25167,7 +25163,7 @@ body[data-layout-color=dark] .editor-statusbar {
     color: #000 !important;
     font-size: 12px !important;
     line-height: 18px !important;
-    font-family: 'Gordita Regular', sans-serif !important;
+    font-family: 'Lexend Deca', sans-serif !important;
     font-weight: 700 !important
 }
 
@@ -26074,4 +26070,44 @@ input.tutor-form-check-input.tutor-form-check-circle {
 .pending .content i {
     font-size: 25px;
     color: #000;
+}
+.leftbar-user-names {
+    padding:5px;
+    color: #000;
+    font-weight: 600;
+    margin: 12px 0;
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 1px solid #dddddd30;
+}
+.plan-names {
+    padding: 0px 5px;
+    text-transform: capitalize;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    margin-bottom: 2px;
+    text-align: center;
+}
+.pb {
+    padding: 0px 4px;
+    margin-left: 0px;
+    background: var(--ct-navbar-light-hover-color);
+    box-shadow: none;
+    border: 0;
+}
+.user-box-imgs img {
+    border-radius: 40px;
+    width: 65px;
+    height: 68px;
+}
+.bg-icn
+{
+    background: linear-gradient(90deg, #d6078d2e, rgb(157 23 126 / 44%));
+    color: #a2157f !important;
+}
+.bg-icn:hover{
+    background: #a2157f !important;
+    color: #fff !important;
 }
