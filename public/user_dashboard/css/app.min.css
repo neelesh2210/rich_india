@@ -17909,7 +17909,6 @@ body[data-layout-color=dark] .badge-outline-dark[href]:hover {
     -webkit-box-shadow: var(--ct-card-box-shadow);
     box-shadow: var(--ct-card-box-shadow);
     margin-bottom: 10px;
-    overflow-x: auto;
 }
 
 .single-pricing-table.with-hover-color img
@@ -18140,6 +18139,10 @@ body[data-layout-color=dark] .badge-outline-dark[href]:hover {
 
 .card .card-widgets>a.collapsed i:before {
     content: "\f0415"
+}
+
+.leader-board .card{
+  min-height:400px;
 }
 
 .leader-board h4{
