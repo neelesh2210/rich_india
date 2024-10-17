@@ -30,7 +30,7 @@
                 </div>
                 <div class="row mt-3 mb-3">
                     <div class="col-lg-3">
-                        <div class="left-side-menu">
+                        <div class="left-side-menu" style="background: #fff;">
                             <div class="ribbon">
                                 <span>{{Auth::guard('web')->user()->userDetail->plan->title}}</span>
                             </div>

@@ -3345,8 +3345,8 @@ textarea.form-control-lg {
 }
 
 .form-check-input:checked {
-    background-color: var(--ct-form-check-input-checked-bg-color);
-    border-color: var(--ct-form-check-input-checked-border-color)
+    background-color: #423ab5;
+    border-color: #423ab5
 }
 
 .form-check-input:checked[type=checkbox] {
@@ -25859,14 +25859,19 @@ body[data-layout-color=dark] .gantt .today-highlight {
     box-shadow: 0 0 35px 0 rgb(154 161 171 / 15%);
     z-index: 1;
     border-radius: 5px;
+    background: linear-gradient(#FFC107, #ff7d17);
+    border: 2.5px solid #531fa8;
 }
-
+.left-side-menu:hover  {
+    -ms-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    cursor: pointer;
+}
 .widget-flat:hover {
-    /* background-color: var(--black-color);
-    border: 1px solid var(--white-color); */
-    /* -webkit-transform: translateY(-5px);
-    transform: translateY(-5px);
-    transform: scale(1.045) !important; */
+    -ms-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
     cursor: pointer;
 }
 
@@ -26111,3 +26116,153 @@ input.tutor-form-check-input.tutor-form-check-circle {
     background: #a2157f !important;
     color: #fff !important;
 }
+.mybox-shadow {
+    /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+}
+.leader-heading {
+    /* background: #fdc388; */
+    background: -webkit-linear-gradient(#5751e1, #324ebf);
+    border-radius: 0px 0px 35px 35px !important;
+    text-align: center;
+}
+.box-left {
+    flex-basis: 25%;
+}
+.top-rank-image {
+    position: relative;
+    margin-bottom: 10px;
+    display: block;
+    text-align: center;
+}
+.top-rank-image img {
+    border-radius: 50%;
+    height: 90px;
+    width: 90px;
+    border: 2px solid #921e82;
+    position: relative;
+}
+.rank-circle {
+    position: absolute;
+    left: 39%;
+    bottom: -11px;
+    background: #921e82;
+    border: 1px solid #781a93;
+    color: #fff;
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 24px;
+    font-size: 13px;
+    font-weight: 800;
+}
+.box-center {
+    position: absolute;
+    z-index: 1;
+    flex-basis: 50%;
+    top: -40px;
+}
+.box-center .rank-circle {
+    left: 47%;
+}
+.box-center img {
+    width: 130px;
+    height: 130px;
+}
+.earning-color {
+    font-weight: 700;
+    color:#4e23a9;
+}
+.box-center p {
+    font-size: 14px;
+}
+.box-right {
+    flex-basis: 20%;
+}
+.top-header {
+    background: linear-gradient(#ffc11a, #ff7d17);
+    border-radius: 10px;
+    width: max-content;
+    margin: auto;
+    padding: 1px 13px;
+    margin-bottom: 7px;
+}
+.leader-heading .card-title {
+    color: #ece6f5 !important;
+    font-size: 20px;
+}
+.leader-heading small{
+    color: #fff;
+}
+.gap-90 {
+    gap: 85px;
+}
+.leader-board-box {
+    border: 1px solid #f3b16e;
+    padding: 5px 7px;
+    border-radius: 50px;
+    margin-bottom: 15px;
+    position: relative;
+}
+.leader-board-box .rank-num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    background: #3746bb;
+    border: 2px solid #4731b0;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 15px;
+}
+.leader-board-box .leader-img img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+}
+.leader-details h5 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    color: #6719a0;
+}
+.leader-details p {
+    color: #b0009a;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 0px;
+    position: absolute;
+    right: 9px;
+    top: 35%;
+}
+.gap-10 {
+    gap: 10px;
+}
+.rupee {
+    padding: 15px;
+    box-shadow: inset 0px 0px 0px 3px #cbc0c026;
+}
+.rupee small {
+    padding: 0px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 32px;
+    opacity: 1;
+    display: inline-block;
+    line-height: 1.0625rem;
+    width: 20px;
+    font-size: 20px;
+    vertical-align: middle;
+    width: 35px;
+    line-height: 35px;
+    height: 35px;
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: 1px 2px 20px 5px rgb(215 216 222 / 26%);
+    margin-top: -10px;
+}
+
