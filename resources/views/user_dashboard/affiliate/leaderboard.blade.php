@@ -34,13 +34,13 @@
                                                     <div class="box-left">
                                                         <a href="javascript:;" class="viewProfile">
                                                             <div class="top-rank-image">
-                                                                <img src="{{ asset('frontend/images/avatar/' . $today_leaderboards[0]->user->avatar) }}"
+                                                                <img src="{{ asset('frontend/images/avatar/' . $today_leaderboards[1]->user->avatar) }}"
                                                                     width="80" onerror="this.onerror=null;this.src='{{ asset('user_dashboard/images/users/avatar-1.jpg') }}'">
                                                                 <span class="rank-circle">2</span>
                                                             </div>
                                                             <h6 class="text-black fw-600 text-center mt-3 top-header"
-                                                                style="font-size: 14px;">{{$today_leaderboards[0]->user->name}}</h6>
-                                                            <p class="text-center earning-color">₹ {{$today_leaderboards[0]->total_commission}}</p>
+                                                                style="font-size: 14px;">{{$today_leaderboards[1]->user->name}}</h6>
+                                                            <p class="text-center earning-color">₹ {{$today_leaderboards[1]->total_commission}}</p>
                                                         </a>
                                                     </div>
                                                 @endisset
@@ -119,13 +119,13 @@
                                                     <div class="box-left">
                                                         <a href="javascript:;" class="viewProfile">
                                                             <div class="top-rank-image">
-                                                                <img src="{{ asset('frontend/images/avatar/' . $last_week_leaderboards[0]->user->avatar) }}"
+                                                                <img src="{{ asset('frontend/images/avatar/' . $last_week_leaderboards[1]->user->avatar) }}"
                                                                     width="80" onerror="this.onerror=null;this.src='{{ asset('user_dashboard/images/users/avatar-1.jpg') }}'">
                                                                 <span class="rank-circle">2</span>
                                                             </div>
                                                             <h6 class="text-black fw-600 text-center mt-3 top-header"
-                                                                style="font-size: 14px;">{{$last_week_leaderboards[0]->user->name}}</h6>
-                                                            <p class="text-center earning-color">₹ {{$last_week_leaderboards[0]->total_commission}}</p>
+                                                                style="font-size: 14px;">{{$last_week_leaderboards[1]->user->name}}</h6>
+                                                            <p class="text-center earning-color">₹ {{$last_week_leaderboards[1]->total_commission}}</p>
                                                         </a>
                                                     </div>
                                                 @endisset
@@ -133,13 +133,13 @@
                                                     <div class="box-center">
                                                         <a href="javascript:;" class="viewProfile">
                                                             <div class="top-rank-image">
-                                                                <img src="{{ asset('frontend/images/avatar/' . $last_week_leaderboards[1]->user->avatar) }}"
+                                                                <img src="{{ asset('frontend/images/avatar/' . $last_week_leaderboards[0]->user->avatar) }}"
                                                                     width="80" onerror="this.onerror=null;this.src='{{ asset('user_dashboard/images/users/avatar-1.jpg') }}'">
                                                                 <span class="rank-circle">1</span>
                                                             </div>
                                                             <h6 class="text-black fw-600 text-center mt-3 top-header"
-                                                                style="font-size: 14px;">{{$last_week_leaderboards[1]->user->name}}</h6>
-                                                            <p class="text-center earning-color">₹ {{$last_week_leaderboards[1]->total_commission}}</p>
+                                                                style="font-size: 14px;">{{$last_week_leaderboards[0]->user->name}}</h6>
+                                                            <p class="text-center earning-color">₹ {{$last_week_leaderboards[0]->total_commission}}</p>
                                                         </a>
                                                     </div>
                                                 @endisset
@@ -204,13 +204,13 @@
                                                     <div class="box-left">
                                                         <a href="javascript:;" class="viewProfile">
                                                             <div class="top-rank-image">
-                                                                <img src="{{ asset('frontend/images/avatar/' . $last_month_leaderboards[0]->user->avatar) }}"
+                                                                <img src="{{ asset('frontend/images/avatar/' . $last_month_leaderboards[1]->user->avatar) }}"
                                                                     width="80" onerror="this.onerror=null;this.src='{{ asset('user_dashboard/images/users/avatar-1.jpg') }}'">
                                                                 <span class="rank-circle">2</span>
                                                             </div>
                                                             <h6 class="text-black fw-600 text-center mt-3 top-header"
-                                                                style="font-size: 14px;">{{$last_month_leaderboards[0]->user->name}}</h6>
-                                                            <p class="text-center earning-color">₹ {{$last_month_leaderboards[0]->total_commission}}</p>
+                                                                style="font-size: 14px;">{{$last_month_leaderboards[1]->user->name}}</h6>
+                                                            <p class="text-center earning-color">₹ {{$last_month_leaderboards[1]->total_commission}}</p>
                                                         </a>
                                                     </div>
                                                 @endisset
@@ -218,13 +218,13 @@
                                                     <div class="box-center">
                                                         <a href="javascript:;" class="viewProfile">
                                                             <div class="top-rank-image">
-                                                                <img src="{{ asset('frontend/images/avatar/' . $last_month_leaderboards[1]->user->avatar) }}"
+                                                                <img src="{{ asset('frontend/images/avatar/' . $last_month_leaderboards[0]->user->avatar) }}"
                                                                     width="80" onerror="this.onerror=null;this.src='{{ asset('user_dashboard/images/users/avatar-1.jpg') }}'">
                                                                 <span class="rank-circle">1</span>
                                                             </div>
                                                             <h6 class="text-black fw-600 text-center mt-3 top-header"
-                                                                style="font-size: 14px;">{{$last_month_leaderboards[1]->user->name}}</h6>
-                                                            <p class="text-center earning-color">₹ {{$last_month_leaderboards[1]->total_commission}}</p>
+                                                                style="font-size: 14px;">{{$last_month_leaderboards[0]->user->name}}</h6>
+                                                            <p class="text-center earning-color">₹ {{$last_month_leaderboards[0]->total_commission}}</p>
                                                         </a>
                                                     </div>
                                                 @endisset
@@ -287,13 +287,13 @@
                                                     <div class="box-left">
                                                         <a href="javascript:;" class="viewProfile">
                                                             <div class="top-rank-image">
-                                                                <img src="{{ asset('frontend/images/avatar/' . $all_time_leaderboards[0]->user->avatar) }}"
+                                                                <img src="{{ asset('frontend/images/avatar/' . $all_time_leaderboards[1]->user->avatar) }}"
                                                                     width="80" onerror="this.onerror=null;this.src='{{ asset('user_dashboard/images/users/avatar-1.jpg') }}'">
                                                                 <span class="rank-circle">2</span>
                                                             </div>
                                                             <h6 class="text-black fw-600 text-center mt-3 top-header"
-                                                                style="font-size: 14px;">{{$all_time_leaderboards[0]->user->name}}</h6>
-                                                            <p class="text-center earning-color">₹ {{$all_time_leaderboards[0]->total_commission}}</p>
+                                                                style="font-size: 14px;">{{$all_time_leaderboards[1]->user->name}}</h6>
+                                                            <p class="text-center earning-color">₹ {{$all_time_leaderboards[1]->total_commission}}</p>
                                                         </a>
                                                     </div>
                                                 @endisset
@@ -301,13 +301,13 @@
                                                     <div class="box-center">
                                                         <a href="javascript:;" class="viewProfile">
                                                             <div class="top-rank-image">
-                                                                <img src="{{ asset('frontend/images/avatar/' . $all_time_leaderboards[1]->user->avatar) }}"
+                                                                <img src="{{ asset('frontend/images/avatar/' . $all_time_leaderboards[0]->user->avatar) }}"
                                                                     width="80" onerror="this.onerror=null;this.src='{{ asset('user_dashboard/images/users/avatar-1.jpg') }}'">
                                                                 <span class="rank-circle">1</span>
                                                             </div>
                                                             <h6 class="text-black fw-600 text-center mt-3 top-header"
-                                                                style="font-size: 14px;">{{$all_time_leaderboards[1]->user->name}}</h6>
-                                                            <p class="text-center earning-color">₹ {{$all_time_leaderboards[1]->total_commission}}</p>
+                                                                style="font-size: 14px;">{{$all_time_leaderboards[0]->user->name}}</h6>
+                                                            <p class="text-center earning-color">₹ {{$all_time_leaderboards[0]->total_commission}}</p>
                                                         </a>
                                                     </div>
                                                 @endisset
