@@ -59,24 +59,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xl-4 col-lg-6">
-                                        <div class="card card-outline card-danger">
-                                            <div class="card-header d-flex justify-content-between align-items-center">
-                                                <h4 class="header-title">All Time</h4>
-                                            </div>
-                                            <div class="card-body pt-2">
-                                                @foreach ($all_time_leaderboards as $all_key=>$all_time_leaderboard)
-                                                    <div class="d-flex align-items-start br-btm  @if($all_key != 0) mt-3 @endif">
-                                                        <img class="me-3 img-crcl" src="{{ asset('frontend/images/avatar/'.$all_time_leaderboard['user']['avatar']) }}" onerror="this.onerror=null;this.src='{{asset('user_dashboard/images/users/avatar-1.jpg')}}'" width="40" alt="Generic placeholder image">
-                                                        <div class="w-75 overflow-hidden my-auto">
-                                                            <span class="badge badge-primary-lighten float-end">₹ {{$all_time_leaderboard['total_commission']}}</span>
-                                                            <h5 class="mt-0 mb-1">{{$all_time_leaderboard['user']['name']}}</h5>
-                                                        </div>
-                                                    </div>
-                                                @endforeach
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
