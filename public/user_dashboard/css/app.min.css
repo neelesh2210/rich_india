@@ -17909,7 +17909,6 @@ body[data-layout-color=dark] .badge-outline-dark[href]:hover {
     -webkit-box-shadow: var(--ct-card-box-shadow);
     box-shadow: var(--ct-card-box-shadow);
     margin-bottom: 10px;
-    overflow-x: auto;
 }
 
 .single-pricing-table.with-hover-color img
@@ -18140,6 +18139,10 @@ body[data-layout-color=dark] .badge-outline-dark[href]:hover {
 
 .card .card-widgets>a.collapsed i:before {
     content: "\f0415"
+}
+
+.leader-board .card{
+  min-height:400px;
 }
 
 .leader-board h4{
@@ -25751,31 +25754,38 @@ body[data-layout-color=dark] .gantt .today-highlight {
     background: #6a11cb;
     background: -webkit-linear-gradient( 45deg, #5927d6, #335def)!important;
     background: linear-gradient(45deg, #5927d6, #335def) !important;
+    border: 3px solid white;
 }
 
 .gradient-45deg-red-pink {
+    border: 3px solid white;
     background: #ee0979;
     background: -webkit-linear-gradient(45deg, #e72d2d, #d75e86)!important;
     background: linear-gradient(45deg, #e72d2d, #d75e86) !important;
 }
 
 .gradient-45deg-amber-amber {
+    border: 3px solid white;
     background: linear-gradient(45deg, #ff6f00, #ffca28) !important;
 }
 .bg-gradient-moonlit {
+    border: 3px solid white;
     background: linear-gradient(to right, #707239, #919541, #c1c577)!important;
 }
 .gradient-45deg-green-teal {
+    border: 3px solid white;
     background: #00b09b;
     background: -webkit-linear-gradient(45deg, #39afd1, #0acf97)!important;
     background: linear-gradient(45deg, #39afd1, #0acf97) !important;
 }
 .statistic-bg-purple {
+    border: 3px solid white;
     height: auto;
     background: linear-gradient(45deg, #ff6f00, #ffca28) !important;
 }
 .statistic-bg-purple {
     height: auto;
+    border: 3px solid white;
     background: linear-gradient(45deg, #ff6f00, #ffca28) !important;
 }
 
@@ -25795,8 +25805,8 @@ body[data-layout-color=dark] .gantt .today-highlight {
 
 .user-box img {
 
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
     margin-top: 20px;
 }
 
@@ -25848,6 +25858,25 @@ body[data-layout-color=dark] .gantt .today-highlight {
     transform: rotate(-45deg);
 }
 
+.left-side-menu-new {
+    bottom: 0;
+    padding: 10px 0;
+    position: relative;
+    -webkit-transition: all .1s ease-out;
+    transition: all .1s ease-out;
+    top: 0;
+    -webkit-box-shadow: 0 0 35px 0 rgb(154 161 171 / 15%);
+    box-shadow: 0 0 35px 0 rgb(154 161 171 / 15%);
+    z-index: 1;
+    border-radius: 20px;
+    box-shadow: 7px 8px 2px #00000045;
+    background: radial-gradient(#d6d7d7, transparent);
+    border: 3px solid white;
+}
+.left-side-menu-new:hover  {
+    background: linear-gradient(85deg, #ffc21a, #ff9418) !important;
+    transition: 0.25s;
+}
 .left-side-menu {
     bottom: 0;
     padding: 10px 0;
@@ -25997,6 +26026,14 @@ input.tutor-form-check-input.tutor-form-check-circle {
 .product-box-hi8 a:hover{
     color:#fff;
     transform: translateY(-3px);
+}
+.leftbar-user-name-new {
+    font-size: 32px;
+    font-weight: 900;
+    color: #fff;
+    /* -webkit-text-stroke: 1px #fff; */
+    text-shadow: 1px 4px 0px #00000052;
+    text-align: center;
 }
 .leftbar-user-name {
     padding: 8px 20px;
@@ -26244,25 +26281,26 @@ input.tutor-form-check-input.tutor-form-check-circle {
 }
 .rupee {
     padding: 15px;
-    box-shadow: inset 0px 0px 0px 3px #cbc0c026;
 }
 .rupee small {
     padding: 0px;
     border-radius: 50%;
     color: #fff;
-    font-size: 32px;
-    opacity: 1;
-    display: inline-block;
-    line-height: 1.0625rem;
-    width: 20px;
-    font-size: 20px;
-    vertical-align: middle;
-    width: 35px;
-    line-height: 35px;
-    height: 35px;
-    text-align: center;
-    border-radius: 30px;
-    box-shadow: 1px 2px 20px 5px rgb(215 216 222 / 26%);
-    margin-top: -10px;
+    font-size: 58px;
+    opacity: .5;
 }
 
+.pckg_name{
+    color: white;
+    background: linear-gradient(65.4deg, rgb(56, 248, 249) -9.1%, rgb(17 96 182) 48%, rgb(18 97 182) 111.1%);
+    width: max-content;
+    padding: 11px 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin: auto;
+}
+.pkge-id{
+    text-shadow: 0px 1px 0px black;
+    letter-spacing: .5px;
+    font-weight: 500 !important;
+}
