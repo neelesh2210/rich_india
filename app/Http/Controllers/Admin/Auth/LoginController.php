@@ -28,7 +28,7 @@ class LoginController extends Controller
 
         if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember))
         {
-            return redirect()->route('admin.dashboard');
+            return redirect()->route('admin.user.index');
         }
         return redirect()->back()->withInput($request->only('email'))->withErrors(['password' => ['These credentials don\'t match our records.','Or Incorrect Password']]);
     }
