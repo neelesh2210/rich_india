@@ -429,7 +429,7 @@
     <section class="instructor__area">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-xl-4">
+                <div class="col-xl-6">
                     <div class="instructor__content-wrap">
                         <div class="section__title mb-15">
                             <span class="sub-title">Skilled Introduce</span>
@@ -439,34 +439,32 @@
                         <p>He has helped more than 20K+ students in learning new skill. He is guiding now 10k people about social media marketing in this company.</p>
                     </div>
                 </div>
-                <div class="col-xl-8">
+                <div class="col-xl-6">
                     <div class="instructor__item-wrap">
                         <div class="row">
-                            @foreach($instructors as $instructor)
-                                <div class="col-6">
+                                <div class="col-12">
                                     <div class="instructor__item">
                                         <div class="instructor__thumb">
-                                            <a href="#"><img src="{{ asset('backend/img/instructors/'.$instructor->image) }}" alt="img"></a>
+                                            <a href="#"><img src="{{ asset('frontend/assets/img/founder.jpg') }}" alt="img"></a>
                                         </div>
                                         <div class="instructor__content">
-                                            <h2 class="title"><a href="#">{{$instructor->name}}</a></h2>
-                                            <span class="designation">{{$instructor->designation}}</span>
+                                            <h2 class="title"><a href="#">Yash kulshrestha</a></h2>
+                                            <span class="designation">Founder & CEO</span>
                                             <p class="avg-rating">
                                                 <i class="fas fa-star"></i>
-                                                ({{$instructor->rating}} Ratings)
+                                                (4.8 Ratings)
                                             </p>
                                             <div class="instructor__social">
                                                 <ul class="list-wrap">
-                                                    <li><a href="{{$instructor->facebook}}"><i class="fab fa-facebook-f"></i></a></li>
-                                                    <li><a href="{{$instructor->twitter}}"><i class="fab fa-twitter"></i></a></li>
-                                                    <li><a href="{{$instructor->whatsapp}}"><i class="fab fa-whatsapp"></i></a></li>
-                                                    <li><a href="{{$instructor->instagram}}"><i class="fab fa-instagram"></i></a></li>
+                                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                    <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+                                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -683,16 +681,13 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <div class="faq__img-wrap tg-svg">
-                        <div class="faq__img">
-                            <img src="{{ asset('frontend/assets/img/others/faq_img.jpeg') }}" alt="img" class="img-fluid">
-                            <div class="shape-one">
-                                <img src="{{ asset('frontend/assets/img/others/faq_shape01.svg') }}" class="injectable tg-motion-effects4" alt="img">
-                            </div>
-                            <div class="shape-two">
-                                <span class="svg-icon" id="faq-svg" data-svg-icon="{{ asset('frontend/assets/img/others/faq_shape02.svg') }}"></span>
-                            </div>
+                    <div class="banner__images">
+                        <img src="{{ asset('frontend/assets/img/banner/banner_img.png')}}" alt="img" class="main-img">
+                        <div class="shape big-shape aos-init aos-animate" data-aos="fade-up-right" data-aos-delay="600">
+                            <img src="{{ asset('frontend/assets/img/banner/banner_shape01.png')}}" alt="shape" class="tg-motion-effects1">
                         </div>
+                        <img src="{{ asset('frontend/assets/img/banner/bg_dots.svg')}}" alt="shape" class="shape bg-dots rotateme">
+                        <img src="{{ asset('frontend/assets/img/banner/banner_shape02.png')}}" alt="shape" class="shape small-shape tg-motion-effects3">
                     </div>
                 </div>
                 <div class="col-lg-6">

@@ -340,6 +340,10 @@ textarea {
   }
 }
 @media (max-width: 767.98px) {
+    .instructor__thumb img {
+        padding-top:10px !important;
+        border-radius: 20px 20px 0 0 !important;
+    }
   .tgmenu__nav .logo a img {
     height: 50px !important;
   }
@@ -4194,6 +4198,7 @@ textarea {
   padding-right: 118px;
   text-align: right;
   z-index: 1;
+  margin-bottom: -115px;
 }
 @media (max-width: 1199.98px) {
   .banner__images {
@@ -4211,6 +4216,7 @@ textarea {
 @media (max-width: 767.98px) {
   .banner__images {
     max-width: 100%;
+    display: none;
   }
 }
 @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -11610,14 +11616,18 @@ textarea {
     padding-right: 10px;
 }
 .instructor__item {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  gap: 15px;
-  align-items: center;
-  margin-bottom: 35px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    margin-bottom: 35px;
+    border-radius: 20px;
+    border: 1px solid #4731b0;
+    background: #ff00a812;
+    box-shadow: 8px 8px 0px 0px #701a9857;
 }
 @media (max-width: 991.98px) {
   .instructor__item {
@@ -11696,9 +11706,13 @@ textarea {
   width: 186px;
   flex: 0 0 auto;
 }
+.instructor__thumb img{
+    border-radius: 20px 0 0 20px;
+}
 @media (max-width: 991.98px) {
   .instructor__thumb {
     margin: 0 auto 20px;
+    width: 100%;
   }
 }
 .instructor__thumb::before {
@@ -12001,6 +12015,7 @@ textarea {
 @media (max-width: 991.98px) {
   .instructor__social .list-wrap {
     justify-content: center;
+    padding-bottom: 10px;
   }
 }
 .instructor__social .list-wrap li a {
@@ -14986,7 +15001,7 @@ textarea {
 }
 @media (max-width: 767.98px) {
   .faq__area {
-    padding: 240px 0 100px;
+    padding: 160px 0 100px;
   }
 }
 .faq__area::before {
@@ -15371,6 +15386,7 @@ textarea {
   object-fit: cover;
 }
 .faq__content {
+    padding-left: 20px;
 }
 @media (max-width: 1199.98px) {
   .faq__content {
