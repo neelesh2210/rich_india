@@ -73,27 +73,105 @@
         </div>
         <div class="container-fluid">
             <div class="row">
-                {{-- <div class="col-lg-4 mb-3">
-                        <div class="left-side-menu-new">
-                            <div class="user-box text-center mb-2">
-                                <img src="{{asset('frontend/images/avatar/'.Auth::guard('web')->user()->avatar)}}" onerror="this.onerror=null;this.src='{{asset('user_dashboard/images/users/avatar-1.jpg')}}'" height="100" class="rounded-circle shadow-sm">
-                            </div>
-                            <p class="leftbar-user-name-new">
-                                {{ Auth::guard('web')->user()->name ? Auth::guard('web')->user()->name : 'User' }}</p>
-                            <h5 class="pckg_name">{{Auth::guard('web')->user()->userDetail->plan->title}}</h5>
-                                <div class="text-center">
-                                <input type="hidden" value="{{env('APP_URL')}}?referrer_code={{ encrypt(Auth::guard('web')->user()->referrer_code) }}" id="referral_link">
-                                <p class="text-center fw-bolder mr-2 text-white mt-2 pkge-id">ID: {{ Auth::guard('web')->user()->referrer_code }}
-                                    <a class="btn btn-success pb" onclick="copyText()"><i class="uil-copy" style="font-size: 20px;"></i></a></p>
+                <div class="col-md-12">
+                    <div class="row">
+                    <div class="col-sm-3 col-6">
+                            <div class="card widget-flat gradient-45deg-sevent-earning bg-primary-opacity">
+                                <div class="card-body user-earnings">
+                                    <h3><small class="text-dark"><i class="fas fa-rupee-sign"></i></small> <span class="counter-value">{{ $today_earning }}</span>
+                                    </h3>
+                                    <h5 title="Number of Orders">Today's Earning</h5>
+                                    <div class="progress progress-sm m-0">
+                                        <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="90"
+                                            aria-valuemin="0" aria-valuemax="100" style="width: 90%;background:#ffc107;">
+                                            <span class="visually-hidden">90% Complete</span>
+                                        </div>
+                                    </div>
+                                    <h5 class="text-white" title="Number of Customers" style="margin-bottom: 0;">View details <span
+                                            class="r8-arw"><i class="fas fa-chevron-right text-white"></i></span></h5>
+                                </div>
                             </div>
                         </div>
-                    </div> --}}
+                        <div class="col-sm-3 col-6">
+                            <div class="card widget-flat gradient-45deg-red-pink">
+                                <div class="card-body user-earnings">
+                                    <h3><small class="text-dark"><i class="fas fa-rupee-sign"></i></small> <span class="counter-value">{{ $last_week_earning }}</span>
+                                    </h3>
+                                    <h5 class="text-dark" title="Number of Orders">7 Days Earning</h5>
+                                    <div class="progress progress-sm m-0">
+                                        <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="90"
+                                            aria-valuemin="0" aria-valuemax="100" style="width: 90%;background: #eb9fd4;">
+                                            <span class="visually-hidden">90% Complete</span>
+                                        </div>
+                                    </div>
+                                    <h5 class="text-dark" title="Number of Customers" style="margin-bottom: 0;">View details <span
+                                            class="r8-arw"><i class="fas fa-chevron-right"></i></span></h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-6">
+                            <div class="card widget-flat statistic-bg-purple">
+                                <div class="card-body user-earnings">
+                                    <h3><small class="text-dark"><i class="fas fa-rupee-sign"></i></small> <span class="counter-value">{{ $last_month_earning }}</span>
+                                    </h3>
+                                    <h5 class="text-dark" title="Number of Orders">30 Days Earning</h5>
+                                    <div class="progress progress-sm m-0">
+                                        <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="90"
+                                            aria-valuemin="0" aria-valuemax="100" style="width: 90%;background: #f2b1b3;">
+                                            <span class="visually-hidden">90% Complete</span>
+                                        </div>
+                                    </div>
+                                    <h5 class="text-dark" title="Number of Customers" style="margin-bottom: 0;">View details <span
+                                            class="r8-arw"><i class="fas fa-chevron-right"></i></span></h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-6">
+                            <div class="card widget-flat gradient-45deg-green-teal">
+                                <div class="card-body user-earnings">
+                                    <h3><small class="text-dark"><i class="fas fa-rupee-sign"></i></small> <span
+                                            class="counter-value">{{ $all_time_earning + $old_payout->old_paid_payout + $old_payout->old_not_paid_payout }}</span>
+                                    </h3>
+                                    <h5 class="text-dark" title="Number of Orders">All Time Earning</h5>
+                                    <div class="progress progress-sm m-0">
+                                        <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="90"
+                                            aria-valuemin="0" aria-valuemax="100" style="width: 90%;background: #a3ddeb;">
+                                            <span class="visually-hidden">90% Complete</span>
+                                        </div>
+                                    </div>
+                                    <h5 class="text-dark" title="Number of Customers" style="margin-bottom: 0;">View details <span
+                                            class="r8-arw"><i class="fas fa-chevron-right"></i></span></h5>
+                                </div>
+                            </div>
+                        </div>
+                       <div class="col-sm-3">
+                            <div class="card widget-flat bg-gradient-moonlit">
+                                <div class="card-body user-earnings">
+                                    <h3><small class="text-dark"><i class="fas fa-rupee-sign"></i></small> <span
+                                            class="counter-value">{{$passive_income}}</span>
+                                    </h3>
+                                    <h5 class="text-dark" title="Number of Orders">Passive Income</h5>
+                                    <div class="progress progress-sm m-0">
+                                        <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="90"
+                                            aria-valuemin="0" aria-valuemax="100" style="width: 90%;background:#b699fd;">
+                                            <span class="visually-hidden">90% Complete</span>
+                                        </div>
+                                    </div>
+                                    <h5 class="text-dark" title="Number of Customers" style="margin-bottom: 0;">View details <span
+                                            class="r8-arw"><i class="fas fa-chevron-right"></i></span></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- <div class="row">
                 <div class="col-sm-3">
                     <div class="card widget-flat gradient-45deg-light-blue-cyan" data-aos="fade-left"
                         data-aos-duration="500" data-aos-once="true">
                         <div class="card-body rupee row">
                             <div class="col-3">
-                                <small><i class="fas fa-rupee-sign text-white"></i></small>
+                                <small><i class="fas fa-rupee-sign"></i></small>
                             </div>
                             <div class="col-9 px-1">
                                 <h3 class="text-white"><span class="counter-value text-white">{{ $today_earning }}</span></h3>
@@ -186,23 +264,7 @@
                         </div>
                     </div>
                 </div>
-                {{-- <div class="col-sm-4">
-                                <div class="card widget-flat bg-gradient-moonlit">
-                                     <div class="card-body rupee row">
-                                        <div class="col-3">
-                                            <small><i class="fas fa-rupee-sign"></i></small>
-                                        </div>
-                                        <div class="col-9">
-                                        <h3 class="text-white"><span class="counter-value">6548</span></h3>
-                                        <div class="progress mb-1" style="height:1px;">
-                                            <div class="progress-bar bg-white" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <h5 class="fw-normal mb-0 text-dark" title="Number of Customers">Pending Amount</h5>
-                                    </div>
-                                     </div>
-                                </div>
-                            </div> --}}
-            </div>
+            </div> --}}
             <div class="row">
                 <div class="col-lg-8">
                     <div class="row">

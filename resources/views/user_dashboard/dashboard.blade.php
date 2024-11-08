@@ -1,5 +1,13 @@
 @extends('user_dashboard.layouts.app')
 @section('content')
+<style>
+    .progress-sm {
+    height: 1px;
+    }
+    .progress-bar {
+        background: #fff;
+    }
+</style>
     <div class="content-page">
         <div class="content">
             <div class="container-fluid">
@@ -54,7 +62,7 @@
                         <div class="col-sm-3 col-6">
                                 <div class="card widget-flat gradient-45deg-sevent-earning bg-primary-opacity">
                                     <div class="card-body user-earnings">
-                                        <h3><small><i class="fas fa-rupee-sign"></i></small> <span class="counter-value">{{ $today_earning }}</span>
+                                        <h3><small><i class="fas fa-rupee-sign"></i></small> <span class="counter-value text-white">{{ $today_earning }}</span>
                                         </h3>
                                         <h5 title="Number of Orders">Today's Earning</h5>
                                         <div class="progress progress-sm m-0">
@@ -64,14 +72,14 @@
                                             </div>
                                         </div>
                                         <h5 title="Number of Customers" style="margin-bottom: 0;">View details <span
-                                                class="r8-arw"><i class="fas fa-chevron-right"></i></span></h5>
+                                                class="r8-arw"><i class="fas fa-chevron-right text-white"></i></span></h5>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-3 col-6">
                                 <div class="card widget-flat gradient-45deg-sevent-earning bg-img-opacity">
                                     <div class="card-body user-earnings">
-                                        <h3><small><i class="fas fa-rupee-sign"></i></small> <span class="counter-value">{{ $last_week_earning }}</span>
+                                        <h3><small><i class="fas fa-rupee-sign"></i></small> <span class="counter-value text-white">{{ $last_week_earning }}</span>
                                         </h3>
                                         <h5 title="Number of Orders">7 Days Earning</h5>
                                         <div class="progress progress-sm m-0">
@@ -81,14 +89,14 @@
                                             </div>
                                         </div>
                                         <h5 title="Number of Customers" style="margin-bottom: 0;">View details <span
-                                                class="r8-arw"><i class="fas fa-chevron-right"></i></span></h5>
+                                                class="r8-arw"><i class="fas fa-chevron-right text-white"></i></span></h5>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-3 col-6">
                                 <div class="card widget-flat gradient-45deg-thirty-earning bg-img1-opacity">
                                     <div class="card-body user-earnings">
-                                        <h3><small><i class="fas fa-rupee-sign"></i></small> <span class="counter-value">{{ $last_month_earning }}</span>
+                                        <h3><small><i class="fas fa-rupee-sign"></i></small> <span class="counter-value text-white">{{ $last_month_earning }}</span>
                                         </h3>
                                         <h5 title="Number of Orders">30 Days Earning</h5>
                                         <div class="progress progress-sm m-0">
@@ -98,7 +106,7 @@
                                             </div>
                                         </div>
                                         <h5 title="Number of Customers" style="margin-bottom: 0;">View details <span
-                                                class="r8-arw"><i class="fas fa-chevron-right"></i></span></h5>
+                                                class="r8-arw"><i class="fas fa-chevron-right text-white"></i></span></h5>
                                     </div>
                                 </div>
                             </div>
@@ -106,7 +114,7 @@
                                 <div class="card widget-flat gradient-45deg-all-time-earning bg-img2-opacity">
                                     <div class="card-body user-earnings">
                                         <h3><small><i class="fas fa-rupee-sign"></i></small> <span
-                                                class="counter-value">{{ $all_time_earning + $old_payout->old_paid_payout + $old_payout->old_not_paid_payout }}</span>
+                                                class="counter-value text-white">{{ $all_time_earning + $old_payout->old_paid_payout + $old_payout->old_not_paid_payout }}</span>
                                         </h3>
                                         <h5 title="Number of Orders">All Time Earning</h5>
                                         <div class="progress progress-sm m-0">
@@ -116,7 +124,7 @@
                                             </div>
                                         </div>
                                         <h5 title="Number of Customers" style="margin-bottom: 0;">View details <span
-                                                class="r8-arw"><i class="fas fa-chevron-right"></i></span></h5>
+                                                class="r8-arw"><i class="fas fa-chevron-right text-white"></i></span></h5>
                                     </div>
                                 </div>
                             </div>
@@ -124,7 +132,7 @@
                                 <div class="card widget-flat gradient-45deg-all-time-earning bg-img3-opacity">
                                     <div class="card-body user-earnings">
                                         <h3><small><i class="fas fa-rupee-sign"></i></small> <span
-                                                class="counter-value">{{$passive_income}}</span>
+                                                class="counter-value text-white">{{$passive_income}}</span>
                                         </h3>
                                         <h5 title="Number of Orders">Passive Income</h5>
                                         <div class="progress progress-sm m-0">
@@ -134,7 +142,7 @@
                                             </div>
                                         </div>
                                         <h5 title="Number of Customers" style="margin-bottom: 0;">View details <span
-                                                class="r8-arw"><i class="fas fa-chevron-right"></i></span></h5>
+                                                class="r8-arw"><i class="fas fa-chevron-right text-white"></i></span></h5>
                                     </div>
                                 </div>
                             </div>
@@ -142,7 +150,7 @@
                                 <div class="card widget-flat gradient-45deg-all-time-earning bg-img4-opacity">
                                     <div class="card-body user-earnings">
                                         <h3><small><i class="fas fa-rupee-sign"></i></small> <span
-                                                class="counter-value">{{Auth::guard('web')->user()->userDetail->total_wallet_balance}}</span>
+                                                class="counter-value text-white">{{Auth::guard('web')->user()->userDetail->total_wallet_balance}}</span>
                                         </h3>
                                         <h5 title="Number of Orders">Total Wallet Amount</h5>
                                         <div class="progress progress-sm m-0">
@@ -152,7 +160,7 @@
                                             </div>
                                         </div>
                                         <h5 title="Number of Customers" style="margin-bottom: 0;">View details <span
-                                                class="r8-arw"><i class="fas fa-chevron-right"></i></span></h5>
+                                                class="r8-arw"><i class="fas fa-chevron-right text-white"></i></span></h5>
                                     </div>
                                 </div>
                             </div> --}}
@@ -204,7 +212,7 @@
     <script src="{{asset('backend/js/Chart.min.js')}}"></script>
     <script>
         $(document).ready(function() {
-            $('.counter-value').each(function() {
+            $('.counter-value text-white').each(function() {
                 $(this).prop('Counter', 0).animate({
                     Counter: $(this).text()
                 }, {

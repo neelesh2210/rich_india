@@ -6845,7 +6845,7 @@ fieldset:disabled .btn {
     height: 1rem;
     overflow: hidden;
     font-size: .675rem;
-    background: #7854bd36 !important;
+    background: #fff;
     border-radius: .25rem
 }
 
@@ -18809,7 +18809,7 @@ body[data-layout-color=dark] .nav-tabs.nav-bordered {
 }
 
 .progress-sm {
-    height: 1px
+    height: 2px
 }
 
 .progress-md {
@@ -26106,9 +26106,6 @@ input.tutor-form-check-input.tutor-form-check-circle {
 .bg-img4-opacity {
     background: #be8202;
     background-image: url(../../user_dashboard/images/card-1.png);
-}
-.progress-bar {
-    background: none;
 }
 .r8-arw {
     font-size: 12px !important;
