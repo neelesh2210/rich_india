@@ -5273,9 +5273,7 @@ fieldset:disabled .btn {
 
 .accordion-button:focus {
     z-index: 3;
-    border-color: var(--bs-accordion-btn-focus-border-color);
     outline: 0;
-    box-shadow: var(--bs-accordion-btn-focus-box-shadow)
 }
 
 .accordion-header {
@@ -5294,8 +5292,7 @@ fieldset:disabled .btn {
 }
 
 .accordion-item:first-of-type .accordion-button {
-    border-top-left-radius: var(--bs-accordion-inner-border-radius);
-    border-top-right-radius: var(--bs-accordion-inner-border-radius)
+
 }
 
 .accordion-item:not(:first-of-type) {
