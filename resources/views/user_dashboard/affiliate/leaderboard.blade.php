@@ -11,8 +11,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="card">
-                        <div class="card-body">
+                    <div class="card res-p-0">
+                        <div class="card-body res-p-0">
                             {{-- <h5 class="mb-3 text-uppercase bg-light p-2">Leaderboard</h5>
                             <hr> --}}
                             <div class="row leader-board">
