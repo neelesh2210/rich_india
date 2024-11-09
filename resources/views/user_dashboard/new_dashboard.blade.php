@@ -2,14 +2,14 @@
 @section('content')
     <div class="content-page" style="padding: 0;">
         <div class="rbt-breadcrumb-default rbt-breadcrumb-style-3 new-ht">
-            <div class="breadcrumb-inner">
+            {{-- <div class="breadcrumb-inner">
                 <img src="{{ asset('user_dashboard/images/bg-image-10.jpg') }}">
-            </div>
+            </div> --}}
         </div>
         <div class="rbt-dashboard-area rbt-section-overlayping-top mb--50">
             <div class="container">
-                <div class="row" style="position: relative">
-                    <div class="col-5">
+                <div class="row welcome__usrs" style="position: relative">
+                    <div class="col-12">
                         @php
                             $dat = new DateTime('now', new DateTimeZone('Asia/Kolkata'));
                             $date = $dat->format('H');
@@ -23,22 +23,21 @@
                                 $greet_message = 'Good Night';
                             }
                         @endphp
-                        <h5 class="text-dark mt-0 mb-0"><span>{{ $greet_message }}</span></h5>
+                        <h4 class="text-dark fn-11"><span>{{ $greet_message }}, </span>
+                            {{ Auth::guard('web')->user()->name ? Auth::guard('web')->user()->name : 'User' }}</h4>
                     </div>
-                    <div class="col-7">
+                    {{-- <div class="col-7">
                         <div class="form-check form-switch float-end mb-1">
                             <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"
                                 onclick="changeDashboard()">
                             <label class="form-check-label text-dark" for="flexSwitchCheckDefault">Switch Old
                                 Dashboard</label>
                         </div>
-                    </div>
+                    </div> --}}
+                </div>
+                <div class="row">
                     <div class="col-lg-12">
                         <div class="rbt-dashboard-content-wrapper">
-                            <div class="tutor-bg-photo"></div>
-                            <div class="pricing-badge">
-                                <span>{{ Auth::guard('web')->user()->userDetail->plan->title }}</span>
-                            </div>
                             <div class="rbt-tutor-information">
                                 <div class="rbt-tutor-information-left">
                                     <div class="thumbnail rbt-avatars size-lg">
@@ -49,20 +48,15 @@
                                         <h5 class="title">
                                             {{ Auth::guard('web')->user()->name ? Auth::guard('web')->user()->name : 'User' }}
                                         </h5>
+                                        <span>{{ Auth::guard('web')->user()->userDetail->plan->title }}</span>
                                         <input type="hidden"
-                                            value="{{ env('APP_URL') }}?referrer_code={{ Auth::guard('web')->user()->referrer_code }}"
-                                            id="referral_link">
-                                        <div class="rbt-review" style="font-weight:600">
+                                        value="{{ env('APP_URL') }}?referrer_code={{ Auth::guard('web')->user()->referrer_code }}"
+                                        id="referral_link">
+                                        {{-- <div class="rbt-review" style="font-weight:500">
                                             {{ Auth::guard('web')->user()->referrer_code }}
                                             <a class="btn btn-success pb" onclick="copyText()"><i class="uil-copy"
-                                                    style="font-size: 20px;"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="rbt-tutor-information-right">
-                                    <div class="tutor-btn">
-                                        <a class="btn btn-primary pckg_name" href="#">Download Report <i
-                                                class="fas fa-arrow-right"></i></a>
+                                                    style="font-size: 13px;"></i></a>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -75,15 +69,15 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="row">
-                    <div class="col-sm-3 col-6">
-                            <div class="card widget-flat gradient-45deg-sevent-earning bg-primary-opacity">
+                    <div class="col-sm-3 col-12">
+                            <div class="card widget-flat gradient-today">
                                 <div class="card-body user-earnings">
-                                    <h3><small class="text-dark"><i class="fas fa-rupee-sign"></i></small> <span class="counter-value">{{ $today_earning }}</span>
+                                    <h3><small ><i class="fas fa-rupee-sign"></i></small> <span class="counter-value">{{ $today_earning }}</span>
                                     </h3>
                                     <h5 title="Number of Orders">Today's Earning</h5>
                                     <div class="progress progress-sm m-0">
                                         <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="90"
-                                            aria-valuemin="0" aria-valuemax="100" style="width: 90%;background:#ffc107;">
+                                            aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
                                             <span class="visually-hidden">90% Complete</span>
                                         </div>
                                     </div>
@@ -92,54 +86,54 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3 col-6">
+                        <div class="col-sm-3 col-12">
                             <div class="card widget-flat gradient-45deg-red-pink">
                                 <div class="card-body user-earnings">
-                                    <h3><small class="text-dark"><i class="fas fa-rupee-sign"></i></small> <span class="counter-value">{{ $last_week_earning }}</span>
+                                    <h3><small ><i class="fas fa-rupee-sign"></i></small> <span class="counter-value">{{ $last_week_earning }}</span>
                                     </h3>
-                                    <h5 class="text-dark" title="Number of Orders">7 Days Earning</h5>
+                                    <h5  title="Number of Orders">7 Days Earning</h5>
                                     <div class="progress progress-sm m-0">
                                         <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="90"
-                                            aria-valuemin="0" aria-valuemax="100" style="width: 90%;background: #eb9fd4;">
+                                            aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
                                             <span class="visually-hidden">90% Complete</span>
                                         </div>
                                     </div>
-                                    <h5 class="text-dark" title="Number of Customers" style="margin-bottom: 0;">View details <span
+                                    <h5  title="Number of Customers" style="margin-bottom: 0;">View details <span
                                             class="r8-arw"><i class="fas fa-chevron-right"></i></span></h5>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3 col-6">
+                        <div class="col-sm-3 col-12">
                             <div class="card widget-flat statistic-bg-purple">
                                 <div class="card-body user-earnings">
-                                    <h3><small class="text-dark"><i class="fas fa-rupee-sign"></i></small> <span class="counter-value">{{ $last_month_earning }}</span>
+                                    <h3><small ><i class="fas fa-rupee-sign"></i></small> <span class="counter-value">{{ $last_month_earning }}</span>
                                     </h3>
-                                    <h5 class="text-dark" title="Number of Orders">30 Days Earning</h5>
+                                    <h5  title="Number of Orders">30 Days Earning</h5>
                                     <div class="progress progress-sm m-0">
                                         <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="90"
-                                            aria-valuemin="0" aria-valuemax="100" style="width: 90%;background: #f2b1b3;">
+                                            aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
                                             <span class="visually-hidden">90% Complete</span>
                                         </div>
                                     </div>
-                                    <h5 class="text-dark" title="Number of Customers" style="margin-bottom: 0;">View details <span
+                                    <h5  title="Number of Customers" style="margin-bottom: 0;">View details <span
                                             class="r8-arw"><i class="fas fa-chevron-right"></i></span></h5>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3 col-6">
+                        <div class="col-sm-3 col-12">
                             <div class="card widget-flat gradient-45deg-green-teal">
                                 <div class="card-body user-earnings">
-                                    <h3><small class="text-dark"><i class="fas fa-rupee-sign"></i></small> <span
+                                    <h3><small ><i class="fas fa-rupee-sign"></i></small> <span
                                             class="counter-value">{{ $all_time_earning + $old_payout->old_paid_payout + $old_payout->old_not_paid_payout }}</span>
                                     </h3>
-                                    <h5 class="text-dark" title="Number of Orders">All Time Earning</h5>
+                                    <h5  title="Number of Orders">All Time Earning</h5>
                                     <div class="progress progress-sm m-0">
                                         <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="90"
-                                            aria-valuemin="0" aria-valuemax="100" style="width: 90%;background: #a3ddeb;">
+                                            aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
                                             <span class="visually-hidden">90% Complete</span>
                                         </div>
                                     </div>
-                                    <h5 class="text-dark" title="Number of Customers" style="margin-bottom: 0;">View details <span
+                                    <h5  title="Number of Customers" style="margin-bottom: 0;">View details <span
                                             class="r8-arw"><i class="fas fa-chevron-right"></i></span></h5>
                                 </div>
                             </div>
@@ -147,17 +141,17 @@
                        <div class="col-sm-3">
                             <div class="card widget-flat bg-gradient-moonlit">
                                 <div class="card-body user-earnings">
-                                    <h3><small class="text-dark"><i class="fas fa-rupee-sign"></i></small> <span
+                                    <h3><small ><i class="fas fa-rupee-sign"></i></small> <span
                                             class="counter-value">{{$passive_income}}</span>
                                     </h3>
-                                    <h5 class="text-dark" title="Number of Orders">Passive Income</h5>
+                                    <h5  title="Number of Orders">Passive Income</h5>
                                     <div class="progress progress-sm m-0">
                                         <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="90"
-                                            aria-valuemin="0" aria-valuemax="100" style="width: 90%;background:#b699fd;">
+                                            aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
                                             <span class="visually-hidden">90% Complete</span>
                                         </div>
                                     </div>
-                                    <h5 class="text-dark" title="Number of Customers" style="margin-bottom: 0;">View details <span
+                                    <h5  title="Number of Customers" style="margin-bottom: 0;">View details <span
                                             class="r8-arw"><i class="fas fa-chevron-right"></i></span></h5>
                                 </div>
                             </div>
@@ -292,7 +286,7 @@
                             <div class="pending text-center">
                                 <div class="content">
                                     <i class="fas fa-lock"></i>
-                                    <h2 class="text-dark" title="Pending Amount">Pending Amount</h2>
+                                    <h2  title="Pending Amount">Pending Amount</h2>
                                     <h6 class="text-dark counter"><small>Rs.</small>
                                         <span
                                             style="font-size:15px;">{{ Auth::guard('web')->user()->userDetail->total_wallet_balance }}</span>
@@ -311,17 +305,30 @@
     <script src="{{ asset('backend/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('backend/js/Chart.min.js') }}"></script>
     <script>
-        $(document).ready(function() {
-            $('.counter-value').each(function() {
-                $(this).prop('Counter', 0).animate({
-                    Counter: $(this).text()
-                }, {
-                    duration: 5000,
-                    easing: 'swing',
-                    step: function(now) {
-                        $(this).text(Math.ceil(now));
-                    }
-                });
+               // Function to add commas in the Indian numbering system
+               function convert(value) {
+            let x = value.toString().split(".");
+            let lastThree = x[0].slice(-3);
+            let otherNumbers = x[0].slice(0, -3);
+            if (otherNumbers !== '') {
+                lastThree = ',' + lastThree;
+            }
+            let output = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree;
+            if (x.length > 1) {
+                output += "." + x[1];
+            }
+            return output;
+        }
+
+        $('.counter-value').each(function () {
+            $(this).prop('Counter', 0).animate({
+                Counter: $(this).text()
+            }, {
+                duration: 1500,
+                easing: 'swing',
+                step: function (now) {
+                    $(this).text(convert(Math.ceil(now))); // Applying Indian currency formatting
+                }
             });
         });
 

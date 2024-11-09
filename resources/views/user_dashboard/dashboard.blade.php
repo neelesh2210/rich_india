@@ -211,17 +211,30 @@
     <script src="{{asset('backend/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('backend/js/Chart.min.js')}}"></script>
     <script>
-        $(document).ready(function() {
-            $('.counter-value text-white').each(function() {
-                $(this).prop('Counter', 0).animate({
-                    Counter: $(this).text()
-                }, {
-                    duration: 5000,
-                    easing: 'swing',
-                    step: function(now) {
-                        $(this).text(Math.ceil(now));
-                    }
-                });
+              // Function to add commas in the Indian numbering system
+              function convert(value) {
+            let x = value.toString().split(".");
+            let lastThree = x[0].slice(-3);
+            let otherNumbers = x[0].slice(0, -3);
+            if (otherNumbers !== '') {
+                lastThree = ',' + lastThree;
+            }
+            let output = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree;
+            if (x.length > 1) {
+                output += "." + x[1];
+            }
+            return output;
+        }
+
+        $('.counter-value').each(function () {
+            $(this).prop('Counter', 0).animate({
+                Counter: $(this).text()
+            }, {
+                duration: 1500,
+                easing: 'swing',
+                step: function (now) {
+                    $(this).text(convert(Math.ceil(now))); // Applying Indian currency formatting
+                }
             });
         });
 
