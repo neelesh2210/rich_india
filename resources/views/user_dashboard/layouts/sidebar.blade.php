@@ -57,6 +57,12 @@
         <div class="h-100" id="leftside-menu-container" data-simplebar>
             <ul class="side-nav">
                 <li class="side-nav-item">
+                    <a href="{{ route('user.course') }}" class="side-nav-link">
+                        <i class="fad fa-book-open"></i>
+                        <span> My Courses </span>
+                    </a>
+                </li>
+                <li class="side-nav-item">
                     <a href="{{ route('user.dashboard') }}" class="side-nav-link active">
                         <i class="fad fa-home"></i>
                         <span> Affiliate Dashboard </span>
@@ -66,6 +72,12 @@
                     <a href="{{ route('user.user.profile') }}" class="side-nav-link">
                         <i class="fad fa-user"></i>
                         <span>My Profile </span>
+                    </a>
+                </li>
+                <li class="side-nav-item">
+                    <a href="{{ route('user.affiliate.links') }}" class="side-nav-link">
+                        <i class="fad fa-link"></i>
+                        <span> Affiliate Link </span>
                     </a>
                 </li>
                 <li class="side-nav-item">
@@ -108,18 +120,6 @@
                     <a href="{{ route('user.leaderboard') }}" class="side-nav-link">
                         <i class="fad fa-cash-register"></i>
                         <span> Leaderboard </span>
-                    </a>
-                </li>
-                <li class="side-nav-item">
-                    <a href="{{ route('user.course') }}" class="side-nav-link">
-                        <i class="fad fa-book-open"></i>
-                        <span> My Courses </span>
-                    </a>
-                </li>
-                <li class="side-nav-item">
-                    <a href="{{ route('user.affiliate.links') }}" class="side-nav-link">
-                        <i class="fad fa-link"></i>
-                        <span> Affiliate Link </span>
                     </a>
                 </li>
                 <li class="side-nav-item">
