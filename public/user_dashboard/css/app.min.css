@@ -2907,6 +2907,9 @@ progress {
 }
 
 @media (max-width:767.98px) {
+    .res-p-0{
+        padding: 0 !important;
+    }
     .rbt-review{
         margin-top: 4px !important;
     }
@@ -26273,8 +26276,8 @@ input.tutor-form-check-input.tutor-form-check-circle {
     border-radius: 10px;
     width: max-content;
     margin: auto;
-    padding: 1px 13px;
-    margin-bottom: 7px;
+    padding: 1px 10px;
+    margin-bottom: 5px;
 }
 .leader-heading .card-title {
     color: #ece6f5 !important;
