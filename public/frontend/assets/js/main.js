@@ -304,8 +304,6 @@ var testimonialSwiper = new Swiper('.testimonial-swiper-active', {
     // Optional parameters
     slidesPerView: 3,
     spaceBetween: 30,
-    observer: true,
-    observeParents: true,
     loop: true,
     breakpoints: {
         '1500': {

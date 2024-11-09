@@ -411,9 +411,9 @@
                         <h2 class="title">RichInd <span>Customer Support</span></h2>
                         <p style="color: #fff;">(We are available on Monday to Saturday 9:15am to 5pm)</p>
                         <div class="newsletter__form button">
-                            @isset($website_data['whatsapp'])
-                                <a href="" class="btn"><i class="fab fa-whatsapp"></i>
-                                    +91-{{$website_data['whatsapp']}}
+                            @isset($website_data['email'])
+                                <a href="mailto:{{$website_data['email']}}" class="btn"><i class="fas fa-envelope-open-text"></i>
+                                    {{$website_data['email']}}
                                 </a>
                             @endisset
                         </div>
@@ -432,7 +432,7 @@
                 <div class="col-xl-6">
                     <div class="instructor__content-wrap">
                         <div class="section__title mb-15">
-                            <span class="sub-title">Skilled Introduce</span>
+                            <span class="sub-title">Mr. Yash kulshrestha</span>
                             <h3>CEO & Founder of RichInd</h3>
                         </div>
                         <p>Yash kulshrestha is one of the Youngest Entrepreneur and YouTuber from India. He started his journey since 2018. He has 5 years Experience about Sales And Law of attraction. He love to share his knowledge with youth.</p>
@@ -450,10 +450,6 @@
                                         <div class="instructor__content">
                                             <h2 class="title"><a href="#">Yash kulshrestha</a></h2>
                                             <span class="designation">Founder & CEO</span>
-                                            <p class="avg-rating">
-                                                <i class="fas fa-star"></i>
-                                                (4.8 Ratings)
-                                            </p>
                                             <div class="instructor__social">
                                                 <ul class="list-wrap">
                                                     <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>

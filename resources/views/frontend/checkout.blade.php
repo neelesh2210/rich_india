@@ -290,11 +290,10 @@
             </div>
             <div class="row">
                 <div class="col-lg-10 col-12 m-lg-auto" style="display:none" id="payment_div">
-                    <div class="login-wrapper">
+                    <div class="customer__form-wrap">
                         <div class="loginbox">
-                            <div class="section-title mb-4 mt-2">
-                                <h5 class="gordita-bold">Payment Modes</h5>
-                                <hr>
+                            <div class="section-title mb-4">
+                                <span class="title">Payment Modes</span>
                             </div>
                             <div class="faq-accordion">
                                 <div class="accordion" id="FaqAccordion">
@@ -353,8 +352,8 @@
                                                 <div class="about-btn mt-3 mb-3">
                                                     <div class="text-center">
                                                         <a href="#" id="place_order"
-                                                            class="richind-btn richind-btn-second w-100"><span
-                                                                class="richind-btn__curve" id="price"></span>Place
+                                                            class="btn arrow-btn"><span
+                                                                class="text-center" id="price"></span>Place
                                                             Order<i class="icon-arrow"></i></a>
                                                     </div>
                                                 </div>
@@ -389,18 +388,20 @@
                                             data-bs-parent="#FaqAccordion" style="">
                                             <div class="accordion-body">
                                                 <p> Pay Using {{ env('APP_ENV') }} Referrel Wallet </p>
-                                                <div class="about-btn mt-3 mb-3">
-                                                    <input type="text" id="wallet_referrel_code" readonly>
-                                                    <form action="{{ route('wallet.referrel.request') }}" method="POST"
-                                                        id="wallet_referrel_code_form">
-                                                        @csrf
-                                                    </form>
+                                                <div class="payment-page mt-3 mb-3">
+                                                    <div class="form-grp">
+                                                        <input type="text" id="wallet_referrel_code" readonly placeholder="Referrel Wallet">
+                                                        <form action="{{ route('wallet.referrel.request') }}" method="POST"
+                                                            id="wallet_referrel_code_form">
+                                                            @csrf
+                                                        </form>
+                                                    </div>
                                                 </div>
                                                 <div class="text-center">
                                                     <a id="wallet_referrel_code_button"
-                                                        class="richind-btn richind-btn-second w-100"
+                                                        class="btn arrow-btn"
                                                         onclick="$('#wallet_referrel_code_form').submit()"><span
-                                                            class="richind-btn__curve"></span>Place Order<i
+                                                            class="text-center"></span>Place Order<i
                                                             class="icon-arrow"></i></a>
                                                 </div>
                                             </div>

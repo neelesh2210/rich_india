@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
 :root {
     --ct-link-color: #b29456;
     --ct-link-hover-color: #b29456;
@@ -500,10 +499,10 @@ body[data-leftbar-theme=light] {
     --ct-black-rgb: 0, 0, 0;
     --ct-body-color-rgb: 108, 117, 125;
     --ct-body-bg-rgb: 250, 251, 254;
-    --ct-font-sans-serif: 'Lexend Deca', sans-serif;
+    --ct-font-sans-serif: 'Gordita Regular', sans-serif;
     --ct-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --ct-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-    --ct-body-font-family:'Lexend Deca', sans-serif;
+    --ct-body-font-family:'Gordita Regular', sans-serif;
     --ct-body-font-size: 0.9rem;
     --ct-body-font-weight: 400;
     --ct-body-line-height: 1.5;
@@ -526,7 +525,7 @@ body[data-leftbar-theme=light] {
 
 body {
     margin: 0;
-    font-family: 'Lexend Deca', sans-serif;
+    font-family: 'Gordita Regular', sans-serif;
     font-size: var(--ct-body-font-size);
     font-weight: var(--ct-body-font-weight);
     line-height: var(--ct-body-line-height);
@@ -724,7 +723,7 @@ code,
 kbd,
 pre,
 samp {
-    font-family: 'Lexend Deca', sans-serif;
+    font-family: 'Gordita Regular', sans-serif;
     font-size: 1em;
     direction: ltr;
     unicode-bidi: bidi-override
@@ -6213,7 +6212,7 @@ fieldset:disabled .btn {
 {
     padding: 5px 15px;
     text-transform: capitalize;
-    font-family: 'Lexend Deca', sans-serif;
+    font-family: 'Gordita Regular', sans-serif;
     background-image: linear-gradient(177deg, #fff759, rgb(198 159 21));
     color: #fff;
     text-shadow: 0px 1px 4px #2c2a2a;
@@ -7834,7 +7833,7 @@ fieldset:disabled .btn {
     z-index: 1080;
     display: block;
     margin: 0;
-    font-family: 'Lexend Deca', sans-serif;
+    font-family: 'Gordita Regular', sans-serif;
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
@@ -18110,7 +18109,7 @@ body[data-layout-color=dark] .badge-outline-dark[href]:hover {
     color: #fff;
     letter-spacing: 0.5px;
     font-size: 16px;
-    font-family: 'Lexend Deca', sans-serif;
+    font-family: 'Gordita Regular', sans-serif;
     font-weight: 600;
     margin-bottom: 3px;
     margin-top: 0;
@@ -18131,7 +18130,7 @@ body[data-layout-color=dark] .badge-outline-dark[href]:hover {
 .user-info-header-title h6
 {
     margin: 1px 5px;
-    font-family: 'Lexend Deca', sans-serif;
+    font-family: 'Gordita Regular', sans-serif;
     font-size: 16px;
 }
 
@@ -19871,7 +19870,7 @@ body[data-layout-color=dark] .border-dark {
     color: #fff;
     font-size: 22px;
     opacity: 0.5; */
-    font-family: 'Lexend Deca', sans-serif;
+    font-family: 'Gordita Regular', sans-serif;
     padding: 0px;
     border-radius: 50%;
     color: #fff;
@@ -22181,7 +22180,7 @@ body[data-layout-color=dark] .timeline-show .time-show-name {
     margin: 0 0 5px;
     border-radius: 4px;
     font-size: 12px;
-    font-family: 'Lexend Deca', sans-serif;
+    font-family: 'Gordita Regular', sans-serif;
     line-height: 17px;
     position: relative;
     pointer-events: all !important;
@@ -22191,7 +22190,7 @@ body[data-layout-color=dark] .timeline-show .time-show-name {
 
 .jq-toast-single .h2,
 .jq-toast-single h2 {
-    font-family: 'Lexend Deca', sans-serif;
+    font-family: 'Gordita Regular', sans-serif;
     font-size: 14px;
     margin: 0 0 7px;
     background: 0 0;
@@ -23018,7 +23017,7 @@ body[data-layout-color=dark] .timeline-show .time-show-name {
     margin: 0 0 5px;
     border-radius: 4px;
     font-size: 12px;
-    font-family: 'Lexend Deca', sans-serif;
+    font-family: 'Gordita Regular', sans-serif;
     line-height: 17px;
     position: relative;
     pointer-events: all !important;
@@ -23028,7 +23027,7 @@ body[data-layout-color=dark] .timeline-show .time-show-name {
 
 .jq-toast-single .h2,
 .jq-toast-single h2 {
-    font-family: 'Lexend Deca', sans-serif;
+    font-family: 'Gordita Regular', sans-serif;
     font-size: 14px;
     margin: 0 0 7px;
     background: 0 0;
@@ -23325,7 +23324,7 @@ body[data-layout-color=dark] .timeline-show .time-show-name {
 }
 
 .apex-charts text {
-    font-family: 'Lexend Deca', sans-serif !important;
+    font-family: 'Gordita Regular', sans-serif !important;
     fill: #adb5bd
 }
 
@@ -23343,7 +23342,7 @@ body[data-layout-color=dark] .timeline-show .time-show-name {
 
 .apexcharts-tooltip-text,
 .apexcharts-tooltip-title {
-    font-family: 'Lexend Deca', sans-serif !important;
+    font-family: 'Gordita Regular', sans-serif !important;
     color: #6c757d
 }
 
@@ -23358,12 +23357,12 @@ body[data-layout-color=dark] .timeline-show .time-show-name {
 
 .apexcharts-legend-text {
     color: #98a6ad !important;
-    font-family: 'Lexend Deca', sans-serif !important
+    font-family: 'Gordita Regular', sans-serif !important
 }
 
 .apexcharts-xaxis text,
 .apexcharts-yaxis text {
-    font-family: 'Lexend Deca', sans-serif !important;
+    font-family: 'Gordita Regular', sans-serif !important;
     fill: #adb5bd
 }
 
@@ -23436,7 +23435,7 @@ body[data-layout-color=dark] .apex-charts text.apexcharts-title-text {
 
 body[data-layout-color=dark] .apexcharts-tooltip-text,
 body[data-layout-color=dark] .apexcharts-tooltip-title {
-    font-family: 'Lexend Deca', sans-serif !important;
+    font-family: 'Gordita Regular', sans-serif !important;
     color: #8391a2
 }
 
@@ -23472,7 +23471,7 @@ body[data-layout-color=dark] .apexcharts-track path {
 
 .britechart,
 .tick text {
-    font-family: 'Lexend Deca', sans-serif;
+    font-family: 'Gordita Regular', sans-serif;
     font-size: .75rem
 }
 
@@ -24092,7 +24091,7 @@ body[data-layout-color=dark] .activate-select .sorting_1 {
 }
 
 .daterangepicker {
-    font-family: 'Lexend Deca', sans-serif;
+    font-family: 'Gordita Regular', sans-serif;
     border: 1px solid var(--ct-dropdown-border-color);
     -webkit-box-shadow: var(--ct-box-shadow);
     box-shadow: var(--ct-box-shadow);
@@ -24413,7 +24412,7 @@ body[data-layout-color=dark] .datepicker tfoot tr th:hover {
     border: none;
     background: #343a40;
     color: #f1f3fa;
-    font-family: 'Lexend Deca', sans-serif;
+    font-family: 'Gordita Regular', sans-serif;
     font-size: .9rem;
     padding: 5px 8px
 }
@@ -24446,7 +24445,7 @@ body[data-layout-color=dark] .jvectormap-container .jvectormap-zoomout {
 }
 
 .ql-container {
-    font-family: 'Lexend Deca', sans-serif
+    font-family: 'Gordita Regular', sans-serif
 }
 
 .ql-container.ql-snow {
@@ -24459,7 +24458,7 @@ body[data-layout-color=dark] .jvectormap-container .jvectormap-zoomout {
 }
 
 .ql-toolbar {
-    font-family: 'Lexend Deca', sans-serif !important
+    font-family: 'Gordita Regular', sans-serif !important
 }
 
 .ql-toolbar span {
@@ -24902,7 +24901,7 @@ body[data-layout-color=dark] .select2-container--default .select2-results__optio
 .jq-toast-single {
     text-align: left !important;
     padding: 15px;
-    font-family: 'Lexend Deca', sans-serif;
+    font-family: 'Gordita Regular', sans-serif;
     background-color: #1c80af;
     font-size: 13px;
     line-height: 22px
@@ -24910,7 +24909,7 @@ body[data-layout-color=dark] .select2-container--default .select2-results__optio
 
 .jq-toast-single .h2,
 .jq-toast-single h2 {
-    font-family: 'Lexend Deca', sans-serif
+    font-family: 'Gordita Regular', sans-serif
 }
 
 .jq-toast-single a {
@@ -25188,7 +25187,7 @@ body[data-layout-color=dark] .editor-statusbar {
 }
 
 .tt-highlight {
-    font-family: 'Lexend Deca', sans-serif
+    font-family: 'Gordita Regular', sans-serif
 }
 
 .typeahead-empty-message {
@@ -25217,7 +25216,7 @@ body[data-layout-color=dark] .editor-statusbar {
     color: #000 !important;
     font-size: 12px !important;
     line-height: 18px !important;
-    font-family: 'Lexend Deca', sans-serif !important;
+    font-family: 'Gordita Regular', sans-serif !important;
     font-weight: 700 !important
 }
 
