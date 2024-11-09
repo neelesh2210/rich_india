@@ -99,6 +99,12 @@
                     </a>
                 </li>
                 <li class="side-nav-item">
+                    <a href="{{ route('user.withdrawal.request.index') }}" class="side-nav-link">
+                        <i class="fad fa-money-check-edit"></i>
+                        <span> Withdrawal Request</span>
+                    </a>
+                </li>
+                <li class="side-nav-item">
                     <a href="{{ route('user.upgrade.plan.request.list') }}" class="side-nav-link">
                         <i class="fad fa-pen-square"></i>
                         <span> Upgrade Request </span>
@@ -132,12 +138,6 @@
                     <a href="{{ route('user.payouts') }}" class="side-nav-link">
                         <i class="fad fa-receipt"></i>
                         <span> Payout Transaction </span>
-                    </a>
-                </li>
-                <li class="side-nav-item">
-                    <a href="{{ route('user.withdrawal.request.index') }}" class="side-nav-link">
-                        <i class="fad fa-money-check-edit"></i>
-                        <span> Withdrawal Request</span>
                     </a>
                 </li>
                 <li class="side-nav-item mb-5">
