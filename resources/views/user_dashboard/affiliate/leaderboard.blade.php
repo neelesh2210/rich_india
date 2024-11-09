@@ -278,6 +278,8 @@
                                                 <div class="col-12">
                                                     <h5 class="card-title mb-0">Top Earners</h5>
                                                     <small>All Time</small>
+                                                    <br>
+                                                    <br>
                                                 </div>
                                             </div>
                                         </div>
