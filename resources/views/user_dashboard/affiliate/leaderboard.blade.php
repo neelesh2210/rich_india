@@ -39,7 +39,7 @@
                                                                 <span class="rank-circle">2</span>
                                                             </div>
                                                             <h6 class="text-black fw-600 text-center mt-3 top-header"
-                                                                style="font-size: 14px;">{{strstr($today_leaderboards[1]->user->name, " ", true)}}</h6>
+                                                                style="font-size: 12px;">{{strstr($today_leaderboards[1]->user->name, " ", true)}}</h6>
                                                             <p class="text-center earning-color">₹ {{$today_leaderboards[1]->total_commission}}</p>
                                                         </a>
                                                     </div>
@@ -53,7 +53,7 @@
                                                                 <span class="rank-circle">1</span>
                                                             </div>
                                                             <h6 class="text-black fw-600 text-center mt-3 top-header"
-                                                                style="font-size: 14px;">{{strstr($today_leaderboards[0]->user->name, " ", true)}}</h6>
+                                                                style="font-size: 12px;">{{strstr($today_leaderboards[0]->user->name, " ", true)}}</h6>
                                                             <p class="text-center earning-color">₹ {{$today_leaderboards[0]->total_commission}}</p>
                                                         </a>
                                                     </div>
@@ -67,7 +67,7 @@
                                                                 <span class="rank-circle">3</span>
                                                             </div>
                                                             <h6 class="text-black fw-600 text-center mt-3 top-header"
-                                                                style="font-size: 14px;">{{strstr($today_leaderboards[2]->user->name, " ", true)}}</h6>
+                                                                style="font-size: 12px;">{{strstr($today_leaderboards[2]->user->name, " ", true)}}</h6>
                                                             <p class="text-center earning-color">₹ {{$today_leaderboards[2]->total_commission}}</p>
                                                         </a>
                                                     </div>
@@ -124,7 +124,7 @@
                                                                 <span class="rank-circle">2</span>
                                                             </div>
                                                             <h6 class="text-black fw-600 text-center mt-3 top-header"
-                                                                style="font-size: 14px;">{{strstr($last_week_leaderboards[1]->user->name, " ", true)}}</h6>
+                                                                style="font-size: 12px;">{{strstr($last_week_leaderboards[1]->user->name, " ", true)}}</h6>
                                                             <p class="text-center earning-color">₹ {{$last_week_leaderboards[1]->total_commission}}</p>
                                                         </a>
                                                     </div>
@@ -138,7 +138,7 @@
                                                                 <span class="rank-circle">1</span>
                                                             </div>
                                                             <h6 class="text-black fw-600 text-center mt-3 top-header"
-                                                                style="font-size: 14px;">{{strstr($last_week_leaderboards[0]->user->name, " ", true)}}</h6>
+                                                                style="font-size: 12px;">{{strstr($last_week_leaderboards[0]->user->name, " ", true)}}</h6>
                                                             <p class="text-center earning-color">₹ {{$last_week_leaderboards[0]->total_commission}}</p>
                                                         </a>
                                                     </div>
@@ -152,7 +152,7 @@
                                                                 <span class="rank-circle">3</span>
                                                             </div>
                                                             <h6 class="text-black fw-600 text-center mt-3 top-header"
-                                                                style="font-size: 14px;">{{strstr($last_week_leaderboards[2]->user->name, " ", true)}}</h6>
+                                                                style="font-size: 12px;">{{strstr($last_week_leaderboards[2]->user->name, " ", true)}}</h6>
                                                             <p class="text-center earning-color">₹ {{$last_week_leaderboards[2]->total_commission}}</p>
                                                         </a>
                                                     </div>
@@ -209,7 +209,7 @@
                                                                 <span class="rank-circle">2</span>
                                                             </div>
                                                             <h6 class="text-black fw-600 text-center mt-3 top-header"
-                                                                style="font-size: 14px;">{{strstr($last_month_leaderboards[1]->user->name, " ", true)}}</h6>
+                                                                style="font-size: 12px;">{{strstr($last_month_leaderboards[1]->user->name, " ", true)}}</h6>
                                                             <p class="text-center earning-color">₹ {{$last_month_leaderboards[1]->total_commission}}</p>
                                                         </a>
                                                     </div>
@@ -223,7 +223,7 @@
                                                                 <span class="rank-circle">1</span>
                                                             </div>
                                                             <h6 class="text-black fw-600 text-center mt-3 top-header"
-                                                                style="font-size: 14px;">{{strstr($last_month_leaderboards[0]->user->name, " ", true)}}</h6>
+                                                                style="font-size: 12px;">{{strstr($last_month_leaderboards[0]->user->name, " ", true)}}</h6>
                                                             <p class="text-center earning-color">₹ {{$last_month_leaderboards[0]->total_commission}}</p>
                                                         </a>
                                                     </div>
@@ -237,7 +237,7 @@
                                                                 <span class="rank-circle">3</span>
                                                             </div>
                                                             <h6 class="text-black fw-600 text-center mt-3 top-header"
-                                                                style="font-size: 14px;">{{strstr($last_month_leaderboards[2]->user->name, " ", true)}}</h6>
+                                                                style="font-size: 12px;">{{strstr($last_month_leaderboards[2]->user->name, " ", true)}}</h6>
                                                             <p class="text-center earning-color">₹ {{$last_month_leaderboards[2]->total_commission}}</p>
                                                         </a>
                                                     </div>
@@ -292,7 +292,7 @@
                                                                 <span class="rank-circle">2</span>
                                                             </div>
                                                             <h6 class="text-black fw-600 text-center mt-3 top-header"
-                                                                style="font-size: 14px;">{{strstr($all_time_leaderboards[1]->user->name, " ", true)}}</h6>
+                                                                style="font-size: 12px;">{{strstr($all_time_leaderboards[1]->user->name, " ", true)}}</h6>
                                                             <p class="text-center earning-color">₹ {{$all_time_leaderboards[1]->total_commission}}</p>
                                                         </a>
                                                     </div>
@@ -306,7 +306,7 @@
                                                                 <span class="rank-circle">1</span>
                                                             </div>
                                                             <h6 class="text-black fw-600 text-center mt-3 top-header"
-                                                                style="font-size: 14px;">{{strstr($all_time_leaderboards[0]->user->name, " ", true)}}</h6>
+                                                                style="font-size: 12px;">{{strstr($all_time_leaderboards[0]->user->name, " ", true)}}</h6>
                                                             <p class="text-center earning-color">₹ {{$all_time_leaderboards[0]->total_commission}}</p>
                                                         </a>
                                                     </div>
@@ -320,7 +320,7 @@
                                                                 <span class="rank-circle">3</span>
                                                             </div>
                                                             <h6 class="text-black fw-600 text-center mt-3 top-header"
-                                                                style="font-size: 14px;">{{strstr($all_time_leaderboards[2]->user->name, " ", true)}}</h6>
+                                                                style="font-size: 12px;">{{strstr($all_time_leaderboards[2]->user->name, " ", true)}}</h6>
                                                             <p class="text-center earning-color">₹ {{$all_time_leaderboards[2]->total_commission}}</p>
                                                         </a>
                                                     </div>
