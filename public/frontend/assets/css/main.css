@@ -20739,3 +20739,7 @@ blockquote > p {
     margin-left: 40px;
     margin-right: auto;
 }
+.panel_list{
+    display: block;
+    width: 100% !important;
+}
