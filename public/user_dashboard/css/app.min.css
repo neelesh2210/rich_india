@@ -26264,20 +26264,22 @@ input.tutor-form-check-input.tutor-form-check-circle {
 .earning-color {
     font-weight: 700;
     color:#4e23a9;
+    font-size: 12px;
 }
 .box-center p {
-    font-size: 14px;
+    font-size: 12px;
 }
 .box-right {
     flex-basis: 20%;
 }
 .top-header {
-    background: linear-gradient(#ffc11a, #ff7d17);
+    background: linear-gradient(#ff00a8, #951e7f);
     border-radius: 10px;
     width: max-content;
     margin: auto;
-    padding: 1px 10px;
+    padding: 2px 10px;
     margin-bottom: 5px;
+    color: #fff !important;
 }
 .leader-heading .card-title {
     color: #ece6f5 !important;
@@ -26300,13 +26302,13 @@ input.tutor-form-check-input.tutor-form-check-circle {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 25px;
-    height: 25px;
+    width: 22px;
+    height: 22px;
     background: #3746bb;
-    border: 2px solid #4731b0;
+    /* border: 2px solid #4731b0; */
     color: #fff;
     border-radius: 50px;
-    font-size: 15px;
+    font-size: 11px;
 }
 .leader-board-box .leader-img img {
     width: 40px;
@@ -26314,16 +26316,16 @@ input.tutor-form-check-input.tutor-form-check-circle {
     border-radius: 50px;
 }
 .leader-details h5 {
-    font-size: 17px;
-    font-weight: 700;
+    font-size: 13px;
+    font-weight: 600;
     margin-bottom: 0px;
-    margin-top: 0px;
+    margin-top: 2px;
     color: #6719a0;
 }
 .leader-details p {
     color: #b0009a;
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 12px;
+    font-weight: 600;
     margin-bottom: 0px;
     position: absolute;
     right: 9px;
@@ -26584,4 +26586,9 @@ input.tutor-form-check-input.tutor-form-check-circle {
 .fn-11{
     font-size: 18px;
     margin-top: 6px;
+}
+.scrl-height{
+    height: 455px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
 }
