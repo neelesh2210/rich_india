@@ -26239,12 +26239,12 @@ input.tutor-form-check-input.tutor-form-check-circle {
     background: #921e82;
     border: 1px solid #781a93;
     color: #fff;
-    width: 25px;
-    height: 25px;
+    width: 23px;
+    height: 23px;
     border-radius: 50px;
     text-align: center;
     vertical-align: middle;
-    line-height: 24px;
+    line-height: 22px;
     font-size: 13px;
     font-weight: 800;
 }
@@ -26280,6 +26280,7 @@ input.tutor-form-check-input.tutor-form-check-circle {
     padding: 2px 10px;
     margin-bottom: 5px;
     color: #fff !important;
+    text-transform: capitalize;
 }
 .leader-heading .card-title {
     color: #ece6f5 !important;
@@ -26588,7 +26589,7 @@ input.tutor-form-check-input.tutor-form-check-circle {
     margin-top: 6px;
 }
 .scrl-height{
-    height: 455px;
+    height: 469px;
     overflow-y: scroll;
     scrollbar-width: thin;
 }

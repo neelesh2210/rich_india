@@ -1,5 +1,10 @@
 @extends('user_dashboard.layouts.app')
 @section('content')
+<style>
+    .mybox-shadow{
+        background: #cecfff3b;
+    }
+</style>
     <div class="content-page">
         <div class="content">
             <div class="container-fluid">
