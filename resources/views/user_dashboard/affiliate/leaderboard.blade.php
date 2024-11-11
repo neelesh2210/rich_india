@@ -22,7 +22,7 @@
                             <hr> --}}
                             <div class="row leader-board">
                                 <div class="col-lg-6 res-p-0">
-                                    <div class="card m-b-30 mybox-shadow">
+                                    <div class="card mb-2 mybox-shadow">
                                         <div class="card-header leader-heading">
                                             <div class="row align-items-center">
                                                 <div class="col-12">
@@ -107,7 +107,7 @@
                                 </div>
 
                                 <div class="col-lg-6 res-p-0">
-                                    <div class="card m-b-30 mybox-shadow">
+                                    <div class="card mb-2 mybox-shadow">
                                         <div class="card-header leader-heading">
                                             <div class="row align-items-center">
                                                 <div class="col-12">
@@ -192,7 +192,7 @@
                                 </div>
 
                                 <div class="col-lg-6 res-p-0">
-                                    <div class="card m-b-30 mybox-shadow">
+                                    <div class="card mb-2 mybox-shadow">
                                         <div class="card-header leader-heading">
                                             <div class="row align-items-center">
                                                 <div class="col-12">
@@ -277,7 +277,7 @@
                                 </div>
 
                                 <div class="col-lg-6 res-p-0">
-                                    <div class="card m-b-30 mybox-shadow">
+                                    <div class="card mb-2 mybox-shadow">
                                         <div class="card-header leader-heading">
                                             <div class="row align-items-center">
                                                 <div class="col-12">
