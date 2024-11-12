@@ -333,7 +333,7 @@
                                                     </div>
                                                 @endisset
                                             </div>
-                                            <div class="table-responsive scrl-height">
+                                            <div class="table-responsive">
                                                 @foreach ($all_time_leaderboards as $all_key => $all_time_leaderboard)
                                                     @if($all_key > 2)
                                                         <div class="d-flex align-items-center leader-board-box">
