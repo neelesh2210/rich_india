@@ -31,7 +31,8 @@
                 <div class="row">
                     <div class="card">
                         <div class="card-body">
-                            <table class="table table-striped table-centered mb-0">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-centered mb-0">
                                 <thead>
                                     <tr>
                                         <th>Sr. No</th>
@@ -73,6 +74,7 @@
                                     @endforelse
                                 </tbody>
                             </table>
+                            </div>
                             <div class="d-flex justify-content-center mt-3">
                                 {!! $payouts->links() !!}
                             </div>

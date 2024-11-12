@@ -40,7 +40,8 @@
                                     </div>
                                     <hr>
                                 </form>
-                                <table class="table table-centered mb-0">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-centered mb-0">
                                     <thead>
                                         <tr>
                                             <th class="text-center">#</th>
@@ -90,6 +91,7 @@
                                         @endforelse
                                     </tbody>
                                 </table>
+                                </div>
                                 <div class="d-flex justify-content-center mt-3">
                                     {!! $users->appends(['search_date'=>$search_date,'search_plan'=>$search_plan,'search_key'=>$search_key])->links() !!}
                                 </div>
