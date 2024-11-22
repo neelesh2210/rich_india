@@ -6,8 +6,6 @@
 <script src="{{ asset('frontend/assets/js/swiper-bundle.min.js') }}"></script>
 <script src="{{ asset('frontend/assets/js/vivus.min.js') }}"></script>
 <script src="{{ asset('frontend/assets/js/plyr.min.js') }}"></script>
-<script src="{{ asset('frontend/assets/js/wow.min.js') }}"></script>
-<script src="{{ asset('frontend/assets/js/aos.js') }}"></script>
 <script src="{{ asset('frontend/assets/js/main.js') }}"></script>
 <script type="text/javascript">
     $(function() {

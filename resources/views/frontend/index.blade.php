@@ -27,7 +27,7 @@
                 <div class="col-xl-3 col-lg-4 col-md-6">
                     <div class="features__item-six features__item-seven">
                         <div class="features__icon-six features__icon-seven">
-                            <i class="skillgro-profit"></i>
+                            <img src="{{ asset('frontend/assets/img/icons/q1.png') }}" alt="">
                         </div>
                         <div class="features__content-six features__content-seven">
                             <h4 class="title">Learn skills with 120k+</h4>
@@ -38,7 +38,7 @@
                 <div class="col-xl-3 col-lg-4 col-md-6">
                     <div class="features__item-six features__item-seven">
                         <div class="features__icon-six features__icon-seven">
-                            <i class="skillgro-instructor"></i>
+                            <img src="{{ asset('frontend/assets/img/icons/q2.png') }}" alt="">
                         </div>
                         <div class="features__content-six features__content-seven">
                             <h4 class="title">Choose courses</h4>
@@ -49,7 +49,7 @@
                 <div class="col-xl-3 col-lg-4 col-md-6">
                     <div class="features__item-six features__item-seven">
                         <div class="features__icon-six features__icon-seven">
-                            <i class="skillgro-tutorial"></i>
+                            <img src="{{ asset('frontend/assets/img/icons/q3.png') }}" alt="">
                         </div>
                         <div class="features__content-six features__content-seven">
                             <h4 class="title">processional Tutors</h4>
@@ -60,7 +60,7 @@
                 <div class="col-xl-3 col-lg-4 col-md-6">
                     <div class="features__item-six features__item-seven">
                         <div class="features__icon-six features__icon-seven">
-                            <i class="skillgro-graduated"></i>
+                            <img src="{{ asset('frontend/assets/img/icons/q4.png') }}" alt="">
                         </div>
                         <div class="features__content-six features__content-seven">
                             <h4 class="title">Online Degrees</h4>
@@ -79,7 +79,7 @@
                     <div class="about__images">
                         <img src="{{ asset('frontend/assets/img/others/about_img.png') }}" alt="img" class="main-img">
                         <img src="{{ asset('frontend/assets/img/others/about_shape.svg') }}" alt="img" class="shape alltuchtopdown">
-                        <a href="https://www.youtube.com/watch?v=b2Az7_lLh3g" class="popup-video">
+                        <a href="#" class="popup-video">
                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="28" viewBox="0 0 22 28" fill="none">
                                 <path d="M0.19043 26.3132V1.69421C0.190288 1.40603 0.245303 1.12259 0.350273 0.870694C0.455242 0.6188 0.606687 0.406797 0.79027 0.254768C0.973854 0.10274 1.1835 0.0157243 1.39936 0.00193865C1.61521 -0.011847 1.83014 0.0480663 2.02378 0.176003L20.4856 12.3292C20.6973 12.4694 20.8754 12.6856 20.9999 12.9535C21.1245 13.2214 21.1904 13.5304 21.1904 13.8456C21.1904 14.1608 21.1245 14.4697 20.9999 14.7376C20.8754 15.0055 20.6973 15.2217 20.4856 15.3619L2.02378 27.824C1.83056 27.9517 1.61615 28.0116 1.40076 27.9981C1.18536 27.9847 0.97607 27.8983 0.792638 27.7472C0.609205 27.596 0.457661 27.385 0.352299 27.1342C0.246938 26.8833 0.191236 26.6008 0.19043 26.3132Z" fill="currentcolor" />
                             </svg>
@@ -111,20 +111,20 @@
                         </p>
                         <ul class="about__info-list list-wrap">
                             <li class="about__info-list-item">
-                                <i class="flaticon-angle-right"></i>
+                                <i class="fas fa-angle-right"></i>
                                 <p class="content">The Most World Class Instructors</p>
                             </li>
                             <li class="about__info-list-item">
-                                <i class="flaticon-angle-right"></i>
+                                <i class="fas fa-angle-right"></i>
                                 <p class="content">Access Your Class anywhere</p>
                             </li>
                             <li class="about__info-list-item">
-                                <i class="flaticon-angle-right"></i>
+                                <i class="fas fa-angle-right"></i>
                                 <p class="content">Flexible Course Plan</p>
                             </li>
                         </ul>
                         <div class="tg-button-wrap">
-                            <a href="#" class="btn arrow-btn">Discover More <i class="fas fa-arrow-right"></i></a>
+                            <a href="#" class="btn arrow-btn">Discover More <i class="far fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -183,8 +183,8 @@
                                             <h5 class="title"><a href="#">{{$course->name}}</a></h5>
                                             <div class="courses__item-bottom-three">
                                                 <ul class="list-wrap">
-                                                    <li><i class="flaticon-book"></i>Lessons {{$course->topic_count}}</li>
-                                                    <li><i class="flaticon-mortarboard"></i>Students {{$course->student}}</li>
+                                                    <li><i class="far fa-book"></i>Lessons {{$course->topic_count}}</li>
+                                                    <li><i class="far fa-graduation-cap"></i>Students {{$course->student}}</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -194,8 +194,8 @@
                         </div>
                     </div>
                     <div class="courses__nav">
-                        <div class="courses-button-prev"><i class="flaticon-arrow-right"></i></div>
-                        <div class="courses-button-next"><i class="flaticon-arrow-right"></i></div>
+                        <div class="courses-button-prev"><i class="far fa-arrow-right"></i></div>
+                        <div class="courses-button-next"><i class="far fa-arrow-right"></i></div>
                     </div>
                 </div>
                 @foreach ($plans as $plan)
@@ -225,8 +225,8 @@
 
                                                 <div class="courses__item-bottom-three">
                                                     <ul class="list-wrap">
-                                                        <li><i class="flaticon-book"></i>Lessons {{$plan_course->topic_count}}</li>
-                                                        <li><i class="flaticon-mortarboard"></i>Students {{$plan_course->student}}</li>
+                                                        <li><i class="far fa-book"></i>Lessons {{$plan_course->topic_count}}</li>
+                                                        <li><i class="fas fa-mortarboard"></i>Students {{$plan_course->student}}</li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -236,8 +236,8 @@
                             </div>
                         </div>
                         <div class="courses__nav">
-                            <div class="courses-button-prev"><i class="flaticon-arrow-right"></i></div>
-                            <div class="courses-button-next"><i class="flaticon-arrow-right"></i></div>
+                            <div class="courses-button-prev"><i class="far fa-arrow-right"></i></div>
+                            <div class="courses-button-next"><i class="far fa-arrow-right"></i></div>
                         </div>
                     </div>
                 @endforeach
@@ -278,7 +278,7 @@
                                     <div class="button">
                                         <a href="{{route('checkout')}}?slug={{$plan->slug}}">
                                             <span class="text">Buy Now</span>
-                                            <i class="flaticon-arrow-right"></i>
+                                            <i class="far fa-arrow-right"></i>
                                         </a>
                                     </div>
                                     <h5 class="price">₹{{$plan->discounted_price}} <del>{{$plan->amount}}</del></h5>
@@ -495,19 +495,19 @@
                         <p>When it comes to the best in Quality, Management, Knowledge, Nourishment, Leadership, Skill Development and Earning – Here we are!</p>
                         <ul class="about__info-list list-wrap">
                             <li class="about__info-list-item">
-                                <i class="flaticon-angle-right"></i>
+                                <i class="fas fa-angle-right"></i>
                                 <p class="content">E-learning Courses Of High Quality</p>
                             </li>
                             <li class="about__info-list-item">
-                                <i class="flaticon-angle-right"></i>
+                                <i class="fas fa-angle-right"></i>
                                 <p class="content">Possibility Of Skill Development</p>
                             </li>
                             <li class="about__info-list-item">
-                                <i class="flaticon-angle-right"></i>
+                                <i class="fas fa-angle-right"></i>
                                 <p class="content">Opportunity To Begin Your Entrepreneurial Journey</p>
                             </li>
                             <li class="about__info-list-item">
-                                <i class="flaticon-angle-right"></i>
+                                <i class="fas fa-angle-right"></i>
                                 <p class="content">Dedicated Support System</p>
                             </li>
                         </ul>
@@ -560,8 +560,8 @@
                             </div>
                         </div>
                         <div class="testimonial__nav">
-                            <button class="testimonial-button-prev"><i class="flaticon-arrow-right"></i></button>
-                            <button class="testimonial-button-next"><i class="flaticon-arrow-right"></i></button>
+                            <button class="testimonial-button-prev"><i class="far fa-arrow-right"></i></button>
+                            <button class="testimonial-button-next"><i class="far fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -645,7 +645,7 @@
                                 <h3 class="title"><a href="#">Become a Instructor</a></h3>
                                 <p>Become an Instructor empowers knowledgeable individuals to share their expertise and make a meaningful impact by teaching others.</p>
                                 <div class="tg-button-wrap">
-                                    <a href="#" class="btn arrow-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                                    <a href="#" class="btn arrow-btn">Apply Now <i class="far fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -663,7 +663,7 @@
                                 <p>Become a Student offers you the chance to embark on a personalized learning journey with access to a diverse range of courses and expert instructors.
                                 </p>
                                 <div class="tg-button-wrap">
-                                    <a href="#" class="btn arrow-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                                    <a href="#" class="btn arrow-btn">Apply Now <i class="far fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>

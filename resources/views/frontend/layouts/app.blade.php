@@ -27,7 +27,7 @@
 
     <!-- Scroll-top -->
     <button class="scroll__top scroll-to-target" data-target="html">
-        <i class="tg-flaticon-arrowhead-up"></i>
+        <i class="far fa-long-arrow-up"></i>
     </button>
     <!-- Scroll-top-end-->
 
