@@ -359,7 +359,7 @@
                     @isset($website_data['trainers'])
                         <div class="col-lg-3 col-6">
                             <div class="fact__item">
-                                <h2 class="count"><span class="odometer" data-count="{{$website_data['trainers']}}"></span>+</h2>
+                                <h2 class="count"><span class="counter-value">{{$website_data['trainers']}}</span>+</h2>
                                 <p>Trainers</p>
                             </div>
                         </div>
@@ -368,7 +368,7 @@
                     @isset($website_data['students'])
                         <div class="col-lg-3 col-6">
                             <div class="fact__item">
-                                <h2 class="count"><span class="odometer" data-count="{{$website_data['students']}}"></span>K+</h2>
+                                <h2 class="count"><span class="counter-value">{{$website_data['students']}}</span>K+</h2>
                                 <p>Students</p>
                             </div>
                         </div>
@@ -377,7 +377,7 @@
                     @isset($website_data['live_training'])
                         <div class="col-lg-3 col-6">
                             <div class="fact__item">
-                                <h2 class="count"><span class="odometer" data-count="{{$website_data['live_training']}}"></span>+</h2>
+                                <h2 class="count"><span class="counter-value">{{$website_data['live_training']}}</span>+</h2>
                                 <p>Live Training</p>
                             </div>
                         </div>
@@ -386,7 +386,7 @@
                     @isset($website_data['community_earning'])
                         <div class="col-lg-3 col-6">
                             <div class="fact__item">
-                                <h2 class="count"><span class="odometer" data-count="{{$website_data['community_earning']}}"></span>Cr</h2>
+                                <h2 class="count"><span class="counter-value">{{$website_data['community_earning']}}</span>Cr</h2>
                                 <p>Community Earning</p>
                             </div>
                         </div>
