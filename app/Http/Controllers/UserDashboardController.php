@@ -124,7 +124,7 @@ class UserDashboardController extends Controller
             return $item;
         });
 
-        $all_time_leaderboards = $all_time_leaderboards->sortByDesc('total_commission')->take(100)->values();
+        $all_time_leaderboards = $all_time_leaderboards->sortByDesc('total_commission')->take(10)->values();
 
         return view('user_dashboard.affiliate.leaderboard',compact('last_week_leaderboards','last_month_leaderboards','all_time_leaderboards','today_leaderboards'));
     }
