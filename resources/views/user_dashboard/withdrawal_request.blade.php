@@ -32,7 +32,7 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <label class="form-label">From</label>
-                            <input class="form-control input-daterange-datepicker" id="reservation" type="text" name="search_date" value="{{$search_date}}" placeholder="Select Date Range...">
+                            <input class="form-control input-daterange-datepicker" id="reservation" type="text" name="search_date" value="{{$search_date}}" placeholder="Select Date Range..." readonly>
                         </div>
                         <div class="col-md-1 mb-3">
                             <button type="submit" class="btn btn-primary mt-3_5">Filter</button>
