@@ -191,6 +191,14 @@
                                                                 <i class="fas fa-level-up-alt"></i>
                                                             </a>
                                                         </div>
+                                                        <div class="col-md-6">
+                                                            <form action="{{route('admin.user.login',$user->id)}}" id="user_login_form_{{$user->id}}" method="POST" target="_blank">
+                                                                @csrf
+                                                            </form>
+                                                            <a class="btn btn-outline-primary btn-sm mr-1 mb-1" target="_blank" onclick="$('#user_login_form_{{$user->id}}').submit()" style="width:35px;" title="User Login">
+                                                                <i class="fas fa-sign-in-alt"></i>
+                                                            </a>
+                                                        </div>
                                                     </div>
                                                 </td>
                                             </tr>

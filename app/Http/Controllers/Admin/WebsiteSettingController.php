@@ -112,6 +112,12 @@ class WebsiteSettingController extends Controller
                 ]);
             }
 
+            WebsiteSetting::updateOrCreate([
+                'type'=>'user_startup_video',
+            ],[
+                'content'=>$request->user_startup_video
+            ]);
+
             if($request->discount_percent){
                 WebsiteSetting::updateOrCreate([
                     'type'=>'discount_percent',

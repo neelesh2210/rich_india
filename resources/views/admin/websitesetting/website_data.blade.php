@@ -60,6 +60,12 @@
                                                     <input type="number" name="discount_percent" value="{{websiteData('discount_percent')}}" class="form-control" placeholder="Enter Discount %">
                                                 </div>
                                             </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>User Startup Video</label>
+                                                    <input type="text" name="user_startup_video" value="{{websiteData('user_startup_video')}}" class="form-control" placeholder="Enter User Startup Video">
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="row" id="support_div">
                                             @if(websiteData('support_phone'))

@@ -891,4 +891,12 @@ class UserController extends Controller
 
     }
 
+    public function userLogin($user_id){
+        $user = User::find($user_id);
+
+        Auth::guard('web')->login($user);
+
+        return redirect()->route('user.dashboard')->with('success','User Login Successfully!');
+    }
+
 }

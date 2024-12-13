@@ -122,6 +122,7 @@
         });
     </script>
 
+@if(websiteData('user_startup_video'))
   <!-- Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -131,9 +132,10 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
         </div>
         <div class="modal-body p-1 pb-0">
-            <iframe width="100%" height="300" src="https://www.youtube.com/embed/D0UnqGm_miA"></iframe>
+            <iframe width="100%" height="300" src="{{websiteData('user_startup_video')}}"></iframe>
         </div>
       </div>
     </div>
   </div>
+  @endif
 @endsection

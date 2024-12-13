@@ -73,6 +73,7 @@ Route::group(['middleware'=>'auth:admin','as'=>'admin.'],function () {
     Route::get('upgrade-plan-index/{user_id}',[UserController::class,'upgradePlanIndex'])->name('upgrade.plan.index');
     Route::post('upgrade-plan/{user_id}',[UserController::class,'upgradePlan'])->name('upgrade.plan');
     Route::get('change-user-status/{id}/{status}',[UserController::class,'changeUserStatus'])->name('change.user.status');
+    Route::post('user-login/{user_id}',[UserController::class,'userLogin'])->name('user.login');
 
     //WebsiteSetting
     Route::resource('websitesetting',WebsiteSettingController::class);
