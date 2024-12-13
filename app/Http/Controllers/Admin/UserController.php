@@ -12,16 +12,18 @@ use App\Models\Commission;
 use App\Models\UserWallet;
 use App\Models\PlanPurchase;
 use Illuminate\Http\Request;
+use App\Models\LevelUpWallet;
 use Illuminate\Validation\Rule;
 use App\Models\Admin\UserDetail;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\WebsiteSetting;
 use App\Models\RegistrationErrorLog;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\File;
 use App\Models\Admin\CommissionSetting;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Controllers\AutoUpgradeController;
 
 class UserController extends Controller
 {
@@ -33,7 +35,7 @@ class UserController extends Controller
         $search_register_from = $request->search_register_from;
         $search_commission = $request->search_commission;
 
-        $users = UserManager::withoutTrash()->with(['sponsorDetail','userDetail'])->withSum('payout','amount')->withSum('commission','commission');
+        $users = UserManager::withoutTrash();
         if($search_date){
             $dates=explode('-',$search_date);
             $d1=strtotime($dates[0]);
@@ -68,7 +70,7 @@ class UserController extends Controller
                       ->orWhere('referrer_code','like','%'.$search_key.'%');
             });
         }
-        $users = $users->orderBy('id','desc')->simplePaginate(10);
+        $users = $users->withCount('associates')->with(['sponsorDetail','userDetail.plan'])->withSum('payout','amount')->withSum('commission','commission')->withSum('levelupCredit','amount')->withSum('levelupDebit','amount')->orderBy('id','desc')->simplePaginate(10);
 
         return view('admin.user.index',compact('users','search_key','search_date','search_have_sponser','search_register_from','search_commission'),['page_title'=>'Users']);
     }
@@ -202,6 +204,36 @@ class UserController extends Controller
                 $user_detail->total_wallet_balance = $user_detail->total_wallet_balance + $commission_amount;
                 $user_detail->save();
 
+                $higher_plan = Plan::where('delete_status','0')->where('status','1')->latest('priority')->first();
+                if($higher_plan->priority > $commission_user->userDetail->plan->priority){
+                    $level_up_wallet = new LevelUpWallet;
+                    $level_up_wallet->user_id = $commission_user->id;
+                    $level_up_wallet->from_id = $commission->id;
+                    $level_up_wallet->amount = ($commission_amount*10)/100;
+                    $level_up_wallet->type = 'credit';
+                    if($i == 1){
+                        $level_up_wallet->from = 'active_commission';
+                    }else{
+                        $level_up_wallet->from = 'passive_commission';
+                    }
+                    $level_up_wallet->save();
+
+                    $user_wallet = new UserWallet;
+                    $user_wallet->user_id = $commission_user->id;
+                    $user_wallet->from_id = $level_up_wallet->id;
+                    $user_wallet->amount = $level_up_wallet->amount;
+                    $user_wallet->type = 'debit';
+                    $user_wallet->from = 'level_up_wallet_commission';
+                    $user_wallet->save();
+
+                    $user_detail = UserDetail::where('user_id',User::first()->id)->first();
+                    $user_detail->total_wallet_balance = $user_detail->total_wallet_balance - $level_up_wallet->amount;
+                    $user_detail->save();
+
+                    $auto_upgrade_controller = new AutoUpgradeController;
+                    $auto_upgrade_controller->upgradePlan($commission_user->id);
+                }
+
                 if($i == 1){
                     try {
                         Mail::send('email.active_mail', ['user_name'=>$commission_user->name,'amount'=>$commission_amount], function($message) use($commission_user){
@@ -266,6 +298,36 @@ class UserController extends Controller
                 $user_detail->total_wallet_balance = $user_detail->total_wallet_balance + $commission_amount;
                 $user_detail->save();
 
+                $higher_plan = Plan::where('delete_status','0')->where('status','1')->latest('priority')->first();
+                if($higher_plan->priority > $commission_user->userDetail->plan->priority){
+                    $level_up_wallet = new LevelUpWallet;
+                    $level_up_wallet->user_id = $commission_user->id;
+                    $level_up_wallet->from_id = $commission->id;
+                    $level_up_wallet->amount = ($commission_amount*10)/100;
+                    $level_up_wallet->type = 'credit';
+                    if($i == 1){
+                        $level_up_wallet->from = 'active_commission';
+                    }else{
+                        $level_up_wallet->from = 'passive_commission';
+                    }
+                    $level_up_wallet->save();
+
+                    $user_wallet = new UserWallet;
+                    $user_wallet->user_id = $commission_user->id;
+                    $user_wallet->from_id = $level_up_wallet->id;
+                    $user_wallet->amount = $level_up_wallet->amount;
+                    $user_wallet->type = 'debit';
+                    $user_wallet->from = 'level_up_wallet_commission';
+                    $user_wallet->save();
+
+                    $user_detail = UserDetail::where('user_id',$commission_user->id)->first();
+                    $user_detail->total_wallet_balance = $user_detail->total_wallet_balance - $level_up_wallet->amount;
+                    $user_detail->save();
+
+                    $auto_upgrade_controller = new AutoUpgradeController;
+                    $auto_upgrade_controller->upgradePlan($commission_user->id);
+                }
+
                 array_push($user_arr,$commission_user->id);
                 $referral_code = $commission_user->referral_code;
                 if($i == 1){
@@ -318,6 +380,36 @@ class UserController extends Controller
                 $user_detail->total_commission = $user_detail->total_commission + $commission_amount;
                 $user_detail->total_wallet_balance = $user_detail->total_wallet_balance + $commission_amount;
                 $user_detail->save();
+
+                $higher_plan = Plan::where('delete_status','0')->where('status','1')->latest('priority')->first();
+                if($higher_plan->priority > $commission_user->userDetail->plan->priority){
+                    $level_up_wallet = new LevelUpWallet;
+                    $level_up_wallet->user_id = $commission_user->id;
+                    $level_up_wallet->from_id = $commission->id;
+                    $level_up_wallet->amount = ($commission_amount*10)/100;
+                    $level_up_wallet->type = 'credit';
+                    if($i == 1){
+                        $level_up_wallet->from = 'active_commission';
+                    }else{
+                        $level_up_wallet->from = 'passive_commission';
+                    }
+                    $level_up_wallet->save();
+
+                    $user_wallet = new UserWallet;
+                    $user_wallet->user_id = $commission_user->id;
+                    $user_wallet->from_id = $level_up_wallet->id;
+                    $user_wallet->amount = $level_up_wallet->amount;
+                    $user_wallet->type = 'debit';
+                    $user_wallet->from = 'level_up_wallet_commission';
+                    $user_wallet->save();
+
+                    $user_detail = UserDetail::where('user_id',User::first()->id)->first();
+                    $user_detail->total_wallet_balance = $user_detail->total_wallet_balance - $level_up_wallet->amount;
+                    $user_detail->save();
+
+                    $auto_upgrade_controller = new AutoUpgradeController;
+                    $auto_upgrade_controller->upgradePlan($commission_user->id);
+                }
 
                 if($i == 1){
                     try {
@@ -461,6 +553,7 @@ class UserController extends Controller
             for($i=1;$i<=$upgrade_commission_level->content;$i++){
 
                 $commission_user = User::where('referrer_code',$referrer_code)->first();
+
                 if($commission_user){
                     $update_commission = UserDetail::where('user_id',$commission_user->id)->first();
                     $referrer_code = optional(User::where('id',$update_commission->user_id)->first())->referral_code;
@@ -468,44 +561,94 @@ class UserController extends Controller
                     $update_commission = UserDetail::first();
                     $referrer_code = User::where('id',$update_commission->user_id)->first()->referrer_code;
                 }
-                $commission = new Commission;
-                $commission->user_id = $update_commission->user_id;
-                $commission->plan_purchase_id = $plan_purchase->id;
-                $commission->commission = $current_plan->upgrade_commission[$upgrade_plan_detail->priority - $current_plan->priority - 1][$i-1];
-                $commission->level = $i;
-                $commission->save();
 
-                $user_wallet = new UserWallet;
-                $user_wallet->user_id = $update_commission->user_id;
-                $user_wallet->from_id = $plan_purchase->id;
-                $user_wallet->amount = $current_plan->upgrade_commission[$upgrade_plan_detail->priority - $current_plan->priority - 1][$i-1];
-                $user_wallet->type = 'credit';
-                $user_wallet->from = 'upgrade';
-                $user_wallet->save();
+                if($upgrade_plan_detail->priority <= $update_commission->plan->priority ){
+                    $commission = new Commission;
+                    $commission->user_id = $update_commission->user_id;
+                    $commission->plan_purchase_id = $plan_purchase->id;
+                    $commission->commission = $current_plan->upgrade_commission[$upgrade_plan_detail->priority - $current_plan->priority - 1][$i-1];
+                    $commission->level = $i;
+                    $commission->save();
 
-                $update_commission->total_commission = $update_commission->total_commission + $current_plan->upgrade_commission[$upgrade_plan_detail->priority - $current_plan->priority - 1][$i-1];
-                $update_commission->total_wallet_balance = $update_commission->total_wallet_balance + $current_plan->upgrade_commission[$upgrade_plan_detail->priority - $current_plan->priority - 1][$i-1];
-                $update_commission->save();
+                    $user_wallet = new UserWallet;
+                    $user_wallet->user_id = $update_commission->user_id;
+                    $user_wallet->from_id = $plan_purchase->id;
+                    $user_wallet->amount = $current_plan->upgrade_commission[$upgrade_plan_detail->priority - $current_plan->priority - 1][$i-1];
+                    $user_wallet->type = 'credit';
+                    $user_wallet->from = 'upgrade';
+                    $user_wallet->save();
+
+                    $update_commission->total_commission = $update_commission->total_commission + $current_plan->upgrade_commission[$upgrade_plan_detail->priority - $current_plan->priority - 1][$i-1];
+                    $update_commission->total_wallet_balance = $update_commission->total_wallet_balance + $current_plan->upgrade_commission[$upgrade_plan_detail->priority - $current_plan->priority - 1][$i-1];
+                    $update_commission->save();
+
+                    $higher_plan = Plan::where('delete_status','0')->where('status','1')->latest('priority')->first();
+                    if($higher_plan->priority > $update_commission->plan->priority){
+                        $level_up_wallet = new LevelUpWallet;
+                        $level_up_wallet->user_id = $update_commission->user_id;
+                        $level_up_wallet->from_id = $commission->id;
+                        $level_up_wallet->amount = ($commission->commission*10)/100;
+                        $level_up_wallet->type = 'credit';
+                        if($i == 1){
+                            $level_up_wallet->from = 'active_commission';
+                        }else{
+                            $level_up_wallet->from = 'passive_commission';
+                        }
+                        $level_up_wallet->save();
+
+                        $user_wallet = new UserWallet;
+                        $user_wallet->user_id = $update_commission->user_id;
+                        $user_wallet->from_id = $level_up_wallet->id;
+                        $user_wallet->amount = $level_up_wallet->amount;
+                        $user_wallet->type = 'debit';
+                        $user_wallet->from = 'level_up_wallet_commission';
+                        $user_wallet->save();
+
+                        $user_detail = UserDetail::where('user_id',$update_commission->user_id)->first();
+                        $user_detail->total_wallet_balance = $user_detail->total_wallet_balance - $level_up_wallet->amount;
+                        $user_detail->save();
+
+                        $auto_upgrade_controller = new AutoUpgradeController;
+                        $auto_upgrade_controller->upgradePlan($update_commission->user_id);
+                    }
+                }
+
 
             }
 
-            // $commission_user = User::where('referrer_code',$user->referral_code)->first();
-            // if($commission_user){
-            //     $update_commission = UserDetail::where('user_id',$commission_user->id)->first();
-            // }else{
-            //     $update_commission = UserDetail::first();
-            // }
+            $higher_plan = Plan::where('delete_status','0')->where('status','1')->latest('priority')->first();
+            if($user->userDetail->plan->priority == $higher_plan->priority){
+                $total_user_level_up_wallet_credit_amount = LevelUpWallet::where('user_id',$user_id)->where('type','credit')->sum('amount');
+                $total_user_level_up_wallet_debit_amount = LevelUpWallet::where('user_id',$user_id)->where('type','debit')->sum('amount');
+                $total_user_level_up_wallet_remaining_amount = $total_user_level_up_wallet_credit_amount - $total_user_level_up_wallet_debit_amount;
 
-            // $commission = new Commission;
-            // $commission->user_id = $update_commission->user_id;
-            // $commission->plan_purchase_id = $plan_purchase->id;
-            // $commission->commission = 0;
-            // $commission->level = 1;
-            // $commission->save();
+                if($total_user_level_up_wallet_remaining_amount > 0){
+                    $level_up_wallet = new LevelUpWallet;
+                    $level_up_wallet->user_id = $user_id;
+                    $level_up_wallet->from_id = $user_id;
+                    $level_up_wallet->amount = $total_user_level_up_wallet_remaining_amount;
+                    $level_up_wallet->type = 'debit';
+                    $level_up_wallet->from = 'main_wallet_transfer';
+                    $level_up_wallet->save();
 
-            // $update_commission->total_commission = $update_commission->total_commission + 0;
-            // $update_commission->save();
 
+                    $user_wallet = new UserWallet;
+                    $user_wallet->user_id = $user_id;
+                    $user_wallet->from_id = $level_up_wallet->id;
+                    $user_wallet->amount = $level_up_wallet->amount;
+                    $user_wallet->type = 'credit';
+                    $user_wallet->from = 'level_up_wallet_return';
+                    $user_wallet->save();
+
+                    $update_level_up_wallet = LevelUpWallet::find($level_up_wallet->id);
+                    $update_level_up_wallet->from_id = $user_wallet->id;
+                    $update_level_up_wallet->save();
+
+                    $user_detail = UserDetail::where('user_id',$user_id)->first();
+                    $user_detail->total_wallet_balance = $user_detail->total_wallet_balance + $level_up_wallet->amount;
+                    $user_detail->save();
+                }
+            }
             return redirect()->route('admin.user.index')->with('success','Plan Upgraded Successfully!');
         }else{
             return back()->with('error','Please Select Plan First!');
@@ -663,6 +806,36 @@ class UserController extends Controller
                                 $user_detail->total_commission = $user_detail->total_commission + $commission_amount;
                                 $user_detail->total_wallet_balance = $user_detail->total_wallet_balance + $commission_amount;
                                 $user_detail->save();
+
+                                $higher_plan = Plan::where('delete_status','0')->where('status','1')->latest('priority')->first();
+                                if($higher_plan->priority > $commission_user->userDetail->plan->priority){
+                                    $level_up_wallet = new LevelUpWallet;
+                                    $level_up_wallet->user_id = $commission_user->id;
+                                    $level_up_wallet->from_id = $commission->id;
+                                    $level_up_wallet->amount = ($commission_amount*10)/100;
+                                    $level_up_wallet->type = 'credit';
+                                    if($i == 1){
+                                        $level_up_wallet->from = 'active_commission';
+                                    }else{
+                                        $level_up_wallet->from = 'passive_commission';
+                                    }
+                                    $level_up_wallet->save();
+
+                                    $user_wallet = new UserWallet;
+                                    $user_wallet->user_id = $commission_user->id;
+                                    $user_wallet->from_id = $level_up_wallet->id;
+                                    $user_wallet->amount = $level_up_wallet->amount;
+                                    $user_wallet->type = 'debit';
+                                    $user_wallet->from = 'level_up_wallet_commission';
+                                    $user_wallet->save();
+
+                                    $user_detail = UserDetail::where('user_id',User::first()->id)->first();
+                                    $user_detail->total_wallet_balance = $user_detail->total_wallet_balance - $level_up_wallet->amount;
+                                    $user_detail->save();
+
+                                    $auto_upgrade_controller = new AutoUpgradeController;
+                                    $auto_upgrade_controller->upgradePlan($commission_user->id);
+                                }
 
                                 if($i == 1){
                                     try {

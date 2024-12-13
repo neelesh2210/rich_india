@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserWalletsTable extends Migration
+class CreateLevelUpWalletsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateUserWalletsTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_wallets', function (Blueprint $table) {
+        Schema::create('level_up_wallets', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id');
             $table->bigInteger('from_id');
             $table->double('amount',15,2);
             $table->enum('type', ['credit', 'debit']);
-            $table->enum('from', ['active_commission', 'passive_commission', 'payout', 'register', 'upgrade', 'pending_payout_transfer','level_up_wallet_commission','level_up_wallet_return']);
+            $table->enum('from', ['active_commission', 'passive_commission', 'upgrade', 'main_wallet_transfer']);
             $table->text('remark')->nullable();
             $table->enum('delete_status', ['1', '0'])->default('0');
             $table->timestamps();
@@ -33,6 +33,6 @@ class CreateUserWalletsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_wallets');
+        Schema::dropIfExists('level_up_wallets');
     }
 }

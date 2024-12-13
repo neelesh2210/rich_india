@@ -7,6 +7,7 @@ use App\Models\Commission;
 use App\Models\Admin\Payout;
 use Illuminate\Http\Request;
 use App\Models\Admin\Webinar;
+use App\Models\LevelUpWallet;
 use App\Models\Admin\Training;
 use App\Models\Admin\UserDetail;
 use Illuminate\Support\Facades\Auth;
@@ -60,6 +61,10 @@ class UserDashboardController extends Controller
         // $sorted_products = $this->sort_array_by_key($all_time_leaderboards->toArray(), 'total_commission');
         // $all_time_leaderboards = array_slice($sorted_products, 0, 10);
 
+        $total_user_level_up_wallet_credit_amount = LevelUpWallet::where('user_id',Auth::guard('web')->user()->id)->where('type','credit')->sum('amount');
+        $total_user_level_up_wallet_debit_amount = LevelUpWallet::where('user_id',Auth::guard('web')->user()->id)->where('type','debit')->sum('amount');
+        $total_user_level_up_wallet_remaining_amount = $total_user_level_up_wallet_credit_amount - $total_user_level_up_wallet_debit_amount;
+
         if($type == 'old'){
             return view('user_dashboard.dashboard',compact('today_earning',
                                                             'last_week_earning',
@@ -95,7 +100,8 @@ class UserDashboardController extends Controller
                                                         'last_month_leaderboards',
                                                         // 'all_time_leaderboards',
                                                         'today_leaderboards',
-                                                        'type'
+                                                        'type',
+                                                        'total_user_level_up_wallet_remaining_amount'
                                                     ));
     }
 

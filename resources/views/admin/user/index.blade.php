@@ -95,6 +95,7 @@
                                             <th>Total Earning</th>
                                             <th>Total Withdrawl</th>
                                             <th>Total Wallet Amount</th>
+                                            <th>Total Levelup Fund</th>
                                             <th>Associate</th>
                                             <th>Old Site Data</th>
                                             {{-- <th class="text-center">Status</th> --}}
@@ -143,10 +144,10 @@
                                                 </td>
                                                 <td class="text-center">{{$user->userDetail->total_wallet_balance}}</td>
                                                 <td class="text-center">
-                                                    @php
-                                                        $associates = App\Models\User::where('referral_code', $user->referrer_code)->where('delete_status','0')->get();
-                                                    @endphp
-                                                    <a href="{{ route('admin.associates') }}?search_key={{ $user->referrer_code }}">{{ $associates->count() }}</a>
+                                                    {{ $user->levelup_credit_sum_amount - $user->levelup_debit_sum_amount }}
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="{{ route('admin.associates') }}?search_key={{ $user->referrer_code }}">{{ $user->associates_count }}</a>
                                                 </td>
                                                 <td>
                                                     <b>Paid Amount:</b> {{ $user->userDetail->old_paid_payout }} <br>

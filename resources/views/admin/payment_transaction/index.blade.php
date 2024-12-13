@@ -102,9 +102,14 @@
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    @if ($plan_purchase->payment_detail != null && $plan_purchase->payment_detail != 'Updated by Admin')
+                                                    @if ($plan_purchase->payment_detail != null && $plan_purchase->payment_detail != 'Updated by Admin' && $plan_purchase->payment_detail != 'Autoupdated')
                                                         <b>Payment Id: </b>{{json_decode($plan_purchase->payment_detail)->id}} <br>
                                                         <b>Amount Paid: </b>₹ {{json_decode($plan_purchase->payment_detail)->amount}} <br>
+                                                        <b>Date: </b>{{$plan_purchase->created_at->format('d-M-Y h:i A')}} <br>
+                                                    @endif
+                                                    @if ($plan_purchase->payment_detail == 'Autoupdated')
+                                                        <b>Payment Id: </b>Updated With Level Up Wallet <br>
+                                                        <b>Amount Paid: </b>₹ {{$plan_purchase->total_amount}} <br>
                                                         <b>Date: </b>{{$plan_purchase->created_at->format('d-M-Y h:i A')}} <br>
                                                     @endif
                                                 </td>

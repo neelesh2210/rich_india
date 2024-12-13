@@ -65,4 +65,11 @@ class User extends Authenticatable
         return $this->hasMany(User::class,'referral_code','referrer_code')->where('delete_status','0');
     }
 
+    public function levelupCredit(){
+        return $this->hasMany(LevelUpWallet::class)->where('delete_status','0')->where('type','credit');
+    }
+    public function levelupDebit(){
+        return $this->hasMany(LevelUpWallet::class)->where('delete_status','0')->where('type','debit');
+    }
+
 }
