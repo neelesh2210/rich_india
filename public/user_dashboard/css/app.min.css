@@ -7521,7 +7521,8 @@ fieldset:disabled .btn {
     background-clip: padding-box;
     border: 1px solid transparent;
     border-radius: .2rem;
-    outline: 0
+    outline: 0;
+    border: 3px solid #9c1480;
 }
 
 .modal-backdrop {
@@ -7561,8 +7562,17 @@ fieldset:disabled .btn {
 }
 
 .modal-header .btn-close {
-    padding: .5rem .5rem;
-    margin: -.5rem -.5rem -.5rem auto
+    float: right;
+    padding: 5px !important;
+    border-radius: 20px;
+    top: -10px;
+    opacity: 1;
+    right: -10px;
+    position: absolute;
+    background: #9c1480 !important;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.25;
 }
 
 .modal-title {
@@ -25835,7 +25845,24 @@ body[data-layout-color=dark] .gantt .today-highlight {
 .bg-white-transparent {
     background-color: rgba(255, 255, 255, 0.25) !important;
 }
-
+.bg-level {
+    border: 3px solid #4e26ab;
+    background: #651aa2;
+    background-image: url(../../user_dashboard/images/today-earning.png);
+    padding: 10px;
+    width: 175px;
+    height: 175px;
+    border-radius: 100px;
+    margin: 0 auto;
+}
+.bg-level h3{
+    color: #fff;
+    text-align: center;
+    margin-top: 25px !important;
+}
+.bg-level h5{
+    text-align: center;
+}
 .ribbon {
     position: absolute;
     overflow: hidden;
@@ -26103,10 +26130,7 @@ input.tutor-form-check-input.tutor-form-check-circle {
 .widget-flat small {
 
 }
-.modal-header .btn-close {
-    padding: calc(var(--bs-modal-header-padding-y) * .5) calc(var(--bs-modal-header-padding-x) * .5);
-    margin: calc(var(--bs-modal-header-padding-y) * -.5) calc(var(--bs-modal-header-padding-x) * -.5) calc(var(--bs-modal-header-padding-y) * -.5) auto;
-}
+
 .bg-primary-opacity {
     background: #b90479;
     background-image: linear-gradient(90deg, #68004d 0%, #dd0395 100%);

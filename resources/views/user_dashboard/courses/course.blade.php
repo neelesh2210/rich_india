@@ -110,4 +110,30 @@
             </div>
         </div>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--- modal script is here ---->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            if(sessionStorage.getItem('#myModal') !== 'true'){
+                $('#myModal').modal('show');
+                sessionStorage.setItem('#myModal', 'true');
+            }
+        });
+    </script>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header p-2">
+          <h5 class="modal-title text-dark" id="myModalLabel">Welcome to RichInd</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+        </div>
+        <div class="modal-body p-1 pb-0">
+            <iframe width="100%" height="300" src="https://www.youtube.com/embed/D0UnqGm_miA"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
 @endsection

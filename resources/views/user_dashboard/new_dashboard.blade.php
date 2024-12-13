@@ -65,7 +65,7 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
+        <div class="container-fluid mb-50">
             <div class="row">
                 <div class="col-md-12">
                     <div class="row">
@@ -145,24 +145,6 @@
                                             class="counter-value">{{$passive_income}}</span>
                                     </h3>
                                     <h5  title="Number of Orders">Passive Income</h5>
-                                    <div class="progress progress-sm m-0">
-                                        <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="90"
-                                            aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
-                                            <span class="visually-hidden">90% Complete</span>
-                                        </div>
-                                    </div>
-                                    <h5  title="Number of Customers" style="margin-bottom: 0;">View details <span
-                                            class="r8-arw"><i class="fas fa-chevron-right"></i></span></h5>
-                                </div>
-                            </div>
-                        </div>
-                       <div class="col-sm-3">
-                            <div class="card widget-flat bg-gradient-moonlit">
-                                <div class="card-body user-earnings">
-                                    <h3><small ><i class="fas fa-rupee-sign"></i></small> <span
-                                            class="counter-value">{{$total_user_level_up_wallet_remaining_amount}}</span>
-                                    </h3>
-                                    <h5  title="Number of Orders">Level Up Fund</h5>
                                     <div class="progress progress-sm m-0">
                                         <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="90"
                                             aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
@@ -278,7 +260,7 @@
                 </div>
             </div> --}}
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-9">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card card-info">
@@ -295,7 +277,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <div class="card card-info">
                         <div class="card-header">
                             <h3 class="card-title">Pending Amount</h3>
@@ -313,10 +295,19 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-sm-12 mt-2 card p-3">
+                        <div class="card bg-level">
+                            <div class="card-body user-earnings">
+                                <h3><small ><i class="fas fa-rupee-sign"></i></small> <span
+                                        class="counter-value">{{$total_user_level_up_wallet_remaining_amount}}</span>
+                                </h3>
+                                <h5  title="Number of Orders">Level Up Fund</h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </div><br><br><br>
     </div>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
