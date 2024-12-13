@@ -187,7 +187,7 @@
                 </form>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-info waves-effect waves-light" id="model_pay_button">Pay Online</button>
+                    {{-- <button type="button" class="btn btn-info waves-effect waves-light" id="model_pay_button">Pay Online</button> --}}
                     <button type="button" class="btn btn-info waves-effect waves-light" id="model_pay_wallet_button">Pay Wallet</button>
                 </div>
             </div>
@@ -318,9 +318,9 @@
     <script>
 
         function couponModel(plan_id,amount) {
-            $('#model_pay_button').attr("onclick","pay("+plan_id+","+amount+")")
+            // $('#model_pay_button').attr("onclick","pay("+plan_id+","+amount+")")
             $('#model_apply_button').attr("onclick","checkUpgradeCoupon("+plan_id+","+amount+")")
-            $('#model_pay_button').text("Pay Online ₹"+amount)
+            // $('#model_pay_button').text("Pay Online ₹"+amount)
             $('#model_pay_wallet_button').text("Pay With Wallet ₹"+amount)
             $('#model_pay_wallet_button').attr("onclick","payWithWallet("+plan_id+","+amount+")")
             $('#coupon-modal').modal('show')
@@ -378,13 +378,13 @@
                     url: "{{route('check.upgrade.coupon')}}?coupon="+coupon+"&plan_id="+plan_id,
                     success: function(data) {
                         var final_amount  = parseFloat(amount) - data.amount;
-                        $('#model_pay_button').attr("onclick","pay("+plan_id+","+final_amount+")")
-                        $('#model_pay_button').text("Pay ₹"+final_amount)
+                        // $('#model_pay_button').attr("onclick","pay("+plan_id+","+final_amount+")")
+                        // $('#model_pay_button').text("Pay ₹"+final_amount)
                     },
                     error: function (request, status, error) {
                         alert(request.responseJSON.msg);
-                        $('#model_pay_button').attr("onclick","pay("+plan_id+","+amount+")")
-                        $('#model_pay_button').text("Pay ₹"+amount)
+                        // $('#model_pay_button').attr("onclick","pay("+plan_id+","+amount+")")
+                        // $('#model_pay_button').text("Pay ₹"+amount)
                     }
                 });
             }else{
