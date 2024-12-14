@@ -295,7 +295,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12 mt-2 card p-3">
+                    <div class="col-sm-12 mt-2">
                         <div class="card bg-level">
                             <div class="card-body user-earnings">
                                 <h3><small ><i class="fas fa-rupee-sign"></i></small> <span
