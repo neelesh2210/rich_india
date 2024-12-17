@@ -114,6 +114,12 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a href="{{route('admin.levelup.transaction')}}" class="nav-link @if(Route::currentRouteName() == 'admin.levelup.transaction') active @endif">
+                        <i class="nav-icon fas fa-money-bill-alt"></i>
+                        <p>Levelup Wallet Transaction</p>
+                    </a>
+                </li>
                 <li class="nav-item @if(Route::currentRouteName() == 'admin.total.pending.wallet.amount' || Route::currentRouteName() == 'admin.payment.transaction.report') menu-is-opening menu-open @endif">
                     <a href="#" class="nav-link @if(Route::currentRouteName() == 'admin.total.pending.wallet.amount' || Route::currentRouteName() == 'admin.payment.transaction.report') active @endif">
                         <i class="nav-icon fas fa-money-bill-alt" aria-hidden="true"></i>

@@ -33,6 +33,7 @@ use App\Http\Controllers\Admin\EmergingAssociateController;
 use App\Http\Controllers\Admin\ErrorRegistrationController;
 use App\Http\Controllers\Admin\MarketingMaterialController;
 use App\Http\Controllers\Admin\WithdrawalRequestController;
+use App\Http\Controllers\Admin\LevelupTransactionController;
 
 
 /*
@@ -194,6 +195,9 @@ Route::group(['middleware'=>'auth:admin','as'=>'admin.'],function () {
 
     //Instagram Link
     Route::resource('instagram-link', InstagramLinkController::class)->except('create','show');
+
+    //Levelup Wallet Transaction
+    Route::get('levelup-transaction',[LevelupTransactionController::class,'index'])->name('levelup.transaction');
 
     Route::post('logout/', [LoginController::class, 'logout'])->name('logout');
 });

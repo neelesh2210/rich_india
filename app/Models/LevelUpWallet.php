@@ -19,4 +19,8 @@ class LevelUpWallet extends Model
         'delete_status'
     ];
 
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
 }
