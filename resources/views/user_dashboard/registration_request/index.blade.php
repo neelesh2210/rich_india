@@ -19,7 +19,7 @@
                                         <div class="col-md-2 mb-3"></div>
                                         <div class="col-md-3 mb-3">
                                             <label class="form-label">Date Range Pick</label>
-                                            <input class="form-control input-daterange-datepicker" id="reservation" type="text" name="search_date" value="{{$search_date}}" placeholder="Select Date Range...">
+                                            <input class="form-control input-daterange-datepicker" id="reservation" type="text" name="search_date" value="{{$search_date}}" placeholder="Select Date Range..." readonly>
                                         </div>
                                         <div class="col-md-3 mb-3">
                                             <label class="form-label">Packages Types</label>
