@@ -25,11 +25,11 @@
                             </p>
                             <p class="plan-names">
                             <div class="button-list">
-                                <form id="logout-form" action="{{route('user.logout')}}" method="POST">
+                                <form id="logout-form" action="{{ route('user.logout') }}" method="POST">
                                     @csrf
                                 </form>
-                                <a href="{{route('user.user.profile')}}" class="btn bg-icn waves-effect waves-light"><i
-                                        class="fad fa-user"></i></a>
+                                <a href="{{ route('user.user.profile') }}"
+                                    class="btn bg-icn waves-effect waves-light"><i class="fad fa-user"></i></a>
                                 <a class="btn bg-icn waves-effect waves-light" onclick="$('#logout-form').submit()"><i
                                         class="fad fa-power-off"></i></a>
                                 <a onclick="copyText()" class="btn bg-icn waves-effect waves-light"><i
@@ -126,6 +126,12 @@
                     <a href="{{ route('user.leaderboard') }}" class="side-nav-link">
                         <i class="fad fa-cash-register"></i>
                         <span> Leaderboard </span>
+                    </a>
+                </li>
+                <li class="side-nav-item">
+                    <a href="{{ route('user.qualification') }}" class="side-nav-link">
+                        <i class="fad fa-bullseye-arrow"></i>
+                        <span> Qualification </span>
                     </a>
                 </li>
                 <li class="side-nav-item">
@@ -281,7 +287,8 @@
             <div class="clearfix"></div>
         </div>
     </div>
-    <input type="text" value="{{env('APP_URL')}}?referrer_code={{Auth::guard('web')->user()->referrer_code}}" class="form-control referral_link" hidden>
+    <input type="text" value="{{ env('APP_URL') }}?referrer_code={{ Auth::guard('web')->user()->referrer_code }}"
+        class="form-control referral_link" hidden>
     <script>
         function copyText() {
             navigator.clipboard.writeText($('.referral_link').val());
