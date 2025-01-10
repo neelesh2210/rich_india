@@ -16,20 +16,21 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="row text-center">
+                                @foreach ($targets as $target)
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div class="card">
                                         <div class="card-body p-2">
-                                            <a href="{{ route('user.qualification_details') }}">
-                                                <img src="https://careerfixx.com/backend/img/target/119278451732096310.jpeg"
+                                            <a href="{{route('user.qualification.details',$target->id)}}">
+                                                <img src="{{asset('backend/img/target/'.$target->image)}}"
                                                     alt="Card image" class="img-fluid">
                                             </a>
                                             <h4 class="text-center mb-1 mt-2">
-                                                <a href="{{ route('user.qualification_details') }}"> RichInd National
-                                                    Trip</a>
+                                                <a href="{{route('user.qualification.details',$target->id)}}"> {{$target->name}}</a>
                                             </h4>
                                         </div>
                                     </div>
                                 </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>

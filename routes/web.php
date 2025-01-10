@@ -150,8 +150,12 @@ Route::group(['middleware'=>['auth:web',CheckUserStatus::class],'prefix'=>'user'
     Route::get('associates',[AssociateController::class,'associate'])->name('associates');
 
     //Qualification
-    Route::view('qualification', 'user_dashboard.qualification')->name('qualification');
-    Route::view('qualification_details', 'user_dashboard.qualification_details')->name('qualification_details');
+    Route::get('qualification', [QualificationController::class,'index'])->name('qualification');
+    Route::get('qualification/{id}', [QualificationController::class,'show'])->name('qualification.details');
+
+    //Qualification
+    // Route::view('qualification', 'user_dashboard.qualification')->name('qualification');
+    // Route::view('qualification_details', 'user_dashboard.qualification_details')->name('qualification_details');
 
     //Registration Request
     Route::get('registration-request',[RegistrationRequestController::class,'index'])->name('registration.request');

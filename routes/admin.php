@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\PayoutController;
 use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Admin\ReviewController;
+use App\Http\Controllers\Admin\TargetController;
 use App\Http\Controllers\Admin\OldDataController;
 use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\WebinarController;
@@ -198,6 +199,10 @@ Route::group(['middleware'=>'auth:admin','as'=>'admin.'],function () {
 
     //Levelup Wallet Transaction
     Route::get('levelup-transaction',[LevelupTransactionController::class,'index'])->name('levelup.transaction');
+
+    //Target
+    Route::resource('target', TargetController::class);
+    Route::get('achieved-users/{target_id}',[TargetController::class,'achievedUsers'])->name('achieved.users');
 
     Route::post('logout/', [LoginController::class, 'logout'])->name('logout');
 });

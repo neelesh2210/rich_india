@@ -29,3 +29,4 @@ docker-compose.override.yml
 /public/backend/img/websitesetting
 /public/frontend/images/payment_image
 /public/backend/img/marketing_materials
+/public/backend/img/target

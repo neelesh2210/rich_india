@@ -31,7 +31,7 @@
                                         </a>
                                     </div>
                                     <div class="card-body px-1 py-0">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                                        <p>{{ $target->description_one }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -44,7 +44,7 @@
                                         </a>
                                     </div>
                                     <div class="card-body px-1 py-0">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                                        <p>{{ $target->description_two }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -57,7 +57,7 @@
                                         </a>
                                     </div>
                                     <div class="card-body px-1 py-0">
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                                        <p>{{ $target->description_three }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -83,70 +83,91 @@
                             </div>
                             <div class="col-lg-8 offset-lg-2">
                                 <div class="single-progress">
-                                    <h5 style="color: #051c43;">Achieve <span class="progress-number">50%</span></h5>
+                                    <h5 style="color: #051c43;">Achieve <span
+                                            class="progress-number">{{ $avg_percent }}%</span></h5>
                                     <div class="progress">
-                                        <div class="progress-bar wow fadeInLeft" role="progressbar" style="width: 50%"
-                                            aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar wow fadeInLeft" role="progressbar"
+                                            style="width: {{ $avg_percent }}%" aria-valuenow="65" aria-valuemin="0"
+                                            aria-valuemax="100"></div>
 
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-sm-4">
-                                <div class="card widget-flat gradient-45deg-thirty-earning bg-img1-opacity">
-                                    <div class="card-body user-earnings">
-                                        <h3><small><i class="fas fa-rupee-sign"></i></small> <span
-                                                class="counter-value text-white">1111</span>
-                                        </h3>
-                                        <h5 title="Number of Orders">Target Amount</h5>
-                                        <div class="progress progress-sm m-0">
-                                            <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="90"
-                                                aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-                                                <span class="visually-hidden">90% Complete</span>
+                            @if ($target->amount != 0)
+                                <div class="col-sm-4">
+                                    <div class="card widget-flat gradient-45deg-thirty-earning bg-img1-opacity">
+                                        <div class="card-body user-earnings">
+                                            <h3><small><i class="fas fa-rupee-sign"></i></small> <span
+                                                    class="counter-value text-white">{{ $target->amount }}</span>
+                                            </h3>
+                                            <h5 title="Number of Orders">Target Amount</h5>
+                                            {{-- <div class="progress progress-sm m-0">
+                                                <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="90"
+                                                    aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                                                    <span class="visually-hidden">90% Complete</span>
+                                                </div>
                                             </div>
+                                            <h5 title="Number of Customers" style="margin-bottom: 0;">View details <span
+                                                    class="r8-arw"><i class="fas fa-chevron-right text-white"></i></span></h5> --}}
                                         </div>
-                                        <h5 title="Number of Customers" style="margin-bottom: 0;">View details <span
-                                                class="r8-arw"><i class="fas fa-chevron-right text-white"></i></span></h5>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="card widget-flat gradient-45deg-red-pink bg-img1-opacity">
-                                    <div class="card-body user-earnings">
-                                        <h3><small><i class="fas fa-rupee-sign"></i></small> <span
-                                                class="counter-value text-white">1111</span>
-                                        </h3>
-                                        <h5 title="Number of Orders">Remaining Amount</h5>
-                                        <div class="progress progress-sm m-0">
-                                            <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="90"
-                                                aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-                                                <span class="visually-hidden">90% Complete</span>
-                                            </div>
+                                <div class="col-sm-4">
+                                    <div class="card widget-flat gradient-45deg-red-pink bg-img1-opacity">
+                                        <div class="card-body user-earnings">
+                                            @if ($remaining_commission <= 0)
+                                                <h3>
+                                                    <small><i class="fas fa-rupee-sign"></i></small>
+                                                    @if($remaining_commission <= 0)
+                                                    <span class="counter-value text-white">0</span>
+                                                    @else
+                                                    <span class="counter-value text-white">{{$remaining_commission}}</span>
+
+                                                    @endif
+                                                </h3>
+                                                <h5 title="Number of Orders">Remaining Amount</h5>
+                                                {{-- <div class="progress progress-sm m-0">
+                                                    <div class="progress-bar bg-purple" role="progressbar"
+                                                        aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"
+                                                        style="width: 90%">
+                                                        <span class="visually-hidden">90% Complete</span>
+                                                    </div>
+                                                </div>
+                                                <h5 title="Number of Customers" style="margin-bottom: 0;">View details <span
+                                                        class="r8-arw"><i
+                                                            class="fas fa-chevron-right text-white"></i></span></h5> --}}
                                         </div>
-                                        <h5 title="Number of Customers" style="margin-bottom: 0;">View details <span
-                                                class="r8-arw"><i class="fas fa-chevron-right text-white"></i></span></h5>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="card widget-flat gradient-45deg-thirty-earning bg-img1-opacity">
-                                    <div class="card-body user-earnings">
-                                        <h3><small><i class="fas fa-rupee-sign"></i></small> <span
-                                                class="counter-value text-white">1111</span>
-                                        </h3>
-                                        <h5 title="Number of Orders">Achieved Amount</h5>
-                                        <div class="progress progress-sm m-0">
-                                            <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="90"
-                                                aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-                                                <span class="visually-hidden">90% Complete</span>
+                                <div class="col-sm-4">
+                                    <div class="card widget-flat gradient-45deg-thirty-earning bg-img1-opacity">
+                                        <div class="card-body user-earnings">
+                                            <h3><small><i class="fas fa-rupee-sign"></i></small>
+                                                @if($commission <= 0)
+                                                <span
+                                                    class="counter-value text-white">0</span>
+                                                    @else
+                                                    <span
+                                                        class="counter-value text-white">{{$commission}}</span>
+
+                                                    @endif
+                                            </h3>
+                                            <h5 title="Number of Orders">Achieved Amount</h5>
+                                            {{-- <div class="progress progress-sm m-0">
+                                                <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="90"
+                                                    aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                                                    <span class="visually-hidden">90% Complete</span>
+                                                </div>
                                             </div>
+                                            <h5 title="Number of Customers" style="margin-bottom: 0;">View details <span
+                                                    class="r8-arw"><i class="fas fa-chevron-right text-white"></i></span>
+                                            </h5> --}}
                                         </div>
-                                        <h5 title="Number of Customers" style="margin-bottom: 0;">View details <span
-                                                class="r8-arw"><i class="fas fa-chevron-right text-white"></i></span></h5>
                                     </div>
                                 </div>
-                            </div>
+                            @endif
                         </div>
                     </div>
                 </div>
