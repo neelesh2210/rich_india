@@ -16,6 +16,7 @@ use App\Http\Controllers\BankDetailController;
 use App\Http\Controllers\CommissionController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\QualificationController;
 use App\Http\Controllers\UserDashboardController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\WalletTransactionController;
