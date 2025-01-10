@@ -135,10 +135,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-4">
-                                    <div class="card widget-flat gradient-45deg-red-pink bg-img1-opacity">
-                                        <div class="card-body user-earnings">
-                                            @if ($remaining_commission <= 0)
+                                @if ($remaining_commission <= 0)
+                                    <div class="col-sm-4">
+                                        <div class="card widget-flat gradient-45deg-red-pink bg-img1-opacity">
+                                            <div class="card-body user-earnings">
                                                 <h3>
                                                     <small><i class="fas fa-rupee-sign"></i></small>
                                                     @if ($remaining_commission <= 0)
@@ -159,10 +159,10 @@
                                                 <h5 title="Number of Customers" style="margin-bottom: 0;">View details <span
                                                         class="r8-arw"><i
                                                             class="fas fa-chevron-right text-white"></i></span></h5> --}}
-                                            @endif
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                @endif
                                 <div class="col-sm-4">
                                     <div class="card widget-flat gradient-45deg-thirty-earning bg-img1-opacity">
                                         <div class="card-body user-earnings">
