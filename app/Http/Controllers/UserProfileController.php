@@ -37,7 +37,7 @@ class UserProfileController extends Controller
     public function saveUserProfile(Request $request)
     {
         if(Auth::guard('web')->user()->kyc_status != 'verified'){
-            if(Session::get('profile_otp') == $request->otp){
+            if(Session::get('profile_otp') === $request->otp){
                 $this->validate($request,[
                     'avatar'=>'nullable|mimes:png,jpg,jpeg,webp',
                 ]);
