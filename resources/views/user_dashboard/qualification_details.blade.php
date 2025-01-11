@@ -95,6 +95,27 @@
                             </div>
                         </div>
                         <div class="row mt-3">
+                            @if ($target->no_of_referral != 0)
+                                <div class="col-sm-4">
+                                    <div class="card widget-flat gradient-45deg-thirty-earning bg-img1-opacity">
+                                        <div class="card-body user-earnings">
+                                            <h3> <span>{{ $total_affiliate_user }}</span>
+                                            </h3>
+                                            <h5 title="Referrals">Referrals</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="card widget-flat gradient-45deg-thirty-earning bg-img1-opacity">
+                                        <div class="card-body user-earnings">
+                                            <h3> <span>{{ $target->no_of_referral }}</span>
+                                            </h3>
+                                            <h5 title="Referrals">Target Referrals
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
                             @if ($target->amount != 0)
                                 <div class="col-sm-4">
                                     <div class="card widget-flat gradient-45deg-thirty-earning bg-img1-opacity">
@@ -114,17 +135,17 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-4">
-                                    <div class="card widget-flat gradient-45deg-red-pink bg-img1-opacity">
-                                        <div class="card-body user-earnings">
-                                            @if ($remaining_commission <= 0)
+                                @if ($remaining_commission <= 0)
+                                    <div class="col-sm-4">
+                                        <div class="card widget-flat gradient-45deg-red-pink bg-img1-opacity">
+                                            <div class="card-body user-earnings">
                                                 <h3>
                                                     <small><i class="fas fa-rupee-sign"></i></small>
-                                                    @if($remaining_commission <= 0)
-                                                    <span class="counter-value text-white">0</span>
+                                                    @if ($remaining_commission <= 0)
+                                                        <span class="counter-value text-white">0</span>
                                                     @else
-                                                    <span class="counter-value text-white">{{$remaining_commission}}</span>
-
+                                                        <span
+                                                            class="counter-value text-white">{{ $remaining_commission }}</span>
                                                     @endif
                                                 </h3>
                                                 <h5 title="Number of Orders">Remaining Amount</h5>
@@ -138,21 +159,19 @@
                                                 <h5 title="Number of Customers" style="margin-bottom: 0;">View details <span
                                                         class="r8-arw"><i
                                                             class="fas fa-chevron-right text-white"></i></span></h5> --}}
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                @endif
                                 <div class="col-sm-4">
                                     <div class="card widget-flat gradient-45deg-thirty-earning bg-img1-opacity">
                                         <div class="card-body user-earnings">
                                             <h3><small><i class="fas fa-rupee-sign"></i></small>
-                                                @if($commission <= 0)
-                                                <span
-                                                    class="counter-value text-white">0</span>
-                                                    @else
-                                                    <span
-                                                        class="counter-value text-white">{{$commission}}</span>
-
-                                                    @endif
+                                                @if ($commission <= 0)
+                                                    <span class="counter-value text-white">0</span>
+                                                @else
+                                                    <span class="counter-value text-white">{{ $commission }}</span>
+                                                @endif
                                             </h3>
                                             <h5 title="Number of Orders">Achieved Amount</h5>
                                             {{-- <div class="progress progress-sm m-0">
