@@ -119,7 +119,7 @@
                 <li class="side-nav-item">
                     <a href="{{ route('user.social.media.handles') }}" class="side-nav-link">
                         <i class="fad fa-share"></i>
-                        <span> Group Links </span>
+                        <span> Community & Support </span>
                     </a>
                 </li>
                 <li class="side-nav-item">
