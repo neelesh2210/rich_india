@@ -197,7 +197,7 @@
     <script>
         function handle_tickInit(tick) {
             // Define the target date in ISO 8601 format
-            var targetDate = "2025-02-20T00:00:00";
+            var targetDate = "{{ $target->end_date }}";
 
             // Initialize the countdown using Tick library
             Tick.count.down(targetDate).onupdate = function(value) {
