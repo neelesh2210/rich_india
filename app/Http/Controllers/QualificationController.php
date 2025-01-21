@@ -47,7 +47,7 @@ class QualificationController extends Controller
 
         $avg_percent = round(($commission_percent+$user_percent)/2);
 
-        return view('user_dashboard.qualification_details',compact('target','remaining_commission','total_affiliate_user','avg_percent', 'commission'));
+        return view('user_dashboard.qualification_details',compact('target','remaining_commission','total_affiliate_user','avg_percent', 'commission', 'commission_percent'));
     }
 
 }

@@ -84,10 +84,10 @@
                             <div class="col-lg-8 offset-lg-2">
                                 <div class="single-progress">
                                     <h5 style="color: #051c43;">Achieve <span
-                                            class="progress-number">{{ $avg_percent }}%</span></h5>
+                                            class="progress-number">{{ $commission_percent }}%</span></h5>
                                     <div class="progress">
                                         <div class="progress-bar wow fadeInLeft" role="progressbar"
-                                            style="width: {{ $avg_percent }}%" aria-valuenow="65" aria-valuemin="0"
+                                            style="width: {{ $commission_percent }}%" aria-valuenow="65" aria-valuemin="0"
                                             aria-valuemax="100"></div>
 
                                     </div>
