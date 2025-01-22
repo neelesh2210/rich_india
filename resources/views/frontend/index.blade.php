@@ -532,17 +532,19 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-xl-3 col-lg-4 col-6">
-                    <div class="instructor__item-five">
-                        <div class="instructor__thumb-five">
-                            <img src="{{ asset('frontend/assets/img/founder.jpg') }}" alt="img">
-                        </div>
-                        <div class="instructor__content-five">
-                            <h2 class="title">Yash kulshrestha</h2>
-                            <span>Founder & CEO</span>
+                @foreach ($instructors as $instructor)
+                    <div class="col-xl-3 col-lg-4 col-6">
+                        <div class="instructor__item-five">
+                            <div class="instructor__thumb-five">
+                                <img src="{{ asset('backend/img/instructors/'.$instructor->image) }}" alt="img">
+                            </div>
+                            <div class="instructor__content-five">
+                                <h2 class="title">{{$instructor->name}}</h2>
+                                <span>{{$instructor->designation}}</span>
+                            </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
