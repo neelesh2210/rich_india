@@ -1060,7 +1060,7 @@ textarea {
 }
 @media (max-width: 767.98px) {
   .section__title .title {
-    font-size: 29px;
+    font-size: 22px;
   }
 }
 @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -11694,7 +11694,10 @@ textarea {
   transform: translateY(-5px);
 }
 .instructor__item-five {
-  margin-bottom: 30px;
+    margin: 10px 0;
+    position: relative;
+    box-shadow: rgba(149, 157, 165, 0.2) 1px 1px 10px 0px;
+    padding: 10px;
 }
 .instructor__item-five:hover .instructor__social-two .list-wrap {
   opacity: 1;
@@ -11835,13 +11838,8 @@ textarea {
 }
 .instructor__thumb-five {
   position: relative;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  -o-border-radius: 30px;
-  -ms-border-radius: 30px;
-  border-radius: 30px;
   overflow: hidden;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .instructor__thumb-five img {
   width: 100%;
@@ -17761,7 +17759,7 @@ blockquote > p {
 }
 @media (max-width: 1199.98px) {
   .newsletter__content .title {
-    font-size: 34px;
+    font-size: 24px;
   }
 }
 .newsletter__content .title span {
@@ -17786,6 +17784,13 @@ blockquote > p {
   gap: 10px;
 }
 @media (max-width: 767.98px) {
+    .instructor__content-five .title {
+        margin-bottom: 5px;
+        font-size: 16px;
+    }
+    .instructor__content-five span {
+        font-size: 13px;
+    }
   .newsletter__form form {
     flex-wrap: wrap;
     justify-content: center;
