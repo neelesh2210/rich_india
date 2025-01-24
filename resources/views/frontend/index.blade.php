@@ -187,6 +187,7 @@
                                         <div class="courses__item-thumb">
                                             <a href="#" class="shine__animate-link">
                                                 <img src="{{ asset('backend/img/course/' . $course->image) }}"
+                                                    onerror="this.onerror=null;this.src='{{ asset('frontend/assets/img/default-image.jpg') }}'"
                                                     alt="img">
                                             </a>
                                         </div>
@@ -235,7 +236,8 @@
                                             <div class="courses__item-thumb">
                                                 <a href="#" class="shine__animate-link">
                                                     <img src="{{ asset('backend/img/course/' . $plan_course->image) }}"
-                                                        alt="img">
+                                                        alt="img"
+                                                        onerror="this.onerror=null;this.src='{{ asset('frontend/assets/img/default-image.jpg') }}'">
                                                 </a>
                                             </div>
                                             <div class="courses__item-content">
@@ -290,7 +292,9 @@
                         <div class="courses__item shine__animate-item">
                             <div class="courses__item-thumb">
                                 <a href="{{ route('checkout') }}?slug={{ $plan->slug }}" class="shine__animate-link">
-                                    <img src="{{ asset('backend/img/plan/' . $plan->image) }}" alt="img">
+                                    <img src="{{ asset('backend/img/plan/' . $plan->image) }}"
+                                        onerror="this.onerror=null;this.src='{{ asset('frontend/assets/img/default-image.jpg') }}'"
+                                        alt="img">
                                 </a>
                             </div>
                             <div class="courses__item-content">
@@ -536,11 +540,11 @@
                     <div class="col-xl-3 col-lg-4 col-6">
                         <div class="instructor__item-five">
                             <div class="instructor__thumb-five">
-                                <img src="{{ asset('backend/img/instructors/'.$instructor->image) }}" alt="img">
+                                <img src="{{ asset('backend/img/instructors/' . $instructor->image) }}" alt="img">
                             </div>
                             <div class="instructor__content-five">
-                                <h2 class="title">{{$instructor->name}}</h2>
-                                <span>{{$instructor->designation}}</span>
+                                <h2 class="title">{{ $instructor->name }}</h2>
+                                <span>{{ $instructor->designation }}</span>
                             </div>
                         </div>
                     </div>
