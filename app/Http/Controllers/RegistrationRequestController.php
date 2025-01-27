@@ -81,7 +81,11 @@ class RegistrationRequestController extends Controller
                     $user->email = $reg_user->email;
                     $user->phone = $reg_user->phone;
                     $user->state = $reg_user->state;
-                    $user->referrer_code = 'RIND'.strtoupper(generateRandomString(6));
+                    do {
+                        $referrer_code = 'RIND' . strtoupper(generateRandomString(8));
+                    } while (User::where('referrer_code', $referrer_code)->exists());
+
+                    $user->referrer_code = $referrer_code;
                     $user->referral_code = $reg_user->referral_code;
                     $user->password = Hash::make($reg_user->password);
                     $user->save();
