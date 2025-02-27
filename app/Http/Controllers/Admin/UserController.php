@@ -906,8 +906,18 @@ class UserController extends Controller
 
     public function userCommissionPayout(Request $request) {
         $search_key = $request->search_key;
+        $search_payout_date = $request->search_payout_date;
+        $search_commission_date = $request->search_commission_date;
 
-        $users = UserDetail::where('total_wallet_balance','>',0)->when($search_key, function($query) use ($search_key){
+        $users = UserDetail::where('total_wallet_balance','>',0)->when($search_payout_date, function($query) use ($search_payout_date){
+            $query->whereDoesntHave('payouts', function($quer) use ($search_payout_date){
+                $quer->whereDate('created_at','>=', Carbon::createFromFormat('Y-m-d', $search_payout_date)->startOfDay());
+            });
+        })->when($search_commission_date, function($query) use ($search_commission_date){
+            $query->whereDoesntHave('commissions', function($quer) use ($search_commission_date){
+                $quer->whereDate('created_at','>=', Carbon::createFromFormat('Y-m-d', $search_commission_date)->startOfDay());
+            });
+        })->when($search_key, function($query) use ($search_key){
             $query->whereHas('user',function($quer) use ($search_key){
                 $quer->where(function($que) use ($search_key){
                     $que->where('name','like','%'.$search_key.'%')
@@ -918,7 +928,7 @@ class UserController extends Controller
             });
         })->with('user','lastPayout','lastCommission')->orderBy('total_wallet_balance','desc')->paginate(10);
 
-        return view('admin.user.commission_payout',compact('users','search_key'),['page_title'=>'Commission Payout']);
+        return view('admin.user.commission_payout',compact('users','search_key','search_payout_date','search_commission_date'),['page_title'=>'Commission Payout']);
     }
 
 }

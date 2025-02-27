@@ -3,6 +3,7 @@
 namespace App\Models\Admin;
 
 use App\Models\User;
+use App\Models\Commission;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -34,5 +35,13 @@ class UserDetail extends Model
 
     public function lastCommission(){
         return $this->hasOne(Commission::class,'user_id','user_id')->orderBy('id','desc');
+    }
+
+    public function payouts(){
+        return $this->hasMany(Payout::class,'user_id','user_id');
+    }
+
+    public function commissions(){
+        return $this->hasMany(Commission::class,'user_id','user_id');
     }
 }

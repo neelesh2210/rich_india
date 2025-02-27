@@ -26,7 +26,15 @@
                                 <div class="">
                                     <form action="{{ route('admin.user.commission.payout') }}">
                                         <div class="row">
-                                            <div class="col-md-9"></div>
+                                            <div class="col-md-3"></div>
+                                            <div class="col-md-3">
+                                                <label>Payout Date</label>
+                                                <input type="date" name="search_payout_date" value="{{$search_payout_date}}" class="form-control form-control-sm">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label>Commission Date</label>
+                                                <input type="date" name="search_commission_date" value="{{$search_commission_date}}" class="form-control form-control-sm">
+                                            </div>
                                             <div class="col-md-3">
                                                 <label>Search</label>
                                                 <div class="input-group input-group-sm">
@@ -60,7 +68,7 @@
                                                     <b>Name: </b>{{ $user->user->name }} <br>
                                                     <b>Email: </b>{{ $user->user->email }} <br>
                                                     <b>Phone: </b>{{ $user->user->phone }} <br>
-                                                    <b>Date: </b>{{ $user->created_at->user->format('d-M-Y h:i A') }} <br>
+                                                    <b>Date: </b>{{ $user->user->created_at->format('d-M-Y h:i A') }} <br>
                                                 </td>
                                                 <td class="text-center">
                                                     {{$user->lastCommission->created_at}}
@@ -82,7 +90,7 @@
                                 <div class="row">
 
                                     <div class="col-md-8 d-flex justify-content-end">
-                                        {!! $users->appends(['search_key' => $search_key])->links() !!}
+                                        {!! $users->appends(['search_payout_date'=>$search_payout_date,'search_commission_date'=>$search_commission_date,'search_key' => $search_key])->links() !!}
                                     </div>
                                 </div>
                             </div>
