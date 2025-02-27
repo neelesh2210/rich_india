@@ -204,6 +204,9 @@ Route::group(['middleware'=>'auth:admin','as'=>'admin.'],function () {
     Route::resource('target', TargetController::class);
     Route::get('achieved-users/{target_id}',[TargetController::class,'achievedUsers'])->name('achieved.users');
 
+    //User Commission / Payout
+    Route::get('user-commission-payout',[UserController::class,'userCommissionPayout'])->name('user.commission.payout');
+
     Route::post('logout/', [LoginController::class, 'logout'])->name('logout');
 });
 

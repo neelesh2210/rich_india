@@ -43,6 +43,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="{{route('admin.user.commission.payout')}}" class="nav-link @if(Route::currentRouteName() == 'admin.user.commission.payout') active @endif">
+                            <i class="nav-icon fas fa-users"></i>
+                            <p>User Commission/Payout</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{route('admin.error.registration')}}" class="nav-link @if(Route::currentRouteName() == 'admin.error.registration') active @endif">
                             <i class="nav-icon fas fa-users"></i>
                             <p>Error Registration</p>

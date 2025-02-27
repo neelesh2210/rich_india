@@ -904,4 +904,21 @@ class UserController extends Controller
         return redirect()->route('user.dashboard')->with('success','User Login Successfully!');
     }
 
+    public function userCommissionPayout(Request $request) {
+        $search_key = $request->search_key;
+
+        $users = UserDetail::where('total_wallet_balance','>',0)->when($search_key, function($query) use ($search_key){
+            $query->whereHas('user',function($quer) use ($search_key){
+                $quer->where(function($que) use ($search_key){
+                    $que->where('name','like','%'.$search_key.'%')
+                    ->orWhere('email','like','%'.$search_key.'%')
+                    ->orWhere('phone','like','%'.$search_key.'%')
+                    ->orWhere('referrer_code','like','%'.$search_key.'%');
+                });
+            });
+        })->with('user','lastPayout','lastCommission')->orderBy('total_wallet_balance','desc')->paginate(10);
+
+        return view('admin.user.commission_payout',compact('users','search_key'),['page_title'=>'Commission Payout']);
+    }
+
 }

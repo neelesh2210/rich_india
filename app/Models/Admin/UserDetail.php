@@ -27,4 +27,12 @@ class UserDetail extends Model
     public function user(){
         return $this->belongsTo(User::Class);
     }
+
+    public function lastPayout(){
+        return $this->hasOne(Payout::class,'user_id','user_id')->orderBy('id','desc');
+    }
+
+    public function lastCommission(){
+        return $this->hasOne(Commission::class,'user_id','user_id')->orderBy('id','desc');
+    }
 }
