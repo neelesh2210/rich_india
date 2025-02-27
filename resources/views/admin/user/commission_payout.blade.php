@@ -71,9 +71,9 @@
                                                     <b>Date: </b>{{ $user->user->created_at->format('d-M-Y h:i A') }} <br>
                                                 </td>
                                                 <td class="text-center">
-                                                    {{$user->lastCommission->created_at}}
+                                                    {{$user?->lastCommission?->created_at}}
                                                 </td>
-                                                <td class="text-center">{{$user->lastPayout->created_at}}</td>
+                                                <td class="text-center">{{$user?->lastPayout?->created_at}}</td>
                                             </tr>
                                         @empty
                                             <tr class="footable-empty">
