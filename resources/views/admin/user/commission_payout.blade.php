@@ -56,6 +56,7 @@
                                         <tr>
                                             <th class="text-center">#</th>
                                             <th class="text-center">User Detail</th>
+                                            <th class="text-center">Total Wallet Amount</th>
                                             <th class="text-center">Last Commission Date</th>
                                             <th class="text-center">Last Payout Date</th>
                                         </tr>
@@ -69,6 +70,9 @@
                                                     <b>Email: </b>{{ $user->user->email }} <br>
                                                     <b>Phone: </b>{{ $user->user->phone }} <br>
                                                     <b>Date: </b>{{ $user->user->created_at->format('d-M-Y h:i A') }} <br>
+                                                </td>
+                                                <td class="text-center">
+                                                    {{$user?->total_wallet_balance}}
                                                 </td>
                                                 <td class="text-center">
                                                     {{$user?->lastCommission?->created_at}}
