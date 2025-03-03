@@ -206,6 +206,8 @@ Route::group(['middleware'=>'auth:admin','as'=>'admin.'],function () {
 
     //User Commission / Payout
     Route::get('user-commission-payout',[UserController::class,'userCommissionPayout'])->name('user.commission.payout');
+    Route::get('withdrawal-amount/{user_id}',[UserController::class,'withdrawalAmount'])->name('withdrawal.amount');
+    Route::post('withdrawal-amount-store/{user_id}',[UserController::class,'withdrawalAmountStore'])->name('withdrawal.amount.store');
 
     Route::post('logout/', [LoginController::class, 'logout'])->name('logout');
 });

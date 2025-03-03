@@ -13,7 +13,7 @@ class PayoutController extends Controller
     public function index(Request $request){
         $search_date = $request->search_date;
 
-        $payouts = Payout::where('user_id',Auth::guard('web')->user()->id);
+        $payouts = Payout::where('user_id',Auth::guard('web')->user()->id)->where('is_show','1');
         if($search_date){
             $dates=explode('-',$search_date);
             $d1=strtotime($dates[0]);

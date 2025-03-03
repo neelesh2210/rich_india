@@ -10,6 +10,7 @@ use App\Models\Admin\Plan;
 use App\Models\BankDetail;
 use App\Models\Commission;
 use App\Models\UserWallet;
+use App\Models\Admin\Payout;
 use App\Models\PlanPurchase;
 use Illuminate\Http\Request;
 use App\Models\LevelUpWallet;
@@ -929,6 +930,53 @@ class UserController extends Controller
         })->with('user','lastPayout','lastCommission')->orderBy('total_wallet_balance','desc')->paginate(10);
 
         return view('admin.user.commission_payout',compact('users','search_key','search_payout_date','search_commission_date'),['page_title'=>'Commission Payout']);
+    }
+
+    public function withdrawalAmount($user_id){
+        $user = User::where('id',$user_id)->with('userDetail.lastPayout','userDetail.lastCommission')->first();
+        if(!$user){
+            return redirect()->route('admin.user.commission.payout')->with('error','User Not Found!');
+        }
+
+        return view('admin.user.withdrawal_amount',compact('user'),['page_title'=>'Withdrawal Amount']);
+    }
+
+    public function withdrawalAmountStore(Request $request,$user_id) {
+        $user = User::where('id',$user_id)->with('userDetail')->first();
+        if(!$user){
+            return redirect()->route('admin.user.commission.payout')->with('error','User Not Found!');
+        }
+
+        if($request->withdrawal_amount > $user->userDetail->total_wallet_balance){
+            return back()->with('error','Withdrawal Amount is Greater than Total Wallet Balance!');
+        }
+
+        $payout = new Payout;
+        $payout->user_id = $user->id;
+        $payout->amount = $request->withdrawal_amount;
+        $payout->service_charge = 0;
+        $payout->tds_charge = 0;
+        $payout->payment_type = 'cash';
+        $payout->payment_status = 'success';
+        $payout->remark = 'Withdrawal By Admin';
+        $payout->is_show = '0';
+        $payout->save();
+
+        $user_wallet = new UserWallet;
+        $user_wallet->user_id = $user->id;
+        $user_wallet->from_id = $payout->id;
+        $user_wallet->amount = $request->withdrawal_amount;
+        $user_wallet->type = 'debit';
+        $user_wallet->from = 'payout';
+        $user_wallet->remark = 'Withdrawal By Admin';
+        $user_wallet->is_show = '0';
+        $user_wallet->save();
+
+        $user_detail = UserDetail::where('user_id',$user->id)->first();
+        $user_detail->total_wallet_balance = $user_detail->total_wallet_balance - $request->withdrawal_amount;
+        $user_detail->save();
+
+        return redirect()->route('admin.user.commission.payout')->with('success','Withdrawal Successfull!');
     }
 
 }

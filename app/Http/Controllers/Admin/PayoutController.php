@@ -139,8 +139,13 @@ class PayoutController extends Controller
 
         $search_key = $request->search_key;
         $search_date = $request->search_date;
+        $search_payout_by = $request->search_payout_by;
 
         $payouts = Payout::orderBy('id','desc');
+
+        if($search_payout_by != null){
+            $payouts = $payouts->where('is_show', $search_payout_by);
+        }
 
         if($search_key){
             $payouts = $payouts->whereHas('user', function($q) use ($search_key){
@@ -163,7 +168,7 @@ class PayoutController extends Controller
 
         $payouts = $payouts->simplePaginate(10);
 
-        return view('admin.payout_transaction.index',compact('payouts','search_key','search_date'),['page_title'=>'Success Payout Transaction']);
+        return view('admin.payout_transaction.index',compact('payouts','search_key','search_date','search_payout_by'),['page_title'=>'Success Payout Transaction']);
     }
 
     public function failedpayoutTransactionIndex(Request $request){

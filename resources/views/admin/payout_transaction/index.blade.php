@@ -23,6 +23,13 @@
                                     <form action="{{route('admin.payout.transaction.index')}}">
                                         <div class="row">
                                             <div class="input-group input-group-sm" style="width: 200px;">
+                                                <select name="search_payout_by" class="form-control form-control-sm">
+                                                    <option value="">All</option>
+                                                    <option value="1" @if($search_payout_by == '1') selected @endif>User</option>
+                                                    <option value="0" @if($search_payout_by == '0') selected @endif>Admin</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-group input-group-sm" style="width: 200px;">
                                                 <div class="input-group-append">
                                                     <button type="submit" class="btn btn-default">
                                                         <i class="fas fa-calendar"></i>

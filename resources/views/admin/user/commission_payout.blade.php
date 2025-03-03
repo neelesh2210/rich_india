@@ -59,6 +59,7 @@
                                             <th class="text-center">Total Wallet Amount</th>
                                             <th class="text-center">Last Commission Date</th>
                                             <th class="text-center">Last Payout Date</th>
+                                            <th class="text-center">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -78,6 +79,11 @@
                                                     {{$user?->lastCommission?->created_at}}
                                                 </td>
                                                 <td class="text-center">{{$user?->lastPayout?->created_at}}</td>
+                                                <td class="text-center">
+                                                    <a class="btn btn-outline-primary btn-sm mr-1 mb-1" href="{{route('admin.withdrawal.amount',$user->id)}}" title="Withdrawal Amount">
+                                                        <i class="fas fa-wallet"></i>
+                                                    </a>
+                                                </td>
                                             </tr>
                                         @empty
                                             <tr class="footable-empty">
