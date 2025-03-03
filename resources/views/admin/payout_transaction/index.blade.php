@@ -25,8 +25,8 @@
                                             <div class="input-group input-group-sm" style="width: 200px;">
                                                 <select name="search_payout_by" class="form-control form-control-sm">
                                                     <option value="">All</option>
-                                                    <option value="1" @if($search_payout_by == '1') selected @endif>User</option>
-                                                    <option value="0" @if($search_payout_by == '0') selected @endif>Admin</option>
+                                                    <option value="1" @if($search_payout_by == '1') selected @endif>Normal Withdrawl</option>
+                                                    <option value="0" @if($search_payout_by == '0') selected @endif>Inactive ID Withdrawl</option>
                                                 </select>
                                             </div>
                                             <div class="input-group input-group-sm" style="width: 200px;">
