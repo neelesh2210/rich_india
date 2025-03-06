@@ -41,7 +41,9 @@ class RegistrationRequestController extends Controller
             $users = $users->where('plan',$search_plan);
         }
         if($search_key){
-            $users = $users->where('phone',$search_key)->orWhere('name','like','%'.$search_key.'%')->orWhere('email','like','%'.$search_key.'%');
+            $users = $users->where(function($query) use ($search_key){
+                $query->where('phone',$search_key)->orWhere('name','like','%'.$search_key.'%')->orWhere('email','like','%'.$search_key.'%');
+            });
         }
 
         $users = $users->with('planDetail')->latest()->paginate(10);
