@@ -56,7 +56,7 @@ class PaymentController extends Controller
             });
         }
         if($request->has('export')){
-            $plan_purchases = $plan_purchases->orderBy('created_at','desc')->get();
+            $plan_purchases = $plan_purchases->with(['plan','user.sponsorDetail','commission'])->orderBy('created_at','desc')->get();
             return Excel::download(new PaymentTransactionsExport($plan_purchases), 'orders.xlsx');
         }else{
             $plan_purchases = $plan_purchases->with(['user.sponsorDetail','plan','commission.user'])->orderBy('id','desc')->simplePaginate('10');

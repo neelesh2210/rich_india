@@ -22,12 +22,12 @@
                 <td>{{$plan->created_at->format('d-m-Y h:i A')}}</td>
                 <td>
                     @if ($plan->payment_detail != null && $plan->payment_detail != 'Updated by Admin')
-                        {{json_decode($plan->payment_detail)->id}}
+                        {{json_decode($plan->payment_detail)?->id}}
                     @endif
                 </td>
                 <td>
                     @if ($plan->payment_detail != null && $plan->payment_detail != 'Updated by Admin')
-                        {{json_decode($plan->payment_detail)->amount}}
+                        {{json_decode($plan->payment_detail)?->amount}}
                     @else
                         0
                     @endif
@@ -48,7 +48,7 @@
                 <td>{{$plan->user->referrer_code}}</td>
                 <td>{{optional($plan->user->sponsorDetail)->name}}</td>
                 <td>{{optional($plan->user->sponsorDetail)->referrer_code}}</td>
-                @foreach (App\Models\Commission::where('plan_purchase_id',$plan->id)->get() as $plan_key=>$commission_plan_purchase)
+                @foreach ($plan->commission as $plan_key=>$commission_plan_purchase)
                     <td>{{$commission_plan_purchase->commission}}</td>
                 @endforeach
             </tr>
