@@ -8,8 +8,10 @@ use App\Models\Commission;
 use App\Models\Admin\Payout;
 use App\Models\PlanPurchase;
 use Illuminate\Http\Request;
+use App\Jobs\DownloadOrderExcel;
 use App\Http\Controllers\Controller;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Storage;
 use App\Exports\PaymentTransactionsExport;
 
 class PaymentController extends Controller
@@ -57,7 +59,12 @@ class PaymentController extends Controller
         }
         if($request->has('export')){
             $plan_purchases = $plan_purchases->with(['plan','user.sponsorDetail','commission'])->orderBy('created_at','desc')->get();
-            return Excel::download(new PaymentTransactionsExport($plan_purchases), 'orders.xlsx');
+            DownloadOrderExcel::dispatch($plan_purchases);
+
+        //     sleep(10); // Wait for the job to complete, adjust the time as needed
+
+        // return Storage::disk('public')->download('orders.xlsx');
+            return back()->with('success', 'Export job has been dispatched.');
         }else{
             $plan_purchases = $plan_purchases->with(['user.sponsorDetail','plan','commission.user'])->orderBy('id','desc')->simplePaginate('10');
             return view('admin.payment_transaction.index',compact('plan_purchases','search_date','search_key','search_plan','search_have_sponser'),['page_title'=>'Orders']);
