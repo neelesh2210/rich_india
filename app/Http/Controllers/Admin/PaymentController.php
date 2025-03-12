@@ -59,11 +59,12 @@ class PaymentController extends Controller
         }
         if($request->has('export')){
             $plan_purchases = $plan_purchases->with(['plan','user.sponsorDetail','commission'])->orderBy('created_at','desc')->get();
-            DownloadOrderExcel::dispatch($plan_purchases);
+            return Excel::download(new PaymentTransactionsExport($plan_purchases), 'orders.xlsx');
+        //     DownloadOrderExcel::dispatch($plan_purchases);
 
-        //     sleep(10); // Wait for the job to complete, adjust the time as needed
+        // //     sleep(10); // Wait for the job to complete, adjust the time as needed
 
-        // return Storage::disk('public')->download('orders.xlsx');
+        // // return Storage::disk('public')->download('orders.xlsx');
             return back()->with('success', 'Export job has been dispatched.');
         }else{
             $plan_purchases = $plan_purchases->with(['user.sponsorDetail','plan','commission.user'])->orderBy('id','desc')->simplePaginate('10');
