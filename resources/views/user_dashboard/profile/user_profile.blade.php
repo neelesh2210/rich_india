@@ -20,10 +20,10 @@
                                     <label for="sponsor_name" class="form-label">Name</label>
                                     <input type="text" id="sponsor_name" class="form-control" value="{{optional($user_details->sponsorDetail)->name}}" placeholder="Sponsor Name..." readonly>
                                 </div>
-                                <div class="col-md-6 mb-3">
+                                {{-- <div class="col-md-6 mb-3">
                                     <label for="sponsor_email" class="form-label">Email</label>
                                     <input type="email" id="sponsor_email" class="form-control" value="{{optional($user_details->sponsorDetail)->email}}" placeholder="Sponsor Email..." readonly>
-                                </div>
+                                </div> --}}
                                 <div class="col-md-6 mb-3">
                                     <label for="sponsor_phone" class="form-label">Phone</label>
                                     <input type="number" id="sponsor_phone" class="form-control" value="{{optional($user_details->sponsorDetail)->phone}}" placeholder="Sponsor Phone..." readonly>
