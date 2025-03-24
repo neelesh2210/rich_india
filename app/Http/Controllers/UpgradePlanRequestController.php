@@ -66,7 +66,17 @@ class UpgradePlanRequestController extends Controller
                     $current_plan = Plan::where('id',$user_detail->current_plan_id)->first();
                     $upgrade_plan_detail = Plan::where('id',$data->plan_id)->first();
                     $total_amount = $current_plan->upgrade_amount[$upgrade_plan_detail->priority - $current_plan->priority - 1];
-                    if($total_amount <= Auth::guard('web')->user()->userDetail->total_wallet_balance){
+
+                    $upgrade_commission_level = WebsiteSetting::where('type','upgrade_commission_level')->first();
+
+                    $first_commission = 0;
+
+                    if($upgrade_plan_detail->priority <=  Auth::guard('web')->user()->userDetail->plan->priority ){
+                        $first_commission = $current_plan->upgrade_commission[$upgrade_plan_detail->priority - $current_plan->priority - 1][0];
+                    }
+                    // $total_amount = $total_amount - $first_commission;
+                    // \Log::info($total_amount - $first_commission);
+                    if(($total_amount - $first_commission) <= Auth::guard('web')->user()->userDetail->total_wallet_balance){
                         $plan_purchase = new PlanPurchase;
                         $plan_purchase->user_id = $data->user_id;
                         $plan_purchase->plan_id = $data->plan_id;
@@ -90,8 +100,6 @@ class UpgradePlanRequestController extends Controller
                         $upgrade_user_detail = UserDetail::where('user_id',Auth::guard('web')->user()->id)->first();
                         $upgrade_user_detail->total_wallet_balance = $upgrade_user_detail->total_wallet_balance - $total_amount;
                         $upgrade_user_detail->save();
-
-                        $upgrade_commission_level = WebsiteSetting::where('type','upgrade_commission_level')->first();
 
                         $referrer_code = Auth::guard('web')->user()->referrer_code;
 

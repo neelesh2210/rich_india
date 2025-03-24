@@ -77,7 +77,14 @@ class RegistrationRequestController extends Controller
                     $final_amount = $plan->discounted_price;
                 }
 
-                if($final_amount <= Auth::guard('web')->user()->userDetail->total_wallet_balance){
+                $first_commission = 0;
+                if(Auth::guard('web')->user()->userDetail->plan->priority <= $plan->priority){
+                    $first_commission = Auth::guard('web')->user()->userDetail->plan->commission[0];
+                }else{
+                    $first_commission = $plan->commission[0];
+                }
+
+                if(($final_amount - $first_commission) <= Auth::guard('web')->user()->userDetail->total_wallet_balance){
                     $user = new User;
                     $user->name = $reg_user->name;
                     $user->email = $reg_user->email;
