@@ -16,7 +16,9 @@
                             <div class="card-body">
                                 <form action="{{route('user.registration.request')}}">
                                     <div class="row">
-                                        <div class="col-md-2 mb-3"></div>
+                                        <div class="col-md-2 mb-3">
+                                            <a href="{{route('user.wallet.registration')}}" class="btn btn-primary mt-3_5"><i class="fas fa-plus"></i> Create New Id</a>
+                                        </div>
                                         <div class="col-md-3 mb-3">
                                             <label class="form-label">Date Range Pick</label>
                                             <input class="form-control input-daterange-datepicker" id="reservation" type="text" name="search_date" value="{{$search_date}}" placeholder="Select Date Range..." readonly>

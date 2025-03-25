@@ -168,8 +168,34 @@ class RegistrationRequestController extends Controller
                 return back()->with('error','This Request Already Proccessed!');
             }
         }
+    }
 
+    public function walletRegistration(){
+        return view('user_dashboard.wallet_registration.index');
+    }
 
+    public function walletRegistrationStore(Request $request){
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users,email',
+            'phone' => 'required|min:10|max:10|unique:users,phone',
+            'state' => 'required|string|max:255',
+            'plan' => 'required|exists:plans,id',
+            'wallet_pin' => 'required|string|in:'.Auth::guard('web')->user()->wallet_pin,
+        ]);
+
+        $wallet_registration_request = new WalletRegistrationRequest;
+        $wallet_registration_request->name = $request->name;
+        $wallet_registration_request->email = $request->email;
+        $wallet_registration_request->phone = $request->phone;
+        $wallet_registration_request->state = $request->state;
+        $wallet_registration_request->plan = $request->plan;
+        $wallet_registration_request->referral_code = Auth::guard('web')->user()->referrer_code;
+        $wallet_registration_request->password = $request->email;
+        $wallet_registration_request->status = 'pending';
+        $wallet_registration_request->save();
+
+        return $this->store($request,$wallet_registration_request->id);
     }
 
 }

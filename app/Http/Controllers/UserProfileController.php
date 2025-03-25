@@ -130,4 +130,16 @@ class UserProfileController extends Controller
         }
     }
 
+    public function updateSecurity(Request $request) {
+        $request->validate([
+            'wallet_pin'    =>  'required|min:6'
+        ]);
+
+        $user = User::find(Auth::guard('web')->user()->id);
+        $user->wallet_pin = $request->wallet_pin;
+        $user->save();
+
+        return back()->with('success','Wallet Pin Updated Successfully!');
+    }
+
 }

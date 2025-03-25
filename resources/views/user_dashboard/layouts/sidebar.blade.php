@@ -147,7 +147,7 @@
                     </a>
                 </li>
                 <li class="side-nav-item mb-5">
-                    <a href="#" class="side-nav-link">
+                    <a href="{{route('user.security')}}" class="side-nav-link">
                         <i class="fad fa-lock"></i>
                         <span> Security </span>
                     </a>

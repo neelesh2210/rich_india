@@ -162,6 +162,8 @@ Route::group(['middleware'=>['auth:web',CheckUserStatus::class],'prefix'=>'user'
     Route::get('registration-request',[RegistrationRequestController::class,'index'])->name('registration.request');
     Route::get('registration-request-detail/{id}',[RegistrationRequestController::class,'detail'])->name('registration.request.detail');
     Route::post('registration-request-store/{id}',[RegistrationRequestController::class,'store'])->name('registration.request.store');
+    Route::get('wallet-registration' , [RegistrationRequestController::class,'walletRegistration'])->name('wallet.registration');
+    Route::post('wallet-registration' , [RegistrationRequestController::class,'walletRegistrationStore'])->name('wallet.registration.store');
 
     Route::get('course',[CourseController::class,'index'])->name('course');
     Route::get('select-language/{course_id}',[CourseController::class,'selectLanguage'])->name('select.language');
@@ -201,6 +203,10 @@ Route::group(['middleware'=>['auth:web',CheckUserStatus::class],'prefix'=>'user'
 
     //Wallet Transaction
     Route::get('wallet-transaction',[WalletTransactionController::class,'index'])->name('wallet.transaction.index');
+
+    //Security
+    Route::view('security', 'user_dashboard.security')->name('security');
+    Route::post('update-security', [UserProfileController::class,'updateSecurity'])->name('update.security');
 
     //Logout
     Route::post('user-logout',[LoginController::class,'logout'])->name('logout');
