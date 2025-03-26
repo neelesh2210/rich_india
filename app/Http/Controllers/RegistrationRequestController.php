@@ -182,6 +182,7 @@ class RegistrationRequestController extends Controller
             'state' => 'required|string|max:255',
             'plan' => 'required|exists:plans,id',
             'wallet_pin' => 'required|string|in:'.Auth::guard('web')->user()->wallet_pin,
+            'password' => 'required|min:8',
         ]);
 
         $wallet_registration_request = new WalletRegistrationRequest;
@@ -191,7 +192,7 @@ class RegistrationRequestController extends Controller
         $wallet_registration_request->state = $request->state;
         $wallet_registration_request->plan = $request->plan;
         $wallet_registration_request->referral_code = Auth::guard('web')->user()->referrer_code;
-        $wallet_registration_request->password = $request->email;
+        $wallet_registration_request->password = $request->password;
         $wallet_registration_request->status = 'pending';
         $wallet_registration_request->save();
 

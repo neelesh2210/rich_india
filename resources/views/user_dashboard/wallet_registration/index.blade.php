@@ -103,6 +103,13 @@
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
                                     </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="password" class="form-label">Password</label>
+                                        <input type="text" id="password" name="password" value="{{old('password')}}" class="form-control" placeholder="Password...">
+                                        @error('password')
+                                            <span class="text-danger">{{$message}}</span>
+                                        @enderror
+                                    </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Save</button>
                             </form>
