@@ -44,7 +44,7 @@ class CourseController extends Controller
         $course = Course::where('slug',$slug)->with('topic')->withCount('topic')->first();
 
         if(!$course){
-            return redirect()->redirect('index')->with('error','Course not found');
+            return redirect()->route('index')->with('error','Course not found');
         }
         return view('frontend.course_details',compact('course'));
     }
