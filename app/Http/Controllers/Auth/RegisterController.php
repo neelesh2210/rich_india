@@ -599,6 +599,9 @@ class RegisterController extends Controller
         $registration_error_log_id = \Session::get('registration_error_log_id');
         $registration_error_log = RegistrationErrorLog::find(decrypt($registration_error_log_id));
 
+        if(!$registration_error_log){
+            return redirect()->route('index')->with('error','Something went wrong!');
+        }
         $wallet_registration_request = new WalletRegistrationRequest;
         $wallet_registration_request->name = $registration_error_log->name;
         $wallet_registration_request->email = $registration_error_log->email;
