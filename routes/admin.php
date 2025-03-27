@@ -209,6 +209,9 @@ Route::group(['middleware'=>'auth:admin','as'=>'admin.'],function () {
     Route::get('withdrawal-amount/{user_id}',[UserController::class,'withdrawalAmount'])->name('withdrawal.amount');
     Route::post('withdrawal-amount-store/{user_id}',[UserController::class,'withdrawalAmountStore'])->name('withdrawal.amount.store');
 
+    //Transfer levelup wallet amount to main wallet
+    Route::get('transfer-levelup-wallet-amount',[UserController::class,'transferLevelupWalletAmount'])->name('transfer.levelup.wallet.amount');
+
     Route::post('logout/', [LoginController::class, 'logout'])->name('logout');
 });
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use DB;
 use Auth;
 use Carbon\Carbon;
 use App\Models\User;
@@ -977,6 +978,19 @@ class UserController extends Controller
         $user_detail->save();
 
         return redirect()->route('admin.user.commission.payout')->with('success','Withdrawal Successfull!');
+    }
+
+    public function transferLevelupWalletAmount(){
+        DB::statement("
+            UPDATE user_details
+            INNER JOIN (
+                SELECT user_id, SUM(amount) as total_amount
+                FROM level_up_wallets
+                GROUP BY user_id
+            ) as wallet_totals
+            ON user_details.user_id = wallet_totals.user_id
+            SET user_details.total_wallet_balance = user_details.total_wallet_balance + wallet_totals.total_amount
+        ");
     }
 
 }
