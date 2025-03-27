@@ -19,9 +19,9 @@
     <tbody>
         @foreach ($plans as $key=>$plan)
             <tr>
-                <td>{{$plan->created_at->format('d-m-Y h:i A')}}</td>
+                <td>{{$plan?->created_at?->format('d-m-Y h:i A')}}</td>
                 <td>
-                    @if ($plan->payment_detail != null && $plan->payment_detail != 'Updated by Admin')
+                    @if ($plan?->payment_detail != null && $plan?->payment_detail != 'Updated by Admin')
                         {{json_decode($plan->payment_detail)?->id}}
                     @endif
                 </td>
@@ -40,14 +40,14 @@
                     @endif
                 </td>
                 <td>
-                    {{$plan->plan->title}}
+                    {{$plan?->plan?->title}}
                 </td>
-                <td>{{$plan->user->name}}</td>
-                <td>{{$plan->user->email}}</td>
-                <td>{{$plan->user->phone}}</td>
-                <td>{{$plan->user->referrer_code}}</td>
-                <td>{{optional($plan->user->sponsorDetail)->name}}</td>
-                <td>{{optional($plan->user->sponsorDetail)->referrer_code}}</td>
+                <td>{{$plan?->user?->name}}</td>
+                <td>{{$plan?->user?->email}}</td>
+                <td>{{$plan?->user?->phone}}</td>
+                <td>{{$plan?->user?->referrer_code}}</td>
+                <td>{{optional($plan?->user?->sponsorDetail)->name}}</td>
+                <td>{{optional($plan?->user?->sponsorDetail)->referrer_code}}</td>
                 @foreach ($plan->commission as $plan_key=>$commission_plan_purchase)
                     <td>{{$commission_plan_purchase->commission}}</td>
                 @endforeach

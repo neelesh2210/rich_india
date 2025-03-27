@@ -35,15 +35,15 @@
             @endphp
             <tr>
                 <td></td>
-                <td>{{optional($withdrawal_request->user->bankDetail)->account_number}}</td>
-                <td>{{$withdrawal_request->user->name}}</td>
+                <td>{{optional($withdrawal_request->user?->bankDetail)->account_number}}</td>
+                <td>{{$withdrawal_request->user?->name}}</td>
                 <td>{{$withdrawal_request->amount}}</td>
                 <td>{{$service_charge->content}}</td>
                 <td>{{$tds_charge->content}}</td>
                 <td>{{$withdrawal_request->amount - $service_charge->content - $tds_charge->content}}</td>
                 <td></td>
                 <td></td>
-                <td>{{optional($withdrawal_request->user->bankDetail)->ifsc_code}}</td>
+                <td>{{optional($withdrawal_request->user?->bankDetail)->ifsc_code}}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -57,7 +57,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td>{{$withdrawal_request->user->referrer_code}}</td>
+                <td>{{$withdrawal_request->user?->referrer_code}}</td>
             </tr>
         @endforeach
     </tbody>
