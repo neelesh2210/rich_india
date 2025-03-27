@@ -56,7 +56,10 @@ class UserProfileController extends Controller
                     if($request->has('avatar')){
                         $user_detail->avatar = imageUpload($request->file('avatar'),'frontend/images/avatar');
                         $src= "frontend/images/avatar/".$user_detail->avatar;
-                        compress($src, $src, 500, $user_detail->avatar);
+                        // return $request->file('avatar')->getClientOriginalExtension();
+                        if($request->file('avatar')->getClientOriginalExtension() != 'webp'){
+                            compress($src, $src, 500, $user_detail->avatar);
+                        }
                     }
                     $user_detail->save();
 
