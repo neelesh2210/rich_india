@@ -981,16 +981,25 @@ class UserController extends Controller
     }
 
     public function transferLevelupWalletAmount(){
-        DB::statement("
-            UPDATE user_details
-            INNER JOIN (
-                SELECT user_id, SUM(amount) as total_amount
-                FROM level_up_wallets
-                GROUP BY user_id
-            ) as wallet_totals
-            ON user_details.user_id = wallet_totals.user_id
-            SET user_details.total_wallet_balance = user_details.total_wallet_balance + wallet_totals.total_amount
-        ");
+        $usersWithPositiveBalance = LevelUpWallet::select('user_id', DB::raw('SUM(CASE WHEN type = "credit" THEN amount ELSE 0 END) as total_credit'), DB::raw('SUM(CASE WHEN type = "debit" THEN amount ELSE 0 END) as total_debit'))
+        ->groupBy('user_id')
+        ->havingRaw('total_credit - total_debit > 0')
+        ->get();
+
+        foreach ($usersWithPositiveBalance as $key => $usersWithPositiveBalanc) {
+            $user_wallets = new UserWallet;
+            $user_wallets->user_id = $usersWithPositiveBalanc->user_id;
+            $user_wallets->from_id = $usersWithPositiveBalanc->user_id;
+            $user_wallets->amount = $usersWithPositiveBalanc->total_credit;
+            $user_wallets->type = 'credit';
+            $user_wallets->from = 'level_up_wallet_transfer';
+            $user_wallets->remark = 'fund transferred from level up wallet to main wallet';
+            $user_wallets->save();
+
+            $user_detail = UserDetail::where('user_id',$usersWithPositiveBalanc->user_id)->first();
+            $user_detail->total_wallet_balance = $user_detail->total_wallet_balance + $usersWithPositiveBalanc->total_credit;
+            $user_detail->save();
+        }
     }
 
 }
