@@ -295,16 +295,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12 mt-2">
-                        <div class="card bg-level">
-                            <div class="card-body user-earnings">
-                                <h3><small ><i class="fas fa-rupee-sign"></i></small> <span
-                                        class="counter-value">{{$total_user_level_up_wallet_remaining_amount}}</span>
-                                </h3>
-                                <h5  title="Number of Orders">Level Up Fund</h5>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div><br><br><br>
